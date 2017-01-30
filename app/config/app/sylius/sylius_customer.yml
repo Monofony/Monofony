@@ -1,0 +1,4 @@
+sylius_customer:
+    resources:
+        customer: ~
+        customer_group: ~
