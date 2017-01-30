@@ -1,0 +1,59 @@
+# Description
+This configuration includes following software:
+
+* Debian 8.1
+* PHP 7.0
+* MySQL 5.6 Percona Server
+* Apache 2.2.22
+* Composer
+* Curl
+* Vim
+* Git
+
+# Usage
+
+First you need to create vagrant VM
+
+```
+$ cd etc/vagrant
+$ vagrant up
+```
+
+While waiting for Vagrant to start up, you should add an entry into /etc/hosts file on the host machine.
+
+```
+10.0.0.200      alceane.dev
+```
+
+Setup your db password in parameters.yml
+
+```
+parameters:
+    database_password: vagrant
+```
+
+From now you should be able to access your alceane project at [http://alceane.dev/app_dev.php](http://alceane.dev/app_dev.php)
+
+Installing your assets manually
+
+```
+    vagrant ssh -c 'cd /var/www/alceane && ./node_modules/.bin/gulp'
+```
+
+# Troubleshooting
+
+Using Symfony2 inside Vagrant can be slow due to synchronisation delay incurred by NFS. To avoid this, both locations have been moved to a shared memory segment under ``/dev/shm/alceane``.
+
+To view the application logs, run the following commands:
+
+```bash
+$ tail -f /dev/shm/alceane/app/logs/prod.log
+$ tail -f /dev/shm/alceane/app/logs/dev.log
+```
+
+To view the apache logs, run the following commands:
+
+```bash
+$ tail -f /var/log/apache2/alceane_error.log
+$ tail -f /var/log/apache2/alceane_access.log
+```
