@@ -13,8 +13,25 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle(),
+            new Sylius\Bundle\UiBundle\SyliusUiBundle(),
+            new Sylius\Bundle\UserBundle\SyliusUserBundle(),
+            new Sylius\Bundle\CustomerBundle\SyliusCustomerBundle(),
+            new Sylius\Bundle\MailerBundle\SyliusMailerBundle(),
+            new Sylius\Bundle\GridBundle\SyliusGridBundle(),
+            new winzou\Bundle\StateMachineBundle\winzouStateMachineBundle(),
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
+            new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new AppBundle\AppBundle(),
         ];
 
@@ -35,16 +52,32 @@ class AppKernel extends Kernel
 
     public function getCacheDir()
     {
+        if ($this->isVagrantEnvironment()) {
+            return '/dev/shm/app_name/cache/' . $this->getEnvironment();
+        }
+
         return dirname(__DIR__).'/var/cache/'.$this->getEnvironment();
     }
 
     public function getLogDir()
     {
+        if ($this->isVagrantEnvironment()) {
+            return '/dev/shm/app_name/logs';
+        }
+
         return dirname(__DIR__).'/var/logs';
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isVagrantEnvironment()
+    {
+        return (getenv('HOME') === '/home/vagrant' || getenv('VAGRANT') === 'VAGRANT') && is_dir('/dev/shm');
     }
 }
