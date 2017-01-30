@@ -1,2 +1,5 @@
 sylius_resource:
-    resources: ~
+    resources:
+        app.address:
+            classes:
+                model: AppBundle\Entity\Address
