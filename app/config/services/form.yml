@@ -23,3 +23,10 @@ services:
             - "@sylius.repository.customer"
         tags:
           - { name: form.type }
+
+    sylius.form.type.user:
+        class: AppBundle\Form\Type\User\UserRegistrationType
+        arguments:
+            - "%sylius.model.app_user.class%"
+        tags:
+          - { name: form.type }

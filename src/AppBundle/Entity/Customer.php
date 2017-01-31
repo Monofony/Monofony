@@ -21,7 +21,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @author Loïc Frémont <loic@mobizel.com>
  *
  * @ORM\Entity
- * @ORM\Table(name="sylius_contract_customer")
+ * @ORM\Table(name="sylius_customer")
  */
 class Customer extends BaseCustomer implements UserAwareInterface
 {
