@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Sylius package.
+ * This file is part of AppName.
  *
- * (c) Paweł Jędrzejewski
+ * (c) Mobizel
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,38 +11,30 @@
 
 namespace AppBundle\Form\Type\User;
 
-use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
+use AppBundle\Entity\AdminUser;
 use Sylius\Bundle\UserBundle\Form\Type\UserType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 /**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
+ * @author Loïc Frémont <loic@mobizel.com>
  */
-class UserRegistrationType
+class UserRegistrationType extends UserType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
+        parent::buildForm($builder, $options);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getParent()
+    public function getBlockPrefix()
     {
-        return UserType::class;
-    }
-
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return 'sylius_app_user_registration';
+        return 'sylius_user';
     }
 }

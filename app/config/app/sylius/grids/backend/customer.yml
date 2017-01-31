@@ -19,7 +19,7 @@ sylius_grid:
                     label: sylius.ui.email
                     sortable: email
                 createdAt:
-                    type: date
+                    type: datetime
                     label: sylius.ui.created_at
                     sortable: createdAt
             filters:
