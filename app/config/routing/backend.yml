@@ -10,9 +10,6 @@ sylius_backend_admin_user:
 sylius_backend_customer:
     resource: "backend/customer.yml"
 
-sylius_backend_customer_group:
-    resource: "backend/customer_group.yml"
-
 sylius_backend_security:
     resource: "backend/security.yml"
 
