@@ -6,10 +6,18 @@ imports:
 sylius_grid:
     templates:
         action:
-            show: "backend/grid/action/show.html.twig"
-            create: "backend/grid/action/create.html.twig"
-            update: "backend/grid/action/update.html.twig"
-            delete: "backend/grid/action/delete.html.twig"
+            default: "@SyliusUi/Grid/Action/default.html.twig"
+            create: "@SyliusUi/Grid/Action/create.html.twig"
+            delete: "@SyliusUi/Grid/Action/delete.html.twig"
+            show: "@SyliusUi/Grid/Action/show.html.twig"
+            update: "@SyliusUi/Grid/Action/update.html.twig"
+            apply_transition: "@SyliusUi/Grid/Action/applyTransition.html.twig"
+            links: "@SyliusUi/Grid/Action/links.html.twig"
+            archive: "@SyliusUi/Grid/Action/archive.html.twig"
         filter:
-            string: "backend/grid/filter/string.html.twig"
-            boolean: "backend/grid/filter/boolean.html.twig"
+            string: "@SyliusUi/Grid/Filter/string.html.twig"
+            boolean: "@SyliusUi/Grid/Filter/boolean.html.twig"
+            date: "@SyliusUi/Grid/Filter/date.html.twig"
+            entity: "@SyliusUi/Grid/Filter/entity.html.twig"
+            money: "@SyliusUi/Grid/Filter/money.html.twig"
+            exists: "@SyliusUi/Grid/Filter/exists.html.twig"
