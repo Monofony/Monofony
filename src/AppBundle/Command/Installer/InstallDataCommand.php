@@ -38,25 +38,8 @@ EOT
         $output->writeln(sprintf('Loading Alcéane data for environment <info>%s</info>.', $this->getEnvironment()));
 
 
-        $commands = [
-            'app:root-taxons:load',
-            'app:cities:load',
-            'app:product-types:load',
-            'app:product-categories:load',
-            'app:product-attributes:load',
-            'app:job-offers:load',
-            'app:products:load',
-            'app:article-documents:load',
-            'app:magazines:load',
-            'app:achievements:load',
-            'app:string-blocks:load',
-            'app:question-blocks:load',
-            'app:building-managers:load',
-            'app:import:contract' => [
-                'archive_path' => $kernelRootDir = $this->getContainer()->getParameter('kernel.root_dir') . '/../transfert/EXTRA_DONNEES.tar.gz'
-            ]
-        ];
+        $commands = [];
 
-        $this->runCommands($commands, $input, $output);
+        $this->runCommands($commands, $output);
     }
 }
