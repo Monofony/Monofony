@@ -1,9 +1,9 @@
 {
   "dependencies": {
-    "semantic-ui-css": "^2.1.8",
+    "foundation-sites": "6.2.*",
     "autobahn": "^0.11.1",
     "interact.js": "^1.2.6",
-    "jquery": "^2.2.4",
+    "jquery": "^2.1.4",
     "jwt-decode": "^2.1.0",
     "moment": "^2.17.1",
     "moment-range": "^2.2.0",
@@ -33,7 +33,8 @@
     "watchify": "^3.2.1"
   },
   "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js"
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "foundation": "./node_modules/foundation-sites/js/foundation.js"
   },
   "scripts": {
     "gulp": "gulp"
