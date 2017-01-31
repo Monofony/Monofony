@@ -1,0 +1,19 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+     sylius.form.type.admin_user.validation_groups: ["sylius"]
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    sylius.form.type.admin_user:
+        class: AppBundle\Form\Type\User\AdminUserType
+        arguments:
+            - "%sylius.model.admin_user.class%"
+            - "%sylius.form.type.admin_user.validation_groups%"
+            - "@sylius.repository.customer"
+        tags:
+          - { name: form.type }

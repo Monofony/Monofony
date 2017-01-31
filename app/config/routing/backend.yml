@@ -4,6 +4,9 @@ app_backend_dashboard:
         _controller:  FrameworkBundle:Template:template
         template:     'backend/index.html.twig'
 
+sylius_backend_admin_user:
+    resource: "backend/admin_user.yml"
+
 sylius_backend_customer:
     resource: "backend/customer.yml"
 

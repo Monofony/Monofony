@@ -9,6 +9,7 @@ sylius_user:
                 classes:
                     model: AppBundle\Entity\AdminUser
                     repository: Sylius\Bundle\UserBundle\Doctrine\ORM\UserRepository
+                    form: AppBundle\Form\Type\User\AdminUserType
         admin_oauth:
             user:
                 classes:
