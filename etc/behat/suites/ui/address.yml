@@ -1,0 +1,11 @@
+default:
+    suites:
+        ui_address:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\ApiContext
+                - AppBundle\Behat\UtilsContext
+                - AppBundle\Behat\AdminUserContext
+                - AppBundle\Behat\AddressContext
+            filters:
+                tags: "@address && @ui"

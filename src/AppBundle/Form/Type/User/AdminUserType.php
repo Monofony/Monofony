@@ -20,7 +20,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 /**
  * @author Loïc Frémont <loic@mobizel.com>
  */
-class AdminRegistrationType extends UserType
+class AdminUserType extends UserType
 {
     /**
      * {@inheritdoc}
@@ -30,9 +30,12 @@ class AdminRegistrationType extends UserType
         parent::buildForm($builder, $options);
 
         $builder
-            ->remove('username')
-            ->remove('email')
-            ->remove('enabled');
+            ->add('firstName', TextType::class, [
+                'label' => 'sylius.ui.first_name'
+            ])
+            ->add('lastName', TextType::class, [
+                'label' => 'sylius.ui.last_name'
+            ]);
     }
 
     /**

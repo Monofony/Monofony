@@ -1,5 +1,9 @@
 app:
     ui:
+        addresses: Adresses
+        manage_addresses: Gérer les adresses
+        new_address: Nouvelle adresse
+        edit_address: Modifier l'adresse
         overview_of_your_website: Aperçu de votre site web
     text:
         error:
