@@ -23,23 +23,6 @@ use Symfony\Component\Form\FormBuilderInterface;
  */
 final class CustomerTypeExtension extends AbstractTypeExtension
 {
-//    /**
-//     * @var RepositoryInterface
-//     */
-//    private $customerRepository;
-//
-//    /**
-//     * @param string              $dataClass
-//     * @param array               $validationGroups
-//     * @param RepositoryInterface $customerRepository
-//     */
-//    public function __construct($dataClass, array $validationGroups, RepositoryInterface $customerRepository)
-//    {
-//        parent::__construct($dataClass, $validationGroups);
-//
-//        $this->customerRepository = $customerRepository;
-//    }
-
     /**
      * {@inheritdoc}
      */
@@ -49,7 +32,6 @@ final class CustomerTypeExtension extends AbstractTypeExtension
             ->add('user',UserRegistrationType::class)
             ->remove('gender')
             ->remove('group')
-//            ->addEventSubscriber(new CustomerRegistrationFormSubscriber($this->customerRepository))
             ->addEventSubscriber(new UserRegistrationFormSubscriber());
     }
 
