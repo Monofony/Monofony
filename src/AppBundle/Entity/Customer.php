@@ -25,9 +25,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Customer extends BaseCustomer implements UserAwareInterface
 {
-
-
-
     /**
      * @var AppUser
      *
