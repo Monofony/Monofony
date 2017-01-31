@@ -36,7 +36,7 @@ final class AdminMenuBuilder
     }
 
     /**
-     * @param array $options
+     * @param RequestStack $requestStack
      *
      * @return ItemInterface
      */
@@ -52,6 +52,7 @@ final class AdminMenuBuilder
 
     /**
      * @param ItemInterface $menu
+     *
      * @return ItemInterface
      */
     private function addCustomerSubMenu(ItemInterface $menu)
@@ -65,16 +66,13 @@ final class AdminMenuBuilder
             ->setLabel('sylius.ui.customers')
             ->setLabelAttribute('icon', 'users');
 
-        $customer->addChild('backend_customer_group', ['route' => 'sylius_backend_customer_index'])
-            ->setLabel('sylius.ui.customer_groups')
-            ->setLabelAttribute('icon', 'archive');
-
         return $customer;
     }
 
 
     /**
      * @param ItemInterface $menu
+     *
      * @return ItemInterface
      */
     private function addConfigurationSubMenu(ItemInterface $menu)

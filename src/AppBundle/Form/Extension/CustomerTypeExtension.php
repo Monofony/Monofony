@@ -11,23 +11,28 @@
 
 namespace AppBundle\Form\Extension;
 
+use AppBundle\Form\EventSubscriber\CustomerRegistrationFormSubscriber;
+use AppBundle\Form\EventSubscriber\UserRegistrationFormSubscriber;
 use AppBundle\Form\Type\User\UserRegistrationType;
-use Sylius\Bundle\CustomerBundle\Form\Type\CustomerProfileType;
+use Sylius\Bundle\CustomerBundle\Form\Type\CustomerType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
 
 /**
  * @author Corentin Nicole <corentin@mobizel.com>
  */
-final class CustomerProfileTypeExtension extends AbstractTypeExtension
+final class CustomerTypeExtension extends AbstractTypeExtension
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('user',UserRegistrationType::class);
-        $builder->remove('gender');
+        $builder
+            ->add('user',UserRegistrationType::class)
+            ->remove('gender')
+            ->remove('group')
+            ->addEventSubscriber(new UserRegistrationFormSubscriber());
     }
 
     /**
@@ -35,6 +40,6 @@ final class CustomerProfileTypeExtension extends AbstractTypeExtension
      */
     public function getExtendedType()
     {
-        return CustomerProfileType::class;
+        return CustomerType::class;
     }
 }

@@ -10,10 +10,10 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
 services:
-    app.form.extension.type.customer_profile:
-        class: AppBundle\Form\Extension\CustomerProfileTypeExtension
+    app.form.extension.type.customer:
+        class: AppBundle\Form\Extension\CustomerTypeExtension
         tags:
-            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerProfileType }
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerType }
 
     sylius.form.type.admin_user:
         class: AppBundle\Form\Type\User\AdminUserType
