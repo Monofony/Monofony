@@ -1,0 +1,38 @@
+default:
+    formatters:
+        pretty:
+            verbose:  true
+            paths:    false
+            snippets: false
+
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://app_name.dev/app_test.php/
+            default_session: symfony
+            javascript_session: firefox
+            sessions:
+                symfony:
+                    symfony2: ~
+                firefox:
+                    selenium2:
+                        browser: firefox
+                chrome:
+                    selenium2:
+                        browser: chrome
+                        capabilities:
+                            browserName: chrome
+                            browser: chrome
+                            version: ""
+                            chrome:
+                                switches:
+                                    - "start-fullscreen"
+                                    - "start-maximized"
+                                    - "no-sandbox"
+
+        Behat\Symfony2Extension: ~
+
+        FriendsOfBehat\PerformanceExtension: ~
+
+    gherkin:
+        filters:
+            tags: "~@todo"
