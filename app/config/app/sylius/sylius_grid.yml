@@ -1,4 +1,5 @@
 imports:
+  - { resource: 'grids/backend/address.yml' }
   - { resource: 'grids/backend/admin_user.yml' }
   - { resource: 'grids/backend/customer.yml' }
   - { resource: 'grids/backend/customer_group.yml' }

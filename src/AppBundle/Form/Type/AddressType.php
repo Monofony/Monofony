@@ -11,10 +11,39 @@
 
 namespace AppBundle\Form\Type;
 
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+
 /**
  * @author Loïc Frémont <loic@mobizel.com>
  */
-class AddressType
+class AddressType extends AbstractType
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        parent::buildForm($builder, $options);
 
+        $builder
+            ->add('street', TextType::class, [
+                'label' => 'sylius.ui.street',
+            ])
+            ->add('postcode', TextType::class, [
+                'label' => 'sylius.ui.postcode',
+            ])
+            ->add('city', TextType::class, [
+                'label' => 'sylius.ui.city',
+            ]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'app_address';
+    }
 }

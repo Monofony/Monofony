@@ -3,3 +3,4 @@ sylius_resource:
         app.address:
             classes:
                 model: AppBundle\Entity\Address
+                form: AppBundle\Form\Type\AddressType

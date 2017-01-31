@@ -1,0 +1,16 @@
+app_backend_address:
+    resource: |
+        alias: app.address
+        section: backend
+        templates: :backend/crud
+        except: ['show']
+        redirect: index
+        grid: app_backend_address
+        vars:
+            all:
+                subheader: app.ui.manage_addresses
+                templates:
+                    form: backend/address/_form.html.twig
+            index:
+                icon: map
+    type: sylius.resource
