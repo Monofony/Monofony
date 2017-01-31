@@ -16,3 +16,4 @@
 /web/bundles/
 .idea
 /web/assets/backend/node_modules/
+behat.yml
