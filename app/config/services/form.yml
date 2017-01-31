@@ -1,0 +1,5 @@
+services:
+    app.form.extension.type.customer_profile:
+        class: AppBundle\Form\Extension\CustomerProfileTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerProfileType }

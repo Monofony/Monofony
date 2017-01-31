@@ -6,9 +6,9 @@
             <div class="two fields">
                 {{ form_row(form.firstName) }}
                 {{ form_row(form.lastName) }}
+
             </div>
             {{ form_row(form.email) }}
-            {{ form_row(form.group) }}
         </div>
     </div>
     <div class="column">
@@ -17,7 +17,6 @@
             <div id="user-form">
                 {% if form.user is defined %}
                     {{ form_row(form.user.plainPassword) }}
-                    {{ form_row(form.user.enabled) }}
                 {% endif %}
             </div>
         </div>
