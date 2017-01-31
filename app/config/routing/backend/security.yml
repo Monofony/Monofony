@@ -1,0 +1,15 @@
+sylius_backend_login:
+    path: /login
+    defaults:
+        _controller: sylius.controller.security:loginAction
+        _sylius:
+            template: backend/security/login.html.twig
+            permission: true
+
+sylius_backend_login_check:
+    path: /login-check
+    defaults:
+        _controller: sylius.controller.security:checkAction
+
+sylius_backend_logout:
+    path: /logout

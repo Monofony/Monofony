@@ -1,0 +1,15 @@
+{% extends '@SyliusUi/Layout/centered.html.twig' %}
+
+{% block title %}Alcéane | {{ 'sylius.ui.administration_panel_login'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/backend/compiled/css/style.css'} %}
+{% endblock %}
+
+{% block content %}
+{% include '@SyliusUi/Security/_login.html.twig' with {'action': path('sylius_backend_login_check'), 'paths': {'logo': 'assets/backend/img/logo.png'}} %}
+{% endblock %}
+
+{% block javascripts %}
+    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/backend/compiled/js/app.js'} %}
+{% endblock %}

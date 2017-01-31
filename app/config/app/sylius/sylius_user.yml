@@ -1,7 +1,14 @@
 sylius_user:
     resources:
-        shop:
-            user: ~
+        app:
+            user:
+                classes:
+                    model: AppBundle\Entity\AppUser
+        admin:
+            user:
+                classes:
+                    model: AppBundle\Entity\AdminUser
+                    repository: Sylius\Bundle\UserBundle\Doctrine\ORM\UserRepository
         admin_oauth:
             user:
                 classes:

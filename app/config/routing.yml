@@ -1,3 +1,7 @@
+app_backend:
+    resource: "routing/backend.yml"
+    prefix: admin
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

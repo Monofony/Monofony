@@ -1,0 +1,22 @@
+app:
+    ui:
+        overview_of_your_website: Aperçu de votre site web
+    text:
+        error:
+            500:
+                title: Erreur
+                content: |
+                    <p>Quelque chose est cassé.<br />
+                    Merci de nous envoyer un email et écrivez ce que vous faisiez avant de rencontrer cette erreur.<br />
+                    Nous corrigerons aussi vite que possible. Désolé pour la gêne occasionnée.</p>
+            404:
+                title: Erreur 404
+                content: |
+                    <p>Oups, on dirait que ce que vous recherchez n'est pas ici...</p>
+    emails:
+        footer: |
+            <p>A bientôt sur AppName.fr</p>
+            <p>Attention : cet email est envoyé automatiquement, si vous souhaitez nous contacter,
+            vous pouvez nous écrire en cliquant <a href=\"%LINK%\">ici</a>.</p>
+sylius:
+    ui: ~

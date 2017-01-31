@@ -1,0 +1,9 @@
+{% extends 'backend/layout.html.twig' %}
+
+{% import 'SyliusUiBundle:Macro:headers.html.twig' as headers %}
+
+{% block title %}{{ parent() }}{{ 'sylius.ui.dashboard'|trans }}{% endblock %}
+
+{% block content %}
+    {{ headers.default('sylius.ui.dashboard'|trans, 'home', 'app.ui.overview_of_your_website'|trans) }}
+{% endblock %}
