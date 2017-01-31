@@ -1,3 +1,14 @@
 imports:
-  
-sylius_grid: ~
+  - { resource: 'grids/backend/customer.yml' }
+  - { resource: 'grids/backend/customer_group.yml' }
+
+sylius_grid:
+    templates:
+        action:
+            show: "backend/grid/action/show.html.twig"
+            create: "backend/grid/action/create.html.twig"
+            update: "backend/grid/action/update.html.twig"
+            delete: "backend/grid/action/delete.html.twig"
+        filter:
+            string: "backend/grid/filter/string.html.twig"
+            boolean: "backend/grid/filter/boolean.html.twig"

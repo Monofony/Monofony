@@ -1,0 +1,15 @@
+sylius_admin_group:
+    resource: |
+        alias: sylius.customer_group
+        section: backend
+        templates: :backend/crud
+        except: ['show']
+        grid: sylius_backend_customer_group
+        redirect: index
+        vars:
+            all:
+                header: sylius.ui.groups
+                subheader: sylius.ui.manage_groups
+            index:
+                icon: archive
+    type: sylius.resource

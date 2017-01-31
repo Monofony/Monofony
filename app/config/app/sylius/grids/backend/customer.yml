@@ -1,0 +1,49 @@
+sylius_grid:
+    grids:
+        sylius_backend_customer:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%sylius.model.customer.class%"
+            sorting:
+                createdAt: desc
+            fields:
+                firstName:
+                    type: string
+                    label: sylius.ui.first_name
+                lastName:
+                    type: string
+                    label: sylius.ui.last_name
+                email:
+                    type: string
+                    label: sylius.ui.email
+                    sortable: email
+                createdAt:
+                    type: date
+                    label: sylius.ui.created_at
+                    sortable: createdAt
+            filters:
+                firstName:
+                    type: string
+                    label: sylius.ui.first_name
+                    options:
+                        fields: [firstName]
+                lastName:
+                    type: string
+                    label: sylius.ui.last_name
+                    options:
+                        fields: [lastName]
+                email:
+                    type: string
+                    label: sylius.ui.email
+                    options:
+                        fields: [email]
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

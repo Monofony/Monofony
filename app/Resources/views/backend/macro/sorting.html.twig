@@ -1,0 +1,29 @@
+{% macro sorting(routeName, label, property, defaultOrder = 'asc', icon = false, currentOrder = null, routeParams = {}) %}
+
+    {% set sorting = app.request.get('sorting') %}
+    {% set criteria = app.request.get('criteria') %}
+
+    {% if sorting %}
+        {% if attribute(sorting, property) is defined %}
+            {% set icon = true %}
+            {% set currentOrder = attribute(sorting, property) %}
+        {% endif %}
+    {% endif %}
+
+    {% set routeParams = routeParams | merge({'criteria': criteria }) %}
+
+    {% if currentOrder == 'desc' or (currentOrder is null and defaultOrder == 'asc') %}
+        {% set routeParams = routeParams | merge({'sorting': {(property): 'asc'} }) %}
+    {% else %}
+        {% set routeParams = routeParams | merge({'sorting': {(property): 'desc'} }) %}
+    {% endif %}
+
+    {% set url = path(routeName, routeParams) %}
+
+    <a href="{{ url }}" class="{% if icon %}color{% endif %}">
+        {{ label }}
+        {% if icon -%}
+            <i class="sort icon {% if currentOrder == 'desc' %}descending{% elseif currentOrder == 'asc' %}ascending{% endif %}"></i>
+        {%- endif %}
+    </a>
+{% endmacro %}

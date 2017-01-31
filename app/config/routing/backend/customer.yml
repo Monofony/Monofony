@@ -1,0 +1,16 @@
+sylius_backend_customer:
+    resource: |
+        section: backend
+        alias: sylius.customer
+        templates: :backend/crud
+        grid: sylius_backend_customer
+        redirect: index
+        grid: sylius_backend_customer
+        vars:
+            all:
+                subheader: sylius.ui.manage_your_customers
+                templates:
+                    form: backend/customer/_form.html.twig
+            index:
+                icon: users
+    type: sylius.resource
