@@ -9,6 +9,12 @@ services:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
+services:
+    app.form.extension.type.customer_profile:
+        class: AppBundle\Form\Extension\CustomerProfileTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerProfileType }
+
     sylius.form.type.admin_user:
         class: AppBundle\Form\Type\User\AdminUserType
         arguments:
