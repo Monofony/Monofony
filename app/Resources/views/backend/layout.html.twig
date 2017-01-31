@@ -25,7 +25,7 @@
 
 {% block sidebar %}
     <a class="item" href="#"><b>AppName</b></a>
-    {% include 'backend/layout/_menu.html.twig' %}
+    {{ knp_menu_render('app.admin.main', {'template': 'SyliusUiBundle:Menu:sidebar.html.twig'}) }}
 {% endblock %}
 
 {% block footer %}

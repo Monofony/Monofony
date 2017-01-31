@@ -1,0 +1,11 @@
+services:
+    app.menu_builder:
+        class: AppBundle\Menu\AdminMenuBuilder
+        arguments: ["@knp_menu.factory"]
+
+    app.admin_menu:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory: ["@app.menu_builder", createMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: app.admin.main } # The alias is what is used to retrieve the menu

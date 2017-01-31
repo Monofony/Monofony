@@ -2,4 +2,4 @@ imports:
     - { resource: services/form.yml }
     - { resource: services/installer.yml }
     - { resource: services/listener.yml }
-    - { resource: services/form.yml }
+    - { resource: services/menu.yml }
