@@ -3,4 +3,3 @@ sylius_customer:
         customer:
             classes:
                 model: AppBundle\Entity\Customer
-        customer_group: ~
