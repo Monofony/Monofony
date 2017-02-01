@@ -29,6 +29,8 @@ class Customer extends BaseCustomer implements UserAwareInterface
      * @var AppUser
      *
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\AppUser", mappedBy="customer", cascade={"persist"})
+     *
+     * @Assert\Valid
      */
     private $user;
 

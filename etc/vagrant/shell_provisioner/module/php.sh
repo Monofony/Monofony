@@ -10,12 +10,14 @@ sed -i 's/;date.timezone.*/date.timezone = Europe\/Brussels/' /etc/php/7.0/cli/p
 sed -i 's/^user = www-data/user = vagrant/' /etc/php/7.0/fpm/pool.d/www.conf
 sed -i 's/^group = www-data/group = vagrant/' /etc/php/7.0/fpm/pool.d/www.conf
 
+# xdebug
+yes | pecl install xdebug
+cp ${CONFIG_PATH}/php/xdebug.ini /etc/php/7.0/mods-available/xdebug.ini
+phpenmod xdebug
+
 service php7.0-fpm restart
 
 # composer
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin
 ln -s /usr/bin/composer.phar /usr/bin/composer
 
-# xdebug
-yes | pecl install xdebug
-cat ${CONFIG_PATH}/php/xdebug.ini > /usr/local/etc/php/conf.d/xdebug.ini
