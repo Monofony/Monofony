@@ -3,3 +3,4 @@ imports:
     - { resource: services/installer.yml }
     - { resource: services/listener.yml }
     - { resource: services/menu.yml }
+    - { resource: services/view.yml }

@@ -1,10 +1,12 @@
 {% extends 'frontend/layout.html.twig' %}
 
+{% import 'frontend/macro/pagination.html.twig' as pagination %}
+
 {% block bodyClass %}addresses{% endblock %}
 
 {% block content %}
 
-    <div class="row align-center text-center">
+    <div class="row text-center">
         {% for address in addresses.data %}
             <div class="small-12 medium-4 column">
                 <img src="http://placehold.it/200x150">
@@ -17,4 +19,5 @@
         {% endfor %}
     </div>
 
+    {{ pagination.render(addresses.data) }}
 {% endblock %}

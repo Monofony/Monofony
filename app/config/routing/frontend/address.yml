@@ -1,9 +1,10 @@
-app_frontend_address:
-    resource: |
-        alias: app.address
-        path: adresses
-        section: frontend
-        templates: :frontend/address
-        only: ['index']
-        grid: app_frontend_address
-    type: sylius.resource
+app_frontend_address_index:
+    methods: [GET]
+    path: /adresses/
+    defaults:
+        _controller: app.controller.address:indexAction
+        _sylius:
+            template: frontend/address/index.html.twig
+            section: frontend
+            grid: app_frontend_address
+            paginate: 9

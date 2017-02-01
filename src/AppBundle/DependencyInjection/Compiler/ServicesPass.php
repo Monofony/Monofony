@@ -72,6 +72,8 @@ class ServicesPass implements CompilerPassInterface
      */
     protected function processControllers(ContainerBuilder $container)
     {
-
+        $resourcesCollectionProviderDefinition = $container->getDefinition('sylius.resource_controller.resources_collection_provider');
+        $resourcesCollectionProviderDefinition
+            ->setClass('AppBundle\Controller\ResourcesCollectionProvider');
     }
 }

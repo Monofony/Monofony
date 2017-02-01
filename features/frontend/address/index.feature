@@ -14,3 +14,5 @@ Feature: View list of addresses
   Scenario: View list of addresses
     When I am on "/adresses/"
     Then I should see "Rennes"
+    And I should see "Pacé"
+    And I should see "Saint-Grégoire"
