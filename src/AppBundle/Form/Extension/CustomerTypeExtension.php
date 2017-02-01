@@ -17,6 +17,8 @@ use AppBundle\Form\Type\User\UserRegistrationType;
 use Sylius\Bundle\CustomerBundle\Form\Type\CustomerType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author Corentin Nicole <corentin@mobizel.com>
@@ -33,6 +35,28 @@ final class CustomerTypeExtension extends AbstractTypeExtension
             ->remove('gender')
             ->remove('group')
             ->addEventSubscriber(new UserRegistrationFormSubscriber());
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        parent::configureOptions($resolver);
+
+        $resolver
+            ->setDefaults([
+                'validation_groups' => function (FormInterface $form) use ($resolver) {
+                    $validationGroups = ['sylius'];
+                    $data = $form->getData();
+                    if ($data && !$data->getId()) {
+                        $validationGroups[] = 'sylius_user_create';
+                    }
+                    return $validationGroups;
+                },
+            ])
+        ;
     }
 
     /**
