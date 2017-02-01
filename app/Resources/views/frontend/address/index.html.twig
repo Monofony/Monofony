@@ -1,0 +1,20 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% block bodyClass %}addresses{% endblock %}
+
+{% block content %}
+
+    <div class="row align-center text-center">
+        {% for address in addresses.data %}
+            <div class="small-12 medium-4 column">
+                <img src="http://placehold.it/200x150">
+
+                <address>
+                    {{ address.street }}<br />
+                    {{ address.postcode }} {{ address.city }}
+                </address>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

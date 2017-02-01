@@ -1,0 +1,9 @@
+app_frontend_address:
+    resource: |
+        alias: app.address
+        path: adresses
+        section: frontend
+        templates: :frontend/address
+        only: ['index']
+        grid: app_frontend_address
+    type: sylius.resource

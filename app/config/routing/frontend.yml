@@ -4,6 +4,9 @@ app_frontend_homepage:
         _controller: FrameworkBundle:Template:template
         template: 'frontend/home/index.html.twig'
 
+app_frontend_address:
+    resource: "frontend/address.yml"
+
 sylius_security:
     resource: "frontend/security.yml"
 

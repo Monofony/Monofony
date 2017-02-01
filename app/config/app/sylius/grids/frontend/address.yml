@@ -1,0 +1,20 @@
+sylius_grid:
+    grids:
+        app_frontend_address:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%app.model.address.class%"
+            sorting:
+                city: asc
+            fields:
+                city:
+                    type: string
+                    label: sylius.ui.city
+                    sortable: ~
+            filters:
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [street, postcode, city]
