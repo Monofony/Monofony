@@ -7,11 +7,6 @@
     {% block stylesheets %}
         {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/frontend/compiled/css/style.css'} %}
     {% endblock %}
-    <script src="https://use.typekit.net/vrc4tdo.js"></script>
-    <script>try {
-        Typekit.load({async: true});
-      } catch (e) {
-      }</script>
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body class="{% block bodyClass %}{% endblock %} pn {% if app.user %}user-logged{% endif %}">
@@ -23,9 +18,6 @@
         </div>
         <div id="nav-bar" class="show-for-medium">
             {% block menu %}{% endblock %}
-        </div>
-        <div class="nav-screen" class="show-for-small-only">
-            {% block menuxs %}{% endblock %}
         </div>
     </header>
 
@@ -56,11 +48,9 @@
 {% endblock body %}
 
 {% block javascripts %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
     <script type="text/javascript" src="{{ asset('assets/frontend/compiled/js/app.js') }}"></script>
-
 {% endblock %}
 
 </body>
