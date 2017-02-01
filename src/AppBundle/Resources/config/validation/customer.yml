@@ -3,6 +3,4 @@ Sylius\Component\Customer\Model\Customer:
         - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
             fields: email
             groups: [sylius]
-    properties:
-        email:
-            - Email: ~
+
