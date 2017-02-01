@@ -1,0 +1,12 @@
+app_frontend_homepage:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: 'frontend/home/index.html.twig'
+
+sylius_security:
+    resource: "frontend/security.yml"
+
+app_frontend_partial:
+    resource: "frontend/partial.yml"
+    prefix: "/_partial"

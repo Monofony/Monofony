@@ -14,6 +14,9 @@ parameters:
     mailer_host:       127.0.0.1
     mailer_user:       ~
     mailer_password:   ~
+    mailer_port: 2525
+    mailer_encryption: null
+    mailer_auth: cram-md5
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt

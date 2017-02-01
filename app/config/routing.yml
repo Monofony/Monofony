@@ -2,6 +2,12 @@ app_backend:
     resource: "routing/backend.yml"
     prefix: admin
 
+app_frontend:
+    resource: "routing/frontend.yml"
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

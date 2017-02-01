@@ -29,13 +29,17 @@ var paths = {
       'js/**.js'
     ],
     sass: [
-      nodeModulesPath + 'foundation-sites/scss/**'
+      nodeModulesPath + 'foundation-sites/scss',
+      'scss/app.scss'
     ],
     css: [
 
     ],
     img: [
 
+    ],
+    font: [
+      nodeModulesPath + 'font-awesome/fonts/**'
     ]
   }
 };
@@ -101,6 +105,13 @@ gulp.task('app-img', function() {
     ;
 });
 
+gulp.task('app-font', function() {
+  return gulp.src(paths.app.font)
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(appRootPath + 'fonts/'))
+    ;
+});
+
 gulp.task('app-watch', function() {
   livereload.listen();
 
@@ -111,5 +122,5 @@ gulp.task('app-watch', function() {
   gulp.watch(paths.app.img, ['app-img']);
 });
 
-gulp.task('default', ['app-js', 'app-css', 'app-img']);
+gulp.task('default', ['app-js', 'app-css', 'app-img', 'app-font']);
 gulp.task('watch', ['default', 'app-watch']);

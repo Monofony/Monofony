@@ -6,6 +6,8 @@ security:
     providers:
         sylius_admin_user_provider:
             id: sylius.admin_user_provider.email_or_name_based
+        sylius_app_user_provider:
+            id: sylius.app_user_provider.email_or_name_based
     encoders:
         Sylius\Component\User\Model\UserInterface: sha512
 
@@ -29,20 +31,27 @@ security:
                 target: sylius_backend_login
             anonymous: true
 
+        app:
+            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
+            context: app
+            pattern: /.*
+            form_login:
+                provider: sylius_app_user_provider
+                login_path: app_frontend_login
+                check_path: app_frontend_login_check
+                failure_path: app_frontend_login
+                default_target_path: app_frontend_homepage
+                use_forward: false
+                use_referer: true
+            logout:
+                path: app_frontend_logout
+                target: app_frontend_homepage
+            anonymous: true
+
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
 
     access_control:
         - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }

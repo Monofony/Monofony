@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}AppName{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    {% block stylesheets %}
+        {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/frontend/compiled/css/style.css'} %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body class="{% block bodyClass %}{% endblock %} pn {% if app.user %}user-logged{% endif %}">
+
+{% block body %}
+    <header>
+        <div id="header">
+            {% block header %}{% endblock %}
+        </div>
+        <div id="nav-bar" class="show-for-medium">
+            {% block menu %}{% endblock %}
+        </div>
+    </header>
+
+    <div id="container">
+
+        {% block message_container %}
+            <div class="row">
+                <div class="small-12 columns">
+                    {% include 'frontend/_flashes.html.twig' %}
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block container %}
+            <div class="row">
+                <div class="small-12 columns">
+
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+    <footer>
+        {% block footer %}{% endblock %}
+    </footer>
+
+{% endblock body %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/frontend/compiled/js/app.js') }}"></script>
+{% endblock %}
+
+</body>
 </html>
