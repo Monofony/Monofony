@@ -82,6 +82,10 @@ final class AdminMenuBuilder
             ->setLabel('sylius.ui.configuration')
         ;
 
+        $configuration->addChild('backend_address', ['route' => 'app_backend_address_index'])
+            ->setLabel('app.ui.addresses')
+            ->setLabelAttribute('icon', 'marker');
+
         $configuration->addChild('backend_admin_user', ['route' => 'sylius_backend_admin_user_index'])
             ->setLabel('sylius.ui.admin_users')
             ->setLabelAttribute('icon', 'lock');
