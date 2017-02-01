@@ -1,0 +1,50 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% block bodyClass %} {{ parent() }} security register{% endblock %}
+
+{% set pageTitle =  'title.create_account'|trans %}
+
+{% block page_title_subcontent %}
+    <p class="content-text">
+        <span class="light-text">{{ 'label.to_loan_bike'|trans|upper }}</span><br/>
+        <span class="brand-text">{{ 'label.its_fast'|trans }}</span>
+    </p>
+{% endblock %}
+
+{% block content %}
+    <div class="small-12 user-form">
+
+        <form action="{{ path('app_frontend_register') }}?" method="post" class="form-signin" >
+            <div class="form-field">
+                {{ form_widget(form.email, {attr: {'placeholder': 'label.email'|trans}}) }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.user.plainPassword.first, {attr: {'placeholder': 'label.password'|trans}}) }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.user.plainPassword.second, {attr: {'placeholder': 'label.password_confirmation'|trans}}) }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.lastName, {attr: {'placeholder': 'label.last_name'|trans}}) }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.firstName, {attr: {'placeholder': 'label.first_name'|trans}}) }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.phoneNumber, {attr: {'placeholder': 'label.phone'|trans}}) }}
+            </div>
+            <div class="form-field">
+                {{ form_widget(form.cgu) }}
+                <label for="{{ form.cgu.vars['id'] }}">{{ 'label.accept_cgu'|trans }} <a href="#" class="link brand-text">{{ 'label.cgu'|trans }}</a></label>
+            </div>
+
+            {{ form_rest(form) }}
+            <div class="action-buttons">
+                {{ form_rest(form) }}
+                <a href="javascript:window.history.back()" class="button button-bordered" >{{ 'label.cancel'|trans }}</a>
+                <button class="button" type="submit" id="_submit" name="_submit">{{ 'label.validate'|trans }}</button>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

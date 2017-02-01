@@ -1,0 +1,13 @@
+.button {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+  background-color: $primary-color;
+  border-radius: 20px;
+  color: white;
+  font-size: rem-calc(14);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+}

@@ -1,0 +1,25 @@
+{% for type in ['success', 'error', 'info', 'warning'] %}
+    {% for flash in app.session.flashbag.get(type) %}
+        {% if 'error' == type %}
+            {% set result = 'alert' %}
+        {% endif %}
+        <div data-closable="slide-out-right" class="callout {{ result|default('success') }}">
+            <p>
+                {% if flash is iterable %}
+                    {{ flash.message|trans(flash.parameters, 'flashes') }}
+                {% else %}
+                    {{ flash|trans({}, 'flashes') }}
+                {% endif %}
+            </p>
+            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+{% endfor %}
+
+{% if error|default(false) %}
+    <div class="callout alert">
+        <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+    </div>
+{% endif %}

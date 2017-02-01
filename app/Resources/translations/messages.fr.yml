@@ -4,7 +4,10 @@ app:
         manage_addresses: Gérer les adresses
         new_address: Nouvelle adresse
         edit_address: Modifier l'adresse
+        forgotten_password: Mot de passe oublié
+        legal_notices: Mentions légales
         overview_of_your_website: Aperçu de votre site web
+        validate: Valider
     text:
         error:
             500:
@@ -17,6 +20,7 @@ app:
                 title: Erreur 404
                 content: |
                     <p>Oups, on dirait que ce que vous recherchez n'est pas ici...</p>
+        legal_notices: Toute reproduction interdite
     emails:
         footer: |
             <p>A bientôt sur AppName.fr</p>

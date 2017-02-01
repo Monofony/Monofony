@@ -1,7 +1,8 @@
 {
   "dependencies": {
-    "foundation-sites": "6.2.*",
     "autobahn": "^0.11.1",
+    "font-awesome": "^4.7.0",
+    "foundation-sites": "6.2.*",
     "interact.js": "^1.2.6",
     "jquery": "^2.1.4",
     "jwt-decode": "^2.1.0",

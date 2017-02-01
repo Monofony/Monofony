@@ -1,0 +1,110 @@
+#nav-bar {
+  text-transform: uppercase;
+  font-size: rem-calc(14);
+  font-weight: 700;
+  letter-spacing: rem-calc(0.93);
+  border-bottom: 4px solid lighten($light-gray, 3%);
+  .row {
+    height: 70px;
+    .menu{
+      width: 100%;
+      li{
+        a {
+          color: $black;
+          transition: all 0.25s ease;
+          display: inline-block;
+          height: 70px;
+          line-height:70px;
+          vertical-align: middle;
+          padding:0;
+          width: 100%;
+          text-align: center;
+          box-shadow: inset 0px 0px 0px 0px rgba($light-gray, 0.25);
+        }
+        &:hover{
+          a{
+            color: $primary-color;
+            box-shadow: inset 0px -70px 0px 0px rgba($light-gray, 0.25);
+          }
+        }
+        &.active{
+          a{
+            color: $primary-color;
+            box-shadow: inset 0px -70px 0px 0px rgba($light-gray, 0.25);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------ NAV XS ------------*/
+
+.nav-screen{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background-color: $white;
+  box-shadow: 20px 0px 40px 0px rgba($black, 0);
+  z-index: 100;
+  transform: translateX(-100%);
+  transition: all 0.25s cubic-bezier(.63,.17,.27,.94);
+  .nav-screen-close{
+    width: 40px;
+    height: 40px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    cursor: pointer;
+    padding: 7px 12px;
+    &:hover{
+      background-color: lighten($primary-color, 5%);
+    }
+    img{
+      width: 16px;
+    }
+  }
+  .menu-xs{
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li{
+      width: 100%;
+      text-align: center;
+      a{
+        display: block;
+        padding: 30px 0;
+        width: 100%;
+        vertical-align: middle;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $black;
+        border-top: 1px solid rgba($black, 0.2);
+        box-shadow: inset 0px 0px 0px 0px rgba($light-gray, 0.25);
+        opacity: 1;
+        transition: all 0.2s ease;
+        &:hover{
+          box-shadow: inset 0px -70px 0px 0px rgba($light-gray, 0.25);
+          color: $primary-color;
+        }
+      }
+      &:nth-child(5){
+        a{
+          border-bottom: 1px solid rgba($black, 0.2);
+        }
+      }
+    }
+  }
+  &.active{
+    transform: translateX(0);
+    box-shadow: 20px 0px 40px 0px rgba($black, 0.4);
+  }
+}
