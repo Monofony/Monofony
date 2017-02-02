@@ -1,0 +1,9 @@
+{% macro render(paginator, options) %}
+    {% if paginator.haveToPaginate %}
+        <div class="row text-center">
+            <div class="small-12 columns">
+                {{ pagerfanta(paginator, 'foundation_translated', options|default({})) }}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}

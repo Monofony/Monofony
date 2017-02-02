@@ -5789,6 +5789,9 @@ strong {
 h2 {
   font-weight: 700; }
 
+#container {
+  min-height: 94vh; }
+
 .footer-navigation {
   background-color: #535353;
   padding: 20px; }
