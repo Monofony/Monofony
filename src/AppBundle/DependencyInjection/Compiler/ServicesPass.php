@@ -83,5 +83,4 @@ class ServicesPass implements CompilerPassInterface
         $resourcesCollectionProviderDefinition
             ->setClass('AppBundle\Controller\ResourcesCollectionProvider');
     }
-
 }
