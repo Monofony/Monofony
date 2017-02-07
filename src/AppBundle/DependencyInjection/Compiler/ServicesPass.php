@@ -67,8 +67,8 @@ class ServicesPass implements CompilerPassInterface
     {
         $listenerPasswordUpdaterDefinition = $container->getDefinition('sylius.listener.password_updater');
         $listenerPasswordUpdaterDefinition
-            ->setClass(PasswordUpdaterListener::class);
-        $listenerPasswordUpdaterDefinition->addTag('kernel.event_listener', [
+            ->setClass(PasswordUpdaterListener::class)
+            ->addTag('kernel.event_listener', [
             'event' => 'sylius.customer.pre_update',
             'method' => 'customerUpdateEvent'
         ]);
@@ -83,4 +83,5 @@ class ServicesPass implements CompilerPassInterface
         $resourcesCollectionProviderDefinition
             ->setClass('AppBundle\Controller\ResourcesCollectionProvider');
     }
+
 }
