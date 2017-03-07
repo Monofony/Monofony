@@ -6,5 +6,6 @@ default:
                 - AppBundle\Behat\ApiContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\CustomerContext
+                - AppBundle\Behat\UserContext
             filters:
                 tags: "@security && @ui"

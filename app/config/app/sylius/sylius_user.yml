@@ -4,6 +4,7 @@ sylius_user:
             user:
                 classes:
                     model: AppBundle\Entity\AppUser
+                    repository: AppBundle\Repository\UserRepository
         admin:
             user:
                 classes:
