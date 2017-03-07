@@ -26,6 +26,7 @@ var paths = {
   app: {
     js: [
       nodeModulesPath + 'jquery/dist/jquery.min.js',
+      nodeModulesPath + 'foundation-sites/dist/foundation.js',
       'js/**.js'
     ],
     sass: [

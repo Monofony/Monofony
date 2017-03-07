@@ -1,0 +1,20 @@
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">AppName</li>
+            <li><a href="{{ path('app_frontend_address_index') }}">{{ 'app.ui.addresses'|trans }}</a></li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        {% if app.user %}
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li>
+                    <a href="#">{{ app.user.customer }}</a>
+                    <ul class="menu vertical">
+                        <li><a href="{{ path('app_frontend_logout') }}"><span class="fa fa-sign-out"></span> {{ 'sylius.ui.logout'|trans }}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+</div>
