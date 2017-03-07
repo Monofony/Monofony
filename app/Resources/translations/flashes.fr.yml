@@ -8,3 +8,7 @@ sylius:
         create: L'administrateur a bien été créé.
         update: L'administrateur a bien été mis à jour.
         delete: L'administrateur a bien été supprimé.
+    user:
+        change_password: Votre mot de passe a été mis à jour avec succès !
+    customer:
+        update_profile: Votre profil a bien été mis à jour.

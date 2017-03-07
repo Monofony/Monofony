@@ -1,0 +1,65 @@
+{% macro default(url, message, id, icon, class, title) %}
+    <a class="button {% if class is not empty %} {{ class }} {% endif %}"
+            {% if id is not empty %} id="{{ id }}"{% endif %}
+            {% if title is not empty %} title="{{ title }}"{% endif %}
+       href="{{ url }}">
+        {% if icon is not empty %}
+            <i class="fa fa-{{ icon }}"></i>
+        {% endif %}
+        {{ message|trans }}
+    </a>
+{% endmacro %}
+
+{% macro show(url, message, id, class) %}
+    {% import _self as buttons %}
+
+    {% if message is empty %}
+        {% set message = 'label.show'|trans %}
+    {% endif %}
+
+    {{ buttons.default(url, message, id, 'book') }}
+{% endmacro %}
+
+{% macro create(url, message, id, class) %}
+    {% import _self as buttons %}
+
+    {% if message is empty %}
+        {% set message = 'label.create'|trans %}
+    {% endif %}
+
+    {{ buttons.default(url, message, id, 'plus', 'secondary ' ~ class|default('')) }}
+{% endmacro %}
+
+{% macro edit(url, message, id) %}
+    {% import _self as buttons %}
+
+    {% if message is null %}
+        {% set message = 'label.edit'|trans %}
+    {% endif %}
+
+    {{ buttons.default(url, message, id, 'pencil ', 'no-margin', 'label.edit'|trans) }}
+{% endmacro %}
+
+{% macro delete(url, message, disabled) %}
+    {% if disabled %}
+        <span class="button secondary alert disabled">
+            <i class="fa fa-trash"></i><span>{{ message is empty ? 'label.delete'|trans : message }}</span>
+        </span>
+    {% else %}
+        <form action="{{ url }}" method="post" style="display: inline;">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="button secondary alert confirm no-margin" data-open="deleteModal" type="submit" title="{{ 'label.delete'|trans }}">
+                <span><i class="fa fa-trash"></i> {{ message is null ? 'label.delete'|trans : message }}</span>
+            </button>
+        </form>
+    {% endif %}
+{% endmacro %}
+
+{% macro patch(url, message, icon, class, title) %}
+    <form action="{{ url }}" method="post" novalidate>
+        <input type="hidden" name="_method" value="PATCH">
+        <button title="{{ title|default('') }}" class="button {{ class|default('') }}" type="submit">
+            <span><i class="fa fa-{{ icon|default('transfer') }}"></i> {{ message|trans }}</span>
+        </button>
+    </form>
+{% endmacro %}

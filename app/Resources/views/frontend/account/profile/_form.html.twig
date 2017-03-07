@@ -1,0 +1,12 @@
+{{ form_start(form, {'action': path('sylius_frontend_account_profile_update')}) }}
+{{ form_errors(form) }}
+<input type="hidden" name="_method" value="PUT"/>
+{{ form_row(form.email) }}
+{{ form_row(form.gender) }}
+{{ form_row(form.firstName) }}
+{{ form_row(form.lastName) }}
+<div class="pull-right">
+    <button class="button">{{ 'sylius.ui.save_changes'|trans }}</button>
+</div>
+{{ form_row(form._token) }}
+{{ form_end(form, {'render_rest': false}) }}

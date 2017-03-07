@@ -1,4 +1,5 @@
 imports:
+    - suites/ui/account.yml
     - suites/ui/address.yml
     - suites/ui/admin_user.yml
     - suites/ui/security.yml

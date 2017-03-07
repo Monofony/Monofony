@@ -1,0 +1,38 @@
+{% extends "frontend/layout.html.twig" %}
+
+{% import 'frontend/macro/buttons.html.twig' as buttons %}
+
+{% block content -%}
+    <div class="row">
+        <div class="medium-8 column">
+            <div class="row">
+                <div class="medium-4 column">
+                    <!-- Image -->
+                    <img src="{{ asset('assets/backend/compiled/img/avatar.png') }}">
+                </div>
+                <div class="medium-8 column">
+                    <!-- Your Name / Heading -->
+                    <h4>{{ customer.user }}</h4>
+                    <!-- Email Address -->
+
+                    <p><i class="fa fa-user"></i>&nbsp; {{ customer.fullName }}</p>
+                    <p><i class="fa fa-envelope color"></i>&nbsp; {{ customer.email }}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="btn-group">
+                        {{ buttons.default(path('sylius_frontend_account_profile_update'), 'sylius.ui.edit', null, 'pencil') }}
+                        {{ buttons.default(path('sylius_frontend_account_change_password'), 'sylius.ui.change_password', null, 'lock') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="medium-4 column">
+            {% include 'frontend/account/_sidebar.html.twig' %}
+        </div>
+
+    </div>
+
+{% endblock %}
