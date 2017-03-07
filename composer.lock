@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a36d1b19d2f9192bcfb0ed4c44aafe93",
+    "content-hash": "f7b41c71a4cef17856a9cc3473410e2d",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -5787,6 +5787,59 @@
             "time": "2015-06-15T20:19:33+00:00"
         },
         {
+            "name": "lbaey/chromedriver",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lbaey/chromedriver.git",
+                "reference": "aec121bdf4168063904eea5c76424b976b4f2af0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lbaey/chromedriver/zipball/aec121bdf4168063904eea5c76424b976b4f2af0",
+                "reference": "aec121bdf4168063904eea5c76424b976b4f2af0",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1",
+                "ext-zip": "*",
+                "php": ">=7.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Lbaey\\Composer\\ChromeDriverPlugin",
+                "chromedriver_version": "2.27"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Lbaey": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laurent Baey",
+                    "email": "laurent.baey@gmail.com"
+                }
+            ],
+            "description": "Utility for installing Chromedriver, whatever platform you are on, for use with Behat",
+            "homepage": "https://github.com/lbaey",
+            "keywords": [
+                "Behat",
+                "Browser Testing",
+                "Chromedriver",
+                "MAC",
+                "linux",
+                "osx",
+                "selenium",
+                "windows"
+            ],
+            "time": "2017-03-03T15:54:43+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "1.0",
             "source": {
@@ -6450,7 +6503,8 @@
         "behat/mink-extension": 20,
         "behat/mink-browserkit-driver": 20,
         "behat/mink-selenium2-driver": 20,
-        "behat/mink": 20
+        "behat/mink": 20,
+        "lbaey/chromedriver": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

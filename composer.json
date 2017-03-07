@@ -53,7 +53,8 @@
         "behat/mink": "~1.6@dev",
         "se/selenium-server-standalone": " ^2.52",
         "friends-of-behat/performance-extension": "^1.0",
-        "phpspec/phpspec": "^3.0"
+        "phpspec/phpspec": "^3.0",
+        "lbaey/chromedriver": "dev-master"
     },
     "scripts": {
         "symfony-scripts": [

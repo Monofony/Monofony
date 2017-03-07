@@ -9,13 +9,10 @@ default:
         Behat\MinkExtension:
             base_url: http://app_name.dev/app_test.php/
             default_session: symfony
-            javascript_session: firefox
+            javascript_session: chrome
             sessions:
                 symfony:
                     symfony2: ~
-                firefox:
-                    selenium2:
-                        browser: firefox
                 chrome:
                     selenium2:
                         browser: chrome
