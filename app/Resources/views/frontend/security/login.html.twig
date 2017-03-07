@@ -8,40 +8,49 @@
 
     <div class="row align-center">
         <div class="small-12 medium-6 column">
+            <h4>{{ 'sylius.ui.registered_customers'|trans }}</h4>
+            <p>{{ 'sylius.ui.if_you_have_an_account_sign_in_with_your_email_address'|trans }}.</p>
+
             {{ form_errors(form) }}
             <form action="{{ path("app_frontend_login_check") }}"
                   novalidate
-                  class="form-signin"
                   method="post">
 
-                <div class="row">
-                    <div class="small-12 columns">
-                        <div class="row input-group-row">
-                            <label>
-                                <div class="input-group">
-                                    <span class="input-group-label"><span class="fa fa-user"></span></span>
-                                    <input name="_username" class="input-group-field" type="text"
-                                           placeholder="{{ 'sylius.ui.email'|trans }}">
-                                </div>
-                            </label>
+                <div class="row input-group-row">
+                    <label>
+                        <div class="input-group">
+                            <span class="input-group-label"><span class="fa fa-user"></span></span>
+                            <input name="_username" class="input-group-field" type="text"
+                                   placeholder="{{ 'sylius.ui.email'|trans }}">
                         </div>
-                        <div class="row input-group-row">
-                            <label>
-                                <div class="input-group">
-                                    <span class="input-group-label"><span class="fa fa-lock"></span></span>
-                                    <input name="_password" class="input-group-field" type="password"
-                                           placeholder="{{ 'sylius.ui.password'|trans }}">
-                                </div>
-                            </label>
-                            <a href="{{ path('sylius_user_request_password_reset_token') }}"
-                               class="forgotpsw">{{ 'app.ui.forgotten_password'|trans }}</a>
+                    </label>
+                </div>
+                <div class="row input-group-row">
+                    <label>
+                        <div class="input-group">
+                            <span class="input-group-label"><span class="fa fa-lock"></span></span>
+                            <input name="_password" class="input-group-field" type="password"
+                                   placeholder="{{ 'sylius.ui.password'|trans }}">
                         </div>
-                    </div>
+                    </label>
+                    <a href="{{ path('sylius_user_request_password_reset_token') }}"
+                       class="forgotpsw">{{ 'app.ui.forgotten_password'|trans }}</a>
+
                 </div>
                 <div class="row align-center text-center">
-                    <button type="submit" class="button connexion-button">Connexion</button>
+                    <button type="submit" class="button expanded">{{ 'sylius.ui.login'|trans }}</button>
                 </div>
             </form>
+
+        </div>
+
+        <div class="small-12 medium-6 column">
+            <div class="row align-center">
+
+                <h4>{{ 'sylius.ui.new_customers'|trans }}</h4>
+                <a href="{{ path('app_frontend_register') }}"
+                   class="button expanded">{{ 'sylius.ui.create_an_account'|trans }}</a>
+            </div>
         </div>
     </div>
 

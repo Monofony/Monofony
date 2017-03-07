@@ -1,0 +1,10 @@
+default:
+    suites:
+        ui_security:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\ApiContext
+                - AppBundle\Behat\UtilsContext
+                - AppBundle\Behat\CustomerContext
+            filters:
+                tags: "@security && @ui"

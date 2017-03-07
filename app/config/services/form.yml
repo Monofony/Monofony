@@ -30,3 +30,29 @@ services:
             - "%sylius.model.app_user.class%"
         tags:
           - { name: form.type }
+
+    sylius.form.type.app_user_registration:
+        class: AppBundle\Form\Type\User\AppUserRegistrationType
+        arguments:
+            - "%sylius.model.app_user.class%"
+            - [sylius, sylius_user_registration]
+        tags:
+          - { name: form.type }
+
+    sylius.form.type.customer_simple_registration:
+        class: AppBundle\Form\Type\Customer\CustomerSimpleRegistrationType
+        arguments:
+            - "%sylius.model.customer.class%"
+            - [sylius, sylius_user_registration]
+            - "@sylius.repository.customer"
+        tags:
+          - { name: form.type, alias: sylius_customer_simple_registration }
+
+    sylius.form.type.customer_registration:
+        class: AppBundle\Form\Type\Customer\CustomerRegistrationType
+        arguments:
+            - "%sylius.model.customer.class%"
+            - [sylius, sylius_user_registration, sylius_customer_profile]
+            - "@sylius.repository.customer"
+        tags:
+          - { name: form.type, alias: sylius_customer_registration }

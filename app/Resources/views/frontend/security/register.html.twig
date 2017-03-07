@@ -16,34 +16,31 @@
 
         <form action="{{ path('app_frontend_register') }}?" method="post" class="form-signin" >
             <div class="form-field">
-                {{ form_widget(form.email, {attr: {'placeholder': 'label.email'|trans}}) }}
+                {{ form_row(form.email, {attr: {'placeholder': 'sylius.ui.email'|trans}}) }}
             </div>
             <div class="form-field">
-                {{ form_widget(form.user.plainPassword.first, {attr: {'placeholder': 'label.password'|trans}}) }}
+                {{ form_row(form.user.plainPassword.first, {attr: {'placeholder': 'sylius.ui.password'|trans}}) }}
             </div>
             <div class="form-field">
-                {{ form_widget(form.user.plainPassword.second, {attr: {'placeholder': 'label.password_confirmation'|trans}}) }}
+                {{ form_row(form.user.plainPassword.second, {attr: {'placeholder': 'sylius.ui.repeat_new_password'|trans}}) }}
             </div>
             <div class="form-field">
-                {{ form_widget(form.lastName, {attr: {'placeholder': 'label.last_name'|trans}}) }}
+                {{ form_row(form.lastName, {attr: {'placeholder': 'sylius.ui.last_name'|trans}}) }}
             </div>
             <div class="form-field">
-                {{ form_widget(form.firstName, {attr: {'placeholder': 'label.first_name'|trans}}) }}
+                {{ form_row(form.firstName, {attr: {'placeholder': 'sylius.ui.first_name'|trans}}) }}
             </div>
             <div class="form-field">
-                {{ form_widget(form.phoneNumber, {attr: {'placeholder': 'label.phone'|trans}}) }}
-            </div>
-            <div class="form-field">
-                {{ form_widget(form.cgu) }}
-                <label for="{{ form.cgu.vars['id'] }}">{{ 'label.accept_cgu'|trans }} <a href="#" class="link brand-text">{{ 'label.cgu'|trans }}</a></label>
+                {{ form_row(form.phoneNumber, {attr: {'placeholder': 'sylius.ui.phone_number'|trans}}) }}
             </div>
 
-            {{ form_rest(form) }}
             <div class="action-buttons">
-                {{ form_rest(form) }}
-                <a href="javascript:window.history.back()" class="button button-bordered" >{{ 'label.cancel'|trans }}</a>
-                <button class="button" type="submit" id="_submit" name="_submit">{{ 'label.validate'|trans }}</button>
+                <a href="javascript:window.history.back()" class="button button-bordered" >{{ 'sylius.ui.cancel'|trans }}</a>
+                <button class="button" type="submit" id="_submit" name="_submit">{{ 'sylius.ui.create_an_account'|trans }}</button>
             </div>
+
+            {{ form_row(form._token) }}
+            {{ form_end(form, {'render_rest': false}) }}
         </form>
 
     </div>
