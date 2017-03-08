@@ -3,6 +3,9 @@
 {% import 'frontend/macro/buttons.html.twig' as buttons %}
 
 {% block content -%}
+    <h1>{{ 'sylius.ui.my_account'|trans }}</h1>
+    <h2>{{ 'sylius.ui.manage_your_personal_information_and_preferences'|trans }}</h2>
+
     <div class="row">
         <div class="medium-8 column">
             <div class="row">
@@ -28,7 +31,6 @@
         <div class="medium-4 column">
             {% include 'frontend/account/_sidebar.html.twig' %}
         </div>
-
     </div>
 
 {% endblock %}
