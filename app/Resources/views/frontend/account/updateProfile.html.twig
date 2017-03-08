@@ -1,6 +1,9 @@
 {% extends 'frontend/layout.html.twig' %}
 
 {% block content %}
+    <h1>{{ 'sylius.ui.your_profile'|trans }}</h1>
+    <h2>{{ 'sylius.ui.edit_your_personal_information'|trans }}</h2>
+
     <div class="row">
         <div class="medium-8 column">
             {% include 'frontend/account/profile/_form.html.twig' %}
