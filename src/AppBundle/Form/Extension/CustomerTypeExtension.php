@@ -11,14 +11,11 @@
 
 namespace AppBundle\Form\Extension;
 
-use AppBundle\Form\EventSubscriber\CustomerRegistrationFormSubscriber;
-use AppBundle\Form\EventSubscriber\UserRegistrationFormSubscriber;
-use AppBundle\Form\Type\User\UserRegistrationType;
+use AppBundle\Form\EventSubscriber\AddUserFormSubscriber;
+use AppBundle\Form\Type\User\AppUserType;
 use Sylius\Bundle\CustomerBundle\Form\Type\CustomerType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author Corentin Nicole <corentin@mobizel.com>
@@ -30,33 +27,7 @@ final class CustomerTypeExtension extends AbstractTypeExtension
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('user',UserRegistrationType::class)
-            ->remove('gender')
-            ->remove('group')
-            ->addEventSubscriber(new UserRegistrationFormSubscriber());
-    }
-
-
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        parent::configureOptions($resolver);
-
-        $resolver
-            ->setDefaults([
-                'validation_groups' => function (FormInterface $form) use ($resolver) {
-                    $validationGroups = ['sylius'];
-                    $data = $form->getData();
-                    if ($data && !$data->getId()) {
-                        $validationGroups[] = 'sylius_user_create';
-                    }
-                    return $validationGroups;
-                },
-            ])
-        ;
+        $builder->addEventSubscriber(new AddUserFormSubscriber(AppUserType::class));
     }
 
     /**

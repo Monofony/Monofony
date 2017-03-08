@@ -5,6 +5,7 @@ sylius_user:
                 classes:
                     model: AppBundle\Entity\AppUser
                     repository: AppBundle\Repository\UserRepository
+                    form: AppBundle\Form\Type\User\AppUserType
         admin:
             user:
                 classes:

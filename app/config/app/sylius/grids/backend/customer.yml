@@ -20,24 +20,14 @@ sylius_grid:
                     sortable: email
                 createdAt:
                     type: datetime
-                    label: sylius.ui.created_at
+                    label: sylius.ui.registration_date
                     sortable: createdAt
             filters:
-                firstName:
+                search:
                     type: string
-                    label: sylius.ui.first_name
+                    label: sylius.ui.search
                     options:
-                        fields: [firstName]
-                lastName:
-                    type: string
-                    label: sylius.ui.last_name
-                    options:
-                        fields: [lastName]
-                email:
-                    type: string
-                    label: sylius.ui.email
-                    options:
-                        fields: [email]
+                        fields: [email, firstName, lastName]
             actions:
                 main:
                     create:
@@ -45,5 +35,3 @@ sylius_grid:
                 item:
                     update:
                         type: update
-                    delete:
-                        type: delete

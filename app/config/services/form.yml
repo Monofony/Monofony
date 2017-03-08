@@ -19,8 +19,15 @@ services:
         class: AppBundle\Form\Type\User\AdminUserType
         arguments:
             - "%sylius.model.admin_user.class%"
-            - "%sylius.form.type.admin_user.validation_groups%"
-            - "@sylius.repository.customer"
+            - [sylius]
+        tags:
+          - { name: form.type }
+
+    sylius.form.type.app_user:
+        class: AppBundle\Form\Type\User\AppUserType
+        arguments:
+            - "%sylius.model.app_user.class%"
+            - [sylius]
         tags:
           - { name: form.type }
 
