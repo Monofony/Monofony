@@ -31,6 +31,7 @@ var paths = {
     ],
     sass: [
       nodeModulesPath + 'foundation-sites/scss',
+      nodeModulesPath + 'motion-ui/src',
       'scss/app.scss'
     ],
     css: [
