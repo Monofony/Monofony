@@ -11,7 +11,15 @@
                 <li>
                     <a href="#">{{ app.user.customer }}</a>
                     <ul class="menu vertical">
-                        <li><a href="{{ path('app_frontend_logout') }}"><span class="fa fa-sign-out"></span> {{ 'sylius.ui.logout'|trans }}</a></li>
+                        <li>
+                            <a href="{{ path('sylius_frontend_account_dashboard') }}">
+                                <span class="fa fa-home"></span> {{ 'sylius.ui.my_account'|trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_frontend_logout') }}">
+                                <span class="fa fa-sign-out"></span> {{ 'sylius.ui.logout'|trans }}
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
