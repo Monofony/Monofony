@@ -1,0 +1,11 @@
+default:
+    suites:
+        ui_customer:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - AppBundle\Behat\UtilsContext
+                - AppBundle\Behat\AdminUserContext
+                - AppBundle\Behat\CustomerContext
+                - AppBundle\Behat\UserContext
+            filters:
+                tags: "@customer && @ui"

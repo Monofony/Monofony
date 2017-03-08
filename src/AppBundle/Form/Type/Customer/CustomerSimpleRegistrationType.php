@@ -12,7 +12,6 @@
 namespace AppBundle\Form\Type\Customer;
 
 use AppBundle\Form\EventSubscriber\CustomerRegistrationFormSubscriber;
-use AppBundle\Form\EventSubscriber\UserRegistrationFormSubscriber;
 use AppBundle\Form\Type\User\AppUserRegistrationType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Sylius\Component\Resource\Repository\RepositoryInterface;

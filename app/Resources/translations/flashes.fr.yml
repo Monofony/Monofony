@@ -11,4 +11,7 @@ sylius:
     user:
         change_password: Votre mot de passe a été mis à jour avec succès !
     customer:
+        create: Le client a bien été créé.
+        update: Le client a bien été mis à jour.
+        delete: Le client a bien été supprimé.
         update_profile: Votre profil a bien été mis à jour.
