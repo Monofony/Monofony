@@ -17,9 +17,9 @@ class InstallAssetsCommand extends AbstractInstallCommand
     {
         $this
             ->setName('app:install:assets')
-            ->setDescription('Installs all Alcéane assets.')
+            ->setDescription('Installs all AppName assets.')
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command downloads and installs all Alcéane media assets.
+The <info>%command.name%</info> command downloads and installs all AppName media assets.
 EOT
             )
         ;
@@ -30,7 +30,7 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Installing Alcéane assets for environment <info>%s</info>.', $this->getEnvironment()));
+        $output->writeln(sprintf('Installing AppName assets for environment <info>%s</info>.', $this->getEnvironment()));
 
         try {
             $this->ensureDirectoryExistsAndIsWritable(self::WEB_ASSETS_DIRECTORY, $output);

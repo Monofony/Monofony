@@ -19,9 +19,9 @@ class InstallDatabaseCommand extends AbstractInstallCommand
     {
         $this
             ->setName('app:install:database')
-            ->setDescription('Install Alcéane database.')
+            ->setDescription('Install AppName database.')
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command creates Alcéane database.
+The <info>%command.name%</info> command creates AppName database.
 EOT
             )
         ;
@@ -31,7 +31,7 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Creating Alcéane database for environment <info>%s</info>.', $this->getEnvironment()));
+        $output->writeln(sprintf('Creating AppName database for environment <info>%s</info>.', $this->getEnvironment()));
 
         $commands = $this->get('sylius.commands_provider.database_setup')->getCommands($input, $output, $this->getHelper('question'));
 

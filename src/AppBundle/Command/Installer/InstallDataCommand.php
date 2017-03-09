@@ -23,9 +23,9 @@ class InstallDataCommand extends AbstractInstallCommand
     {
         $this
             ->setName('app:install:data')
-            ->setDescription('Install Alcéane data.')
+            ->setDescription('Install AppName data.')
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command installs Alcéane data.
+The <info>%command.name%</info> command installs AppName data.
 EOT
             );
     }
@@ -35,7 +35,7 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Loading Alcéane data for environment <info>%s</info>.', $this->getEnvironment()));
+        $output->writeln(sprintf('Loading AppName data for environment <info>%s</info>.', $this->getEnvironment()));
 
 
         $commands = [];
