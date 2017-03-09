@@ -12,6 +12,7 @@
 namespace AppBundle\Command\Installer;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
@@ -90,14 +91,31 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
      */
     protected function createProgressBar(OutputInterface $output, $length = 10)
     {
+        ProgressBar::setFormatDefinition('custom', ' %current%/%max% [%bar%] %percent:3s%% <info>%command_name%</info>');
+
         $progress = new ProgressBar($output);
+        $progress->setFormat('custom');
+        $progress->setBarCharacter('<info>|</info>');
         $progress->setBarCharacter('<info>|</info>');
         $progress->setEmptyBarCharacter(' ');
         $progress->setProgressCharacter('|');
 
-        $progress->start($length);
-
         return $progress;
+    }
+
+    /**
+     * @param string $commandName
+     *
+     * @return \Closure
+     */
+    protected function getCommandDescriptionClosure($commandName)
+    {
+        return function() use ($commandName) {
+            /** @var Command $command */
+            $command = $this->getApplication()->find($commandName);
+
+            return $command->getDescription();
+        };
     }
 
     /**
@@ -108,7 +126,9 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
     protected function runCommands(array $commands, OutputInterface $output, $displayProgress = true)
     {
         if ($displayProgress) {
-            $progress = $this->createProgressBar($output, count($commands));
+            $length = count($commands);
+            $progress = $this->createProgressBar($output, $length);
+            $started = false;
         }
 
         foreach ($commands as $key => $value) {
@@ -120,15 +140,21 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
                 $parameters = [];
             }
 
+            if ($displayProgress) {
+                ProgressBar::setPlaceholderFormatterDefinition('command_name', $this->getCommandDescriptionClosure($command));
+                if (!$started) {
+                    $progress->start($length);
+                    $started = true;
+                } else {
+                    $progress->advance();
+                }
+            }
+
             $this->commandExecutor->runCommand($command, $parameters);
 
             // PDO does not always close the connection after Doctrine commands.
             // See https://github.com/symfony/symfony/issues/11750.
             $this->get('doctrine')->getManager()->getConnection()->close();
-
-            if ($displayProgress) {
-                $progress->advance();
-            }
         }
 
         if ($displayProgress) {
