@@ -36,9 +36,9 @@ class InstallCommand extends AbstractInstallCommand
     {
         $this
             ->setName('app:install')
-            ->setDescription('Installs Alcéane in your preferred environment.')
+            ->setDescription('Installs AppName in your preferred environment.')
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command installs Alcéane.
+The <info>%command.name%</info> command installs AppName.
 EOT
             )
         ;
@@ -49,7 +49,7 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('<info>Installing Alcéane...</info>');
+        $output->writeln('<info>Installing AppName...</info>');
         $output->writeln('');
 
         $this->ensureDirectoryExistsAndIsWritable($this->getContainer()->getParameter('kernel.cache_dir'), $output);
@@ -78,9 +78,9 @@ EOT
     private function getProperFinalMessage($errored)
     {
         if ($errored) {
-            return '<info>Alcéane has been installed, but some error occurred.</info>';
+            return '<info>AppName has been installed, but some error occurred.</info>';
         }
 
-        return '<info>Alcéane has been successfully installed.</info>';
+        return '<info>AppName has been successfully installed.</info>';
     }
 }
