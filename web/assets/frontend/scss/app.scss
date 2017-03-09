@@ -13,8 +13,12 @@
 // Foundation mixins & browser resets
 @import '../node_modules/foundation-sites/scss/foundation';
 
+// Foundation motion ui
+@import '../node_modules/motion-ui/src/motion-ui';
+
 // Third-party libraries
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
+
 
 // Foundation global styles
 @include foundation-global-styles;
@@ -61,8 +65,8 @@
 @include foundation-flex-classes;
 
 // Motion UI
-//@include motion-ui-transitions;
-//@include motion-ui-animations;
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // Mixins
 @import "mixins/placeholder";
