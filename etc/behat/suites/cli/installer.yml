@@ -1,0 +1,8 @@
+default:
+    suites:
+        cli_installer:
+            contexts:
+                - AppBundle\Behat\Command\CommandContext
+                - AppBundle\Behat\Command\InstallerContext
+            filters:
+                tags: "@installer && @cli"
