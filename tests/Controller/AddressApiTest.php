@@ -22,6 +22,19 @@ class AddressApiTest extends JsonApiTestCase
     /**
      * @test
      */
+    public function it_does_not_allow_to_show_taxon_when_it_does_not_exist()
+    {
+        $this->loadFixturesFromFile('resources/addresses.yml');
+
+        $this->client->request('GET', '/api/addresses/-1');
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @test
+     */
     public function it_allows_indexing_addresses()
     {
         $this->loadFixturesFromFile('resources/addresses.yml');
