@@ -32,6 +32,32 @@ class InstallerContext extends DefaultContext
     ];
 
     /**
+     * @Given I do not provide an email
+     */
+    public function iDoNotProvideEmail()
+    {
+        $this->inputChoices['e-mail'] = '';
+    }
+
+    /**
+     * @Given I do not provide a correct email
+     */
+    public function iDoNotProvideCorrectEmail()
+    {
+        $this->inputChoices['e-mail'] = 'janusz';
+    }
+
+    /**
+     * @Given I provide full administrator data
+     */
+    public function iProvideFullAdministratorData()
+    {
+        $this->inputChoices['e-mail'] = 'test@admin.com';
+        $this->inputChoices['password'] = 'pswd1$';
+        $this->inputChoices['confirmation'] = $this->inputChoices['password'];
+    }
+
+    /**
      * @param string $name
      */
     private function iExecuteCommandWithInputChoices($name)
