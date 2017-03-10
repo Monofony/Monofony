@@ -4,3 +4,5 @@ imports:
     - suites/ui/admin_user.yml
     - suites/ui/customer.yml
     - suites/ui/security.yml
+
+    - suites/cli/installer.yml
