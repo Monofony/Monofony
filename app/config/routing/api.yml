@@ -1,0 +1,2 @@
+app_api_address:
+    resource: "api/address.yml"

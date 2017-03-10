@@ -12,6 +12,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -20,6 +21,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Entity
  * @ORM\Table(name="app_address")
+ *
+ * @JMS\ExclusionPolicy("all")
  */
 class Address implements ResourceInterface
 {
@@ -31,6 +34,9 @@ class Address implements ResourceInterface
      * @ORM\Column(type="string")
      *
      * @Assert\NotBlank()
+     *
+     * @JMS\Expose
+     * @JMS\Groups({"Default"})
      */
     protected $street;
 
@@ -40,6 +46,9 @@ class Address implements ResourceInterface
      * @ORM\Column(type="string")
      *
      * @Assert\NotBlank()
+     *
+     * @JMS\Expose
+     * @JMS\Groups({"Default"})
      */
     protected $postcode;
 
@@ -49,6 +58,9 @@ class Address implements ResourceInterface
      * @ORM\Column(type="string")
      *
      * @Assert\NotBlank()
+     *
+     * @JMS\Expose
+     * @JMS\Groups({"Default"})
      */
     protected $city;
 

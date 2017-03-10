@@ -1,0 +1,33 @@
+{
+  "page": 1,
+  "limit": 10,
+  "pages": 1,
+  "total": 2,
+  "_links": {
+    "self": {
+      "href": "/api/addresses/?page=1&limit=10"
+    },
+    "first": {
+      "href": "/api/addresses/?page=1&limit=10"
+    },
+    "last": {
+      "href": "/api/addresses/?page=1&limit=10"
+    }
+  },
+  "_embedded": {
+    "items": [
+      {
+        "street": "2 rue de la Mabilais",
+        "postcode": "35000",
+        "city": "Rennes",
+        "id": @integer@
+      },
+      {
+        "street": "4 rue d'Isly",
+        "postcode": "35000",
+        "city": "Rennes",
+        "id": @integer@
+      }
+    ]
+  }
+}

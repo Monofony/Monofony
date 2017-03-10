@@ -27,7 +27,6 @@ Trait IdentifiableTrait
      * @ORM\GeneratedValue(strategy="AUTO")
      *
      * @JMS\Expose
-     * @JMS\Groups({"Default"})
      */
     protected $id;
 
