@@ -19,7 +19,10 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class AddressApiTest extends JsonApiTestCase
 {
-    public function testAddressesIndexAction()
+    /**
+     * @test
+     */
+    public function it_allows_indexing_addresses()
     {
         $this->loadFixturesFromFile('resources/addresses.yml');
         $this->client->request('GET', '/api/addresses/');
