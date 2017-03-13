@@ -74,3 +74,12 @@ swiftmailer:
     port:       "%mailer_port%"
     encryption: "%mailer_encryption%"
     spool:     { type: memory }
+
+fos_oauth_server:
+    db_driver: orm
+    client_class:        AppBundle\Entity\OAuth\Client
+    access_token_class:  AppBundle\Entity\OAuth\AccessToken
+    refresh_token_class: AppBundle\Entity\OAuth\RefreshToken
+    auth_code_class:     AppBundle\Entity\OAuth\AuthCode
+    service:
+        user_provider: sylius.app_user_provider.email_or_name_based

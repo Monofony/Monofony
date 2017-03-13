@@ -1,5 +1,8 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
+imports:
+    - { resource: "@FOSOAuthServerBundle/Resources/config/security.xml" }
+
 security:
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
@@ -31,6 +34,11 @@ security:
                 target: sylius_backend_login
             anonymous: true
 
+        api:
+            pattern:    ^/api
+            fos_oauth:  true
+            stateless:  true
+
         app:
             switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
             context: app
@@ -59,3 +67,4 @@ security:
         - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/dashboard, role: ROLE_ADMIN }
         - { path: "^/admin.*", role: ROLE_ADMIN }
+        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
