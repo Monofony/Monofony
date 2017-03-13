@@ -12,6 +12,7 @@
 namespace AppBundle\Behat\Command;
 
 use AppBundle\Command\Installer\InstallCommand;
+use AppBundle\Command\Installer\InstallDatabaseCommand;
 use AppBundle\Command\Installer\InstallDataCommand;
 use AppBundle\Command\Installer\SetupCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
@@ -84,6 +85,20 @@ class InstallerContext extends DefaultContext
         $this->setTester(new CommandTester($this->command));
 
         $this->iExecuteCommandWithInputChoices('app:install:setup');
+    }
+
+    /**
+     * @When /^I run Install database command$/
+     */
+    public function iRunInstallDatabaseCommmandLine()
+    {
+        $this->application = new Application($this->kernel);
+        $this->application->add(new InstallDatabaseCommand());
+
+        $this->command = $this->application->find('app:install:database');
+        $this->setTester(new CommandTester($this->command));
+
+        $this->iExecuteCommandAndConfirm('app:install:database');
     }
 
     /**
