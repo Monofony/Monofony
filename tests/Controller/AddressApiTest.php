@@ -11,6 +11,7 @@
 
 namespace test\AppBundle\Tests\Controller;
 
+use AppBundle\Entity\Address;
 use Lakion\ApiTestCase\JsonApiTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -79,5 +80,35 @@ EOT;
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'address/create_response', Response::HTTP_CREATED);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_delete_address()
+    {
+        $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
+        $address = $addresses['address1'];
+
+        $this->client->request('DELETE', $this->getAddressUrl($address), [], [], static::$authorizedHeaderWithContentType, []);
+
+        $response = $this->client->getResponse();
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
+        $address = $addresses['address1'];
+
+        $this->client->request('GET', $this->getAddressUrl($address), [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+        $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @param Address $address
+     *
+     * @return string
+     */
+    private function getAddressUrl(Address $address)
+    {
+        return '/api/addresses/' . $address->getId();
     }
 }
