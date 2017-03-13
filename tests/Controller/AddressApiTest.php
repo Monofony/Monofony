@@ -85,6 +85,18 @@ EOT;
     /**
      * @test
      */
+    public function it_does_not_allow_delete_address_if_it_does_not_exist()
+    {
+        $this->client->request('DELETE', '/api/addresses/-1', [], [], static::$authorizedHeaderWithAccept);
+
+        $response = $this->client->getResponse();
+
+        $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @test
+     */
     public function it_allows_delete_address()
     {
         $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
@@ -100,6 +112,28 @@ EOT;
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'error/not_found_response', Response::HTTP_NOT_FOUND);
+    }
+
+    /**
+     * @test
+     */
+    public function it_allows_updating_address()
+    {
+        $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
+        $address = $addresses["address1"];
+
+        $data =
+            <<<EOT
+                    {
+            "street": "16 rue DOM François Plaine",
+            "postcode": "35137",
+            "city": "Bédée"
+        }
+EOT;
+        $this->client->request('PUT', $this->getAddressUrl($address), [], [], static::$authorizedHeaderWithContentType, $data);
+        $response = $this->client->getResponse();
+
+        $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
     }
 
     /**
