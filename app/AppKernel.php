@@ -1,5 +1,6 @@
 <?php
 
+use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
@@ -49,6 +50,18 @@ class AppKernel extends Kernel
     public function getRootDir()
     {
         return __DIR__;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getContainerBaseClass()
+    {
+        if (in_array($this->getEnvironment(), ['test', 'test_cached'], true)) {
+            return MockerContainer::class;
+        }
+
+        return parent::getContainerBaseClass();
     }
 
     public function getCacheDir()

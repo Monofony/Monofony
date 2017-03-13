@@ -1,0 +1,9 @@
+AppBundle\Entity\Address:
+    address1:
+        street: 2 rue de la Mabilais
+        postCode: 35000
+        city: Rennes
+    address2:
+        street: 4 rue d'Isly
+        postCode: 35000
+        city: Rennes

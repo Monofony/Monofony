@@ -5,6 +5,12 @@ app_backend:
 app_frontend:
     resource: "routing/frontend.yml"
 
+app_api:
+    resource: "routing/api.yml"
+    prefix: /api
+    defaults:
+        _format: json
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

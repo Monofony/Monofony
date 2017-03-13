@@ -18,6 +18,10 @@
         </testsuite>
     </testsuites>
 
+    <php>
+        <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
+    </php>
+
     <filter>
         <whitelist>
             <directory>src</directory>
