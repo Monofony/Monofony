@@ -1,0 +1,6 @@
+{
+    "id": @integer@,
+    "street": "2 rue de la Mabilais",
+    "postcode": "35000",
+    "city": "Rennes"
+}
