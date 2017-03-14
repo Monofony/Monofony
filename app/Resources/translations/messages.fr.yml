@@ -8,6 +8,7 @@ app:
         legal_notices: Mentions légales
         overview_of_your_website: Aperçu de votre site web
         validate: Valider
+        create_user: Créer un utilisateur
     text:
         error:
             500:
