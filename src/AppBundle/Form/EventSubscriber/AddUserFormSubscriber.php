@@ -57,7 +57,7 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
         $form = $event->getForm();
         $form->add('user', $this->entryType, ['constraints' => [new Valid()]]);
         $form->add('createUser', CheckboxType::class, [
-            'label' => 'sylius.ui.customer_can_login_to_the_store',
+            'label' => 'app.ui.create_user',
             'required' => false,
             'mapped' => false,
         ]);
