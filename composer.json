@@ -41,7 +41,8 @@
         "friendsofsymfony/jsrouting-bundle": "^1.5",
         "twig/extensions": " ~1.2",
         "fzaninotto/Faker": "^1.5",
-        "sylius/grid-bundle": "^1.0"
+        "sylius/grid-bundle": "^1.0",
+        "friendsofsymfony/oauth-server-bundle": "^1.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.1",

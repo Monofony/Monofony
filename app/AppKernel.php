@@ -34,6 +34,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new AppBundle\AppBundle(),
         ];
 

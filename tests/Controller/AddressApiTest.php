@@ -41,6 +41,7 @@ class AddressApiTest extends JsonApiTestCase
      */
     public function it_does_not_allow_to_show_taxon_when_it_does_not_exist()
     {
+        $this->loadFixturesFromFile('authentication/api_user.yml');
         $this->loadFixturesFromFile('resources/addresses.yml');
 
         $this->client->request('GET', '/api/addresses/-1', [], [], static::$authorizedHeaderWithAccept);
@@ -54,6 +55,7 @@ class AddressApiTest extends JsonApiTestCase
      */
     public function it_allows_indexing_addresses()
     {
+        $this->loadFixturesFromFile('authentication/api_user.yml');
         $this->loadFixturesFromFile('resources/addresses.yml');
         $this->client->request('GET', '/api/addresses/', [], [], static::$authorizedHeaderWithAccept);
 
@@ -67,6 +69,8 @@ class AddressApiTest extends JsonApiTestCase
      */
     public function it_allows_creating_address()
     {
+        $this->loadFixturesFromFile('authentication/api_user.yml');
+
         $data =
             <<<EOT
                     {
@@ -87,6 +91,8 @@ EOT;
      */
     public function it_does_not_allow_delete_address_if_it_does_not_exist()
     {
+        $this->loadFixturesFromFile('authentication/api_user.yml');
+
         $this->client->request('DELETE', '/api/addresses/-1', [], [], static::$authorizedHeaderWithAccept);
 
         $response = $this->client->getResponse();
@@ -99,6 +105,8 @@ EOT;
      */
     public function it_allows_delete_address()
     {
+        $this->loadFixturesFromFile('authentication/api_user.yml');
+
         $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
         $address = $addresses['address1'];
 
@@ -119,6 +127,8 @@ EOT;
      */
     public function it_allows_updating_address()
     {
+        $this->loadFixturesFromFile('authentication/api_user.yml');
+
         $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
         $address = $addresses["address1"];
 

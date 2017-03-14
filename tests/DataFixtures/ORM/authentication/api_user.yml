@@ -1,0 +1,31 @@
+AppBundle\Entity\OAuth\Client:
+    oauth:
+        randomId: client_id
+        secret: secret
+        allowedGrantTypes: [password, access_token, refresh_token]
+
+AppBundle\Entity\OAuth\AccessToken:
+    oauth_access_token:
+        client: "@oauth"
+        user: "@user"
+        token: SampleTokenNjZkNjY2MDEwMTAzMDkxMGE0OTlhYzU3NzYyMTE0ZGQ3ODcyMDAwM2EwMDZjNDI5NDlhMDdlMQ
+
+AppBundle\Entity\OAuth\RefreshToken:
+    oauth_refresh_token:
+        client: "@oauth"
+        user: "@user"
+        token: SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng
+
+AppBundle\Entity\AppUser:
+    user:
+        plainPassword: sylius
+        roles: [ROLE_API_ACCESS]
+        enabled: true
+        customer: "@customer"
+
+AppBundle\Entity\Customer:
+    customer:
+        email: api@sylius.com
+        firstName: Sam
+        lastName: Identifie
+
