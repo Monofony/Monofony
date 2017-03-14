@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(name="oauth_access_token")
  */
 class AccessToken extends BaseAccessToken
 {

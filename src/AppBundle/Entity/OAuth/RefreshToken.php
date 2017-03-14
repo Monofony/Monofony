@@ -18,6 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Corentin Nicole <corentin@mobizel.com>
  *
  * @ORM\Entity
+ * @ORM\Table(name="oauth_refresh_token")
  */
 class RefreshToken extends BaseRefreshToken
 {

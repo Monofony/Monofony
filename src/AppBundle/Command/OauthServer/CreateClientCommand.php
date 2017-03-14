@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace AppBundle\Command;
+namespace AppBundle\Command\OauthServer;
 
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
