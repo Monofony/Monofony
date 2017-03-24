@@ -8,9 +8,9 @@ Adding ssh authorized keys for server on your local computer
 
 .. code-block:: bash
 
-    $ cat ~/.ssh/id_rsa.pub | ssh jedisjeux@92.243.10.152 "cat - >> ~/.ssh/authorized_keys"
+    $ cat ~/.ssh/id_rsa.pub | ssh mobizel@XXX.XXX.XX.XX "cat - >> ~/.ssh/authorized_keys"
 
-and enter the correct password for username "jedisjeux" on server
+and enter the correct password for username "mobizel" on server
 
 
 Install dependencies
