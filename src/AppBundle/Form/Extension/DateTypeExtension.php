@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of mz_105_s_smeco.
+ * This file is part of AppName.
  *
  * (c) Mobizel
  *
