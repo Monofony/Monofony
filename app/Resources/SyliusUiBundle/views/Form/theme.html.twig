@@ -123,3 +123,14 @@
         </div>
     {% endspaceless %}
 {% endmacro %}
+
+{% block date_widget %}
+    {% spaceless %}
+        <div class="ui calendar js-datePicker">
+            <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                {{ block('form_widget') }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock %}

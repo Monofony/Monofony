@@ -28,6 +28,7 @@ var paths = {
     js: [
       nodeModulesPath + 'jquery/dist/jquery.min.js',
       nodeModulesPath + 'semantic-ui-css/semantic.min.js',
+      nodeModulesPath + 'semantic-ui-calendar/dist/calendar.js',
       vendorUiPath + 'Resources/private/js/**',
       'js/**.js'
     ],
@@ -38,33 +39,7 @@ var paths = {
     css: [
       nodeModulesPath + 'semantic-ui-css/semantic.min.css',
       vendorUiPath + 'Resources/private/css/**',
-      'css/ui/components/icon.css',
-      'css/ui/components/form.css',
-      'css/ui/components/sidebar.css',
-      'css/ui/components/transition.css',
-      'css/ui/components/reset.css',
-      'css/ui/components/site.css',
-      'css/ui/components/breadcrumb.css',
-      'css/ui/components/button.css',
-      'css/ui/components/checkbox.css',
-      'css/ui/components/container.css',
-      'css/ui/components/divider.css',
-      'css/ui/components/dropdown.css',
-      'css/ui/components/grid.css',
-      'css/ui/components/header.css',
-      'css/ui/components/image.css',
-      'css/ui/components/input.css',
-      'css/ui/components/label.css',
-      'css/ui/components/list.css',
-      'css/ui/components/menu.css',
-      'css/ui/components/message.css',
-      'css/ui/components/popup.css',
-      'css/ui/components/reveal.css',
-      'css/ui/components/segment.css',
-      'css/ui/components/table.css',
-
-      'css/global.classic.css',
-      'css/layouts/theme.css'
+      nodeModulesPath + 'semantic-ui-calendar/dist/calendar.css',
     ],
     img: [
       vendorUiPath + 'Resources/private/img/**',
