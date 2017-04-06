@@ -15,6 +15,11 @@ services:
         tags:
             - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerType }
 
+    app.date_type_extension:
+            class: AppBundle\Form\Extension\DateTypeExtension
+            tags:
+                - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\DateType }
+
     sylius.form.type.admin_user:
         class: AppBundle\Form\Type\User\AdminUserType
         arguments:
