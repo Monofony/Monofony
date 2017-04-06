@@ -8,7 +8,7 @@ locale-gen
 # echo 'LANG=fr_FR.UTF-8' > /etc/default/locale
 
 # Timezone
-echo "Europe/Brussels" > /etc/timezone
+echo "Europe/Paris" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 
 # Console keyboard
