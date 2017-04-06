@@ -3,9 +3,9 @@
 # Debian
 
 # Locales
-sed -i 's/# nl_BE.UTF-8 UTF-8/nl_BE.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/# fr_FR.UTF-8 UTF-8/fr_FR.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-# echo 'LANG=nl_BE.UTF-8' > /etc/default/locale
+# echo 'LANG=fr_FR.UTF-8' > /etc/default/locale
 
 # Timezone
 echo "Europe/Brussels" > /etc/timezone
