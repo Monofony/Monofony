@@ -39,7 +39,20 @@ Deployment
 
 .. include:: /deployment/map.rst.inc
 
+
+Cookbook
+--------
+
+.. toctree::
+    :hidden:
+
+    cookbook/index
+
+.. include:: /cookbook/map.rst.inc
+
+
 .. _AppName: http://www.mobizel.com
 .. _Sylius: http://sylius.org
 .. _`Symfony Framework`: http://symfony.com
 .. _`Quick Tour`: http://symfony.com/doc/current/quick_tour
+

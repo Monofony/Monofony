@@ -12,14 +12,6 @@ Adding ssh authorized keys for server on your local computer
 
 and enter the correct password for username "mobizel" on server
 
-
-Install dependencies
---------------------
-
-.. code-block:: bash
-
-    $ bundle install
-
 Deploy the staging environment
 ------------------------------
 
