@@ -1,6 +1,8 @@
 Capistrano
 ==========
 
+This page give some hit about Capistrano. To go further check `the official documentation <http://capistranorb.com/>`_
+
 Install Capistrano
 ------------------
 

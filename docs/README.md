@@ -1,14 +1,14 @@
 AppName Documentation
-====================
+=====================
 
 This directory contains documentation for AppName. 
 
-This documentation is inspired by[Sylius documentation](http://docs.sylius.org). 
+This documentation is inspired by [Sylius documentation](http://docs.sylius.org). 
 
 Build
 -----
 
-In order to build the documentation :
+In order to build the documentation:
 * [Install `pip`, Python package manager](https://pip.pypa.io/en/stable/installing/)
 
 * Download the documentation requirements: 
