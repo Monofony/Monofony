@@ -1,6 +1,12 @@
 How to run add new context
 ==========================
 
+.. note::
+
+    A context is an object which includes several methods used by behat to transform sentences into actions. You can create as contexts as you want.
+
+To add a new context to Behat container it is needed to add a context object
+
 .. code-block:: php
 
     <?php
