@@ -39,6 +39,18 @@ Deployment
 
 .. include:: /deployment/map.rst.inc
 
+The Behat Guide
+---------------
+
+In :doc:`the Behat Guide </behat/index>` you will learn how to write clean and reusable features, contexts and pages.
+
+.. toctree::
+    :hidden:
+
+    behat/index
+
+.. include:: /behat/map.rst.inc
+
 
 Cookbook
 --------
