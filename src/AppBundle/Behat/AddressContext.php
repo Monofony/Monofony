@@ -20,9 +20,9 @@ use Behat\Gherkin\Node\TableNode;
 class AddressContext extends DefaultContext
 {
     /**
-     * @Given /^there are addresses:$/
-     * @Given /^there are following addresses:$/
-     * @Given /^the following addresses exist:$/
+     * @Given there are addresses:
+     * @Given there are following addresses:
+     * @Given the following addresses exist:
      *
      * @param TableNode $table
      */
