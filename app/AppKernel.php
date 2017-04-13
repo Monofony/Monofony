@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
             new AppBundle\AppBundle(),
         ];
 

@@ -15,3 +15,4 @@ sylius:
         update: Le client a bien été mis à jour.
         delete: Le client a bien été supprimé.
         update_profile: Votre profil a bien été mis à jour.
+        register: 'Merci pour votre inscription, vous allez recevoir un mail pour vérifier votre compte.'

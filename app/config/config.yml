@@ -83,3 +83,6 @@ fos_oauth_server:
     auth_code_class:     AppBundle\Entity\OAuth\AuthCode
     service:
         user_provider: sylius.app_user_provider.email_or_name_based
+
+sonata_block:
+    default_contexts: ~
