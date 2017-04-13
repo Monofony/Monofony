@@ -11,9 +11,11 @@
 
 namespace AppBundle\Form\Type;
 
+use AppBundle\Entity\Address;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @author Loïc Frémont <loic@mobizel.com>
@@ -42,8 +44,10 @@ class AddressType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function configureOptions(OptionsResolver $resolver)
     {
-        return 'app_address';
+        $resolver->setDefaults(array(
+            'data_class' => Address::class,
+        ));
     }
 }
