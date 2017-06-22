@@ -32,7 +32,7 @@ $ composer install
 
 Init project with fixtures (fake data) :
 ```bash
-$ bin/console app:install --mode=feature --no-interaction
+$ bin/console app:install --mode=fixture --no-interaction
 ```
 
 Or init project with only one administrator :

@@ -39,7 +39,7 @@ class InstallCommand extends AbstractInstallCommand
     /**
      * @var array
      */
-    private $fixturesCommands = [
+    private $fixtureCommands = [
         [
             'command' => 'fixtures',
             'message' => 'Installing fixtures',
@@ -76,7 +76,7 @@ EOT
                 $this->commands = array_merge($this->commands, $this->setupCommands);
                 break;
             case 'fixture':
-                $this->commands = array_merge($this->commands, $this->fixturesCommands);
+                $this->commands = array_merge($this->commands, $this->fixtureCommands);
                 break;
             default:
                 break;

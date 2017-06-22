@@ -22,7 +22,7 @@ use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
+ * @author Corentin Nicole <corentin@mobizel.com>
  */
 class CustomerExampleFactory extends AbstractExampleFactory implements ExampleFactoryInterface
 {
@@ -40,7 +40,6 @@ class CustomerExampleFactory extends AbstractExampleFactory implements ExampleFa
      * @var OptionsResolver
      */
     private $optionsResolver;
-
 
     /**
      * CustomerExampleFactory constructor.
