@@ -1,0 +1,47 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        default:
+            listeners:
+                orm_purger: ~
+                logger: ~
+
+            fixtures:
+                admin_user:
+                    name: "admin_user"
+                    options:
+                        custom:
+                            -
+                                email: "admin@mobizel.com"
+                                password: "mobizel"
+                                enabled: true
+                                first_name: "John"
+                                last_name: "Doe"
+                customer:
+                    options:
+                        custom:
+                            -
+                                email: "customer@mobizel.com"
+                                first_name: "Harry"
+                                last_name: "Cover"
+                app_user:
+                   options:
+                       custom:
+                           -
+                               email: "customer@mobizel.com"
+                               password: "password"
+                               enabled: true
+                               customer: "customer@mobizel.com"
+                oauth_client:
+                    options:
+                        custom:
+                            client:
+                                random_id: 5rbhrb0iiukokcwk8gow0w4ocgww0oco8g8gsgokwc0wcssg4w
+                                secret: 2rlxzhijcx448ow4c0gksw4wo8oo4k8kkwwg0osskk8g0k8kw8
+                address:
+                    options:
+                        custom:
+                            - ~
+

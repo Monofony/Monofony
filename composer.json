@@ -38,11 +38,12 @@
         "symfony/symfony": "3.3.0",
         "symfony/monolog-bundle": "~2.4",
         "sylius/customer-bundle": "^1.0",
-        "sylius/user-bundle": "^1.0",
+        "sylius/fixtures-bundle": "^v1.0",
         "sylius/grid-bundle": "^1.0",
         "sylius/mailer-bundle": "^1.0",
         "sylius/resource-bundle": "^1.0",
         "sylius/ui-bundle": "^1.0",
+        "sylius/user-bundle": "^1.0",
         "twig/extensions": " ^1.4",
         "twig/twig": "^1.28",
         "winzou/state-machine-bundle": "~0.2"

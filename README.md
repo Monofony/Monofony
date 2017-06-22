@@ -20,11 +20,25 @@ $ cd etc/docker
 $ docker-compose build
 $ docker-compose up -d
 $ docker exec -it $(docker-compose ps -q app_name_php) bash
-$ composer install
-$ bin/console app:install --no-interaction
 ```
 
-The install script will give you the option to run fixtures that make testing and development phases much easier.
+Init project
+------------
+
+Install php dependencies using composer
+```bash
+$ composer install
+```
+
+Init project with fixtures (fake data) :
+```bash
+$ bin/console app:install --mode=fixture --no-interaction
+```
+
+Or init project with only one administrator :
+```bash
+$ bin/console app:install --no-interaction
+```
 
 If you want to work on assets, please run the following commands:
 
