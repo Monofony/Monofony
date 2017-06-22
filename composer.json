@@ -45,7 +45,8 @@
         "sylius/ui-bundle": "^1.0",
         "twig/extensions": " ^1.4",
         "twig/twig": "^1.28",
-        "winzou/state-machine-bundle": "~0.2"
+        "winzou/state-machine-bundle": "~0.2",
+        "sylius/fixtures-bundle": "v1.0.0-beta.2"
     },
     "require-dev": {
         "behat/behat": "~3.0",

@@ -1,5 +1,7 @@
 imports:
     - { resource: services/context.yml }
+    - { resource: services/fixtures.yml }
+    - { resource: services/fixtures_factories.yml }
     - { resource: services/form.yml }
     - { resource: services/installer.yml }
     - { resource: services/listener.yml }

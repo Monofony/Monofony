@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sylius\Bundle\FixturesBundle\SyliusFixturesBundle(),
             new AppBundle\AppBundle(),
         ];
 
