@@ -7,6 +7,7 @@ sylius_grid:
                     class: "%app.model.address.class%"
             sorting:
                 city: asc
+            limits: ~
             fields:
                 city:
                     type: string
