@@ -15,3 +15,8 @@ services:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
             - { name: doctrine.event_listener, event: preUpdate }
+
+    sylius.listener.default_username:
+        class: AppBundle\EventListener\DefaultUsernameORMListener
+        tags:
+            - { name: doctrine.event_listener, event: onFlush }
