@@ -33,7 +33,6 @@ class ServicesPass implements CompilerPassInterface
         $this->processFactories($container);
         $this->processRepositories($container);
         $this->processListeners($container);
-        $this->processControllers($container);
     }
 
     /**
@@ -72,15 +71,5 @@ class ServicesPass implements CompilerPassInterface
             'event' => 'sylius.customer.pre_update',
             'method' => 'customerUpdateEvent'
         ]);
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    protected function processControllers(ContainerBuilder $container)
-    {
-        $resourcesCollectionProviderDefinition = $container->getDefinition('sylius.resource_controller.resources_collection_provider');
-        $resourcesCollectionProviderDefinition
-            ->setClass('AppBundle\Controller\ResourcesCollectionProvider');
     }
 }
