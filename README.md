@@ -1,8 +1,99 @@
 ![Mobizel](http://www.mobizel.com/wp-content/uploads/2013/04/logomobizel.png)
 
-Au commencement...
-------------------
-Commencer par rechercher 'app_name', 'AppName' et 'APP_NAME' dans le projet et le remplacer par le nom de l'application
+# `mzh` command helper 
+
+## Install mzh command helper in your workstation
+
+`mbz` is an helper to centralize and facilitate some repetitive commands used when developing an application
+Once installed, this helper can be used in any Mobizel project using Vagrant.
+
+```bash
+$ cd ~/dev
+$ git clone git@bitbucket.org:yannick_le_duc/rd_042_s_monofony.git
+$ cd rd_042_s_monofony.git
+$ ./mzh mzhinstall
+```
+
+## Getting some help
+
+Run `mzh` to get all available commands and some example
+
+```
+$ mzh
+Build helper to centralize Mobizel projects setup and build commands
+ 
+USAGE: /usr/local/bin/mzh <targets>
+ 
+Valid targets are:
+ 
+  app: initialize project (migrate and load fixtures)
+  bootstrap: clone monofony, ask some info and create a brand new project
+  behat: run behat tests
+  clean: stop virtual machine
+  db: connect to database (command line shell)
+  doc: build the documentation
+  distclean: deep clean to approach fresh clone
+  mzhinstall: install mbz helper binary in system path
+  mzhversion: dump mzh helper version
+  phpspec: run phpspec tests
+  phpunit: run phpunit tests
+  ssh: connect a terminal to the virtual machine (command line shell)
+  start: build and start virtual machine
+  reboot: power-off and reboot virtual machine, when it is stuck for example
+  resetdb: drop and reset database
+  reload: restart machine gracefully
+  testdb: setup test database to be able to run phpunit tests
+  tests: run all unit tests and save output in logs.txt
+ 
+EXAMPLES:
+	--- Build vagrant machine, install database and fixtures
+	/usr/local/bin/mzh start app
+ 
+	--- Run all tests
+	/usr/local/bin/mzh tests
+ 
+	--- Run behat tests
+	/usr/local/bin/mzh behat
+```
+
+## Bootstrap a fresh new app
+
+- Run `mzh bootstrap` and follow instructions
+- Rename the newly created directory with the right code (instead of 000)
+
+Example:
+
+```bash
+user@MacBookPro: ~/dev]$ mzh bootstrap
+LOG_INFO: Now preparing to boostrap a new Mobizel project from monophony
+Please provide the application name (eg. AppName, Wecome, ...) : MyNewApp
+Text to used instead of 'app_name'? [my_new_app] 
+Text to used instead of 'APP_NAME'? [MY_NEW_APP] 
+LOG_INFO: Now ready to start boostrap with following substitutions
+  'AppName' → 'MyNewApp'
+  'app_name' → 'my_new_app'
+  'APP_NAME' → 'MY_NEW_APP'
+Proceed ? [y/N] y
+LOG_INFO: Cloning monophony master into mz_000_my_new_app directory
+LOG_INFO: Replacing all variants of 'AppName'
+LOG_INFO: Opening security in app_dev.php
+```
+
+## Start the VM and setup the minimum stuff to start using an application
+
+```bash
+$ cd mz_000_my_new_app
+$ mzh start app
+```
+
+
+# Manual operations (used in mzh internally)
+
+Create a new project manually
+-----------------------------
+
+Search and replace 'app_name', 'AppName' et 'APP_NAME' with your application name
+
 
 Quick Installation with Vagrant
 -------------------------------
