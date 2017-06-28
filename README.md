@@ -14,6 +14,19 @@ $ cd rd_042_s_monofony.git
 $ ./mzh mzhinstall
 ```
 
+**Note:** Normally, it everything is fine bash completion should be available
+
+```
+$ mzh [TAB][TAB]
+app           bootstrap     db            doc           listcommands  mzhversion    phpunit       reload        ssh           testdb        
+behat         clean         distclean     help          mzhinstall    phpspec       reboot        resetdb       start         tests         
+$ mzh p[TAB]
+$ mzh php[TAB][TAB]
+phpspec  phpunit
+$ mzh phpu[TAB]
+$ mzh phpunit
+```
+
 ## Getting some help
 
 Run `mzh` to get all available commands and some example
