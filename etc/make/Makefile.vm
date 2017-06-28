@@ -7,7 +7,7 @@ calledFromVm:
 # ----------------- database rules -----------------
 
 app:
-	composer install --optimize-autoloader
+	composer install
 	bin/console doctrine:migrations:migrate
 	bin/console sy:fi:lo
 
