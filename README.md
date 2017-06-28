@@ -14,7 +14,7 @@ $ cd rd_042_s_monofony.git
 $ ./mzh mzhinstall
 ```
 
-**Note:** Normally, it everything is fine bash completion should be available
+**Note:** Normally, if everything is fine, bash completion should be available
 
 ```
 $ mzh [TAB][TAB]
