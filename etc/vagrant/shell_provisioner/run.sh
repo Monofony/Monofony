@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Shell provisioner
-MODULE_PATH='/vagrant/shell_provisioner/module'
-CONFIG_PATH='/vagrant/shell_provisioner/config'
+PROVISONER_PATH=/vagrant/shell_provisioner
+MODULE_PATH=$PROVISONER_PATH/module
+CONFIG_PATH=$PROVISONER_PATH/config
 
 # IP for the vagrant VM
 GUEST_IP='10.0.0.200'
@@ -21,6 +22,9 @@ DEPENDENCIES=(
     node
 )
 
+source $PROVISONER_PATH/helpers/plog.sh
 for MODULE in ${DEPENDENCIES[@]}; do
+    plog "Entering '$MODULE' provisioning"
     source ${MODULE_PATH}/${MODULE}.sh
+    plog "Finished '$MODULE' provisioning"
 done

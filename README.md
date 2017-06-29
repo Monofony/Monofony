@@ -29,7 +29,7 @@ $ mzh phpunit
 
 ## Getting some help
 
-Run `mzh` to get all available commands and some example
+Run `mzh` to get all available commands and some examples
 
 ```
 $ mzh
@@ -80,8 +80,8 @@ Example:
 user@MacBookPro: ~/dev]$ mzh bootstrap
 LOG_INFO: Now preparing to boostrap a new Mobizel project from monophony
 Please provide the application name (eg. AppName, Wecome, ...) : MyNewApp
-Text to used instead of 'app_name'? [my_new_app] 
-Text to used instead of 'APP_NAME'? [MY_NEW_APP] 
+Text to be used instead of 'app_name'? [my_new_app] 
+Text to be used instead of 'APP_NAME'? [MY_NEW_APP] 
 LOG_INFO: Now ready to start boostrap with following substitutions
   'AppName' → 'MyNewApp'
   'app_name' → 'my_new_app'

@@ -7,7 +7,7 @@
 progName=$0
 scriptTargets=(bootstrap help listcommands mzhinstall mzhversion)
 hostTargets=(clean doc distclean ssh start reboot reload)
-vmTargets=(app behat db phpspec phpunit resetdb testdb tests)
+vmTargets=(appinit appupdate behat db phpspec phpunit resetdb testdb tests)
 
 confDir=/etc/mzh
 
@@ -17,7 +17,7 @@ function listcommands {
 }
 
 function mzhversion {
-  echo "1.1"
+  echo "1.2"
 }
 
 function mzhinstall {
@@ -55,7 +55,8 @@ USAGE: $progName <targets>
 
 Valid targets are:
 
-  app: initialize project (migrate and load fixtures)
+  appinit: initialize project (migrate and load fixtures)
+  appupdate: update project (composer deps, migrations etc.)
   bootstrap: clone monofony, ask some info and create a brand new project
   behat: run behat tests
   clean: stop virtual machine
@@ -102,11 +103,11 @@ function bootstrap {
   appNameWithUnderscore=$(sed -e 's/\([A-Z]\)/_\1/g' -e 's/^_//g' <<< "$new")
   
   appNameLowerWithUnderscore=$(tr '[:upper:]' '[:lower:]' <<< "$appNameWithUnderscore")
-  read -p "Text to used instead of 'app_name'? [$appNameLowerWithUnderscore] " appNameLowerWithUnderscoreUser
+  read -p "Text to be used instead of 'app_name'? [$appNameLowerWithUnderscore] " appNameLowerWithUnderscoreUser
   [ -n "$appNameLowerWithUnderscoreUser" ] && appNameLowerWithUnderscore=appNameLowerWithUnderscoreUser
 
   appNameUpperWithUnderscore=$(tr '[:lower:]' '[:upper:]' <<< "$appNameWithUnderscore")
-  read -p "Text to used instead of 'APP_NAME'? [$appNameUpperWithUnderscore] " appNameUpperWithUnderscoreUser
+  read -p "Text to be used instead of 'APP_NAME'? [$appNameUpperWithUnderscore] " appNameUpperWithUnderscoreUser
   [ -n "$appNameUpperWithUnderscoreUser" ] && appNameUpperWithUnderscore=appNameUpperWithUnderscoreUser
 
   mlog LOG_INFO "Now ready to start boostrap with following substitutions"
