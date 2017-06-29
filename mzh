@@ -51,7 +51,7 @@ function help {
   cat <<EOF
 Build helper to centralize Mobizel projects setup and build commands
 
-USAGE: $progName <targets>
+USAGE: $progName target1 [target2 ...]
 
 Valid targets are:
 
@@ -63,7 +63,7 @@ Valid targets are:
   db: connect to database (command line shell)
   doc: build the documentation
   distclean: deep clean to approach fresh clone
-  mzhinstall: install mbz helper binary in system path
+  mzhinstall: install mzh helper binary in system path
   mzhversion: dump mzh helper version
   phpspec: run phpspec tests
   phpunit: run phpunit tests
@@ -84,6 +84,9 @@ EXAMPLES:
 
 	--- Run behat tests
 	$progName behat
+
+        --- Connect to the mysql database inside the virtual machine
+        $progName db
 EOF
   exit 0
 }
@@ -97,7 +100,7 @@ function mlog {
 function bootstrap {
   local new
   
-  mlog LOG_INFO "Now preparing to boostrap a new Mobizel project from monophony"
+  mlog LOG_INFO "Now preparing to boostrap a new Mobizel project from monofony"
 
   read -p "Please provide the application name (eg. AppName, Wecome, ...) : " new
   appNameWithUnderscore=$(sed -e 's/\([A-Z]\)/_\1/g' -e 's/^_//g' <<< "$new")
@@ -119,11 +122,11 @@ EOF
   read -p "Proceed ? [y/N] " proceed
   if [ $proceed = "y" ] || [ $proceed = "Y" ]; then
     projectDir="mz_000_$appNameLowerWithUnderscore"
-    mlog LOG_INFO "Cloning monophony master into $projectDir directory"
+    mlog LOG_INFO "Cloning monofony master into $projectDir directory"
     git archive --format=tar --prefix=$projectDir/ --remote=git@bitbucket.org:yannick_le_duc/rd_042_s_monofony.git master | tar -x -
 
     mlog LOG_INFO "Replacing all variants of 'AppName'"
-    grep -r -i -l 'appname\|app_name' $projectDir | grep -v 'mbz$' | xargs -I{} sed -i '' "s/AppName/$new/g;s/app_name/$appNameLowerWithUnderscore/g;s/APP_NAME/$appNameUpperWithUnderscore/g" {}
+    grep -r -i -l 'appname\|app_name' $projectDir | grep -v 'mzh$' | xargs -I{} sed -i '' "s/AppName/$new/g;s/app_name/$appNameLowerWithUnderscore/g;s/APP_NAME/$appNameUpperWithUnderscore/g" {}
 
     mlog LOG_INFO "Opening security in app_dev.php"
     sed -i '' "s/'127.0.0.1/'10.0.0.1', '10.0.2.2', '127.0.0.1/g" $projectDir/web/app_dev.php
@@ -136,8 +139,6 @@ EOF
 }
 
 function routing {
-  [ "$1" = "_mbz" ] && return
-  
   ([ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]) && help
   
   inlineScriptTargets=" ${scriptTargets[*]} "
