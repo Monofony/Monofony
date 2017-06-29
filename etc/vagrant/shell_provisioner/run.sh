@@ -22,9 +22,20 @@ DEPENDENCIES=(
     node
 )
 
+APT_CACHE=/home/mobizel/aptCacheDirectory
+
+echo $APT_CACHE/archives
+
+if [ -e "$APT_CACHE" ]; then
+  mkdir -p $APT_CACHE/archives/
+  find $APT_CACHE/archives -name '*.deb' -exec cp -f {} /var/cache/apt/archives/ \;
+fi
+
 source $PROVISONER_PATH/helpers/plog.sh
 for MODULE in ${DEPENDENCIES[@]}; do
     plog "Entering '$MODULE' provisioning"
     source ${MODULE_PATH}/${MODULE}.sh
     plog "Finished '$MODULE' provisioning"
 done
+
+rsync -ua --progress /var/cache/apt/archives/*.deb /home/mobizel/aptCacheDirectory/archives/

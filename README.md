@@ -4,7 +4,7 @@
 
 ## Install mzh command helper in your workstation
 
-`mbz` is an helper to centralize and facilitate some repetitive commands used when developing an application
+`mzh` is an helper to centralize and facilitate some repetitive commands used when developing an application
 Once installed, this helper can be used in any Mobizel project using Vagrant.
 
 ```bash
@@ -27,6 +27,13 @@ $ mzh phpu[TAB]
 $ mzh phpunit
 ```
 
+**Note#2:** Using mzh or direct vagrant commands, you can preserve Internet bandwidth and speed up the virtual machine creation by enabling debian package caching.
+This will use local debian packages if available, and may result in a vm up in ~3m45s instead of ~8m30s (at 400 kB/s)
+```
+$ mkdir ~/dev/debianLocalCache
+```
+
+
 ## Getting some help
 
 Run `mzh` to get all available commands and some examples
@@ -34,19 +41,20 @@ Run `mzh` to get all available commands and some examples
 ```
 $ mzh
 Build helper to centralize Mobizel projects setup and build commands
- 
-USAGE: /usr/local/bin/mzh <targets>
- 
+
+USAGE: /usr/local/bin/mzh target1 [target2 ...]
+
 Valid targets are:
- 
-  app: initialize project (migrate and load fixtures)
+
+  appinit: initialize project (migrate and load fixtures)
+  appupdate: update project (composer deps, migrations etc.)
   bootstrap: clone monofony, ask some info and create a brand new project
   behat: run behat tests
   clean: stop virtual machine
   db: connect to database (command line shell)
   doc: build the documentation
   distclean: deep clean to approach fresh clone
-  mzhinstall: install mbz helper binary in system path
+  mzhinstall: install mzh helper binary in system path
   mzhversion: dump mzh helper version
   phpspec: run phpspec tests
   phpunit: run phpunit tests
@@ -57,16 +65,19 @@ Valid targets are:
   reload: restart machine gracefully
   testdb: setup test database to be able to run phpunit tests
   tests: run all unit tests and save output in logs.txt
- 
+
 EXAMPLES:
 	--- Build vagrant machine, install database and fixtures
 	/usr/local/bin/mzh start app
- 
+
 	--- Run all tests
 	/usr/local/bin/mzh tests
- 
+
 	--- Run behat tests
 	/usr/local/bin/mzh behat
+
+        --- Connect to the mysql database inside the virtual machine
+        /usr/local/bin/mzh db
 ```
 
 ## Bootstrap a fresh new app
@@ -78,7 +89,7 @@ Example:
 
 ```bash
 user@MacBookPro: ~/dev]$ mzh bootstrap
-LOG_INFO: Now preparing to boostrap a new Mobizel project from monophony
+LOG_INFO: Now preparing to boostrap a new Mobizel project from monofony
 Please provide the application name (eg. AppName, Wecome, ...) : MyNewApp
 Text to be used instead of 'app_name'? [my_new_app] 
 Text to be used instead of 'APP_NAME'? [MY_NEW_APP] 
@@ -87,7 +98,7 @@ LOG_INFO: Now ready to start boostrap with following substitutions
   'app_name' → 'my_new_app'
   'APP_NAME' → 'MY_NEW_APP'
 Proceed ? [y/N] y
-LOG_INFO: Cloning monophony master into mz_000_my_new_app directory
+LOG_INFO: Cloning monofony master into mz_000_my_new_app directory
 LOG_INFO: Replacing all variants of 'AppName'
 LOG_INFO: Opening security in app_dev.php
 ```
