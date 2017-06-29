@@ -1,0 +1,185 @@
+#!/bin/bash
+# -*- mode: sh;-*-
+
+# Mobizel commands helper
+# tested with GNU bash, version 4.4.12(1)-release (x86_64-apple-darwin15.6.0)
+
+progName=$0
+scriptTargets=(bootstrap help listcommands mzhinstall mzhversion)
+hostTargets=(clean doc distclean ssh start reboot reload)
+vmTargets=(app behat db phpspec phpunit resetdb testdb tests)
+
+confDir=/etc/mzh
+
+function listcommands {
+  echo ${scriptTargets[@]} ${hostTargets[@]} ${vmTargets[@]}
+  exit 0
+}
+
+function mzhversion {
+  echo "1.1"
+}
+
+function mzhinstall {
+  mlog LOG_INFO "Installing Mobizel helper in /usr/local/bin (sudo required)"
+  sudo cp $0 /usr/local/bin
+  sudo cp -a etc/make $confDir
+  mlog LOG_INFO "mzh command helper can now be called from any Mobizel project root"
+
+  # install completion
+  ! brew ls --versions bash-completion > /dev/null && brew install bash-completion
+  if [ ! -e ~/.bash_profile ] || ! grep -q "bash_completion" ~/.bash_profile; then
+    echo "[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion" >> ~/.bash_profile
+  fi
+
+  mlog LOG_INFO "Installing bash completion"
+  local progName=$(basename "$0")
+  sudo tee /usr/local/etc/bash_completion.d/mzh > /dev/null <<EOF
+_mzh()
+{
+  local cur
+  _get_comp_words_by_ref -n = cur
+  local opts="\$(/usr/local/bin/mzh listcommands)"
+  COMPREPLY=( \$(compgen -W "\$opts" -- "\$cur") )
+} && complete -F _mzh $progName
+EOF
+
+  . ~/.bash_profile
+}
+
+function help {
+  cat <<EOF
+Build helper to centralize Mobizel projects setup and build commands
+
+USAGE: $progName <targets>
+
+Valid targets are:
+
+  app: initialize project (migrate and load fixtures)
+  bootstrap: clone monofony, ask some info and create a brand new project
+  behat: run behat tests
+  clean: stop virtual machine
+  db: connect to database (command line shell)
+  doc: build the documentation
+  distclean: deep clean to approach fresh clone
+  mzhinstall: install mbz helper binary in system path
+  mzhversion: dump mzh helper version
+  phpspec: run phpspec tests
+  phpunit: run phpunit tests
+  ssh: connect a terminal to the virtual machine (command line shell)
+  start: build and start virtual machine
+  reboot: power-off and reboot virtual machine, when it is stuck for example
+  resetdb: drop and reset database
+  reload: restart machine gracefully
+  testdb: setup test database to be able to run phpunit tests
+  tests: run all unit tests and save output in logs.txt
+
+EXAMPLES:
+	--- Build vagrant machine, install database and fixtures
+	$progName start app
+
+	--- Run all tests
+	$progName tests
+
+	--- Run behat tests
+	$progName behat
+EOF
+  exit 0
+}
+
+function mlog {
+  local level=$1
+  shift
+  echo "$level: $*"
+}
+
+function bootstrap {
+  local new
+  
+  mlog LOG_INFO "Now preparing to boostrap a new Mobizel project from monophony"
+
+  read -p "Please provide the application name (eg. AppName, Wecome, ...) : " new
+  appNameWithUnderscore=$(sed -e 's/\([A-Z]\)/_\1/g' -e 's/^_//g' <<< "$new")
+  
+  appNameLowerWithUnderscore=$(tr '[:upper:]' '[:lower:]' <<< "$appNameWithUnderscore")
+  read -p "Text to used instead of 'app_name'? [$appNameLowerWithUnderscore] " appNameLowerWithUnderscoreUser
+  [ -n "$appNameLowerWithUnderscoreUser" ] && appNameLowerWithUnderscore=appNameLowerWithUnderscoreUser
+
+  appNameUpperWithUnderscore=$(tr '[:lower:]' '[:upper:]' <<< "$appNameWithUnderscore")
+  read -p "Text to used instead of 'APP_NAME'? [$appNameUpperWithUnderscore] " appNameUpperWithUnderscoreUser
+  [ -n "$appNameUpperWithUnderscoreUser" ] && appNameUpperWithUnderscore=appNameUpperWithUnderscoreUser
+
+  mlog LOG_INFO "Now ready to start boostrap with following substitutions"
+  cat <<EOF
+  'AppName' → '$new'
+  'app_name' → '$appNameLowerWithUnderscore'
+  'APP_NAME' → '$appNameUpperWithUnderscore'
+EOF
+  read -p "Proceed ? [y/N] " proceed
+  if [ $proceed = "y" ] || [ $proceed = "Y" ]; then
+    projectDir="mz_000_$appNameLowerWithUnderscore"
+    mlog LOG_INFO "Cloning monophony master into $projectDir directory"
+    git archive --format=tar --prefix=$projectDir/ --remote=git@bitbucket.org:yannick_le_duc/rd_042_s_monofony.git master | tar -x -
+
+    mlog LOG_INFO "Replacing all variants of 'AppName'"
+    grep -r -i -l 'appname\|app_name' $projectDir | grep -v 'mbz$' | xargs -I{} sed -i '' "s/AppName/$new/g;s/app_name/$appNameLowerWithUnderscore/g;s/APP_NAME/$appNameUpperWithUnderscore/g" {}
+
+    mlog LOG_INFO "Opening security in app_dev.php"
+    sed -i '' "s/'127.0.0.1/'10.0.0.1', '10.0.2.2', '127.0.0.1/g" $projectDir/web/app_dev.php
+
+  else
+    mlog LOG_INFO "Bootstrap cancelled by user"
+  fi  
+
+  exit 0
+}
+
+function routing {
+  [ "$1" = "_mbz" ] && return
+  
+  ([ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]) && help
+  
+  inlineScriptTargets=" ${scriptTargets[*]} "
+  inlineHostTargets=" ${hostTargets[*]} "
+  inlineVmTargets=" ${vmTargets[*]} "
+  for target in $@; do
+    [[ $inlineScriptTargets =~ " $target " ]] && scriptsTargetsToRun+=($target)
+    [[ $inlineHostTargets =~ " $target " ]] && hostTargetsToRun+=($target)
+    [[ $inlineVmTargets =~ " $target " ]] && vmTargetsToRun+=($target)
+  done
+
+  if [ ${#scriptsTargetsToRun[@]} -gt 0 ]; then
+    for target in ${scriptsTargetsToRun[@]}; do
+      #mlog LOG_DEBUG "Calling $target function of current script"
+      $target
+    done
+  fi
+
+  [ ! -e etc/vagrant ] && mlog LOG_ERROR "This program must be run from the root of a Mobizel project" && exit 1
+
+  projectName=$(perl -nle 'print $1 while /database_host:\s*(.*)\.dev/g' ./app/config/parameters.yml)
+  
+  if [ ${#hostTargetsToRun[@]} -gt 0 ]; then
+    if [ -e /home/vagrant ]; then
+      mlog LOG_WARNING "Skipping host targets since we are in the virtual machine (${hostTargetsToRun[@]})"
+    else
+      hostMake=Makefile.host
+      makeFile=etc/make/$hostMake
+      [ ! -e $makeFile ] && makeFile=$confDir/$hostMake
+      
+      mlog LOG_DEBUG "Now running these targets on host: ${hostTargetsToRun[@]}"
+      make -f $makeFile ${hostTargetsToRun[*]}
+    fi
+  fi
+
+  if [ ${#vmTargetsToRun[@]} -gt 0 ]; then
+    vmMake=Makefile.vm
+    makeFile=etc/make/$vmMake
+    [ ! -e $makeFile ] && mkdir -p etc/make && $confDir/$vmMake etc/make/
+    
+    mlog LOG_DEBUG "Now running these targets inside the virtual machine: ${vmTargetsToRun[@]}"
+    VAGRANT_CWD=etc/vagrant vagrant ssh -c "PROJECT=$projectName make -C /var/www/$projectName -f etc/make/Makefile.vm ${vmTargetsToRun[*]}"
+  fi
+}
+
+routing "$@"
