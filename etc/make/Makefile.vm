@@ -1,12 +1,15 @@
 
-.PHONY: calledFromVm app db resetdb testdb tests phpspec phpunit behat
+.PHONY: calledFromVm appinit appupdate db resetdb testdb tests phpspec phpunit behat
 
 calledFromVm:
 	[ -e /home/vagrant ]
 
 # ----------------- database rules -----------------
 
-app:
+appinit:
+	bin/console app:install --mode=fixture --no-interaction
+
+appupdate:
 	composer install
 	bin/console doctrine:migrations:migrate
 	bin/console sy:fi:lo

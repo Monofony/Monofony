@@ -1,10 +1,6 @@
 #!/bin/bash
 
-cd /var/www/app_name
+source /vagrant/shell_provisioner/helpers/plog.sh
 
-composer install --optimize-autoloader
-
-#php app/console app:install --no-interaction
-#npm rebuild node-sass
-#npm install
-#./node_modules/.bin/gulp
+plog "Installing application app_name with composer"
+composer install -vvv -d /var/www/app_name --optimize-autoloader

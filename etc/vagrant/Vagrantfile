@@ -1,7 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'fileutils'
+
 VAGRANTFILE_API_VERSION = "2"
+
+APT_CACHE_DIRECTORY = File.expand_path('~/dev/debianLocalCache')
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define :app_name do |app_name_config|
@@ -14,14 +18,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
 
         app_name_config.vm.synced_folder "./../../", "/var/www/app_name", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp', 'fsc', 'nolock', 'actimeo=2']
+
+        if File.exists? APT_CACHE_DIRECTORY then
+            app_name_config.vm.synced_folder APT_CACHE_DIRECTORY, "/home/mobizel/aptCacheDirectory", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp', 'fsc', 'nolock', 'actimeo=2']
+        end
+
         app_name_config.vm.network "private_network", ip: "10.0.0.200"
         if (ENV['MBZ_PROJ_ID'] != nil) then
-            wecome_config.vm.network "forwarded_port", guest: 80, host: ("8" + ENV['MBZ_PROJ_ID']).to_i
-            wecome_config.vm.network "forwarded_port", guest: 22, host: ("22" + ENV['MBZ_PROJ_ID']).to_i
+            app_name_config.vm.network "forwarded_port", guest: 80, host: ("8" + ENV['MBZ_PROJ_ID']).to_i
+            app_name_config.vm.network "forwarded_port", guest: 22, host: ("22" + ENV['MBZ_PROJ_ID']).to_i
         end
 
         # Shell provisioning
         app_name_config.vm.provision :shell, :path => "shell_provisioner/run.sh"
         app_name_config.vm.provision :shell, privileged: false, path: "shell_provisioner/module/app.sh"
+
+        app_name_config.vm.provision :shell, privileged: false, inline: <<-EOF
+          echo "Virtual machine provisioned and started"
+          echo "Now, you can run `mzh appinit` from project root to build database and load fixtures"
+          echo "And, then connect to http://app_name.dev/app_dev.php"
+        EOF
     end
 end
