@@ -38,4 +38,6 @@ for MODULE in ${DEPENDENCIES[@]}; do
     plog "Finished '$MODULE' provisioning"
 done
 
-rsync -ua --progress /var/cache/apt/archives/*.deb /home/mobizel/aptCacheDirectory/archives/
+if [ -e "$APT_CACHE" ]; then
+  rsync -ua --progress /var/cache/apt/archives/*.deb /home/mobizel/aptCacheDirectory/archives/
+fi
