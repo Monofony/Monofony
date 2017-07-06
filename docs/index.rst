@@ -2,7 +2,7 @@ AppName Documentation
 =====================
 
 .. image:: /_images/logo.png
-   :alt:   Jedisjeux Welcome Page
+   :alt:   AppName Welcome Page
 
 `AppName`_ is a project based on
 `Symfony Framework`_ and `Sylius`_.
