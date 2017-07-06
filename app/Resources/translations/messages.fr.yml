@@ -1,14 +1,14 @@
 app:
     ui:
         addresses: Adresses
-        manage_addresses: Gérer les adresses
-        new_address: Nouvelle adresse
+        create_user: Créer un utilisateur
         edit_address: Modifier l'adresse
         forgotten_password: Mot de passe oublié
         legal_notices: Mentions légales
+        manage_addresses: Gérer les adresses
+        new_address: Nouvelle adresse
         overview_of_your_website: Aperçu de votre site web
         validate: Valider
-        create_user: Créer un utilisateur
     text:
         error:
             500:
