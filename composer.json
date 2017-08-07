@@ -35,7 +35,7 @@
         "sonata-project/block-bundle": "^3.3",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/symfony": "3.3.0",
+        "symfony/symfony": "3.3.*",
         "symfony/monolog-bundle": "~2.4",
         "sylius/customer-bundle": "^1.0",
         "sylius/fixtures-bundle": "^v1.0",
