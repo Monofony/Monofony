@@ -2,7 +2,6 @@ app_backend_address:
     resource: |
         alias: app.address
         section: backend
-        templates: :backend/crud
         except: ['show']
         redirect: index
         grid: app_backend_address
@@ -13,4 +12,6 @@ app_backend_address:
                     form: backend/address/_form.html.twig
             index:
                 icon: map
+        templates: :backend/crud
     type: sylius.resource
+
