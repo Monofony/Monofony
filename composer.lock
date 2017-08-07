@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5d4a8428ddbdefb6e17b4b15e9dc370",
+    "content-hash": "73143b2d34297719238f81c64a2845c8",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -6903,16 +6903,16 @@
         },
         {
             "name": "lbaey/chromedriver",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lbaey/chromedriver.git",
-                "reference": "b72ba160913467816aa27ae7d56a424c5a078a07"
+                "reference": "6c22532a2df255f7ececbbfae25995a2e15309df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lbaey/chromedriver/zipball/b72ba160913467816aa27ae7d56a424c5a078a07",
-                "reference": "b72ba160913467816aa27ae7d56a424c5a078a07",
+                "url": "https://api.github.com/repos/lbaey/chromedriver/zipball/6c22532a2df255f7ececbbfae25995a2e15309df",
+                "reference": "6c22532a2df255f7ececbbfae25995a2e15309df",
                 "shasum": ""
             },
             "require": {
@@ -6951,7 +6951,7 @@
                 "selenium",
                 "windows"
             ],
-            "time": "2017-06-20 10:18:38"
+            "time": "2017-06-20T10:08:50+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8558,8 +8558,7 @@
         "behat/mink-extension": 20,
         "behat/mink-browserkit-driver": 20,
         "behat/mink-selenium2-driver": 20,
-        "behat/mink": 20,
-        "lbaey/chromedriver": 20
+        "behat/mink": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

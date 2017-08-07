@@ -57,7 +57,7 @@
         "behat/mink": "~1.6@dev",
         "friends-of-behat/performance-extension": "^1.0",
         "lakion/api-test-case": "^1.1",
-        "lbaey/chromedriver": "dev-master",
+        "lbaey/chromedriver": "^1.0",
         "phpspec/phpspec": "^3.0",
         "se/selenium-server-standalone": " ^2.52",
         "sensio/generator-bundle": "~3.1"
