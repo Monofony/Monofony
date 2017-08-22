@@ -23,6 +23,1371 @@ i.on("click"+E,n)):w.error(P.notFound,t)},show:function(t){if(t=e.isFunction(t)?
 y="module-"+m.namespace,g=w.data(y)||C,b=C.get.animationEndEvent(),f&&(f=C.invoke(u)),f===!1&&(C.verbose("Converted arguments into settings object",m),m.interval?C.delay(m.animate):C.animate(),C.instantiate())},instantiate:function(){C.verbose("Storing instance of module",C),g=C,w.data(y,g)},destroy:function(){C.verbose("Destroying previous module for",k),w.removeData(y)},refresh:function(){C.verbose("Refreshing display type on next animation"),delete C.displayType},forceRepaint:function(){C.verbose("Forcing element repaint");var e=w.parent(),t=w.next();0===t.length?w.detach().appendTo(e):w.detach().insertBefore(t)},repaint:function(){C.verbose("Repainting element");k.offsetWidth},delay:function(e){var n,o,r=C.get.animationDirection();r||(r=C.can.transition()?C.get.direction():"static"),e=e!==i?e:m.interval,n="auto"==m.reverse&&r==h.outward,o=n||1==m.reverse?(a.length-t)*m.interval:t*m.interval,C.debug("Delaying animation by",o),setTimeout(C.animate,o)},animate:function(e){if(m=e||m,!C.is.supported())return C.error(p.support),!1;if(C.debug("Preparing animation",m.animation),C.is.animating()){if(m.queue)return!m.allowRepeats&&C.has.direction()&&C.is.occurring()&&C.queuing!==!0?C.debug("Animation is currently occurring, preventing queueing same animation",m.animation):C.queue(m.animation),!1;if(!m.allowRepeats&&C.is.occurring())return C.debug("Animation is already occurring, will not execute repeated animation",m.animation),!1;C.debug("New animation started, completing previous early",m.animation),g.complete()}C.can.animate()?C.set.animating(m.animation):C.error(p.noAnimation,m.animation,k)},reset:function(){C.debug("Resetting animation to beginning conditions"),C.remove.animationCallbacks(),C.restore.conditions(),C.remove.animating()},queue:function(e){C.debug("Queueing animation of",e),C.queuing=!0,w.one(b+".queue"+x,function(){C.queuing=!1,C.repaint(),C.animate.apply(this,m)})},complete:function(e){C.debug("Animation complete",m.animation),C.remove.completeCallback(),C.remove.failSafe(),C.is.looping()||(C.is.outward()?(C.verbose("Animation is outward, hiding element"),C.restore.conditions(),C.hide()):C.is.inward()?(C.verbose("Animation is outward, showing element"),C.restore.conditions(),C.show()):(C.verbose("Static animation completed"),C.restore.conditions(),m.onComplete.call(k)))},force:{visible:function(){var e=w.attr("style"),t=C.get.userStyle(),n=C.get.displayType(),o=t+"display: "+n+" !important;",a=w.css("display"),r=e===i||""===e;a!==n?(C.verbose("Overriding default display to show element",n),w.attr("style",o)):r&&w.removeAttr("style")},hidden:function(){var e=w.attr("style"),t=w.css("display"),n=e===i||""===e;"none"===t||C.is.hidden()?n&&w.removeAttr("style"):(C.verbose("Overriding default display to hide element"),w.css("display","none"))}},has:{direction:function(t){var n=!1;return t=t||m.animation,"string"==typeof t&&(t=t.split(" "),e.each(t,function(e,t){t!==h.inward&&t!==h.outward||(n=!0)})),n},inlineDisplay:function(){var t=w.attr("style")||"";return e.isArray(t.match(/display.*?;/,""))}},set:{animating:function(e){var t;C.remove.completeCallback(),e=e||m.animation,t=C.get.animationClass(e),C.save.animation(t),C.force.visible(),C.remove.hidden(),C.remove.direction(),C.start.animation(t)},duration:function(e,t){t=t||m.duration,t="number"==typeof t?t+"ms":t,(t||0===t)&&(C.verbose("Setting animation duration",t),w.css({"animation-duration":t}))},direction:function(e){e=e||C.get.direction(),e==h.inward?C.set.inward():C.set.outward()},looping:function(){C.debug("Transition set to loop"),w.addClass(h.looping)},hidden:function(){w.addClass(h.transition).addClass(h.hidden)},inward:function(){C.debug("Setting direction to inward"),w.removeClass(h.outward).addClass(h.inward)},outward:function(){C.debug("Setting direction to outward"),w.removeClass(h.inward).addClass(h.outward)},visible:function(){w.addClass(h.transition).addClass(h.visible)}},start:{animation:function(e){e=e||C.get.animationClass(),C.debug("Starting tween",e),w.addClass(e).one(b+".complete"+x,C.complete),m.useFailSafe&&C.add.failSafe(),C.set.duration(m.duration),m.onStart.call(k)}},save:{animation:function(e){C.cache||(C.cache={}),C.cache.animation=e},displayType:function(e){"none"!==e&&w.data(v.displayType,e)},transitionExists:function(t,n){e.fn.transition.exists[t]=n,C.verbose("Saving existence of transition",t,n)}},restore:{conditions:function(){var e=C.get.currentAnimation();e&&(w.removeClass(e),C.verbose("Removing animation class",C.cache)),C.remove.duration()}},add:{failSafe:function(){var e=C.get.duration();C.timer=setTimeout(function(){w.triggerHandler(b)},e+m.failSafeDelay),C.verbose("Adding fail safe timer",C.timer)}},remove:{animating:function(){w.removeClass(h.animating)},animationCallbacks:function(){C.remove.queueCallback(),C.remove.completeCallback()},queueCallback:function(){w.off(".queue"+x)},completeCallback:function(){w.off(".complete"+x)},display:function(){w.css("display","")},direction:function(){w.removeClass(h.inward).removeClass(h.outward)},duration:function(){w.css("animation-duration","")},failSafe:function(){C.verbose("Removing fail safe timer",C.timer),C.timer&&clearTimeout(C.timer)},hidden:function(){w.removeClass(h.hidden)},visible:function(){w.removeClass(h.visible)},looping:function(){C.debug("Transitions are no longer looping"),C.is.looping()&&(C.reset(),w.removeClass(h.looping))},transition:function(){w.removeClass(h.visible).removeClass(h.hidden)}},get:{settings:function(t,n,i){return"object"==typeof t?e.extend(!0,{},e.fn.transition.settings,t):"function"==typeof i?e.extend({},e.fn.transition.settings,{animation:t,onComplete:i,duration:n}):"string"==typeof n||"number"==typeof n?e.extend({},e.fn.transition.settings,{animation:t,duration:n}):"object"==typeof n?e.extend({},e.fn.transition.settings,n,{animation:t}):"function"==typeof n?e.extend({},e.fn.transition.settings,{animation:t,onComplete:n}):e.extend({},e.fn.transition.settings,{animation:t})},animationClass:function(e){var t=e||m.animation,n=C.can.transition()&&!C.has.direction()?C.get.direction()+" ":"";return h.animating+" "+h.transition+" "+n+t},currentAnimation:function(){return!(!C.cache||C.cache.animation===i)&&C.cache.animation},currentDirection:function(){return C.is.inward()?h.inward:h.outward},direction:function(){return C.is.hidden()||!C.is.visible()?h.inward:h.outward},animationDirection:function(t){var n;return t=t||m.animation,"string"==typeof t&&(t=t.split(" "),e.each(t,function(e,t){t===h.inward?n=h.inward:t===h.outward&&(n=h.outward)})),!!n&&n},duration:function(e){return e=e||m.duration,e===!1&&(e=w.css("animation-duration")||0),"string"==typeof e?e.indexOf("ms")>-1?parseFloat(e):1e3*parseFloat(e):e},displayType:function(){return m.displayType?m.displayType:(w.data(v.displayType)===i&&C.can.transition(!0),w.data(v.displayType))},userStyle:function(e){return e=e||w.attr("style")||"",e.replace(/display.*?;/,"")},transitionExists:function(t){return e.fn.transition.exists[t]},animationStartEvent:function(){var e,t=n.createElement("div"),o={animation:"animationstart",OAnimation:"oAnimationStart",MozAnimation:"mozAnimationStart",WebkitAnimation:"webkitAnimationStart"};for(e in o)if(t.style[e]!==i)return o[e];return!1},animationEndEvent:function(){var e,t=n.createElement("div"),o={animation:"animationend",OAnimation:"oAnimationEnd",MozAnimation:"mozAnimationEnd",WebkitAnimation:"webkitAnimationEnd"};for(e in o)if(t.style[e]!==i)return o[e];return!1}},can:{transition:function(t){var n,o,a,r,s,l,c,u=m.animation,d=C.get.transitionExists(u);if(d===i||t){if(C.verbose("Determining whether animation exists"),n=w.attr("class"),o=w.prop("tagName"),a=e("<"+o+" />").addClass(n).insertAfter(w),r=a.addClass(u).removeClass(h.inward).removeClass(h.outward).addClass(h.animating).addClass(h.transition).css("animationName"),s=a.addClass(h.inward).css("animationName"),c=a.attr("class",n).removeAttr("style").removeClass(h.hidden).removeClass(h.visible).show().css("display"),C.verbose("Determining final display state",c),C.save.displayType(c),a.remove(),r!=s)C.debug("Direction exists for animation",u),l=!0;else{if("none"==r||!r)return void C.debug("No animation defined in css",u);C.debug("Static animation found",u,c),l=!1}C.save.transitionExists(u,l)}return d!==i?d:l},animate:function(){return C.can.transition()!==i}},is:{animating:function(){return w.hasClass(h.animating)},inward:function(){return w.hasClass(h.inward)},outward:function(){return w.hasClass(h.outward)},looping:function(){return w.hasClass(h.looping)},occurring:function(e){return e=e||m.animation,e="."+e.replace(" ","."),w.filter(e).length>0},visible:function(){return w.is(":visible")},hidden:function(){return"hidden"===w.css("visibility")},supported:function(){return b!==!1}},hide:function(){C.verbose("Hiding element"),C.is.animating()&&C.reset(),k.blur(),C.remove.display(),C.remove.visible(),C.set.hidden(),C.force.hidden(),m.onHide.call(k),m.onComplete.call(k)},show:function(e){C.verbose("Showing element",e),C.remove.hidden(),C.set.visible(),C.force.visible(),m.onShow.call(k),m.onComplete.call(k)},toggle:function(){C.is.visible()?C.hide():C.show()},stop:function(){C.debug("Stopping current animation"),w.triggerHandler(b)},stopAll:function(){C.debug("Stopping all animation"),C.remove.queueCallback(),w.triggerHandler(b)},clear:{queue:function(){C.debug("Clearing animation queue"),C.remove.queueCallback()}},enable:function(){C.verbose("Starting animation"),w.removeClass(h.disabled)},disable:function(){C.debug("Stopping animation"),w.addClass(h.disabled)},setting:function(t,n){if(C.debug("Changing setting",t,n),e.isPlainObject(t))e.extend(!0,m,t);else{if(n===i)return m[t];e.isPlainObject(m[t])?e.extend(!0,m[t],n):m[t]=n}},internal:function(t,n){if(e.isPlainObject(t))e.extend(!0,C,t);else{if(n===i)return C[t];C[t]=n}},debug:function(){!m.silent&&m.debug&&(m.performance?C.performance.log(arguments):(C.debug=Function.prototype.bind.call(console.info,console,m.name+":"),C.debug.apply(console,arguments)))},verbose:function(){!m.silent&&m.verbose&&m.debug&&(m.performance?C.performance.log(arguments):(C.verbose=Function.prototype.bind.call(console.info,console,m.name+":"),C.verbose.apply(console,arguments)))},error:function(){m.silent||(C.error=Function.prototype.bind.call(console.error,console,m.name+":"),C.error.apply(console,arguments))},performance:{log:function(e){var t,n,i;m.performance&&(t=(new Date).getTime(),i=s||t,n=t-i,s=t,l.push({Name:e[0],Arguments:[].slice.call(e,1)||"",Element:k,"Execution Time":n})),clearTimeout(C.performance.timer),C.performance.timer=setTimeout(C.performance.display,500)},display:function(){var t=m.name+":",n=0;s=!1,clearTimeout(C.performance.timer),e.each(l,function(e,t){n+=t["Execution Time"]}),t+=" "+n+"ms",r&&(t+=" '"+r+"'"),a.length>1&&(t+=" ("+a.length+")"),(console.group!==i||console.table!==i)&&l.length>0&&(console.groupCollapsed(t),console.table?console.table(l):e.each(l,function(e,t){console.log(t.Name+": "+t["Execution Time"]+"ms")}),console.groupEnd()),l=[]}},invoke:function(t,n,a){var r,s,l,c=g;return n=n||d,a=k||a,"string"==typeof t&&c!==i&&(t=t.split(/[\. ]/),r=t.length-1,e.each(t,function(n,o){var a=n!=r?o+t[n+1].charAt(0).toUpperCase()+t[n+1].slice(1):t;if(e.isPlainObject(c[a])&&n!=r)c=c[a];else{if(c[a]!==i)return s=c[a],!1;if(!e.isPlainObject(c[o])||n==r)return c[o]!==i&&(s=c[o],!1);c=c[o]}})),e.isFunction(s)?l=s.apply(a,n):s!==i&&(l=s),e.isArray(o)?o.push(l):o!==i?o=[o,l]:l!==i&&(o=l),s!==i&&s}},C.initialize()}),o!==i?o:this},e.fn.transition.exists={},e.fn.transition.settings={name:"Transition",silent:!1,debug:!1,verbose:!1,performance:!0,namespace:"transition",interval:0,reverse:"auto",onStart:function(){},onComplete:function(){},onShow:function(){},onHide:function(){},useFailSafe:!0,failSafeDelay:100,allowRepeats:!1,displayType:!1,animation:"fade",duration:!1,queue:!0,metadata:{displayType:"display"},className:{animating:"animating",disabled:"disabled",hidden:"hidden",inward:"in",loading:"loading",looping:"looping",outward:"out",transition:"transition",visible:"visible"},error:{noAnimation:"Element is no longer attached to DOM. Unable to animate.  Use silent setting to surpress this warning in production.",repeated:"That animation is already occurring, cancelling repeated animation",method:"The method you called is not defined",support:"This browser does not support CSS animations"}}}(jQuery,window,document),function(e,t,n,i){"use strict";var t="undefined"!=typeof t&&t.Math==Math?t:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();e.api=e.fn.api=function(n){var o,a=e(e.isFunction(this)?t:this),r=a.selector||"",s=(new Date).getTime(),l=[],c=arguments[0],u="string"==typeof c,d=[].slice.call(arguments,1);return a.each(function(){var a,f,m,g,p,h,v=e.isPlainObject(n)?e.extend(!0,{},e.fn.api.settings,n):e.extend({},e.fn.api.settings),b=v.namespace,y=v.metadata,x=v.selector,C=v.error,w=v.className,k="."+b,S="module-"+b,T=e(this),A=T.closest(x.form),R=v.stateContext?e(v.stateContext):T,P=this,E=R[0],F=T.data(S);h={initialize:function(){u||h.bind.events(),h.instantiate()},instantiate:function(){h.verbose("Storing instance of module",h),F=h,T.data(S,F)},destroy:function(){h.verbose("Destroying previous module for",P),T.removeData(S).off(k)},bind:{events:function(){var e=h.get.event();e?(h.verbose("Attaching API events to element",e),T.on(e+k,h.event.trigger)):"now"==v.on&&(h.debug("Querying API endpoint immediately"),h.query())}},decode:{json:function(e){if(e!==i&&"string"==typeof e)try{e=JSON.parse(e)}catch(t){}return e}},read:{cachedResponse:function(e){var n;return t.Storage===i?void h.error(C.noStorage):(n=sessionStorage.getItem(e),h.debug("Using cached response",e,n),n=h.decode.json(n))}},write:{cachedResponse:function(n,o){return o&&""===o?void h.debug("Response empty, not caching",o):t.Storage===i?void h.error(C.noStorage):(e.isPlainObject(o)&&(o=JSON.stringify(o)),sessionStorage.setItem(n,o),void h.verbose("Storing cached response for url",n,o))}},query:function(){if(h.is.disabled())return void h.debug("Element is disabled API request aborted");if(h.is.loading()){if(!v.interruptRequests)return void h.debug("Cancelling request, previous request is still pending");h.debug("Interrupting previous request"),h.abort()}return v.defaultData&&e.extend(!0,v.urlData,h.get.defaultData()),v.serializeForm&&(v.data=h.add.formData(v.data)),f=h.get.settings(),f===!1?(h.cancelled=!0,void h.error(C.beforeSend)):(h.cancelled=!1,m=h.get.templatedURL(),m||h.is.mocked()?(m=h.add.urlData(m),m||h.is.mocked()?(f.url=v.base+m,a=e.extend(!0,{},v,{type:v.method||v.type,data:g,url:v.base+m,beforeSend:v.beforeXHR,success:function(){},failure:function(){},complete:function(){}}),h.debug("Querying URL",a.url),h.verbose("Using AJAX settings",a),"local"===v.cache&&h.read.cachedResponse(m)?(h.debug("Response returned from local cache"),h.request=h.create.request(),void h.request.resolveWith(E,[h.read.cachedResponse(m)])):void(v.throttle?v.throttleFirstRequest||h.timer?(h.debug("Throttling request",v.throttle),clearTimeout(h.timer),h.timer=setTimeout(function(){h.timer&&delete h.timer,h.debug("Sending throttled request",g,a.method),h.send.request()},v.throttle)):(h.debug("Sending request",g,a.method),h.send.request(),h.timer=setTimeout(function(){},v.throttle)):(h.debug("Sending request",g,a.method),h.send.request()))):void 0):void h.error(C.missingURL))},should:{removeError:function(){return v.hideError===!0||"auto"===v.hideError&&!h.is.form()}},is:{disabled:function(){return T.filter(x.disabled).length>0},expectingJSON:function(){return"json"===v.dataType||"jsonp"===v.dataType},form:function(){return T.is("form")||R.is("form")},mocked:function(){return v.mockResponse||v.mockResponseAsync||v.response||v.responseAsync},input:function(){return T.is("input")},loading:function(){return!!h.request&&"pending"==h.request.state()},abortedRequest:function(e){return e&&e.readyState!==i&&0===e.readyState?(h.verbose("XHR request determined to be aborted"),!0):(h.verbose("XHR request was not aborted"),!1)},validResponse:function(t){return h.is.expectingJSON()&&e.isFunction(v.successTest)?(h.debug("Checking JSON returned success",v.successTest,t),v.successTest(t)?(h.debug("Response passed success test",t),!0):(h.debug("Response failed success test",t),!1)):(h.verbose("Response is not JSON, skipping validation",v.successTest,t),!0)}},was:{cancelled:function(){return h.cancelled||!1},succesful:function(){return h.request&&"resolved"==h.request.state()},failure:function(){return h.request&&"rejected"==h.request.state()},complete:function(){return h.request&&("resolved"==h.request.state()||"rejected"==h.request.state())}},add:{urlData:function(t,n){var o,a;return t&&(o=t.match(v.regExp.required),a=t.match(v.regExp.optional),n=n||v.urlData,o&&(h.debug("Looking for required URL variables",o),e.each(o,function(o,a){var r=a.indexOf("$")!==-1?a.substr(2,a.length-3):a.substr(1,a.length-2),s=e.isPlainObject(n)&&n[r]!==i?n[r]:T.data(r)!==i?T.data(r):R.data(r)!==i?R.data(r):n[r];return s===i?(h.error(C.requiredParameter,r,t),t=!1,!1):(h.verbose("Found required variable",r,s),s=v.encodeParameters?h.get.urlEncodedValue(s):s,t=t.replace(a,s),void 0)})),a&&(h.debug("Looking for optional URL variables",o),e.each(a,function(o,a){var r=a.indexOf("$")!==-1?a.substr(3,a.length-4):a.substr(2,a.length-3),s=e.isPlainObject(n)&&n[r]!==i?n[r]:T.data(r)!==i?T.data(r):R.data(r)!==i?R.data(r):n[r];s!==i?(h.verbose("Optional variable Found",r,s),t=t.replace(a,s)):(h.verbose("Optional variable not found",r),t=t.indexOf("/"+a)!==-1?t.replace("/"+a,""):t.replace(a,""))}))),t},formData:function(t){var n,o=e.fn.serializeObject!==i,a=o?A.serializeObject():A.serialize();return t=t||v.data,n=e.isPlainObject(t),n?o?(h.debug("Extending existing data with form data",t,a),t=e.extend(!0,{},t,a)):(h.error(C.missingSerialize),h.debug("Cant extend data. Replacing data with form data",t,a),t=a):(h.debug("Adding form data",a),t=a),t}},send:{request:function(){h.set.loading(),h.request=h.create.request(),h.is.mocked()?h.mockedXHR=h.create.mockedXHR():h.xhr=h.create.xhr(),v.onRequest.call(E,h.request,h.xhr)}},event:{trigger:function(e){h.query(),"submit"!=e.type&&"click"!=e.type||e.preventDefault()},xhr:{always:function(){},done:function(t,n,i){var o=this,a=(new Date).getTime()-p,r=v.loadingDuration-a,s=!!e.isFunction(v.onResponse)&&(h.is.expectingJSON()?v.onResponse.call(o,e.extend(!0,{},t)):v.onResponse.call(o,t));r=r>0?r:0,s&&(h.debug("Modified API response in onResponse callback",v.onResponse,s,t),t=s),r>0&&h.debug("Response completed early delaying state change by",r),setTimeout(function(){h.is.validResponse(t)?h.request.resolveWith(o,[t,i]):h.request.rejectWith(o,[i,"invalid"])},r)},fail:function(e,t,n){var i=this,o=(new Date).getTime()-p,a=v.loadingDuration-o;a=a>0?a:0,a>0&&h.debug("Response completed early delaying state change by",a),setTimeout(function(){h.is.abortedRequest(e)?h.request.rejectWith(i,[e,"aborted",n]):h.request.rejectWith(i,[e,"error",t,n])},a)}},request:{done:function(e,t){h.debug("Successful API Response",e),"local"===v.cache&&m&&(h.write.cachedResponse(m,e),h.debug("Saving server response locally",h.cache)),v.onSuccess.call(E,e,T,t)},complete:function(e,t){var n,i;h.was.succesful()?(i=e,n=t):(n=e,i=h.get.responseFromXHR(n)),h.remove.loading(),v.onComplete.call(E,i,T,n)},fail:function(e,t,n){var o=h.get.responseFromXHR(e),r=h.get.errorFromRequest(o,t,n);return"aborted"==t?(h.debug("XHR Aborted (Most likely caused by page navigation or CORS Policy)",t,n),v.onAbort.call(E,t,T,e),!0):("invalid"==t?h.debug("JSON did not pass success test. A server-side error has most likely occurred",o):"error"==t&&e!==i&&(h.debug("XHR produced a server error",t,n),200!=e.status&&n!==i&&""!==n&&h.error(C.statusMessage+n,a.url),v.onError.call(E,r,T,e)),v.errorDuration&&"aborted"!==t&&(h.debug("Adding error state"),h.set.error(),h.should.removeError()&&setTimeout(h.remove.error,v.errorDuration)),h.debug("API Request failed",r,e),void v.onFailure.call(E,o,T,e))}}},create:{request:function(){return e.Deferred().always(h.event.request.complete).done(h.event.request.done).fail(h.event.request.fail)},mockedXHR:function(){var t,n,i,o=!1,a=!1,r=!1,s=v.mockResponse||v.response,l=v.mockResponseAsync||v.responseAsync;return i=e.Deferred().always(h.event.xhr.complete).done(h.event.xhr.done).fail(h.event.xhr.fail),s?(e.isFunction(s)?(h.debug("Using specified synchronous callback",s),n=s.call(E,f)):(h.debug("Using settings specified response",s),n=s),i.resolveWith(E,[n,o,{responseText:n}])):e.isFunction(l)&&(t=function(e){h.debug("Async callback returned response",e),e?i.resolveWith(E,[e,o,{responseText:e}]):i.rejectWith(E,[{responseText:e},a,r])},h.debug("Using specified async response callback",l),l.call(E,f,t)),i},xhr:function(){var t;return t=e.ajax(a).always(h.event.xhr.always).done(h.event.xhr.done).fail(h.event.xhr.fail),h.verbose("Created server request",t,a),t}},set:{error:function(){h.verbose("Adding error state to element",R),R.addClass(w.error)},loading:function(){h.verbose("Adding loading state to element",R),R.addClass(w.loading),p=(new Date).getTime()}},remove:{error:function(){h.verbose("Removing error state from element",R),R.removeClass(w.error)},loading:function(){h.verbose("Removing loading state from element",R),R.removeClass(w.loading)}},get:{responseFromXHR:function(t){return!!e.isPlainObject(t)&&(h.is.expectingJSON()?h.decode.json(t.responseText):t.responseText)},errorFromRequest:function(t,n,o){return e.isPlainObject(t)&&t.error!==i?t.error:v.error[n]!==i?v.error[n]:o},request:function(){return h.request||!1},xhr:function(){return h.xhr||!1},settings:function(){var t;return t=v.beforeSend.call(E,v),t&&(t.success!==i&&(h.debug("Legacy success callback detected",t),h.error(C.legacyParameters,t.success),t.onSuccess=t.success),t.failure!==i&&(h.debug("Legacy failure callback detected",t),h.error(C.legacyParameters,t.failure),t.onFailure=t.failure),t.complete!==i&&(h.debug("Legacy complete callback detected",t),h.error(C.legacyParameters,t.complete),t.onComplete=t.complete)),t===i&&h.error(C.noReturnedValue),t===!1?t:t!==i?e.extend(!0,{},t):e.extend(!0,{},v)},urlEncodedValue:function(e){var n=t.decodeURIComponent(e),i=t.encodeURIComponent(e),o=n!==e;return o?(h.debug("URL value is already encoded, avoiding double encoding",e),e):(h.verbose("Encoding value using encodeURIComponent",e,i),i)},defaultData:function(){var t={};return e.isWindow(P)||(h.is.input()?t.value=T.val():h.is.form()||(t.text=T.text())),t},event:function(){return e.isWindow(P)||"now"==v.on?(h.debug("API called without element, no events attached"),!1):"auto"==v.on?T.is("input")?P.oninput!==i?"input":P.onpropertychange!==i?"propertychange":"keyup":T.is("form")?"submit":"click":v.on},templatedURL:function(e){if(e=e||T.data(y.action)||v.action||!1,m=T.data(y.url)||v.url||!1)return h.debug("Using specified url",m),m;if(e){if(h.debug("Looking up url for action",e,v.api),v.api[e]===i&&!h.is.mocked())return void h.error(C.missingAction,v.action,v.api);m=v.api[e]}else h.is.form()&&(m=T.attr("action")||R.attr("action")||!1,h.debug("No url or action specified, defaulting to form action",m));return m}},abort:function(){var e=h.get.xhr();e&&"resolved"!==e.state()&&(h.debug("Cancelling API request"),e.abort())},reset:function(){h.remove.error(),h.remove.loading()},setting:function(t,n){if(h.debug("Changing setting",t,n),e.isPlainObject(t))e.extend(!0,v,t);else{if(n===i)return v[t];e.isPlainObject(v[t])?e.extend(!0,v[t],n):v[t]=n}},internal:function(t,n){if(e.isPlainObject(t))e.extend(!0,h,t);else{if(n===i)return h[t];h[t]=n}},debug:function(){!v.silent&&v.debug&&(v.performance?h.performance.log(arguments):(h.debug=Function.prototype.bind.call(console.info,console,v.name+":"),h.debug.apply(console,arguments)))},verbose:function(){!v.silent&&v.verbose&&v.debug&&(v.performance?h.performance.log(arguments):(h.verbose=Function.prototype.bind.call(console.info,console,v.name+":"),h.verbose.apply(console,arguments)))},error:function(){v.silent||(h.error=Function.prototype.bind.call(console.error,console,v.name+":"),h.error.apply(console,arguments))},performance:{log:function(e){var t,n,i;v.performance&&(t=(new Date).getTime(),i=s||t,n=t-i,s=t,l.push({Name:e[0],Arguments:[].slice.call(e,1)||"","Execution Time":n})),clearTimeout(h.performance.timer),h.performance.timer=setTimeout(h.performance.display,500)},display:function(){var t=v.name+":",n=0;s=!1,clearTimeout(h.performance.timer),e.each(l,function(e,t){n+=t["Execution Time"]}),t+=" "+n+"ms",r&&(t+=" '"+r+"'"),(console.group!==i||console.table!==i)&&l.length>0&&(console.groupCollapsed(t),console.table?console.table(l):e.each(l,function(e,t){console.log(t.Name+": "+t["Execution Time"]+"ms")}),console.groupEnd()),l=[]}},invoke:function(t,n,a){var r,s,l,c=F;return n=n||d,a=P||a,"string"==typeof t&&c!==i&&(t=t.split(/[\. ]/),r=t.length-1,e.each(t,function(n,o){var a=n!=r?o+t[n+1].charAt(0).toUpperCase()+t[n+1].slice(1):t;if(e.isPlainObject(c[a])&&n!=r)c=c[a];else{if(c[a]!==i)return s=c[a],!1;if(!e.isPlainObject(c[o])||n==r)return c[o]!==i?(s=c[o],!1):(h.error(C.method,t),!1);c=c[o]}})),e.isFunction(s)?l=s.apply(a,n):s!==i&&(l=s),e.isArray(o)?o.push(l):o!==i?o=[o,l]:l!==i&&(o=l),s}},u?(F===i&&h.initialize(),h.invoke(c)):(F!==i&&F.invoke("destroy"),h.initialize())}),o!==i?o:this},e.api.settings={name:"API",namespace:"api",debug:!1,verbose:!1,performance:!0,api:{},cache:!0,interruptRequests:!0,on:"auto",stateContext:!1,loadingDuration:0,hideError:"auto",errorDuration:2e3,encodeParameters:!0,action:!1,url:!1,base:"",urlData:{},defaultData:!0,serializeForm:!1,throttle:0,throttleFirstRequest:!0,method:"get",data:{},dataType:"json",mockResponse:!1,mockResponseAsync:!1,response:!1,responseAsync:!1,beforeSend:function(e){return e},beforeXHR:function(e){},onRequest:function(e,t){},onResponse:!1,onSuccess:function(e,t){},onComplete:function(e,t){},onFailure:function(e,t){},onError:function(e,t){},onAbort:function(e,t){},successTest:!1,error:{beforeSend:"The before send function has aborted the request",error:"There was an error with your request",exitConditions:"API Request Aborted. Exit conditions met",JSONParse:"JSON could not be parsed during error handling",legacyParameters:"You are using legacy API success callback names",method:"The method you called is not defined",missingAction:"API action used but no url was defined",missingSerialize:"jquery-serialize-object is required to add form data to an existing data object",missingURL:"No URL specified for api event",noReturnedValue:"The beforeSend callback must return a settings object, beforeSend ignored.",noStorage:"Caching responses locally requires session storage",parseError:"There was an error parsing your request",requiredParameter:"Missing a required URL parameter: ",statusMessage:"Server gave an error: ",timeout:"Your request timed out"},regExp:{required:/\{\$*[A-z0-9]+\}/g,optional:/\{\/\$*[A-z0-9]+\}/g},className:{loading:"loading",error:"error"},selector:{disabled:".disabled",form:"form"},metadata:{action:"action",url:"url"}}}(jQuery,window,document),function(e,t,n,i){"use strict";t="undefined"!=typeof t&&t.Math==Math?t:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")(),e.fn.state=function(t){var o,a=e(this),r=a.selector||"",s=("ontouchstart"in n.documentElement,(new Date).getTime()),l=[],c=arguments[0],u="string"==typeof c,d=[].slice.call(arguments,1);return a.each(function(){var n,f=e.isPlainObject(t)?e.extend(!0,{},e.fn.state.settings,t):e.extend({},e.fn.state.settings),m=f.error,g=f.metadata,p=f.className,h=f.namespace,v=f.states,b=f.text,y="."+h,x=h+"-module",C=e(this),w=this,k=C.data(x);n={initialize:function(){n.verbose("Initializing module"),f.automatic&&n.add.defaults(),f.context&&""!==r?e(f.context).on(r,"mouseenter"+y,n.change.text).on(r,"mouseleave"+y,n.reset.text).on(r,"click"+y,n.toggle.state):C.on("mouseenter"+y,n.change.text).on("mouseleave"+y,n.reset.text).on("click"+y,n.toggle.state),n.instantiate()},instantiate:function(){n.verbose("Storing instance of module",n),k=n,C.data(x,n)},destroy:function(){n.verbose("Destroying previous module",k),C.off(y).removeData(x)},refresh:function(){n.verbose("Refreshing selector cache"),C=e(w)},add:{defaults:function(){var o=t&&e.isPlainObject(t.states)?t.states:{};e.each(f.defaults,function(t,a){n.is[t]!==i&&n.is[t]()&&(n.verbose("Adding default states",t,w),e.extend(f.states,a,o))})}},is:{active:function(){return C.hasClass(p.active)},loading:function(){return C.hasClass(p.loading)},inactive:function(){return!C.hasClass(p.active)},state:function(e){return p[e]!==i&&C.hasClass(p[e])},enabled:function(){return!C.is(f.filter.active)},disabled:function(){return C.is(f.filter.active)},textEnabled:function(){return!C.is(f.filter.text)},button:function(){return C.is(".button:not(a, .submit)")},input:function(){return C.is("input")},progress:function(){return C.is(".ui.progress")}},allow:function(e){n.debug("Now allowing state",e),v[e]=!0},disallow:function(e){n.debug("No longer allowing",e),v[e]=!1},allows:function(e){return v[e]||!1},enable:function(){C.removeClass(p.disabled)},disable:function(){C.addClass(p.disabled)},setState:function(e){n.allows(e)&&C.addClass(p[e])},removeState:function(e){n.allows(e)&&C.removeClass(p[e])},toggle:{state:function(){var t,o;if(n.allows("active")&&n.is.enabled()){if(n.refresh(),e.fn.api!==i)if(t=C.api("get request"),o=C.api("was cancelled"))n.debug("API Request cancelled by beforesend"),f.activateTest=function(){return!1},f.deactivateTest=function(){return!1};else if(t)return void n.listenTo(t);n.change.state()}}},listenTo:function(t){n.debug("API request detected, waiting for state signal",t),t&&(b.loading&&n.update.text(b.loading),e.when(t).then(function(){"resolved"==t.state()?(n.debug("API request succeeded"),f.activateTest=function(){return!0},f.deactivateTest=function(){return!0}):(n.debug("API request failed"),f.activateTest=function(){return!1},f.deactivateTest=function(){return!1}),n.change.state()}))},change:{state:function(){n.debug("Determining state change direction"),n.is.inactive()?n.activate():n.deactivate(),f.sync&&n.sync(),f.onChange.call(w)},text:function(){n.is.textEnabled()&&(n.is.disabled()?(n.verbose("Changing text to disabled text",b.hover),n.update.text(b.disabled)):n.is.active()?b.hover?(n.verbose("Changing text to hover text",b.hover),n.update.text(b.hover)):b.deactivate&&(n.verbose("Changing text to deactivating text",b.deactivate),n.update.text(b.deactivate)):b.hover?(n.verbose("Changing text to hover text",b.hover),n.update.text(b.hover)):b.activate&&(n.verbose("Changing text to activating text",b.activate),n.update.text(b.activate)))}},activate:function(){f.activateTest.call(w)&&(n.debug("Setting state to active"),C.addClass(p.active),n.update.text(b.active),f.onActivate.call(w))},deactivate:function(){f.deactivateTest.call(w)&&(n.debug("Setting state to inactive"),C.removeClass(p.active),n.update.text(b.inactive),f.onDeactivate.call(w))},sync:function(){n.verbose("Syncing other buttons to current state"),n.is.active()?a.not(C).state("activate"):a.not(C).state("deactivate")},get:{text:function(){return f.selector.text?C.find(f.selector.text).text():C.html()},textFor:function(e){return b[e]||!1}},flash:{text:function(e,t,i){var o=n.get.text();n.debug("Flashing text message",e,t),e=e||f.text.flash,t=t||f.flashDuration,i=i||function(){},n.update.text(e),setTimeout(function(){n.update.text(o),i.call(w)},t)}},reset:{text:function(){var e=b.active||C.data(g.storedText),t=b.inactive||C.data(g.storedText);n.is.textEnabled()&&(n.is.active()&&e?(n.verbose("Resetting active text",e),n.update.text(e)):t&&(n.verbose("Resetting inactive text",e),n.update.text(t)))}},update:{text:function(e){var t=n.get.text();e&&e!==t?(n.debug("Updating text",e),f.selector.text?C.data(g.storedText,e).find(f.selector.text).text(e):C.data(g.storedText,e).html(e)):n.debug("Text is already set, ignoring update",e)}},setting:function(t,o){
 if(n.debug("Changing setting",t,o),e.isPlainObject(t))e.extend(!0,f,t);else{if(o===i)return f[t];e.isPlainObject(f[t])?e.extend(!0,f[t],o):f[t]=o}},internal:function(t,o){if(e.isPlainObject(t))e.extend(!0,n,t);else{if(o===i)return n[t];n[t]=o}},debug:function(){!f.silent&&f.debug&&(f.performance?n.performance.log(arguments):(n.debug=Function.prototype.bind.call(console.info,console,f.name+":"),n.debug.apply(console,arguments)))},verbose:function(){!f.silent&&f.verbose&&f.debug&&(f.performance?n.performance.log(arguments):(n.verbose=Function.prototype.bind.call(console.info,console,f.name+":"),n.verbose.apply(console,arguments)))},error:function(){f.silent||(n.error=Function.prototype.bind.call(console.error,console,f.name+":"),n.error.apply(console,arguments))},performance:{log:function(e){var t,i,o;f.performance&&(t=(new Date).getTime(),o=s||t,i=t-o,s=t,l.push({Name:e[0],Arguments:[].slice.call(e,1)||"",Element:w,"Execution Time":i})),clearTimeout(n.performance.timer),n.performance.timer=setTimeout(n.performance.display,500)},display:function(){var t=f.name+":",o=0;s=!1,clearTimeout(n.performance.timer),e.each(l,function(e,t){o+=t["Execution Time"]}),t+=" "+o+"ms",r&&(t+=" '"+r+"'"),(console.group!==i||console.table!==i)&&l.length>0&&(console.groupCollapsed(t),console.table?console.table(l):e.each(l,function(e,t){console.log(t.Name+": "+t["Execution Time"]+"ms")}),console.groupEnd()),l=[]}},invoke:function(t,a,r){var s,l,c,u=k;return a=a||d,r=w||r,"string"==typeof t&&u!==i&&(t=t.split(/[\. ]/),s=t.length-1,e.each(t,function(o,a){var r=o!=s?a+t[o+1].charAt(0).toUpperCase()+t[o+1].slice(1):t;if(e.isPlainObject(u[r])&&o!=s)u=u[r];else{if(u[r]!==i)return l=u[r],!1;if(!e.isPlainObject(u[a])||o==s)return u[a]!==i?(l=u[a],!1):(n.error(m.method,t),!1);u=u[a]}})),e.isFunction(l)?c=l.apply(r,a):l!==i&&(c=l),e.isArray(o)?o.push(c):o!==i?o=[o,c]:c!==i&&(o=c),l}},u?(k===i&&n.initialize(),n.invoke(c)):(k!==i&&k.invoke("destroy"),n.initialize())}),o!==i?o:this},e.fn.state.settings={name:"State",debug:!1,verbose:!1,namespace:"state",performance:!0,onActivate:function(){},onDeactivate:function(){},onChange:function(){},activateTest:function(){return!0},deactivateTest:function(){return!0},automatic:!0,sync:!1,flashDuration:1e3,filter:{text:".loading, .disabled",active:".disabled"},context:!1,error:{beforeSend:"The before send function has cancelled state change",method:"The method you called is not defined."},metadata:{promise:"promise",storedText:"stored-text"},className:{active:"active",disabled:"disabled",error:"error",loading:"loading",success:"success",warning:"warning"},selector:{text:!1},defaults:{input:{disabled:!0,loading:!0,active:!0},button:{disabled:!0,loading:!0,active:!0},progress:{active:!0,success:!0,warning:!0,error:!0}},states:{active:!0,disabled:!0,error:!0,loading:!0,success:!0,warning:!0},text:{disabled:!1,flash:!1,hover:!1,active:!1,inactive:!1,activate:!1,deactivate:!1}}}(jQuery,window,document),function(e,t,n,i){"use strict";t="undefined"!=typeof t&&t.Math==Math?t:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")(),e.fn.visibility=function(o){var a,r=e(this),s=r.selector||"",l=(new Date).getTime(),c=[],u=arguments[0],d="string"==typeof u,f=[].slice.call(arguments,1),m=r.length,g=0;return r.each(function(){var r,p,h,v,b=e.isPlainObject(o)?e.extend(!0,{},e.fn.visibility.settings,o):e.extend({},e.fn.visibility.settings),y=b.className,x=b.namespace,C=b.error,w=b.metadata,k="."+x,S="module-"+x,T=e(t),A=e(this),R=e(b.context),P=(A.selector||"",A.data(S)),E=t.requestAnimationFrame||t.mozRequestAnimationFrame||t.webkitRequestAnimationFrame||t.msRequestAnimationFrame||function(e){setTimeout(e,0)},F=this,O=!1;v={initialize:function(){v.debug("Initializing",b),v.setup.cache(),v.should.trackChanges()&&("image"==b.type&&v.setup.image(),"fixed"==b.type&&v.setup.fixed(),b.observeChanges&&v.observeChanges(),v.bind.events()),v.save.position(),v.is.visible()||v.error(C.visible,A),b.initialCheck&&v.checkVisibility(),v.instantiate()},instantiate:function(){v.debug("Storing instance",v),A.data(S,v),P=v},destroy:function(){v.verbose("Destroying previous module"),h&&h.disconnect(),p&&p.disconnect(),T.off("load"+k,v.event.load).off("resize"+k,v.event.resize),R.off("scroll"+k,v.event.scroll).off("scrollchange"+k,v.event.scrollchange),"fixed"==b.type&&(v.resetFixed(),v.remove.placeholder()),A.off(k).removeData(S)},observeChanges:function(){"MutationObserver"in t&&(p=new MutationObserver(v.event.contextChanged),h=new MutationObserver(v.event.changed),p.observe(n,{childList:!0,subtree:!0}),h.observe(F,{childList:!0,subtree:!0}),v.debug("Setting up mutation observer",h))},bind:{events:function(){v.verbose("Binding visibility events to scroll and resize"),b.refreshOnLoad&&T.on("load"+k,v.event.load),T.on("resize"+k,v.event.resize),R.off("scroll"+k).on("scroll"+k,v.event.scroll).on("scrollchange"+k,v.event.scrollchange)}},event:{changed:function(e){v.verbose("DOM tree modified, updating visibility calculations"),v.timer=setTimeout(function(){v.verbose("DOM tree modified, updating sticky menu"),v.refresh()},100)},contextChanged:function(t){[].forEach.call(t,function(t){t.removedNodes&&[].forEach.call(t.removedNodes,function(t){(t==F||e(t).find(F).length>0)&&(v.debug("Element removed from DOM, tearing down events"),v.destroy())})})},resize:function(){v.debug("Window resized"),b.refreshOnResize&&E(v.refresh)},load:function(){v.debug("Page finished loading"),E(v.refresh)},scroll:function(){b.throttle?(clearTimeout(v.timer),v.timer=setTimeout(function(){R.triggerHandler("scrollchange"+k,[R.scrollTop()])},b.throttle)):E(function(){R.triggerHandler("scrollchange"+k,[R.scrollTop()])})},scrollchange:function(e,t){v.checkVisibility(t)}},precache:function(t,i){t instanceof Array||(t=[t]);for(var o=t.length,a=0,r=[],s=n.createElement("img"),l=function(){a++,a>=t.length&&e.isFunction(i)&&i()};o--;)s=n.createElement("img"),s.onload=l,s.onerror=l,s.src=t[o],r.push(s)},enableCallbacks:function(){v.debug("Allowing callbacks to occur"),O=!1},disableCallbacks:function(){v.debug("Disabling all callbacks temporarily"),O=!0},should:{trackChanges:function(){return d?(v.debug("One time query, no need to bind events"),!1):(v.debug("Callbacks being attached"),!0)}},setup:{cache:function(){v.cache={occurred:{},screen:{},element:{}}},image:function(){var e=A.data(w.src);e&&(v.verbose("Lazy loading image",e),b.once=!0,b.observeChanges=!1,b.onOnScreen=function(){v.debug("Image on screen",F),v.precache(e,function(){v.set.image(e,function(){g++,g==m&&b.onAllLoaded.call(this),b.onLoad.call(this)})})})},fixed:function(){v.debug("Setting up fixed"),b.once=!1,b.observeChanges=!1,b.initialCheck=!0,b.refreshOnLoad=!0,o.transition||(b.transition=!1),v.create.placeholder(),v.debug("Added placeholder",r),b.onTopPassed=function(){v.debug("Element passed, adding fixed position",A),v.show.placeholder(),v.set.fixed(),b.transition&&e.fn.transition!==i&&A.transition(b.transition,b.duration)},b.onTopPassedReverse=function(){v.debug("Element returned to position, removing fixed",A),v.hide.placeholder(),v.remove.fixed()}}},create:{placeholder:function(){v.verbose("Creating fixed position placeholder"),r=A.clone(!1).css("display","none").addClass(y.placeholder).insertAfter(A)}},show:{placeholder:function(){v.verbose("Showing placeholder"),r.css("display","block").css("visibility","hidden")}},hide:{placeholder:function(){v.verbose("Hiding placeholder"),r.css("display","none").css("visibility","")}},set:{fixed:function(){v.verbose("Setting element to fixed position"),A.addClass(y.fixed).css({position:"fixed",top:b.offset+"px",left:"auto",zIndex:b.zIndex}),b.onFixed.call(F)},image:function(t,n){A.attr("src",t),b.transition?e.fn.transition!==i?A.transition(b.transition,b.duration,n):A.fadeIn(b.duration,n):A.show()}},is:{onScreen:function(){var e=v.get.elementCalculations();return e.onScreen},offScreen:function(){var e=v.get.elementCalculations();return e.offScreen},visible:function(){return!(!v.cache||!v.cache.element)&&!(0===v.cache.element.width&&0===v.cache.element.offset.top)}},refresh:function(){v.debug("Refreshing constants (width/height)"),"fixed"==b.type&&v.resetFixed(),v.reset(),v.save.position(),b.checkOnRefresh&&v.checkVisibility(),b.onRefresh.call(F)},resetFixed:function(){v.remove.fixed(),v.remove.occurred()},reset:function(){v.verbose("Resetting all cached values"),e.isPlainObject(v.cache)&&(v.cache.screen={},v.cache.element={})},checkVisibility:function(e){v.verbose("Checking visibility of element",v.cache.element),!O&&v.is.visible()&&(v.save.scroll(e),v.save.calculations(),v.passed(),v.passingReverse(),v.topVisibleReverse(),v.bottomVisibleReverse(),v.topPassedReverse(),v.bottomPassedReverse(),v.onScreen(),v.offScreen(),v.passing(),v.topVisible(),v.bottomVisible(),v.topPassed(),v.bottomPassed(),b.onUpdate&&b.onUpdate.call(F,v.get.elementCalculations()))},passed:function(t,n){var o=v.get.elementCalculations();if(t&&n)b.onPassed[t]=n;else{if(t!==i)return v.get.pixelsPassed(t)>o.pixelsPassed;o.passing&&e.each(b.onPassed,function(e,t){o.bottomVisible||o.pixelsPassed>v.get.pixelsPassed(e)?v.execute(t,e):b.once||v.remove.occurred(t)})}},onScreen:function(e){var t=v.get.elementCalculations(),n=e||b.onOnScreen,o="onScreen";if(e&&(v.debug("Adding callback for onScreen",e),b.onOnScreen=e),t.onScreen?v.execute(n,o):b.once||v.remove.occurred(o),e!==i)return t.onOnScreen},offScreen:function(e){var t=v.get.elementCalculations(),n=e||b.onOffScreen,o="offScreen";if(e&&(v.debug("Adding callback for offScreen",e),b.onOffScreen=e),t.offScreen?v.execute(n,o):b.once||v.remove.occurred(o),e!==i)return t.onOffScreen},passing:function(e){var t=v.get.elementCalculations(),n=e||b.onPassing,o="passing";if(e&&(v.debug("Adding callback for passing",e),b.onPassing=e),t.passing?v.execute(n,o):b.once||v.remove.occurred(o),e!==i)return t.passing},topVisible:function(e){var t=v.get.elementCalculations(),n=e||b.onTopVisible,o="topVisible";if(e&&(v.debug("Adding callback for top visible",e),b.onTopVisible=e),t.topVisible?v.execute(n,o):b.once||v.remove.occurred(o),e===i)return t.topVisible},bottomVisible:function(e){var t=v.get.elementCalculations(),n=e||b.onBottomVisible,o="bottomVisible";if(e&&(v.debug("Adding callback for bottom visible",e),b.onBottomVisible=e),t.bottomVisible?v.execute(n,o):b.once||v.remove.occurred(o),e===i)return t.bottomVisible},topPassed:function(e){var t=v.get.elementCalculations(),n=e||b.onTopPassed,o="topPassed";if(e&&(v.debug("Adding callback for top passed",e),b.onTopPassed=e),t.topPassed?v.execute(n,o):b.once||v.remove.occurred(o),e===i)return t.topPassed},bottomPassed:function(e){var t=v.get.elementCalculations(),n=e||b.onBottomPassed,o="bottomPassed";if(e&&(v.debug("Adding callback for bottom passed",e),b.onBottomPassed=e),t.bottomPassed?v.execute(n,o):b.once||v.remove.occurred(o),e===i)return t.bottomPassed},passingReverse:function(e){var t=v.get.elementCalculations(),n=e||b.onPassingReverse,o="passingReverse";if(e&&(v.debug("Adding callback for passing reverse",e),b.onPassingReverse=e),t.passing?b.once||v.remove.occurred(o):v.get.occurred("passing")&&v.execute(n,o),e!==i)return!t.passing},topVisibleReverse:function(e){var t=v.get.elementCalculations(),n=e||b.onTopVisibleReverse,o="topVisibleReverse";if(e&&(v.debug("Adding callback for top visible reverse",e),b.onTopVisibleReverse=e),t.topVisible?b.once||v.remove.occurred(o):v.get.occurred("topVisible")&&v.execute(n,o),e===i)return!t.topVisible},bottomVisibleReverse:function(e){var t=v.get.elementCalculations(),n=e||b.onBottomVisibleReverse,o="bottomVisibleReverse";if(e&&(v.debug("Adding callback for bottom visible reverse",e),b.onBottomVisibleReverse=e),t.bottomVisible?b.once||v.remove.occurred(o):v.get.occurred("bottomVisible")&&v.execute(n,o),e===i)return!t.bottomVisible},topPassedReverse:function(e){var t=v.get.elementCalculations(),n=e||b.onTopPassedReverse,o="topPassedReverse";if(e&&(v.debug("Adding callback for top passed reverse",e),b.onTopPassedReverse=e),t.topPassed?b.once||v.remove.occurred(o):v.get.occurred("topPassed")&&v.execute(n,o),e===i)return!t.onTopPassed},bottomPassedReverse:function(e){var t=v.get.elementCalculations(),n=e||b.onBottomPassedReverse,o="bottomPassedReverse";if(e&&(v.debug("Adding callback for bottom passed reverse",e),b.onBottomPassedReverse=e),t.bottomPassed?b.once||v.remove.occurred(o):v.get.occurred("bottomPassed")&&v.execute(n,o),e===i)return!t.bottomPassed},execute:function(e,t){var n=v.get.elementCalculations(),i=v.get.screenCalculations();e=e||!1,e&&(b.continuous?(v.debug("Callback being called continuously",t,n),e.call(F,n,i)):v.get.occurred(t)||(v.debug("Conditions met",t,n),e.call(F,n,i))),v.save.occurred(t)},remove:{fixed:function(){v.debug("Removing fixed position"),A.removeClass(y.fixed).css({position:"",top:"",left:"",zIndex:""}),b.onUnfixed.call(F)},placeholder:function(){v.debug("Removing placeholder content"),r&&r.remove()},occurred:function(e){if(e){var t=v.cache.occurred;t[e]!==i&&t[e]===!0&&(v.debug("Callback can now be called again",e),v.cache.occurred[e]=!1)}else v.cache.occurred={}}},save:{calculations:function(){v.verbose("Saving all calculations necessary to determine positioning"),v.save.direction(),v.save.screenCalculations(),v.save.elementCalculations()},occurred:function(e){e&&(v.cache.occurred[e]!==i&&v.cache.occurred[e]===!0||(v.verbose("Saving callback occurred",e),v.cache.occurred[e]=!0))},scroll:function(e){e=e+b.offset||R.scrollTop()+b.offset,v.cache.scroll=e},direction:function(){var e,t=v.get.scroll(),n=v.get.lastScroll();return e=t>n&&n?"down":t<n&&n?"up":"static",v.cache.direction=e,v.cache.direction},elementPosition:function(){var e=v.cache.element,t=v.get.screenSize();return v.verbose("Saving element position"),e.fits=e.height<t.height,e.offset=A.offset(),e.width=A.outerWidth(),e.height=A.outerHeight(),v.cache.element=e,e},elementCalculations:function(){var e=v.get.screenCalculations(),t=v.get.elementPosition();return b.includeMargin?(t.margin={},t.margin.top=parseInt(A.css("margin-top"),10),t.margin.bottom=parseInt(A.css("margin-bottom"),10),t.top=t.offset.top-t.margin.top,t.bottom=t.offset.top+t.height+t.margin.bottom):(t.top=t.offset.top,t.bottom=t.offset.top+t.height),t.topVisible=e.bottom>=t.top,t.topPassed=e.top>=t.top,t.bottomVisible=e.bottom>=t.bottom,t.bottomPassed=e.top>=t.bottom,t.pixelsPassed=0,t.percentagePassed=0,t.onScreen=t.topVisible&&!t.bottomPassed,t.passing=t.topPassed&&!t.bottomPassed,t.offScreen=!t.onScreen,t.passing&&(t.pixelsPassed=e.top-t.top,t.percentagePassed=(e.top-t.top)/t.height),v.cache.element=t,v.verbose("Updated element calculations",t),t},screenCalculations:function(){var e=v.get.scroll();return v.save.direction(),v.cache.screen.top=e,v.cache.screen.bottom=e+v.cache.screen.height,v.cache.screen},screenSize:function(){v.verbose("Saving window position"),v.cache.screen={height:R.height()}},position:function(){v.save.screenSize(),v.save.elementPosition()}},get:{pixelsPassed:function(e){var t=v.get.elementCalculations();return e.search("%")>-1?t.height*(parseInt(e,10)/100):parseInt(e,10)},occurred:function(e){return v.cache.occurred!==i&&(v.cache.occurred[e]||!1)},direction:function(){return v.cache.direction===i&&v.save.direction(),v.cache.direction},elementPosition:function(){return v.cache.element===i&&v.save.elementPosition(),v.cache.element},elementCalculations:function(){return v.cache.element===i&&v.save.elementCalculations(),v.cache.element},screenCalculations:function(){return v.cache.screen===i&&v.save.screenCalculations(),v.cache.screen},screenSize:function(){return v.cache.screen===i&&v.save.screenSize(),v.cache.screen},scroll:function(){return v.cache.scroll===i&&v.save.scroll(),v.cache.scroll},lastScroll:function(){return v.cache.screen===i?(v.debug("First scroll event, no last scroll could be found"),!1):v.cache.screen.top}},setting:function(t,n){if(e.isPlainObject(t))e.extend(!0,b,t);else{if(n===i)return b[t];b[t]=n}},internal:function(t,n){if(e.isPlainObject(t))e.extend(!0,v,t);else{if(n===i)return v[t];v[t]=n}},debug:function(){!b.silent&&b.debug&&(b.performance?v.performance.log(arguments):(v.debug=Function.prototype.bind.call(console.info,console,b.name+":"),v.debug.apply(console,arguments)))},verbose:function(){!b.silent&&b.verbose&&b.debug&&(b.performance?v.performance.log(arguments):(v.verbose=Function.prototype.bind.call(console.info,console,b.name+":"),v.verbose.apply(console,arguments)))},error:function(){b.silent||(v.error=Function.prototype.bind.call(console.error,console,b.name+":"),v.error.apply(console,arguments))},performance:{log:function(e){var t,n,i;b.performance&&(t=(new Date).getTime(),i=l||t,n=t-i,l=t,c.push({Name:e[0],Arguments:[].slice.call(e,1)||"",Element:F,"Execution Time":n})),clearTimeout(v.performance.timer),v.performance.timer=setTimeout(v.performance.display,500)},display:function(){var t=b.name+":",n=0;l=!1,clearTimeout(v.performance.timer),e.each(c,function(e,t){n+=t["Execution Time"]}),t+=" "+n+"ms",s&&(t+=" '"+s+"'"),(console.group!==i||console.table!==i)&&c.length>0&&(console.groupCollapsed(t),console.table?console.table(c):e.each(c,function(e,t){console.log(t.Name+": "+t["Execution Time"]+"ms")}),console.groupEnd()),c=[]}},invoke:function(t,n,o){var r,s,l,c=P;return n=n||f,o=F||o,"string"==typeof t&&c!==i&&(t=t.split(/[\. ]/),r=t.length-1,e.each(t,function(n,o){var a=n!=r?o+t[n+1].charAt(0).toUpperCase()+t[n+1].slice(1):t;if(e.isPlainObject(c[a])&&n!=r)c=c[a];else{if(c[a]!==i)return s=c[a],!1;if(!e.isPlainObject(c[o])||n==r)return c[o]!==i?(s=c[o],!1):(v.error(C.method,t),!1);c=c[o]}})),e.isFunction(s)?l=s.apply(o,n):s!==i&&(l=s),e.isArray(a)?a.push(l):a!==i?a=[a,l]:l!==i&&(a=l),s}},d?(P===i&&v.initialize(),P.save.scroll(),P.save.calculations(),v.invoke(u)):(P!==i&&P.invoke("destroy"),v.initialize())}),a!==i?a:this},e.fn.visibility.settings={name:"Visibility",namespace:"visibility",debug:!1,verbose:!1,performance:!0,observeChanges:!0,initialCheck:!0,refreshOnLoad:!0,refreshOnResize:!0,checkOnRefresh:!0,once:!0,continuous:!1,offset:0,includeMargin:!1,context:t,throttle:!1,type:!1,zIndex:"10",transition:"fade in",duration:1e3,onPassed:{},onOnScreen:!1,onOffScreen:!1,onPassing:!1,onTopVisible:!1,onBottomVisible:!1,onTopPassed:!1,onBottomPassed:!1,onPassingReverse:!1,onTopVisibleReverse:!1,onBottomVisibleReverse:!1,onTopPassedReverse:!1,onBottomPassedReverse:!1,onLoad:function(){},onAllLoaded:function(){},onFixed:function(){},onUnfixed:function(){},onUpdate:!1,onRefresh:function(){},metadata:{src:"src"},className:{fixed:"fixed",placeholder:"placeholder"},error:{method:"The method you called is not defined.",visible:"Element is hidden, you must call refresh after element becomes visible"}}}(jQuery,window,document);
 /*
+ * # Semantic UI 0.0.6 - Calendar
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ */
+
+;
+(function ($, window, document, undefined) {
+
+  "use strict";
+
+  window = (typeof window != 'undefined' && window.Math == Math)
+    ? window
+    : (typeof self != 'undefined' && self.Math == Math)
+    ? self
+    : Function('return this')()
+  ;
+
+  $.fn.calendar = function (parameters) {
+
+    var
+      $allModules = $(this),
+
+      moduleSelector = $allModules.selector || '',
+
+      time = new Date().getTime(),
+      performance = [],
+
+      query = arguments[0],
+      methodInvoked = (typeof query == 'string'),
+      queryArguments = [].slice.call(arguments, 1),
+      returnedValue
+      ;
+
+    $allModules
+      .each(function () {
+        var
+          settings = ( $.isPlainObject(parameters) )
+            ? $.extend(true, {}, $.fn.calendar.settings, parameters)
+            : $.extend({}, $.fn.calendar.settings),
+
+          className = settings.className,
+          namespace = settings.namespace,
+          selector = settings.selector,
+          formatter = settings.formatter,
+          parser = settings.parser,
+          metadata = settings.metadata,
+          error = settings.error,
+
+          eventNamespace = '.' + namespace,
+          moduleNamespace = 'module-' + namespace,
+
+          $module = $(this),
+          $input = $module.find(selector.input),
+          $container = $module.find(selector.popup),
+          $activator = $module.find(selector.activator),
+
+          element = this,
+          instance = $module.data(moduleNamespace),
+
+          isTouch,
+          isTouchDown = false,
+          focusDateUsedForRange = false,
+          module
+          ;
+
+        module = {
+
+          initialize: function () {
+            module.debug('Initializing calendar for', element);
+
+            isTouch = module.get.isTouch();
+            module.setup.popup();
+            module.setup.inline();
+            module.setup.input();
+            module.setup.date();
+            module.create.calendar();
+
+            module.bind.events();
+            module.instantiate();
+          },
+
+          instantiate: function () {
+            module.verbose('Storing instance of calendar');
+            instance = module;
+            $module.data(moduleNamespace, instance);
+          },
+
+          destroy: function () {
+            module.verbose('Destroying previous calendar for', element);
+            $module.removeData(moduleNamespace);
+            module.unbind.events();
+          },
+
+          setup: {
+            popup: function () {
+              if (settings.inline) {
+                return;
+              }
+              if (!$activator.length) {
+                $activator = $module.children().first();
+                if (!$activator.length) {
+                  return;
+                }
+              }
+              if ($.fn.popup === undefined) {
+                module.error(error.popup);
+                return;
+              }
+              if (!$container.length) {
+                //prepend the popup element to the activator's parent so that it has less chance of messing with
+                //the styling (eg input action button needs to be the last child to have correct border radius)
+                $container = $('<div/>').addClass(className.popup).prependTo($activator.parent());
+              }
+              $container.addClass(className.calendar);
+              var onVisible = settings.onVisible;
+              var onHidden = settings.onHidden;
+              if (!$input.length) {
+                //no input, $container has to handle focus/blur
+                $container.attr('tabindex', '0');
+                onVisible = function () {
+                  module.focus();
+                  return settings.onVisible.apply($container, arguments);
+                };
+                onHidden = function () {
+                  module.blur();
+                  return settings.onHidden.apply($container, arguments);
+                };
+              }
+              var onShow = function () {
+                //reset the focus date onShow
+                module.set.focusDate(module.get.date());
+                module.set.mode(settings.startMode);
+                return settings.onShow.apply($container, arguments);
+              };
+              var on = settings.on || ($input.length ? 'focus' : 'click');
+              var options = $.extend({}, settings.popupOptions, {
+                popup: $container,
+                on: on,
+                hoverable: on === 'hover',
+                onShow: onShow,
+                onVisible: onVisible,
+                onHide: settings.onHide,
+                onHidden: onHidden
+              });
+              module.popup(options);
+            },
+            inline: function () {
+              if ($activator.length && !settings.inline) {
+                return;
+              }
+              $container = $('<div/>').addClass(className.calendar).appendTo($module);
+              if (!$input.length) {
+                $container.attr('tabindex', '0');
+              }
+            },
+            input: function () {
+              if (settings.touchReadonly && $input.length && isTouch) {
+                $input.prop('readonly', true);
+              }
+            },
+            date: function () {
+              if ($input.length) {
+                var val = $input.val();
+                var date = parser.date(val, settings);
+                module.set.date(date, settings.formatInput, false);
+              }
+            }
+          },
+
+          create: {
+            calendar: function () {
+              var i, r, c, p, row, cell, pageGrid;
+
+              var mode = module.get.mode();
+              var today = new Date();
+              var date = module.get.date();
+              var focusDate = module.get.focusDate();
+              var display = focusDate || date || settings.initialDate || today;
+              display = module.helper.dateInRange(display);
+
+              if (!focusDate) {
+                focusDate = display;
+                module.set.focusDate(focusDate, false, false);
+              }
+
+              var isYear = mode === 'year';
+              var isMonth = mode === 'month';
+              var isDay = mode === 'day';
+              var isHour = mode === 'hour';
+              var isMinute = mode === 'minute';
+              var isTimeOnly = settings.type === 'time';
+
+              var multiMonth = Math.max(settings.multiMonth, 1);
+              var monthOffset = !isDay ? 0 : module.get.monthOffset();
+
+              var minute = display.getMinutes();
+              var hour = display.getHours();
+              var day = display.getDate();
+              var startMonth = display.getMonth() + monthOffset;
+              var year = display.getFullYear();
+
+              var columns = isDay ? 7 : isHour ? 4 : 3;
+              var columnsString = columns === 7 ? 'seven' : columns === 4 ? 'four' : 'three';
+              var rows = isDay || isHour ? 6 : 4;
+              var pages = isDay ? multiMonth : 1;
+
+              var container = $container;
+              container.empty();
+              if (pages > 1) {
+                pageGrid = $('<div/>').addClass(className.grid).appendTo(container);
+              }
+
+              for (p = 0; p < pages; p++) {
+                if (pages > 1) {
+                  var pageColumn = $('<div/>').addClass(className.column).appendTo(pageGrid);
+                  container = pageColumn;
+                }
+
+                var month = startMonth + p;
+                var firstMonthDayColumn = (new Date(year, month, 1).getDay() - settings.firstDayOfWeek % 7 + 7) % 7;
+                if (!settings.constantHeight && isDay) {
+                  var requiredCells = new Date(year, month + 1, 0).getDate() + firstMonthDayColumn;
+                  rows = Math.ceil(requiredCells / 7);
+                }
+
+                var yearChange = isYear ? 10 : isMonth ? 1 : 0;
+                var monthChange = isDay ? 1 : 0;
+                var dayChange = isHour || isMinute ? 1 : 0;
+                var prevNextDay = isHour || isMinute ? day : 1;
+                var prevDate = new Date(year - yearChange, month - monthChange, prevNextDay - dayChange, hour);
+                var nextDate = new Date(year + yearChange, month + monthChange, prevNextDay + dayChange, hour);
+
+                var prevLast = isYear ? new Date(Math.ceil(year / 10) * 10 - 9, 0, 0) :
+                  isMonth ? new Date(year, 0, 0) : isDay ? new Date(year, month, 0) : new Date(year, month, day, -1);
+                var nextFirst = isYear ? new Date(Math.ceil(year / 10) * 10 + 1, 0, 1) :
+                  isMonth ? new Date(year + 1, 0, 1) : isDay ? new Date(year, month + 1, 1) : new Date(year, month, day + 1);
+
+                var table = $('<table/>').addClass(className.table).addClass(columnsString + ' column').addClass(mode).appendTo(container);
+
+                //no header for time-only mode
+                if (!isTimeOnly) {
+                  var thead = $('<thead/>').appendTo(table);
+
+                  row = $('<tr/>').appendTo(thead);
+                  cell = $('<th/>').attr('colspan', '' + columns).appendTo(row);
+
+                  var headerDate = isYear || isMonth ? new Date(year, 0, 1) :
+                    isDay ? new Date(year, month, 1) : new Date(year, month, day, hour, minute);
+                  var headerText = $('<span/>').addClass(className.link).appendTo(cell);
+                  headerText.text(formatter.header(headerDate, mode, settings));
+                  var newMode = isMonth ? (settings.disableYear ? 'day' : 'year') :
+                    isDay ? (settings.disableMonth ? 'year' : 'month') : 'day';
+                  headerText.data(metadata.mode, newMode);
+
+                  if (p === 0) {
+                    var prev = $('<span/>').addClass(className.prev).appendTo(cell);
+                    prev.data(metadata.focusDate, prevDate);
+                    prev.toggleClass(className.disabledCell, !module.helper.isDateInRange(prevLast, mode));
+                    $('<i/>').addClass(className.prevIcon).appendTo(prev);
+                  }
+
+                  if (p === pages - 1) {
+                    var next = $('<span/>').addClass(className.next).appendTo(cell);
+                    next.data(metadata.focusDate, nextDate);
+                    next.toggleClass(className.disabledCell, !module.helper.isDateInRange(nextFirst, mode));
+                    $('<i/>').addClass(className.nextIcon).appendTo(next);
+                  }
+
+                  if (isDay) {
+                    row = $('<tr/>').appendTo(thead);
+                    for (i = 0; i < columns; i++) {
+                      cell = $('<th/>').appendTo(row);
+                      cell.text(formatter.dayColumnHeader((i + settings.firstDayOfWeek) % 7, settings));
+                    }
+                  }
+                }
+
+                var tbody = $('<tbody/>').appendTo(table);
+                i = isYear ? Math.ceil(year / 10) * 10 - 9 : isDay ? 1 - firstMonthDayColumn : 0;
+                for (r = 0; r < rows; r++) {
+                  row = $('<tr/>').appendTo(tbody);
+                  for (c = 0; c < columns; c++, i++) {
+                    var cellDate = isYear ? new Date(i, month, 1, hour, minute) :
+                      isMonth ? new Date(year, i, 1, hour, minute) : isDay ? new Date(year, month, i, hour, minute) :
+                        isHour ? new Date(year, month, day, i) : new Date(year, month, day, hour, i * 5);
+                    var cellText = isYear ? i :
+                      isMonth ? settings.text.monthsShort[i] : isDay ? cellDate.getDate() :
+                        formatter.time(cellDate, settings, true);
+                    cell = $('<td/>').addClass(className.cell).appendTo(row);
+                    cell.text(cellText);
+                    cell.data(metadata.date, cellDate);
+                    var adjacent = isDay && cellDate.getMonth() !== ((month + 12) % 12);
+                    var disabled = adjacent || !module.helper.isDateInRange(cellDate, mode) || settings.isDisabled(cellDate, mode);
+                    var active = module.helper.dateEqual(cellDate, date, mode);
+                    cell.toggleClass(className.adjacentCell, adjacent);
+                    cell.toggleClass(className.disabledCell, disabled);
+                    cell.toggleClass(className.activeCell, active && !adjacent);
+                    if (!isHour && !isMinute) {
+                      cell.toggleClass(className.todayCell, !adjacent && module.helper.dateEqual(cellDate, today, mode));
+                    }
+                    if (module.helper.dateEqual(cellDate, focusDate, mode)) {
+                      //ensure that the focus date is exactly equal to the cell date
+                      //so that, if selected, the correct value is set
+                      module.set.focusDate(cellDate, false, false);
+                    }
+                  }
+                }
+
+                if (settings.today) {
+                  var todayRow = $('<tr/>').appendTo(tbody);
+                  var todayButton = $('<td/>').attr('colspan', '' + columns).addClass(className.today).appendTo(todayRow);
+                  todayButton.text(formatter.today(settings));
+                  todayButton.data(metadata.date, today);
+                }
+
+                module.update.focus(false, table);
+              }
+            }
+          },
+
+          update: {
+            focus: function (updateRange, container) {
+              container = container || $container;
+              var mode = module.get.mode();
+              var date = module.get.date();
+              var focusDate = module.get.focusDate();
+              var startDate = module.get.startDate();
+              var endDate = module.get.endDate();
+              var rangeDate = (updateRange ? focusDate : null) || date || (!isTouch ? focusDate : null);
+
+              container.find('td').each(function () {
+                var cell = $(this);
+                var cellDate = cell.data(metadata.date);
+                if (!cellDate) {
+                  return;
+                }
+                var disabled = cell.hasClass(className.disabledCell);
+                var active = cell.hasClass(className.activeCell);
+                var adjacent = cell.hasClass(className.adjacentCell);
+                var focused = module.helper.dateEqual(cellDate, focusDate, mode);
+                var inRange = !rangeDate ? false :
+                  ((!!startDate && module.helper.isDateInRange(cellDate, mode, startDate, rangeDate)) ||
+                  (!!endDate && module.helper.isDateInRange(cellDate, mode, rangeDate, endDate)));
+                cell.toggleClass(className.focusCell, focused && (!isTouch || isTouchDown) && !adjacent);
+                cell.toggleClass(className.rangeCell, inRange && !active && !disabled);
+              });
+            }
+          },
+
+          refresh: function () {
+            module.create.calendar();
+          },
+
+          bind: {
+            events: function () {
+              $container.on('mousedown' + eventNamespace, module.event.mousedown);
+              $container.on('touchstart' + eventNamespace, module.event.mousedown);
+              $container.on('mouseup' + eventNamespace, module.event.mouseup);
+              $container.on('touchend' + eventNamespace, module.event.mouseup);
+              $container.on('mouseover' + eventNamespace, module.event.mouseover);
+              if ($input.length) {
+                $input.on('input' + eventNamespace, module.event.inputChange);
+                $input.on('focus' + eventNamespace, module.event.inputFocus);
+                $input.on('blur' + eventNamespace, module.event.inputBlur);
+                $input.on('click' + eventNamespace, module.event.inputClick);
+                $input.on('keydown' + eventNamespace, module.event.keydown);
+              } else {
+                $container.on('keydown' + eventNamespace, module.event.keydown);
+              }
+            }
+          },
+
+          unbind: {
+            events: function () {
+              $container.off(eventNamespace);
+              if ($input.length) {
+                $input.off(eventNamespace);
+              }
+            }
+          },
+
+          event: {
+            mouseover: function (event) {
+              var target = $(event.target);
+              var date = target.data(metadata.date);
+              var mousedown = event.buttons === 1;
+              if (date) {
+                module.set.focusDate(date, false, true, mousedown);
+              }
+            },
+            mousedown: function (event) {
+              if ($input.length) {
+                //prevent the mousedown on the calendar causing the input to lose focus
+                event.preventDefault();
+              }
+              isTouchDown = event.type.indexOf('touch') >= 0;
+              var target = $(event.target);
+              var date = target.data(metadata.date);
+              if (date) {
+                module.set.focusDate(date, false, true, true);
+              }
+            },
+            mouseup: function (event) {
+              //ensure input has focus so that it receives keydown events for calendar navigation
+              module.focus();
+              event.preventDefault();
+              event.stopPropagation();
+              isTouchDown = false;
+              var target = $(event.target);
+              var parent = target.parent();
+              if (parent.data(metadata.date) || parent.data(metadata.focusDate) || parent.data(metadata.mode)) {
+                //clicked on a child element, switch to parent (used when clicking directly on prev/next <i> icon element)
+                target = parent;
+              }
+              var date = target.data(metadata.date);
+              var focusDate = target.data(metadata.focusDate);
+              var mode = target.data(metadata.mode);
+              if (date) {
+                var forceSet = target.hasClass(className.today);
+                module.selectDate(date, forceSet);
+              }
+              else if (focusDate) {
+                module.set.focusDate(focusDate);
+              }
+              else if (mode) {
+                module.set.mode(mode);
+              }
+            },
+            keydown: function (event) {
+              if (event.keyCode === 27 || event.keyCode === 9) {
+                //esc || tab
+                module.popup('hide');
+              }
+
+              if (module.popup('is visible')) {
+                if (event.keyCode === 37 || event.keyCode === 38 || event.keyCode === 39 || event.keyCode === 40) {
+                  //arrow keys
+                  var mode = module.get.mode();
+                  var bigIncrement = mode === 'day' ? 7 : mode === 'hour' ? 4 : 3;
+                  var increment = event.keyCode === 37 ? -1 : event.keyCode === 38 ? -bigIncrement : event.keyCode == 39 ? 1 : bigIncrement;
+                  increment *= mode === 'minute' ? 5 : 1;
+                  var focusDate = module.get.focusDate() || module.get.date() || new Date();
+                  var year = focusDate.getFullYear() + (mode === 'year' ? increment : 0);
+                  var month = focusDate.getMonth() + (mode === 'month' ? increment : 0);
+                  var day = focusDate.getDate() + (mode === 'day' ? increment : 0);
+                  var hour = focusDate.getHours() + (mode === 'hour' ? increment : 0);
+                  var minute = focusDate.getMinutes() + (mode === 'minute' ? increment : 0);
+                  var newFocusDate = new Date(year, month, day, hour, minute);
+                  if (settings.type === 'time') {
+                    newFocusDate = module.helper.mergeDateTime(focusDate, newFocusDate);
+                  }
+                  if (module.helper.isDateInRange(newFocusDate, mode)) {
+                    module.set.focusDate(newFocusDate);
+                  }
+                } else if (event.keyCode === 13) {
+                  //enter
+                  var mode = module.get.mode();
+                  var date = module.get.focusDate();
+                  if (date && !settings.isDisabled(date, mode)) {
+                    module.selectDate(date);
+                  }
+                  //disable form submission:
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+              }
+
+              if (event.keyCode === 38 || event.keyCode === 40) {
+                //arrow-up || arrow-down
+                event.preventDefault(); //don't scroll
+                module.popup('show');
+              }
+            },
+            inputChange: function () {
+              var val = $input.val();
+              var date = parser.date(val, settings);
+              module.set.date(date, false);
+            },
+            inputFocus: function () {
+              $container.addClass(className.active);
+            },
+            inputBlur: function () {
+              $container.removeClass(className.active);
+              if (settings.formatInput) {
+                var date = module.get.date();
+                var text = formatter.datetime(date, settings);
+                $input.val(text);
+              }
+            },
+            inputClick: function () {
+              module.popup('show');
+            }
+          },
+
+          get: {
+            date: function () {
+              return $module.data(metadata.date) || null;
+            },
+            focusDate: function () {
+              return $module.data(metadata.focusDate) || null;
+            },
+            startDate: function () {
+              var startModule = module.get.calendarModule(settings.startCalendar);
+              return (startModule ? startModule.get.date() : $module.data(metadata.startDate)) || null;
+            },
+            endDate: function () {
+              var endModule = module.get.calendarModule(settings.endCalendar);
+              return (endModule ? endModule.get.date() : $module.data(metadata.endDate)) || null;
+            },
+            monthOffset: function () {
+              return $module.data(metadata.monthOffset) || 0;
+            },
+            mode: function () {
+              //only returns valid modes for the current settings
+              var mode = $module.data(metadata.mode) || settings.startMode;
+              var validModes = module.get.validModes();
+              if ($.inArray(mode, validModes) >= 0) {
+                return mode;
+              }
+              return settings.type === 'time' ? 'hour' :
+                settings.type === 'month' ? 'month' :
+                  settings.type === 'year' ? 'year' : 'day';
+            },
+            validModes: function () {
+              var validModes = [];
+              if (settings.type !== 'time') {
+                if (!settings.disableYear || settings.type === 'year') {
+                  validModes.push('year');
+                }
+                if (!(settings.disableMonth || settings.type === 'year') || settings.type === 'month') {
+                  validModes.push('month');
+                }
+                if (settings.type.indexOf('date') >= 0) {
+                  validModes.push('day');
+                }
+              }
+              if (settings.type.indexOf('time') >= 0) {
+                validModes.push('hour');
+                if (!settings.disableMinute) {
+                  validModes.push('minute');
+                }
+              }
+              return validModes;
+            },
+            isTouch: function () {
+              try {
+                document.createEvent('TouchEvent');
+                return true;
+              }
+              catch (e) {
+                return false;
+              }
+            },
+            calendarModule: function (selector) {
+              if (!selector) {
+                return null;
+              }
+              if (!(selector instanceof $)) {
+                selector = $module.parent().children(selector).first();
+              }
+              //assume range related calendars are using the same namespace
+              return selector.data(moduleNamespace);
+            }
+          },
+
+          set: {
+            date: function (date, updateInput, fireChange) {
+              updateInput = updateInput !== false;
+              fireChange = fireChange !== false;
+              date = module.helper.sanitiseDate(date);
+              date = module.helper.dateInRange(date);
+
+              var mode = module.get.mode();
+              var text = formatter.datetime(date, settings);
+              if (fireChange && settings.onChange.call(element, date, text, mode) === false) {
+                return false;
+              }
+
+              module.set.focusDate(date);
+
+              if (settings.isDisabled(date, mode)) {
+                return false;
+              }
+
+              var endDate = module.get.endDate();
+              if (!!endDate && !!date && date > endDate) {
+                //selected date is greater than end date in range, so clear end date
+                module.set.endDate(undefined);
+              }
+              module.set.dataKeyValue(metadata.date, date);
+
+              if (updateInput && $input.length) {
+                $input.val(text);
+              }
+            },
+            startDate: function (date, refreshCalendar) {
+              date = module.helper.sanitiseDate(date);
+              var startModule = module.get.calendarModule(settings.startCalendar);
+              if (startModule) {
+                startModule.set.date(date);
+              }
+              module.set.dataKeyValue(metadata.startDate, date, refreshCalendar);
+            },
+            endDate: function (date, refreshCalendar) {
+              date = module.helper.sanitiseDate(date);
+              var endModule = module.get.calendarModule(settings.endCalendar);
+              if (endModule) {
+                endModule.set.date(date);
+              }
+              module.set.dataKeyValue(metadata.endDate, date, refreshCalendar);
+            },
+            focusDate: function (date, refreshCalendar, updateFocus, updateRange) {
+              date = module.helper.sanitiseDate(date);
+              date = module.helper.dateInRange(date);
+              var isDay = module.get.mode() === 'day';
+              var oldFocusDate = module.get.focusDate();
+              if (isDay && date && oldFocusDate) {
+                var yearDelta = date.getFullYear() - oldFocusDate.getFullYear();
+                var monthDelta = yearDelta * 12 + date.getMonth() - oldFocusDate.getMonth();
+                if (monthDelta) {
+                  var monthOffset = module.get.monthOffset() - monthDelta;
+                  module.set.monthOffset(monthOffset, false);
+                }
+              }
+              var changed = module.set.dataKeyValue(metadata.focusDate, date, refreshCalendar);
+              updateFocus = (updateFocus !== false && changed && refreshCalendar === false) || focusDateUsedForRange != updateRange;
+              focusDateUsedForRange = updateRange;
+              if (updateFocus) {
+                module.update.focus(updateRange);
+              }
+            },
+            monthOffset: function (monthOffset, refreshCalendar) {
+              var multiMonth = Math.max(settings.multiMonth, 1);
+              monthOffset = Math.max(1 - multiMonth, Math.min(0, monthOffset));
+              module.set.dataKeyValue(metadata.monthOffset, monthOffset, refreshCalendar);
+            },
+            mode: function (mode, refreshCalendar) {
+              module.set.dataKeyValue(metadata.mode, mode, refreshCalendar);
+            },
+            dataKeyValue: function (key, value, refreshCalendar) {
+              var oldValue = $module.data(key);
+              var equal = oldValue === value || (oldValue <= value && oldValue >= value); //equality test for dates and string objects
+              if (value) {
+                $module.data(key, value);
+              } else {
+                $module.removeData(key);
+              }
+              refreshCalendar = refreshCalendar !== false && !equal;
+              if (refreshCalendar) {
+                module.create.calendar();
+              }
+              return !equal;
+            }
+          },
+
+          selectDate: function (date, forceSet) {
+            var mode = module.get.mode();
+            var complete = forceSet || mode === 'minute' ||
+              (settings.disableMinute && mode === 'hour') ||
+              (settings.type === 'date' && mode === 'day') ||
+              (settings.type === 'month' && mode === 'month') ||
+              (settings.type === 'year' && mode === 'year');
+            if (complete) {
+              var canceled = module.set.date(date) === false;
+              if (!canceled && settings.closable) {
+                module.popup('hide');
+                //if this is a range calendar, show the end date calendar popup and focus the input
+                var endModule = module.get.calendarModule(settings.endCalendar);
+                if (endModule) {
+                  endModule.popup('show');
+                  endModule.focus();
+                }
+              }
+            } else {
+              var newMode = mode === 'year' ? (!settings.disableMonth ? 'month' : 'day') :
+                mode === 'month' ? 'day' : mode === 'day' ? 'hour' : 'minute';
+              module.set.mode(newMode);
+              if (mode === 'hour' || (mode === 'day' && module.get.date())) {
+                //the user has chosen enough to consider a valid date/time has been chosen
+                module.set.date(date);
+              } else {
+                module.set.focusDate(date);
+              }
+            }
+          },
+
+          changeDate: function (date) {
+            module.set.date(date);
+          },
+
+          clear: function () {
+            module.set.date(undefined);
+          },
+
+          popup: function () {
+            return $activator.popup.apply($activator, arguments);
+          },
+
+          focus: function () {
+            if ($input.length) {
+              $input.focus();
+            } else {
+              $container.focus();
+            }
+          },
+          blur: function () {
+            if ($input.length) {
+              $input.blur();
+            } else {
+              $container.blur();
+            }
+          },
+
+          helper: {
+            sanitiseDate: function (date) {
+              if (!date) {
+                return undefined;
+              }
+              if (!(date instanceof Date)) {
+                date = parser.date('' + date, settings);
+              }
+              if (isNaN(date.getTime())) {
+                return undefined;
+              }
+              return date;
+            },
+            dateDiff: function (date1, date2, mode) {
+              mode = mode || 'day';
+              var isTimeOnly = settings.type === 'time';
+              var isYear = mode === 'year';
+              var isYearOrMonth = isYear || mode === 'month';
+              var isMinute = mode === 'minute';
+              var isHourOrMinute = isMinute || mode === 'hour';
+              //only care about a minute accuracy of 5
+              date1 = new Date(
+                isTimeOnly ? 2000 : date1.getFullYear(),
+                isTimeOnly ? 0 : isYear ? 0 : date1.getMonth(),
+                isTimeOnly ? 1 : isYearOrMonth ? 1 : date1.getDate(),
+                !isHourOrMinute ? 0 : date1.getHours(),
+                !isMinute ? 0 : 5 * Math.floor(date1.getMinutes() / 5));
+              date2 = new Date(
+                isTimeOnly ? 2000 : date2.getFullYear(),
+                isTimeOnly ? 0 : isYear ? 0 : date2.getMonth(),
+                isTimeOnly ? 1 : isYearOrMonth ? 1 : date2.getDate(),
+                !isHourOrMinute ? 0 : date2.getHours(),
+                !isMinute ? 0 : 5 * Math.floor(date2.getMinutes() / 5));
+              return date2.getTime() - date1.getTime();
+            },
+            dateEqual: function (date1, date2, mode) {
+              return !!date1 && !!date2 && module.helper.dateDiff(date1, date2, mode) === 0;
+            },
+            isDateInRange: function (date, mode, minDate, maxDate) {
+              if (!minDate && !maxDate) {
+                var startDate = module.get.startDate();
+                minDate = startDate && settings.minDate ? new Date(Math.max(startDate, settings.minDate)) : startDate || settings.minDate;
+                maxDate = settings.maxDate;
+              }
+              minDate = minDate && new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate(), minDate.getHours(), 5 * Math.ceil(minDate.getMinutes() / 5));
+              return !(!date ||
+              (minDate && module.helper.dateDiff(date, minDate, mode) > 0) ||
+              (maxDate && module.helper.dateDiff(maxDate, date, mode) > 0));
+            },
+            dateInRange: function (date, minDate, maxDate) {
+              if (!minDate && !maxDate) {
+                var startDate = module.get.startDate();
+                minDate = startDate && settings.minDate ? new Date(Math.max(startDate, settings.minDate)) : startDate || settings.minDate;
+                maxDate = settings.maxDate;
+              }
+              minDate = minDate && new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate(), minDate.getHours(), 5 * Math.ceil(minDate.getMinutes() / 5));
+              var isTimeOnly = settings.type === 'time';
+              return !date ? date :
+                (minDate && module.helper.dateDiff(date, minDate, 'minute') > 0) ?
+                  (isTimeOnly ? module.helper.mergeDateTime(date, minDate) : minDate) :
+                  (maxDate && module.helper.dateDiff(maxDate, date, 'minute') > 0) ?
+                    (isTimeOnly ? module.helper.mergeDateTime(date, maxDate) : maxDate) :
+                    date;
+            },
+            mergeDateTime: function (date, time) {
+              return (!date || !time) ? time :
+                new Date(date.getFullYear(), date.getMonth(), date.getDate(), time.getHours(), time.getMinutes());
+            }
+          },
+
+          setting: function (name, value) {
+            module.debug('Changing setting', name, value);
+            if ($.isPlainObject(name)) {
+              $.extend(true, settings, name);
+            }
+            else if (value !== undefined) {
+              if ($.isPlainObject(settings[name])) {
+                $.extend(true, settings[name], value);
+              }
+              else {
+                settings[name] = value;
+              }
+            }
+            else {
+              return settings[name];
+            }
+          },
+          internal: function (name, value) {
+            module.debug('Changing internal', name, value);
+            if (value !== undefined) {
+              if ($.isPlainObject(name)) {
+                $.extend(true, module, name);
+              }
+              else {
+                module[name] = value;
+              }
+            }
+            else {
+              return module[name];
+            }
+          },
+          debug: function () {
+            if (!settings.silent && settings.debug) {
+              if (settings.performance) {
+                module.performance.log(arguments);
+              }
+              else {
+                module.debug = Function.prototype.bind.call(console.info, console, settings.name + ':');
+                module.debug.apply(console, arguments);
+              }
+            }
+          },
+          verbose: function () {
+            if (!settings.silent && settings.verbose && settings.debug) {
+              if (settings.performance) {
+                module.performance.log(arguments);
+              }
+              else {
+                module.verbose = Function.prototype.bind.call(console.info, console, settings.name + ':');
+                module.verbose.apply(console, arguments);
+              }
+            }
+          },
+          error: function () {
+            if (!settings.silent) {
+              module.error = Function.prototype.bind.call(console.error, console, settings.name + ':');
+              module.error.apply(console, arguments);
+            }
+          },
+          performance: {
+            log: function (message) {
+              var
+                currentTime,
+                executionTime,
+                previousTime
+                ;
+              if (settings.performance) {
+                currentTime = new Date().getTime();
+                previousTime = time || currentTime;
+                executionTime = currentTime - previousTime;
+                time = currentTime;
+                performance.push({
+                  'Name': message[0],
+                  'Arguments': [].slice.call(message, 1) || '',
+                  'Element': element,
+                  'Execution Time': executionTime
+                });
+              }
+              clearTimeout(module.performance.timer);
+              module.performance.timer = setTimeout(module.performance.display, 500);
+            },
+            display: function () {
+              var
+                title = settings.name + ':',
+                totalTime = 0
+                ;
+              time = false;
+              clearTimeout(module.performance.timer);
+              $.each(performance, function (index, data) {
+                totalTime += data['Execution Time'];
+              });
+              title += ' ' + totalTime + 'ms';
+              if (moduleSelector) {
+                title += ' \'' + moduleSelector + '\'';
+              }
+              if ((console.group !== undefined || console.table !== undefined) && performance.length > 0) {
+                console.groupCollapsed(title);
+                if (console.table) {
+                  console.table(performance);
+                }
+                else {
+                  $.each(performance, function (index, data) {
+                    console.log(data['Name'] + ': ' + data['Execution Time'] + 'ms');
+                  });
+                }
+                console.groupEnd();
+              }
+              performance = [];
+            }
+          },
+          invoke: function (query, passedArguments, context) {
+            var
+              object = instance,
+              maxDepth,
+              found,
+              response
+              ;
+            passedArguments = passedArguments || queryArguments;
+            context = element || context;
+            if (typeof query == 'string' && object !== undefined) {
+              query = query.split(/[\. ]/);
+              maxDepth = query.length - 1;
+              $.each(query, function (depth, value) {
+                var camelCaseValue = (depth != maxDepth)
+                    ? value + query[depth + 1].charAt(0).toUpperCase() + query[depth + 1].slice(1)
+                    : query
+                  ;
+                if ($.isPlainObject(object[camelCaseValue]) && (depth != maxDepth)) {
+                  object = object[camelCaseValue];
+                }
+                else if (object[camelCaseValue] !== undefined) {
+                  found = object[camelCaseValue];
+                  return false;
+                }
+                else if ($.isPlainObject(object[value]) && (depth != maxDepth)) {
+                  object = object[value];
+                }
+                else if (object[value] !== undefined) {
+                  found = object[value];
+                  return false;
+                }
+                else {
+                  module.error(error.method, query);
+                  return false;
+                }
+              });
+            }
+            if ($.isFunction(found)) {
+              response = found.apply(context, passedArguments);
+            }
+            else if (found !== undefined) {
+              response = found;
+            }
+            if ($.isArray(returnedValue)) {
+              returnedValue.push(response);
+            }
+            else if (returnedValue !== undefined) {
+              returnedValue = [returnedValue, response];
+            }
+            else if (response !== undefined) {
+              returnedValue = response;
+            }
+            return found;
+          }
+        };
+
+        if (methodInvoked) {
+          if (instance === undefined) {
+            module.initialize();
+          }
+          module.invoke(query);
+        }
+        else {
+          if (instance !== undefined) {
+            instance.invoke('destroy');
+          }
+          module.initialize();
+        }
+      })
+    ;
+    return (returnedValue !== undefined)
+      ? returnedValue
+      : this
+      ;
+  };
+
+  $.fn.calendar.settings = {
+
+    name: 'Calendar',
+    namespace: 'calendar',
+
+    silent: false,
+    debug: false,
+    verbose: false,
+    performance: false,
+
+    type: 'datetime',     // picker type, can be 'datetime', 'date', 'time', 'month', or 'year'
+    firstDayOfWeek: 0,    // day for first day column (0 = Sunday)
+    constantHeight: true, // add rows to shorter months to keep day calendar height consistent (6 rows)
+    today: false,         // show a 'today/now' button at the bottom of the calendar
+    closable: true,       // close the popup after selecting a date/time
+    monthFirst: true,     // month before day when parsing/converting date from/to text
+    touchReadonly: true,  // set input to readonly on touch devices
+    inline: false,        // create the calendar inline instead of inside a popup
+    on: null,             // when to show the popup (defaults to 'focus' for input, 'click' for others)
+    initialDate: null,    // date to display initially when no date is selected (null = now)
+    startMode: false,     // display mode to start in, can be 'year', 'month', 'day', 'hour', 'minute' (false = 'day')
+    minDate: null,        // minimum date/time that can be selected, dates/times before are disabled
+    maxDate: null,        // maximum date/time that can be selected, dates/times after are disabled
+    ampm: true,           // show am/pm in time mode
+    disableYear: false,   // disable year selection mode
+    disableMonth: false,  // disable month selection mode
+    disableMinute: false, // disable minute selection mode
+    formatInput: true,    // format the input text upon input blur and module creation
+    startCalendar: null,  // jquery object or selector for another calendar that represents the start date of a date range
+    endCalendar: null,    // jquery object or selector for another calendar that represents the end date of a date range
+    multiMonth: 1,        // show multiple months when in 'day' mode
+
+    // popup options ('popup', 'on', 'hoverable', and show/hide callbacks are overridden)
+    popupOptions: {
+      position: 'bottom left',
+      lastResort: 'bottom left',
+      prefer: 'opposite',
+      hideOnScroll: false
+    },
+
+    text: {
+      days: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+      months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      today: 'Today',
+      now: 'Now',
+      am: 'AM',
+      pm: 'PM'
+    },
+
+    formatter: {
+      header: function (date, mode, settings) {
+        return mode === 'year' ? settings.formatter.yearHeader(date, settings) :
+          mode === 'month' ? settings.formatter.monthHeader(date, settings) :
+            mode === 'day' ? settings.formatter.dayHeader(date, settings) :
+              mode === 'hour' ? settings.formatter.hourHeader(date, settings) :
+                settings.formatter.minuteHeader(date, settings);
+      },
+      yearHeader: function (date, settings) {
+        var decadeYear = Math.ceil(date.getFullYear() / 10) * 10;
+        return (decadeYear - 9) + ' - ' + (decadeYear + 2);
+      },
+      monthHeader: function (date, settings) {
+        return date.getFullYear();
+      },
+      dayHeader: function (date, settings) {
+        var month = settings.text.months[date.getMonth()];
+        var year = date.getFullYear();
+        return month + ' ' + year;
+      },
+      hourHeader: function (date, settings) {
+        return settings.formatter.date(date, settings);
+      },
+      minuteHeader: function (date, settings) {
+        return settings.formatter.date(date, settings);
+      },
+      dayColumnHeader: function (day, settings) {
+        return settings.text.days[day];
+      },
+      datetime: function (date, settings) {
+        if (!date) {
+          return '';
+        }
+        var day = settings.type === 'time' ? '' : settings.formatter.date(date, settings);
+        var time = settings.type.indexOf('time') < 0 ? '' : settings.formatter.time(date, settings, false);
+        var separator = settings.type === 'datetime' ? ' ' : '';
+        return day + separator + time;
+      },
+      date: function (date, settings) {
+        if (!date) {
+          return '';
+        }
+        var day = date.getDate();
+        var month = settings.text.months[date.getMonth()];
+        var year = date.getFullYear();
+        return settings.type === 'year' ? year :
+          settings.type === 'month' ? month + ' ' + year :
+          (settings.monthFirst ? month + ' ' + day : day + ' ' + month) + ', ' + year;
+      },
+      time: function (date, settings, forCalendar) {
+        if (!date) {
+          return '';
+        }
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var ampm = '';
+        if (settings.ampm) {
+          ampm = ' ' + (hour < 12 ? settings.text.am : settings.text.pm);
+          hour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
+        }
+        return hour + ':' + (minute < 10 ? '0' : '') + minute + ampm;
+      },
+      today: function (settings) {
+        return settings.type === 'date' ? settings.text.today : settings.text.now;
+      }
+    },
+
+    parser: {
+      date: function (text, settings) {
+        if (!text) {
+          return null;
+        }
+        text = ('' + text).trim().toLowerCase();
+        if (text.length === 0) {
+          return null;
+        }
+
+        var i, j, k;
+        var minute = -1, hour = -1, day = -1, month = -1, year = -1;
+        var isAm = undefined;
+
+        var isTimeOnly = settings.type === 'time';
+        var isDateOnly = settings.type.indexOf('time') < 0;
+
+        var words = text.split(settings.regExp.dateWords);
+        var numbers = text.split(settings.regExp.dateNumbers);
+
+        if (!isDateOnly) {
+          //am/pm
+          isAm = $.inArray(settings.text.am.toLowerCase(), words) >= 0 ? true :
+            $.inArray(settings.text.pm.toLowerCase(), words) >= 0 ? false : undefined;
+
+          //time with ':'
+          for (i = 0; i < numbers.length; i++) {
+            var number = numbers[i];
+            if (number.indexOf(':') >= 0) {
+              if (hour < 0 || minute < 0) {
+                var parts = number.split(':');
+                for (k = 0; k < Math.min(2, parts.length); k++) {
+                  j = parseInt(parts[k]);
+                  if (isNaN(j)) {
+                    j = 0;
+                  }
+                  if (k === 0) {
+                    hour = j % 24;
+                  } else {
+                    minute = j % 60;
+                  }
+                }
+              }
+              numbers.splice(i, 1);
+            }
+          }
+        }
+
+        if (!isTimeOnly) {
+          //textual month
+          for (i = 0; i < words.length; i++) {
+            var word = words[i];
+            if (word.length <= 0) {
+              continue;
+            }
+            word = word.substring(0, Math.min(word.length, 3));
+            for (j = 0; j < settings.text.months.length; j++) {
+              var monthString = settings.text.months[j];
+              monthString = monthString.substring(0, Math.min(word.length, Math.min(monthString.length, 3))).toLowerCase();
+              if (monthString === word) {
+                month = j + 1;
+                break;
+              }
+            }
+            if (month >= 0) {
+              break;
+            }
+          }
+
+          //year > 59
+          for (i = 0; i < numbers.length; i++) {
+            j = parseInt(numbers[i]);
+            if (isNaN(j)) {
+              continue;
+            }
+            if (j > 59) {
+              year = j;
+              numbers.splice(i, 1);
+              break;
+            }
+          }
+
+          //numeric month
+          if (month < 0) {
+            for (i = 0; i < numbers.length; i++) {
+              k = i > 1 || settings.monthFirst ? i : i === 1 ? 0 : 1;
+              j = parseInt(numbers[k]);
+              if (isNaN(j)) {
+                continue;
+              }
+              if (1 <= j && j <= 12) {
+                month = j;
+                numbers.splice(k, 1);
+                break;
+              }
+            }
+          }
+
+          //day
+          for (i = 0; i < numbers.length; i++) {
+            j = parseInt(numbers[i]);
+            if (isNaN(j)) {
+              continue;
+            }
+            if (1 <= j && j <= 31) {
+              day = j;
+              numbers.splice(i, 1);
+              break;
+            }
+          }
+
+          //year <= 59
+          if (year < 0) {
+            for (i = numbers.length - 1; i >= 0; i--) {
+              j = parseInt(numbers[i]);
+              if (isNaN(j)) {
+                continue;
+              }
+              if (j < 99) {
+                j += 2000;
+              }
+              year = j;
+              numbers.splice(i, 1);
+              break;
+            }
+          }
+        }
+
+        if (!isDateOnly) {
+          //hour
+          if (hour < 0) {
+            for (i = 0; i < numbers.length; i++) {
+              j = parseInt(numbers[i]);
+              if (isNaN(j)) {
+                continue;
+              }
+              if (0 <= j && j <= 23) {
+                hour = j;
+                numbers.splice(i, 1);
+                break;
+              }
+            }
+          }
+
+          //minute
+          if (minute < 0) {
+            for (i = 0; i < numbers.length; i++) {
+              j = parseInt(numbers[i]);
+              if (isNaN(j)) {
+                continue;
+              }
+              if (0 <= j && j <= 59) {
+                minute = j;
+                numbers.splice(i, 1);
+                break;
+              }
+            }
+          }
+        }
+
+        if (minute < 0 && hour < 0 && day < 0 && month < 0 && year < 0) {
+          return null;
+        }
+
+        if (minute < 0) {
+          minute = 0;
+        }
+        if (hour < 0) {
+          hour = 0;
+        }
+        if (day < 0) {
+          day = 1;
+        }
+        if (month < 0) {
+          month = 1;
+        }
+        if (year < 0) {
+          year = new Date().getFullYear();
+        }
+
+        if (isAm !== undefined) {
+          if (isAm) {
+            if (hour === 12) {
+              hour = 0;
+            }
+          } else if (hour < 12) {
+            hour += 12;
+          }
+        }
+
+        var date = new Date(year, month - 1, day, hour, minute);
+        if (date.getMonth() !== month - 1 || date.getFullYear() !== year) {
+          //month or year don't match up, switch to last day of the month
+          date = new Date(year, month, 0, hour, minute);
+        }
+        return isNaN(date.getTime()) ? null : date;
+      }
+    },
+
+    // callback when date changes, return false to cancel the change
+    onChange: function (date, text, mode) {
+      return true;
+    },
+
+    // callback before show animation, return false to prevent show
+    onShow: function () {
+    },
+
+    // callback after show animation
+    onVisible: function () {
+    },
+
+    // callback before hide animation, return false to prevent hide
+    onHide: function () {
+    },
+
+    // callback after hide animation
+    onHidden: function () {
+    },
+
+    // is the given date disabled?
+    isDisabled: function (date, mode) {
+      return false;
+    },
+
+    selector: {
+      popup: '.ui.popup',
+      input: 'input',
+      activator: 'input'
+    },
+
+    regExp: {
+      dateWords: /[^A-Za-z\u00C0-\u024F]+/g,
+      dateNumbers: /[^\d:]+/g
+    },
+
+    error: {
+      popup: 'UI Popup, a required component is not included in this page',
+      method: 'The method you called is not defined.'
+    },
+
+    className: {
+      calendar: 'calendar',
+      active: 'active',
+      popup: 'ui popup',
+      grid: 'ui equal width grid',
+      column: 'column',
+      table: 'ui celled center aligned unstackable table',
+      prev: 'prev link',
+      next: 'next link',
+      prevIcon: 'chevron left icon',
+      nextIcon: 'chevron right icon',
+      link: 'link',
+      cell: 'link',
+      disabledCell: 'disabled',
+      adjacentCell: 'adjacent',
+      activeCell: 'active',
+      rangeCell: 'range',
+      focusCell: 'focus',
+      todayCell: 'today',
+      today: 'today link'
+    },
+
+    metadata: {
+      date: 'date',
+      focusDate: 'focusDate',
+      startDate: 'startDate',
+      endDate: 'endDate',
+      mode: 'mode',
+      monthOffset: 'monthOffset'
+    }
+  };
+
+})(jQuery, window, document);
+
+/*
  * This file is part of the Sylius package.
  *
  * (c) Paweł Jędrzejewski
@@ -753,35 +2118,109 @@ if(n.debug("Changing setting",t,o),e.isPlainObject(t))e.extend(!0,f,t);else{if(o
     });
 })( jQuery );
 
-(function($) {
+(function ($) {
+    'use strict';
+
+    var calendarTextFr = {
+        days: ['S', 'L', 'M', 'M', 'J', 'V', 'S'],
+        months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        monthsShort: ['Janv', 'Févr', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
+        today: 'Aujourd\'hui',
+        now: 'Maintenant',
+        am: 'AM',
+        pm: 'PM'
+    };
+
+    $.fn.extend({
+        datePicker: function () {
+            $(this).each(function () {
+                var $element = $(this);
+
+                $element.calendar({
+                    type: 'date',
+                    firstDayOfWeek: 1,
+                    text: calendarTextFr,
+                    formatter: {
+                        date: function (date, settings) {
+                            if (!date) return '';
+                            var day = date.getDate();
+                            var month = date.getMonth() + 1;
+                            var year = date.getFullYear();
+
+                            if (month < 10) {
+                                month = "0" + month;
+                            }
+                            if (day < 10) {
+                                day = "0" + day;
+                            }
+
+                            return day + '/' + month + '/' + year;
+                        }
+                    },
+                    parser: {
+                        date: function (text, settings) {
+                            var dateAsArray = text.split('/');
+                            return new Date(dateAsArray[2], dateAsArray[1] - 1, dateAsArray[0]);
+                        }
+                    },
+                });
+            });
+        }
+    });
+
+    $.fn.extend({
+        dateTimePicker: function () {
+            $(this).each(function () {
+                var $element = $(this);
+
+                $element.calendar({
+                    type: 'datetime',
+                    firstDayOfWeek: 1,
+                    text: calendarTextFr,
+                    disableMinute: true,
+                    ampm: false,
+                    formatter: {
+                        date: function (date, settings) {
+                            if (!date) return '';
+                            var day = date.getDate();
+                            var month = date.getMonth() + 1;
+                            var year = date.getFullYear();
+
+                            if (month < 10) {
+                                month = "0" + month;
+                            }
+
+                            if (day < 10) {
+                                day = "0" + day;
+                            }
+
+                            return day + '/' + month + '/' + year;
+                        },
+                        time: function (date, settings, forCalendar) {
+                            var hours = date.getHours();
+                            var minutes = date.getMinutes();
+
+                            if (minutes < 10) {
+                                minutes = "0" + minutes;
+                            }
+
+                            return hours + 'h' + minutes;
+                        }
+                    }
+                });
+            });
+        }
+    });
+})(jQuery);
+(function ($) {
     $(document).ready(function () {
-      $('#sylius_customer_createUser').change(function(){
-        $('#user-form').toggle();
-      });
+        $('.sylius-autocomplete').autoComplete();
+        $('#sylius_customer_createUser').change(function () {
+            $('#user-form').toggle();
+        });
 
-      $('.js-datePicker').calendar({
-        type: 'date',
-        formatter: {
-          date: function (date, settings) {
-            if (!date) return '';
-            var day = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-
-            if (month < 10) {
-              month = "0" + month;
-            }
-
-            return day + '/' + month + '/' + year;
-          }
-        },
-        parser: {
-          date: function (text, settings) {
-            var dateAsArray = text.split('/')
-            return new Date(dateAsArray[2], dateAsArray[1] - 1, dateAsArray[0]);
-          }
-        },
-      });
+        $('.app-date-picker').datePicker();
+        $('.app-date-time-picker').dateTimePicker();
     });
 })(jQuery);
 
