@@ -3,7 +3,6 @@ sylius_backend_admin_user:
         alias: sylius.admin_user
         section: backend
         path: users
-        templates: :backend/crud
         except: ['show']
         redirect: index
         grid: sylius_backend_admin_user
@@ -14,4 +13,5 @@ sylius_backend_admin_user:
                     form: backend/admin_user/_form.html.twig
             index:
                 icon: lock
+        templates: :backend/crud
     type: sylius.resource
