@@ -14,26 +14,27 @@ sylius_fixtures:
                     options:
                         custom:
                             -
-                                email: "admin@mobizel.com"
-                                password: "mobizel"
+                                email: "admin@example.com"
+                                password: "admin"
                                 enabled: true
                                 first_name: "John"
                                 last_name: "Doe"
                 customer:
                     options:
+                        random: 20
                         custom:
                             -
-                                email: "customer@mobizel.com"
+                                email: "customer@example.com"
                                 first_name: "Harry"
                                 last_name: "Cover"
                 app_user:
                    options:
                        custom:
                            -
-                               email: "customer@mobizel.com"
+                               email: "customer@example.com"
                                password: "password"
                                enabled: true
-                               customer: "customer@mobizel.com"
+                               customer: "customer@example.com"
                 oauth_client:
                     options:
                         custom:
@@ -42,6 +43,5 @@ sylius_fixtures:
                                 secret: 2rlxzhijcx448ow4c0gksw4wo8oo4k8kkwwg0osskk8g0k8kw8
                 address:
                     options:
-                        custom:
-                            - ~
+                        random: 20
 
