@@ -7,7 +7,7 @@ textarea,
 select,
 .select {
   @include placeholder {
-    color: $lighter-gray;
+    color: lighten($light-gray, 20%);
     font-size: rem-calc(13);
   }
 }
@@ -97,7 +97,7 @@ input[type="file"] {
   cursor: pointer;
 
   &::-webkit-file-upload-button {
-    background: $lighter-gray;
+    background: lighten($light-gray, 20%);;
     border: 0;
     padding: 10px 20px;
     cursor: pointer;
@@ -106,7 +106,7 @@ input[type="file"] {
   }
 
   &::-ms-browse {
-    background: $lighter-gray;
+    background: lighten($light-gray, 20%);;
     border: 0;
     padding: 10px 20px;
     cursor: pointer;
