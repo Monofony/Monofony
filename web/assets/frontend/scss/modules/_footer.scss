@@ -14,7 +14,7 @@
     letter-spacing: rem-calc(0.72);
   }
 
-  @media #{$medium-up} {
+  @include breakpoint(medium up) {
     > .row {
       height: 110px;
 
