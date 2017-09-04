@@ -1,10 +1,11 @@
 {
-    "name": "loicfremont/monofony",
+    "name": "mobizel/monofony",
+    "description": "Starter project for Symfony projects",
     "license": "proprietary",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "AppBundle\\": "src/AppBundle/"
         },
         "classmap": [
             "app/AppKernel.php",
