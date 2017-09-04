@@ -165,7 +165,7 @@ $ gulp
 [Behat](http://behat.org) scenarios
 -----------------------------------
 
-By default Behat uses `http://app_name.dev/app_test.php/` as your application base url. If your one is different,
+By default Behat uses `http://localhost:8080/` as your application base url. If your one is different,
 you need to create `behat.yml` files that will overwrite it with your custom url:
 
 ```yaml
