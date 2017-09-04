@@ -7,7 +7,7 @@ default:
 
     extensions:
         Behat\MinkExtension:
-            base_url: http://app_name.dev/app_test.php/
+            base_url: "http://localhost:8080/"
             default_session: symfony
             javascript_session: chrome
             sessions:
