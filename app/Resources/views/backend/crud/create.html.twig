@@ -4,7 +4,7 @@
 
 {% block title %}{{ parent() }} {{ header|trans }}{% endblock %}
 
-{% form_theme form 'SyliusUiBundle:Form:theme.html.twig' %}
+{% form_theme form 'backend/form/theme.html.twig' %}
 
 {% block content %}
     {% include 'backend/crud/create/_header.html.twig' %}
