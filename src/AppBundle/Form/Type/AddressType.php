@@ -13,6 +13,7 @@ namespace AppBundle\Form\Type;
 
 use AppBundle\Entity\Address;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -41,16 +42,21 @@ class AddressType extends AbstractType
             ->add('city', TextType::class, [
                 'label' => 'sylius.ui.city',
             ])
-            ->add('date', DateType::class, [
-                'label' => 'sylius.ui.date',
+            ->add('birthday', BirthdayType::class, [
+                'label' => 'Date de naissance',
+                'widget' => 'choice',
                 'mapped' => false,
                 'required' => false,
             ])
-            ->add('dateTime', DateTimeType::class, [
-                'label' => 'sylius.ui.date',
+            ->add('date', DatePickerType::class, [
+                'label' => 'Date picker',
                 'mapped' => false,
                 'required' => false,
-                'widget' => 'single_text',
+            ])
+            ->add('dateTime', DateTimePickerType::class, [
+                'label' => 'Date picker avec heure',
+                'mapped' => false,
+                'required' => false,
             ])
         ;
     }
