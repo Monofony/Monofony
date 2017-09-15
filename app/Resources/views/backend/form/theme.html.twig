@@ -1,0 +1,42 @@
+{% extends '@SyliusUi/Form/theme.html.twig' %}
+
+{%- block date_widget -%}
+    <div class="three fields">
+        {{- form_widget(form.day) -}}
+        {{- form_widget(form.month) -}}
+        {{- form_widget(form.year) -}}
+    </div>
+{%- endblock -%}
+
+{% block app_date_time_picker_widget %}
+    {% spaceless %}
+        <div class="ui calendar app-date-time-picker">
+            <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                {{ block('form_widget') }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block app_date_picker_widget %}
+    {% spaceless %}
+        <div class="ui calendar app-date-picker">
+            <div class="ui input left icon">
+                <i class="calendar icon"></i>
+                {{ block('form_widget') }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block time_widget %}
+    <div class="two fields">
+        <div class="field">
+            {{- form_widget(form.hour) -}}
+        </div>
+        <div class="field">
+            {{- form_widget(form.minute) -}}
+        </div>
+    </div>
+{% endblock %}

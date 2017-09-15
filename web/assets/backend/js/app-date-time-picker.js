@@ -84,7 +84,7 @@
                                 minutes = "0" + minutes;
                             }
 
-                            return hours + 'h' + minutes;
+                            return hours + ':' + minutes;
                         }
                     }
                 });
