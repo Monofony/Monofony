@@ -2204,7 +2204,7 @@ if(n.debug("Changing setting",t,o),e.isPlainObject(t))e.extend(!0,f,t);else{if(o
                                 minutes = "0" + minutes;
                             }
 
-                            return hours + 'h' + minutes;
+                            return hours + ':' + minutes;
                         }
                     }
                 });
