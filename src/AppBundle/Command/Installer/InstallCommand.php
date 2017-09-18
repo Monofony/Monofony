@@ -67,7 +67,7 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('<info>Installing AppName...</info>');
-        $output->writeln('');
+        $output->writeln($this->getLogo());
 
         $this->ensureDirectoryExistsAndIsWritable($this->getContainer()->getParameter('kernel.cache_dir'), $output);
 
@@ -98,7 +98,7 @@ EOT
         $frontControllerPath = 'prod' === $this->getEnvironment() ? '/' : sprintf('/app_%s.php', $this->getEnvironment());
 
         $output->writeln($this->getProperFinalMessage($errored));
-        $output->writeln(sprintf('You can now open your store at the following path under the website root: <info>%s.</info>', $frontControllerPath));
+        $output->writeln(sprintf('You can now open your website at the following path under the website root: <info>%s.</info>', $frontControllerPath));
     }
 
     /**
@@ -111,5 +111,27 @@ EOT
         }
 
         return '<info>AppName has been successfully installed.</info>';
+    }
+
+    /**
+     * @return string
+     */
+    private function getLogo()
+    {
+        return '
+        
+$$\      $$\                                $$$$$$\                               
+$$$\    $$$ |                              $$  __$$\                              
+$$$$\  $$$$ | $$$$$$\  $$$$$$$\   $$$$$$\  $$ /  \__|$$$$$$\  $$$$$$$\  $$\   $$\ 
+$$\$$\$$ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$$$\    $$  __$$\ $$  __$$\ $$ |  $$ |
+$$ \$$$  $$ |$$ /  $$ |$$ |  $$ |$$ /  $$ |$$  _|   $$ /  $$ |$$ |  $$ |$$ |  $$ |
+$$ |\$  /$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |
+$$ | \_/ $$ |\$$$$$$  |$$ |  $$ |\$$$$$$  |$$ |     \$$$$$$  |$$ |  $$ |\$$$$$$$ |
+\__|     \__| \______/ \__|  \__| \______/ \__|      \______/ \__|  \__| \____$$ |
+                                                                        $$\   $$ |
+                                                                        \$$$$$$  |
+                                                                         \______/ 
+                                                                         
+        ';
     }
 }
