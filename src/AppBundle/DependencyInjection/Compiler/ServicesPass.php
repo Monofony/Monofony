@@ -68,8 +68,12 @@ class ServicesPass implements CompilerPassInterface
         $listenerPasswordUpdaterDefinition
             ->setClass(PasswordUpdaterListener::class)
             ->addTag('kernel.event_listener', [
-            'event' => 'sylius.customer.pre_update',
-            'method' => 'customerUpdateEvent'
-        ]);
+                'event' => 'sylius.customer.pre_update',
+                'method' => 'customerUpdateEvent'
+            ])
+            ->addTag('kernel.event_listener', [
+                'event' => 'sylius.admin_user.pre_update',
+                'method' => 'genericEventUpdater'
+            ]);
     }
 }
