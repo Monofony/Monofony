@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Set php version through phpenv. 5.3, 5.4 and 5.5 available
-phpenv local 7.0
+# Set php version through phpenv.
+phpenv local 7.1
 
 # Install dependencies through Composer
 composer install --prefer-dist --no-interaction
