@@ -37,17 +37,17 @@ class Customer extends BaseCustomer implements UserAwareInterface
     /**
      * @return AppUser
      */
-    public function getUser()
+    public function getUser(): ?UserInterface
     {
         return $this->user;
     }
 
     /**
-     * @param UserInterface $user
+     * @param UserInterface|null $user
      *
      * @return $this
      */
-    public function setUser(UserInterface $user = null)
+    public function setUser(?UserInterface $user)
     {
         if ($this->user !== $user) {
             $this->user = $user;
