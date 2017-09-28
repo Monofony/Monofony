@@ -47,7 +47,7 @@ class CustomerContext implements CustomerContextInterface
      *
      * @return CustomerInterface|null
      */
-    public function getCustomer()
+    public function getCustomer(): ?CustomerInterface
     {
         if (null === $token = $this->tokenStorage->getToken()) {
             return null;
