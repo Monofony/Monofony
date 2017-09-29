@@ -18,7 +18,7 @@
         }
     },
     "require": {
-        "php": "^5.5.9|^7.0",
+        "php": "^7.1",
 
         "doctrine/orm": "^2.4.8",
         "doctrine/doctrine-bundle": "~1.4",
@@ -45,8 +45,6 @@
         "sylius/resource-bundle": "^1.0",
         "sylius/ui-bundle": "^1.0",
         "sylius/user-bundle": "^1.0",
-        "twig/extensions": " ^1.4",
-        "twig/twig": "^1.28",
         "winzou/state-machine-bundle": "~0.2"
     },
     "require-dev": {
