@@ -38,7 +38,7 @@ AppUser
 
 AppUser entity is designed for customers that have registered in the system - they have an account with both e-mail and password. They can visit and modify their account.
 
-While creating new account the existence of the provided email in the system is checked - if the email was present - it will already have a Customer therefore the existing one will be assigned to the newly created ShopUser, if not - a new Customer will be created together with the ShopUser.
+While creating new account the existence of the provided email in the system is checked - if the email was present - it will already have a Customer therefore the existing one will be assigned to the newly created AppUser, if not - a new Customer will be created together with the AppUser.
 
 How to create an AppUser programmatically?
 ------------------------------------------
