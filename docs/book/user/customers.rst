@@ -48,7 +48,7 @@ Assuming that you have a Customer (either retrieved from the repository or a new
 .. code-block:: php
 
     /** @var ShopUserInterface $user */
-    $user = $this->container->get('sylius.factory.shop_user')->createNew();
+    $user = $this->container->get('sylius.factory.app_user')->createNew();
 
     // Now let's find a Customer by their e-mail:
     /** @var CustomerInterface $customer */
@@ -58,7 +58,7 @@ Assuming that you have a Customer (either retrieved from the repository or a new
     $user->setCustomer($customer);
     $user->setPlainPassword('pswd');
 
-    $this->container->get('sylius.repository.shop_user')->add($user);
+    $this->container->get('sylius.repository.app_user')->add($user);
 
 Changing the AppUser password
 -----------------------------
