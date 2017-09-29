@@ -9,11 +9,11 @@ SyliusResourceBundle ships with a custom route loader that can save you some tim
 Generating a routing
 --------------------
 
-In order to generate routing on administration, you have to create a .yml file in ``app/config/routing/backend/`` directory and to add this file in the ````app/config/routing/backend.yml``.
+In order to generate routing on administration, you have to create a yaml file in ``app/config/routing/backend/`` directory and to add this file in the ````app/config/routing/backend.yml``.
 
-In order to generate routing for API Endpoints, you have to create a .yml file in ``app/config/routing/api/`` directory and to add this file in the ````app/config/routing/api.yml``.
+In order to generate routing for API Endpoints, you have to create a yaml file in ``app/config/routing/api/`` directory and to add this file in the ````app/config/routing/api.yml``.
 
-In order to generate routing on frontend, you have to create a .yml file in ``app/config/routing/frontend/`` directory and to add this file in the ````app/config/routing/frontend.yml``.
+In order to generate routing on frontend, you have to create a yaml file in ``app/config/routing/frontend/`` directory and to add this file in the ````app/config/routing/frontend.yml``.
 
 Routing Configuration Reference
 -------------------------------

@@ -9,7 +9,7 @@ A grid is the way objects of a desired entity are displayed on its index view.
 Create a Grid
 -------------
 
-To create a grid, youo have to create a .yml file in ``app/config/app/sylius/grids`` and to add this file in the ``sylius_grid.yml``.
+To create a grid, you have to create a yaml file in ``app/config/app/sylius/grids`` and to add this file in the ``sylius_grid.yml``.
 
 .. code-block:: yaml
 
