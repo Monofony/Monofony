@@ -13,6 +13,18 @@ AppName Documentation
     Framework. If you're not familiar with Symfony, please start with
     reading the `Quick Tour`_ from the Symfony documentation.
 
+The Book
+--------
+
+Here you will find all the concepts used in the AppName platform.
+:doc:`The Book </book/index>` helps to understand how AppName works.
+
+.. toctree::
+    :hidden:
+
+    book/index
+
+.. include:: /book/map.rst.inc
 
 The REST API Reference
 ----------------------
