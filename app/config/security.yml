@@ -29,6 +29,12 @@ security:
                 default_target_path: app_backend_dashboard
                 use_forward: false
                 use_referer: false
+            remember_me:
+                secret: "%secret%"
+                path: /admin
+                name: APP_ADMIN_REMEMBER_ME
+                lifetime: 31536000
+                remember_me_parameter: _remember_me
             logout:
                 path: sylius_backend_logout
                 target: sylius_backend_login
