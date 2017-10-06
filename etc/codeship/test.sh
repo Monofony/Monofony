@@ -3,7 +3,9 @@
 code=0
 commands=(
     validate-composer
+    validate-behat-features
     validate-doctrine-schema
+    validate-twig
     test-phpspec
     test-phpunit
     test-fixtures
