@@ -6,8 +6,8 @@ Feature: Edit admin users
 
     Background:
         Given there are admin users:
-            | email                  | password |
-            | admin@example.com      | password |
+            | email             | password |
+            | admin@example.com | password |
         And I am logged in on administration as user "admin@example.com" with password "password"
 
     Scenario: Updating an admin user
@@ -19,7 +19,7 @@ Feature: Edit admin users
     Scenario: Updating password of an admin user
         Given I am on "/admin/users/"
         And I follow "Modifier"
-        And  I fill in the following:
+        And I fill in the following:
             | Mot de passe | newPassword |
         And I press "Enregistrer les modifications"
         When I am logged in on administration as user "admin@example.com" with password "newPassword"

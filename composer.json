@@ -59,7 +59,8 @@
         "lbaey/chromedriver": "^1.0",
         "phpspec/phpspec": "^3.0",
         "se/selenium-server-standalone": " ^2.52",
-        "sensio/generator-bundle": "~3.1"
+        "sensio/generator-bundle": "~3.1",
+        "malukenho/kawaii-gherkin": "^0.1.3"
     },
     "scripts": {
         "symfony-scripts": [
