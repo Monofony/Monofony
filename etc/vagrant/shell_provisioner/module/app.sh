@@ -1,6 +1,8 @@
 #!/bin/bash
 
-source /vagrant/shell_provisioner/helpers/plog.sh
+cd /var/www/jdj
 
-plog "Installing application app_name with composer"
-composer install -vvv -d /var/www/app_name --optimize-autoloader
+composer install --optimize-autoloader
+
+php bin/console app:install --no-interaction
+php bin/console sylius:fixtures:load --no-interaction
