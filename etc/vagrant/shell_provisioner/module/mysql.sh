@@ -1,28 +1,30 @@
 #!/bin/bash
 
-plog "Adding percona debian repository"
+# Percona server (MySQL)
+
 cat << EOF >/etc/apt/sources.list.d/percona.list
 deb http://repo.percona.com/apt jessie main
 deb-src http://repo.percona.com/apt jessie main
 EOF
+apt-get update
 
+# Add repository
 gpg --keyserver keys.gnupg.net --recv-key 9334A25F8507EFA5
+
 wget -O - http://www.percona.com/redir/downloads/RPM-GPG-KEY-percona | gpg --import
 gpg --armor --export 9334A25F8507EFA5 | apt-key add -
 
-apt-get update
-
-plog "Installing percona server and client (MySQL)"
+# Install server and client
 echo "percona-server-server-5.6 percona-server-server/root_password password vagrant" | debconf-set-selections
 echo "percona-server-server-5.6 percona-server-server/root_password_again password vagrant" | debconf-set-selections
 apt-get -y --force-yes install percona-server-server-5.6 percona-server-client-5.6
 
-plog "Configuring percona server"
+# Configuration
 sed -i "s/\[mysqld\]/[mysqld]\ninnodb_file_per_table = 1/" /etc/mysql/my.cnf
 sed -i 's/bind-address.*/bind-address\t\t= 0.0.0.0/' /etc/mysql/my.cnf
 service mysql restart
 
-plog "Creating and configuring ${APP_DBNAME} database in mysql server"
+# Add database
 MYSQLCMD="mysql -uroot -pvagrant -e"
 $MYSQLCMD "CREATE DATABASE ${APP_DBNAME} DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
 
@@ -31,7 +33,7 @@ $MYSQLCMD "GRANT ALL PRIVILEGES ON *.* TO root@'10.0.0.1';"
 
 $MYSQLCMD "FLUSH PRIVILEGES;"
 
-plog "Installing Percona toolkit and enabling functions"
+# Install Percona toolkit and enable functions
 $MYSQLCMD "CREATE FUNCTION fnv1a_64 RETURNS INTEGER SONAME 'libfnv1a_udf.so'"
 $MYSQLCMD "CREATE FUNCTION fnv_64 RETURNS INTEGER SONAME 'libfnv_udf.so'"
 $MYSQLCMD "CREATE FUNCTION murmur_hash RETURNS INTEGER SONAME 'libmurmur_udf.so'"

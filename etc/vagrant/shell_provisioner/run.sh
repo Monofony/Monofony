@@ -20,6 +20,7 @@ DEPENDENCIES=(
     mysql
     apache
     node
+    yarn
 )
 
 APT_CACHE=/home/mobizel/aptCacheDirectory
