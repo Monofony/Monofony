@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
+
+print_header "Testing (Fixtures)" "AppName"
+retry_run_command "bin/console sylius:fixtures:load default --env=test --no-interaction --no-debug"
