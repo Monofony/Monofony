@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
+
+run_behat() {
+    local code=0
+
+    print_header "Testing (Behat - brand new, regular scenarios; ~@javascript && ~@todo && ~@cli)" "AppName"
+    run_command "bin/behat --strict --no-interaction -vvv -f progress --tags=\"~@javascript && ~@todo && ~@cli\"" || code=$?
+    if [[ ${code} = 1 ]]; then
+        run_command "bin/behat --strict --no-interaction -vvv -f progress --tags=\"~@javascript && ~@todo && ~@cli\" --rerun" ; code=$?
+    fi
+
+    return ${code}
+}
+
+run_behat
