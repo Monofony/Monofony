@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc997108713148b99e087672c582db60",
+    "content-hash": "48700afffcd9e5d99e70d0656ad1694f",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1205,12 +1205,12 @@
             "target-dir": "EightPoints/Bundle/GuzzleBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/8p/GuzzleBundle.git",
+                "url": "https://github.com/8p/EightPointsGuzzleBundle.git",
                 "reference": "cc36257218b6174f2264ce84511c12f3a6d85bc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/8p/GuzzleBundle/zipball/cc36257218b6174f2264ce84511c12f3a6d85bc3",
+                "url": "https://api.github.com/repos/8p/EightPointsGuzzleBundle/zipball/cc36257218b6174f2264ce84511c12f3a6d85bc3",
                 "reference": "cc36257218b6174f2264ce84511c12f3a6d85bc3",
                 "shasum": ""
             },
@@ -6997,58 +6997,6 @@
                 "xml"
             ],
             "time": "2017-06-09T11:06:58+00:00"
-        },
-        {
-            "name": "lbaey/chromedriver",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lbaey/chromedriver.git",
-                "reference": "6c22532a2df255f7ececbbfae25995a2e15309df"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lbaey/chromedriver/zipball/6c22532a2df255f7ececbbfae25995a2e15309df",
-                "reference": "6c22532a2df255f7ececbbfae25995a2e15309df",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1",
-                "ext-zip": "*",
-                "php": ">=7.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Lbaey\\Composer\\ChromeDriverPlugin"
-            },
-            "autoload": {
-                "psr-0": {
-                    "Lbaey": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Laurent Baey",
-                    "email": "laurent.baey@gmail.com"
-                }
-            ],
-            "description": "Utility for installing Chromedriver, whatever platform you are on, for use with Behat",
-            "homepage": "https://github.com/lbaey",
-            "keywords": [
-                "Behat",
-                "Browser Testing",
-                "Chromedriver",
-                "MAC",
-                "linux",
-                "osx",
-                "selenium",
-                "windows"
-            ],
-            "time": "2017-06-20T10:08:50+00:00"
         },
         {
             "name": "malukenho/kawaii-gherkin",
