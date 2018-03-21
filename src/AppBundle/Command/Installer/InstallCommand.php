@@ -118,23 +118,20 @@ EOT
      */
     private function getLogo()
     {
-        return '                                                                                                                                   
-    <info>ii</info>                                                                                                                       
-   <info>iiii</info>                                                                                                                      
-    <info>iiii</info>                                                                                                                     
-     <info>iiii.</info>                                                                                                                   
-      <info>iiiii  iiii</info>                                                                                                            
-      <info>iiiiii iiiiiiiiii</info>                                             CC            CC                             CC          
-       <info>iiiiiiiiiiiiiiiiiiiiiiii</info>                                     CC            CC                             CC          
-        <info>iiiiiiiiiiiiiiiiiiiiiiiiii,</info>    C          C       CCC,      CC   CCC          GCCCCCCCCCC       CCC      CC          
-         <info>iiiiiiiiiiiiiiiiiiiiiii</info>      CCCC      CCCC   CCCCCCCCCC   CCCCCCCCCCC   CC1          CC,  CCCCCCCCCC   CC          
-          <info>iiiiiiiiiiiiiiiiiiiii</info>       CC CCC CCCC CC 1CC       CCC  CCC       CCC CC1        CCC   CCC       CC1 CC          
-           <info>iiiiiiiiiiiiiiiiiii</info>        CC   CCCC   CC CC         CC. CC         CC CC1      CCC     CCCCCCCCCCCCC CC          
-           <info>iiiiiiiiiiiiiiiiii</info>         CC          CC CC         CC  CC         CC CC1    CCC       CC            CC          
-           <info>iiiiiiiiiiiiiiiii</info>          CC          CC  CCC      CCC  CCC      GCC  CC1  tCC1        CCC      CC   CC          
-         <info>iiiiiiiiiiiiiiiii</info>            CC          CC   tCCCCCCCC      CCCCCCCCC   CC1 CCCCCCCCCCCC   CCCCCCCCC    CC         
-        <info>iiiiii</info>                                                                                                             
-        <info>iiii</info>                                                                                                                                                                                                                                                                                                                                                          
+        return '
+        
+$$\      $$\                                $$$$$$\                               
+$$$\    $$$ |                              $$  __$$\                              
+$$$$\  $$$$ | $$$$$$\  $$$$$$$\   $$$$$$\  $$ /  \__|$$$$$$\  $$$$$$$\  $$\   $$\ 
+$$\$$\$$ $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$$$\    $$  __$$\ $$  __$$\ $$ |  $$ |
+$$ \$$$  $$ |$$ /  $$ |$$ |  $$ |$$ /  $$ |$$  _|   $$ /  $$ |$$ |  $$ |$$ |  $$ |
+$$ |\$  /$$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |     $$ |  $$ |$$ |  $$ |$$ |  $$ |
+$$ | \_/ $$ |\$$$$$$  |$$ |  $$ |\$$$$$$  |$$ |     \$$$$$$  |$$ |  $$ |\$$$$$$$ |
+\__|     \__| \______/ \__|  \__| \______/ \__|      \______/ \__|  \__| \____$$ |
+                                                                        $$\   $$ |
+                                                                        \$$$$$$  |
+                                                                         \______/ 
+                                                                         
         ';
     }
 }

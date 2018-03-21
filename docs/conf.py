@@ -7,7 +7,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sp
 source_suffix = '.rst'
 master_doc = 'index'
 project = 'AppName'
-copyright = u'2017, Mobizel'
+copyright = u'2017, Monofony'
 version = ''
 release = ''
 exclude_patterns = ['_includes/*.rst']
@@ -16,7 +16,7 @@ html_theme_path = ["_themes"]
 htmlhelp_basename = 'Syliusdoc'
 man_pages = [
     ('index', 'sylius', u'Sylius Documentation',
-     [u'Mobizel'], 1)
+     [u'Monofony'], 1)
 ]
 sys.path.append(os.path.abspath('_exts'))
 lexers['php'] = PhpLexer(startinline=True)
