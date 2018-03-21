@@ -1,5 +1,3 @@
-![Mobizel](http://www.mobizel.com/wp-content/uploads/2013/04/logomobizel.png)
-
 Create a new project manually
 -----------------------------
 
