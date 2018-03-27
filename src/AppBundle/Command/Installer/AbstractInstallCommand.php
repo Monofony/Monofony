@@ -121,15 +121,12 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
     /**
      * @param array $commands
      * @param OutputInterface $output
-     * @param bool $displayProgress
      */
-    protected function runCommands(array $commands, OutputInterface $output, $displayProgress = true)
+    protected function runCommands(array $commands, OutputInterface $output)
     {
-        if ($displayProgress) {
-            $length = count($commands);
-            $progress = $this->createProgressBar($output, $length);
-            $started = false;
-        }
+        $length = count($commands);
+        $progress = $this->createProgressBar($output, $length);
+        $started = false;
 
         foreach ($commands as $key => $value) {
             if (is_string($key)) {
@@ -140,14 +137,13 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
                 $parameters = [];
             }
 
-            if ($displayProgress) {
-                ProgressBar::setPlaceholderFormatterDefinition('command_name', $this->getCommandDescriptionClosure($command));
-                if (!$started) {
-                    $progress->start($length);
-                    $started = true;
-                } else {
-                    $progress->advance();
-                }
+            ProgressBar::setPlaceholderFormatterDefinition('command_name', $this->getCommandDescriptionClosure($command));
+
+            if (!$started) {
+                $progress->start($length);
+                $started = true;
+            } else {
+                $progress->advance();
             }
 
             $this->commandExecutor->runCommand($command, $parameters);
@@ -157,9 +153,7 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
             $this->get('doctrine')->getManager()->getConnection()->close();
         }
 
-        if ($displayProgress) {
-            $progress->finish();
-        }
+        $progress->finish();
     }
 
     /**
