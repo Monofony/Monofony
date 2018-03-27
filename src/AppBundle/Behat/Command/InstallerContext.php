@@ -11,9 +11,7 @@
 
 namespace AppBundle\Behat\Command;
 
-use AppBundle\Command\Installer\InstallCommand;
 use AppBundle\Command\Installer\InstallDatabaseCommand;
-use AppBundle\Command\Installer\InstallDataCommand;
 use AppBundle\Command\Installer\SetupCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
