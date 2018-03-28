@@ -10,6 +10,7 @@ commands=(
     validate-doctrine-schema
     validate-twig
     test-phpspec
+    test-phpstan
     test-phpunit
     test-fixtures
     test-behat-without-javascript

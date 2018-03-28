@@ -1,0 +1,26 @@
+parameters:
+    reportUnmatchedIgnoredErrors: false
+
+    excludes_analyse:
+        # Makes PHPStan crash
+        - '**/DependencyInjection/Configuration.php'
+
+        # Test dependencies
+        - 'spec/**.php'
+        - 'tests/**.php'
+
+        # These packages aren't in require-dev of the global package
+        - '**MongoDB**'
+        - '**ODM**'
+
+    ignoreErrors:
+        # Magic calls
+        - '/Call to an undefined static method Webmozart\\Assert\\Assert::all/'
+        - '/Call to an undefined static method Webmozart\\Assert\\Assert::nullOr/'
+        - '/Call to an undefined method Faker\\Generator::/'
+        - '/Access to an undefined property Faker\\Generator::/'
+        - '/Method Mockery\\MockInterface::shouldReceive\(\) invoked with 1 parameter, 0 required/'
+
+        # These packages aren't in require-dev of the global package
+        - '/Class Doctrine\\Bundle\\MongoDBBundle/'
+        - '/Class Doctrine\\Bundle\\PHPCRBundle/'
