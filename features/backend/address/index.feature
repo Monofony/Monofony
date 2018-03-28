@@ -8,9 +8,7 @@ Feature: View list of addresses
         Given there are admin users:
             | email             | password |
             | admin@example.com | password |
-        And there are addresses:
-            | city   |
-            | Rennes |
+        And there are 5 addresses located at "Rennes"
         And I am logged in on administration as user "admin@example.com" with password "password"
 
     Scenario: View list of addresses

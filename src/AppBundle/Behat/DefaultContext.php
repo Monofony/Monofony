@@ -11,6 +11,7 @@
 
 namespace AppBundle\Behat;
 
+use AppBundle\Fixture\Factory\ExampleFactoryInterface;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 use Doctrine\Bundle\PHPCRBundle\Command\WorkspacePurgeCommand;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
@@ -80,6 +81,22 @@ class DefaultContext extends DefaultApiContext
 
         /** @var FactoryInterface $factory */
         $factory = $this->getService($applicationName . '.factory.' . $resourceName);
+
+        return $factory;
+    }
+
+    /**
+     * @param string $resourceName
+     * @param null|string $applicationName
+     *
+     * @return ExampleFactoryInterface
+     */
+    protected function getExampleFactory($resourceName, $applicationName = null): ExampleFactoryInterface
+    {
+        $applicationName = null === $applicationName ? $this->applicationName : $applicationName;
+
+        /** @var ExampleFactoryInterface $factory */
+        $factory = $this->getService($applicationName . '.fixture.example_factory.' . $resourceName);
 
         return $factory;
     }
