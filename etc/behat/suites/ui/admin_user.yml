@@ -3,7 +3,6 @@ default:
         ui_admin_user:
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
-                - AppBundle\Behat\ApiContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\AdminUserContext
             filters:
