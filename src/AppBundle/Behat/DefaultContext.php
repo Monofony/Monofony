@@ -26,7 +26,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 /**
  * @author Loïc Frémont <lc.fremont@gmail.com>
  */
-class DefaultContext extends DefaultApiContext
+class DefaultContext extends AbstractDefaultContext
 {
     /**
      * @var string
