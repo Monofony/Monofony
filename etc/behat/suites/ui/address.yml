@@ -6,7 +6,6 @@ default:
                 - AppBundle\Behat\ApiContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\AdminUserContext
-                - AppBundle\Behat\AddressContext
                 - AppBundle\Behat\Context\Setup\AddressContext
             filters:
                 tags: "@address && @ui"
