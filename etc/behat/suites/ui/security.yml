@@ -3,7 +3,6 @@ default:
         ui_security:
             contexts:
                 - Behat\MinkExtension\Context\MinkContext
-                - AppBundle\Behat\ApiContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\CustomerContext
                 - AppBundle\Behat\UserContext
