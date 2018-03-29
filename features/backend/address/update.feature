@@ -8,9 +8,7 @@ Feature: Edit addresses
         Given there are admin users:
             | email             | password |
             | admin@example.com | password |
-        And there are addresses:
-            | city   |
-            | Rennes |
+        And there is an address located at "Rennes"
         And I am logged in on administration as user "admin@example.com" with password "password"
 
     Scenario: Update an address
