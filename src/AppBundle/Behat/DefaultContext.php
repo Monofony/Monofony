@@ -49,27 +49,6 @@ class DefaultContext extends DefaultApiContext
     private $command;
 
     /**
-     * @BeforeScenario
-     */
-    public function purgeDatabase(BeforeScenarioScope $scope)
-    {
-        /** @var EntityManager $em */
-        $em = $this->getEntityManager();
-        $stmt = $em
-            ->getConnection()
-            ->prepare('SET foreign_key_checks = 0;');
-        $stmt->execute();
-        $purger = new ORMPurger($this->getEntityManager());
-        $purger->purge();
-        $stmt = $em
-            ->getConnection()
-            ->prepare('SET foreign_key_checks = 1;');
-        $stmt->execute();
-
-
-    }
-
-    /**
      * @param string $resourceName
      * @param null|string $applicationName
      *
