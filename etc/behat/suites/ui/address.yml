@@ -2,6 +2,7 @@ default:
     suites:
         ui_address:
             contexts:
+                - AppBundle\Behat\Context\Hook\DoctrineORMContext
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\ApiContext
                 - AppBundle\Behat\UtilsContext

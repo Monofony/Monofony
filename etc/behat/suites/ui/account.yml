@@ -2,6 +2,7 @@ default:
     suites:
         ui_account:
             contexts:
+                - AppBundle\Behat\Context\Hook\DoctrineORMContext
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\CustomerContext
