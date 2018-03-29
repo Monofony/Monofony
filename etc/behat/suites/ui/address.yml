@@ -4,7 +4,6 @@ default:
             contexts:
                 - AppBundle\Behat\Context\Hook\DoctrineORMContext
                 - Behat\MinkExtension\Context\MinkContext
-                - AppBundle\Behat\ApiContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\AdminUserContext
                 - AppBundle\Behat\Context\Setup\AddressContext
