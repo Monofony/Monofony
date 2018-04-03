@@ -11,10 +11,32 @@
 
 namespace AppBundle\Behat\Context\Setup;
 
-use AppBundle\Behat\DefaultContext;
+use AppBundle\Fixture\Factory\ExampleFactoryInterface;
+use Behat\Behat\Context\Context;
+use Doctrine\Common\Persistence\ObjectManager;
 
-class AddressContext extends DefaultContext
+class AddressContext implements Context
 {
+    /**
+     * @var ObjectManager
+     */
+    private $entityManager;
+
+    /**
+     * @var ExampleFactoryInterface
+     */
+    private $factory;
+
+    /**
+     * @param ObjectManager $manager
+     * @param ExampleFactoryInterface $factory
+     */
+    public function __construct(ObjectManager $manager, ExampleFactoryInterface $factory)
+    {
+        $this->entityManager = $manager;
+        $this->factory = $factory;
+    }
+
     /**
      * @Given there is an address located at :city
      */
@@ -38,14 +60,11 @@ class AddressContext extends DefaultContext
      */
     private function createAddresses(int $count, array $options = []): void
     {
-        $manager = $this->getEntityManager();
-        $factory = $this->getExampleFactory('address');
-
         for ($i=0 ; $i<$count ; $i++) {
-            $address = $factory->create($options);
-            $manager->persist($address);
+            $address = $this->factory->create($options);
+            $this->entityManager->persist($address);
         }
 
-        $manager->flush();
+        $this->entityManager->flush();
     }
 }
