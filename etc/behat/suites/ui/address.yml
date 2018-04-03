@@ -6,6 +6,9 @@ default:
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\AdminUserContext
-                - AppBundle\Behat\Context\Setup\AddressContext
+                - AppBundle\Behat\Context\Setup\AddressContext:
+                    manager: '@app.manager.address'
+                    factory: '@app.fixture.example_factory.address'
+
             filters:
                 tags: "@address && @ui"
