@@ -2,7 +2,8 @@ default:
     suites:
         ui_account:
             contexts:
-                - AppBundle\Behat\Context\Hook\DoctrineORMContext
+                - AppBundle\Behat\Context\Hook\DoctrineORMContext:
+                    entityManager: '@doctrine.orm.entity_manager'
                 - Behat\MinkExtension\Context\MinkContext
                 - AppBundle\Behat\UtilsContext
                 - AppBundle\Behat\CustomerContext
