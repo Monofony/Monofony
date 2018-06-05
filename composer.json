@@ -54,7 +54,6 @@
         "behat/mink-browserkit-driver": "~1.2@dev",
         "behat/mink-selenium2-driver": "@dev",
         "behat/mink": "~1.6@dev",
-        "friends-of-behat/performance-extension": "^1.0",
         "lakion/api-test-case": "^1.1",
         "phpspec/phpspec": "^3.0",
         "se/selenium-server-standalone": " ^2.52",
