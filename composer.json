@@ -63,7 +63,8 @@
         "phpstan/phpstan-shim": "^0.9.2",
         "friends-of-behat/context-service-extension": "^1.2",
         "friends-of-behat/cross-container-extension": "^1.1",
-        "friends-of-behat/service-container-extension": "^1.0"
+        "friends-of-behat/service-container-extension": "^1.0",
+        "friends-of-behat/symfony-extension": "^1.2"
     },
     "scripts": {
         "symfony-scripts": [
