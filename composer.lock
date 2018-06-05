@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81a617f86b707820dffd305e1d6e712e",
+    "content-hash": "9279a63a48a2edcf0a90cf4ab4535d13",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -6847,6 +6847,54 @@
             ],
             "description": "Allows to declare and use contexts services in scenario scoped container.",
             "time": "2018-02-13T18:49:22+00:00"
+        },
+        {
+            "name": "friends-of-behat/cross-container-extension",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/CrossContainerExtension.git",
+                "reference": "97c376c450c46d2af7d440464f490b914da0dc89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/CrossContainerExtension/zipball/97c376c450c46d2af7d440464f490b914da0dc89",
+                "reference": "97c376c450c46d2af7d440464f490b914da0dc89",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^7.1",
+                "symfony/dependency-injection": "^3.3|^4.0"
+            },
+            "require-dev": {
+                "friends-of-behat/test-context": "^1.0",
+                "phpspec/phpspec": "^4.0",
+                "phpunit/phpunit": "^6.0",
+                "symfony/http-kernel": "^3.3|^4.0"
+            },
+            "suggest": {
+                "symfony/http-kernel": "^3.3|^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\CrossContainerExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamil Kokot",
+                    "email": "kamil@kokot.me",
+                    "homepage": "http://kamil.kokot.me"
+                }
+            ],
+            "description": "Makes possible to inject services and parameters from other containers.",
+            "time": "2018-02-13T17:55:39+00:00"
         },
         {
             "name": "friends-of-behat/performance-extension",
