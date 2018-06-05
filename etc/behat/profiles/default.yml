@@ -28,8 +28,6 @@ default:
 
         Behat\Symfony2Extension: ~
 
-        FriendsOfBehat\PerformanceExtension: ~
-
     gherkin:
         filters:
             tags: "~@todo"
