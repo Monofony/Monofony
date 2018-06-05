@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2d0db4a901f476b2281d7d7cdbddf9b",
+    "content-hash": "0d6d89755ae6efcb8cc1839170703e91",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -7033,6 +7033,47 @@
             ],
             "description": "Integrates Behat with Symfony.",
             "time": "2018-05-25T12:59:32+00:00"
+        },
+        {
+            "name": "friends-of-behat/variadic-extension",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfBehat/VariadicExtension.git",
+                "reference": "6513d8f61c3483c65ec3292d7c80027946b4708c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfBehat/VariadicExtension/zipball/6513d8f61c3483c65ec3292d7c80027946b4708c",
+                "reference": "6513d8f61c3483c65ec3292d7c80027946b4708c",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "^3.1",
+                "php": "^7.1",
+                "symfony/dependency-injection": "^3.2|^4.0"
+            },
+            "require-dev": {
+                "friends-of-behat/test-context": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FriendsOfBehat\\VariadicExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Łukasz Chruściel",
+                    "email": "lchrusciel@gmail.com"
+                }
+            ],
+            "description": "Variadic support for behat context arguments",
+            "time": "2018-02-13T17:40:06+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
