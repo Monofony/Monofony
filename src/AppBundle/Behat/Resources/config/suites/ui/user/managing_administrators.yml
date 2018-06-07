@@ -1,0 +1,15 @@
+default:
+    suites:
+        ui_managing_administrators:
+            contexts_services:
+                - app.behat.context.hook.doctrine_orm
+
+                - app.behat.context.setup.admin_security
+                - app.behat.context.setup.admin_user
+
+                - app.behat.context.transform.shared_storage
+
+                - app.behat.context.ui.backend.managing_administrators
+                - app.behat.context.ui.backend.notification
+            filters:
+                tags: "@managing_administrators && @ui"
