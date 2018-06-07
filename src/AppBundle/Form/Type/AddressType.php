@@ -70,4 +70,12 @@ class AddressType extends AbstractType
             'data_class' => Address::class,
         ));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getBlockPrefix()
+    {
+        return 'app_address';
+    }
 }
