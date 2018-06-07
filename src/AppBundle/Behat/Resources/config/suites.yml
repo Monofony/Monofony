@@ -1,0 +1,2 @@
+imports:
+    - suites/ui/address/managing_addresses.yml
