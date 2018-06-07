@@ -18,6 +18,16 @@ services:
         tags:
             - { name: fob.context_service }
 
+    app.behat.context.ui.backend.managing_administrators:
+        class: AppBundle\Behat\Context\Ui\Backend\ManagingAdministratorsContext
+        arguments:
+            - "@app.behat.page.backend.administrator.create"
+            - "@app.behat.page.backend.administrator.index"
+            - "@app.behat.page.backend.administrator.update"
+            - "@app.behat.notification_checker"
+        tags:
+            - { name: fob.context_service }
+
     app.behat.context.ui.backend.notification:
         class: AppBundle\Behat\Context\Ui\Backend\NotificationContext
         arguments:
