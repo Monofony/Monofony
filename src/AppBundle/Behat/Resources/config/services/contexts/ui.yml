@@ -1,0 +1,26 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    app.behat.context.ui.backend.managing_addresses:
+        class: AppBundle\Behat\Context\Ui\Backend\ManagingAddressesContext
+        arguments:
+            - "@app.behat.page.backend.address.index"
+            - "@app.behat.page.backend.address.create"
+            - "@app.behat.page.backend.address.update"
+            - "@app.behat.current_page_resolver"
+        tags:
+            - { name: fob.context_service }
+
+    app.behat.context.ui.backend.notification:
+        class: AppBundle\Behat\Context\Ui\Backend\NotificationContext
+        arguments:
+            - "@app.behat.notification_checker"
+        tags:
+            - { name: fob.context_service }

@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of Jedisjeux.
+ * This file is part of AppName.
  *
- * (c) Loïc Frémont
+ * (c) Monofony
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -11,16 +11,23 @@
 
 namespace AppBundle\Behat\Context\Setup;
 
+use AppBundle\Behat\Service\SharedStorageInterface;
+use AppBundle\Entity\Address;
 use AppBundle\Fixture\Factory\ExampleFactoryInterface;
 use Behat\Behat\Context\Context;
-use Doctrine\Common\Persistence\ObjectManager;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 class AddressContext implements Context
 {
     /**
-     * @var ObjectManager
+     * @var SharedStorageInterface
      */
-    private $entityManager;
+    private $sharedStorage;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $repository;
 
     /**
      * @var ExampleFactoryInterface
@@ -28,13 +35,18 @@ class AddressContext implements Context
     private $factory;
 
     /**
-     * @param ObjectManager $manager
+     * @param SharedStorageInterface $sharedStorage
      * @param ExampleFactoryInterface $factory
+     * @param RepositoryInterface $repository
      */
-    public function __construct(ObjectManager $manager, ExampleFactoryInterface $factory)
-    {
-        $this->entityManager = $manager;
+    public function __construct(
+        SharedStorageInterface $sharedStorage,
+        ExampleFactoryInterface $factory,
+        RepositoryInterface $repository
+    ) {
+        $this->sharedStorage = $sharedStorage;
         $this->factory = $factory;
+        $this->repository = $repository;
     }
 
     /**
@@ -43,6 +55,17 @@ class AddressContext implements Context
     public function thereIsAddressLocatedAtCity(string $city)
     {
         $this->createAddresses(1, ['city' => $city]);
+    }
+
+    /**
+     * @Given there is an address with street :street located at :city
+     */
+    public function thereIsAddressWithStreetLocatedAtCity(string $street, string $city)
+    {
+        $this->createAddresses(1, [
+            'street' => $street,
+            'city' => $city,
+        ]);
     }
 
     /**
@@ -61,10 +84,11 @@ class AddressContext implements Context
     private function createAddresses(int $count, array $options = []): void
     {
         for ($i=0 ; $i<$count ; $i++) {
+            /** @var Address $address */
             $address = $this->factory->create($options);
-            $this->entityManager->persist($address);
-        }
+            $this->repository->add($address);
 
-        $this->entityManager->flush();
+            $this->sharedStorage->set('address', $address);
+        }
     }
 }
