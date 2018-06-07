@@ -5,9 +5,8 @@
 !var/.gitkeep
 /vendor/
 /web/bundles/
-/web/assets/backend/node_modules/
-/web/assets/frontend/node_modules/
-
+**/node_modules/*
+**/compiled/*
 
 /bin/*
 !/bin/console
