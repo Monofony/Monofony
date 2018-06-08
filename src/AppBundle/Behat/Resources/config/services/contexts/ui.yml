@@ -34,3 +34,11 @@ services:
             - "@app.behat.notification_checker"
         tags:
             - { name: fob.context_service }
+
+    app.behat.context.ui.frontend.address:
+        class: AppBundle\Behat\Context\Ui\Frontend\AddressContext
+        arguments:
+            - "@app.behat.page.frontend.address.show"
+            - "@app.behat.page.frontend.address.index"
+        tags:
+            - { name: fob.context_service }
