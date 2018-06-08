@@ -1,3 +1,4 @@
 imports:
     - suites/ui/address/managing_addresses.yml
+    - suites/ui/address/viewing_addresses.yml
     - suites/ui/user/managing_administrators.yml
