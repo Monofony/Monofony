@@ -31,13 +31,10 @@ $ composer install
 Install project :
 ```bash
 $ bin/console app:install
-```
-
-If you want to work on assets, please run the following commands:
-
-```bash
-$ npm install
-$ gulp
+$ cd web/assets/backend
+$ yarn install && yarn run gulp
+$ cd ../../../
+$ php bin/console server:start
 ```
 
 [Behat](http://behat.org) scenarios
