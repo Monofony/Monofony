@@ -28,6 +28,15 @@ services:
         tags:
             - { name: fob.context_service }
 
+    app.behat.context.ui.backend.managing_customers:
+        class: AppBundle\Behat\Context\Ui\Backend\ManagingCustomersContext
+        arguments:
+            - "@app.behat.page.backend.customer.index"
+            - "@app.behat.page.backend.customer.update"
+            - "@app.behat.notification_checker"
+        tags:
+            - { name: fob.context_service }
+
     app.behat.context.ui.backend.notification:
         class: AppBundle\Behat\Context\Ui\Backend\NotificationContext
         arguments:

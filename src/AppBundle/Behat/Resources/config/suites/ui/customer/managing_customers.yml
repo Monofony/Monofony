@@ -1,0 +1,16 @@
+default:
+    suites:
+        ui_managing_customers:
+            contexts_services:
+                - app.behat.context.hook.doctrine_orm
+
+                - app.behat.context.setup.customer
+                - app.behat.context.setup.admin_security
+
+                - app.behat.context.transform.customer
+                - app.behat.context.transform.shared_storage
+
+                - app.behat.context.ui.backend.managing_customers
+                - app.behat.context.ui.backend.notification
+            filters:
+                tags: "@managing_customers && @ui"
