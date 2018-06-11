@@ -29,9 +29,9 @@ class ShowPage extends SymfonyPage
     /**
      * @return string
      */
-    public function getTitle()
+    public function getStreet()
     {
-        return $this->getElement('title')->getText();
+        return $this->getElement('street')->getText();
     }
 
     /**
@@ -40,7 +40,7 @@ class ShowPage extends SymfonyPage
     protected function getDefinedElements()
     {
         return array_merge(parent::getDefinedElements(), [
-            'title' => 'h2 span',
+            'street' => 'address .street',
         ]);
     }
 }
