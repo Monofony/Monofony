@@ -5,9 +5,9 @@ Feature: Browsing customers
     I want to browse customers
 
     Background:
-        Given the store has customer "f.baggins@example.com"
-        And the store has customer "mr.banana@example.com"
-        And the store has customer "l.skywalker@example.com"
+        Given there is customer "f.baggins@example.com"
+        And there is also customer "mr.banana@example.com"
+        And there is also customer "l.skywalker@example.com"
         And I am logged in as an administrator
 
     @ui
