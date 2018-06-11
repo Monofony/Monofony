@@ -33,7 +33,7 @@ services:
         arguments:
             - "@app.behat.page.backend.customer.index"
             - "@app.behat.page.backend.customer.update"
-            - "@app.behat.notification_checker"
+            - "@app.behat.current_page_resolver"
         tags:
             - { name: fob.context_service }
 

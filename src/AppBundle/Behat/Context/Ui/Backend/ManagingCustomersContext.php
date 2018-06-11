@@ -163,14 +163,6 @@ final class ManagingCustomersContext implements Context
     }
 
     /**
-     * @When I remove its first name
-     */
-    public function iRemoveItsFirstName()
-    {
-        $this->updatePage->changeFirstName('');
-    }
-
-    /**
      * @Then /^(this customer) should have an empty first name$/
      * @Then the customer :customer should still have an empty first name
      */
@@ -179,14 +171,6 @@ final class ManagingCustomersContext implements Context
         $this->updatePage->open(['id' => $customer->getId()]);
 
         Assert::eq($this->updatePage->getFirstName(), '');
-    }
-
-    /**
-     * @When I remove its last name
-     */
-    public function iRemoveItsLastName()
-    {
-        $this->updatePage->changeLastName('');
     }
 
     /**
