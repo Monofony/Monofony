@@ -56,7 +56,7 @@ class AddressContext implements Context
      */
     public function iOpenAddressPage(Address $address)
     {
-        $this->showPage->open(['slug' => $address->getSlug()]);
+        $this->showPage->open(['id' => $address->getId()]);
     }
 
     /**
@@ -76,11 +76,11 @@ class AddressContext implements Context
     }
 
     /**
-     * @Then I should see the address title :title
+     * @Then I should see the address street :street
      */
-    public function iShouldSeePersonName($title)
+    public function iShouldSeeAddressStreet($street)
     {
-        Assert::same($this->showPage->getTitle(), $title);
+        Assert::same($this->showPage->getStreet(), $street);
     }
 
     /**
@@ -95,7 +95,7 @@ class AddressContext implements Context
             // nothing else to do
         }
 
-        Assert::true($this->showPage->isOpen(['slug' => $address->getSlug()]));
+        Assert::true($this->showPage->isOpen(['id' => $address->getId()]));
     }
 
     /**
@@ -110,6 +110,6 @@ class AddressContext implements Context
             // nothing else to do
         }
 
-        Assert::false($this->showPage->isOpen(['slug' => $address->getSlug()]));
+        Assert::false($this->showPage->isOpen(['id' => $address->getId()]));
     }
 }

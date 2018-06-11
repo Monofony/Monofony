@@ -1,6 +1,15 @@
+app_frontend_address_show:
+    methods: [GET]
+    path: /addresses/{id}
+    defaults:
+        _controller: app.controller.address:showAction
+        _sylius:
+            template: frontend/address/show.html.twig
+            section: frontend
+
 app_frontend_address_index:
     methods: [GET]
-    path: /adresses/
+    path: /addresses/
     defaults:
         _controller: app.controller.address:indexAction
         _sylius:
