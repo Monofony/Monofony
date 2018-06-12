@@ -40,7 +40,9 @@ services:
             class: AppBundle\Behat\Context\Setup\CustomerContext
             arguments:
                 - "@app.behat.shared_storage"
-                - "@__symfony__.app.fixture.example_factory.app_user"
                 - "@__symfony__.sylius.repository.customer"
+                - "@__symfony__.sylius.manager.customer"
+                - "@__symfony__.sylius.factory.customer"
+                - "@__symfony__.sylius.factory.app_user"
             tags:
                 - { name: fob.context_service }
