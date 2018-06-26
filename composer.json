@@ -21,9 +21,9 @@
         "php": "^7.1",
 
         "doctrine/orm": "^2.4.8",
-        "doctrine/doctrine-bundle": "~1.4",
-        "doctrine/doctrine-fixtures-bundle": " ^2.2",
-        "doctrine/doctrine-migrations-bundle": "^1.1",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "doctrine/doctrine-migrations-bundle": "^1.2",
         "eightpoints/guzzle-bundle": "^7.3",
         "friendsofsymfony/jsrouting-bundle": "^1.5",
         "fzaninotto/Faker": "^1.5",
@@ -31,7 +31,6 @@
         "guzzlehttp/guzzle": "^6.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "knplabs/doctrine-behaviors": "~1.1",
-        "sensio/distribution-bundle": "~5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "sonata-project/block-bundle": "^3.3",
         "symfony/assetic-bundle": "~2.3",
@@ -45,7 +44,8 @@
         "sylius/resource-bundle": "^1.1",
         "sylius/ui-bundle": "^1.1",
         "sylius/user-bundle": "^1.1",
-        "winzou/state-machine-bundle": "~0.2"
+        "winzou/state-machine-bundle": "~0.2",
+        "sylius-labs/sensio-distribution-bundle": "^6.0"
     },
     "require-dev": {
         "behat/behat": "~3.0",
