@@ -53,7 +53,7 @@
         "behat/mink-selenium2-driver": "@dev",
         "behat/mink": "~1.6@dev",
         "lakion/api-test-case": "^1.1",
-        "phpspec/phpspec": "^3.0",
+        "phpspec/phpspec": "^4.0",
         "se/selenium-server-standalone": " ^2.52",
         "sensio/generator-bundle": "~3.1",
         "malukenho/kawaii-gherkin": "^0.1.3",
