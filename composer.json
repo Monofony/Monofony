@@ -42,7 +42,8 @@
         "sylius/ui-bundle": "^1.2",
         "sylius/user-bundle": "^1.2",
         "winzou/state-machine-bundle": "~0.2",
-        "sylius-labs/sensio-distribution-bundle": "^6.0"
+        "sylius-labs/sensio-distribution-bundle": "^6.0",
+        "sensio/framework-extra-bundle": "^5.1"
     },
     "require-dev": {
         "behat/behat": "~3.0",
