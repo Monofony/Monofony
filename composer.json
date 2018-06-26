@@ -24,7 +24,7 @@
         "doctrine/doctrine-bundle": "~1.4",
         "doctrine/doctrine-fixtures-bundle": " ^2.2",
         "doctrine/doctrine-migrations-bundle": "^1.1",
-        "eightpoints/guzzle-bundle": "^4.5",
+        "eightpoints/guzzle-bundle": "^7.3",
         "friendsofsymfony/jsrouting-bundle": "^1.5",
         "fzaninotto/Faker": "^1.5",
         "friendsofsymfony/oauth-server-bundle": "^1.5",
