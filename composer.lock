@@ -3860,16 +3860,16 @@
         },
         {
             "name": "sylius/customer",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Customer.git",
-                "reference": "ff7e8862a703316f32188e721c7095322d61e7a6"
+                "reference": "1423ecab900cdde168868e9684d668110fc00efb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Customer/zipball/ff7e8862a703316f32188e721c7095322d61e7a6",
-                "reference": "ff7e8862a703316f32188e721c7095322d61e7a6",
+                "url": "https://api.github.com/repos/Sylius/Customer/zipball/1423ecab900cdde168868e9684d668110fc00efb",
+                "reference": "1423ecab900cdde168868e9684d668110fc00efb",
                 "shasum": ""
             },
             "require": {
@@ -3883,7 +3883,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -3923,42 +3923,42 @@
                 "customer",
                 "groups"
             ],
-            "time": "2018-02-08T16:38:47+00:00"
+            "time": "2018-06-07T11:36:20+00:00"
         },
         {
             "name": "sylius/customer-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusCustomerBundle.git",
-                "reference": "9d943f2a170354fc18a9aac7fdea278bae71cb0c"
+                "reference": "eeae290aa6c43183f8b4f46250fe86c6efe6eb1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusCustomerBundle/zipball/9d943f2a170354fc18a9aac7fdea278bae71cb0c",
-                "reference": "9d943f2a170354fc18a9aac7fdea278bae71cb0c",
+                "url": "https://api.github.com/repos/Sylius/SyliusCustomerBundle/zipball/eeae290aa6c43183f8b4f46250fe86c6efe6eb1a",
+                "reference": "eeae290aa6c43183f8b4f46250fe86c6efe6eb1a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "^2.5",
                 "php": "^7.1",
-                "sylius/customer": "^1.1",
-                "sylius/resource-bundle": "^1.1",
-                "symfony/framework-bundle": "^3.4",
+                "sylius/customer": "^1.2",
+                "sylius/resource-bundle": "^1.2",
+                "symfony/framework-bundle": "^3.4|^4.1",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^6.5",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
-                "symfony/browser-kit": "^3.4",
-                "symfony/dependency-injection": "^3.4",
-                "symfony/form": "^3.4"
+                "symfony/browser-kit": "^3.4|^4.1",
+                "symfony/dependency-injection": "^3.4|^4.1",
+                "symfony/form": "^3.4|^4.1"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4002,28 +4002,28 @@
                 "customer",
                 "groups"
             ],
-            "time": "2018-05-16T08:14:33+00:00"
+            "time": "2018-06-12T09:37:33+00:00"
         },
         {
             "name": "sylius/fixtures-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusFixturesBundle.git",
-                "reference": "62a6f8f3966c5c9250ea936a20633a656fc1a69e"
+                "reference": "4410d2687e729ace9cb4d9ee56bc26053da52bf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusFixturesBundle/zipball/62a6f8f3966c5c9250ea936a20633a656fc1a69e",
-                "reference": "62a6f8f3966c5c9250ea936a20633a656fc1a69e",
+                "url": "https://api.github.com/repos/Sylius/SyliusFixturesBundle/zipball/4410d2687e729ace9cb4d9ee56bc26053da52bf3",
+                "reference": "4410d2687e729ace9cb4d9ee56bc26053da52bf3",
                 "shasum": ""
             },
             "require": {
                 "doctrine/data-fixtures": "^1.2",
                 "monolog/monolog": "^1.8",
                 "php": "^7.1",
-                "symfony/framework-bundle": "^3.4",
-                "symfony/monolog-bridge": "^3.4",
+                "symfony/framework-bundle": "^3.4|^4.1",
+                "symfony/monolog-bridge": "^3.4|^4.1",
                 "webmozart/assert": "^1.0",
                 "zendframework/zend-stdlib": "^3.0"
             },
@@ -4035,18 +4035,18 @@
                 "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^6.5",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
-                "symfony/browser-kit": "^3.4",
-                "symfony/dependency-injection": "^3.4",
-                "symfony/security-csrf": "^3.4",
-                "symfony/templating": "^3.4",
-                "symfony/translation": "^3.4",
-                "symfony/twig-bundle": "^3.4",
+                "symfony/browser-kit": "^3.4|^4.1",
+                "symfony/dependency-injection": "^3.4|^4.1",
+                "symfony/security-csrf": "^3.4|^4.1",
+                "symfony/templating": "^3.4|^4.1",
+                "symfony/translation": "^3.4|^4.1",
+                "symfony/twig-bundle": "^3.4|^4.1",
                 "twig/twig": "^2.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4079,35 +4079,35 @@
                 "sylius",
                 "symfony"
             ],
-            "time": "2018-05-01T10:05:36+00:00"
+            "time": "2018-06-11T11:56:48+00:00"
         },
         {
             "name": "sylius/grid",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Grid.git",
-                "reference": "059e997741a9cea7fea9511ebc97fa300d442e65"
+                "reference": "91a6092f428e3f2d0cf3383a1a60ffc31b296889"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Grid/zipball/059e997741a9cea7fea9511ebc97fa300d442e65",
-                "reference": "059e997741a9cea7fea9511ebc97fa300d442e65",
+                "url": "https://api.github.com/repos/Sylius/Grid/zipball/91a6092f428e3f2d0cf3383a1a60ffc31b296889",
+                "reference": "91a6092f428e3f2d0cf3383a1a60ffc31b296889",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "sylius/registry": "^1.1",
+                "sylius/registry": "^1.2",
                 "webmozart/assert": "^1.1"
             },
             "require-dev": {
                 "phpspec/phpspec": "^4.0",
-                "symfony/property-access": "^3.4"
+                "symfony/property-access": "^3.4|^4.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4145,28 +4145,28 @@
                 "shop",
                 "sylius"
             ],
-            "time": "2018-05-01T09:35:16+00:00"
+            "time": "2018-06-04T18:00:35+00:00"
         },
         {
             "name": "sylius/grid-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusGridBundle.git",
-                "reference": "ab2dd52f47b147ffca58ee2cfbc6cf097c8d8f23"
+                "reference": "9acc975ef8bd7012bca79ba06e9657e8e3855915"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/ab2dd52f47b147ffca58ee2cfbc6cf097c8d8f23",
-                "reference": "ab2dd52f47b147ffca58ee2cfbc6cf097c8d8f23",
+                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/9acc975ef8bd7012bca79ba06e9657e8e3855915",
+                "reference": "9acc975ef8bd7012bca79ba06e9657e8e3855915",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "sylius/grid": "^1.1",
-                "symfony/form": "^3.4",
-                "symfony/framework-bundle": "^3.4",
-                "symfony/templating": "^3.4"
+                "sylius/grid": "^1.2",
+                "symfony/form": "^3.4|^4.1",
+                "symfony/framework-bundle": "^3.4|^4.1",
+                "symfony/templating": "^3.4|^4.1"
             },
             "conflict": {
                 "twig/twig": "^1.0"
@@ -4184,18 +4184,18 @@
                 "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^6.5",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
-                "symfony/browser-kit": "^3.4",
-                "symfony/dependency-injection": "^3.4",
-                "symfony/proxy-manager-bridge": "^3.4",
-                "symfony/security-csrf": "^3.4",
-                "symfony/twig-bundle": "^3.4",
-                "symfony/validator": "^3.4",
+                "symfony/browser-kit": "^3.4|^4.1",
+                "symfony/dependency-injection": "^3.4|^4.1",
+                "symfony/proxy-manager-bridge": "^3.4|^4.1",
+                "symfony/security-csrf": "^3.4|^4.1",
+                "symfony/twig-bundle": "^3.4|^4.1",
+                "symfony/validator": "^3.4|^4.1",
                 "twig/twig": "^2.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4233,20 +4233,20 @@
                 "sylius",
                 "webshop"
             ],
-            "time": "2018-05-16T09:47:12+00:00"
+            "time": "2018-06-11T11:56:48+00:00"
         },
         {
             "name": "sylius/mailer",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Mailer.git",
-                "reference": "ba9365273b63cc46442a392c9dbaad81e4eca124"
+                "reference": "ebe85435379ed10eaaa430416d49889ffcb23241"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Mailer/zipball/ba9365273b63cc46442a392c9dbaad81e4eca124",
-                "reference": "ba9365273b63cc46442a392c9dbaad81e4eca124",
+                "url": "https://api.github.com/repos/Sylius/Mailer/zipball/ebe85435379ed10eaaa430416d49889ffcb23241",
+                "reference": "ebe85435379ed10eaaa430416d49889ffcb23241",
                 "shasum": ""
             },
             "require": {
@@ -4259,7 +4259,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4292,41 +4292,41 @@
                 "mails",
                 "notifications"
             ],
-            "time": "2018-04-23T08:43:22+00:00"
+            "time": "2018-04-23T08:57:51+00:00"
         },
         {
             "name": "sylius/mailer-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusMailerBundle.git",
-                "reference": "dc2a03b6e91c5e6cddb2999aa83f4a5815915eda"
+                "reference": "e69cdeb7fe779544d3c2feb8b70da584b0dd9a6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusMailerBundle/zipball/dc2a03b6e91c5e6cddb2999aa83f4a5815915eda",
-                "reference": "dc2a03b6e91c5e6cddb2999aa83f4a5815915eda",
+                "url": "https://api.github.com/repos/Sylius/SyliusMailerBundle/zipball/e69cdeb7fe779544d3c2feb8b70da584b0dd9a6a",
+                "reference": "e69cdeb7fe779544d3c2feb8b70da584b0dd9a6a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "sylius/mailer": "^1.1",
-                "symfony/framework-bundle": "^3.4"
+                "sylius/mailer": "^1.2",
+                "symfony/framework-bundle": "^3.4|^4.1"
             },
             "require-dev": {
                 "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^6.5",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
-                "symfony/browser-kit": "^3.4",
-                "symfony/dependency-injection": "^3.4",
+                "symfony/browser-kit": "^3.4|^4.1",
+                "symfony/dependency-injection": "^3.4|^4.1",
                 "symfony/swiftmailer-bundle": "^3.1",
-                "symfony/templating": "^3.4",
-                "symfony/twig-bundle": "^3.4"
+                "symfony/templating": "^3.4|^4.1",
+                "symfony/twig-bundle": "^3.4|^4.1"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4359,20 +4359,20 @@
                 "mailer",
                 "swiftmailer"
             ],
-            "time": "2018-05-01T10:05:36+00:00"
+            "time": "2018-06-11T11:56:48+00:00"
         },
         {
             "name": "sylius/registry",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Registry.git",
-                "reference": "785a4e0a252d1e9b1a805e2f587d8faa7c73d845"
+                "reference": "d55d01b6f3e4b65af3c13fd43f988530f99065e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Registry/zipball/785a4e0a252d1e9b1a805e2f587d8faa7c73d845",
-                "reference": "785a4e0a252d1e9b1a805e2f587d8faa7c73d845",
+                "url": "https://api.github.com/repos/Sylius/Registry/zipball/d55d01b6f3e4b65af3c13fd43f988530f99065e3",
+                "reference": "d55d01b6f3e4b65af3c13fd43f988530f99065e3",
                 "shasum": ""
             },
             "require": {
@@ -4386,7 +4386,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4418,20 +4418,20 @@
                 "registry",
                 "services"
             ],
-            "time": "2018-04-23T08:43:22+00:00"
+            "time": "2018-04-23T08:57:51+00:00"
         },
         {
             "name": "sylius/resource",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Resource.git",
-                "reference": "c11d7f7bd284ae8a92da2ea6cfd9b6e54dc2a539"
+                "reference": "f5f35787c7b78e25a7ecdcc060301ca7b2b80504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Resource/zipball/c11d7f7bd284ae8a92da2ea6cfd9b6e54dc2a539",
-                "reference": "c11d7f7bd284ae8a92da2ea6cfd9b6e54dc2a539",
+                "url": "https://api.github.com/repos/Sylius/Resource/zipball/f5f35787c7b78e25a7ecdcc060301ca7b2b80504",
+                "reference": "f5f35787c7b78e25a7ecdcc060301ca7b2b80504",
                 "shasum": ""
             },
             "require": {
@@ -4439,8 +4439,8 @@
                 "gedmo/doctrine-extensions": "^2.4",
                 "pagerfanta/pagerfanta": "^1.0",
                 "php": "^7.1",
-                "symfony/event-dispatcher": "^3.4",
-                "symfony/property-access": "^3.4",
+                "symfony/event-dispatcher": "^3.4|^4.1",
+                "symfony/property-access": "^3.4|^4.1",
                 "winzou/state-machine": "^0.3"
             },
             "require-dev": {
@@ -4453,7 +4453,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4489,20 +4489,20 @@
                 "shop",
                 "sylius"
             ],
-            "time": "2018-04-23T08:43:22+00:00"
+            "time": "2018-06-04T18:00:35+00:00"
         },
         {
             "name": "sylius/resource-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusResourceBundle.git",
-                "reference": "f9200785300ba233aa88fd28e5fad078d13ce909"
+                "reference": "3bf1c4c415d29ced7f4e546441f47fa34956c2ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusResourceBundle/zipball/f9200785300ba233aa88fd28e5fad078d13ce909",
-                "reference": "f9200785300ba233aa88fd28e5fad078d13ce909",
+                "url": "https://api.github.com/repos/Sylius/SyliusResourceBundle/zipball/3bf1c4c415d29ced7f4e546441f47fa34956c2ce",
+                "reference": "3bf1c4c415d29ced7f4e546441f47fa34956c2ce",
                 "shasum": ""
             },
             "require": {
@@ -4511,17 +4511,17 @@
                 "jms/serializer-bundle": "^2.0",
                 "php": "^7.1",
                 "stof/doctrine-extensions-bundle": "^1.2",
-                "sylius/registry": "^1.1",
-                "sylius/resource": "^1.1",
-                "symfony/config": "^3.4",
-                "symfony/expression-language": "^3.4",
-                "symfony/form": "^3.4",
-                "symfony/framework-bundle": "^3.4",
-                "symfony/security-csrf": "^3.4",
-                "symfony/templating": "^3.4",
-                "symfony/twig-bundle": "^3.4",
-                "symfony/validator": "^3.4",
-                "symfony/yaml": "^3.4",
+                "sylius/registry": "^1.2",
+                "sylius/resource": "^1.2",
+                "symfony/config": "^3.4|^4.1",
+                "symfony/expression-language": "^3.4|^4.1",
+                "symfony/form": "^3.4|^4.1",
+                "symfony/framework-bundle": "^3.4|^4.1",
+                "symfony/security-csrf": "^3.4|^4.1",
+                "symfony/templating": "^3.4|^4.1",
+                "symfony/twig-bundle": "^3.4|^4.1",
+                "symfony/validator": "^3.4|^4.1",
+                "symfony/yaml": "^3.4|^4.1",
                 "white-october/pagerfanta-bundle": "^1.0",
                 "willdurand/hateoas-bundle": "^1.2",
                 "winzou/state-machine-bundle": "^0.3"
@@ -4532,14 +4532,13 @@
                 "doctrine/orm": "^2.5",
                 "doctrine/phpcr-odm": "^1.4",
                 "jackalope/jackalope-doctrine-dbal": "^1.2",
-                "lakion/api-test-case": "^2.0",
+                "lakion/api-test-case": "^3.1.0",
                 "matthiasnoback/symfony-dependency-injection-test": "^2.0",
                 "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^6.5",
-                "sensio/generator-bundle": "^3.1",
-                "sylius/grid-bundle": "^1.1",
-                "sylius/locale": "^1.1",
-                "symfony/dependency-injection": "^3.4",
+                "sylius/grid-bundle": "^1.2",
+                "sylius/locale": "^1.2",
+                "symfony/dependency-injection": "^3.4|^4.1",
                 "twig/twig": "^2.0"
             },
             "suggest": {
@@ -4549,7 +4548,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4583,20 +4582,20 @@
                 "storage",
                 "sylius"
             ],
-            "time": "2018-05-21T04:09:08+00:00"
+            "time": "2018-06-11T11:56:48+00:00"
         },
         {
             "name": "sylius/ui-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusUiBundle.git",
-                "reference": "1238950e3efb4f0963c6a3865b6634ab6b899995"
+                "reference": "cdc18d93710964b61c46ec871776382a26b9b4dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/1238950e3efb4f0963c6a3865b6634ab6b899995",
-                "reference": "1238950e3efb4f0963c6a3865b6634ab6b899995",
+                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/cdc18d93710964b61c46ec871776382a26b9b4dd",
+                "reference": "cdc18d93710964b61c46ec871776382a26b9b4dd",
                 "shasum": ""
             },
             "require": {
@@ -4604,23 +4603,23 @@
                 "knplabs/knp-menu-bundle": "^2.1",
                 "php": "^7.1",
                 "sonata-project/block-bundle": "^3.3",
-                "symfony/framework-bundle": "^3.4",
-                "symfony/security": "^3.4",
-                "symfony/templating": "^3.4"
+                "symfony/framework-bundle": "^3.4|^4.1",
+                "symfony/security": "^3.4|^4.1",
+                "symfony/templating": "^3.4|^4.1"
             },
             "conflict": {
                 "twig/twig": "^1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "^4.0",
-                "symfony/dependency-injection": "^3.4",
-                "symfony/form": "^3.4",
+                "symfony/dependency-injection": "^3.4|^4.1",
+                "symfony/form": "^3.4|^4.1",
                 "twig/twig": "^2.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4657,28 +4656,28 @@
                 "user interface",
                 "webshop"
             ],
-            "time": "2018-05-21T15:59:30+00:00"
+            "time": "2018-06-12T09:37:33+00:00"
         },
         {
             "name": "sylius/user",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/User.git",
-                "reference": "7bb2e4b82334c848214182e50cf7fdaf745a610d"
+                "reference": "96c1feb5d72c5cf2260e9d0d8ff989d5d6460e63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/User/zipball/7bb2e4b82334c848214182e50cf7fdaf745a610d",
-                "reference": "7bb2e4b82334c848214182e50cf7fdaf745a610d",
+                "url": "https://api.github.com/repos/Sylius/User/zipball/96c1feb5d72c5cf2260e9d0d8ff989d5d6460e63",
+                "reference": "96c1feb5d72c5cf2260e9d0d8ff989d5d6460e63",
                 "shasum": ""
             },
             "require": {
                 "doctrine/collections": "^1.1",
                 "php": "^7.1",
-                "sylius/resource": "^1.1",
+                "sylius/resource": "^1.2",
                 "symfony/polyfill-mbstring": "^1.6",
-                "symfony/security": "^3.4"
+                "symfony/security": "^3.4|^4.1"
             },
             "require-dev": {
                 "phpspec/phpspec": "^4.0"
@@ -4689,7 +4688,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4731,37 +4730,38 @@
                 "registration",
                 "user"
             ],
-            "time": "2018-05-01T09:35:16+00:00"
+            "time": "2018-06-07T11:36:20+00:00"
         },
         {
             "name": "sylius/user-bundle",
-            "version": "v1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusUserBundle.git",
-                "reference": "b8b4c346ed62bb35ecbf7f68ee37aa4cbfbd1469"
+                "reference": "d2b58428ff945cf4d5e1e7ef98353c73858c23dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusUserBundle/zipball/b8b4c346ed62bb35ecbf7f68ee37aa4cbfbd1469",
-                "reference": "b8b4c346ed62bb35ecbf7f68ee37aa4cbfbd1469",
+                "url": "https://api.github.com/repos/Sylius/SyliusUserBundle/zipball/d2b58428ff945cf4d5e1e7ef98353c73858c23dc",
+                "reference": "d2b58428ff945cf4d5e1e7ef98353c73858c23dc",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "^2.5",
                 "php": "^7.1",
-                "sylius/mailer-bundle": "^1.1",
-                "sylius/resource-bundle": "^1.1",
-                "sylius/user": "^1.1",
-                "symfony/framework-bundle": "^3.4",
+                "sylius/mailer-bundle": "^1.2",
+                "sylius/resource-bundle": "^1.2",
+                "sylius/user": "^1.2",
+                "symfony/framework-bundle": "^3.4|^4.1",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
-                "hwi/oauth-bundle": "^0.5",
+                "hwi/oauth-bundle": "^0.6",
+                "php-http/guzzle6-adapter": "^1.1",
                 "phpspec/phpspec": "^4.0",
                 "phpunit/phpunit": "^6.5",
-                "symfony/dependency-injection": "^3.4",
-                "symfony/security-bundle": "^3.4",
+                "symfony/dependency-injection": "^3.4|^4.1",
+                "symfony/security-bundle": "^3.4|^4.1",
                 "symfony/swiftmailer-bundle": "^3.1"
             },
             "suggest": {
@@ -4770,7 +4770,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -4819,7 +4819,7 @@
                 "registration",
                 "user"
             ],
-            "time": "2018-05-21T15:59:30+00:00"
+            "time": "2018-06-12T09:37:33+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
