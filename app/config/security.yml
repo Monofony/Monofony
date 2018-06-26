@@ -21,6 +21,7 @@ security:
         admin:
             context: admin
             pattern: /admin(?:/.*)?$
+            provider: sylius_admin_user_provider
             form_login:
                 provider: sylius_admin_user_provider
                 login_path: sylius_backend_login
@@ -42,13 +43,15 @@ security:
 
         api:
             pattern:    ^/api
+            provider: sylius_app_user_provider
             fos_oauth:  true
             stateless:  true
 
         app:
-            switch_user: { role: ROLE_ALLOWED_TO_SWITCH }
+            switch_user: true
             context: app
             pattern: /.*
+            provider: sylius_app_user_provider
             form_login:
                 provider: sylius_app_user_provider
                 login_path: app_frontend_login
