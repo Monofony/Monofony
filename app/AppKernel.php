@@ -32,7 +32,6 @@ class AppKernel extends Kernel
             new Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new EightPoints\Bundle\GuzzleBundle\EightPointsGuzzleBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sylius\Bundle\FixturesBundle\SyliusFixturesBundle(),
