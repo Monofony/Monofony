@@ -30,7 +30,6 @@
         "guzzlehttp/guzzle": "^6.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "knplabs/doctrine-behaviors": "~1.1",
-        "sensio/framework-extra-bundle": "^3.0.2",
         "sonata-project/block-bundle": "^3.3",
         "symfony/swiftmailer-bundle": "^3.0",
         "symfony/symfony": "3.4.*",
