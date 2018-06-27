@@ -7279,16 +7279,16 @@
         },
         {
             "name": "nelmio/alice",
-            "version": "v2.3.4",
+            "version": "v2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nelmio/alice.git",
-                "reference": "41fc89e2dfbb9d6d13a0f350393e5a91e9064d69"
+                "reference": "d780fdff10854d93010b4a027fab92b747b42586"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nelmio/alice/zipball/41fc89e2dfbb9d6d13a0f350393e5a91e9064d69",
-                "reference": "41fc89e2dfbb9d6d13a0f350393e5a91e9064d69",
+                "url": "https://api.github.com/repos/nelmio/alice/zipball/d780fdff10854d93010b4a027fab92b747b42586",
+                "reference": "d780fdff10854d93010b4a027fab92b747b42586",
                 "shasum": ""
             },
             "require": {
@@ -7334,7 +7334,7 @@
                 "orm",
                 "test"
             ],
-            "time": "2017-10-31T11:42:39+00:00"
+            "time": "2018-04-07T09:33:52+00:00"
         },
         {
             "name": "openlss/lib-array2xml",
