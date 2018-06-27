@@ -41,8 +41,10 @@ class AddressApiTest extends JsonApiTestCase
      */
     public function it_does_not_allow_to_show_taxon_when_it_does_not_exist()
     {
-        $this->loadFixturesFromFile('authentication/api_user.yml');
-        $this->loadFixturesFromFile('resources/addresses.yml');
+        $this->loadFixturesFromFiles([
+            'authentication/api_user.yml',
+            'resources/addresses.yml',
+        ]);
 
         $this->client->request('GET', '/api/addresses/-1', [], [], static::$authorizedHeaderWithAccept);
 
@@ -55,8 +57,11 @@ class AddressApiTest extends JsonApiTestCase
      */
     public function it_allows_indexing_addresses()
     {
-        $this->loadFixturesFromFile('authentication/api_user.yml');
-        $this->loadFixturesFromFile('resources/addresses.yml');
+        $this->loadFixturesFromFiles([
+            'authentication/api_user.yml',
+            'resources/addresses.yml',
+        ]);
+
         $this->client->request('GET', '/api/addresses/', [], [], static::$authorizedHeaderWithAccept);
 
         $response = $this->client->getResponse();
@@ -105,9 +110,11 @@ EOT;
      */
     public function it_allows_delete_address()
     {
-        $this->loadFixturesFromFile('authentication/api_user.yml');
+        $addresses = $this->loadFixturesFromFiles([
+            'authentication/api_user.yml',
+            'resources/addresses.yml',
+        ]);
 
-        $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
         $address = $addresses['address1'];
 
         $this->client->request('DELETE', $this->getAddressUrl($address), [], [], static::$authorizedHeaderWithContentType, []);
@@ -127,9 +134,11 @@ EOT;
      */
     public function it_allows_updating_address()
     {
-        $this->loadFixturesFromFile('authentication/api_user.yml');
-
-        $addresses = $this->loadFixturesFromFile('resources/addresses.yml');
+        $addresses = $this->loadFixturesFromFiles([
+            'authentication/api_user.yml',
+            'resources/addresses.yml',
+        ]);
+        
         $address = $addresses["address1"];
 
         $data =
