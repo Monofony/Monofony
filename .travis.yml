@@ -5,8 +5,8 @@ language: php
 
 env:
     global:
-        - JEDISJEUX_CACHE_DIR=$HOME/.jedisjeux-cache
-        - JEDISJEUX_BUILD_DIR=etc/build
+        - APP_NAME_CACHE_DIR=$HOME/.app_name-cache
+        - APP_NAME_BUILD_DIR=etc/build
 
 addons:
     apt:
@@ -24,14 +24,14 @@ matrix:
             sudo: required
             php: 7.2
             env:
-                - JEDISJEUX_SUITE="application"
+                - APP_NAME_SUITE="application"
                 - TRAVIS_NODE_VERSION="7.5"
             services:
                 - memcached
         -
             sudo: false
             php: 7.2
-            env: JEDISJEUX_SUITE="docs packages"
+            env: APP_NAME_SUITE="docs packages"
             addons:
                 apt:
                     packages:
@@ -44,31 +44,31 @@ cache:
         - ~/.cache/pip
         - vendor
         - node_modules
-        - $JEDISJEUX_CACHE_DIR
+        - $APP_NAME_CACHE_DIR
 
 before_install:
-    - etc/travis/run-suite before_install "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite before_install "${APP_NAME_SUITE}"
 
 install:
-    - etc/travis/run-suite install "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite install "${APP_NAME_SUITE}"
 
 before_script:
-    - etc/travis/run-suite before_script "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite before_script "${APP_NAME_SUITE}"
 
 script:
-    - etc/travis/run-suite script "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite script "${APP_NAME_SUITE}"
 
 before_cache:
-    - etc/travis/run-suite before_cache "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite before_cache "${APP_NAME_SUITE}"
 
 after_success:
-    - etc/travis/run-suite after_success "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite after_success "${APP_NAME_SUITE}"
 
 after_failure:
-    - etc/travis/run-suite after_failure "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite after_failure "${APP_NAME_SUITE}"
 
 after_script:
-    - etc/travis/run-suite after_script "${JEDISJEUX_SUITE}"
+    - etc/travis/run-suite after_script "${APP_NAME_SUITE}"
 
 notifications:
     email: false
