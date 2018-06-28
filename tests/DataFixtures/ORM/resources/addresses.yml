@@ -1,4 +1,4 @@
-AppBundle\Entity\Address:
+App\Entity\Address:
     address1:
         street: 2 rue de la Mabilais
         postCode: 35000

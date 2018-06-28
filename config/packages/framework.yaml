@@ -1,0 +1,24 @@
+parameters:
+    locale: fr_FR
+    secret: '%env(resolve:APP_SECRET)%'
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    #serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id:  ~
+    fragments:       ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true

@@ -1,6 +1,0 @@
-imports:
-    - { resource: sylius/sylius_customer.yml }
-    - { resource: sylius/sylius_grid.yml }
-    - { resource: sylius/sylius_fixtures.yml }
-    - { resource: sylius/sylius_resource.yml }
-    - { resource: sylius/sylius_user.yml }

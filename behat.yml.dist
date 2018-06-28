@@ -1,3 +1,4 @@
 imports:
-    - src/AppBundle/Behat/Resources/config/profiles.yml
-    - src/AppBundle/Behat/Resources/config/suites.yml
+    - src/Behat/Resources/config/profiles.yml
+    - src/Behat/Resources/config/suites.yml
+    
