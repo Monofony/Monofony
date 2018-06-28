@@ -3,4 +3,4 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 print_header "Validating (Twig templates)" "AppName"
-run_command "bin/console lint:twig app/Resources/views --env=test --no-debug"
+run_command "bin/console lint:twig templates --env=test --no-debug"
