@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace test\AppBundle\Tests\Controller;
+namespace App\Tests\Controller;
 
-use AppBundle\Entity\Address;
+use App\Entity\Address;
 use Lakion\ApiTestCase\JsonApiTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -108,7 +108,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_delete_address()
+    public function it_allows_to_delete_address()
     {
         $addresses = $this->loadFixturesFromFiles([
             'authentication/api_user.yml',
@@ -117,7 +117,7 @@ EOT;
 
         $address = $addresses['address1'];
 
-        $this->client->request('DELETE', $this->getAddressUrl($address), [], [], static::$authorizedHeaderWithContentType, []);
+        $this->client->request('DELETE', $this->getAddressUrl($address), [], [], static::$authorizedHeaderWithContentType);
 
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);

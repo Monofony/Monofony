@@ -5,11 +5,20 @@
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.8/phpunit.xsd"
          backupGlobals="false"
          colors="true"
-         bootstrap="app/autoload.php"
+         bootstrap="vendor/autoload.php"
 >
     <php>
         <ini name="error_reporting" value="-1" />
-        <server name="KERNEL_DIR" value="app/" />
+        <server name="KERNEL_CLASS" value="App\Kernel" />
+        <env name="APP_ENV" value="test" />
+        <env name="APP_DEBUG" value="1"/>
+        <env name="APP_SECRET" value="5a79a1c866efef9ca1800f971d689f3e"/>
+
+        <!-- ###+ doctrine/doctrine-bundle ### -->
+        <env name="DATABASE_URL" value="mysql://root:vagrant@localhost/app_name_test?charset=UTF8"/>
+        <!-- ###- doctrine/doctrine-bundle ### -->
+
+        <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
     </php>
 
     <testsuites>
@@ -17,10 +26,6 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
-
-    <php>
-        <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
-    </php>
 
     <filter>
         <whitelist>

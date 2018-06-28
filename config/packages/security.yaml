@@ -1,0 +1,82 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+imports:
+    - { resource: "@FOSOAuthServerBundle/Resources/config/security.xml" }
+
+parameters:
+    secret: '%env(resolve:APP_SECRET)%'
+
+security:
+
+    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        sylius_admin_user_provider:
+            id: sylius.admin_user_provider.email_or_name_based
+        sylius_app_user_provider:
+            id: sylius.app_user_provider.email_or_name_based
+    encoders:
+        Sylius\Component\User\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+
+    firewalls:
+        admin:
+            context: admin
+            pattern: /admin(?:/.*)?$
+            provider: sylius_admin_user_provider
+            form_login:
+                provider: sylius_admin_user_provider
+                login_path: sylius_backend_login
+                check_path: sylius_backend_login_check
+                failure_path: sylius_backend_login
+                default_target_path: app_backend_dashboard
+                use_forward: false
+                use_referer: false
+            remember_me:
+                secret: "%secret%"
+                path: /admin
+                name: APP_ADMIN_REMEMBER_ME
+                lifetime: 31536000
+                remember_me_parameter: _remember_me
+            logout:
+                path: sylius_backend_logout
+                target: sylius_backend_login
+            anonymous: true
+
+        api:
+            pattern:    ^/api
+            provider: sylius_app_user_provider
+            fos_oauth:  true
+            stateless:  true
+
+        app:
+            switch_user: true
+            context: app
+            pattern: /.*
+            provider: sylius_app_user_provider
+            form_login:
+                provider: sylius_app_user_provider
+                login_path: app_frontend_login
+                check_path: app_frontend_login_check
+                failure_path: app_frontend_login
+                default_target_path: app_frontend_homepage
+                use_forward: false
+                use_referer: false
+            logout:
+                path: app_frontend_logout
+                target: app_frontend_homepage
+            anonymous: true
+
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+    access_control:
+        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/dashboard, role: ROLE_ADMIN }
+        - { path: "^/admin.*", role: ROLE_ADMIN }
+        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
