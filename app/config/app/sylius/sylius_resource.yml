@@ -1,9 +1,0 @@
-sylius_resource:
-    resources:
-        app.address:
-            classes:
-                model: AppBundle\Entity\Address
-                form: AppBundle\Form\Type\AddressType
-        app.oauth_client:
-            classes:
-                model: AppBundle\Entity\OAuth\Client

@@ -1,0 +1,68 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+     sylius.form.type.admin_user.validation_groups: ["sylius"]
+
+services:
+    App\Form\EventSubscriber\CustomerRegistrationFormSubscriber:
+        autowire: false 
+        
+    app.form.extension.type.customer:
+        class: App\Form\Extension\CustomerTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerType }
+
+    app.date_type_extension:
+            class: App\Form\Extension\DateTypeExtension
+            tags:
+                - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\DateType }
+
+    sylius.form.type.admin_user:
+        class: App\Form\Type\User\AdminUserType
+        arguments:
+            - "%sylius.model.admin_user.class%"
+            - [sylius]
+        tags:
+          - { name: form.type }
+
+    sylius.form.type.app_user:
+        class: App\Form\Type\User\AppUserType
+        arguments:
+            - "%sylius.model.app_user.class%"
+            - [sylius]
+        tags:
+          - { name: form.type }
+
+    sylius.form.type.user:
+        class: App\Form\Type\User\UserRegistrationType
+        arguments:
+            - "%sylius.model.app_user.class%"
+        tags:
+          - { name: form.type }
+
+    sylius.form.type.app_user_registration:
+        class: App\Form\Type\User\AppUserRegistrationType
+        arguments:
+            - "%sylius.model.app_user.class%"
+            - [sylius, sylius_user_registration]
+        tags:
+          - { name: form.type }
+
+    sylius.form.type.customer_simple_registration:
+        class: App\Form\Type\Customer\CustomerSimpleRegistrationType
+        arguments:
+            - "%sylius.model.customer.class%"
+            - [sylius, sylius_user_registration]
+            - "@sylius.repository.customer"
+        tags:
+          - { name: form.type, alias: sylius_customer_simple_registration }
+
+    sylius.form.type.customer_registration:
+        class: App\Form\Type\Customer\CustomerRegistrationType
+        arguments:
+            - "%sylius.model.customer.class%"
+            - [sylius, sylius_user_registration, sylius_customer_profile]
+            - "@sylius.repository.customer"
+        tags:
+          - { name: form.type, alias: sylius_customer_registration }

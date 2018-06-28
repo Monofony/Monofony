@@ -1,0 +1,61 @@
+imports:
+    - { resource: services/contexts.yml }
+    - { resource: services/pages.yml }
+
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: App\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    mink.default_session:
+        class: Behat\Mink\Session
+        lazy: true
+        public: false
+        factory: __behat__.mink:getSession
+
+    app.behat.cookie_setter:
+        class: App\Behat\Service\Setter\CookieSetter
+        public: false
+        arguments:
+            - "@mink.default_session"
+            - "%__behat__.mink.parameters%"
+
+    app.behat.admin_security:
+        class: App\Behat\Service\SecurityService
+        public: false
+        arguments:
+            - "@__symfony__.session"
+            - "@app.behat.cookie_setter"
+            - "admin"
+
+    app.behat.table_accessor:
+        class: App\Behat\Service\Accessor\TableAccessor
+        public: false
+
+    app.behat.notification_accessor:
+        class: App\Behat\Service\Accessor\NotificationAccessor
+        public: false
+        arguments:
+            - "@mink.default_session"
+
+    app.behat.notification_checker:
+        class: App\Behat\Service\NotificationChecker
+        public: false
+        arguments:
+            - "@app.behat.notification_accessor"
+
+    app.behat.current_page_resolver:
+        class: App\Behat\Service\Resolver\CurrentPageResolver
+        public: false
+        arguments:
+            - "@mink.default_session"
+            - "@__symfony__.router"
+
+    app.behat.shared_storage:
+        class: App\Behat\Service\SharedStorage
+        public: false
