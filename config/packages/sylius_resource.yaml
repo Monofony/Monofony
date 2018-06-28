@@ -1,0 +1,9 @@
+sylius_resource:
+    resources:
+        app.address:
+            classes:
+                model: App\Entity\Address
+                form: App\Form\Type\AddressType
+        app.oauth_client:
+            classes:
+                model: App\Entity\OAuth\Client

@@ -4,10 +4,8 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../bash/common.lib.s
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../bash/application.sh"
 
 print_header "Configuring parameters" "AppName"
-run_command "sed -i 's/database_host.*/database_host: 127.0.0.1/' app/config/parameters.yml"
-run_command "sed -i 's/database_user.*/database_user: root/' app/config/parameters.yml"
-run_command "sed -i 's/database_password.*/database_password: null/' app/config/parameters.yml"
-run_command "sed -i 's/fos_elastica\.host.*/fos_elastica\.host: 127.0.0.1/' app/config/parameters.yml"
+run_command "cp .env.travis .env"
+run_command "cp phpunit.xml.travis phpunit.xml"
 
 print_header "Setting xvfb up" "AppName"
 run_command "export DISPLAY=:99.0"
