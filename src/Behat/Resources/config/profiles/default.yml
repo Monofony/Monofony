@@ -1,4 +1,6 @@
 default:
+    autoload:
+        '': '%paths.base%/app/features/bootstrap'
     formatters:
         pretty:
             verbose:  true
@@ -28,7 +30,7 @@ default:
 
         FriendsOfBehat\SymfonyExtension:
             kernel:
-                bootstrap: 'vendor/autoload.php'
+                bootstrap: 'features/bootstrap/bootstrap.php'
                 path: src/Kernel.php
                 class: 'App\Kernel'
                 debug: true
