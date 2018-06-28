@@ -19,24 +19,36 @@ class AddressSpec extends ObjectBehavior
         $this->shouldImplement(ResourceInterface::class);
     }
 
-    function it_sets_street()
+    function it_has_no_street_by_default(): void
+    {
+        $this->getStreet()->shouldReturn(null);
+    }
+
+    function its_street_is_mutable()
     {
         $this->setStreet('11 rue de la préfecture');
-
         $this->getStreet()->shouldReturn('11 rue de la préfecture');
     }
 
-    function it_sets_postcode()
+    function it_has_no_postcode_by_default(): void
+    {
+        $this->getPostcode()->shouldReturn(null);
+    }
+
+    function its_postcode_is_mutable()
     {
         $this->setPostcode('35000');
-
         $this->getPostcode()->shouldReturn('35000');
     }
 
-    function it_sets_city()
+    function it_has_no_city_by_default(): void
+    {
+        $this->getCity()->shouldReturn(null);
+    }
+
+    function its_city_is_mutable()
     {
         $this->setCity('Rennes');
-
         $this->getCity()->shouldReturn('Rennes');
     }
 }
