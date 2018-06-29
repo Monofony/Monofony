@@ -39,7 +39,7 @@ class AddressApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_show_taxon_when_it_does_not_exist()
+    public function it_does_not_allow_to_show_address_when_it_does_not_exist()
     {
         $this->loadFixturesFromFiles([
             'authentication/api_user.yml',
