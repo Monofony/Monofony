@@ -17,10 +17,10 @@ var uglifycss = require('gulp-uglifycss');
 var argv = require('yargs').argv;
 var watchify     = require('watchify');
 
-var rootPath = argv.rootPath || '../';
-var appRootPath = rootPath + 'frontend/compiled/';
+var rootPath = argv.rootPath || '../../';
+var appRootPath = rootPath + 'public/compiled/frontend/';
 var vendorPath = argv.vendorPath || '';
-var nodeModulesPath = rootPath + 'frontend/node_modules/';
+var nodeModulesPath = rootPath + 'assets/frontend/node_modules/';
 
 var paths = {
   app: {
