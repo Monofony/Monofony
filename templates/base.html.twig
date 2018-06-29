@@ -5,7 +5,7 @@
     <title>{% block title %}AppName{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     {% block stylesheets %}
-        {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/frontend/compiled/css/style.css'} %}
+        {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'compiled/frontend/css/style.css'} %}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
@@ -49,7 +49,7 @@
 
 {% block javascripts %}
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/frontend/compiled/js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('compiled/frontend/js/app.js') }}"></script>
 {% endblock %}
 
 </body>
