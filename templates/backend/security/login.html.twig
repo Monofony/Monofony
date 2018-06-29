@@ -3,13 +3,13 @@
 {% block title %}AppName | {{ 'sylius.ui.administration_panel_login'|trans }}{% endblock %}
 
 {% block stylesheets %}
-    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/backend/compiled/css/style.css'} %}
+    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'compiled/backend/css/style.css'} %}
 {% endblock %}
 
 {% block content %}
-{% include '@SyliusUi/Security/_login.html.twig' with {'action': path('sylius_backend_login_check'), 'paths': {'logo': 'assets/backend/compiled/img/logo.png'}} %}
+{% include '@SyliusUi/Security/_login.html.twig' with {'action': path('sylius_backend_login_check'), 'paths': {'logo': 'compiled/backend/img/logo.png'}} %}
 {% endblock %}
 
 {% block javascripts %}
-    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/backend/compiled/js/app.js'} %}
+    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'compiled/backend/js/app.js'} %}
 {% endblock %}
