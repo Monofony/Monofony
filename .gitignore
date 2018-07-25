@@ -4,7 +4,7 @@
 /var/*
 !var/.gitkeep
 /vendor/
-/web/bundles/
+/public/bundles/
 **/node_modules/*
 **/compiled/*
 
