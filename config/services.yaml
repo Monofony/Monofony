@@ -1,3 +1,13 @@
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autoconfigure: true
+
+    command_handlers:
+        namespace: App\Command\
+        resource: '../src/Command/*'
+        tags: [command_handler]
+
 imports:
     - { resource: services/context.yml }
     - { resource: services/fixtures.yml }

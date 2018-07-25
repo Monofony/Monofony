@@ -20,10 +20,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 abstract class AbstractInstallCommand extends ContainerAwareCommand
 {
-    const WEB_ASSETS_DIRECTORY = 'web/assets/';
-    const WEB_BUNDLES_DIRECTORY = 'web/bundles/';
-    const WEB_MEDIA_DIRECTORY = 'web/media/';
-    const WEB_MEDIA_IMAGE_DIRECTORY = 'web/media/image/';
+    const WEB_ASSETS_DIRECTORY = 'public/assets/';
+    const WEB_BUNDLES_DIRECTORY = 'public/bundles/';
+    const WEB_MEDIA_DIRECTORY = 'public/media/';
+    const WEB_MEDIA_IMAGE_DIRECTORY = 'public/media/image/';
 
     /**
      * @var CommandExecutor
@@ -91,14 +91,12 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
      */
     protected function createProgressBar(OutputInterface $output, $length = 10)
     {
-        ProgressBar::setFormatDefinition('custom', ' %current%/%max% [%bar%] %percent:3s%% <info>%command_name%</info>');
-
         $progress = new ProgressBar($output);
-        $progress->setFormat('custom');
-        $progress->setBarCharacter('<info>|</info>');
-        $progress->setBarCharacter('<info>|</info>');
+        $progress->setBarCharacter('<info>░</info>');
         $progress->setEmptyBarCharacter(' ');
-        $progress->setProgressCharacter('|');
+        $progress->setProgressCharacter('<comment>░</comment>');
+
+        $progress->start($length);
 
         return $progress;
     }
@@ -121,12 +119,11 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
     /**
      * @param array $commands
      * @param OutputInterface $output
+     * @param bool $displayProgress
      */
-    protected function runCommands(array $commands, OutputInterface $output)
+    protected function runCommands(array $commands, OutputInterface $output, bool $displayProgress = true): void
     {
-        $length = count($commands);
-        $progress = $this->createProgressBar($output, $length);
-        $started = false;
+        $progress = $this->createProgressBar($displayProgress ? $output : new NullOutput(), count($commands));
 
         foreach ($commands as $key => $value) {
             if (is_string($key)) {
@@ -137,20 +134,13 @@ abstract class AbstractInstallCommand extends ContainerAwareCommand
                 $parameters = [];
             }
 
-            ProgressBar::setPlaceholderFormatterDefinition('command_name', $this->getCommandDescriptionClosure($command));
-
-            if (!$started) {
-                $progress->start($length);
-                $started = true;
-            } else {
-                $progress->advance();
-            }
-
             $this->commandExecutor->runCommand($command, $parameters);
 
             // PDO does not always close the connection after Doctrine commands.
             // See https://github.com/symfony/symfony/issues/11750.
             $this->get('doctrine')->getManager()->getConnection()->close();
+
+            $progress->advance();
         }
 
         $progress->finish();
