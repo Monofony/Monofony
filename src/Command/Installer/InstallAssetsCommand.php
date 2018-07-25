@@ -41,7 +41,6 @@ EOT
 
         $commands = [
             'assets:install',
-            'assetic:dump',
         ];
 
         $this->runCommands($commands, $output);

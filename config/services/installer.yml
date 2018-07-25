@@ -10,10 +10,12 @@ services:
 
     sylius.installer.checker.command_directory:
         class: App\Installer\Checker\CommandDirectoryChecker
+        public: true
         arguments:
             - "@filesystem"
 
     sylius.commands_provider.database_setup:
         class: App\Installer\Provider\DatabaseSetupCommandsProvider
+        public: true
         arguments:
             - "@doctrine"
