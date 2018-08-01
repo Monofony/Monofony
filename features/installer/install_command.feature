@@ -10,7 +10,7 @@ Feature: Install feature
         Then the command should finish successfully
 
     @setup
-    Scenario: Running install setup command
+    Scenario: Registering administrator account
         Given I provide full administrator data
         When I run Install setup command
         Then the command should finish successfully
