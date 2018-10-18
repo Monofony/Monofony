@@ -8,6 +8,7 @@ commands=(
     validate-composer-security
     validate-doctrine-schema
     validate-twig
+    validate-yaml-files
     test-phpspec
     test-phpstan
     test-phpunit
