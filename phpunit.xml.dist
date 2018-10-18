@@ -19,6 +19,7 @@
         <env name="DATABASE_HOST" value="localhost"/>
         <env name="DATABASE_NAME" value="app_name"/>
         <env name="DATABASE_USER" value="root"/>
+        <env name="DATABASE_PASSWORD" value="root"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
 
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
