@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9082bb1f3a922ce8cc8158de84ddbadc",
+    "content-hash": "64239f640531bc304290647ce1548ae0",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -4767,6 +4767,53 @@
             "time": "2018-01-03T07:37:34+00:00"
         },
         {
+            "name": "symfony/flex",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/flex.git",
+                "reference": "9fb60f232af0764d58002e7872acb43a74506d25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/9fb60f232af0764d58002e7872acb43a74506d25",
+                "reference": "9fb60f232af0764d58002e7872acb43a74506d25",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0.2",
+                "symfony/phpunit-bridge": "^3.2.8"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                },
+                "class": "Symfony\\Flex\\Flex"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Flex\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien.potencier@gmail.com"
+                }
+            ],
+            "description": "Composer plugin for Symfony",
+            "time": "2018-09-03T08:17:12+00:00"
+        },
+        {
             "name": "symfony/monolog-bundle",
             "version": "v3.3.0",
             "source": {
@@ -6898,12 +6945,12 @@
             "version": "v3.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Lakion/ApiTestCase.git",
+                "url": "https://github.com/lchrusciel/ApiTestCase.git",
                 "reference": "97b8e0df9e66a924d35aaa7ae122aed0e1937a87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Lakion/ApiTestCase/zipball/97b8e0df9e66a924d35aaa7ae122aed0e1937a87",
+                "url": "https://api.github.com/repos/lchrusciel/ApiTestCase/zipball/97b8e0df9e66a924d35aaa7ae122aed0e1937a87",
                 "reference": "97b8e0df9e66a924d35aaa7ae122aed0e1937a87",
                 "shasum": ""
             },
