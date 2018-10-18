@@ -19,9 +19,17 @@
         <env name="DATABASE_HOST" value="localhost"/>
         <env name="DATABASE_NAME" value="app_name"/>
         <env name="DATABASE_USER" value="root"/>
+        <env name="DATABASE_PASSWORD" value="root"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
 
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
+
+        <!-- ###+ symfony/swiftmailer-bundle ### -->
+        <!-- For Gmail as a transport, use: "gmail://username:password@localhost" -->
+        <!-- For a generic SMTP server, use: "smtp://localhost:25?encryption=&auth_mode=" -->
+        <!-- Delivery is disabled by default via "null://localhost" -->
+        <env name="MAILER_URL" value="null://localhost"/>
+        <!-- ###- symfony/swiftmailer-bundle ### -->
     </php>
 
     <testsuites>
