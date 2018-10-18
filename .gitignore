@@ -14,4 +14,23 @@
 
 .idea
 *.DS_Store
+
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/public/uploads/img/*
+/public/uploads/avatar/*
+!/public/uploads/avatar/.gitkeep
+!/public/uploads/img/.gitkeep
+/public/media/*
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> behat/symfony2-extension ###
 behat.yml
+###< behat/symfony2-extension ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###
