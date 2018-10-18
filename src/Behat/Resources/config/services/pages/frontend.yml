@@ -1,2 +1,8 @@
 imports:
     - { resource: frontend/address.yml }
+
+services:
+    app.behat.page.frontend.home:
+        class: App\Behat\Page\Frontend\HomePage
+        parent: app.behat.symfony_page
+        public: false
