@@ -51,3 +51,10 @@ services:
             - "@app.behat.page.frontend.address.index"
         tags:
             - { name: fob.context_service }
+
+    app.behat.context.ui.frontend.homepage:
+        class: App\Behat\Context\Ui\Frontend\HomepageContext
+        arguments:
+            - "@app.behat.page.frontend.home"
+        tags:
+            - { name: fob.context_service }

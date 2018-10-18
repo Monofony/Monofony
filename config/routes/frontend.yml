@@ -2,7 +2,7 @@ app_frontend_homepage:
     path: /
     defaults:
         _controller: FrameworkBundle:Template:template
-        template: 'frontend/home/index.html.twig'
+        template: 'frontend/homepage/index.html.twig'
 
 app_account:
     resource: "frontend/account.yml"
