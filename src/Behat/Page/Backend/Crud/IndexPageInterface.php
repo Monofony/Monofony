@@ -27,7 +27,7 @@ interface IndexPageInterface extends SymfonyPageInterface
     public function isSingleResourceOnPage(array $parameters);
 
     /**
-     * @param array $parameters
+     * @param array  $parameters
      * @param string $element
      *
      * @return bool

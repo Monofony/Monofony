@@ -31,8 +31,8 @@ abstract class SymfonyPage extends Page implements SymfonyPageInterface
     protected static $additionalParameters = ['_locale' => 'en_US'];
 
     /**
-     * @param Session $session
-     * @param array $parameters
+     * @param Session         $session
+     * @param array           $parameters
      * @param RouterInterface $router
      */
     public function __construct(Session $session, array $parameters, RouterInterface $router)
@@ -86,7 +86,7 @@ abstract class SymfonyPage extends Page implements SymfonyPageInterface
 
     /**
      * @param NodeElement $modalContainer
-     * @param string $appearClass
+     * @param string      $appearClass
      *
      * @todo it really shouldn't be here :)
      */

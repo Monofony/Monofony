@@ -27,17 +27,17 @@ final class CommandExecutor
     /**
      * @var InputInterface
      */
-    protected $input;
+    private $input;
 
     /**
      * @var OutputInterface
      */
-    protected $output;
+    private $output;
 
     /**
      * @var Application
      */
-    protected $application;
+    private $application;
 
     /**
      * @param InputInterface  $input
@@ -53,7 +53,7 @@ final class CommandExecutor
 
     /**
      * @param $command
-     * @param array $parameters
+     * @param array           $parameters
      * @param OutputInterface $output
      *
      * @return $this
@@ -93,7 +93,7 @@ final class CommandExecutor
      *
      * @return array
      */
-    protected function getDefaultParameters()
+    private function getDefaultParameters()
     {
         $defaultParameters = ['--no-debug' => true];
 

@@ -11,7 +11,6 @@
 
 namespace App\Fixture\Factory;
 
-use App\Entity\Address;
 use App\Entity\OAuth\Client;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
@@ -75,7 +74,7 @@ class OAuthClientExampleFactory extends AbstractExampleFactory
         $client = $this->oauthClientFactory->createNew();
         $client->setRandomId($options['random_id']);
         $client->setSecret($options['secret']);
-        $client->setAllowedGrantTypes(['password','refresh_token','token']);
+        $client->setAllowedGrantTypes(['password', 'refresh_token', 'token']);
 
         return $client;
     }

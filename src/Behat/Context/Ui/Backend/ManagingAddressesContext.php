@@ -48,9 +48,9 @@ class ManagingAddressesContext implements Context
     /**
      * ManagingPeopleContext constructor.
      *
-     * @param IndexPage $indexPage
-     * @param CreatePage $createPage
-     * @param UpdatePage $updatePage
+     * @param IndexPage                    $indexPage
+     * @param CreatePage                   $createPage
+     * @param UpdatePage                   $updatePage
      * @param CurrentPageResolverInterface $currentPageResolver
      */
     public function __construct(
@@ -162,7 +162,7 @@ class ManagingAddressesContext implements Context
      */
     public function iShouldSeeAddressesInTheList($number)
     {
-        Assert::same($this->indexPage->countItems(), (int)$number);
+        Assert::same($this->indexPage->countItems(), (int) $number);
     }
 
     /**
@@ -211,7 +211,6 @@ class ManagingAddressesContext implements Context
     {
         try {
             $this->indexPage->open();
-
         } catch (UnexpectedPageException $exception) {
             // nothing else to do
         }

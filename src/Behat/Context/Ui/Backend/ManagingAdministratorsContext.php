@@ -45,9 +45,9 @@ final class ManagingAdministratorsContext implements Context
     private $notificationChecker;
 
     /**
-     * @param CreatePage $createPage
-     * @param IndexPageInterface $indexPage
-     * @param UpdatePage $updatePage
+     * @param CreatePage                   $createPage
+     * @param IndexPageInterface           $indexPage
+     * @param UpdatePage                   $updatePage
      * @param NotificationCheckerInterface $notificationChecker
      */
     public function __construct(

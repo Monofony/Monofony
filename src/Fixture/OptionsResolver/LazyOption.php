@@ -58,7 +58,7 @@ final class LazyOption
 
     /**
      * @param RepositoryInterface $repository
-     * @param int $chanceOfRandomOne
+     * @param int                 $chanceOfRandomOne
      *
      * @return \Closure
      */
@@ -81,7 +81,7 @@ final class LazyOption
 
     /**
      * @param RepositoryInterface $repository
-     * @param int $amount
+     * @param int                 $amount
      *
      * @return \Closure
      */
@@ -121,7 +121,7 @@ final class LazyOption
 
     /**
      * @param RepositoryInterface $repository
-     * @param string $field
+     * @param string              $field
      *
      * @return \Closure
      */
@@ -149,7 +149,7 @@ final class LazyOption
 
     /**
      * @param RepositoryInterface $repository
-     * @param string $field
+     * @param string              $field
      *
      * @return \Closure
      */

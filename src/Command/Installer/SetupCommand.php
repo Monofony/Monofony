@@ -50,7 +50,7 @@ EOT
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      *
      * @return int
@@ -77,8 +77,8 @@ EOT
     }
 
     /**
-     * @param AdminUser $user
-     * @param InputInterface $input
+     * @param AdminUser       $user
+     * @param InputInterface  $input
      * @param OutputInterface $output
      *
      * @return AdminUser
@@ -134,7 +134,7 @@ EOT
     }
 
     /**
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
      *
      * @return mixed
@@ -177,7 +177,7 @@ EOT
     }
 
     /**
-     * @param string $message
+     * @param string   $message
      * @param \Closure $validator
      *
      * @return Question

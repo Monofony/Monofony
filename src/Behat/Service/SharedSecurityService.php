@@ -11,7 +11,6 @@
 
 namespace App\Behat\Service;
 
-use Sylius\Component\Core\Model\AdminUserInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 
@@ -43,8 +42,8 @@ final class SharedSecurityService implements SharedSecurityServiceInterface
 
     /**
      * @param SecurityServiceInterface $securityService
-     * @param UserInterface $user
-     * @param callable $action
+     * @param UserInterface            $user
+     * @param callable                 $action
      */
     private function performActionAs(SecurityServiceInterface $securityService, UserInterface $user, callable $action)
     {

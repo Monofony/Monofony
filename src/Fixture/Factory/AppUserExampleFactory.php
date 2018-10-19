@@ -11,11 +11,7 @@
 
 namespace App\Fixture\Factory;
 
-use App\Entity\AppUser;
-use App\Fixture\OptionsResolver\LazyOption;
-use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
-use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -78,7 +74,7 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
         $user->setEnabled($options['enabled']);
         $user->addRole('ROLE_USER');
 
-        foreach($options['roles'] as $role) {
+        foreach ($options['roles'] as $role) {
             $user->addRole($role);
         }
 

@@ -18,5 +18,4 @@ use App\Behat\Page\Backend\Crud\IndexPage as BaseIndexPage;
  */
 class IndexPage extends BaseIndexPage
 {
-
 }

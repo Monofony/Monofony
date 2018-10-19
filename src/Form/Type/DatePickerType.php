@@ -35,10 +35,10 @@ class DatePickerType extends AbstractType
     {
         parent::configureOptions($resolver);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'widget' => 'single_text',
             'format' => 'dd/MM/yyyy',
-        ));
+        ]);
     }
 
     /**

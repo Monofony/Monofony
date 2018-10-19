@@ -17,10 +17,10 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * @author Loïc Frémont <loic@mobizel.com>
  */
-Trait IdentifiableTrait
+trait IdentifiableTrait
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(type="integer")
      * @ORM\Id

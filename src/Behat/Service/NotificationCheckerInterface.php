@@ -14,14 +14,13 @@ namespace App\Behat\Service;
 use App\Behat\Exception\NotificationExpectationMismatchException;
 use App\Behat\NotificationType;
 
-
 /**
  * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
  */
 interface NotificationCheckerInterface
 {
     /**
-     * @param string $message
+     * @param string           $message
      * @param NotificationType $type
      *
      * @throws NotificationExpectationMismatchException

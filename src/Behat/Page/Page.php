@@ -41,7 +41,7 @@ abstract class Page implements PageInterface
 
     /**
      * @param Session $session
-     * @param array $parameters
+     * @param array   $parameters
      */
     public function __construct(Session $session, array $parameters = [])
     {
@@ -144,7 +144,7 @@ abstract class Page implements PageInterface
     /**
      * Defines elements by returning an array with items being:
      *  - :elementName => :cssLocator
-     *  - :elementName => [:selectorType => :locator]
+     *  - :elementName => [:selectorType => :locator].
      *
      * @return array
      */
@@ -155,7 +155,7 @@ abstract class Page implements PageInterface
 
     /**
      * @param string $name
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @return NodeElement
      *
@@ -179,7 +179,7 @@ abstract class Page implements PageInterface
 
     /**
      * @param string $name
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @return bool
      */
@@ -218,7 +218,7 @@ abstract class Page implements PageInterface
 
     /**
      * @param string $name
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @return NodeElement
      */
@@ -243,7 +243,7 @@ abstract class Page implements PageInterface
     }
 
     /**
-     * @param string|array $selector
+     * @param string|array     $selector
      * @param SelectorsHandler $selectorsHandler
      *
      * @return string
@@ -258,7 +258,7 @@ abstract class Page implements PageInterface
 
     /**
      * @param string $name
-     * @param array $parameters
+     * @param array  $parameters
      * @param array$definedElements
      *
      * @return string

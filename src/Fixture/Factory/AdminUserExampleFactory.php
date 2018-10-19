@@ -8,6 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace App\Fixture\Factory;
 
 use App\Entity\AdminUser;
@@ -34,7 +35,6 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
      * @var OptionsResolver
      */
     private $optionsResolver;
-
 
     /**
      * AdminUserExampleFactory constructor.
