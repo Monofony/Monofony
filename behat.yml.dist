@@ -1,4 +1,3 @@
 imports:
     - src/Behat/Resources/config/profiles.yml
     - src/Behat/Resources/config/suites.yml
-    

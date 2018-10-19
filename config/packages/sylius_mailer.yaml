@@ -1,0 +1,21 @@
+sylius_mailer:
+    sender:
+        name: '%email_name%'
+        address: '%email_sender%'
+    emails:
+        reset_password_token:
+            subject: sylius.emails.user.password_reset.subject
+            template: emails/passwordReset.html.twig
+        user_registration:
+            subject: Bienvenue sur Cyclocom
+            template: emails/userRegistration.html.twig
+        website_release:
+            subject: Nouveau Jedisjeux en ligne
+            template: emails/websiteRelease.html.twig
+        contact_request:
+            subject: Nouveau message de contact Jedisjeux
+            template: emails/contactRequest.html.twig
+        verification_token:
+            subject: emails.verification_token.subject
+            template: "emails/verification.html.twig"
+
