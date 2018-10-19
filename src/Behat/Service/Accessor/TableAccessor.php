@@ -98,7 +98,7 @@ final class TableAccessor implements TableAccessorInterface
 
     /**
      * @param NodeElement $table
-     * @param array $fields
+     * @param array       $fields
      *
      * @return NodeElement[]
      *
@@ -155,7 +155,7 @@ final class TableAccessor implements TableAccessorInterface
 
     /**
      * @param NodeElement $table
-     * @param string[] $fields
+     * @param string[]    $fields
      *
      * @return string[]
      *
@@ -175,7 +175,7 @@ final class TableAccessor implements TableAccessorInterface
 
     /**
      * @param NodeElement $table
-     * @param string $fieldName
+     * @param string      $fieldName
      *
      * @return int
      *

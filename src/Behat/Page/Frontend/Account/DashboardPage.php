@@ -85,6 +85,6 @@ class DashboardPage extends SymfonyPage
     {
         $customerText = $this->getElement('customer')->getText();
 
-        return stripos($customerText, $value) !== false;
+        return false !== stripos($customerText, $value);
     }
 }

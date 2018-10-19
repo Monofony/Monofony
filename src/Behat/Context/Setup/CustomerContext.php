@@ -50,10 +50,10 @@ final class CustomerContext implements Context
 
     /**
      * @param SharedStorageInterface $sharedStorage
-     * @param RepositoryInterface $customerRepository
-     * @param ObjectManager $customerManager
-     * @param FactoryInterface $customerFactory
-     * @param FactoryInterface $userFactory
+     * @param RepositoryInterface    $customerRepository
+     * @param ObjectManager          $customerManager
+     * @param FactoryInterface       $customerFactory
+     * @param FactoryInterface       $userFactory
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
@@ -100,11 +100,11 @@ final class CustomerContext implements Context
     }
 
     /**
-     * @param string $email
-     * @param string|null $firstName
-     * @param string|null $lastName
+     * @param string                  $email
+     * @param string|null             $firstName
+     * @param string|null             $lastName
      * @param \DateTimeInterface|null $createdAt
-     * @param string|null $phoneNumber
+     * @param string|null             $phoneNumber
      *
      * @return Customer
      */
@@ -132,9 +132,9 @@ final class CustomerContext implements Context
     }
 
     /**
-     * @param string $email
-     * @param string $password
-     * @param bool $enabled
+     * @param string      $email
+     * @param string      $password
+     * @param bool        $enabled
      * @param string|null $firstName
      * @param string|null $lastName
      * @param string|null $role

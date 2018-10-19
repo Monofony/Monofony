@@ -40,7 +40,7 @@ abstract class AbstractResourceFixture implements FixtureInterface
     private $optionsResolver;
 
     /**
-     * @param ObjectManager $objectManager
+     * @param ObjectManager           $objectManager
      * @param ExampleFactoryInterface $exampleFactory
      */
     public function __construct(ObjectManager $objectManager, ExampleFactoryInterface $exampleFactory)

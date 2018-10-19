@@ -32,7 +32,7 @@ interface SharedStorageInterface
 
     /**
      * @param string $key
-     * @param mixed $resource
+     * @param mixed  $resource
      */
     public function set($key, $resource);
 

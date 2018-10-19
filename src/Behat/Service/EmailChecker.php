@@ -97,7 +97,7 @@ final class EmailChecker implements EmailCheckerInterface
 
     /**
      * @param \Swift_Message $message
-     * @param string $recipient
+     * @param string         $recipient
      *
      * @return bool
      */

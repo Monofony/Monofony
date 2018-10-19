@@ -38,7 +38,7 @@ final class DefaultUsernameORMListener
     }
 
     /**
-     * @param array $entities
+     * @param array                  $entities
      * @param EntityManagerInterface $entityManager
      */
     private function processEntities($entities, EntityManagerInterface $entityManager, UnitOfWork $unitOfWork)
