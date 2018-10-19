@@ -1,0 +1,14 @@
+default:
+    suites:
+        ui_customer_login:
+            contexts_services:
+                - app.behat.context.hook.doctrine_orm
+
+                - app.behat.context.transform.user
+
+                - app.behat.context.setup.user
+
+                - app.behat.context.ui.email
+                - app.behat.context.ui.frontend.login
+            filters:
+                tags: "@customer_login && @ui"

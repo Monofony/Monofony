@@ -58,3 +58,24 @@ services:
             - "@app.behat.page.frontend.home"
         tags:
             - { name: fob.context_service }
+
+    app.behat.context.ui.frontend.login:
+        class: App\Behat\Context\Ui\Frontend\LoginContext
+        arguments:
+            - "@app.behat.page.frontend.home"
+            - "@app.behat.page.frontend.account.login"
+            - "@app.behat.page.frontend.account.register"
+            - "@app.behat.page.frontend.account.request_password_reset"
+            - "@app.behat.page.frontend.account.reset_password"
+            - "@app.behat.notification_checker"
+            - "@app.behat.current_page_resolver"
+        tags:
+            - { name: fob.context_service }
+
+    app.behat.context.ui.email:
+        class: App\Behat\Context\Ui\EmailContext
+        arguments:
+            - "@app.behat.shared_storage"
+            - "@app.behat.email_checker"
+        tags:
+            - { name: fob.context_service }

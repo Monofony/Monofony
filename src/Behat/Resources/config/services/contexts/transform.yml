@@ -100,3 +100,10 @@ services:
                 - "@app.behat.shared_storage"
             tags:
                 - { name: fob.context_service }
+
+        app.behat.context.transform.user:
+            class: App\Behat\Context\Transform\UserContext
+            arguments:
+                - "@app.behat.shared_storage"
+            tags:
+                - { name: fob.context_service }

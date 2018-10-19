@@ -3,23 +3,27 @@ services:
         class: App\Fixture\Factory\AddressExampleFactory
         arguments:
             - "@app.factory.address"
-        public: true   
+        public: true
+
     app.fixture.example_factory.admin_user:
         class: App\Fixture\Factory\AdminUserExampleFactory
         arguments:
             - "@sylius.factory.admin_user"
         public: true
+
     app.fixture.example_factory.app_user:
         class: App\Fixture\Factory\AppUserExampleFactory
         arguments:
-            - "@sylius.factory.app_user"
-            - "@sylius.repository.customer"
-        public: true    
+        - "@sylius.factory.app_user"
+        - "@sylius.factory.customer"
+        public: true
+
     app.fixture.example_factory.customer:
         class: App\Fixture\Factory\CustomerExampleFactory
         arguments:
             - "@sylius.factory.customer"
-        public: true    
+        public: true
+
     app.fixture.example_factory.oauth_client:
         class: App\Fixture\Factory\OAuthClientExampleFactory
         arguments:
