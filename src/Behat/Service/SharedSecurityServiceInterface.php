@@ -20,7 +20,7 @@ interface SharedSecurityServiceInterface
 {
     /**
      * @param UserInterface $adminUser
-     * @param callable $action
+     * @param callable      $action
      */
     public function performActionAsAdminUser(UserInterface $adminUser, callable $action);
 }

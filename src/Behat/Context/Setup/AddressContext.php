@@ -35,9 +35,9 @@ class AddressContext implements Context
     private $factory;
 
     /**
-     * @param SharedStorageInterface $sharedStorage
+     * @param SharedStorageInterface  $sharedStorage
      * @param ExampleFactoryInterface $factory
-     * @param RepositoryInterface $repository
+     * @param RepositoryInterface     $repository
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
@@ -77,13 +77,12 @@ class AddressContext implements Context
     }
 
     /**
-     * @param int $count
-     *
+     * @param int   $count
      * @param array $options
      */
     private function createAddresses(int $count, array $options = []): void
     {
-        for ($i=0 ; $i<$count ; $i++) {
+        for ($i = 0; $i < $count; ++$i) {
             /** @var Address $address */
             $address = $this->factory->create($options);
             $this->repository->add($address);

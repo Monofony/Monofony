@@ -29,7 +29,7 @@ class DateTypeExtension extends AbstractTypeExtension
             ->setDefaults([
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'dd/MM/yyyy'
+                'format' => 'dd/MM/yyyy',
         ]);
     }
 
@@ -40,5 +40,4 @@ class DateTypeExtension extends AbstractTypeExtension
     {
         return DateType::class;
     }
-
 }

@@ -34,7 +34,7 @@ class AddressContext implements Context
     private $indexPage;
 
     /**
-     * @param ShowPage $showPage
+     * @param ShowPage  $showPage
      * @param IndexPage $indexPage
      */
     public function __construct(ShowPage $showPage, IndexPage $indexPage)
@@ -90,7 +90,6 @@ class AddressContext implements Context
     {
         try {
             $this->iOpenAddressPage($address);
-
         } catch (UnexpectedPageException $exception) {
             // nothing else to do
         }
@@ -105,7 +104,6 @@ class AddressContext implements Context
     {
         try {
             $this->iOpenAddressPage($address);
-
         } catch (UnexpectedPageException $exception) {
             // nothing else to do
         }

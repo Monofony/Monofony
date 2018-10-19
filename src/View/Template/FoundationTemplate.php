@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: pbrun
  * Date: 01/06/15
- * Time: 17:21
+ * Time: 17:21.
  */
 
 namespace App\View\Template;
@@ -15,18 +15,18 @@ class FoundationTemplate extends Template
     /**
      * @var array
      */
-    static protected $defaultOptions = array(
-        'prev_message'        => 'Previous',
-        'next_message'        => 'Next',
-        'dots_message'        => '&hellip;',
-        'active_suffix'       => '',
+    protected static $defaultOptions = [
+        'prev_message' => 'Previous',
+        'next_message' => 'Next',
+        'dots_message' => '&hellip;',
+        'active_suffix' => '',
         'css_container_class' => 'pagination',
-        'css_prev_class'      => 'pagination-previous',
-        'css_next_class'      => 'pagination-next',
-        'css_dots_class'      => 'ellipsis',
-        'css_active_class'    => 'current',
-        'css_disabled_class'  => 'unavailable'
-    );
+        'css_prev_class' => 'pagination-previous',
+        'css_next_class' => 'pagination-next',
+        'css_dots_class' => 'ellipsis',
+        'css_active_class' => 'current',
+        'css_disabled_class' => 'unavailable',
+    ];
 
     /**
      * @return string
@@ -52,7 +52,7 @@ class FoundationTemplate extends Template
     }
 
     /**
-     * @param int $page
+     * @param int    $page
      * @param string $text
      *
      * @return string
@@ -65,7 +65,7 @@ class FoundationTemplate extends Template
     }
 
     /**
-     * @param int $page
+     * @param int    $page
      * @param string $text
      * @param string $class
      *
@@ -99,6 +99,7 @@ class FoundationTemplate extends Template
 
     /**
      * @param int $page
+     *
      * @return string
      */
     public function previousEnabled($page)
@@ -137,6 +138,7 @@ class FoundationTemplate extends Template
     {
         $text = $this->option('next_message');
         $class = $this->option('css_next_class');
+
         return $this->pageWithTextAndClass($page, $text, $class);
     }
 

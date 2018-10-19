@@ -32,7 +32,7 @@ final class CookieSetter implements CookieSetterInterface
 
     /**
      * @param Session $minkSession
-     * @param array $minkParameters
+     * @param array   $minkParameters
      */
     public function __construct(Session $minkSession, array $minkParameters)
     {
@@ -63,7 +63,7 @@ final class CookieSetter implements CookieSetterInterface
     private function prepareMinkSessionIfNeeded(Session $session): void
     {
         if ($this->shouldMinkSessionBePrepared($session)) {
-            $session->visit(rtrim($this->minkParameters['base_url'], '/') . '/');
+            $session->visit(rtrim($this->minkParameters['base_url'], '/').'/');
         }
     }
 
@@ -75,7 +75,7 @@ final class CookieSetter implements CookieSetterInterface
             return false;
         }
 
-        if ($driver instanceof Selenium2Driver && $driver->getWebDriverSession() === null) {
+        if ($driver instanceof Selenium2Driver && null === $driver->getWebDriverSession()) {
             return true;
         }
 

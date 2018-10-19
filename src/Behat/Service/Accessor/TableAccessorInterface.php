@@ -11,7 +11,7 @@ interface TableAccessorInterface
 {
     /**
      * @param NodeElement $table
-     * @param array $fields
+     * @param array       $fields
      *
      * @return NodeElement
      *
@@ -21,7 +21,7 @@ interface TableAccessorInterface
 
     /**
      * @param NodeElement $table
-     * @param array $fields
+     * @param array       $fields
      *
      * @return NodeElement[]
      *
@@ -31,7 +31,7 @@ interface TableAccessorInterface
 
     /**
      * @param NodeElement $table
-     * @param string $fieldName
+     * @param string      $fieldName
      *
      * @return array
      *
@@ -49,7 +49,7 @@ interface TableAccessorInterface
     /**
      * @param NodeElement $table
      * @param NodeElement $row
-     * @param string $field
+     * @param string      $field
      *
      * @return NodeElement
      */

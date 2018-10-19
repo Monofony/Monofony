@@ -15,8 +15,6 @@ namespace App\Behat\Context\Ui\Frontend;
 
 use App\Behat\Page\Frontend\Account\ResetPasswordPage;
 use App\Behat\Service\Resolver\CurrentPageResolverInterface;
-use App\Behat\Service\SharedStorage;
-use App\Behat\Service\SharedStorageInterface;
 use Behat\Behat\Context\Context;
 use App\Behat\NotificationType;
 use App\Behat\Page\Frontend\Account\LoginPage;
@@ -65,11 +63,11 @@ final class LoginContext implements Context
     private $currentPageResolver;
 
     /**
-     * @param HomePage $homePage
-     * @param LoginPage $loginPage
-     * @param RegisterPage $registerPage
-     * @param RequestPasswordResetPage $requestPasswordResetPage
-     * @param ResetPasswordPage $resetPasswordPage
+     * @param HomePage                     $homePage
+     * @param LoginPage                    $loginPage
+     * @param RegisterPage                 $registerPage
+     * @param RequestPasswordResetPage     $requestPasswordResetPage
+     * @param ResetPasswordPage            $resetPasswordPage
      * @param NotificationCheckerInterface $notificationChecker
      * @param CurrentPageResolverInterface $currentPageResolver
      */
