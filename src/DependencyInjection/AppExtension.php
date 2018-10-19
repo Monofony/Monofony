@@ -1,4 +1,5 @@
 <?php
+
 namespace App\DependencyInjection;
 
 use Sylius\Bundle\ResourceBundle\DependencyInjection\Extension\AbstractResourceExtension;
@@ -11,6 +12,5 @@ class AppExtension extends AbstractResourceExtension
 
     public function load(array $config, ContainerBuilder $container)
     {
-
     }
 }

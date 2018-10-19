@@ -46,7 +46,7 @@ trait Toggles
 
     /**
      * @param NodeElement $toggleableElement
-     * @param bool $expectedState
+     * @param bool        $expectedState
      *
      * @throws \RuntimeException
      */

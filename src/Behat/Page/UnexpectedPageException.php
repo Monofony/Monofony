@@ -16,5 +16,4 @@ namespace App\Behat\Page;
  */
 final class UnexpectedPageException extends \Exception
 {
-
 }

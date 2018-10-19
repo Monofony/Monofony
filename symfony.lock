@@ -41,6 +41,12 @@
     "composer/ca-bundle": {
         "version": "1.1.1"
     },
+    "composer/semver": {
+        "version": "1.4.2"
+    },
+    "composer/xdebug-handler": {
+        "version": "1.3.0"
+    },
     "container-interop/container-interop": {
         "version": "1.2.0"
     },
@@ -136,6 +142,15 @@
     },
     "friends-of-behat/variadic-extension": {
         "version": "v1.1.0"
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "81dee417d2cc60cd1c9d6208dff2ec22a1103e93"
+        }
     },
     "friendsofsymfony/oauth-server-bundle": {
         "version": "1.6.1"
@@ -247,6 +262,9 @@
     },
     "phar-io/version": {
         "version": "1.0.1"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v1.3.0"
     },
     "phpcollection/phpcollection": {
         "version": "0.5.0"
@@ -484,6 +502,9 @@
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.8.0"
+    },
+    "symfony/polyfill-php70": {
+        "version": "v1.9.0"
     },
     "symfony/polyfill-php72": {
         "version": "v1.8.0"

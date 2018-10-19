@@ -42,10 +42,10 @@ class UserContext implements Context
     private $userManager;
 
     /**
-     * @param SharedStorageInterface $sharedStorage
+     * @param SharedStorageInterface  $sharedStorage
      * @param UserRepositoryInterface $userRepository
      * @param ExampleFactoryInterface $userFactory
-     * @param ObjectManager $userManager
+     * @param ObjectManager           $userManager
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,

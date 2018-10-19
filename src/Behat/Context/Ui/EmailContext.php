@@ -32,7 +32,7 @@ final class EmailContext implements Context
 
     /**
      * @param SharedStorageInterface $sharedStorage
-     * @param EmailCheckerInterface $emailChecker
+     * @param EmailCheckerInterface  $emailChecker
      */
     public function __construct(SharedStorageInterface $sharedStorage, EmailCheckerInterface $emailChecker)
     {

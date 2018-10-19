@@ -38,7 +38,7 @@ final class ResourceLoader implements LoaderInterface
     private $routeFactory;
 
     /**
-     * @param RegistryInterface $resourceRegistry
+     * @param RegistryInterface     $resourceRegistry
      * @param RouteFactoryInterface $routeFactory
      */
     public function __construct(RegistryInterface $resourceRegistry, RouteFactoryInterface $routeFactory)
@@ -71,7 +71,7 @@ final class ResourceLoader implements LoaderInterface
             $routesToGenerate = array_diff($routesToGenerate, $configuration['except']);
         }
 
-        $isApi = $type === 'sylius.resource_api';
+        $isApi = 'sylius.resource_api' === $type;
 
         /** @var MetadataInterface $metadata */
         $metadata = $this->resourceRegistry->get($configuration['alias']);
@@ -86,27 +86,27 @@ final class ResourceLoader implements LoaderInterface
         }
 
         if (in_array('create', $routesToGenerate, true)) {
-            $createRoute = $this->createRoute($metadata, $configuration, $isApi ? $rootPath : $rootPath . 'new', 'create', $isApi ? ['POST'] : ['GET', 'POST'], $isApi);
+            $createRoute = $this->createRoute($metadata, $configuration, $isApi ? $rootPath : $rootPath.'new', 'create', $isApi ? ['POST'] : ['GET', 'POST'], $isApi);
             $routes->add($this->getRouteName($metadata, $configuration, 'create'), $createRoute);
         }
 
         if (in_array('update', $routesToGenerate, true)) {
-            $updateRoute = $this->createRoute($metadata, $configuration, $isApi ? $rootPath . $identifier : $rootPath . $identifier . '/edit', 'update', $isApi ? ['PUT', 'PATCH'] : ['GET', 'PUT', 'PATCH'], $isApi);
+            $updateRoute = $this->createRoute($metadata, $configuration, $isApi ? $rootPath.$identifier : $rootPath.$identifier.'/edit', 'update', $isApi ? ['PUT', 'PATCH'] : ['GET', 'PUT', 'PATCH'], $isApi);
             $routes->add($this->getRouteName($metadata, $configuration, 'update'), $updateRoute);
         }
 
         if (in_array('show', $routesToGenerate, true)) {
-            $showRoute = $this->createRoute($metadata, $configuration, $rootPath . $identifier, 'show', ['GET'], $isApi);
+            $showRoute = $this->createRoute($metadata, $configuration, $rootPath.$identifier, 'show', ['GET'], $isApi);
             $routes->add($this->getRouteName($metadata, $configuration, 'show'), $showRoute);
         }
 
         if (!$isApi && in_array('bulkDelete', $routesToGenerate, true)) {
-            $bulkDeleteRoute = $this->createRoute($metadata, $configuration, $rootPath . 'bulk-delete', 'bulkDelete', ['DELETE'], $isApi);
+            $bulkDeleteRoute = $this->createRoute($metadata, $configuration, $rootPath.'bulk-delete', 'bulkDelete', ['DELETE'], $isApi);
             $routes->add($this->getRouteName($metadata, $configuration, 'bulk_delete'), $bulkDeleteRoute);
         }
 
         if (in_array('delete', $routesToGenerate, true)) {
-            $deleteRoute = $this->createRoute($metadata, $configuration, $rootPath . $identifier, 'delete', ['DELETE'], $isApi);
+            $deleteRoute = $this->createRoute($metadata, $configuration, $rootPath.$identifier, 'delete', ['DELETE'], $isApi);
             $routes->add($this->getRouteName($metadata, $configuration, 'delete'), $deleteRoute);
         }
 
@@ -139,11 +139,11 @@ final class ResourceLoader implements LoaderInterface
 
     /**
      * @param MetadataInterface $metadata
-     * @param array $configuration
-     * @param string $path
-     * @param string $actionName
-     * @param array $methods
-     * @param bool $isApi
+     * @param array             $configuration
+     * @param string            $path
+     * @param string            $actionName
+     * @param array             $methods
+     * @param bool              $isApi
      *
      * @return Route
      */
@@ -156,7 +156,7 @@ final class ResourceLoader implements LoaderInterface
         bool $isApi = false
     ): Route {
         $defaults = [
-            '_controller' => $metadata->getServiceId('controller') . sprintf(':%sAction', $actionName),
+            '_controller' => $metadata->getServiceId('controller').sprintf(':%sAction', $actionName),
         ];
 
         if ($isApi && 'index' === $actionName) {
@@ -204,7 +204,7 @@ final class ResourceLoader implements LoaderInterface
             $defaults['_sylius']['vars'] = array_merge($vars, $configuration['vars'][$actionName]);
         }
 
-        if ($actionName === 'bulkDelete') {
+        if ('bulkDelete' === $actionName) {
             $defaults['_sylius']['paginate'] = false;
             $defaults['_sylius']['repository'] = [
                 'method' => 'findById',
@@ -217,14 +217,14 @@ final class ResourceLoader implements LoaderInterface
 
     /**
      * @param MetadataInterface $metadata
-     * @param array $configuration
-     * @param string $actionName
+     * @param array             $configuration
+     * @param string            $actionName
      *
      * @return string
      */
     private function getRouteName(MetadataInterface $metadata, array $configuration, string $actionName): string
     {
-        $sectionPrefix = isset($configuration['section']) ? $configuration['section'] . '_' : '';
+        $sectionPrefix = isset($configuration['section']) ? $configuration['section'].'_' : '';
 
         return sprintf('%s_%s%s_%s', $metadata->getApplicationName(), $sectionPrefix, $metadata->getName(), $actionName);
     }

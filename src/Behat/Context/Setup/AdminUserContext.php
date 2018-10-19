@@ -36,7 +36,7 @@ final class AdminUserContext implements Context
     private $userRepository;
 
     /**
-     * @param SharedStorageInterface $sharedStorage
+     * @param SharedStorageInterface  $sharedStorage
      * @param ExampleFactoryInterface $userFactory
      * @param UserRepositoryInterface $userRepository
      */

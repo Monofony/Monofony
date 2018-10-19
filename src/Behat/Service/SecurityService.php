@@ -40,9 +40,9 @@ final class SecurityService implements SecurityServiceInterface
     private $sessionTokenVariable;
 
     /**
-     * @param SessionInterface $session
+     * @param SessionInterface      $session
      * @param CookieSetterInterface $cookieSetter
-     * @param string $firewallContextName
+     * @param string                $firewallContextName
      */
     public function __construct(SessionInterface $session, CookieSetterInterface $cookieSetter, $firewallContextName)
     {

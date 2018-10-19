@@ -40,9 +40,6 @@ final class CommandDirectoryChecker
         $this->filesystem = $filesystem;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function ensureDirectoryExists($directory, OutputInterface $output)
     {
         if (!is_dir($directory)) {
@@ -50,9 +47,6 @@ final class CommandDirectoryChecker
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function ensureDirectoryIsWritable($directory, OutputInterface $output)
     {
         try {
@@ -64,9 +58,6 @@ final class CommandDirectoryChecker
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setCommandName($name)
     {
         $this->name = $name;

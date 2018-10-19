@@ -13,8 +13,6 @@ namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -68,7 +66,6 @@ final class AdminMenuBuilder
 
         return $customer;
     }
-
 
     /**
      * @param ItemInterface $menu
