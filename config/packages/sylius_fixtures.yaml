@@ -19,22 +19,17 @@ sylius_fixtures:
                                 enabled: true
                                 first_name: "John"
                                 last_name: "Doe"
-                customer:
-                    options:
-                        random: 20
-                        custom:
-                            -
-                                email: "customer@example.com"
-                                first_name: "Harry"
-                                last_name: "Cover"
+
                 app_user:
                    options:
                        custom:
                            -
                                email: "customer@example.com"
                                password: "password"
+                               first_name: "Harry"
+                               last_name: "Cover"
                                enabled: true
-                               customer: "customer@example.com"
+
                 oauth_client:
                     options:
                         custom:

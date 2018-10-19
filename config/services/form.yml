@@ -6,6 +6,8 @@ parameters:
 
 services:
     App\Form\EventSubscriber\CustomerRegistrationFormSubscriber:
+        arguments:
+            - "@sylius.repository.customer"
         autowire: false 
         
     app.form.extension.type.customer:
@@ -14,9 +16,9 @@ services:
             - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerType }
 
     app.date_type_extension:
-            class: App\Form\Extension\DateTypeExtension
-            tags:
-                - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\DateType }
+        class: App\Form\Extension\DateTypeExtension
+        tags:
+            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\DateType }
 
     sylius.form.type.admin_user:
         class: App\Form\Type\User\AdminUserType
@@ -34,20 +36,13 @@ services:
         tags:
           - { name: form.type }
 
-    sylius.form.type.user:
-        class: App\Form\Type\User\UserRegistrationType
-        arguments:
-            - "%sylius.model.app_user.class%"
-        tags:
-          - { name: form.type }
-
     sylius.form.type.app_user_registration:
         class: App\Form\Type\User\AppUserRegistrationType
         arguments:
             - "%sylius.model.app_user.class%"
             - [sylius, sylius_user_registration]
         tags:
-          - { name: form.type }
+            - { name: form.type }
 
     sylius.form.type.customer_simple_registration:
         class: App\Form\Type\Customer\CustomerSimpleRegistrationType
@@ -56,7 +51,7 @@ services:
             - [sylius, sylius_user_registration]
             - "@sylius.repository.customer"
         tags:
-          - { name: form.type, alias: sylius_customer_simple_registration }
+            - { name: form.type, alias: sylius_customer_simple_registration }
 
     sylius.form.type.customer_registration:
         class: App\Form\Type\Customer\CustomerRegistrationType
@@ -65,4 +60,4 @@ services:
             - [sylius, sylius_user_registration, sylius_customer_profile]
             - "@sylius.repository.customer"
         tags:
-          - { name: form.type, alias: sylius_customer_registration }
+            - { name: form.type, alias: sylius_customer_registration }
