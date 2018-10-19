@@ -14,13 +14,7 @@ services:
     app.fixture.example_factory.app_user:
         class: App\Fixture\Factory\AppUserExampleFactory
         arguments:
-        - "@sylius.factory.app_user"
-        - "@sylius.factory.customer"
-        public: true
-
-    app.fixture.example_factory.customer:
-        class: App\Fixture\Factory\CustomerExampleFactory
-        arguments:
+            - "@sylius.factory.app_user"
             - "@sylius.factory.customer"
         public: true
 
