@@ -3,7 +3,7 @@
         {% if 'error' == type %}
             {% set result = 'alert' %}
         {% endif %}
-        <div data-closable class="callout {{ result|default('success') }}">
+        <div data-closable class="callout {{ result|default('success') }} sylius-flash-message">
             <p>
                 {% if flash is iterable %}
                     {{ flash.message|trans(flash.parameters, 'flashes') }}

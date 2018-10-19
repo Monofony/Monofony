@@ -47,11 +47,17 @@ final class NotificationAccessor implements NotificationAccessorInterface
      */
     public function getType()
     {
-        if ($this->getMessageElement()->hasClass('positive')) {
+        if (
+            $this->getMessageElement()->hasClass('positive')
+            || $this->getMessageElement()->hasClass('success')
+        ) {
             return NotificationType::success();
         }
 
-        if ($this->getMessageElement()->hasClass('negative')) {
+        if (
+            $this->getMessageElement()->hasClass('negative')
+            || $this->getMessageElement()->hasClass('alert')
+        ) {
             return NotificationType::failure();
         }
 

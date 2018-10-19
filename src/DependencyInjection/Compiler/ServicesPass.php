@@ -33,6 +33,8 @@ class ServicesPass implements CompilerPassInterface
         $this->processFactories($container);
         $this->processRepositories($container);
         $this->processListeners($container);
+
+        $container->setAlias('sylius.context.customer', 'app.context.customer')->setPublic(true);
     }
 
     /**

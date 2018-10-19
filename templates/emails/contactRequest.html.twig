@@ -1,0 +1,9 @@
+{% block subject %}
+    {{ 'emails.contact_request.subject' | trans }}
+{% endblock %}
+
+{% block body %}
+    <h3>{{ 'label.hello'|trans }},</h3>
+    <p>{{ 'emails.contact_request.content'|trans({'%FULLNAME%': contact_request.fullName })|raw }}.</p>
+    <p>{{ contact_request.body|raw }}</p>
+{% endblock %}

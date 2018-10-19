@@ -20,7 +20,7 @@
                     <label>
                         <div class="input-group">
                             <span class="input-group-label"><span class="fa fa-user"></span></span>
-                            <input name="_username" class="input-group-field" type="text"
+                            <input id="_username" name="_username" class="input-group-field" type="text"
                                    placeholder="{{ 'sylius.ui.email'|trans }}">
                         </div>
                     </label>
@@ -29,7 +29,7 @@
                     <label>
                         <div class="input-group">
                             <span class="input-group-label"><span class="fa fa-lock"></span></span>
-                            <input name="_password" class="input-group-field" type="password"
+                            <input id="_password" name="_password" class="input-group-field" type="password"
                                    placeholder="{{ 'sylius.ui.password'|trans }}">
                         </div>
                     </label>
@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="row align-center text-center">
-                    <button type="submit" class="button expanded">{{ 'sylius.ui.login'|trans }}</button>
+                    <button id="_login" type="submit" class="button expanded">{{ 'sylius.ui.login'|trans }}</button>
                 </div>
             </form>
 

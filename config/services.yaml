@@ -1,3 +1,8 @@
+parameters:
+    email_contact: contact@app_name.com
+    email_name: Contact AppName
+    email_sender: no-reply@app_name.com
+
 services:
     # default configuration for services in *this* file
     _defaults:

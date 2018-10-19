@@ -1,0 +1,7 @@
+{% block subject %}
+    {{ 'emails.verification.subject'|trans }}
+{% endblock %}
+
+{% block body %}
+    {{ 'emails.verification.content'|trans({'%url%': url('sylius_frontend_user_verification', { 'token': user.emailVerificationToken})})|raw }}
+{% endblock %}
