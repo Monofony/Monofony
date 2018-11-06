@@ -29,7 +29,7 @@ class Address implements ResourceInterface
     use IdentifiableTrait;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(type="string")
      *
@@ -38,10 +38,10 @@ class Address implements ResourceInterface
      * @JMS\Expose
      * @JMS\Groups({"Default"})
      */
-    protected $street;
+    private $street;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(type="string")
      *
@@ -50,10 +50,10 @@ class Address implements ResourceInterface
      * @JMS\Expose
      * @JMS\Groups({"Default"})
      */
-    protected $postcode;
+    private $postcode;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(type="string")
      *
@@ -62,65 +62,53 @@ class Address implements ResourceInterface
      * @JMS\Expose
      * @JMS\Groups({"Default"})
      */
-    protected $city;
+    private $city;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStreet()
+    public function getStreet(): ?string
     {
         return $this->street;
     }
 
     /**
-     * @param string $street
-     *
-     * @return $this
+     * @param string|null $street
      */
-    public function setStreet($street)
+    public function setStreet($street): void
     {
         $this->street = $street;
-
-        return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPostcode()
+    public function getPostcode(): ?string
     {
         return $this->postcode;
     }
 
     /**
-     * @param string $postcode
-     *
-     * @return $this
+     * @param string|null $postcode
      */
-    public function setPostcode($postcode)
+    public function setPostcode($postcode): void
     {
         $this->postcode = $postcode;
-
-        return $this;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCity()
+    public function getCity(): ?string
     {
         return $this->city;
     }
 
     /**
-     * @param string $city
-     *
-     * @return $this
+     * @param string|null $city
      */
-    public function setCity($city)
+    public function setCity($city): void
     {
         $this->city = $city;
-
-        return $this;
     }
 }
