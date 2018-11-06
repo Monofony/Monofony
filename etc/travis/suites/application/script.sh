@@ -13,6 +13,7 @@ commands=(
     test-phpstan
     test-phpunit
     test-fixtures
+    test-infection
     test-behat-without-javascript
 )
 
