@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Form\EventSubscriber;
 
 use Sylius\Component\User\Model\UserAwareInterface;
@@ -19,10 +10,6 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Validator\Constraints\Valid;
 use Webmozart\Assert\Assert;
 
-/**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
- * @author Anna Walasek <anna.walasek@lakion.com>
- */
 final class AddUserFormSubscriber implements EventSubscriberInterface
 {
     /**
@@ -71,9 +58,10 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
         $data = $event->getData();
         $form = $event->getForm();
 
-        if (null === $form->get('createUser')->getViewData()) {
-            Assert::isInstanceOf($data, UserAwareInterface::class);
+        /** @var UserAwareInterface $data */
+        Assert::isInstanceOf($data, UserAwareInterface::class);
 
+        if (null === $data->getUser()->getId() && null === $form->get('createUser')->getViewData()) {
             $data->setUser(null);
             $event->setData($data);
 
