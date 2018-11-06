@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
+
+INFECTION_FLAGS='--threads=4 --min-msi=4 --min-covered-msi=60'
+
+print_header "Testing (Infection)" "TrackAdvance"
+run_command "bin/infection $INFECTION_FLAGS"
