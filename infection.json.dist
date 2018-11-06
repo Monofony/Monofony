@@ -9,7 +9,8 @@
             "Command",
             "DependencyInjection",
             "Migrations",
-            "Fixture"
+            "Fixture",
+            "Form/Type"
         ]
     },
     "logs": {
