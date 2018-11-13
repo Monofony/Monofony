@@ -12,6 +12,7 @@ commands=(
     test-phpspec
     test-phpstan
     test-phpunit
+    test-installer
     test-fixtures
     test-infection
     test-behat-without-javascript
