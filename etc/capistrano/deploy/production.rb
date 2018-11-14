@@ -31,9 +31,9 @@ server 'XX.XXX.XX.XXX',
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{app_name@46.226.108.147}
-role :web, %w{app_name@46.226.108.147}
-role :db,  %w{app_name@46.226.108.147}
+role :app, %w{app_name@XX.XXX.XX.XXX}
+role :web, %w{app_name@XX.XXX.XX.XXX}
+role :db,  %w{app_name@XX.XXX.XX.XXX}
 
 
 # Configuration
