@@ -13,28 +13,28 @@ Run all tests
 
 .. code-block:: bash
 
-    bin/behat
+    vendor/bin/behat
 
 Run only one scenario
 ---------------------
 
 .. code-block:: bash
 
-    bin/behat --name="My Scenario Name"
+    vendor/bin/behat --name="My Scenario Name"
 
 Run only non-javascript tests
 -----------------------------
 
 .. code-block:: bash
 
-    bin/behat --tags ~javascript
+    vendor/bin/behat --tags ~javascript
 
 Run only non-javascript tests and also exclude todo tests
 ---------------------------------------------------------
 
 .. code-block:: bash
 
-    bin/behat --tags ~javascript --tags ~todo
+    vendor/bin/behat --tags ~javascript --tags ~todo
 
 .. note::
 

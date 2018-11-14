@@ -5,4 +5,4 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.li
 INFECTION_FLAGS='--threads=4 --min-msi=30 --min-covered-msi=75'
 
 print_header "Testing (Infection)" "TrackAdvance"
-run_command "phpdbg -qrr bin/infection $INFECTION_FLAGS"
+run_command "phpdbg -qrr vendor/bin/infection $INFECTION_FLAGS"
