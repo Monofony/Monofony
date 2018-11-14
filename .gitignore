@@ -8,10 +8,6 @@
 **/node_modules/*
 **/compiled/*
 
-/bin/*
-!/bin/console
-!/bin/symfony_requirements
-
 .idea
 *.DS_Store
 
