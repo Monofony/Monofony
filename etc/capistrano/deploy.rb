@@ -1,16 +1,37 @@
 # config valid only for current version of Capistrano
-lock '3.7.1'
+lock '3.11.0'
 
-set :symfony_directory_structure, 2
-set :sensio_distribution_version, 4
+set :symfony_directory_structure, 3
+set :sensio_distribution_version, 5
 
-set :application, 'app_name'
-set :repo_url, 'git@bitbucket.org:yannick_le_duc/app_name.git'
+# symfony-standard edition directories
+set :config_path, "config"
+set :web_path, "public"
+set :var_path, "var"
+set :bin_path, "bin"
+
+# The next 3 settings are lazily evaluated from the above values, so take care
+# when modifying them
+set :log_path, "var/log"
+set :cache_path, "var/cache"
+
+set :symfony_console_path, "bin/console"
+set :symfony_console_flags, "--no-debug"
+
+# asset management
+set :assets_install_path, "public"
+set :assets_install_flags,  '--symlink'
+
+# Share files/directories between releases
+set :linked_dirs, ["var/log", "var/sessions", "public/uploads", "public/media"]
+
+set :application, 'AppName'
+set :repo_url, 'https://github.com/AppName/AppName.git'
 
 # Default branch is :master
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-set :deploy_to, '/home/mobizel/'
+set :deploy_to, '/home/app_name/'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -24,27 +45,23 @@ set :deploy_to, '/home/mobizel/'
 # Default value for :pty is false
 set :pty, true
 
-set :symfony_roles, :web
-set :symfony_default_flags, '--quiet --no-interaction'
-set :symfony_assets_flags, '--symlink'
-set :symfony_assetic_flags, ''
-set :symfony_cache_clear_flags, ''
-set :symfony_cache_warmup_flags, ''
-set :symfony_env, 'prod'
-set :symfony_parameters_upload, :ask
-set :symfony_parameters_path, 'app/config/'
+append :linked_files, fetch(:web_path) + '/robots.txt'
+append :linked_dirs, fetch(:web_path) + '/uploads', fetch(:web_path) + '/media'
 
-append :linked_files, fetch(:app_config_path) + '/parameters.yml', fetch(:web_path) + '/robots.txt', fetch(:web_path) + '/.htaccess'
-append :linked_dirs, fetch(:web_path) + '/uploaded', fetch(:web_path) + '/uploads', fetch(:web_path) + '/media'
-
-append :file_permissions_paths, fetch(:web_path) + '/uploaded', fetch(:web_path) + '/uploads', fetch(:web_path) + '/media'
-append :file_permissions_users, 'www-data'
+set :file_permissions_paths, ["var", "public/uploads"]
+set :file_permissions_users, ["app_name"]
 
 set :permission_method,   :acl
 set :use_set_permissions, true
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Add extra environment variables:
+# set :default_env, {
+#  'APP_ENV' => 'prod',
+#  'APP_SECRET' => 'foobar'
+# }
 
 set :keep_releases, 3
 
@@ -67,6 +84,15 @@ namespace :deploy do
   end
 end
 
+before "deploy:updated", "deploy:set_permissions:acl"
+
+after 'deploy:updated', :build_assets do
+    on roles(:web) do
+        puts "Build assets"
+        execute "cd #{release_path}/assets/backend && yarn install && GULP_ENV=prod yarn run gulp"
+        execute "cd #{release_path}/assets/frontend && yarn install && GULP_ENV=prod yarn run gulp"
+    end
+end
+
 after 'deploy:updated', 'symfony:assets:install'
-after 'deploy:updated', 'symfony:assetic:dump'
 after 'deploy:updated', 'deploy:migrate'

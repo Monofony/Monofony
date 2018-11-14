@@ -7,11 +7,11 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-server '192.168.12.XX',
-  user: 'mobizel',
+server 'XX.XXX.XX.XXX',
+  user: 'app_name',
   roles: %w{app db web},
   ssh_options: {
-    user: 'mobizel', # overrides user setting above
+    user: 'app_name', # overrides user setting above
     # keys: %w(/home/user_name/.ssh/id_rsa),
     forward_agent: true,
     auth_methods: %w(publickey password)
@@ -31,9 +31,9 @@ server '192.168.12.XX',
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
-role :app, %w{mobizel@192.168.12.XX}
-role :web, %w{mobizel@192.168.12.XX}
-role :db,  %w{mobizel@192.168.12.XX}
+role :app, %w{app_name@XX.XXX.XX.XXX}
+role :web, %w{app_name@XX.XXX.XX.XXX}
+role :db,  %w{app_name@XX.XXX.XX.XXX}
 
 
 # Configuration
@@ -72,12 +72,3 @@ role :db,  %w{mobizel@192.168.12.XX}
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-
-
-#after 'deploy:updated', :debug_payment do
-#  puts "Setting payment binaries right permissions"
-#  system "mv #{release_path}/bin/pathfile.preprod #{release_path}/bin/pathfile"
-#  puts "Setting debug Payment"
-#  system "cd #{release_path}/src/Cariboo/Payment/SipsBundle/Client/ && sed -i \"s/.*$this->isDebug[ ]*=.*/        \\$this->isDebug      = true;/g\" Client.php "
-#  invoke 'symfony:console', 'cache:clear'
-#end
