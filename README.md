@@ -55,12 +55,6 @@ default:
             base_url: http://my.custom.url
 ```
 
-Then run selenium-server-standalone:
-
-```bash
-$ bin/selenium-server-standalone -Dwebdriver.chrome.driver=$PWD/bin/chromedriver
-```
-
 Then setup your test database:
 
 ```bash
