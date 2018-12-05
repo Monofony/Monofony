@@ -8,89 +8,12 @@ services:
 #        class: App\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-        app.behat.context.transform.address:
-            class: App\Behat\Context\Transform\AddressContext
-            arguments:
-                - "@__symfony__.app.repository.address"
-            tags:
-                - { name: fob.context_service }
-
         app.behat.context.transform.customer:
             class: App\Behat\Context\Transform\CustomerContext
             arguments:
                 - "@__symfony__.sylius.repository.customer"
                 - "@__symfony__.sylius.factory.customer"
                 - "@app.behat.shared_storage"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.dealer:
-            class: App\Behat\Context\Transform\DealerContext
-            arguments:
-                - "@__symfony__.app.repository.dealer"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.dealer_price:
-            class: App\Behat\Context\Transform\DealerPriceContext
-            arguments:
-                - "@__symfony__.app.repository.dealer_price"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.person:
-            class: App\Behat\Context\Transform\PersonContext
-            arguments:
-                - "@__symfony__.app.repository.person"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.product:
-            class: App\Behat\Context\Transform\ProductContext
-            arguments:
-                - "@__symfony__.sylius.repository.product"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.product_list:
-            class: App\Behat\Context\Transform\ProductListContext
-            arguments:
-                - "@__symfony__.app.repository.product_list"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.product_review:
-            class: App\Behat\Context\Transform\ProductReviewContext
-            arguments:
-                - "@__symfony__.sylius.repository.product_review"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.redirection:
-            class: App\Behat\Context\Transform\RedirectionContext
-            arguments:
-                - "@__symfony__.app.repository.redirection"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.festival_list:
-            class: App\Behat\Context\Transform\FestivalListContext
-            arguments:
-                - "@__symfony__.app.repository.festival_list"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.taxon:
-            class: App\Behat\Context\Transform\TaxonContext
-            arguments:
-                - "@__symfony__.sylius.repository.taxon"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.transform.topic:
-            class: App\Behat\Context\Transform\TopicContext
-            arguments:
-                - "@__symfony__.app.repository.topic"
             tags:
                 - { name: fob.context_service }
 

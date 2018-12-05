@@ -1,12 +1,4 @@
 services:
-    app.fixture.address:
-        class: App\Fixture\AddressFixture
-        arguments:
-            - "@app.manager.address"
-            - "@app.fixture.example_factory.address"
-        tags:
-            - { name: sylius_fixtures.fixture }
-
     app.fixture.admin_user:
         class: App\Fixture\AdminUserFixture
         arguments:

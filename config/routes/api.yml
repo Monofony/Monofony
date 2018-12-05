@@ -1,2 +1,2 @@
-app_api_address:
-    resource: "api/address.yml"
+#app_api_your_respource:
+#    resource: "api/your_resource.yml"
