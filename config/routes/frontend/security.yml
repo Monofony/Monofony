@@ -65,13 +65,13 @@ app_frontend_user_check_action:
             serialization_groups: [Secured]
 
 app_frontend_user_request_verification_token:
-    path: /
+    path: /verify
     methods: [POST]
     defaults:
         _controller: sylius.controller.app_user:requestVerificationTokenAction
 
 app_frontend_user_verification:
-    path: /{token}
+    path: /verify/{token}
     methods: [GET]
     defaults:
         _controller: sylius.controller.app_user:verifyAction
