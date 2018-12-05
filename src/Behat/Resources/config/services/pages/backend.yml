@@ -1,5 +1,4 @@
 imports:
-    - { resource: backend/address.yml }
     - { resource: backend/administrator.yml }
     - { resource: backend/customer.yml }
 

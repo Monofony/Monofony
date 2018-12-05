@@ -3,4 +3,3 @@ sylius_resource:
         app.oauth_client:
             classes:
                 model: App\Entity\OAuth\Client
-                

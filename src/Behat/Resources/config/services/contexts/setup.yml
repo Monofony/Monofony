@@ -8,15 +8,6 @@ services:
 #        class: App\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-        app.behat.context.setup.address:
-            class: App\Behat\Context\Setup\AddressContext
-            arguments:
-                - "@app.behat.shared_storage"
-                - "@__symfony__.app.fixture.example_factory.address"
-                - "@__symfony__.app.repository.address"
-            tags:
-                - { name: fob.context_service }
-
         app.behat.context.setup.admin_security:
             class: App\Behat\Context\Setup\AdminSecurityContext
             arguments:
