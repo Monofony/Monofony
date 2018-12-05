@@ -1,5 +1,0 @@
-app_api_address:
-    resource: |
-        section: api
-        alias: app.address
-    type: sylius.resource_api

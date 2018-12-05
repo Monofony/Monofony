@@ -1,6 +1,5 @@
 imports:
     - { resource: frontend/account.yml }
-    - { resource: frontend/address.yml }
 
 services:
     app.behat.page.frontend.home:

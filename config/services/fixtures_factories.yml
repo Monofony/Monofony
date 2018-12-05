@@ -1,10 +1,4 @@
 services:
-    app.fixture.example_factory.address:
-        class: App\Fixture\Factory\AddressExampleFactory
-        arguments:
-            - "@app.factory.address"
-        public: true
-
     app.fixture.example_factory.admin_user:
         class: App\Fixture\Factory\AdminUserExampleFactory
         arguments:

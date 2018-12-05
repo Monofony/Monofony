@@ -1,6 +1,4 @@
 imports:
     - suites/ui/account/login.yml
-    - suites/ui/address/managing_addresses.yml
-    - suites/ui/address/viewing_addresses.yml
     - suites/ui/customer/managing_customers.yml
     - suites/ui/user/managing_administrators.yml
