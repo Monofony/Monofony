@@ -11,7 +11,7 @@
 
 namespace App\Behat\Page\Backend\Crud;
 
-use App\Behat\Page\SymfonyPageInterface;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 use Behat\Mink\Exception\ElementNotFoundException;
 
 interface UpdatePageInterface extends SymfonyPageInterface

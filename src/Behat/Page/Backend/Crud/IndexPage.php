@@ -13,7 +13,7 @@ namespace App\Behat\Page\Backend\Crud;
 
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
-use App\Behat\Page\SymfonyPage;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use App\Behat\Service\Accessor\TableAccessorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Webmozart\Assert\Assert;
@@ -152,7 +152,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return $this->routeName;
     }
@@ -168,7 +168,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    protected function getDefinedElements()
+    protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'filter' => 'button:contains("Filter")',

@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace App\Behat\Page\Frontend\Account;
 
-use App\Behat\Page\SymfonyPage;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class VerificationPage extends SymfonyPage
 {
@@ -28,7 +28,7 @@ class VerificationPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return 'app_frontend_user_verification';
     }
