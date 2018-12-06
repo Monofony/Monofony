@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Alceane.
+ * This file is part of AppName.
  *
  * (c) Monofony
  *

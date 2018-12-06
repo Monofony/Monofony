@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Sylius package.
+ * This file is part of AppName.
  *
- * (c) Paweł Jędrzejewski
+ * (c) Monofony
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -28,9 +28,9 @@ final class InstallSampleDataCommand extends AbstractInstallCommand
     {
         $this
             ->setName('app:install:sample-data')
-            ->setDescription('Install sample data into Jedisjeux.')
+            ->setDescription('Install sample data into AppName.')
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command loads the sample data for Jedisjeux.
+The <info>%command.name%</info> command loads the sample data for AppName.
 EOT
             )
         ;
