@@ -38,7 +38,8 @@
         "symfony/flex": "^1.1",
         "symfony/monolog-bundle": "^3.3",
         "symfony/swiftmailer-bundle": "^3.0",
-        "symfony/symfony": "^4.1"
+        "symfony/symfony": "^4.1",
+        "symfony/twig-bundle": "^4.2"
     },
     "require-dev": {
         "behat/behat": "^3.2",
