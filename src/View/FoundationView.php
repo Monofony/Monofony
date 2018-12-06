@@ -14,15 +14,6 @@ namespace App\View;
 use App\View\Template\FoundationTemplate;
 use Pagerfanta\View\DefaultView;
 
-/**
- * SemanticUiView.
- *
- * View that can be used with the pagination module
- * from the Semantic UI CSS Toolkit
- * http://semantic-ui.com/
- *
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class FoundationView extends DefaultView
 {
     protected function createDefaultTemplate()

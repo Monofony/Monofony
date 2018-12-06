@@ -13,9 +13,6 @@ namespace App\Behat\Command;
 
 use Webmozart\Assert\Assert;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class CommandContext extends DefaultContext
 {
     /**

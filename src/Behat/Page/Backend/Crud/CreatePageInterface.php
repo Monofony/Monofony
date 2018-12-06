@@ -14,9 +14,6 @@ namespace App\Behat\Page\Backend\Crud;
 use App\Behat\Page\SymfonyPageInterface;
 use Behat\Mink\Exception\ElementNotFoundException;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 interface CreatePageInterface extends SymfonyPageInterface
 {
     /**

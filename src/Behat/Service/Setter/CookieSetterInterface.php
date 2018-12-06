@@ -11,9 +11,6 @@
 
 namespace App\Behat\Service\Setter;
 
-/**
- * @author Kamil Kokot <kamil@kokot.me>
- */
 interface CookieSetterInterface
 {
     /**

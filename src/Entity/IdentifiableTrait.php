@@ -14,9 +14,6 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 trait IdentifiableTrait
 {
     /**

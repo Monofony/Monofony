@@ -15,9 +15,6 @@ use Sylius\Bundle\UserBundle\Form\Type\UserType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class AdminUserType extends UserType
 {
     /**

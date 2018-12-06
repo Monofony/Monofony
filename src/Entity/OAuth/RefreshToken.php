@@ -15,8 +15,6 @@ use FOS\OAuthServerBundle\Entity\RefreshToken as BaseRefreshToken;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @author Corentin Nicole <corentin@mobizel.com>
- *
  * @ORM\Entity
  * @ORM\Table(name="oauth_refresh_token")
  */

@@ -15,9 +15,6 @@ use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-/**
- * @author Paweł Jędrzejewski <pawel@sylius.org>
- */
 final class AdminMenuBuilder
 {
     /**

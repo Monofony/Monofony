@@ -15,9 +15,6 @@ use App\Behat\Service\SharedStorageInterface;
 use App\Formatter\StringInflector;
 use Behat\Behat\Context\Context;
 
-/**
- * @author Mateusz Zalewski <mateusz.zalewski@lakion.com>
- */
 final class SharedStorageContext implements Context
 {
     /**

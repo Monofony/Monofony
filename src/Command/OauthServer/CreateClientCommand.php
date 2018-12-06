@@ -18,9 +18,6 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use App\Entity\OAuth\Client;
 
-/**
- * @author Arnaud Langlade <arn0d.dev@gmali.com>
- */
 class CreateClientCommand extends ContainerAwareCommand
 {
     /**

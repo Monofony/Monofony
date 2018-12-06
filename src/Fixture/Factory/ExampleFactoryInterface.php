@@ -11,9 +11,6 @@
 
 namespace App\Fixture\Factory;
 
-/**
- * @author Kamil Kokot <kamil.kokot@lakion.com>
- */
 interface ExampleFactoryInterface
 {
     /**
