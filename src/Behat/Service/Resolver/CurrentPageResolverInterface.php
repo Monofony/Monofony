@@ -11,7 +11,7 @@
 
 namespace App\Behat\Service\Resolver;
 
-use App\Behat\Page\SymfonyPageInterface;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 
 interface CurrentPageResolverInterface
 {
