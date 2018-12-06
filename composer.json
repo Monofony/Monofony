@@ -38,9 +38,11 @@
         "sylius/user-bundle": "^1.2.1",
         "symfony/flex": "^1.1",
         "symfony/monolog-bundle": "^3.3",
+        "symfony/proxy-manager-bridge": "^4.2",
         "symfony/swiftmailer-bundle": "^3.0",
         "symfony/twig-bundle": "^4.2",
-        "twig/extensions": "^1.5"
+        "twig/extensions": "^1.5",
+        "twig/twig": "^2.5"
     },
     "require-dev": {
         "behat/behat": "^3.2",
@@ -69,6 +71,9 @@
         "symfony/debug-bundle": "^4.1",
         "symfony/web-profiler-bundle": "^4.1",
         "symfony/web-server-bundle": "^4.1"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
     },
     "scripts": {
         "auto-scripts": {
