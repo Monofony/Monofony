@@ -13,9 +13,6 @@ namespace App\Fixture;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-/**
- * @author Corentin Nicole <corentin@mobizel.com>
- */
 class AppUserFixture extends AbstractResourceFixture
 {
     /**

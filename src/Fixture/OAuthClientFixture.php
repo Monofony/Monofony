@@ -13,9 +13,6 @@ namespace App\Fixture;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-/**
- * @author Corentin Nicole
- */
 class OAuthClientFixture extends AbstractResourceFixture
 {
     /**

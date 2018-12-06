@@ -14,9 +14,6 @@ namespace App\Behat\Service;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 final class SharedSecurityService implements SharedSecurityServiceInterface
 {
     /**

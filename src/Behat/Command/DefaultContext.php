@@ -24,9 +24,6 @@ use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class DefaultContext implements Context, KernelAwareContext
 {
     /**

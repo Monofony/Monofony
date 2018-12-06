@@ -14,9 +14,6 @@ namespace App\Behat\Page\Backend\Crud;
 use Behat\Mink\Element\NodeElement;
 use App\Behat\Page\SymfonyPageInterface;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 interface IndexPageInterface extends SymfonyPageInterface
 {
     /**

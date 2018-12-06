@@ -13,9 +13,6 @@ namespace App\Behat\Exception;
 
 use App\Behat\NotificationType;
 
-/**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
- */
 final class NotificationExpectationMismatchException extends \RuntimeException
 {
     public function __construct(

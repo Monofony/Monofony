@@ -15,9 +15,6 @@ use App\EventListener\PasswordUpdaterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class ServicesPass implements CompilerPassInterface
 {
     /**

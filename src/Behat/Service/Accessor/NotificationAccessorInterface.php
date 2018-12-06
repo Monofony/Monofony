@@ -13,9 +13,6 @@ namespace App\Behat\Service\Accessor;
 
 use App\Behat\NotificationType;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 interface NotificationAccessorInterface
 {
     /**

@@ -16,10 +16,6 @@ use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-/**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
- * @author Michał Marcinkowski <michal.marcinkowski@lakion.com>
- */
 final class PasswordUpdaterListener extends BasePasswordUpdaterListener
 {
     /**

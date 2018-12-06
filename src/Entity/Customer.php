@@ -18,8 +18,6 @@ use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @author Loïc Frémont <loic@mobizel.com>
- *
  * @ORM\Entity
  * @ORM\Table(name="sylius_customer")
  */

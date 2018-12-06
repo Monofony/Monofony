@@ -15,9 +15,6 @@ use Behat\Behat\Context\Context;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManagerInterface;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 final class DoctrineORMContext implements Context
 {
     /**

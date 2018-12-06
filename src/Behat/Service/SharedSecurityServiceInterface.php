@@ -13,9 +13,6 @@ namespace App\Behat\Service;
 
 use Sylius\Component\User\Model\UserInterface;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 interface SharedSecurityServiceInterface
 {
     /**

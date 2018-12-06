@@ -16,9 +16,6 @@ use Behat\Mink\Session;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Webmozart\Assert\Assert;
 
-/**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
- */
 final class CurrentPageResolver implements CurrentPageResolverInterface
 {
     /**

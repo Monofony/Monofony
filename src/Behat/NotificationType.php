@@ -11,9 +11,6 @@
 
 namespace App\Behat;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 final class NotificationType
 {
     /**

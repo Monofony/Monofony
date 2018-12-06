@@ -13,9 +13,6 @@ namespace App\Fixture\Factory;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-/**
- * @author Jan Góralski <jan.goralski@lakion.com>
- */
 abstract class AbstractExampleFactory implements ExampleFactoryInterface
 {
     /**
