@@ -500,6 +500,9 @@
     "symfony/class-loader": {
         "version": "v3.4.12"
     },
+    "symfony/contracts": {
+        "version": "v1.0.1"
+    },
     "symfony/flex": {
         "version": "1.0",
         "recipe": {

@@ -63,7 +63,8 @@
         "phpstan/phpstan-shim": "^0.10",
         "phpstan/phpstan-symfony": "^0.10",
         "phpstan/phpstan-webmozart-assert": "^0.10",
-        "se/selenium-server-standalone": " ^2.52"
+        "se/selenium-server-standalone": " ^2.52",
+        "symfony/web-profiler-bundle": "^4.1"
     },
     "scripts": {
         "auto-scripts": {
