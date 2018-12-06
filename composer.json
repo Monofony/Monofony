@@ -25,6 +25,7 @@
         "guzzlehttp/guzzle": "^6.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "knplabs/doctrine-behaviors": "~1.1",
+        "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^5.1",
         "sonata-project/block-bundle": "^3.3",
         "sylius-labs/sensio-distribution-bundle": "^6.0",
@@ -38,7 +39,9 @@
         "symfony/flex": "^1.1",
         "symfony/monolog-bundle": "^3.3",
         "symfony/swiftmailer-bundle": "^3.0",
-        "symfony/symfony": "^4.1"
+        "symfony/symfony": "^4.1",
+        "symfony/twig-bundle": "^4.2",
+        "twig/extensions": "^1.5"
     },
     "require-dev": {
         "behat/behat": "^3.2",
@@ -63,7 +66,10 @@
         "phpstan/phpstan-shim": "^0.10",
         "phpstan/phpstan-symfony": "^0.10",
         "phpstan/phpstan-webmozart-assert": "^0.10",
-        "se/selenium-server-standalone": " ^2.52"
+        "se/selenium-server-standalone": " ^2.52",
+        "symfony/debug-bundle": "^4.1",
+        "symfony/web-profiler-bundle": "^4.1",
+        "symfony/web-server-bundle": "^4.1"
     },
     "scripts": {
         "auto-scripts": {
