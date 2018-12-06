@@ -11,7 +11,7 @@
 
 namespace App\Behat\Page\Backend\Crud;
 
-use App\Behat\Page\SymfonyPage;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use Symfony\Component\Routing\RouterInterface;
@@ -65,7 +65,7 @@ class CreatePage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return $this->routeName;
     }

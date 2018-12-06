@@ -14,14 +14,14 @@ declare(strict_types=1);
 namespace App\Behat\Page\Frontend\Account;
 
 use Behat\Mink\Exception\ElementNotFoundException;
-use App\Behat\Page\SymfonyPage;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class ProfileUpdatePage extends SymfonyPage
 {
     /**
      * {@inheritdoc}
      */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return 'sylius_frontend_account_profile_update';
     }
@@ -88,7 +88,7 @@ class ProfileUpdatePage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    protected function getDefinedElements()
+    protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'email' => '#sylius_customer_profile_email',

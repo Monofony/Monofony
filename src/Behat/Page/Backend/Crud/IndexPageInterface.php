@@ -12,7 +12,7 @@
 namespace App\Behat\Page\Backend\Crud;
 
 use Behat\Mink\Element\NodeElement;
-use App\Behat\Page\SymfonyPageInterface;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 
 interface IndexPageInterface extends SymfonyPageInterface
 {

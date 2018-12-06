@@ -11,14 +11,14 @@
 
 namespace App\Behat\Page\Frontend;
 
-use App\Behat\Page\SymfonyPage;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class HomePage extends SymfonyPage
 {
     /**
      * {@inheritdoc}
      */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return 'app_frontend_homepage';
     }
@@ -42,7 +42,7 @@ class HomePage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    protected function getDefinedElements()
+    protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'logout_button' => '.app-logout-button',

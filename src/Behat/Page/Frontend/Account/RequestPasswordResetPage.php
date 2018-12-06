@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace App\Behat\Page\Frontend\Account;
 
 use Behat\Mink\Exception\ElementNotFoundException;
-use App\Behat\Page\SymfonyPage;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class RequestPasswordResetPage extends SymfonyPage
 {
@@ -37,7 +37,7 @@ class RequestPasswordResetPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return 'sylius_user_request_password_reset_token';
     }
@@ -58,7 +58,7 @@ class RequestPasswordResetPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    protected function getDefinedElements()
+    protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'email' => '#sylius_user_request_password_reset_email',
