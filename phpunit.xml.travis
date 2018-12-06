@@ -15,10 +15,7 @@
         <env name="APP_SECRET" value="5a79a1c866efef9ca1800f971d689f3e"/>
 
         <!-- ###+ doctrine/doctrine-bundle ### -->
-        <env name="DATABASE_DRIVER" value="pdo_mysql"/>
-        <env name="DATABASE_HOST" value="127.0.0.1"/>
-        <env name="DATABASE_NAME" value="app_name"/>
-        <env name="DATABASE_USER" value="root"/>
+        <env name="DATABASE_URL" value="mysql://root@127.0.0.1:3306/app_name_%kernel.environment%"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
 
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
