@@ -4,9 +4,6 @@ namespace App\Behat\Service\Accessor;
 
 use Behat\Mink\Element\NodeElement;
 
-/**
- * @author Kamil Kokot <kamil@kokot.me>
- */
 interface TableAccessorInterface
 {
     /**

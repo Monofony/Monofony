@@ -16,9 +16,6 @@ use App\Command\Installer\SetupCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class InstallerContext extends DefaultContext
 {
     /**

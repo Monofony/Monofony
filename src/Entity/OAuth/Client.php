@@ -15,8 +15,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
 /**
- * @author Corentin Nicole <corentin@mobizel.com>
- *
  * @ORM\Entity
  * @ORM\Table(name="oauth_client")
  */

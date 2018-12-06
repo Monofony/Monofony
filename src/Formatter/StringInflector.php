@@ -11,9 +11,6 @@
 
 namespace App\Formatter;
 
-/**
- * @author Mateusz Zalewski <mateusz.zalewski@lakion.com>
- */
 final class StringInflector
 {
     /**

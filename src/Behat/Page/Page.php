@@ -19,9 +19,6 @@ use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Selector\SelectorsHandler;
 use Behat\Mink\Session;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 abstract class Page implements PageInterface
 {
     /**

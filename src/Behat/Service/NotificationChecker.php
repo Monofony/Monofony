@@ -15,10 +15,6 @@ use App\Behat\Exception\NotificationExpectationMismatchException;
 use App\Behat\NotificationType;
 use App\Behat\Service\Accessor\NotificationAccessorInterface;
 
-/**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 final class NotificationChecker implements NotificationCheckerInterface
 {
     /**

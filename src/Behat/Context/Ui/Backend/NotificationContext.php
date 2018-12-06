@@ -15,9 +15,6 @@ use App\Behat\NotificationType;
 use App\Behat\Service\NotificationCheckerInterface;
 use Behat\Behat\Context\Context;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 final class NotificationContext implements Context
 {
     /**

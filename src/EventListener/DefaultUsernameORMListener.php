@@ -20,8 +20,6 @@ use Sylius\Component\User\Model\UserInterface;
 
 /**
  * Keeps user's username synchronized with email.
- *
- * @author Michał Marcinkowski <michal.marcinkowski@lakion.com>
  */
 final class DefaultUsernameORMListener
 {

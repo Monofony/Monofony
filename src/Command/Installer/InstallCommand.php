@@ -6,9 +6,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Exception\RuntimeException;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class InstallCommand extends AbstractInstallCommand
 {
     /**

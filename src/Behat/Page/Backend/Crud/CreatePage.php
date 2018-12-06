@@ -16,9 +16,6 @@ use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use Symfony\Component\Routing\RouterInterface;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class CreatePage extends SymfonyPage
 {
     /**
