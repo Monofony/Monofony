@@ -1,3 +1,0 @@
-doctrine:
-    dbal:
-        dbname: '%env(resolve:DATABASE_NAME)%_dev'
