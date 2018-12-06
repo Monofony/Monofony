@@ -15,9 +15,6 @@ use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 interface SecurityServiceInterface
 {
     /**

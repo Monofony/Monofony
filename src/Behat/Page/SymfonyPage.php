@@ -15,9 +15,6 @@ use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Session;
 use Symfony\Component\Routing\RouterInterface;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 abstract class SymfonyPage extends Page implements SymfonyPageInterface
 {
     /**

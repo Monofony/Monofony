@@ -16,8 +16,6 @@ use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Model\User as BaseUser;
 
 /**
- * @author Loïc Frémont <loic@mobizel.com>
- *
  * @ORM\Entity
  * @ORM\Table(name="sylius_app_user")
  */

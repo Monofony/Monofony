@@ -17,9 +17,6 @@ use Sylius\Bundle\CustomerBundle\Form\Type\CustomerType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
 
-/**
- * @author Corentin Nicole <corentin@mobizel.com>
- */
 final class CustomerTypeExtension extends AbstractTypeExtension
 {
     /**

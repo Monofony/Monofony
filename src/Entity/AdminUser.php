@@ -15,8 +15,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\User\Model\User as BaseUser;
 
 /**
- * @author Loïc Frémont <loic@mobizel.com>
- *
  * @ORM\Entity
  * @ORM\Table("sylius_admin_user")
  */

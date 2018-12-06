@@ -11,9 +11,6 @@
 
 namespace App\Behat\Page;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 final class UnexpectedPageException extends \Exception
 {
 }

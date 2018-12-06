@@ -14,9 +14,6 @@ namespace App\Form\Type\User;
 use Sylius\Bundle\UserBundle\Form\Type\UserType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-/**
- * @author Loïc Frémont <loic@mobizel.com>
- */
 class AppUserType extends UserType
 {
     /**

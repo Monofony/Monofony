@@ -13,9 +13,6 @@ namespace App\Behat\Service\Resolver;
 
 use App\Behat\Page\SymfonyPageInterface;
 
-/**
- * @author Łukasz Chruściel <lukasz.chrusciel@lakion.com>
- */
 interface CurrentPageResolverInterface
 {
     /**

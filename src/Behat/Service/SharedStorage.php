@@ -11,9 +11,6 @@
 
 namespace App\Behat\Service;
 
-/**
- * @author Arkadiusz Krakowiak <arkadiusz.krakowiak@lakion.com>
- */
 class SharedStorage implements SharedStorageInterface
 {
     /**

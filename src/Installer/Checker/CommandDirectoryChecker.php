@@ -17,9 +17,6 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Iterator\RecursiveDirectoryIterator;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-/**
- * @author Mateusz Zalewski <mateusz.zalewski@lakion.com>
- */
 final class CommandDirectoryChecker
 {
     /**
