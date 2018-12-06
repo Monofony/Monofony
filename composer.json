@@ -64,6 +64,7 @@
         "phpstan/phpstan-symfony": "^0.10",
         "phpstan/phpstan-webmozart-assert": "^0.10",
         "se/selenium-server-standalone": " ^2.52",
+        "symfony/debug-bundle": "^4.1",
         "symfony/web-profiler-bundle": "^4.1",
         "symfony/web-server-bundle": "^4.1"
     },
