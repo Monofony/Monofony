@@ -16,6 +16,8 @@ commands=(
     test-fixtures
     test-infection
     test-behat-without-javascript
+    # Uncomment if you have at least one scenario using javascript
+    # test-behat-with-javascript
 )
 
 for command in ${commands[@]}; do
