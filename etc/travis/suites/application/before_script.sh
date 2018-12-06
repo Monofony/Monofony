@@ -3,10 +3,6 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../bash/common.lib.sh"
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../bash/application.sh"
 
-print_header "Configuring parameters" "AppName"
-run_command "cp .env.travis .env"
-run_command "cp phpunit.xml.travis phpunit.xml"
-
 print_header "Setting xvfb up" "AppName"
 run_command "export DISPLAY=:99.0"
 run_command "sh -e /etc/init.d/xvfb start"
