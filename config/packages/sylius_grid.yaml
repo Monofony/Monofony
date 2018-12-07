@@ -13,6 +13,8 @@ sylius_grid:
             apply_transition: "@SyliusUi/Grid/Action/applyTransition.html.twig"
             links: "@SyliusUi/Grid/Action/links.html.twig"
             archive: "@SyliusUi/Grid/Action/archive.html.twig"
+        bulk_action:
+            delete: "@SyliusUi/Grid/BulkAction/delete.html.twig"
         filter:
             string: "@SyliusUi/Grid/Filter/string.html.twig"
             boolean: "@SyliusUi/Grid/Filter/boolean.html.twig"
