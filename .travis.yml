@@ -47,6 +47,9 @@ cache:
         - $APP_NAME_CACHE_DIR
 
 before_install:
+    - mv .env.test.dist .env
+    - set -a && source .env && set +a
+
     - etc/travis/run-suite before_install "${APP_NAME_SUITE}"
 
 install:
