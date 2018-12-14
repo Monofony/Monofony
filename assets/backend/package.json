@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "semantic-ui-css": "^2.1.8",
     "autobahn": "^0.11.1",
     "interact.js": "^1.2.6",
     "jquery": "^2.2.4",
@@ -8,6 +7,7 @@
     "moment": "^2.17.1",
     "moment-range": "^2.2.0",
     "semantic-ui-calendar": "0.0.7",
+    "semantic-ui-css": "^2.2.0",
     "whatwg-fetch": "0.11.0"
   },
   "devDependencies": {
