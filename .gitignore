@@ -12,7 +12,7 @@
 *.DS_Store
 
 /etc/build/*
-!/etc/build/.gitignore
+!/etc/build/.gitkeep
 
 ###> symfony/framework-bundle ###
 /.env
