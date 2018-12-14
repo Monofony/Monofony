@@ -32,8 +32,9 @@ default:
                                 - "no-sandbox"
 
         FriendsOfBehat\SymfonyExtension:
+            env_file: .env
             kernel:
-                bootstrap: 'features/bootstrap/bootstrap.php'
+                bootstrap: ~
                 path: src/Kernel.php
                 class: 'App\Kernel'
                 debug: true

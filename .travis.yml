@@ -1,5 +1,4 @@
 dist: trusty
-sudo: required
 
 language: php
 
@@ -7,16 +6,6 @@ env:
     global:
         - APP_NAME_CACHE_DIR=$HOME/.app_name-cache
         - APP_NAME_BUILD_DIR=etc/build
-
-addons:
-    apt:
-        sources:
-            - google-chrome
-        packages:
-            - google-chrome-stable
-
-services:
-    - mysql
 
 matrix:
     include:
@@ -47,6 +36,9 @@ cache:
         - $APP_NAME_CACHE_DIR
 
 before_install:
+    - mv .env.test.dist .env
+    - set -a && source .env && set +a
+
     - etc/travis/run-suite before_install "${APP_NAME_SUITE}"
 
 install:
