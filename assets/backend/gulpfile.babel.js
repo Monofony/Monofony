@@ -55,7 +55,7 @@ const nodeModulesPath = upath.normalizeSafe(argv.nodeModulesPath);
 const paths = {
   admin: {
     js: [
-      upath.joinSafe(vendorUiPath, 'Resources/private/js/sylius-auto-complete.js'),
+      upath.joinSafe(vendorUiPath, 'Resources/private/js/**'),
       upath.joinSafe(adminPath, 'js/**'),
     ],
     sass: [
@@ -243,7 +243,5 @@ gulp.task('admin-js', buildAdminJs);
 gulp.task('admin-css', buildAdminCss);
 gulp.task('admin-img', buildAdminImg);
 gulp.task('admin-watch', watchAdmin);
-
-console.log(paths.admin);
 
 export default build;
