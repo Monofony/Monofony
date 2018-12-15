@@ -16,12 +16,6 @@ const { argv } = yargs
       requiresArg: true,
       required: false,
     },
-    vendorPath: {
-      description: '<path> path to vendor directory',
-      type: 'string',
-      requiresArg: true,
-      required: false,
-    },
   });
 
 const config = [
@@ -29,8 +23,6 @@ const config = [
   argv.rootPath || '../../public/assets',
   '--nodeModulesPath',
   argv.nodeModulesPath || '../../node_modules',
-  '--vendorPath',
-  argv.vendorPath || '../../vendor',
 ];
 
 export const buildAdmin = function buildAdmin() {
