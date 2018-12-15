@@ -46,37 +46,37 @@ const options = {
 };
 
 const rootPath = upath.normalizeSafe(argv.rootPath);
-const adminRootPath = upath.joinSafe(rootPath, 'admin');
+const adminRootPath = upath.joinSafe(rootPath, 'backend');
 const vendorPath = upath.normalizeSafe(argv.vendorPath || '.');
-const vendorAdminPath = rootPath === '.' ? '.' : upath.joinSafe(rootPath, '../../assets/backend');
-const vendorUiPath = vendorPath === '.' ? '../UiBundle/' : upath.joinSafe(vendorPath, 'sylius/ui-bundle');
+const adminPath = rootPath === '.' ? '.' : upath.joinSafe(rootPath, '../../assets/backend');
+const vendorUiPath = vendorPath === '.' ? '../../vendor/sylius/ui-bundle' : upath.joinSafe(vendorPath, 'sylius/ui-bundle');
 const nodeModulesPath = upath.normalizeSafe(argv.nodeModulesPath);
 
 const paths = {
   admin: {
     js: [
-      upath.joinSafe(vendorUiPath, 'Resources/private/js/**'),
-      upath.joinSafe(vendorAdminPath, 'js/**'),
+      upath.joinSafe(vendorUiPath, 'Resources/private/js/sylius-auto-complete.js'),
+      upath.joinSafe(adminPath, 'js/**'),
     ],
     sass: [
       upath.joinSafe(vendorUiPath, 'Resources/private/sass/**'),
-      upath.joinSafe(vendorAdminPath, 'Resources/private/sass/**'),
+      upath.joinSafe(adminPath, 'sass/**'),
     ],
     css: [
       upath.joinSafe(nodeModulesPath, 'semantic-ui-css/semantic.min.css'),
       upath.joinSafe(vendorUiPath, 'Resources/private/css/**'),
-      upath.joinSafe(vendorAdminPath, 'Resources/private/css/**'),
+      upath.joinSafe(adminPath, 'css/**'),
     ],
     img: [
       upath.joinSafe(vendorUiPath, 'Resources/private/img/**'),
-      upath.joinSafe(vendorAdminPath, 'Resources/private/img/**'),
+      upath.joinSafe(adminPath, 'img/**'),
     ],
   },
 };
 
 const sourcePathMap = [
   {
-     sourceDir: upath.relative('', upath.joinSafe(vendorAdminPath, '/')),
+     sourceDir: upath.relative('', upath.joinSafe(adminPath, '/')),
      destPath: '/SyliusAdminBundle',
    },
   {
@@ -105,13 +105,13 @@ const mapSourcePath = function mapSourcePath(sourcePath) {
 
 export const buildAdminJs = async function buildAdminJs() {
   const bundle = await rollup({
-    input: upath.joinSafe(vendorAdminPath, 'js/app.js'),
+    input: upath.joinSafe(adminPath, 'js/app.js'),
     plugins: [
       {
         name: 'shim-app',
 
         transform(code, id) {
-          if (upath.relative('', id) === upath.relative('', upath.joinSafe(vendorAdminPath, 'Resources/private/js/app.js'))) {
+          if (upath.relative('', id) === upath.relative('', upath.joinSafe(adminPath, 'js/app.js'))) {
             return {
               code: dedent`
                 import './shim/shim-polyfill';
@@ -233,8 +233,7 @@ export const watchAdmin = function watchAdmin() {
 };
 watchAdmin.description = 'Watch admin asset sources and rebuild on changes.';
 
-// export const build = gulp.parallel(buildAdminJs, buildAdminCss, buildAdminImg);
-export const build = gulp.parallel(buildAdminJs);
+export const build = gulp.parallel(buildAdminJs, buildAdminCss, buildAdminImg);
 build.description = 'Build assets.';
 
 export const watch = gulp.parallel(build, watchAdmin);
@@ -244,5 +243,7 @@ gulp.task('admin-js', buildAdminJs);
 gulp.task('admin-css', buildAdminCss);
 gulp.task('admin-img', buildAdminImg);
 gulp.task('admin-watch', watchAdmin);
+
+console.log(paths.admin);
 
 export default build;

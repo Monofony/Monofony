@@ -3,7 +3,7 @@
 {% block title %}AppName | {% endblock %}
 
 {% block stylesheets %}
-    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'compiled/backend/css/style.css'} %}
+    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/backend/css/style.css'} %}
 {% endblock %}
 
 {% block topbar %}
@@ -11,7 +11,7 @@
         <i class="sidebar icon"></i>
     </a>
     <div class="ui right floated simple dropdown item">
-        <img class="ui avatar image" src="{{ asset('compiled/backend/img/avatar.png') }}">
+        <img class="ui avatar image" src="{{ asset('assets/backend/img/avatar.png') }}">
         <span>{{ app.user.username }}</span>
         <i class="dropdown icon"></i>
         <div class="menu">
@@ -37,5 +37,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'compiled/backend/js/app.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'assets/backend/js/app.js'} %}
 {% endblock %}
