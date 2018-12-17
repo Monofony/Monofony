@@ -1,0 +1,16 @@
+{% extends 'frontend/layout.html.twig' %}
+
+{% block content %}
+    {% block breadcrumb %}
+    {% endblock %}
+
+    <div class="ui stackable grid">
+        <div class="four wide column">
+            {{ knp_menu_render('app.account', {'template': 'frontend/menu/simple.html.twig'}) }}
+        </div>
+        <div class="twelve wide column">
+            {% block subcontent %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
