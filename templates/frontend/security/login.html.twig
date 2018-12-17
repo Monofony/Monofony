@@ -1,55 +1,26 @@
 {% extends 'frontend/layout.html.twig' %}
 
-{% block bodyClass %}security login{% endblock %}
-
-{% set pageTitle =  'title.not_connected'|trans %}
+{% form_theme form 'frontend/form/theme.html.twig' %}
 
 {% block content %}
+    {% include 'frontend/login/_header.html.twig' %}
 
-    <div class="row align-center">
-        <div class="small-12 medium-6 column">
-            <h4>{{ 'sylius.ui.registered_customers'|trans }}</h4>
-            <p>{{ 'sylius.ui.if_you_have_an_account_sign_in_with_your_email_address'|trans }}.</p>
+    <div class="ui padded segment">
+        <div class="ui two column very relaxed stackable grid">
+            <div class="column">
+                <h4 class="ui dividing header">{{ 'sylius.ui.registered_customers'|trans }}</h4>
+                <p>{{ 'sylius.ui.if_you_have_an_account_sign_in_with_your_email_address'|trans }}.</p>
+                {{ form_start(form, {'action': path('app_frontend_login_check'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+                    {% include 'frontend/login/_form.html.twig' %}
 
-            {{ form_errors(form) }}
-            <form action="{{ path("app_frontend_login_check") }}"
-                  novalidate
-                  method="post">
+                    <button type="submit" class="ui blue submit button">{{ 'sylius.ui.login'|trans }}</button>
+                    <a href="{{ path('sylius_user_request_password_reset_token') }}" class="ui right floated button">{{ 'sylius.ui.forgot_password'|trans }}</a>
+                    <input type="hidden" name="_csrf_shop_security_token" value="{{ csrf_token('shop_authenticate') }}">
 
-                <div class="row input-group-row">
-                    <label>
-                        <div class="input-group">
-                            <span class="input-group-label"><span class="fa fa-user"></span></span>
-                            <input id="_username" name="_username" class="input-group-field" type="text"
-                                   placeholder="{{ 'sylius.ui.email'|trans }}">
-                        </div>
-                    </label>
-                </div>
-                <div class="row input-group-row">
-                    <label>
-                        <div class="input-group">
-                            <span class="input-group-label"><span class="fa fa-lock"></span></span>
-                            <input id="_password" name="_password" class="input-group-field" type="password"
-                                   placeholder="{{ 'sylius.ui.password'|trans }}">
-                        </div>
-                    </label>
-                    <a href="{{ path('sylius_user_request_password_reset_token') }}"
-                       class="forgotpsw">{{ 'app.ui.forgotten_password'|trans }}</a>
-
-                </div>
-                <div class="row align-center text-center">
-                    <button id="_login" type="submit" class="button expanded">{{ 'sylius.ui.login'|trans }}</button>
-                </div>
-            </form>
-
-        </div>
-
-        <div class="small-12 medium-6 column">
-            <div class="row align-center">
-
-                <h4>{{ 'sylius.ui.new_customers'|trans }}</h4>
-                <a href="{{ path('app_frontend_register') }}"
-                   class="button expanded">{{ 'sylius.ui.create_an_account'|trans }}</a>
+                {{ form_end(form, {'render_rest': true}) }}
+            </div>
+            <div class=column">
+                {% include 'frontend/login/_register.html.twig' %}
             </div>
         </div>
     </div>
