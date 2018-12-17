@@ -66,7 +66,7 @@ class LoginPage extends SymfonyPage
         return array_merge(parent::getDefinedElements(), [
             'username' => '#_username',
             'password' => '#_password',
-            'validation_error' => '.callout.alert',
+            'validation_error' => '.message.negative',
         ]);
     }
 }
