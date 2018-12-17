@@ -9,3 +9,11 @@ services:
         arguments: ["@request_stack"]
         tags:
             - { name: knp_menu.menu, alias: app.admin.main } # The alias is what is used to retrieve the menu
+
+    app.account_menu:
+        class: App\Menu\AccountMenuBuilder
+        arguments:
+            - "@knp_menu.factory"
+            - "@event_dispatcher"
+        tags:
+            - { name: knp_menu.menu_builder, method: createMenu, alias: app.account } # The alias is what is used to retrieve the menu
