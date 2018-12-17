@@ -2,14 +2,14 @@ app_frontend_login:
     path: /login
     methods: [GET]
     defaults:
-        _controller: sylius.controller.user_security:loginAction
+        _controller: sylius.controller.security:loginAction
         _sylius:
             template: frontend/security/login.html.twig
 
 app_frontend_login_check:
     path: /login-check
     defaults:
-        _controller: sylius.controller.user_security:checkAction
+        _controller: sylius.controller.security:checkAction
 
 app_frontend_logout:
     path: /logout

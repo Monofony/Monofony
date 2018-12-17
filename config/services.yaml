@@ -13,6 +13,16 @@ services:
         resource: '../src/Command/*'
         tags: [command_handler]
 
+    sylius.controller.security:
+        class: Sylius\Bundle\UiBundle\Controller\SecurityController
+        public: true
+        arguments:
+            - "@security.authentication_utils"
+            - "@form.factory"
+            - "@templating.engine.twig"
+            - "@security.authorization_checker"
+            - "@router"
+
 imports:
     - { resource: services/context.yml }
     - { resource: services/fixtures.yml }
