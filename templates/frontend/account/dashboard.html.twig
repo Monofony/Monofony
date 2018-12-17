@@ -1,36 +1,49 @@
-{% extends "frontend/layout.html.twig" %}
+{% extends "frontend/account/layout.html.twig" %}
 
 {% import 'frontend/macro/buttons.html.twig' as buttons %}
 
-{% block content -%}
-    <h1>{{ 'sylius.ui.my_account'|trans }}</h1>
-    <h2>{{ 'sylius.ui.manage_your_personal_information_and_preferences'|trans }}</h2>
+{% block breadcrumb %}
+    <div class="ui breadcrumb">
+        <a href="{{ path('app_frontend_homepage') }}" class="section">{{ 'sylius.ui.home'|trans }}</a>
+        <div class="divider"> / </div>
+        <div class="active section">{{ 'sylius.ui.my_account'|trans }}</div>
+    </div>
+{% endblock %}
 
-    <div class="row">
-        <div class="medium-8 column">
-            <div class="row">
-                <div class="medium-4 column">
-                    <img src="{{ asset('assets/backend/compiled/img/avatar.png') }}">
-                </div>
-                <div class="medium-8 column">
-                    <h4>{{ customer.user }}</h4>
-                    <p><i class="fa fa-user"></i>&nbsp; {{ customer.fullName }}</p>
-                    <p><i class="fa fa-envelope color"></i>&nbsp; {{ customer.email }}</p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="btn-group">
-                        {{ buttons.default(path('sylius_frontend_account_profile_update'), 'sylius.ui.edit', null, 'pencil') }}
-                        {{ buttons.default(path('sylius_frontend_account_change_password'), 'sylius.ui.change_password', null, 'lock') }}
-                    </div>
-                </div>
-            </div>
+{% block subcontent -%}
+    <h1 class="ui dividing header">
+        {{ 'sylius.ui.my_account'|trans }}
+        <div class="sub header">{{ 'sylius.ui.manage_your_personal_information_and_preferences'|trans }}</div>
+    </h1>
+
+    <div class="ui large list" id="customer-information">
+        <div class="item">
+            {{ customer.fullName }}
         </div>
-        <div class="medium-4 column">
-            {% include 'frontend/account/_sidebar.html.twig' %}
+        <div class="item">
+            <strong>
+                {{ customer.email }}
+            </strong>
         </div>
+        <div class="item">
+            {% if customer.user.verified %}
+                <span class="ui icon green basic label"><i class="checkmark icon"></i> {{ 'sylius.ui.verified'|trans }}</span>
+            {% else %}
+                <span class="ui icon red basic label"><i class="remove icon"></i> {{ 'sylius.ui.not_verified'|trans }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="ui text menu">
+        <a href="{{ path('sylius_frontend_account_profile_update') }}" class="item"><i class="pencil icon"></i> {{ 'sylius.ui.edit'|trans }}</a>
+        <a href="{{ path('sylius_frontend_account_change_password') }}" class="item"><i class="lock icon"></i> {{ 'sylius.ui.change_password'|trans }}</a>
+        {% if not customer.user.verified %}
+            <form class="item" id="verification-form" action="{{ path('app_frontend_user_request_verification_token') }}" method="post">
+                <button type="submit" class="ui basic icon mini button">
+                    <i class="checkmark icon"></i> {{ 'sylius.ui.verify'|trans }}
+                </button>
+            </form>
+        {% endif %}
     </div>
 
 {% endblock %}
