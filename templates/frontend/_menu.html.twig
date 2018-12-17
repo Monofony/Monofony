@@ -1,27 +1,10 @@
-<div class="top-bar">
-    <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">AppName</li>
-        </ul>
-    </div>
-    <div class="top-bar-right">
-        {% if app.user %}
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li>
-                    <a href="#">{{ app.user.customer }}</a>
-                    <ul class="menu vertical">
-                        <li>
-                            <a href="{{ path('sylius_frontend_account_dashboard') }}">
-                                <span class="fa fa-home"></span> {{ 'sylius.ui.my_account'|trans }}</a>
-                        </li>
-                        <li>
-                            <a class="app-logout-button" href="{{ path('app_frontend_logout') }}">
-                                <span class="fa fa-sign-out"></span> {{ 'sylius.ui.logout'|trans }}
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        {% endif %}
-    </div>
+<div class="ui right stackable inverted menu">
+    {% if is_granted('ROLE_USER') %}
+        <div class="item">{{ 'sylius.ui.hello'|trans }} {{ app.user.customer.fullName }}!</div>
+        <a href="{{ path('sylius_frontend_account_dashboard') }}" class="item">{{ 'sylius.ui.my_account'|trans }}</a>
+        <a href="{{ path('app_frontend_logout') }}" class="item app-logout-button">{{ 'sylius.ui.logout'|trans }}</a>
+    {% else %}
+        <a href="{{ path('app_frontend_login') }}" class="item">{{ 'sylius.ui.login'|trans }}</a>
+        <a href="{{ path('app_frontend_register') }}" class="item">{{ 'sylius.ui.register'|trans }}</a>
+    {% endif %}
 </div>

@@ -1,47 +1,24 @@
 {% extends 'frontend/layout.html.twig' %}
 
-{% block bodyClass %} {{ parent() }} security register{% endblock %}
-
-{% set pageTitle =  'title.create_account'|trans %}
-
-{% block page_title_subcontent %}
-    <p class="content-text">
-        <span class="light-text">{{ 'label.to_loan_bike'|trans|upper }}</span><br/>
-        <span class="brand-text">{{ 'label.its_fast'|trans }}</span>
-    </p>
-{% endblock %}
+{% form_theme form 'frontend/form/theme.html.twig' %}
 
 {% block content %}
-    <div class="small-12 user-form">
+    {% include 'frontend/register/_header.html.twig' %}
 
-        <form action="{{ path('app_frontend_register') }}?" method="post" class="form-signin" >
-            <div class="form-field">
-                {{ form_row(form.email, {attr: {'placeholder': 'sylius.ui.email'|trans}}) }}
-            </div>
-            <div class="form-field">
-                {{ form_row(form.user.plainPassword.first, {attr: {'placeholder': 'sylius.ui.password'|trans}}) }}
-            </div>
-            <div class="form-field">
-                {{ form_row(form.user.plainPassword.second, {attr: {'placeholder': 'sylius.ui.repeat_new_password'|trans}}) }}
-            </div>
-            <div class="form-field">
-                {{ form_row(form.lastName, {attr: {'placeholder': 'sylius.ui.last_name'|trans}}) }}
-            </div>
-            <div class="form-field">
-                {{ form_row(form.firstName, {attr: {'placeholder': 'sylius.ui.first_name'|trans}}) }}
-            </div>
-            <div class="form-field">
-                {{ form_row(form.phoneNumber, {attr: {'placeholder': 'sylius.ui.phone_number'|trans}}) }}
-            </div>
+    {{ sonata_block_render_event('sylius.shop.register.after_content_header') }}
 
-            <div class="action-buttons">
-                <a href="javascript:window.history.back()" class="button button-bordered" >{{ 'sylius.ui.cancel'|trans }}</a>
-                <button class="button" type="submit" id="_submit" name="_submit">{{ 'sylius.ui.create_an_account'|trans }}</button>
-            </div>
+    <div class="ui padded segment">
+        {{ sonata_block_render_event('sylius.shop.register.before_form') }}
 
-            {{ form_row(form._token) }}
-            {{ form_end(form, {'render_rest': false}) }}
-        </form>
+        {{ form_start(form, {'action': path('app_frontend_register'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+        {% include 'frontend/register/_form.html.twig' %}
 
+        {{ sonata_block_render_event('sylius.shop.register.form', {'form': form}) }}
+
+        <button type="submit" class="ui large primary button">
+            {{ 'sylius.ui.create_an_account'|trans }}
+        </button>
+        {{ form_row(form._token) }}
+        {{ form_end(form, {'render_rest': false}) }}
     </div>
 {% endblock %}

@@ -31,8 +31,7 @@ $ composer install
 Install project :
 ```bash
 $ bin/console app:install
-$ cd assets/backend/ && yarn install && yarn run gulp && cd ../../
-$ cd assets/frontend/ && yarn install && yarn run gulp & cd ../../
+$ yarn install && yarn run gulp
 $ php bin/console server:start
 ```
 
