@@ -37,25 +37,25 @@ export const watchAdmin = function watchAdmin() {
 };
 watchAdmin.description = 'Watch admin asset sources and rebuild on changes.';
 
-// export const buildShop = function buildShop() {
-//   return gulp.src('assets/frontend/gulpfile.babel.js', { read: false })
-//     .pipe(chug({ args: config, tasks: 'build' }));
-// };
-// buildShop.description = 'Build shop assets.';
-//
-// export const watchShop = function watchShop() {
-//   return gulp.src('assets/frontend/gulpfile.babel.js', { read: false })
-//     .pipe(chug({ args: config, tasks: 'watch' }));
-// };
-// watchShop.description = 'Watch shop asset sources and rebuild on changes.';
+export const buildApp = function buildApp() {
+  return gulp.src('assets/frontend/gulpfile.babel.js', { read: false })
+    .pipe(chug({ args: config, tasks: 'build' }));
+};
+buildApp.description = 'Build app assets.';
 
-// export const build = gulp.parallel(buildAdmin, buildShop);
+export const watchApp = function watchApp() {
+  return gulp.src('assets/frontend/gulpfile.babel.js', { read: false })
+    .pipe(chug({ args: config, tasks: 'watch' }));
+};
+watchApp.description = 'Watch app asset sources and rebuild on changes.';
+
+// export const build = gulp.parallel(buildAdmin, buildApp);
 export const build = gulp.parallel(buildAdmin);
 build.description = 'Build assets.';
 
 gulp.task('admin', buildAdmin);
 gulp.task('admin-watch', watchAdmin);
-// gulp.task('shop', buildShop);
-// gulp.task('shop-watch', watchShop);
+gulp.task('app', buildApp);
+gulp.task('app-watch', watchApp);
 
 export default build;
