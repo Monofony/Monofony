@@ -11,13 +11,16 @@
 </head>
 <body class="pushable">
 <div class="pusher">
+    {% block top %}
+        <div id="menu" class="ui large sticky inverted stackable menu">
+            {% include 'frontend/_menu.html.twig' %}
+        </div>
+    {% endblock %}
+
     <div id="ui container">
         {% block header %}
             <header>
                 {% include 'frontend/_header.html.twig' %}
-                {% block menu %}
-                    {% include 'frontend/_menu.html.twig' %}
-                {% endblock %}
             </header>
         {% endblock %}
 
