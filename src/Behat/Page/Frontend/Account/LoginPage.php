@@ -27,7 +27,7 @@ class LoginPage extends SymfonyPage
 
     public function logIn()
     {
-        $this->getDocument()->pressButton('_login');
+        $this->getDocument()->pressButton('Login');
     }
 
     /**
