@@ -4,9 +4,14 @@
 /var/*
 !var/.gitkeep
 /vendor/
-/public/bundles/
+
+/public/assets
+/public/bundles
+/public/css
+/public/js
+/public/media
+
 **/node_modules/*
-**/compiled/*
 
 .idea
 *.DS_Store

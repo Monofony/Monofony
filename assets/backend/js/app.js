@@ -1,3 +1,12 @@
+import 'semantic-ui-css/components/accordion';
+import $ from 'jquery';
+
+import 'sylius/ui/app';
+import 'sylius/ui/sylius-auto-complete';
+import 'sylius/ui/sylius-product-attributes';
+import 'sylius/ui/sylius-product-auto-complete';
+import 'sylius/ui/sylius-prototype-handler';
+
 (function ($) {
     $(document).ready(function () {
         $('.sylius-autocomplete').autoComplete();
@@ -11,4 +20,7 @@
         $('.app-date-time-picker').dateTimePicker();
     });
 })(jQuery);
+
+window.$ = $;
+window.jQuery = $;
 

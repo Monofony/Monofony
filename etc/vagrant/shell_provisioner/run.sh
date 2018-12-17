@@ -9,7 +9,7 @@ CONFIG_PATH=$PROVISONER_PATH/config
 GUEST_IP='10.0.0.200'
 
 #Config
-APP_DOMAIN='app_name.dev'
+APP_DOMAIN='app_name.local'
 APP_DBNAME='app_name'
 
 # Adding an entry here executes the corresponding .sh file in MODULE_PATH
