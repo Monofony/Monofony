@@ -13,7 +13,7 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
       app.behat.page:
-          class: App\Behat\Page\Page
+          class: FriendsOfBehat\PageObjectExtension\Page\Page
           abstract: true
           public: false
           arguments:
@@ -21,7 +21,7 @@ services:
               - "%__behat__.mink.parameters%"
 
       app.behat.symfony_page:
-          class: App\Behat\Page\SymfonyPage
+          class: FriendsOfBehat\PageObjectExtension\Page\SymfonyPage
           parent: app.behat.page
           abstract: true
           public: false
