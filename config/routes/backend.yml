@@ -1,5 +1,5 @@
 app_backend_dashboard:
-    path: /dashboard
+    path: /
     defaults:
         _controller:  FrameworkBundle:Template:template
         template:     'backend/index.html.twig'
