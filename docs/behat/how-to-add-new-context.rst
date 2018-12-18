@@ -1,22 +1,13 @@
-How to run add new context
-==========================
+How to add a new context?
+=========================
 
-.. note::
+To add a new context to Behat container it is needed to add a service in to one of a following files ``cli.xml``/``domain.xml``/``hook.xml``/``setup.xml``/``transform.xml``/``ui.xml`` in ``src/Sylius/Behat/Resources/config/services/contexts/`` folder:
 
-    A context is an object which includes several methods used by behat to transform sentences into actions. You can create many contexts as you want.
+.. code-block:: xml
 
-To add a new context to Behat container it is needed to add a context object
-
-.. code-block:: php
-
-    <?php
-
-    namespace AppBundle\Behat;
-
-    class SupplierContext extends DefaultContext
-    {
-        // ...
-    }
+    <service id="sylius.behat.context.CONTEXT_CATEGORY.CONTEXT_NAME" class="%sylius.behat.context.CONTEXT_CATEGORY.CONTEXT_NAME.class%">
+        <tag name="fob.context_service" />
+    </service>
 
 Then you can use it in your suite configuration:
 
@@ -25,7 +16,12 @@ Then you can use it in your suite configuration:
     default:
         suites:
             SUITE_NAME:
-                contexts:
-                    - AppBundle\Behat\CONTEXTNAMEContext
+                contexts_services:
+                    - "sylius.behat.context.CONTEXT_CATEGORY.CONTEXT_NAME"
+
                 filters:
                     tags: "@SUITE_TAG"
+
+.. note::
+
+    The context categories are usually one of ``hook``, ``setup``, ``ui`` and ``domain`` and, as you can guess, they are corresponded to files name mentioned above.
