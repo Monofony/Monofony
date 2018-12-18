@@ -21,4 +21,4 @@ reading them. They can be found in the ``features/`` directory of the Sylius/Syl
     how-to-define-new-suite
     how-to-use-transformers
 
-.. include:: /bdd/map.rst.inc
+.. include:: /behat/map.rst.inc
