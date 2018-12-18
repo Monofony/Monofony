@@ -1,7 +1,7 @@
 AppName Documentation
 =====================
 
-.. image:: /_images/logo.png
+.. image:: /_images/logo_big.png
    :alt:   AppName Welcome Page
 
 `AppName`_ is a project based on
