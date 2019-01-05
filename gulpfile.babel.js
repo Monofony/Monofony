@@ -49,8 +49,7 @@ export const watchApp = function watchApp() {
 };
 watchApp.description = 'Watch app asset sources and rebuild on changes.';
 
-// export const build = gulp.parallel(buildAdmin, buildApp);
-export const build = gulp.parallel(buildAdmin);
+export const build = gulp.parallel(buildAdmin, buildApp);
 build.description = 'Build assets.';
 
 gulp.task('admin', buildAdmin);
