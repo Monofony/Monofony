@@ -5,7 +5,7 @@ Feature: Customer profile validation
     I want to be prevented from entering incorrect values
 
     Background:
-        Given there is a customer with email "claire@underwood.com"
+        Given there is a customer "Francis Underwood" with email "claire@underwood.com"
         And there is a user "francis@underwood.com" identified by "whitehouse"
         And I am logged in as "francis@underwood.com"
 

@@ -31,10 +31,10 @@ class ProfileUpdatePage extends SymfonyPage
      */
     public function checkValidationMessageFor($element, $message)
     {
-        $errorLabel = $this->getElement($element)->getParent()->getParent()->find('css', '.form-error-message');
+        $errorLabel = $this->getElement($element)->getParent()->find('css', '.sylius-validation-error');
 
         if (null === $errorLabel) {
-            throw new ElementNotFoundException($this->getSession(), 'Validation message', 'css', '.form-error-message');
+            throw new ElementNotFoundException($this->getSession(), 'Validation message', 'css', '.sylius-validation-error');
         }
 
         return $message === $errorLabel->getText();

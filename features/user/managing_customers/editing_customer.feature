@@ -9,7 +9,7 @@ Feature: Editing a customer
 
     @ui
     Scenario: Changing first and last name of an existing customer
-        Given there is customer "Frodo Baggins" with email "f.baggins@example.com"
+        Given there is a customer "Frodo Baggins" with email "f.baggins@example.com"
         And I want to edit this customer
         When I change their first name to "Jon"
         And I change their last name to "Snow"
@@ -19,7 +19,7 @@ Feature: Editing a customer
 
     @ui
     Scenario: Removing first and last name from an existing customer
-        Given there is customer "Luke Skywalker" with email "l.skywalker@gmail.com"
+        Given there is a customer "Luke Skywalker" with email "l.skywalker@gmail.com"
         And I want to edit this customer
         When I remove its first name
         And I remove its last name
