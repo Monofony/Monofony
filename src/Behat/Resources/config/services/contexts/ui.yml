@@ -34,6 +34,17 @@ services:
         tags:
             - { name: fob.context_service }
 
+    app.behat.context.ui.frontend.account:
+        class: App\Behat\Context\Ui\Frontend\AccountContext
+        arguments:
+            - "@app.behat.page.frontend.account.dashboard"
+            - "@app.behat.page.frontend.account.profile_update"
+            - "@app.behat.page.frontend.account.change_password"
+            - "@app.behat.page.frontend.account.login"
+            - "@app.behat.notification_checker"
+        tags:
+            - { name: fob.context_service }
+
     app.behat.context.ui.frontend.homepage:
         class: App\Behat\Context\Ui\Frontend\HomepageContext
         arguments:

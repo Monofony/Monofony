@@ -1,4 +1,5 @@
 imports:
+    - suites/ui/account/customer.yml
     - suites/ui/account/login.yml
     - suites/ui/customer/managing_customers.yml
     - suites/ui/user/managing_administrators.yml
