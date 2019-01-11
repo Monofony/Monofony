@@ -70,7 +70,7 @@ final class CustomerContext implements Context
     }
 
     /**
-     * @Given there is customer :name with email :email
+     * @Given there is a customer :name with email :email
      */
     public function thereIsCustomerWithNameAndEmail($name, $email)
     {
@@ -80,7 +80,7 @@ final class CustomerContext implements Context
     }
 
     /**
-     * @Given there is (also )customer :email
+     * @Given there is (also )a customer :email
      */
     public function thereIsCustomer($email)
     {

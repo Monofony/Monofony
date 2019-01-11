@@ -37,12 +37,11 @@ class RegisterPage extends SymfonyPage
         $errorLabel = $this
             ->getElement(StringInflector::nameToCode($element))
             ->getParent()
-            ->getParent()
-            ->find('css', '.form-error-message')
+            ->find('css', '.sylius-validation-error')
         ;
 
         if (null === $errorLabel) {
-            throw new ElementNotFoundException($this->getSession(), 'Validation message', 'css', '.form-error-message');
+            throw new ElementNotFoundException($this->getSession(), 'Validation message', 'css', '.sylius-validation-error');
         }
 
         return $message === $errorLabel->getText();

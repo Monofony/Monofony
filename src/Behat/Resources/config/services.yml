@@ -26,6 +26,14 @@ services:
             - "@app.behat.cookie_setter"
             - "admin"
 
+    app.behat.app_security:
+        class: App\Behat\Service\SecurityService
+        public: false
+        arguments:
+            - "@__symfony__.session"
+            - "@app.behat.cookie_setter"
+            - "app"
+
     app.behat.cookie_setter:
         class: App\Behat\Service\Setter\CookieSetter
         public: false
