@@ -32,12 +32,12 @@ default:
                                 - "no-sandbox"
 
         FriendsOfBehat\SymfonyExtension:
-            env_file: .env
             kernel:
-                bootstrap: ~
+                bootstrap: config/bootstrap.php
                 path: src/Kernel.php
                 class: 'App\Kernel'
                 debug: true
+                env: test
 
         FriendsOfBehat\ContextServiceExtension:
             imports:
