@@ -20,7 +20,9 @@
 !/etc/build/.gitkeep
 
 ###> symfony/framework-bundle ###
-/.env
+/.env.*.local
+/.env.local
+/.env.local.php
 /public/bundles/
 /public/uploads/img/*
 /public/uploads/avatar/*
