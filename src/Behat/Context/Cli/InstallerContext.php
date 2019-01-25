@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Behat\Command;
+namespace App\Behat\Context\Cli;
 
 use App\Command\Installer\InstallDatabaseCommand;
 use App\Command\Installer\SetupCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-class InstallerContext extends DefaultContext
+class InstallerContext extends CommandContext
 {
     /**
      * @var array
@@ -59,8 +59,7 @@ class InstallerContext extends DefaultContext
     private function iExecuteCommandWithInputChoices($name)
     {
         $this->questionHelper = $this->command->getHelper('question');
-        $inputString = implode(PHP_EOL, $this->inputChoices);
-        $this->questionHelper->setInputStream($this->getInputStream($inputString.PHP_EOL));
+        $this->getTester()->setInputs($this->inputChoices);
 
         try {
             $this->getTester()->execute(['command' => $name]);
@@ -94,5 +93,20 @@ class InstallerContext extends DefaultContext
         $this->setTester(new CommandTester($this->command));
 
         $this->iExecuteCommandAndConfirm('app:install:database');
+    }
+
+    /**
+     * @param string $name
+     */
+    protected function iExecuteCommandAndConfirm($name)
+    {
+        $this->questionHelper = $this->command->getHelper('question');
+
+        $this->getTester()->setInputs(['y', 'y']);
+
+        try {
+            $this->getTester()->execute(['command' => $name]);
+        } catch (\Exception $e) {
+        }
     }
 }

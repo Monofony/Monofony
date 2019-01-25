@@ -32,14 +32,14 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
 
     /**
      * @param Session                $session
-     * @param array                  $parameters
+     * @param \ArrayAccess           $parameters
      * @param RouterInterface        $router
      * @param TableAccessorInterface $tableAccessor
      * @param string                 $routeName
      */
     public function __construct(
         Session $session,
-        array $parameters,
+        \ArrayAccess $parameters,
         RouterInterface $router,
         TableAccessorInterface $tableAccessor,
         $routeName

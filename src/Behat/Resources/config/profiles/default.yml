@@ -31,19 +31,7 @@ default:
                                 - "start-maximized"
                                 - "no-sandbox"
 
-        FriendsOfBehat\SymfonyExtension:
-            kernel:
-                bootstrap: config/bootstrap.php
-                path: src/Kernel.php
-                class: 'App\Kernel'
-                debug: true
-                env: test
-
-        FriendsOfBehat\ContextServiceExtension:
-            imports:
-            - "src/Behat/Resources/config/services.yml"
-
-        FriendsOfBehat\CrossContainerExtension: ~
+        FriendsOfBehat\SymfonyExtension: ~
 
         FriendsOfBehat\VariadicExtension: ~
 
