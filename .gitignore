@@ -19,6 +19,8 @@
 /etc/build/*
 !/etc/build/.gitkeep
 
+/behat.yml
+
 ###> symfony/framework-bundle ###
 /.env.*.local
 /.env.local
@@ -32,11 +34,6 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-
-###> behat/symfony2-extension ###
-behat.yml
-###< behat/symfony2-extension ###
-
 ###> phpunit/phpunit ###
 /phpunit.xml
 ###< phpunit/phpunit ###
