@@ -26,11 +26,11 @@ class UpdatePage extends SymfonyPage implements UpdatePageInterface
 
     /**
      * @param Session         $session
-     * @param array           $parameters
+     * @param \ArrayAccess    $parameters
      * @param RouterInterface $router
      * @param string          $routeName
      */
-    public function __construct(Session $session, array $parameters, RouterInterface $router, $routeName)
+    public function __construct(Session $session, \ArrayAccess $parameters, RouterInterface $router, $routeName)
     {
         parent::__construct($session, $parameters, $router);
 

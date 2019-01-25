@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Behat\Command;
+namespace App\Behat\Context\Cli;
 
 use Webmozart\Assert\Assert;
 

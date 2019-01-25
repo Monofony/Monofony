@@ -17,15 +17,6 @@
     "behat/mink-selenium2-driver": {
         "version": "v1.3.1"
     },
-    "behat/symfony2-extension": {
-        "version": "2.1",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "2.1",
-            "ref": "6b63fb76d3bb2dd16098f12adf6d6ca844e21862"
-        }
-    },
     "behat/transliterator": {
         "version": "v1.2.0"
     },
@@ -134,17 +125,8 @@
             "ref": "8be83603226d268ee8a93721b5bb77ec71d8d334"
         }
     },
-    "friends-of-behat/context-service-extension": {
-        "version": "v1.2.0"
-    },
-    "friends-of-behat/cross-container-extension": {
-        "version": "v1.1.0"
-    },
     "friends-of-behat/page-object-extension": {
         "version": "v0.2.1"
-    },
-    "friends-of-behat/service-container-extension": {
-        "version": "v1.0.1"
     },
     "friends-of-behat/symfony-extension": {
         "version": "v1.2.1"
