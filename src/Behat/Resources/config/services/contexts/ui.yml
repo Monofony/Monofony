@@ -8,6 +8,9 @@ services:
 #        class: App\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
+    _defaults:
+        public: true
+
     app.behat.context.ui.backend.managing_administrators:
         class: App\Behat\Context\Ui\Backend\ManagingAdministratorsContext
         arguments:
@@ -58,3 +61,5 @@ services:
         arguments:
             - "@app.behat.shared_storage"
             - "@app.behat.email_checker"
+        tags:
+            - { name: fob.context_service }
