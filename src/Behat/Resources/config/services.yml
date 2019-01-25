@@ -12,17 +12,11 @@ services:
 #        class: App\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-    mink.default_session:
-        class: Behat\Mink\Session
-        lazy: true
-        public: false
-        factory: __behat__.mink:getSession
-
     app.behat.admin_security:
         class: App\Behat\Service\SecurityService
         public: false
         arguments:
-            - "@__symfony__.session"
+            - "@session"
             - "@app.behat.cookie_setter"
             - "admin"
 
@@ -30,7 +24,7 @@ services:
         class: App\Behat\Service\SecurityService
         public: false
         arguments:
-            - "@__symfony__.session"
+            - "@session"
             - "@app.behat.cookie_setter"
             - "app"
 
@@ -38,26 +32,26 @@ services:
         class: App\Behat\Service\Setter\CookieSetter
         public: false
         arguments:
-            - "@mink.default_session"
-            - "%__behat__.mink.parameters%"
+            - "@behat.mink.default_session"
+            - "@behat.mink.parameters"
 
     app.behat.current_page_resolver:
         class: App\Behat\Service\Resolver\CurrentPageResolver
         public: false
         arguments:
-            - "@mink.default_session"
-            - "@__symfony__.router"
+            - "@behat.mink.default_session"
+            - "@router"
 
     app.behat.email_checker:
         class: App\Behat\Service\EmailChecker
         arguments:
-            - "%__symfony__.kernel.cache_dir%/spool"
+            - "%kernel.cache_dir%/spool"
 
     app.behat.notification_accessor:
         class: App\Behat\Service\Accessor\NotificationAccessor
         public: false
         arguments:
-            - "@mink.default_session"
+            - "@behat.mink.default_session"
 
     app.behat.notification_checker:
         class: App\Behat\Service\NotificationChecker

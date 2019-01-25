@@ -11,22 +11,16 @@ services:
         app.behat.context.transform.customer:
             class: App\Behat\Context\Transform\CustomerContext
             arguments:
-                - "@__symfony__.sylius.repository.customer"
-                - "@__symfony__.sylius.factory.customer"
+                - "@sylius.repository.customer"
+                - "@sylius.factory.customer"
                 - "@app.behat.shared_storage"
-            tags:
-                - { name: fob.context_service }
 
         app.behat.context.transform.shared_storage:
             class: App\Behat\Context\Transform\SharedStorageContext
             arguments:
                 - "@app.behat.shared_storage"
-            tags:
-                - { name: fob.context_service }
 
         app.behat.context.transform.user:
             class: App\Behat\Context\Transform\UserContext
             arguments:
                 - "@app.behat.shared_storage"
-            tags:
-                - { name: fob.context_service }
