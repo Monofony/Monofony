@@ -11,6 +11,4 @@ services:
         app.behat.context.hook.doctrine_orm:
             class: App\Behat\Context\Hook\DoctrineORMContext
             arguments:
-                - "@__symfony_shared__.doctrine.orm.entity_manager"
-            tags:
-                - { name: fob.context_service }
+                - "@doctrine.orm.entity_manager"

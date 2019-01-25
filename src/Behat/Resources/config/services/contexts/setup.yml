@@ -13,56 +13,37 @@ services:
             arguments:
                 - "@app.behat.shared_storage"
                 - "@app.behat.admin_security"
-                - "@__symfony__.app.fixture.example_factory.admin_user"
-                - "@__symfony__.sylius.repository.admin_user"
-            tags:
-                - { name: fob.context_service }
+                - "@app.fixture.example_factory.admin_user"
+                - "@sylius.repository.admin_user"
 
         app.behat.context.setup.admin_user:
             class: App\Behat\Context\Setup\AdminUserContext
             arguments:
                 - "@app.behat.shared_storage"
-                - "@__symfony__.app.fixture.example_factory.admin_user"
-                - "@__symfony__.sylius.repository.admin_user"
-            tags:
-                - { name: fob.context_service }
+                - "@app.fixture.example_factory.admin_user"
+                - "@sylius.repository.admin_user"
 
         app.behat.context.setup.app_security:
             class: App\Behat\Context\Setup\AppSecurityContext
             arguments:
                 - "@app.behat.shared_storage"
                 - "@app.behat.app_security"
-                - "@__symfony__.app.fixture.example_factory.app_user"
-                - "@__symfony__.sylius.repository.app_user"
-            tags:
-                - { name: fob.context_service }
-
-        app.behat.context.setup.article:
-            class: App\Behat\Context\Setup\ArticleContext
-            arguments:
-                - "@app.behat.shared_storage"
-                - "@__symfony__.app.fixture.example_factory.article"
-                - "@__symfony__.app.repository.article"
-            tags:
-                - { name: fob.context_service }
+                - "@app.fixture.example_factory.app_user"
+                - "@sylius.repository.app_user"
 
         app.behat.context.setup.customer:
             class: App\Behat\Context\Setup\CustomerContext
             arguments:
                 - "@app.behat.shared_storage"
-                - "@__symfony__.sylius.repository.customer"
-                - "@__symfony__.sylius.manager.customer"
-                - "@__symfony__.sylius.factory.customer"
-                - "@__symfony__.sylius.factory.app_user"
-            tags:
-                - { name: fob.context_service }
+                - "@sylius.repository.customer"
+                - "@sylius.manager.customer"
+                - "@sylius.factory.customer"
+                - "@sylius.factory.app_user"
 
         app.behat.context.setup.user:
             class: App\Behat\Context\Setup\UserContext
             arguments:
                 - "@app.behat.shared_storage"
-                - "@__symfony__.sylius.repository.app_user"
-                - "@__symfony__.app.fixture.example_factory.app_user"
-                - "@__symfony__.sylius.manager.app_user"
-            tags:
-                - { name: fob.context_service }
+                - "@sylius.repository.app_user"
+                - "@app.fixture.example_factory.app_user"
+                - "@sylius.manager.app_user"
