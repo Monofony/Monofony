@@ -8,7 +8,7 @@ default:
 
                 - app.behat.context.setup.user
 
-                - app.behat.context.ui.email
-                - app.behat.context.ui.frontend.login
+                - App\Behat\Context\Ui\EmailContext
+                - App\Behat\Context\Ui\Frontend\LoginContext
             filters:
                 tags: "@customer_login && @ui"
