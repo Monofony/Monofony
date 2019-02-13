@@ -2,7 +2,7 @@ default:
     suites:
         ui_customer_login:
             contexts:
-                - app.behat.context.hook.doctrine_orm
+                - App\Behat\Context\Hook\DoctrineORMContext
 
                 - App\Behat\Context\Transform\UserContext
 

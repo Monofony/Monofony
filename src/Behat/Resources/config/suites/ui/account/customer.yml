@@ -5,7 +5,7 @@ default:
     suites:
         ui_customer_account:
             contexts:
-                - app.behat.context.hook.doctrine_orm
+                - App\Behat\Context\Hook\DoctrineORMContext
 
                 - App\Behat\Context\Transform\CustomerContext
                 - App\Behat\Context\Transform\SharedStorageContext

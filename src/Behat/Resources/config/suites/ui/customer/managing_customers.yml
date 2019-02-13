@@ -2,7 +2,7 @@ default:
     suites:
         ui_managing_customers:
             contexts:
-                - app.behat.context.hook.doctrine_orm
+                - App\Behat\Context\Hook\DoctrineORMContext
 
                 - app.behat.context.setup.customer
                 - app.behat.context.setup.admin_security
