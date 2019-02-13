@@ -1,6 +1,5 @@
 services:
-    app.fixture.example_factory.admin_user:
-        class: App\Fixture\Factory\AdminUserExampleFactory
+    App\Fixture\Factory\AdminUserExampleFactory:
         arguments:
             - "@sylius.factory.admin_user"
         public: true

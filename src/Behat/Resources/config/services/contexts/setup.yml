@@ -16,20 +16,17 @@ services:
         class: App\Behat\Context\Setup\AdminSecurityContext
         arguments:
             $securityService: "@app.behat.admin_security"
-            $userFactory: "@app.fixture.example_factory.admin_user"
             $userRepository: "@sylius.repository.admin_user"
 
     app.behat.context.setup.admin_user:
         class: App\Behat\Context\Setup\AdminUserContext
         arguments:
-            $userFactory: "@app.fixture.example_factory.admin_user"
             $userRepository: "@sylius.repository.admin_user"
 
     app.behat.context.setup.app_security:
         class: App\Behat\Context\Setup\AppSecurityContext
         arguments:
             $securityService: "@app.behat.app_security"
-            $userFactory: "@app.fixture.example_factory.app_user"
             $userRepository: "@sylius.repository.app_user"
 
     app.behat.context.setup.customer:

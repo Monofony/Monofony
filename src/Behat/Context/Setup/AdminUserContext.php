@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace App\Behat\Context\Setup;
 
+use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;
 use App\Behat\Service\SharedStorageInterface;
 use App\Fixture\Factory\ExampleFactoryInterface;
@@ -26,7 +27,7 @@ final class AdminUserContext implements Context
     private $sharedStorage;
 
     /**
-     * @var ExampleFactoryInterface
+     * @var AdminUserExampleFactory
      */
     private $userFactory;
 
@@ -37,12 +38,12 @@ final class AdminUserContext implements Context
 
     /**
      * @param SharedStorageInterface  $sharedStorage
-     * @param ExampleFactoryInterface $userFactory
+     * @param AdminUserExampleFactory $userFactory
      * @param UserRepositoryInterface $userRepository
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
-        ExampleFactoryInterface $userFactory,
+        AdminUserExampleFactory $userFactory,
         UserRepositoryInterface $userRepository
     ) {
         $this->sharedStorage = $sharedStorage;
