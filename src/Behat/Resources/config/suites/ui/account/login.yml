@@ -6,7 +6,7 @@ default:
 
                 - App\Behat\Context\Transform\UserContext
 
-                - app.behat.context.setup.user
+                - App\Behat\Context\Setup\UserContext
 
                 - App\Behat\Context\Ui\EmailContext
                 - App\Behat\Context\Ui\Frontend\LoginContext
