@@ -3,7 +3,7 @@ services:
         class: App\Fixture\AdminUserFixture
         arguments:
             - "@sylius.manager.admin_user"
-            - "@app.fixture.example_factory.admin_user"
+            - '@App\Fixture\Factory\AdminUserExampleFactory'
         tags:
             - { name: sylius_fixtures.fixture }
 

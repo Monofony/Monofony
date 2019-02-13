@@ -14,6 +14,7 @@ namespace App\Behat\Context\Setup;
 use App\Behat\Service\SecurityServiceInterface;
 use App\Behat\Service\SharedStorageInterface;
 use App\Entity\AppUser;
+use App\Fixture\Factory\AdminUserExampleFactory;
 use App\Fixture\Factory\ExampleFactoryInterface;
 use Behat\Behat\Context\Context;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
@@ -32,7 +33,7 @@ final class AppSecurityContext implements Context
     private $securityService;
 
     /**
-     * @var ExampleFactoryInterface
+     * @var AdminUserExampleFactory
      */
     private $userFactory;
 
@@ -44,13 +45,13 @@ final class AppSecurityContext implements Context
     /**
      * @param SharedStorageInterface   $sharedStorage
      * @param SecurityServiceInterface $securityService
-     * @param ExampleFactoryInterface  $userFactory
+     * @param AdminUserExampleFactory  $userFactory
      * @param UserRepositoryInterface  $userRepository
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         SecurityServiceInterface $securityService,
-        ExampleFactoryInterface $userFactory,
+        AdminUserExampleFactory $userFactory,
         UserRepositoryInterface $userRepository
     ) {
         $this->sharedStorage = $sharedStorage;
