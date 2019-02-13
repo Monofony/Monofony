@@ -16,14 +16,14 @@ services:
         arguments:
             - "@sylius.repository.customer"
             - "@sylius.factory.customer"
-            - "@app.behat.shared_storage"
+            - '@App\Behat\Service\SharedStorage'
 
     app.behat.context.transform.shared_storage:
         class: App\Behat\Context\Transform\SharedStorageContext
         arguments:
-            - "@app.behat.shared_storage"
+            - '@App\Behat\Service\SharedStorage'
 
     app.behat.context.transform.user:
         class: App\Behat\Context\Transform\UserContext
         arguments:
-            - "@app.behat.shared_storage"
+            - '@App\Behat\Service\SharedStorage'
