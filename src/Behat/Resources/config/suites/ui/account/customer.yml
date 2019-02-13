@@ -14,6 +14,6 @@ default:
                 - app.behat.context.setup.app_security
                 - app.behat.context.setup.user
 
-                - app.behat.context.ui.frontend.account
+                - App\Behat\Context\Ui\Frontend\AccountContext
             filters:
                 tags: "@customer_account && @ui"
