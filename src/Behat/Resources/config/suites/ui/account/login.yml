@@ -4,7 +4,7 @@ default:
             contexts:
                 - app.behat.context.hook.doctrine_orm
 
-                - app.behat.context.transform.user
+                - App\Behat\Context\Transform\UserContext
 
                 - app.behat.context.setup.user
 
