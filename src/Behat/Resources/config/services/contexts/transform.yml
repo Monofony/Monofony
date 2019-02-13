@@ -10,20 +10,14 @@ services:
 
     _defaults:
         public: true
+        autowire: true
 
-    app.behat.context.transform.customer:
-        class: App\Behat\Context\Transform\CustomerContext
-        arguments:
-            - "@sylius.repository.customer"
-            - "@sylius.factory.customer"
-            - "@app.behat.shared_storage"
+    App\Behat\Context\Transform\:
+        resource: '../../../../Context/Transform/*'
+        autowire: true
+        public: true
 
-    app.behat.context.transform.shared_storage:
-        class: App\Behat\Context\Transform\SharedStorageContext
+    App\Behat\Context\Transform\CustomerContext:
         arguments:
-            - "@app.behat.shared_storage"
-
-    app.behat.context.transform.user:
-        class: App\Behat\Context\Transform\UserContext
-        arguments:
-            - "@app.behat.shared_storage"
+            $customerRepository: "@sylius.repository.customer"
+            $customerFactory: "@sylius.factory.customer"
