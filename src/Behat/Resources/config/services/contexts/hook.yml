@@ -10,8 +10,7 @@ services:
 
     _defaults:
         public: true
+        autowire: true
 
     app.behat.context.hook.doctrine_orm:
         class: App\Behat\Context\Hook\DoctrineORMContext
-        arguments:
-            - "@doctrine.orm.entity_manager"

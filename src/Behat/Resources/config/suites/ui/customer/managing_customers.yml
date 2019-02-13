@@ -7,8 +7,8 @@ default:
                 - app.behat.context.setup.customer
                 - app.behat.context.setup.admin_security
 
-                - app.behat.context.transform.customer
-                - app.behat.context.transform.shared_storage
+                - App\Behat\Context\Transform\CustomerContext
+                - App\Behat\Context\Transform\SharedStorageContext
 
                 - app.behat.context.ui.backend.managing_customers
                 - app.behat.context.ui.backend.notification

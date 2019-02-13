@@ -7,7 +7,7 @@ default:
                 - app.behat.context.setup.admin_security
                 - app.behat.context.setup.admin_user
 
-                - app.behat.context.transform.shared_storage
+                - App\Behat\Context\Transform\SharedStorageContext
 
                 - app.behat.context.ui.backend.managing_administrators
                 - app.behat.context.ui.backend.notification
