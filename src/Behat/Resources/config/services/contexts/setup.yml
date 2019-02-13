@@ -10,43 +10,39 @@ services:
 
     _defaults:
         public: true
+        autowire: true
 
     app.behat.context.setup.admin_security:
         class: App\Behat\Context\Setup\AdminSecurityContext
         arguments:
-            - "@app.behat.shared_storage"
-            - "@app.behat.admin_security"
-            - "@app.fixture.example_factory.admin_user"
-            - "@sylius.repository.admin_user"
+            $securityService: "@app.behat.admin_security"
+            $userFactory: "@app.fixture.example_factory.admin_user"
+            $userRepository: "@sylius.repository.admin_user"
 
     app.behat.context.setup.admin_user:
         class: App\Behat\Context\Setup\AdminUserContext
         arguments:
-            - "@app.behat.shared_storage"
-            - "@app.fixture.example_factory.admin_user"
-            - "@sylius.repository.admin_user"
+            $userFactory: "@app.fixture.example_factory.admin_user"
+            $userRepository: "@sylius.repository.admin_user"
 
     app.behat.context.setup.app_security:
         class: App\Behat\Context\Setup\AppSecurityContext
         arguments:
-            - "@app.behat.shared_storage"
-            - "@app.behat.app_security"
-            - "@app.fixture.example_factory.app_user"
-            - "@sylius.repository.app_user"
+            $securityService: "@app.behat.app_security"
+            $userFactory: "@app.fixture.example_factory.app_user"
+            $userRepository: "@sylius.repository.app_user"
 
     app.behat.context.setup.customer:
         class: App\Behat\Context\Setup\CustomerContext
         arguments:
-            - "@app.behat.shared_storage"
-            - "@sylius.repository.customer"
-            - "@sylius.manager.customer"
-            - "@sylius.factory.customer"
-            - "@sylius.factory.app_user"
+            $customerRepository: "@sylius.repository.customer"
+            $customerManager: "@sylius.manager.customer"
+            $customerFactory: "@sylius.factory.customer"
+            $userFactory: "@sylius.factory.app_user"
 
     app.behat.context.setup.user:
         class: App\Behat\Context\Setup\UserContext
         arguments:
-            - "@app.behat.shared_storage"
-            - "@sylius.repository.app_user"
-            - "@app.fixture.example_factory.app_user"
-            - "@sylius.manager.app_user"
+            $userRepository: "@sylius.repository.app_user"
+            $userFactory: "@app.fixture.example_factory.app_user"
+            $userManager: "@sylius.manager.app_user"

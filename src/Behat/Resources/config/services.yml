@@ -59,9 +59,11 @@ services:
         arguments:
             - "@app.behat.notification_accessor"
 
-    app.behat.shared_storage:
-        class: App\Behat\Service\SharedStorage
+    App\Behat\Service\SharedStorage:
         public: false
+
+    App\Behat\Service\SharedStorageInterface:
+        alias: App\Behat\Service\SharedStorage
 
     app.behat.table_accessor:
         class: App\Behat\Service\Accessor\TableAccessor

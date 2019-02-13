@@ -59,7 +59,7 @@ services:
     app.behat.context.ui.email:
         class: App\Behat\Context\Ui\EmailContext
         arguments:
-            - "@app.behat.shared_storage"
+            - '@App\Behat\Service\SharedStorage'
             - "@app.behat.email_checker"
         tags:
             - { name: fob.context_service }
