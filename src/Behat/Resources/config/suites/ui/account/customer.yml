@@ -5,15 +5,15 @@ default:
     suites:
         ui_customer_account:
             contexts:
-                - app.behat.context.hook.doctrine_orm
+                - App\Behat\Context\Hook\DoctrineORMContext
 
-                - app.behat.context.transform.customer
-                - app.behat.context.transform.shared_storage
+                - App\Behat\Context\Transform\CustomerContext
+                - App\Behat\Context\Transform\SharedStorageContext
 
-                - app.behat.context.setup.customer
-                - app.behat.context.setup.app_security
-                - app.behat.context.setup.user
+                - App\Behat\Context\Setup\CustomerContext
+                - App\Behat\Context\Setup\AppSecurityContext
+                - App\Behat\Context\Setup\UserContext
 
-                - app.behat.context.ui.frontend.account
+                - App\Behat\Context\Ui\Frontend\AccountContext
             filters:
                 tags: "@customer_account && @ui"

@@ -2,7 +2,6 @@ imports:
     - { resource: frontend/account.yml }
 
 services:
-    app.behat.page.frontend.home:
-        class: App\Behat\Page\Frontend\HomePage
+    App\Behat\Page\Frontend\HomePage:
         parent: app.behat.symfony_page
         public: false

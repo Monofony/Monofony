@@ -10,56 +10,9 @@ services:
 
     _defaults:
         public: true
+        autowire: true
 
-    app.behat.context.ui.backend.managing_administrators:
-        class: App\Behat\Context\Ui\Backend\ManagingAdministratorsContext
-        arguments:
-            - "@app.behat.page.backend.administrator.create"
-            - "@app.behat.page.backend.administrator.index"
-            - "@app.behat.page.backend.administrator.update"
-            - "@app.behat.notification_checker"
-
-    app.behat.context.ui.backend.managing_customers:
-        class: App\Behat\Context\Ui\Backend\ManagingCustomersContext
-        arguments:
-            - "@app.behat.page.backend.customer.index"
-            - "@app.behat.page.backend.customer.update"
-            - "@app.behat.current_page_resolver"
-
-    app.behat.context.ui.backend.notification:
-        class: App\Behat\Context\Ui\Backend\NotificationContext
-        arguments:
-            - "@app.behat.notification_checker"
-
-    app.behat.context.ui.frontend.account:
-        class: App\Behat\Context\Ui\Frontend\AccountContext
-        arguments:
-            - "@app.behat.page.frontend.account.dashboard"
-            - "@app.behat.page.frontend.account.profile_update"
-            - "@app.behat.page.frontend.account.change_password"
-            - "@app.behat.page.frontend.account.login"
-            - "@app.behat.notification_checker"
-
-    app.behat.context.ui.frontend.homepage:
-        class: App\Behat\Context\Ui\Frontend\HomepageContext
-        arguments:
-            - "@app.behat.page.frontend.home"
-
-    app.behat.context.ui.frontend.login:
-        class: App\Behat\Context\Ui\Frontend\LoginContext
-        arguments:
-            - "@app.behat.page.frontend.home"
-            - "@app.behat.page.frontend.account.login"
-            - "@app.behat.page.frontend.account.register"
-            - "@app.behat.page.frontend.account.request_password_reset"
-            - "@app.behat.page.frontend.account.reset_password"
-            - "@app.behat.notification_checker"
-            - "@app.behat.current_page_resolver"
-
-    app.behat.context.ui.email:
-        class: App\Behat\Context\Ui\EmailContext
-        arguments:
-            - "@app.behat.shared_storage"
-            - "@app.behat.email_checker"
-        tags:
-            - { name: fob.context_service }
+    App\Behat\Context\Ui\:
+        resource: '../../../../Context/Ui/*'
+        autowire: true
+        public: true

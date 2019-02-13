@@ -16,7 +16,7 @@ namespace App\Behat\Context\Ui\Backend;
 use App\Behat\NotificationType;
 use App\Behat\Page\Backend\Administrator\CreatePage;
 use App\Behat\Page\Backend\Administrator\UpdatePage;
-use App\Behat\Page\Backend\Crud\IndexPageInterface;
+use App\Behat\Page\Backend\Administrator\IndexPage;
 use App\Behat\Service\NotificationCheckerInterface;
 use App\Entity\AdminUser;
 use Behat\Behat\Context\Context;
@@ -30,7 +30,7 @@ final class ManagingAdministratorsContext implements Context
     private $createPage;
 
     /**
-     * @var IndexPageInterface
+     * @var IndexPage
      */
     private $indexPage;
 
@@ -46,13 +46,13 @@ final class ManagingAdministratorsContext implements Context
 
     /**
      * @param CreatePage                   $createPage
-     * @param IndexPageInterface           $indexPage
+     * @param IndexPage                    $indexPage
      * @param UpdatePage                   $updatePage
      * @param NotificationCheckerInterface $notificationChecker
      */
     public function __construct(
         CreatePage $createPage,
-        IndexPageInterface $indexPage,
+        IndexPage $indexPage,
         UpdatePage $updatePage,
         NotificationCheckerInterface $notificationChecker
     ) {
