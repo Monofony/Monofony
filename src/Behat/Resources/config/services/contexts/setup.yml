@@ -12,33 +12,33 @@ services:
         public: true
         autowire: true
 
-    app.behat.context.setup.admin_security:
-        class: App\Behat\Context\Setup\AdminSecurityContext
+    App\Behat\Context\Setup\:
+        resource: '../../../../Context/Setup/*'
+        autowire: true
+        public: true
+
+    App\Behat\Context\Setup\AdminSecurityContext:
         arguments:
             $securityService: "@app.behat.admin_security"
             $userRepository: "@sylius.repository.admin_user"
 
-    app.behat.context.setup.admin_user:
-        class: App\Behat\Context\Setup\AdminUserContext
+    App\Behat\Context\Setup\AdminUserContext:
         arguments:
             $userRepository: "@sylius.repository.admin_user"
 
-    app.behat.context.setup.app_security:
-        class: App\Behat\Context\Setup\AppSecurityContext
+    App\Behat\Context\Setup\AppSecurityContext:
         arguments:
             $securityService: "@app.behat.app_security"
             $userRepository: "@sylius.repository.app_user"
 
-    app.behat.context.setup.customer:
-        class: App\Behat\Context\Setup\CustomerContext
+    App\Behat\Context\Setup\CustomerContext:
         arguments:
             $customerRepository: "@sylius.repository.customer"
             $customerManager: "@sylius.manager.customer"
             $customerFactory: "@sylius.factory.customer"
             $userFactory: "@sylius.factory.app_user"
 
-    app.behat.context.setup.user:
-        class: App\Behat\Context\Setup\UserContext
+    App\Behat\Context\Setup\UserContext:
         arguments:
             $userRepository: "@sylius.repository.app_user"
             $userFactory: "@app.fixture.example_factory.app_user"

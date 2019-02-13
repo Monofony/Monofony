@@ -4,8 +4,8 @@ default:
             contexts:
                 - App\Behat\Context\Hook\DoctrineORMContext
 
-                - app.behat.context.setup.customer
-                - app.behat.context.setup.admin_security
+                - App\Behat\Context\Setup\CustomerContext
+                - App\Behat\Context\Setup\AdminSecurityContext
 
                 - App\Behat\Context\Transform\CustomerContext
                 - App\Behat\Context\Transform\SharedStorageContext

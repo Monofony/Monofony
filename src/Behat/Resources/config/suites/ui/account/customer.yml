@@ -10,9 +10,9 @@ default:
                 - App\Behat\Context\Transform\CustomerContext
                 - App\Behat\Context\Transform\SharedStorageContext
 
-                - app.behat.context.setup.customer
-                - app.behat.context.setup.app_security
-                - app.behat.context.setup.user
+                - App\Behat\Context\Setup\CustomerContext
+                - App\Behat\Context\Setup\AppSecurityContext
+                - App\Behat\Context\Setup\UserContext
 
                 - App\Behat\Context\Ui\Frontend\AccountContext
             filters:

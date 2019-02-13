@@ -4,8 +4,8 @@ default:
             contexts:
                 - App\Behat\Context\Hook\DoctrineORMContext
 
-                - app.behat.context.setup.admin_security
-                - app.behat.context.setup.admin_user
+                - App\Behat\Context\Setup\AdminSecurityContext
+                - App\Behat\Context\Setup\AdminUserContext
 
                 - App\Behat\Context\Transform\SharedStorageContext
 
