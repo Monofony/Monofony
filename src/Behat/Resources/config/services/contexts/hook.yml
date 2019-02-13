@@ -8,9 +8,7 @@ services:
 #        class: App\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-    _defaults:
-        public: true
+    App\Behat\Context\Hook\:
+        resource: '../../../../Context/Hook/*'
         autowire: true
-
-    app.behat.context.hook.doctrine_orm:
-        class: App\Behat\Context\Hook\DoctrineORMContext
+        public: true

@@ -2,7 +2,7 @@ default:
     suites:
         ui_managing_administrators:
             contexts:
-                - app.behat.context.hook.doctrine_orm
+                - App\Behat\Context\Hook\DoctrineORMContext
 
                 - app.behat.context.setup.admin_security
                 - app.behat.context.setup.admin_user
