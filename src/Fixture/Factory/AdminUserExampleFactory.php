@@ -21,7 +21,7 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
     /**
      * @var FactoryInterface
      */
-    private $userFactory;
+    private $adminUserFactory;
 
     /**
      * @var \Faker\Generator
@@ -36,11 +36,11 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
     /**
      * AdminUserExampleFactory constructor.
      *
-     * @param FactoryInterface $userFactory
+     * @param FactoryInterface $adminUserFactory
      */
-    public function __construct(FactoryInterface $userFactory)
+    public function __construct(FactoryInterface $adminUserFactory)
     {
-        $this->userFactory = $userFactory;
+        $this->adminUserFactory = $adminUserFactory;
 
         $this->faker = \Faker\Factory::create();
         $this->optionsResolver = new OptionsResolver();
@@ -56,7 +56,7 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
         $options = $this->optionsResolver->resolve($options);
 
         /** @var AdminUser $user */
-        $user = $this->userFactory->createNew();
+        $user = $this->adminUserFactory->createNew();
         $user->setEmail($options['email']);
         $user->setPlainPassword($options['password']);
         $user->setEnabled($options['enabled']);

@@ -1,17 +1,5 @@
 services:
-    App\Fixture\Factory\AdminUserExampleFactory:
-        arguments:
-            - "@sylius.factory.admin_user"
+    App\Fixture\Factory\:
+        resource: '../../src/Fixture/Factory/*'
+        autowire: true
         public: true
-
-    App\Fixture\Factory\AppUserExampleFactory:
-        arguments:
-            - "@sylius.factory.app_user"
-            - "@sylius.factory.customer"
-        public: true
-
-    app.fixture.example_factory.oauth_client:
-        class: App\Fixture\Factory\OAuthClientExampleFactory
-        arguments:
-            - "@app.factory.oauth_client"
-        public: true    
