@@ -19,6 +19,6 @@ services:
         class: App\Fixture\OAuthClientFixture
         arguments:
             - '@app.manager.oauth_client'
-            - '@app.fixture.example_factory.oauth_client'
+            - '@App\Fixture\Factory\OAuthClientExampleFactory'
         tags:
             - { name: sylius_fixtures.fixture }
