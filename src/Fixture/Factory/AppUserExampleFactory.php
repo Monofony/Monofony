@@ -20,7 +20,7 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
     /**
      * @var FactoryInterface
      */
-    private $userFactory;
+    private $appUserFactory;
 
     /**
      * @var FactoryInterface
@@ -40,12 +40,12 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
     /**
      * AppUserExampleFactory constructor.
      *
-     * @param FactoryInterface $userFactory
+     * @param FactoryInterface $appUserFactory
      * @param FactoryInterface $customerFactory
      */
-    public function __construct(FactoryInterface $userFactory, FactoryInterface $customerFactory)
+    public function __construct(FactoryInterface $appUserFactory, FactoryInterface $customerFactory)
     {
-        $this->userFactory = $userFactory;
+        $this->appUserFactory = $appUserFactory;
         $this->customerFactory = $customerFactory;
 
         $this->faker = \Faker\Factory::create();
@@ -68,7 +68,7 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
         $customer->setLastName($options['last_name']);
 
         /** @var User $user */
-        $user = $this->userFactory->createNew();
+        $user = $this->appUserFactory->createNew();
         $user->setUsername($options['username']);
         $user->setPlainPassword($options['password']);
         $user->setEnabled($options['enabled']);
