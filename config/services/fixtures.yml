@@ -1,24 +1,16 @@
 services:
-    app.fixture.admin_user:
-        class: App\Fixture\AdminUserFixture
-        arguments:
-            - '@sylius.manager.admin_user'
-            - '@App\Fixture\Factory\AdminUserExampleFactory'
-        tags:
-            - { name: sylius_fixtures.fixture }
+    _defaults:
+        autowire: true
+        tags: [sylius_fixtures.fixture]
 
-    app.fixture.app_user:
-        class: App\Fixture\AppUserFixture
+    App\Fixture\AdminUserFixture:
         arguments:
-            - '@sylius.manager.app_user'
-            - '@App\Fixture\Factory\AppUserExampleFactory'
-        tags:
-            - { name: sylius_fixtures.fixture }
+            $exampleFactory: '@App\Fixture\Factory\AdminUserExampleFactory'
 
-    app.fixture.oauth_client:
-        class: App\Fixture\OAuthClientFixture
+    App\Fixture\AppUserFixture:
         arguments:
-            - '@app.manager.oauth_client'
-            - '@App\Fixture\Factory\OAuthClientExampleFactory'
-        tags:
-            - { name: sylius_fixtures.fixture }
+            $exampleFactory: '@App\Fixture\Factory\AppUserExampleFactory'
+
+    App\Fixture\OAuthClientFixture:
+        arguments:
+            $exampleFactory: '@App\Fixture\Factory\OAuthClientExampleFactory'
