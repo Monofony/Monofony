@@ -34,21 +34,21 @@ final class AdminUserContext implements Context
     /**
      * @var UserRepositoryInterface
      */
-    private $userRepository;
+    private $adminUserRepository;
 
     /**
      * @param SharedStorageInterface  $sharedStorage
      * @param AdminUserExampleFactory $userFactory
-     * @param UserRepositoryInterface $userRepository
+     * @param UserRepositoryInterface $adminUserRepository
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         AdminUserExampleFactory $userFactory,
-        UserRepositoryInterface $userRepository
+        UserRepositoryInterface $adminUserRepository
     ) {
         $this->sharedStorage = $sharedStorage;
         $this->userFactory = $userFactory;
-        $this->userRepository = $userRepository;
+        $this->adminUserRepository = $adminUserRepository;
     }
 
     /**
@@ -58,7 +58,7 @@ final class AdminUserContext implements Context
     public function thereIsAnAdministratorIdentifiedBy($email, $password = 'admin')
     {
         $adminUser = $this->userFactory->create(['email' => $email, 'password' => $password, 'enabled' => true]);
-        $this->userRepository->add($adminUser);
+        $this->adminUserRepository->add($adminUser);
         $this->sharedStorage->set('administrator', $adminUser);
     }
 
@@ -70,7 +70,7 @@ final class AdminUserContext implements Context
         $adminUser = $this->userFactory->create(['username' => $username]);
         $adminUser->setUsername($username);
 
-        $this->userRepository->add($adminUser);
+        $this->adminUserRepository->add($adminUser);
         $this->sharedStorage->set('administrator', $adminUser);
     }
 }

@@ -20,26 +20,7 @@ services:
     App\Behat\Context\Setup\AdminSecurityContext:
         arguments:
             $securityService: "@app.behat.admin_security"
-            $userRepository: "@sylius.repository.admin_user"
-
-    App\Behat\Context\Setup\AdminUserContext:
-        arguments:
-            $userRepository: "@sylius.repository.admin_user"
 
     App\Behat\Context\Setup\AppSecurityContext:
         arguments:
             $securityService: "@app.behat.app_security"
-            $userRepository: "@sylius.repository.app_user"
-
-    App\Behat\Context\Setup\CustomerContext:
-        arguments:
-            $customerRepository: "@sylius.repository.customer"
-            $customerManager: "@sylius.manager.customer"
-            $customerFactory: "@sylius.factory.customer"
-            $userFactory: "@sylius.factory.app_user"
-
-    App\Behat\Context\Setup\UserContext:
-        arguments:
-            $userRepository: "@sylius.repository.app_user"
-            $userFactory: "@app.fixture.example_factory.app_user"
-            $userManager: "@sylius.manager.app_user"

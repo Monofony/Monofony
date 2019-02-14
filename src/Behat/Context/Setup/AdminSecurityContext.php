@@ -41,24 +41,24 @@ final class AdminSecurityContext implements Context
     /**
      * @var UserRepositoryInterface
      */
-    private $userRepository;
+    private $adminUserRepository;
 
     /**
      * @param SharedStorageInterface   $sharedStorage
      * @param SecurityServiceInterface $securityService
      * @param AdminUserExampleFactory  $userFactory
-     * @param UserRepositoryInterface  $userRepository
+     * @param UserRepositoryInterface  $adminUserRepository
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         SecurityServiceInterface $securityService,
         AdminUserExampleFactory $userFactory,
-        UserRepositoryInterface $userRepository
+        UserRepositoryInterface $adminUserRepository
     ) {
         $this->sharedStorage = $sharedStorage;
         $this->securityService = $securityService;
         $this->userFactory = $userFactory;
-        $this->userRepository = $userRepository;
+        $this->adminUserRepository = $adminUserRepository;
     }
 
     /**
@@ -68,7 +68,7 @@ final class AdminSecurityContext implements Context
     {
         /** @var UserInterface $user */
         $user = $this->userFactory->create(['email' => 'admin@example.com', 'password' => 'admin']);
-        $this->userRepository->add($user);
+        $this->adminUserRepository->add($user);
 
         $this->securityService->logIn($user);
 
@@ -80,7 +80,7 @@ final class AdminSecurityContext implements Context
      */
     public function iAmLoggedInAsAdministrator($email)
     {
-        $user = $this->userRepository->findOneByEmail($email);
+        $user = $this->adminUserRepository->findOneByEmail($email);
         Assert::notNull($user);
 
         $this->securityService->logIn($user);

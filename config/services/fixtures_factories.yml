@@ -4,8 +4,7 @@ services:
             - "@sylius.factory.admin_user"
         public: true
 
-    app.fixture.example_factory.app_user:
-        class: App\Fixture\Factory\AppUserExampleFactory
+    App\Fixture\Factory\AppUserExampleFactory:
         arguments:
             - "@sylius.factory.app_user"
             - "@sylius.factory.customer"

@@ -40,24 +40,24 @@ final class AppSecurityContext implements Context
     /**
      * @var UserRepositoryInterface
      */
-    private $userRepository;
+    private $appUserRepository;
 
     /**
      * @param SharedStorageInterface   $sharedStorage
      * @param SecurityServiceInterface $securityService
      * @param AdminUserExampleFactory  $userFactory
-     * @param UserRepositoryInterface  $userRepository
+     * @param UserRepositoryInterface  $appUserRepository
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         SecurityServiceInterface $securityService,
         AdminUserExampleFactory $userFactory,
-        UserRepositoryInterface $userRepository
+        UserRepositoryInterface $appUserRepository
     ) {
         $this->sharedStorage = $sharedStorage;
         $this->securityService = $securityService;
         $this->userFactory = $userFactory;
-        $this->userRepository = $userRepository;
+        $this->appUserRepository = $appUserRepository;
     }
 
     /**
@@ -65,7 +65,7 @@ final class AppSecurityContext implements Context
      */
     public function iAmLoggedInAs($email)
     {
-        $user = $this->userRepository->findOneByEmail($email);
+        $user = $this->appUserRepository->findOneByEmail($email);
         Assert::notNull($user);
 
         $this->securityService->logIn($user);
@@ -78,7 +78,7 @@ final class AppSecurityContext implements Context
     {
         /** @var AppUser $user */
         $user = $this->userFactory->create(['email' => 'customer@example.com', 'password' => 'password', 'roles' => ['ROLE_USER']]);
-        $this->userRepository->add($user);
+        $this->appUserRepository->add($user);
 
         $this->securityService->logIn($user);
 
