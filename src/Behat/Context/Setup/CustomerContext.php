@@ -46,27 +46,27 @@ final class CustomerContext implements Context
     /**
      * @var FactoryInterface
      */
-    private $userFactory;
+    private $appUserFactory;
 
     /**
      * @param SharedStorageInterface $sharedStorage
      * @param RepositoryInterface    $customerRepository
      * @param ObjectManager          $customerManager
      * @param FactoryInterface       $customerFactory
-     * @param FactoryInterface       $userFactory
+     * @param FactoryInterface       $appUserFactory
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         RepositoryInterface $customerRepository,
         ObjectManager $customerManager,
         FactoryInterface $customerFactory,
-        FactoryInterface $userFactory
+        FactoryInterface $appUserFactory
     ) {
         $this->sharedStorage = $sharedStorage;
         $this->customerRepository = $customerRepository;
         $this->customerManager = $customerManager;
         $this->customerFactory = $customerFactory;
-        $this->userFactory = $userFactory;
+        $this->appUserFactory = $appUserFactory;
     }
 
     /**
@@ -150,7 +150,7 @@ final class CustomerContext implements Context
         $role = null
     ) {
         /** @var User $user */
-        $user = $this->userFactory->createNew();
+        $user = $this->appUserFactory->createNew();
         /** @var Customer $customer */
         $customer = $this->customerFactory->createNew();
 

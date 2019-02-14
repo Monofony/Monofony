@@ -13,6 +13,7 @@ namespace App\Behat\Context\Setup;
 
 use App\Behat\Service\SharedStorageInterface;
 use App\Entity\AppUser;
+use App\Fixture\Factory\AppUserExampleFactory;
 use App\Fixture\Factory\ExampleFactoryInterface;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -29,10 +30,10 @@ class UserContext implements Context
     /**
      * @var UserRepositoryInterface
      */
-    private $userRepository;
+    private $appUserRepository;
 
     /**
-     * @var ExampleFactoryInterface
+     * @var AppUserExampleFactory
      */
     private $userFactory;
 
@@ -43,20 +44,20 @@ class UserContext implements Context
 
     /**
      * @param SharedStorageInterface  $sharedStorage
-     * @param UserRepositoryInterface $userRepository
-     * @param ExampleFactoryInterface $userFactory
-     * @param ObjectManager           $userManager
+     * @param UserRepositoryInterface $appUserRepository
+     * @param AppUserExampleFactory   $userFactory
+     * @param ObjectManager           $appUserManager
      */
     public function __construct(
         SharedStorageInterface $sharedStorage,
-        UserRepositoryInterface $userRepository,
-        ExampleFactoryInterface $userFactory,
-        ObjectManager $userManager
+        UserRepositoryInterface $appUserRepository,
+        AppUserExampleFactory $userFactory,
+        ObjectManager $appUserManager
     ) {
         $this->sharedStorage = $sharedStorage;
-        $this->userRepository = $userRepository;
+        $this->appUserRepository = $appUserRepository;
         $this->userFactory = $userFactory;
-        $this->userManager = $userManager;
+        $this->userManager = $appUserManager;
     }
 
     /**
@@ -70,7 +71,7 @@ class UserContext implements Context
 
         $this->sharedStorage->set('user', $user);
 
-        $this->userRepository->add($user);
+        $this->appUserRepository->add($user);
     }
 
     /**
@@ -80,11 +81,11 @@ class UserContext implements Context
     public function accountWasDeleted($email)
     {
         /** @var AppUser $user */
-        $user = $this->userRepository->findOneByEmail($email);
+        $user = $this->appUserRepository->findOneByEmail($email);
 
         $this->sharedStorage->set('customer', $user->getCustomer());
 
-        $this->userRepository->remove($user);
+        $this->appUserRepository->remove($user);
     }
 
     /**
