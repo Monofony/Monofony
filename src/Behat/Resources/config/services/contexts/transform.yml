@@ -16,8 +16,3 @@ services:
         resource: '../../../../Context/Transform/*'
         autowire: true
         public: true
-
-    App\Behat\Context\Transform\CustomerContext:
-        arguments:
-            $customerRepository: "@sylius.repository.customer"
-            $customerFactory: "@sylius.factory.customer"
