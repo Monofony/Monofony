@@ -52,23 +52,23 @@ After we are done with a feature file, we have to create a new suite for it. At 
         suites:
             ui_managing_countries:
                 contexts_services:
-                    - app.behat.context.hook.doctrine_orm
+                    - App\Behat\Context\Hook\DoctrineORMContext
                     # This service is responsible for clearing database before each scenario,
                     # so that only data from the current and its background is available.
 
-                    - app.behat.context.transform.country
-                    - app.behat.context.transform.shared_storage
+                    - App\Behat\Context\Transform\CountryContext
+                    - App\Behat\Context\Transform\SharedStorageContext
                     # The transformer contexts services are responsible for all the transformations of data in steps:
                     # For instance "And the country "France" should appear in the store" transforms "(the country "France")" to a proper Country object, which is from now on available in the scope of the step.
 
-                    - app.behat.context.setup.geographical
-                    - app.behat.context.setup.security
+                    - App\Behat\Context\Setup\GeographicalContext
+                    - App\Behat\Context\Setup\SecurityContext
                     # The setup contexts here are preparing the background, adding available countries and users or administrators.
                     # These contexts have steps like "I am logged in as an administrator" already implemented.
 
                     # Lights, Camera, Action!
-                    - app.behat.context.ui.admin.managing_countries
-                    - app.behat.context.ui.admin.notification
+                    - App\Behat\Context\Ui\Backend\ManagingCountriesContext
+                    - App\Behat\Context\Ui\Backend\NotificationContext
                     # Those contexts are essential here we are placing all action steps like "When I choose "France" and I add it Then I should ne notified that...".
                 filters:
                     tags: "@managing_countries && @ui"
@@ -84,15 +84,15 @@ We have mentioned with the generic steps we can easily switch our testing contex
         suites:
             domain_managing_countries:
                 contexts_services:
-                    - app.behat.context.hook.doctrine_orm
+                    - App\Behat\Context\Hook\DoctrineORMContext
 
-                    - app.behat.context.transform.country
-                    - app.behat.context.transform.shared_storage
+                    - App\Behat\Context\Transform\CountryContext
+                    - App\Behat\Context\Transform\SharedStorageContext
 
-                    - app.behat.context.setup.geographical
-                    - app.behat.context.setup.security
+                    - App\Behat\Context\Setup\GeographicalContext
+                    - App\Behat\Context\Setup\SecurityContext
 
-                    - app.behat.context.domain.admin.managing_countries # Domain step implementation.
+                    - App\Behat\Context\Domain\Backend\ManagingCountriesContext # Domain step implementation.
                 filters:
                     tags: "@managing_countries && @domain"
 
