@@ -32,4 +32,3 @@ imports:
     - { resource: services/listener.yml }
     - { resource: services/menu.yml }
     - { resource: services/validator.yml }
-    - { resource: services/view.yml }
