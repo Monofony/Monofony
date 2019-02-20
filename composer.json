@@ -21,7 +21,7 @@
         "doctrine/orm": "^2.4.8",
         "eightpoints/guzzle-bundle": "^7.3",
         "friendsofsymfony/oauth-server-bundle": "^1.6",
-        "fzaninotto/Faker": "^1.5",
+        "fzaninotto/faker": "^1.8",
         "guzzlehttp/guzzle": "^6.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "knplabs/doctrine-behaviors": "~1.1",
