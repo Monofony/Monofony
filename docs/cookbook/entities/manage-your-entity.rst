@@ -40,6 +40,10 @@ Create a new grid configuration file
                         delete:
                             type: delete
 
+.. note::
+
+    You can view `the whole configuration reference in sylius documentation`_.
+
 Import this to sylius_grid configuration file
 ---------------------------------------------
 
@@ -51,3 +55,10 @@ Import this to sylius_grid configuration file
       - { resource: 'grids/backend/article.yml' }
       - { resource: 'grids/backend/admin_user.yml' }
       - { resource: 'grids/backend/customer.yml' }
+
+.. note::
+
+    You can learn more about `configuring grid in sylius documentation`_.
+
+.. _the whole configuration reference in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/configuration.html
+.. _configuring grid in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html

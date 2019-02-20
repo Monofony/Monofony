@@ -70,6 +70,8 @@ You now have to add it on Sylius Resource configuration.
                 classes:
                     model: App\Entity\OAuth\Client
 
-You can learn more from `Sylius Resource Bundle`_ documentation.
+.. note::
 
-.. _`Sylius Resource Bundle`: https://docs.sylius.com/en/1.3/components_and_bundles/bundles/SyliusResourceBundle/configuration.html
+    You can learn more from `Sylius Resource Bundle`_ documentation.
+
+.. _`Sylius Resource Bundle`: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusResourceBundle/configuration.html

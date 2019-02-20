@@ -35,6 +35,8 @@ And add it on backend routes configuration.
 
 And that’s all!
 
-You can learn more about `configuring routes in sylius documentation`_.
+.. note::
 
-.. _configuring routes in sylius documentation: https://docs.sylius.com/en/1.3/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html#generating-the-crud-routing
+    You can learn more about `configuring routes in sylius documentation`_.
+
+.. _configuring routes in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html#generating-the-crud-routing
