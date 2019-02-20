@@ -15,7 +15,7 @@ use App\Command\Installer\SetupCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-class InstallerContext extends CommandContext
+class InstallerContext extends DefaultContext
 {
     /**
      * @var array

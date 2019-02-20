@@ -4,6 +4,7 @@ default:
             contexts:
                 - App\Behat\Context\Hook\DoctrineORMContext
 
+                - App\Behat\Context\Cli\CommandContext
                 - App\Behat\Context\Cli\InstallerContext
             filters:
                 tags: "@installer && @cli"
