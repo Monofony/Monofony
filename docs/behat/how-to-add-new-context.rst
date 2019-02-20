@@ -1,13 +1,15 @@
 How to add a new context?
 =========================
 
-To add a new context to Behat container it is needed to add a service in to one of a following files ``cli.xml``/``domain.xml``/``hook.xml``/``setup.xml``/``transform.xml``/``ui.xml`` in ``src/Sylius/Behat/Resources/config/services/contexts/`` folder:
+Thanks to symfony autowiring, most of your contexts are ready to use.
 
-.. code-block:: xml
+But if you need to manually route an argument, it is needed to add a service in to one of a following files ``cli.yml``/``hook.yml``/``setup.yml``/``transform.yml``/``ui.yml`` in ``src/Behat/Resources/config/services/contexts/`` folder:
 
-    <service id="sylius.behat.context.CONTEXT_CATEGORY.CONTEXT_NAME" class="%sylius.behat.context.CONTEXT_CATEGORY.CONTEXT_NAME.class%">
-        <tag name="fob.context_service" />
-    </service>
+.. code-block:: yaml
+
+    App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME:
+        arguments:
+            $specificArgument: App\SpecificArgument
 
 Then you can use it in your suite configuration:
 
@@ -17,11 +19,11 @@ Then you can use it in your suite configuration:
         suites:
             SUITE_NAME:
                 contexts_services:
-                    - "sylius.behat.context.CONTEXT_CATEGORY.CONTEXT_NAME"
+                    - "App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME"
 
                 filters:
                     tags: "@SUITE_TAG"
 
 .. note::
 
-    The context categories are usually one of ``hook``, ``setup``, ``ui`` and ``domain`` and, as you can guess, they are corresponded to files name mentioned above.
+    The context categories are usually one of ``cli``, ``hook``, ``setup``, ``transform``, ``ui`` and, as you can guess, they are corresponded to files name mentioned above.
