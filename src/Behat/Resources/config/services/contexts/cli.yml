@@ -1,0 +1,5 @@
+services:
+    App\Behat\Context\Cli\:
+        resource: '../../../../Context/Cli/*'
+        autowire: true
+        public: true
