@@ -1,0 +1,9 @@
+default:
+    suites:
+        cli_installer:
+            contexts:
+                - App\Behat\Context\Hook\DoctrineORMContext
+
+                - App\Behat\Context\Cli\InstallerContext
+            filters:
+                tags: "@installer && @cli"

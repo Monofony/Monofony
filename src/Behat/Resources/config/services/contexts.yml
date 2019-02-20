@@ -1,4 +1,5 @@
 imports:
+    - { resource: contexts/cli.yml }
     - { resource: contexts/hook.yml }
     - { resource: contexts/setup.yml }
     - { resource: contexts/transform.yml }
