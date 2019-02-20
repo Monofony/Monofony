@@ -33,8 +33,8 @@ class DateTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public function getExtendedTypes()
     {
-        return DateType::class;
+        return [DateType::class];
     }
 }
