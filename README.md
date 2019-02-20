@@ -11,15 +11,6 @@
 
 Search and replace 'app_name', 'AppName' et 'APP_NAME' with your application name
 
-
-Quick Installation with Vagrant
--------------------------------
-
-```bash
-$ cd etc/vagrant
-$ vagrant up
-```
-
 Init project
 ------------
 
