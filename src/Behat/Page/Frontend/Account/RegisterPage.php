@@ -107,10 +107,9 @@ class RegisterPage extends SymfonyPage
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
-            'email' => '#sylius_customer_simple_registration_email',
-            'username' => '#sylius_customer_simple_registration_user_username',
-            'password_verification' => '#sylius_customer_simple_registration_user_plainPassword_second',
-            'password' => '#sylius_customer_simple_registration_user_plainPassword_first',
+            'email' => '#sylius_customer_registration_email',
+            'password_verification' => '#sylius_customer_registration_user_plainPassword_second',
+            'password' => '#sylius_customer_registration_user_plainPassword_first',
         ]);
     }
 }

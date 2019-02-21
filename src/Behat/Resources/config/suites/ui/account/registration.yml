@@ -1,0 +1,21 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+default:
+    suites:
+        ui_customer_registration:
+            contexts:
+                - App\Behat\Context\Hook\DoctrineORMContext
+                # - sylius.behat.context.hook.email_spool
+
+                - App\Behat\Context\Transform\SharedStorageContext
+                - App\Behat\Context\Transform\CustomerContext
+
+                - App\Behat\Context\Setup\CustomerContext
+                # - app.behat.context.setup.shop_security
+                - App\Behat\Context\Setup\UserContext
+
+                # - App\Behat\Context\Ui\EmailContext
+                - App\Behat\Context\Ui\Frontend\RegistrationContext
+            filters:
+                tags: "@customer_registration && @ui"

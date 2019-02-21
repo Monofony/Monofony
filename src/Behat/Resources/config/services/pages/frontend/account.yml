@@ -36,7 +36,6 @@ services:
         parent: app.behat.symfony_page
         public: false
 
-    app.behat.page.frontend.account.verify:
-        class: App\Behat\Page\Frontend\Account\VerificationPage
+    App\Behat\Page\Frontend\Account\VerificationPage:
         parent: app.behat.symfony_page
         public: false

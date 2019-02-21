@@ -5,8 +5,10 @@ Feature: Account registration
     I need to be able to create an account in the website
 
     @ui
-    Scenario: Registering a new account
+    Scenario: Registering a new account with minimum information
         When I want to register a new account
+        And I specify the first name as "Saul"
+        And I specify the last name as "Goodman"
         And I specify the email as "goodman@gmail.com"
         And I specify the password as "heisenberg"
         And I confirm this password
