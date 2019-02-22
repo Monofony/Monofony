@@ -20,3 +20,12 @@ services:
         class: App\EventListener\DefaultUsernameORMListener
         tags:
             - { name: doctrine.event_listener, event: onFlush }
+
+    sylius.listener.user_registration:
+        class: App\EventListener\UserRegistrationListener
+        arguments:
+            - "@sylius.manager.app_user"
+            - "@sylius.app_user.token_generator.email_verification"
+            - "@event_dispatcher"
+        tags:
+            - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }

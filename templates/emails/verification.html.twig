@@ -1,7 +1,10 @@
 {% block subject %}
-    {{ 'emails.verification.subject'|trans }}
+    Email address verification
 {% endblock %}
 
 {% block body %}
-    {{ 'emails.verification.content'|trans({'%url%': url('sylius_frontend_user_verification', { 'token': user.emailVerificationToken})})|raw }}
+    {% set url = url('sylius_frontend_user_verification', { 'token': user.emailVerificationToken}) %}
+    {% autoescape %}
+        To verify your email address - please visit <a href="{{ url|raw }}">{{ url|raw }}</a>
+    {% endautoescape %}
 {% endblock %}

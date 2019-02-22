@@ -70,7 +70,7 @@ app_frontend_user_request_verification_token:
     defaults:
         _controller: sylius.controller.app_user:requestVerificationTokenAction
 
-app_frontend_user_verification:
+sylius_frontend_user_verification:
     path: /verify/{token}
     methods: [GET]
     defaults:
