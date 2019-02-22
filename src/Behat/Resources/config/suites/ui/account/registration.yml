@@ -15,7 +15,7 @@ default:
                 # - app.behat.context.setup.shop_security
                 - App\Behat\Context\Setup\UserContext
 
-                # - App\Behat\Context\Ui\EmailContext
+                - App\Behat\Context\Ui\EmailContext
                 - App\Behat\Context\Ui\Frontend\RegistrationContext
             filters:
                 tags: "@customer_registration && @ui"
