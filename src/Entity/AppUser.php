@@ -13,6 +13,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Customer\Model\CustomerInterface;
+use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Sylius\Component\User\Model\User as BaseUser;
 
 /**
@@ -47,6 +48,54 @@ class AppUser extends BaseUser
         $this->customer = $customer;
 
         return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getEmail(): ?string
+    {
+        if (null === $this->customer) {
+            return null;
+        }
+
+        return $this->customer->getEmail();
+    }
+
+    /**
+     * @param string|null $email
+     */
+    public function setEmail(?string $email): void
+    {
+        if (null === $this->customer) {
+            throw new UnexpectedTypeException($this->customer, CustomerInterface::class);
+        }
+
+        $this->customer->setEmail($email);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getEmailCanonical(): ?string
+    {
+        if (null === $this->customer) {
+            return null;
+        }
+
+        return $this->customer->getEmailCanonical();
+    }
+
+    /**
+     * @param string|null $emailCanonical
+     */
+    public function setEmailCanonical(?string $emailCanonical): void
+    {
+        if (null === $this->customer) {
+            throw new UnexpectedTypeException($this->customer, CustomerInterface::class);
+        }
+
+        $this->customer->setEmailCanonical($emailCanonical);
     }
 
     /**
