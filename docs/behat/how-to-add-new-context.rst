@@ -19,7 +19,7 @@ Then you can use it in your suite configuration:
         suites:
             SUITE_NAME:
                 contexts:
-                    - "App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME"
+                    - 'App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME'
                 filters:
                     tags: "@SUITE_TAG"
 
