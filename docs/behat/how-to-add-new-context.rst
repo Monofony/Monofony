@@ -18,9 +18,8 @@ Then you can use it in your suite configuration:
     default:
         suites:
             SUITE_NAME:
-                contexts_services:
-                    - "App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME"
-
+                contexts:
+                    - 'App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME'
                 filters:
                     tags: "@SUITE_TAG"
 
