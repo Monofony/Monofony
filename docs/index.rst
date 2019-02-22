@@ -26,31 +26,6 @@ Here you will find all the concepts used in the AppName platform.
 
 .. include:: /book/map.rst.inc
 
-The REST API Reference
-----------------------
-
-:doc:`The API guide </api/index>` covers the REST API of Sylius platform.
-
-.. toctree::
-    :hidden:
-
-    api/index
-
-.. include:: /api/map.rst.inc
-
-
-Deployment
-----------
-
-:doc:`The Deployment guide </deployment/index>` helps to deploy the website on servers.
-
-.. toctree::
-    :hidden:
-
-    deployment/index
-
-.. include:: /deployment/map.rst.inc
-
 The Cookbook
 ------------
 
@@ -75,6 +50,17 @@ In :doc:`the Behat Guide </behat/index>` you will learn how to write clean and r
 
 .. include:: /behat/map.rst.inc
 
+Deployment
+----------
+
+:doc:`The Deployment guide </deployment/index>` helps to deploy the website on servers.
+
+.. toctree::
+    :hidden:
+
+    deployment/index
+
+.. include:: /deployment/map.rst.inc
 
 .. _AppName: http://www.mobizel.com
 .. _Sylius: http://sylius.org
