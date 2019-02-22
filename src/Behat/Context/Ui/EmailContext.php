@@ -59,11 +59,19 @@ final class EmailContext implements Context
     }
 
     /**
+     * @Then an email to verify your email validity should have been sent to :recipient
+     */
+    public function anEmailToVerifyYourEmailValidityShouldHaveBeenSentTo($recipient)
+    {
+        $this->assertEmailContainsMessageTo('To verify your email address', $recipient);
+    }
+
+    /**
      * @Then a welcoming email should have been sent to :recipient
      */
     public function aWelcomingEmailShouldHaveBeenSentTo($recipient)
     {
-        $this->assertEmailContainsMessageTo('Welcome to our store', $recipient);
+        $this->assertEmailContainsMessageTo('Welcome to our website', $recipient);
     }
 
     /**
