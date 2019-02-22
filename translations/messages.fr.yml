@@ -1,12 +1,8 @@
 app:
     ui:
-        addresses: Adresses
         create_user: Créer un utilisateur
-        edit_address: Modifier l'adresse
         forgotten_password: Mot de passe oublié
         legal_notices: Mentions légales
-        manage_addresses: Gérer les adresses
-        new_address: Nouvelle adresse
         overview_of_your_website: Aperçu de votre site web
         validate: Valider
     text:
@@ -22,10 +18,5 @@ app:
                 content: |
                     <p>Oups, on dirait que ce que vous recherchez n'est pas ici...</p>
         legal_notices: Toute reproduction interdite
-    emails:
-        footer: |
-            <p>A bientôt sur AppName.fr</p>
-            <p>Attention : cet email est envoyé automatiquement, si vous souhaitez nous contacter,
-            vous pouvez nous écrire en cliquant <a href=\"%LINK%\">ici</a>.</p>
 sylius:
     ui: ~

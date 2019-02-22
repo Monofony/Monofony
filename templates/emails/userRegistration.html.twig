@@ -1,10 +1,13 @@
 {% block subject %}
-    {{ 'emails.user_registration.subject' | trans }}
+    User registration
 {% endblock %}
 
 {% block body %}
-    <h3>{{ 'label.hello'|trans }} {{ customer.fullName }},</h3>
-    <p>{{ 'emails.user_registration.content'|trans|raw }}</p>
-    <p>{{ 'emails.ending'|trans }}</p>
-    <p>{{ 'emails.signature'|trans }}</p>
+    {% autoescape %}
+        Welcome to our website!
+        <br/><br/>
+        You have just been registered.
+        <br/>
+        Thank you {{ user.username }}.
+    {% endautoescape %}
 {% endblock %}

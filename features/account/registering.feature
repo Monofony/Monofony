@@ -16,8 +16,8 @@ Feature: Account registration
         Then I should be notified that new account has been successfully created
         But I should not be logged in
 
-    @ui @email @todo
-    Scenario: Receiving a welcoming email after registration
+    @ui @email
+    Scenario: Receiving an email to verify your email validity after registration
         When I register with email "ghastly@bespoke.com" and password "suitsarelife"
         Then I should be notified that new account has been successfully created
-        And a welcoming email should have been sent to "ghastly@bespoke.com"
+        And an email to verify your email validity should have been sent to "ghastly@bespoke.com"
