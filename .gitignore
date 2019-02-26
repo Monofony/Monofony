@@ -17,6 +17,7 @@
 *.DS_Store
 
 /behat.yml
+/phpspec.yml
 
 ###> symfony/framework-bundle ###
 /.env.*.local
