@@ -20,6 +20,7 @@
 !/etc/build/.gitkeep
 
 /behat.yml
+/phpspec.yml
 
 ###> symfony/framework-bundle ###
 /.env.*.local
