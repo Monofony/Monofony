@@ -401,7 +401,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "4.0",
-            "ref": "421933bf8f0e75546ac8e00cb3eb12904fa2ac1a"
+            "ref": "05daf6b214e54aed4089f3480f944a67ac3a7889"
         }
     },
     "sonata-project/block-bundle": {
@@ -433,9 +433,6 @@
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"
-    },
-    "sylius-labs/sensio-distribution-bundle": {
-        "version": "v6.0.1"
     },
     "sylius/customer": {
         "version": "v1.2.1"
