@@ -16,6 +16,9 @@
 .idea
 *.DS_Store
 
+/etc/build/*
+!/etc/build/.gitignore
+
 /behat.yml
 /phpspec.yml
 
