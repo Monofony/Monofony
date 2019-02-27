@@ -1,3 +1,4 @@
+import 'semantic-ui-calendar/dist/calendar';
 import 'semantic-ui-css/components/accordion';
 import $ from 'jquery';
 
@@ -6,6 +7,9 @@ import 'sylius/ui/sylius-auto-complete';
 import 'sylius/ui/sylius-product-attributes';
 import 'sylius/ui/sylius-product-auto-complete';
 import 'sylius/ui/sylius-prototype-handler';
+
+import './app-date-time-picker';
+import './sylius-compound-form-errors';
 
 (function ($) {
     $(document).ready(function () {
@@ -23,4 +27,3 @@ import 'sylius/ui/sylius-prototype-handler';
 
 window.$ = $;
 window.jQuery = $;
-
