@@ -17,6 +17,7 @@ commands=(
     test-infection
     test-behat-without-javascript
     test-behat-with-javascript
+    test-prod-requirements
 )
 
 for command in ${commands[@]}; do
