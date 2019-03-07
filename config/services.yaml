@@ -11,6 +11,7 @@ services:
     command_handlers:
         namespace: App\Command\
         resource: '../src/Command/*'
+        autowire: true
         tags: [command_handler]
 
     sylius.controller.security:
