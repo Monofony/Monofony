@@ -23,6 +23,7 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Webmozart\Assert\Assert;
 
 final class SetupCommand extends Command
@@ -43,18 +44,26 @@ final class SetupCommand extends Command
     private $adminUserRepository;
 
     /**
+     * @var ValidatorInterface
+     */
+    private $validator;
+
+    /**
      * @param ObjectManager       $adminUserManager
      * @param FactoryInterface    $adminUserFactory
      * @param RepositoryInterface $adminUserRepository
+     * @param ValidatorInterface  $validator
      */
     public function __construct(
         ObjectManager $adminUserManager,
         FactoryInterface $adminUserFactory,
-        RepositoryInterface $adminUserRepository
+        RepositoryInterface $adminUserRepository,
+        ValidatorInterface $validator
     ) {
         $this->adminUserManager = $adminUserManager;
         $this->adminUserFactory = $adminUserFactory;
         $this->adminUserRepository = $adminUserRepository;
+        $this->validator = $validator;
 
         parent::__construct();
     }
@@ -152,7 +161,7 @@ EOT
         return (new Question('E-mail:'))
             ->setValidator(function ($value) {
                 /** @var ConstraintViolationListInterface $errors */
-                $errors = $this->get('validator')->validate((string) $value, [new Email(), new NotBlank()]);
+                $errors = $this->validator->validate((string) $value, [new Email(), new NotBlank()]);
                 foreach ($errors as $error) {
                     throw new \DomainException($error->getMessage());
                 }
@@ -197,7 +206,7 @@ EOT
     {
         return function ($value) {
             /** @var ConstraintViolationListInterface $errors */
-            $errors = $this->get('validator')->validate($value, [new NotBlank()]);
+            $errors = $this->validator->validate($value, [new NotBlank()]);
             foreach ($errors as $error) {
                 throw new \DomainException($error->getMessage());
             }
