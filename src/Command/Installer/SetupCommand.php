@@ -85,9 +85,10 @@ EOT
         $userRepository = $this->get('sylius.repository.admin_user');
 
         if ($input->getOption('no-interaction')) {
-            Assert::notNull($userRepository->findOneByEmail('admin@example.com'));
+            Assert::null($userRepository->findOneByEmail('admin@example.com'));
 
             $user->setEmail('admin@example.com');
+            $user->setUsername('admin');
             $user->setPlainPassword('admin');
 
             return $user;
@@ -106,6 +107,7 @@ EOT
         } while ($exists);
 
         $user->setEmail($email);
+        $user->setUsername($email);
         $user->setPlainPassword($this->getAdministratorPassword($input, $output));
 
         return $user;
