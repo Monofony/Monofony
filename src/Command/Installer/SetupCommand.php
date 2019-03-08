@@ -12,6 +12,10 @@
 namespace App\Command\Installer;
 
 use App\Entity\AdminUser;
+use Doctrine\Common\Persistence\ObjectManager;
+use Sylius\Component\Resource\Factory\FactoryInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -19,10 +23,51 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Webmozart\Assert\Assert;
 
-final class SetupCommand extends AbstractInstallCommand
+final class SetupCommand extends Command
 {
+    /**
+     * @var ObjectManager
+     */
+    private $adminUserManager;
+
+    /**
+     * @var FactoryInterface
+     */
+    private $adminUserFactory;
+
+    /**
+     * @var RepositoryInterface
+     */
+    private $adminUserRepository;
+
+    /**
+     * @var ValidatorInterface
+     */
+    private $validator;
+
+    /**
+     * @param ObjectManager       $adminUserManager
+     * @param FactoryInterface    $adminUserFactory
+     * @param RepositoryInterface $adminUserRepository
+     * @param ValidatorInterface  $validator
+     */
+    public function __construct(
+        ObjectManager $adminUserManager,
+        FactoryInterface $adminUserFactory,
+        RepositoryInterface $adminUserRepository,
+        ValidatorInterface $validator
+    ) {
+        $this->adminUserManager = $adminUserManager;
+        $this->adminUserFactory = $adminUserFactory;
+        $this->adminUserRepository = $adminUserRepository;
+        $this->validator = $validator;
+
+        parent::__construct();
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -56,19 +101,16 @@ EOT
     {
         $output->writeln('Create your administrator account.');
 
-        $userManager = $this->get('sylius.manager.admin_user');
-        $userFactory = $this->get('sylius.factory.admin_user');
-
         try {
-            $user = $this->configureNewUser($userFactory->createNew(), $input, $output);
+            $user = $this->configureNewUser($this->adminUserFactory->createNew(), $input, $output);
         } catch (\InvalidArgumentException $exception) {
             return 0;
         }
 
         $user->setEnabled(true);
 
-        $userManager->persist($user);
-        $userManager->flush();
+        $this->adminUserManager->persist($user);
+        $this->adminUserManager->flush();
 
         $output->writeln('Administrator account successfully registered.');
     }
@@ -82,10 +124,8 @@ EOT
      */
     private function configureNewUser(AdminUser $user, InputInterface $input, OutputInterface $output)
     {
-        $userRepository = $this->get('sylius.repository.admin_user');
-
         if ($input->getOption('no-interaction')) {
-            Assert::null($userRepository->findOneByEmail('admin@example.com'));
+            Assert::null($this->adminUserRepository->findOneByEmail('admin@example.com'));
 
             $user->setEmail('admin@example.com');
             $user->setUsername('admin');
@@ -99,7 +139,7 @@ EOT
         do {
             $question = $this->createEmailQuestion();
             $email = $questionHelper->ask($input, $output, $question);
-            $exists = null !== $userRepository->findOneByEmail($email);
+            $exists = null !== $this->adminUserRepository->findOneByEmail($email);
 
             if ($exists) {
                 $output->writeln('<error>E-Mail is already in use!</error>');
@@ -121,7 +161,7 @@ EOT
         return (new Question('E-mail:'))
             ->setValidator(function ($value) {
                 /** @var ConstraintViolationListInterface $errors */
-                $errors = $this->get('validator')->validate((string) $value, [new Email(), new NotBlank()]);
+                $errors = $this->validator->validate((string) $value, [new Email(), new NotBlank()]);
                 foreach ($errors as $error) {
                     throw new \DomainException($error->getMessage());
                 }
@@ -166,7 +206,7 @@ EOT
     {
         return function ($value) {
             /** @var ConstraintViolationListInterface $errors */
-            $errors = $this->get('validator')->validate($value, [new NotBlank()]);
+            $errors = $this->validator->validate($value, [new NotBlank()]);
             foreach ($errors as $error) {
                 throw new \DomainException($error->getMessage());
             }

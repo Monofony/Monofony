@@ -14,9 +14,15 @@ namespace App\Behat\Context\Cli;
 use App\Command\Installer\SetupCommand;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 class InstallerContext extends DefaultContext
 {
+    /**
+     * @var SetupCommand
+     */
+    private $setupCommand;
+
     /**
      * @var array
      */
@@ -25,6 +31,17 @@ class InstallerContext extends DefaultContext
         'password' => 'pswd',
         'confirmation' => 'pswd',
     ];
+
+    /**
+     * @param KernelInterface $kernel
+     * @param SetupCommand    $setupCommand
+     */
+    public function __construct(KernelInterface $kernel, SetupCommand $setupCommand)
+    {
+        $this->setupCommand = $setupCommand;
+
+        parent::__construct($kernel);
+    }
 
     /**
      * @Given I do not provide an email
@@ -72,7 +89,7 @@ class InstallerContext extends DefaultContext
     public function iRunInstallSetupCommmandLine()
     {
         $this->application = new Application($this->kernel);
-        $this->application->add(new SetupCommand());
+        $this->application->add($this->setupCommand);
 
         $this->command = $this->application->find('app:install:setup');
         $this->setTester(new CommandTester($this->command));
