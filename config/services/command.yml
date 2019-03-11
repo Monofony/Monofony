@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    command_handlers:
+        namespace: App\Command\
+        resource: '../../src/Command/*'
+        tags: [command_handler]
+
+    App\Command\Installer\InstallDatabaseCommand:
+        arguments:
+            $environment: '%kernel.environment%'
