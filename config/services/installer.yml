@@ -19,3 +19,5 @@ services:
         public: true
         arguments:
             - "@doctrine"
+
+    App\Installer\Provider\DatabaseSetupCommandsProviderInterface: '@sylius.commands_provider.database_setup'
