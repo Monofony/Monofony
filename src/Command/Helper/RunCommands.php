@@ -12,7 +12,6 @@
 namespace App\Command\Helper;
 
 use App\Command\Installer\CommandExecutor;
-use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -32,10 +31,10 @@ trait RunCommands
     private $entityManager;
 
     /**
-     * @param CommandExecutor $commandExecutor
-     * @param ObjectManager   $entityManager
+     * @param CommandExecutor        $commandExecutor
+     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(CommandExecutor $commandExecutor, ObjectManager $entityManager)
+    public function __construct(CommandExecutor $commandExecutor, EntityManagerInterface $entityManager)
     {
         $this->commandExecutor = $commandExecutor;
         $this->entityManager = $entityManager;
@@ -48,7 +47,7 @@ trait RunCommands
      *
      * @throws \Exception
      */
-    protected function runCommands(array $commands, OutputInterface $output, bool $displayProgress = true): void
+    private function runCommands(array $commands, OutputInterface $output, bool $displayProgress = true): void
     {
         $progress = $this->createProgressBar($displayProgress ? $output : new NullOutput(), count($commands));
 

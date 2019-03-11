@@ -15,3 +15,7 @@ services:
     App\Command\Installer\InstallDatabaseCommand:
         arguments:
             $environment: '%kernel.environment%'
+
+    App\Command\Installer\InstallAssetsCommand:
+        arguments:
+            $environment: '%kernel.environment%'
