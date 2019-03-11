@@ -8,6 +8,10 @@ services:
         resource: '../../src/Command/*'
         tags: [command_handler]
 
+    App\Command\Installer\InstallCommand:
+        arguments:
+            $cacheDir: '%kernel.cache_dir%'
+
     App\Command\Installer\InstallDatabaseCommand:
         arguments:
             $environment: '%kernel.environment%'

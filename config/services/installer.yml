@@ -14,6 +14,8 @@ services:
         arguments:
             - "@filesystem"
 
+    App\Installer\Checker\CommandDirectoryChecker: '@sylius.installer.checker.command_directory'
+
     sylius.commands_provider.database_setup:
         class: App\Installer\Provider\DatabaseSetupCommandsProvider
         public: true
