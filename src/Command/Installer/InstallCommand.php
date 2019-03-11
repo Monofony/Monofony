@@ -12,7 +12,7 @@ use Symfony\Component\Process\Exception\RuntimeException;
 class InstallCommand extends Command
 {
     use EnsureDirectoryExistsAndIsWritable {
-        __construct as initializeEnsureDirectoryExistsAndIsWritable;
+        __construct as private initializeEnsureDirectoryExistsAndIsWritable;
     }
 
     /**
