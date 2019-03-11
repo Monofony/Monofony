@@ -1,0 +1,26 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    command_handlers:
+        namespace: App\Command\
+        resource: '../../src/Command/*'
+        tags: [command_handler]
+
+    App\Command\Installer\InstallCommand:
+        arguments:
+            $cacheDir: '%kernel.cache_dir%'
+
+    App\Command\Installer\InstallDatabaseCommand:
+        arguments:
+            $environment: '%kernel.environment%'
+
+    App\Command\Installer\InstallAssetsCommand:
+        arguments:
+            $environment: '%kernel.environment%'
+
+    App\Command\Installer\InstallSampleDataCommand:
+        arguments:
+            $rootDir: '%kernel.root_dir%'
+            $environment: '%kernel.environment%'

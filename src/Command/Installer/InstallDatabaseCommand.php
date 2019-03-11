@@ -2,11 +2,60 @@
 
 namespace App\Command\Installer;
 
+use App\Command\Helper\RunCommands;
+use App\Installer\Provider\DatabaseSetupCommandsProviderInterface;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class InstallDatabaseCommand extends AbstractInstallCommand
+class InstallDatabaseCommand extends Command
 {
+    use RunCommands {
+        __construct as private initializeRunCommands;
+    }
+
+    /**
+     * @var DatabaseSetupCommandsProviderInterface
+     */
+    private $databaseSetupCommandsProvider;
+
+    /**
+     * @var EntityManagerInterface
+     */
+    private $entityManager;
+
+    /**
+     * @var string
+     */
+    private $environment;
+
+    /**
+     * @param DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider
+     * @param EntityManagerInterface                 $entityManager
+     * @param string                                 $environment
+     */
+    public function __construct(
+        DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider,
+        EntityManagerInterface $entityManager,
+        string $environment
+    ) {
+        $this->databaseSetupCommandsProvider = $databaseSetupCommandsProvider;
+        $this->entityManager = $entityManager;
+        $this->environment = $environment;
+
+        parent::__construct();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+        $this->initializeRunCommands($commandExecutor, $this->entityManager);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -27,9 +76,9 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Creating AppName database for environment <info>%s</info>.', $this->getEnvironment()));
+        $output->writeln(sprintf('Creating AppName database for environment <info>%s</info>.', $this->environment));
 
-        $commands = $this->get('sylius.commands_provider.database_setup')->getCommands($input, $output, $this->getHelper('question'));
+        $commands = $this->databaseSetupCommandsProvider->getCommands($input, $output, $this->getHelper('question'));
 
         $this->runCommands($commands, $output);
         $output->writeln('');
