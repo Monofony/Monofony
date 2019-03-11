@@ -19,3 +19,8 @@ services:
     App\Command\Installer\InstallAssetsCommand:
         arguments:
             $environment: '%kernel.environment%'
+
+    App\Command\Installer\InstallSampleDataCommand:
+        arguments:
+            $rootDir: '%kernel.root_dir%'
+            $environment: '%kernel.environment%'
