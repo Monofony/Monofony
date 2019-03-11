@@ -56,11 +56,10 @@ class InstallAssetsCommand extends Command
      */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
-        $this->commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
 
         $this->initializeEnsureDirectoryExistsAndIsWritable($this->commandDirectoryChecker, $this->getName());
-
-        $this->initializeRunCommands($this->commandExecutor, $this->entityManager);
+        $this->initializeRunCommands($commandExecutor, $this->entityManager);
     }
 
     /**

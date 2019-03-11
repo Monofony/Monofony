@@ -13,14 +13,65 @@ declare(strict_types=1);
 
 namespace App\Command\Installer;
 
+use App\Command\Helper\EnsureDirectoryExistsAndIsWritable;
+use App\Command\Helper\RunCommands;
+use App\Installer\Checker\CommandDirectoryChecker;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ConfirmationQuestion;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-final class InstallSampleDataCommand extends AbstractInstallCommand
+final class InstallSampleDataCommand extends Command
 {
+    const WEB_MEDIA_DIRECTORY = 'public/media/';
+    const WEB_MEDIA_IMAGE_DIRECTORY = 'public/media/image/';
+
+    use EnsureDirectoryExistsAndIsWritable {
+        EnsureDirectoryExistsAndIsWritable::__construct as private initializeEnsureDirectoryExistsAndIsWritable;
+    }
+    use RunCommands {
+        RunCommands::__construct as private initializeRunCommands;
+    }
+
+    /**
+     * @var CommandDirectoryChecker
+     */
+    private $commandDirectoryChecker;
+
+    /**
+     * @var EntityManagerInterface
+     */
+    private $entityManager;
+
+    /**
+     * @var string
+     */
+    private $rootDir;
+
+    /**
+     * @var string
+     */
+    private $environment;
+
+    /**
+     * @param CommandDirectoryChecker $commandDirectoryChecker
+     * @param EntityManagerInterface  $entityManager
+     * @param string                  $rootDir
+     * @param string                  $environment
+     */
+    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, EntityManagerInterface $entityManager, string $rootDir, string $environment)
+    {
+        $this->commandDirectoryChecker = $commandDirectoryChecker;
+        $this->entityManager = $entityManager;
+        $this->rootDir = $rootDir;
+        $this->environment = $environment;
+
+        parent::__construct();
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -39,6 +90,17 @@ EOT
     /**
      * {@inheritdoc}
      */
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+
+        $this->initializeEnsureDirectoryExistsAndIsWritable($this->commandDirectoryChecker, $this->getName());
+        $this->initializeRunCommands($commandExecutor, $this->entityManager);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /** @var QuestionHelper $questionHelper */
@@ -48,7 +110,7 @@ EOT
         $outputStyle->newLine();
         $outputStyle->writeln(sprintf(
             'Loading sample data for environment <info>%s</info>.',
-            $this->getEnvironment()
+            $this->environment
         ));
         $outputStyle->writeln('<error>Warning! This action will erase your database.</error>');
 
@@ -59,7 +121,7 @@ EOT
         }
 
         try {
-            $rootDir = $this->getContainer()->getParameter('kernel.root_dir').'/../';
+            $rootDir = $this->rootDir.'/../';
             $this->ensureDirectoryExistsAndIsWritable($rootDir.self::WEB_MEDIA_DIRECTORY, $output);
             $this->ensureDirectoryExistsAndIsWritable($rootDir.self::WEB_MEDIA_IMAGE_DIRECTORY, $output);
         } catch (\RuntimeException $exception) {
