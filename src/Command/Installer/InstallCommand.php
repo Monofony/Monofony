@@ -2,12 +2,34 @@
 
 namespace App\Command\Installer;
 
+use App\Command\Helper\EnsureDirectoryExistsAndIsWritable;
+use App\Installer\Checker\CommandDirectoryChecker;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Exception\RuntimeException;
 
-class InstallCommand extends AbstractInstallCommand
+class InstallCommand extends Command
 {
+    use EnsureDirectoryExistsAndIsWritable {
+        __construct as private initializeEnsureDirectoryExistsAndIsWritable;
+    }
+
+    /**
+     * @var CommandDirectoryChecker
+     */
+    private $commandDirectoryChecker;
+
+    /**
+     * @var string
+     */
+    private $cacheDir;
+
+    /**
+     * @var CommandExecutor
+     */
+    private $commandExecutor;
+
     /**
      * @var array
      */
@@ -21,6 +43,28 @@ class InstallCommand extends AbstractInstallCommand
             'message' => 'Installing assets.',
         ],
     ];
+
+    /**
+     * @param CommandDirectoryChecker $commandDirectoryChecker
+     * @param string                  $cacheDir
+     */
+    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, string $cacheDir)
+    {
+        $this->commandDirectoryChecker = $commandDirectoryChecker;
+        $this->cacheDir = $cacheDir;
+
+        parent::__construct();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $this->commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+
+        $this->initializeEnsureDirectoryExistsAndIsWritable($this->commandDirectoryChecker, $this->getName());
+    }
 
     /**
      * {@inheritdoc}
@@ -44,7 +88,7 @@ EOT
         $output->writeln('<info>Installing AppName...</info>');
         $output->writeln($this->getLogo());
 
-        $this->ensureDirectoryExistsAndIsWritable($this->getContainer()->getParameter('kernel.cache_dir'), $output);
+        $this->ensureDirectoryExistsAndIsWritable($this->cacheDir, $output);
 
         $errored = false;
         foreach ($this->commands as $step => $command) {

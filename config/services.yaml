@@ -8,12 +8,6 @@ services:
     _defaults:
         autoconfigure: true
 
-    command_handlers:
-        namespace: App\Command\
-        resource: '../src/Command/*'
-        autowire: true
-        tags: [command_handler]
-
     sylius.controller.security:
         class: Sylius\Bundle\UiBundle\Controller\SecurityController
         public: true
@@ -25,6 +19,7 @@ services:
             - "@router"
 
 imports:
+    - { resource: services/command.yml }
     - { resource: services/context.yml }
     - { resource: services/fixtures.yml }
     - { resource: services/fixtures_factories.yml }
