@@ -31,11 +31,6 @@ class InstallDatabaseCommand extends Command
     private $environment;
 
     /**
-     * @var CommandExecutor
-     */
-    private $commandExecutor;
-
-    /**
      * @param DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider
      * @param EntityManagerInterface                 $entityManager
      * @param string                                 $environment
@@ -57,8 +52,8 @@ class InstallDatabaseCommand extends Command
      */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
-        $this->commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
-        $this->initializeRunCommands($this->commandExecutor, $this->entityManager);
+        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+        $this->initializeRunCommands($commandExecutor, $this->entityManager);
     }
 
     /**
