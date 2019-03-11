@@ -8,18 +8,14 @@ services:
 #        class: App\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
-    sylius.installer.checker.command_directory:
-        class: App\Installer\Checker\CommandDirectoryChecker
+    App\Installer\Checker\CommandDirectoryChecker:
         public: true
         arguments:
             - "@filesystem"
 
-    App\Installer\Checker\CommandDirectoryChecker: '@sylius.installer.checker.command_directory'
-
-    sylius.commands_provider.database_setup:
-        class: App\Installer\Provider\DatabaseSetupCommandsProvider
+    App\Installer\Provider\DatabaseSetupCommandsProvider:
         public: true
         arguments:
             - "@doctrine"
 
-    App\Installer\Provider\DatabaseSetupCommandsProviderInterface: '@sylius.commands_provider.database_setup'
+    App\Installer\Provider\DatabaseSetupCommandsProviderInterface: '@App\Installer\Provider\DatabaseSetupCommandsProvider'
