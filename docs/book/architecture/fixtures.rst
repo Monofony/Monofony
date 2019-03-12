@@ -9,30 +9,30 @@ Fixtures are used mainly for testing, but also for having your website in a cert
 
 .. note::
 
-   The way Fixtures are designed in AppName is well described in the `FixturesBundle documentation <http://docs.sylius.org/en/latest/components_and_bundles/bundles/SyliusFixturesBundle/index.html>`_.
+   The way Fixtures are designed in Monofony is well described in the `FixturesBundle documentation <http://docs.sylius.org/en/latest/components_and_bundles/bundles/SyliusFixturesBundle/index.html>`_.
 
-What are the available fixtures in AppName?
--------------------------------------------
+What are the available fixtures in Monofony?
+--------------------------------------------
 
-To check what fixtures are defined in AppName run:
+To check what fixtures are defined in Monofony run:
 
 .. code-block:: bash
 
    $ php bin/console sylius:fixtures:list
 
-How to load AppName fixtures?
------------------------------
+How to load Monofony fixtures?
+------------------------------
 
-The recommended way to load the predefined set of AppName fixtures is here:
+The recommended way to load the predefined set of Monofony fixtures is here:
 
 .. code-block:: bash
 
    $ php bin/console sylius:fixtures:load
 
-What data is loaded by fixtures in AppName?
--------------------------------------------
+What data is loaded by fixtures in Monofony?
+--------------------------------------------
 
-All files that serve for loading fixtures of AppName are placed in the ``AppBundle/Fixture/*`` directory.
+All files that serve for loading fixtures of Monofony are placed in the ``App/Fixture/*`` directory.
 
 And the specified data for fixtures is stored in the
 ``app/config/app/sylius/sylius_fixtures.yml`` file.
