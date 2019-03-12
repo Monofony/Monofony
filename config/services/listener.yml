@@ -1,31 +1,16 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/book/service_container.html
-parameters:
-#    parameter_name: value
-
 services:
-#    service_name:
-#        class: App\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    _defaults:
+        autowire: true
 
-    sylius.listener.canonicalizer:
-        class: App\EventListener\CanonicalizerListener
-        arguments:
-            - "@sylius.canonicalizer"
+    App\EventListener\CanonicalizerListener:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
             - { name: doctrine.event_listener, event: preUpdate }
 
-    sylius.listener.default_username:
-        class: App\EventListener\DefaultUsernameORMListener
+    App\EventListener\DefaultUsernameORMListener:
         tags:
             - { name: doctrine.event_listener, event: onFlush }
 
-    sylius.listener.user_registration:
-        class: App\EventListener\UserRegistrationListener
-        arguments:
-            - "@sylius.manager.app_user"
-            - "@sylius.app_user.token_generator.email_verification"
-            - "@event_dispatcher"
+    App\EventListener\UserRegistrationListener:
         tags:
             - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }
