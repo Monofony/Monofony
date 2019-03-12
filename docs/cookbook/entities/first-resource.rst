@@ -1,5 +1,5 @@
-Configure your first resource
-=============================
+How to configure your first resource
+====================================
 
 As an example we will take an **Article entity**.
 

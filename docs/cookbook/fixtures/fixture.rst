@@ -1,7 +1,7 @@
-Configure your fixture options
-==============================
+How to configure your fixture options
+=====================================
 
-Now you have to create a fixture service to define few options for this resource.
+Now you have to create a fixture service. This defines options you can use on `fixtures bundle configurations yaml files`_.
 
 .. code-block:: php
 
@@ -31,9 +31,12 @@ Now you have to create a fixture service to define few options for this resource
         }
     }
 
-Register it on Symfony on ``config/services/fixtures.yml``
+In this file we have only one custom option which is the article title.
+Now Register it on Symfony on ``config/services/fixtures.yml``
 
 .. code-block:: yaml
+
+    # config/services/fixtures.yml
 
     services:
         _defaults:
@@ -45,3 +48,5 @@ Register it on Symfony on ``config/services/fixtures.yml``
         App\Fixture\ArticleFixture:
                 arguments:
                     $exampleFactory: '@App\Fixture\Factory\ArticleExampleFactory'
+
+.. _fixtures bundle configurations yaml files: https://github.com/Monofony/SymfonyStarter/blob/master/config/packages/sylius_fixtures.yaml
