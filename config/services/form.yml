@@ -5,59 +5,36 @@ parameters:
      sylius.form.type.admin_user.validation_groups: ["sylius"]
 
 services:
-    App\Form\EventSubscriber\CustomerRegistrationFormSubscriber:
-        arguments:
-            - "@sylius.repository.customer"
-        autowire: false 
-        
-    app.form.extension.type.customer:
-        class: App\Form\Extension\CustomerTypeExtension
-        tags:
-            - { name: form.type_extension, extended_type: Sylius\Bundle\CustomerBundle\Form\Type\CustomerType }
+    _defaults:
+        autowire: true
+        autoconfigure: true
 
-    app.date_type_extension:
-        class: App\Form\Extension\DateTypeExtension
-        tags:
-            - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\DateType }
+    App\Form\Extension\:
+        resource: '../../src/Form/Extension'
 
-    sylius.form.type.admin_user:
-        class: App\Form\Type\User\AdminUserType
-        arguments:
-            - "%sylius.model.admin_user.class%"
-            - [sylius]
-        tags:
-          - { name: form.type }
+    App\Form\EventSubscriber\CustomerRegistrationFormSubscriber: ~
 
-    sylius.form.type.app_user:
-        class: App\Form\Type\User\AppUserType
+    App\Form\Type\User\AdminUserType:
         arguments:
-            - "%sylius.model.app_user.class%"
-            - [sylius]
-        tags:
-          - { name: form.type }
+            $dataClass: "%sylius.model.admin_user.class%"
+            $validationGroups: [sylius]
 
-    sylius.form.type.app_user_registration:
-        class: App\Form\Type\User\AppUserRegistrationType
+    App\Form\Type\User\AppUserType:
         arguments:
-            - "%sylius.model.app_user.class%"
-            - [sylius, sylius_user_registration]
-        tags:
-            - { name: form.type }
+            $dataClass: "%sylius.model.app_user.class%"
+            $validationGroups: [sylius]
 
-    sylius.form.type.customer_simple_registration:
-        class: App\Form\Type\Customer\CustomerSimpleRegistrationType
+    App\Form\Type\User\AppUserRegistrationType:
         arguments:
-            - "%sylius.model.customer.class%"
-            - [sylius, sylius_user_registration]
-            - "@sylius.repository.customer"
-        tags:
-            - { name: form.type, alias: sylius_customer_simple_registration }
+            $dataClass: "%sylius.model.app_user.class%"
+            $validationGroups: [sylius, sylius_user_registration]
 
-    sylius.form.type.customer_registration:
-        class: App\Form\Type\Customer\CustomerRegistrationType
+    App\Form\Type\Customer\CustomerSimpleRegistrationType:
         arguments:
-            - "%sylius.model.customer.class%"
-            - [sylius, sylius_user_registration, sylius_customer_profile]
-            - "@sylius.repository.customer"
-        tags:
-            - { name: form.type, alias: sylius_customer_registration }
+            $dataClass: "%sylius.model.customer.class%"
+            $validationGroups: [sylius, sylius_user_registration]
+
+    App\Form\Type\Customer\CustomerRegistrationType:
+        arguments:
+            $dataClass: "%sylius.model.customer.class%"
+            $validationGroups: [sylius, sylius_user_registration, sylius_customer_profile]
