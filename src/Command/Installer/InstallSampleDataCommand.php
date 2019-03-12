@@ -49,7 +49,7 @@ final class InstallSampleDataCommand extends Command
     /**
      * @var string
      */
-    private $rootDir;
+    private $projectDir;
 
     /**
      * @var string
@@ -59,14 +59,14 @@ final class InstallSampleDataCommand extends Command
     /**
      * @param CommandDirectoryChecker $commandDirectoryChecker
      * @param EntityManagerInterface  $entityManager
-     * @param string                  $rootDir
+     * @param string                  $projectDir
      * @param string                  $environment
      */
-    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, EntityManagerInterface $entityManager, string $rootDir, string $environment)
+    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, EntityManagerInterface $entityManager, string $projectDir, string $environment)
     {
         $this->commandDirectoryChecker = $commandDirectoryChecker;
         $this->entityManager = $entityManager;
-        $this->rootDir = $rootDir;
+        $this->projectDir = $projectDir;
         $this->environment = $environment;
 
         parent::__construct();
@@ -121,9 +121,8 @@ EOT
         }
 
         try {
-            $rootDir = $this->rootDir.'/../';
-            $this->ensureDirectoryExistsAndIsWritable($rootDir.self::WEB_MEDIA_DIRECTORY, $output);
-            $this->ensureDirectoryExistsAndIsWritable($rootDir.self::WEB_MEDIA_IMAGE_DIRECTORY, $output);
+            $this->ensureDirectoryExistsAndIsWritable($this->projectDir.'/'.self::WEB_MEDIA_DIRECTORY, $output);
+            $this->ensureDirectoryExistsAndIsWritable($this->projectDir.'/'.self::WEB_MEDIA_IMAGE_DIRECTORY, $output);
         } catch (\RuntimeException $exception) {
             $outputStyle->writeln($exception->getMessage());
 
