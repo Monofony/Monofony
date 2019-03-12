@@ -6,7 +6,6 @@ As an example we will take an **Article entity**.
 
 .. code-block:: php
 
-    <?php
     /*
      * This file is part of AppName.
      *
@@ -16,10 +15,12 @@ As an example we will take an **Article entity**.
      * file that was distributed with this source code.
      */
     namespace App\Entity;
+
     use Doctrine\ORM\Mapping as ORM;
     use JMS\Serializer\Annotation as JMS;
     use Sylius\Component\Resource\Model\ResourceInterface;
     use Symfony\Component\Validator\Constraints as Assert;
+
     /**
      * @ORM\Entity
      * @ORM\Table(name="app_article")
@@ -29,6 +30,7 @@ As an example we will take an **Article entity**.
     class Article implements ResourceInterface
     {
         use IdentifiableTrait;
+
         /**
          * @var string|null
          *
@@ -40,6 +42,7 @@ As an example we will take an **Article entity**.
          * @JMS\Groups({"Default", "Detailed"})
          */
         private $title;
+
         /**
          * @return string|null
          */
@@ -47,6 +50,7 @@ As an example we will take an **Article entity**.
         {
             return $this->title;
         }
+
         /**
          * @param string|null $title
          */
