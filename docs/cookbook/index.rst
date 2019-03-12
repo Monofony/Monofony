@@ -13,6 +13,21 @@ Entities
 
 .. include:: /cookbook/entities/map.rst.inc
 
+
+Fixtures
+--------
+
+.. toctree::
+    :hidden:
+
+    fixtures/factory
+    fixtures/fixture
+    fixtures/suite
+    fixtures/load
+
+.. include:: /cookbook/fixtures/map.rst.inc
+
+
 Capistrano
 ----------
 
