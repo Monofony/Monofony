@@ -1,8 +1,8 @@
 The Book
 ========
 
-Here you will find all the concepts used in AppName.
-The Books helps to understand how AppName works.
+Here you will find all the concepts used in Monofony.
+The Books helps to understand how Monofony works.
 
 Architecture
 ------------
