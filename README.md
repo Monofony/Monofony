@@ -11,7 +11,7 @@
 
 Search and replace 'app_name', 'AppName' et 'APP_NAME' with your application name
 
-Init project
+Installation
 ------------
 
 Install php dependencies using composer
@@ -26,36 +26,25 @@ $ yarn install && yarn run gulp
 $ php bin/console server:start
 ```
 
-[Behat](http://behat.org) scenarios
------------------------------------
+Documentation
+-------------
+ 
+Documentation is available at [https://symfonystarter.readthedocs.io/en/latest/index.html](https://symfonystarter.readthedocs.io/en/latest/index.html).
 
-By default Behat uses `http://localhost:8080/` as your application base url. If your one is different,
-you need to create `behat.yml` files that will overwrite it with your custom url:
 
-```yaml
-imports: ["behat.yml.dist"]
+Contributing
+------------
 
-default:
-    extensions:
-        Behat\MinkExtension:
-            base_url: http://my.custom.url
-```
+Would like to help us and build the most symfony-starter using Sylius? Feel free to open a pull-request!
 
-Then run selenium-server-standalone:
 
-```bash
-$ vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=path/to/chromedriver
-```
+License
+-------
 
-Then setup your test database:
+Monofony is completely free and released under the [MIT License](https://github.com/Monofony/SymfonyStarter/blob/master/LICENSE).
 
-```bash
-$ php bin/console doctrine:database:create --env=test
-$ php bin/console doctrine:migrations:migrate --env=test
-```
+Authors
+-------
 
-You can run Behat using the following commands:
-
-```bash
-$ vendor/bin/behat
-```
+Monofony was originally created by [Loïc Frémont](https://twitter.com/loic_425).
+See the list of [contributors from our awesome community](https://github.com/Monofony/SymfonyStarter/contributors).
