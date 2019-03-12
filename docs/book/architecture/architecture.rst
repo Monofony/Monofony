@@ -4,7 +4,7 @@
 Architecture Overview
 =====================
 
-Before we dive separately into every AppName concept, you need to have an overview of how our main application is structured.
+Before we dive separately into every Monofony concept, you need to have an overview of how our main application is structured.
 
 Fullstack Symfony
 -----------------
@@ -13,7 +13,7 @@ Fullstack Symfony
     :scale: 15%
     :align: center
 
-**AppName** is based on Symfony, which is a leading PHP framework to create web applications. Using Symfony allows
+**Monofony** is based on Symfony, which is a leading PHP framework to create web applications. Using Symfony allows
 developers to work better and faster by providing them with certainty of developing an application that is fully compatible
 with the business rules, that is structured, maintainable and upgradable, but also it allows to save time by providing generic re-usable modules.
 
@@ -45,7 +45,7 @@ To read more about Twig, `go here <http://twig.sensiolabs.org/>`_.
 Third Party Libraries
 ---------------------
 
-AppName uses a lot of libraries for various tasks:
+Monofony uses a lot of libraries for various tasks:
 
 * `Sylius <http://docs.sylius.org/en/latest/>`_ for routing, controllers, data fixtures, grids
 * `KnpMenu <http://symfony.com/doc/current/bundles/KnpMenuBundle/index.html>`_ - for backend menus

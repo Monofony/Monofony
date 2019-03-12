@@ -1,10 +1,10 @@
-AppName Documentation
-=====================
+Monofony Documentation
+======================
 
 .. image:: /_images/logo_big.png
-   :alt:   AppName Welcome Page
+   :alt:   Monofony Welcome Page
 
-`AppName`_ is a project based on
+`Monofony`_ is a project based on
 `Symfony Framework`_ and `Sylius`_.
 
 .. note::
@@ -16,8 +16,8 @@ AppName Documentation
 The Book
 --------
 
-Here you will find all the concepts used in the AppName platform.
-:doc:`The Book </book/index>` helps to understand how AppName works.
+Here you will find all the concepts used in the Monofony platform.
+:doc:`The Book </book/index>` helps to understand how Monofony works.
 
 .. toctree::
     :hidden:
@@ -62,7 +62,7 @@ Deployment
 
 .. include:: /deployment/map.rst.inc
 
-.. _AppName: http://www.mobizel.com
+.. _Monofony: https://twitter.com/hashtag/Monofony
 .. _Sylius: http://sylius.org
 .. _`Symfony Framework`: http://symfony.com
 .. _`Quick Tour`: http://symfony.com/doc/current/quick_tour

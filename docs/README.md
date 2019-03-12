@@ -1,7 +1,7 @@
-AppName Documentation
-=====================
+Monofony Documentation
+======================
 
-This directory contains documentation for AppName. 
+This directory contains documentation for Monofony. 
 
 This documentation is inspired by [Sylius documentation](http://docs.sylius.org). 
 
