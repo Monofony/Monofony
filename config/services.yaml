@@ -18,6 +18,9 @@ services:
             - "@security.authorization_checker"
             - "@router"
 
+    Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
+    Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
+
 imports:
     - { resource: services/command.yml }
     - { resource: services/context.yml }
