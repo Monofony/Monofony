@@ -1,5 +1,5 @@
-Use it on your suite
-====================
+How to use it on your suite
+===========================
 
 .. code-block:: yaml
 
