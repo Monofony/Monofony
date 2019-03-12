@@ -35,7 +35,7 @@ Documentation is available at [https://symfonystarter.readthedocs.io/en/latest/i
 Contributing
 ------------
 
-Would like to help us and build the most symfony-starter using Sylius? Feel free to open a pull-request!
+Would like to help us and build the best symfony-starter using Sylius? Feel free to open a pull-request!
 
 
 License
@@ -47,4 +47,4 @@ Authors
 -------
 
 Monofony was originally created by [Loïc Frémont](https://twitter.com/loic_425).
-See the list of [contributors from our awesome community](https://github.com/Monofony/SymfonyStarter/contributors).
+See the list of [contributors from our community](https://github.com/Monofony/SymfonyStarter/contributors).
