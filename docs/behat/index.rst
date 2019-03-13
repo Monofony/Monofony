@@ -1,6 +1,10 @@
 The BDD Guide
 =============
 
+.. note::
+
+    This section is based on the great `Sylius documentation <http://docs.sylius.com>`_.
+
 Behaviour driven development is an approach to software development process that provides software development and management teams
 with shared tools and a shared process to collaborate on software development. The awesome part of BDD is its ubiquitous language,
 which is used to describe the software in English-like sentences of domain specific language.
