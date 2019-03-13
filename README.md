@@ -29,7 +29,7 @@ $ php bin/console server:start
 Documentation
 -------------
  
-Documentation is available at [https://symfonystarter.readthedocs.io/en/latest/index.html](https://symfonystarter.readthedocs.io/en/latest/index.html).
+Documentation is available at [https://monofony.readthedocs.io/en/latest/](https://symfonystarter.readthedocs.io/en/latest/index.html).
 
 
 Contributing
