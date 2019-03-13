@@ -39,6 +39,10 @@ class InstallCommand extends Command
             'message' => 'Setting up the database.',
         ],
         [
+            'command' => 'setup',
+            'message' => 'Website configuration.',
+        ],
+        [
             'command' => 'assets',
             'message' => 'Installing assets.',
         ],
