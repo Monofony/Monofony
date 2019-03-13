@@ -1,5 +1,5 @@
-Manage your new entity on the admin panel
-=========================================
+How to manage your new entity on the admin panel
+================================================
 
 To add a new grid, create a new grid configuration file in ``config/packages/grids/backend/`` and import this to sylius_grid configuration file
 
