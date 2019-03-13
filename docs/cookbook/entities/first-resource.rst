@@ -6,27 +6,15 @@ As an example we will take an **Article entity**.
 
 .. code-block:: php
 
-    /*
-     * This file is part of AppName.
-     *
-     * (c) Monofony
-     *
-     * For the full copyright and license information, please view the LICENSE
-     * file that was distributed with this source code.
-     */
-
     namespace App\Entity;
 
     use Doctrine\ORM\Mapping as ORM;
-    use JMS\Serializer\Annotation as JMS;
     use Sylius\Component\Resource\Model\ResourceInterface;
     use Symfony\Component\Validator\Constraints as Assert;
 
     /**
      * @ORM\Entity
      * @ORM\Table(name="app_article")
-     *
-     * @JMS\ExclusionPolicy("all")
      */
     class Article implements ResourceInterface
     {
@@ -38,9 +26,6 @@ As an example we will take an **Article entity**.
          * @ORM\Column(type="string")
          *
          * @Assert\NotBlank()
-         *
-         * @JMS\Expose
-         * @JMS\Groups({"Default", "Detailed"})
          */
         private $title;
 
@@ -65,6 +50,8 @@ You now have to add it on Sylius Resource configuration.
 
 .. code-block:: yaml
 
+    # config/packages/sylius_resource.yaml
+
     sylius_resource:
         resources:
             app.article:
@@ -75,8 +62,22 @@ You now have to add it on Sylius Resource configuration.
                 classes:
                     model: App\Entity\OAuth\Client
 
-.. note::
+.. warning::
 
-    You can learn more from `Sylius Resource Bundle`_ documentation.
+    Don't forget to synchronize your database using Doctrine Migrations.
+
+You can use these two commands to generate and synchronize your database.
+
+.. code-block:: bash
+
+    $ bin/console doctrine:migrations:diff
+    $ bin/console doctrine:migrations:migrate
+
+Learn More
+----------
+
+* `Sylius Resource Bundle`_ documentation
+* `Doctrine migrations`_ documentation
 
 .. _`Sylius Resource Bundle`: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusResourceBundle/configuration.html
+.. _`Doctrine migrations`: https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html
