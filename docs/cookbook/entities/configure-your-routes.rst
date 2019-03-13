@@ -1,5 +1,5 @@
-Configure backend routes
-========================
+How to configure backend routes
+===============================
 
 To configure backend routes for your entity, you have to create a new file on backend routes folder ``config/routes/backend``.
 
