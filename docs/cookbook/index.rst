@@ -28,12 +28,12 @@ Fixtures
 .. include:: /cookbook/fixtures/map.rst.inc
 
 
-Capistrano
+Deployment
 ----------
 
 .. toctree::
     :hidden:
 
-    capistrano
+    deployment/capistrano
 
-.. include:: /cookbook/map.rst.inc
+.. include:: /cookbook/deployment/map.rst.inc

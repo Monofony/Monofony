@@ -36,8 +36,6 @@ The Cookbook
 
     cookbook/index
 
-.. include:: /cookbook/map.rst.inc
-
 The Behat Guide
 ---------------
 

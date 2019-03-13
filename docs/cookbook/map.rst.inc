@@ -1,1 +1,1 @@
-* :doc:`/cookbook/capistrano`
+* :doc:`/cookbook/index`
