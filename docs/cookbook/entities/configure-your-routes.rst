@@ -5,9 +5,9 @@ To configure backend routes for your entity, you have to create a new file on ba
 
 Let’s configure our “Article” routes as an example.
 
-``config/routes/backend/article.yml``
-
 .. code-block:: yaml
+
+    # config/routes/backend/article.yml
 
     app_backend_article:
         resource: |
@@ -26,17 +26,20 @@ Let’s configure our “Article” routes as an example.
 
 And add it on backend routes configuration.
 
-``config/routes/backend.yml``
-
 .. code-block:: yaml
+
+    #config/routes/backend.yml
+
+    [...]
 
     app_backend_article:
         resource: "backend/article.yml"
 
 And that’s all!
 
-.. note::
+Learn More
+----------
 
-    You can learn more about `configuring routes in sylius documentation`_.
+* `Configuring routes in sylius documentation`_
 
-.. _configuring routes in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html#generating-the-crud-routing
+.. _Configuring routes in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html#generating-the-crud-routing
