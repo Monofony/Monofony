@@ -13,13 +13,13 @@ load-fixtures:
 	bin/console sylius:fixtures:load default --no-interaction
 
 test-behat:
-	vendor/bin/behat --tags=${TAGS} ${ARGS}
+	APP_ENV=test vendor/bin/behat --tags=${TAGS} ${ARGS}
 
 test-behat-without-javascript:
-	vendor/bin/behat --tags=~javascript --tags=${TAGS}
+	APP_ENV=test vendor/bin/behat --tags=~javascript --tags=${TAGS}
 
 test-behat-with-cli:
-	vendor/bin/behat --tags=cli --tags=${TAGS}
+	APP_ENV=test vendor/bin/behat --tags=cli --tags=${TAGS}
 
 test-infection:
 	phpdbg -qrr vendor/bin/infection ${ARGS}
@@ -33,7 +33,7 @@ test-phpstan::
 	vendor/bin/phpstan analyse -c phpstan.neon -l 1 src
 
 test-phpunit:
-	vendor/bin/phpunit ${ARGS}
+	APP_ENV=test vendor/bin/phpunit ${ARGS}
 
 start:
 	bin/console server:start ${ARGS}
