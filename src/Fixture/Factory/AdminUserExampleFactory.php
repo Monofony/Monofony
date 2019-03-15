@@ -58,6 +58,7 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
         /** @var AdminUser $user */
         $user = $this->adminUserFactory->createNew();
         $user->setEmail($options['email']);
+        $user->setUsername($options['username']);
         $user->setPlainPassword($options['password']);
         $user->setEnabled($options['enabled']);
 
@@ -79,6 +80,9 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
         $resolver
             ->setDefault('email', function (Options $options) {
                 return $this->faker->email;
+            })
+            ->setDefault('username', function (Options $options): string {
+                return $this->faker->firstName.' '.$this->faker->lastName;
             })
             ->setDefault('enabled', true)
             ->setAllowedTypes('enabled', 'bool')
