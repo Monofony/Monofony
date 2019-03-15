@@ -22,6 +22,8 @@
 /behat.yml
 /phpspec.yml
 
+Makefile
+
 ###> symfony/framework-bundle ###
 /.env.*.local
 /.env.local
