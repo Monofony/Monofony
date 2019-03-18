@@ -72,8 +72,43 @@ Create a minimal Article class
 
 Rerun phpspec and see a beautiful green color.
 
-Add your first specification
-----------------------------
+Specify it implements sylius resource interface
+-----------------------------------------------
+
+.. code-block:: php
+
+    function it_implements_sylius_resource_interface(): void
+    {
+        $this->shouldImplement(ResourceInterface::class);
+    }
+
+.. warning::
+
+    And Rerun phpspec, DO NOT FEAR RED COLOR!
+    It's important to check that you write code which solves your specifications.
+
+Solve this on your entity
+-------------------------
+
+.. code-block:: php
+
+    # src/App/Entity/Article.php
+
+    namespace App\Entity;
+
+    use Sylius\Component\Resource\Model\ResourceInterface;
+
+    class Article implements ResourceInterface
+    {
+        use IdentifiableTrait;
+    }
+
+.. warning::
+
+    Rerun phpspec again and check this specification is solved.
+
+Specify it has a title
+----------------------
 
 .. code-block:: php
 
@@ -85,8 +120,7 @@ Add your first specification
 
 .. warning::
 
-    And Rerun phpspec, DO NOT FEAR RED COLOR!
-    It's important to check your code changes do the job matching your specification.
+    Don't forget to rerun phpspec on each step.
 
 Add title on Article entity
 ---------------------------
@@ -133,10 +167,6 @@ Specify author of the article
         $this->getAuthor()->shouldReturn($author);
     }
 
-.. warning::
-
-    Don't forget to rerun phpspec on each step.
-
 Add author on your entity
 -------------------------
 
@@ -169,4 +199,4 @@ Add author on your entity
         $this->author = $author;
     }
 
-You have done with phpspec to design your first entity!
+That's all to design your first entity!
