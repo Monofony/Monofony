@@ -36,6 +36,7 @@ BDD
     bdd/how-to-configure-phpspec-with-code-coverage
     bdd/how-to-disable-phpspec-code-coverage
     bdd/how-to-design-entities-with-phpspec
+    bdd/how-to-design-services-with-phpspec
 
 .. include:: /cookbook/bdd/map.rst.inc
 
