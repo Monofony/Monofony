@@ -1,4 +1,5 @@
 TAGS?=~todo
+CHROMEDRIVER_PATH=../chromedriver
 
 build-docs:
 	cd docs && sphinx-build -b html . build -a
@@ -17,6 +18,11 @@ test-behat:
 
 test-behat-without-javascript:
 	APP_ENV=test vendor/bin/behat --tags=~javascript --tags=${TAGS}
+
+test-behat-with-javascript:
+	vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=${CHROMEDRIVER_PATH} > /dev/null 2>&1 &
+	sleep 5
+	APP_ENV=test vendor/bin/behat --tags=javascript --tags=${TAGS}
 
 test-behat-with-cli:
 	APP_ENV=test vendor/bin/behat --tags=cli --tags=${TAGS}
