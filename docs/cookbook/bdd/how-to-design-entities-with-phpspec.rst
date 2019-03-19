@@ -107,10 +107,15 @@ Solve this on your entity
 
     Rerun phpspec again and check this specification is solved.
 
-Specify it has a title
-----------------------
+Specify title behaviours
+------------------------
 
 .. code-block:: php
+
+    function it_has_no_title_by_default(): void
+    {
+        $this->getTitle()->shouldReturn(null);
+    }
 
     function its_title_is_mutable(): void
     {
