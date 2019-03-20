@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Monofony.
+ * This file is part of AppName.
  *
  * (c) Monofony
  *
@@ -13,7 +13,6 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
-use Sylius\Component\User\Model\UserAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -21,7 +20,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="sylius_customer")
  */
-class Customer extends BaseCustomer implements UserAwareInterface
+class Customer extends BaseCustomer implements CustomerInterface
 {
     /**
      * @var AppUser
@@ -42,25 +41,23 @@ class Customer extends BaseCustomer implements UserAwareInterface
 
     /**
      * @param UserInterface|null $user
-     *
-     * @return $this
      */
-    public function setUser(?UserInterface $user)
+    public function setUser(?UserInterface $user): void
     {
-        if ($this->user !== $user) {
-            $this->user = $user;
-            $this->assignCustomer($user);
+        if ($this->user === $user) {
+            return;
         }
 
-        return $this;
-    }
+        \Webmozart\Assert\Assert::nullOrIsInstanceOf($user, AppUserInterface::class);
 
-    /**
-     * @param AppUser|null $user
-     */
-    protected function assignCustomer($user = null)
-    {
-        if (null !== $user) {
+        $previousUser = $this->user;
+        $this->user = $user;
+
+        if ($previousUser instanceof AppUserInterface) {
+            $previousUser->setCustomer(null);
+        }
+
+        if ($user instanceof AppUserInterface) {
             $user->setCustomer($this);
         }
     }
