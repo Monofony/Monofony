@@ -1,5 +1,5 @@
-The BDD Guide
-=============
+How to use Behat to design your features
+----------------------------------------
 
 .. note::
 
@@ -25,7 +25,15 @@ We use `FriendsOfBehat/SymfonyExtension`_ to integrate Behat with Symfony.
     how-to-add-new-page
     how-to-define-new-suite
     how-to-use-transformers
+    how-to-change-behat-application-base-url
 
-.. include:: /behat/map.rst.inc
+.. include:: /cookbook/bdd/behat/map.rst.inc
+
+Learn more
+----------
+
+.. note::
+
+    To learn more, read the `Behat documentation <http://behat.org/en/latest/guides.html>`_.
 
 .. _FriendsOfBehat/SymfonyExtension: https://github.com/FriendsOfBehat/SymfonyExtension

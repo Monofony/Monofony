@@ -9,7 +9,7 @@ Thus you have two options:
 
 .. note::
 
-    But if you don't need that feature, :doc:`disable code coverage </cookbook/bdd/how-to-disable-phpspec-code-coverage>`.
+    But if you don't need that feature, :doc:`disable code coverage </cookbook/bdd/phpspec/how-to-disable-phpspec-code-coverage>`.
 
 
 Install phpdbg
