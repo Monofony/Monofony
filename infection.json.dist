@@ -8,9 +8,12 @@
             "Behat",
             "Command",
             "DependencyInjection",
+            "Formatter",
+            "Menu",
             "Migrations",
             "Fixture",
-            "Form/Type"
+            "Form/Type",
+            "Kernel.php"
         ]
     },
     "logs": {
