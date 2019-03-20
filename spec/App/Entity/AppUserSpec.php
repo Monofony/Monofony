@@ -2,7 +2,7 @@
 
 namespace spec\App\Entity;
 
-use App\Entity\AppUser;
+use App\Entity\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
@@ -10,6 +10,11 @@ use Sylius\Component\User\Model\User as BaseUser;
 
 class AppUserSpec extends ObjectBehavior
 {
+    function it_implements_an_app_user_interface(): void
+    {
+        $this->shouldImplement(AppUserInterface::class);
+    }
+
     function it_extends_a_user_model(): void
     {
         $this->shouldHaveType(BaseUser::class);
