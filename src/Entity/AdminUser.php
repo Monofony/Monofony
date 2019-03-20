@@ -18,10 +18,8 @@ use Sylius\Component\User\Model\User as BaseUser;
  * @ORM\Entity
  * @ORM\Table("sylius_admin_user")
  */
-class AdminUser extends BaseUser
+class AdminUser extends BaseUser implements AdminUserInterface
 {
-    const DEFAULT_ADMIN_ROLE = 'ROLE_ADMIN';
-
     /**
      * @var string
      *
@@ -47,42 +45,34 @@ class AdminUser extends BaseUser
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    public function getLastName()
+    public function getLastName(): ?string
     {
         return $this->lastName;
     }
 
     /**
-     * @param string $lastName
-     *
-     * @return $this
+     * {@inheritdoc}
      */
-    public function setLastName($lastName)
+    public function setLastName(?string $lastName): void
     {
         $this->lastName = $lastName;
-
-        return $this;
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
-    public function getFirstName()
+    public function getFirstName(): ?string
     {
         return $this->firstName;
     }
 
     /**
-     * @param string $firstName
-     *
-     * @return $this
+     * {@inheritdoc}
      */
-    public function setFirstName($firstName)
+    public function setFirstName(?string $firstName): void
     {
         $this->firstName = $firstName;
-
-        return $this;
     }
 }
