@@ -20,7 +20,7 @@ use Sylius\Component\User\Model\User as BaseUser;
  * @ORM\Entity
  * @ORM\Table(name="sylius_app_user")
  */
-class AppUser extends BaseUser
+class AppUser extends BaseUser implements AppUserInterface
 {
     /**
      * @var CustomerInterface
@@ -28,26 +28,22 @@ class AppUser extends BaseUser
      * @ORM\OneToOne(targetEntity="Sylius\Component\Customer\Model\CustomerInterface", inversedBy="user", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
-    protected $customer;
+    private $customer;
 
     /**
-     * @return CustomerInterface
+     * {@inheritdoc}
      */
-    public function getCustomer()
+    public function getCustomer(): ?CustomerInterface
     {
         return $this->customer;
     }
 
     /**
-     * @param CustomerInterface $customer
-     *
-     * @return $this
+     * {@inheritdoc}
      */
-    public function setCustomer($customer)
+    public function setCustomer($customer): void
     {
         $this->customer = $customer;
-
-        return $this;
     }
 
     /**
@@ -96,15 +92,5 @@ class AppUser extends BaseUser
         }
 
         $this->customer->setEmailCanonical($emailCanonical);
-    }
-
-    /**
-     * @param Customer $customer
-     */
-    protected function assignUser(Customer $customer = null)
-    {
-        if (null !== $customer) {
-            $customer->setUser($this);
-        }
     }
 }
