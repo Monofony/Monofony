@@ -7,7 +7,7 @@ Title is a simple string and author implements CustomerInterface.
 .. warning::
 
     By default, phpspec on Monofony is configured with code coverage.
-    :doc:`Learn how to configure phpspec with code coverage </cookbook/bdd/how-to-configure-phpspec-with-code-coverage>` or :doc:`disable code coverage </cookbook/bdd/how-to-disable-phpspec-code-coverage>`.
+    :doc:`Learn how to configure phpspec with code coverage </cookbook/bdd/phpspec/how-to-configure-phpspec-with-code-coverage>` or :doc:`disable code coverage </cookbook/bdd/phpspec/how-to-disable-phpspec-code-coverage>`.
 
 Generate phpspec for your entity
 --------------------------------
