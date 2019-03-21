@@ -1,7 +1,7 @@
 {
-    "name": "mobizel/monofony",
+    "name": "monofony/symfony_starter",
     "description": "Starter project for Symfony projects",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
