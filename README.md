@@ -31,6 +31,10 @@ Documentation
  
 Documentation is available at [https://monofony.readthedocs.io/en/latest/](https://monofony.readthedocs.io/en/latest/).
 
+Community
+---------
+
+Stay updated by following our [Twitter](https://twitter.com/MonofonyStarter).
 
 Contributing
 ------------
