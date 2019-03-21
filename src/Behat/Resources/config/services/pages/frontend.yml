@@ -1,7 +1,5 @@
-imports:
-    - { resource: frontend/account.yml }
-
 services:
-    App\Behat\Page\Frontend\HomePage:
+    App\Behat\Page\Frontend\:
+        resource: '../../../../Page/Frontend/*'
         parent: app.behat.symfony_page
         public: false
