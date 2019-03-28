@@ -89,8 +89,8 @@ before "deploy:updated", "deploy:set_permissions:acl"
 after 'deploy:updated', :build_assets do
     on roles(:web) do
         puts "Build assets"
-        execute "cd #{release_path}/assets/backend && yarn install && GULP_ENV=prod yarn run gulp"
-        execute "cd #{release_path}/assets/frontend && yarn install && GULP_ENV=prod yarn run gulp"
+        execute "cd #{release_path} && yarn install && GULP_ENV=prod yarn run gulp"
+        execute "cd #{release_path} && composer dump-env prod"
     end
 end
 
