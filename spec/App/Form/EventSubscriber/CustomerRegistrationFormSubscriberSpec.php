@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace spec\Sylius\Bundle\CoreBundle\Form\EventSubscriber;
+namespace spec\App\Form\EventSubscriber;
 
 use App\Entity\Customer;
 use PhpSpec\ObjectBehavior;
@@ -81,6 +81,25 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
 
         $existingCustomer->getUser()->willReturn($user);
 
+        $existingCustomer->setUser($user)->shouldNotBeCalled();
+        $form->setData($existingCustomer)->shouldNotBeCalled();
+
+        $this->preSubmit($event);
+    }
+
+    function it_does_not_set_user_if_email_is_empty(
+        FormEvent $event,
+        FormInterface $form,
+        Customer $customer,
+        RepositoryInterface $customerRepository,
+        Customer $existingCustomer,
+        AppUser $user
+    ): void {
+        $event->getForm()->willReturn($form);
+        $form->getData()->willReturn($customer);
+        $event->getData()->willReturn(['email' => '']);
+
+        $customerRepository->findOneBy(['email' => ''])->shouldNotBeCalled();
         $existingCustomer->setUser($user)->shouldNotBeCalled();
         $form->setData($existingCustomer)->shouldNotBeCalled();
 
