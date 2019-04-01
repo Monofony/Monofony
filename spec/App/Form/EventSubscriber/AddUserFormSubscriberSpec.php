@@ -9,8 +9,10 @@ use Prophecy\Argument;
 use Sylius\Component\User\Model\UserAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Validator\Constraints\Valid;
 
 final class AddUserFormSubscriberSpec extends ObjectBehavior
 {
