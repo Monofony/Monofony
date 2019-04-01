@@ -206,6 +206,9 @@
             "ref": "fe60ce509ef04a3f40da96e3979bc8d9b13b2372"
         }
     },
+    "justinrainbow/json-schema": {
+        "version": "5.2.8"
+    },
     "knplabs/doctrine-behaviors": {
         "version": "1.5.0"
     },
