@@ -31,6 +31,15 @@ class AppUserSpec extends ObjectBehavior
         $this->getCustomer()->shouldReturn($customer);
     }
 
+    function it_sets_customer_email(CustomerInterface $customer): void
+    {
+        $customer->setEmail('jon@snow.wall')->shouldBeCalled();
+
+        $this->setCustomer($customer);
+
+        $this->setEmail('jon@snow.wall');
+    }
+
     function it_returns_customer_email(CustomerInterface $customer): void
     {
         $customer->getEmail()->willReturn('jon@snow.wall');

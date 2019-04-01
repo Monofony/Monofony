@@ -18,6 +18,20 @@ class CanonicalizerListenerSpec extends ObjectBehavior
         $this->beConstructedWith($canonicalizer);
     }
 
+    function it_canonicalize_user_username($canonicalizer, LifecycleEventArgs $event, UserInterface $user): void
+    {
+        $event->getEntity()->willReturn($user);
+        $user->getUsername()->willReturn('testUser');
+        $user->getEmail()->willReturn('test@email.com');
+
+        $user->setUsernameCanonical('testuser')->shouldBeCalled();
+        $user->setEmailCanonical('test@email.com')->shouldBeCalled();
+        $canonicalizer->canonicalize('testUser')->willReturn('testuser')->shouldBeCalled();
+        $canonicalizer->canonicalize('test@email.com')->willReturn('test@email.com')->shouldBeCalled();
+
+        $this->canonicalize($event);
+    }
+
     function it_canonicalize_user_username_on_pre_persist_doctrine_event($canonicalizer, LifecycleEventArgs $event, UserInterface $user): void
     {
         $event->getEntity()->willReturn($user);
