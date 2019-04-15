@@ -8,7 +8,7 @@ import 'sylius/ui/sylius-auto-complete';
     $(document).ready(function () {
         $('.sylius-autocomplete').autoComplete();
     });
-})(jQuery);
+});
 
 window.$ = $;
 window.jQuery = $;
