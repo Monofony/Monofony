@@ -13,8 +13,20 @@ install:
 load-fixtures:
 	bin/console sylius:fixtures:load default --no-interaction
 
+start:
+	symfony server:start --no-tls || bin/console server:start ${ARGS}
+
+stop:
+	symfony server:stop || bin/console server:stop
+
+test: validate-all test-all
+
+test-all: test-phpspec test-phpstan test-phpunit test-infection test-all-behat
+
 test-behat:
 	APP_ENV=test vendor/bin/behat --tags=${TAGS} ${ARGS}
+
+test-all-behat: test-behat-without-javascript test-behat-with-javascript test-behat-with-cli
 
 test-behat-without-javascript:
 	APP_ENV=test vendor/bin/behat --tags=~javascript --tags=${TAGS}
@@ -41,8 +53,19 @@ test-phpstan::
 test-phpunit:
 	APP_ENV=test vendor/bin/phpunit ${ARGS}
 
-start:
-	bin/console server:start ${ARGS}
+validate-all: validate-composer validate-security validate-doctrine-schema validate-twig validate-yaml-files
 
-stop:
-	bin/console server:stop
+validate-composer:
+	composer validate --strict
+
+validate-doctrine-schema:
+	bin/console doctrine:schema:validate
+
+validate-security:
+	vendor/bin/security-checker security:check
+
+validate-twig:
+	bin/console lint:twig templates
+
+validate-yaml-files:
+	bin/console lint:yaml config
