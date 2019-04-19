@@ -63,6 +63,11 @@ security:
                 default_target_path: app_frontend_homepage
                 use_forward: false
                 use_referer: false
+            remember_me:
+                secret: "%env(APP_SECRET)%"
+                name: APP_REMEMBER_ME
+                lifetime: 31536000
+                remember_me_parameter: _remember_me
             logout:
                 path: app_frontend_logout
                 target: app_frontend_homepage
