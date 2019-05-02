@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace App\Behat\Context\Ui\Frontend;
 
+use App\Entity\CustomerInterface;
 use Behat\Behat\Context\Context;
 use App\Behat\NotificationType;
 use App\Behat\Page\Frontend\Account\DashboardPage;
@@ -23,7 +24,6 @@ use App\Behat\Page\Frontend\Account\VerificationPage;
 use App\Behat\Page\Frontend\HomePage;
 use App\Behat\Service\NotificationCheckerInterface;
 use App\Behat\Service\SharedStorageInterface;
-use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Webmozart\Assert\Assert;
 
@@ -159,14 +159,6 @@ class RegistrationContext implements Context
     public function iDoNotConfirmPassword()
     {
         $this->registerPage->verifyPassword(null);
-    }
-
-    /**
-     * @When I specify the phone number as :phoneNumber
-     */
-    public function iSpecifyThePhoneNumberAs($phoneNumber)
-    {
-        $this->registerPage->specifyPhoneNumber($phoneNumber);
     }
 
     /**
