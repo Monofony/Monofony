@@ -22,12 +22,12 @@ services:
     Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
 
 imports:
-    - { resource: services/command.yml }
-    - { resource: services/context.yml }
-    - { resource: services/fixtures.yml }
-    - { resource: services/fixtures_factories.yml }
-    - { resource: services/form.yml }
-    - { resource: services/installer.yml }
-    - { resource: services/listener.yml }
-    - { resource: services/menu.yml }
-    - { resource: services/validator.yml }
+    - { resource: services/command.yaml }
+    - { resource: services/context.yaml }
+    - { resource: services/fixtures.yaml }
+    - { resource: services/fixtures_factories.yaml }
+    - { resource: services/form.yaml }
+    - { resource: services/installer.yaml }
+    - { resource: services/listener.yaml }
+    - { resource: services/menu.yaml }
+    - { resource: services/validator.yaml }

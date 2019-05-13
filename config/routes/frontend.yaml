@@ -5,12 +5,12 @@ app_frontend_homepage:
         template: 'frontend/homepage/index.html.twig'
 
 app_account:
-    resource: "frontend/account.yml"
+    resource: "frontend/account.yaml"
     prefix: "mon-compte"
 
 sylius_security:
-    resource: "frontend/security.yml"
+    resource: "frontend/security.yaml"
 
 app_frontend_partial:
-    resource: "frontend/partial.yml"
+    resource: "frontend/partial.yaml"
     prefix: "/_partial"

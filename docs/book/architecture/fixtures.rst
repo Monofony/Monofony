@@ -35,4 +35,4 @@ What data is loaded by fixtures in Monofony?
 All files that serve for loading fixtures of Monofony are placed in the ``App/Fixture/*`` directory.
 
 And the specified data for fixtures is stored in the
-``app/config/app/sylius/sylius_fixtures.yml`` file.
+``config/packages/sylius_fixtures.yaml`` file.

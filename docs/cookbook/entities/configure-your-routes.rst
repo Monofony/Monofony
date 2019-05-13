@@ -7,7 +7,7 @@ Let’s configure our “Article” routes as an example.
 
 .. code-block:: yaml
 
-    # config/routes/backend/article.yml
+    # config/routes/backend/article.yaml
 
     app_backend_article:
         resource: |
@@ -28,12 +28,12 @@ And add it on backend routes configuration.
 
 .. code-block:: yaml
 
-    #config/routes/backend.yml
+    # config/routes/backend.yaml
 
     [...]
 
     app_backend_article:
-        resource: "backend/article.yml"
+        resource: "backend/article.yaml"
 
 And that’s all!
 

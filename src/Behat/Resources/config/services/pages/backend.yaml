@@ -1,6 +1,6 @@
 imports:
-    - { resource: backend/administrator.yml }
-    - { resource: backend/customer.yml }
+    - { resource: backend/administrator.yaml }
+    - { resource: backend/customer.yaml }
 
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html

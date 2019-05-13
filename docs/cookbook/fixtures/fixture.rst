@@ -32,11 +32,11 @@ Now you have to create a fixture service. This defines options you can use on `f
     }
 
 In this file we have only one custom option which is the article title.
-Now Register it on Symfony on ``config/services/fixtures.yml``
+Now Register it on Symfony on ``config/services/fixtures.yaml``
 
 .. code-block:: yaml
 
-    # config/services/fixtures.yml
+    # config/services/fixtures.yaml
 
     services:
         _defaults:

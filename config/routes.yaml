@@ -1,12 +1,12 @@
 app_backend:
-    resource: "routes/backend.yml"
+    resource: "routes/backend.yaml"
     prefix: admin
 
 app_frontend:
-    resource: "routes/frontend.yml"
+    resource: "routes/frontend.yaml"
 
 app_api:
-    resource: "routes/api.yml"
+    resource: "routes/api.yaml"
     prefix: /api
     defaults:
         _format: json
