@@ -28,7 +28,7 @@ class DashboardPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function hasCustomerName($name)
+    public function hasCustomerName($name): bool
     {
         return $this->hasValueInCustomerSection($name);
     }
@@ -36,7 +36,7 @@ class DashboardPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function hasCustomerEmail($email)
+    public function hasCustomerEmail($email): bool
     {
         return $this->hasValueInCustomerSection($email);
     }
@@ -44,7 +44,7 @@ class DashboardPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function isVerified()
+    public function isVerified(): bool
     {
         return !$this->hasElement('verification');
     }
@@ -52,7 +52,7 @@ class DashboardPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function hasResendVerificationEmailButton()
+    public function hasResendVerificationEmailButton(): bool
     {
         return $this->getDocument()->hasButton('Verify');
     }
@@ -60,7 +60,7 @@ class DashboardPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function pressResendVerificationEmail()
+    public function pressResendVerificationEmail(): void
     {
         $this->getDocument()->pressButton('Verify');
     }
@@ -81,7 +81,7 @@ class DashboardPage extends SymfonyPage
      *
      * @return bool
      */
-    private function hasValueInCustomerSection($value)
+    private function hasValueInCustomerSection($value): bool
     {
         $customerText = $this->getElement('customer')->getText();
 

@@ -40,7 +40,7 @@ trait EnsureDirectoryExistsAndIsWritable
      * @param string          $directory
      * @param OutputInterface $output
      */
-    private function ensureDirectoryExistsAndIsWritable($directory, OutputInterface $output)
+    private function ensureDirectoryExistsAndIsWritable($directory, OutputInterface $output): void
     {
         $checker = $this->commandDirectoryChecker;
         $checker->setCommandName($this->commandName);

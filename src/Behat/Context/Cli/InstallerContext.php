@@ -46,7 +46,7 @@ class InstallerContext extends DefaultContext
     /**
      * @Given I do not provide an email
      */
-    public function iDoNotProvideEmail()
+    public function iDoNotProvideEmail(): void
     {
         $this->inputChoices['e-mail'] = '';
     }
@@ -54,7 +54,7 @@ class InstallerContext extends DefaultContext
     /**
      * @Given I do not provide a correct email
      */
-    public function iDoNotProvideCorrectEmail()
+    public function iDoNotProvideCorrectEmail(): void
     {
         $this->inputChoices['e-mail'] = 'janusz';
     }
@@ -62,7 +62,7 @@ class InstallerContext extends DefaultContext
     /**
      * @Given I provide full administrator data
      */
-    public function iProvideFullAdministratorData()
+    public function iProvideFullAdministratorData(): void
     {
         $this->inputChoices['e-mail'] = 'test@admin.com';
         $this->inputChoices['password'] = 'pswd1$';
@@ -72,7 +72,7 @@ class InstallerContext extends DefaultContext
     /**
      * @param string $name
      */
-    private function iExecuteCommandWithInputChoices($name)
+    private function iExecuteCommandWithInputChoices($name): void
     {
         $this->questionHelper = $this->command->getHelper('question');
         $this->getTester()->setInputs($this->inputChoices);
@@ -86,7 +86,7 @@ class InstallerContext extends DefaultContext
     /**
      * @When /^I run Install setup command$/
      */
-    public function iRunInstallSetupCommmandLine()
+    public function iRunInstallSetupCommmandLine(): void
     {
         $this->application = new Application($this->kernel);
         $this->application->add($this->setupCommand);
@@ -100,7 +100,7 @@ class InstallerContext extends DefaultContext
     /**
      * @param string $name
      */
-    protected function iExecuteCommandAndConfirm($name)
+    protected function iExecuteCommandAndConfirm($name): void
     {
         $this->questionHelper = $this->command->getHelper('question');
 

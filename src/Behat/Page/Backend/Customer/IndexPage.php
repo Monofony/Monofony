@@ -20,7 +20,7 @@ class IndexPage extends BaseIndexPage
     /**
      * {@inheritdoc}
      */
-    public function getCustomerAccountStatus($customer)
+    public function getCustomerAccountStatus($customer): string
     {
         $tableAccessor = $this->getTableAccessor();
         $table = $this->getElement('table');

@@ -15,6 +15,7 @@ namespace App\Behat\Page\Backend\Customer;
 
 use App\Behat\Behaviour\Toggles;
 use App\Behat\Page\Backend\Crud\UpdatePage as BaseUpdatePage;
+use Behat\Mink\Element\NodeElement;
 
 class UpdatePage extends BaseUpdatePage
 {
@@ -23,7 +24,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function getFullName()
+    public function getFullName(): string
     {
         $firstNameElement = $this->getElement('first_name')->getValue();
         $lastNameElement = $this->getElement('last_name')->getValue();
@@ -34,7 +35,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function changeFirstName($firstName)
+    public function changeFirstName($firstName): void
     {
         $this->getDocument()->fillField('First name', $firstName);
     }
@@ -50,7 +51,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function changeLastName($lastName)
+    public function changeLastName($lastName): void
     {
         $this->getDocument()->fillField('Last name', $lastName);
     }
@@ -66,7 +67,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function changeEmail($email)
+    public function changeEmail($email): void
     {
         $this->getDocument()->fillField('Email', $email);
     }
@@ -74,7 +75,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function changePassword($password)
+    public function changePassword($password): void
     {
         $this->getDocument()->fillField('Password', $password);
     }
@@ -82,12 +83,12 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function getPassword()
+    public function getPassword(): NodeElement
     {
         return $this->getElement('password');
     }
 
-    public function subscribeToTheNewsletter()
+    public function subscribeToTheNewsletter(): void
     {
         $this->getDocument()->checkField('Subscribe to the newsletter');
     }
@@ -95,7 +96,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function isSubscribedToTheNewsletter()
+    public function isSubscribedToTheNewsletter(): bool
     {
         return $this->getDocument()->hasCheckedField('Subscribe to the newsletter');
     }
@@ -103,7 +104,7 @@ class UpdatePage extends BaseUpdatePage
     /**
      * {@inheritdoc}
      */
-    public function getGroupName()
+    public function getGroupName(): string
     {
         return $this->getElement('group')->getText();
     }

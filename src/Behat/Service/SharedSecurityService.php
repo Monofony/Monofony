@@ -42,7 +42,7 @@ final class SharedSecurityService implements SharedSecurityServiceInterface
      * @param UserInterface            $user
      * @param callable                 $action
      */
-    private function performActionAs(SecurityServiceInterface $securityService, UserInterface $user, callable $action)
+    private function performActionAs(SecurityServiceInterface $securityService, UserInterface $user, callable $action): void
     {
         try {
             $token = $securityService->getCurrentToken();

@@ -63,7 +63,7 @@ final class AppSecurityContext implements Context
     /**
      * @Given I am logged in as :email
      */
-    public function iAmLoggedInAs($email)
+    public function iAmLoggedInAs($email): void
     {
         $user = $this->appUserRepository->findOneByEmail($email);
         Assert::notNull($user);
@@ -74,7 +74,7 @@ final class AppSecurityContext implements Context
     /**
      * @Given I am a logged in customer
      */
-    public function iAmLoggedInAsACustomer()
+    public function iAmLoggedInAsACustomer(): void
     {
         /** @var AppUser $user */
         $user = $this->userFactory->create(['email' => 'customer@example.com', 'password' => 'password', 'roles' => ['ROLE_USER']]);

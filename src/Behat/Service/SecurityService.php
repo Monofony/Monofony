@@ -89,7 +89,7 @@ final class SecurityService implements SecurityServiceInterface
     /**
      * @param TokenInterface $token
      */
-    private function setToken(TokenInterface $token)
+    private function setToken(TokenInterface $token): void
     {
         $serializedToken = serialize($token);
         $this->session->set($this->sessionTokenVariable, $serializedToken);

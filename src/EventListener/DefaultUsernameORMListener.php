@@ -26,7 +26,7 @@ final class DefaultUsernameORMListener
     /**
      * @param OnFlushEventArgs $onFlushEventArgs
      */
-    public function onFlush(OnFlushEventArgs $onFlushEventArgs)
+    public function onFlush(OnFlushEventArgs $onFlushEventArgs): void
     {
         $entityManager = $onFlushEventArgs->getEntityManager();
         $unitOfWork = $entityManager->getUnitOfWork();
@@ -39,7 +39,7 @@ final class DefaultUsernameORMListener
      * @param array                  $entities
      * @param EntityManagerInterface $entityManager
      */
-    private function processEntities($entities, EntityManagerInterface $entityManager, UnitOfWork $unitOfWork)
+    private function processEntities($entities, EntityManagerInterface $entityManager, UnitOfWork $unitOfWork): void
     {
         foreach ($entities as $customer) {
             if (!$customer instanceof CustomerInterface) {
