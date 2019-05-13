@@ -31,9 +31,9 @@ final class DoctrineORMContext implements Context
     }
 
     /**
-     * @BeforeScenario
+     * @BeforeScenario 
      */
-    public function purgeDatabase()
+    public function purgeDatabase(): void
     {
         $this->entityManager->getConnection()->getConfiguration()->setSQLLogger(null);
         $purger = new ORMPurger($this->entityManager);

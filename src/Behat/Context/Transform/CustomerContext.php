@@ -55,7 +55,7 @@ final class CustomerContext implements Context
      * @Transform :customer
      * @Transform /^customer "([^"]+)"$/
      */
-    public function getOrCreateCustomerByEmail($email)
+    public function getOrCreateCustomerByEmail($email): object
     {
         /** @var CustomerInterface $customer */
         $customer = $this->customerRepository->findOneBy(['email' => $email]);

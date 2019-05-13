@@ -20,12 +20,12 @@ class LoginPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function hasValidationErrorWith($message)
+    public function hasValidationErrorWith($message): bool
     {
         return $this->getElement('validation_error')->getText() === $message;
     }
 
-    public function logIn()
+    public function logIn(): void
     {
         $this->getDocument()->pressButton('Login');
     }
@@ -35,7 +35,7 @@ class LoginPage extends SymfonyPage
      *
      * @throws \Behat\Mink\Exception\ElementNotFoundException
      */
-    public function specifyPassword(?string $password)
+    public function specifyPassword(?string $password): void
     {
         $this->getElement('password')->setValue($password);
     }
@@ -45,7 +45,7 @@ class LoginPage extends SymfonyPage
      *
      * @throws \Behat\Mink\Exception\ElementNotFoundException
      */
-    public function specifyUsername(string $username)
+    public function specifyUsername(string $username): void
     {
         $this->getElement('username')->setValue($username);
     }

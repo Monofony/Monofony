@@ -39,7 +39,7 @@ class CreatePage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function create()
+    public function create(): void
     {
         $this->getDocument()->pressButton('Create');
     }
@@ -47,7 +47,7 @@ class CreatePage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function getValidationMessage($element)
+    public function getValidationMessage($element): string
     {
         $foundElement = $this->getFieldElement($element);
         if (null === $foundElement) {

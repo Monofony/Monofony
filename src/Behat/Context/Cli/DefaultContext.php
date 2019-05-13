@@ -55,7 +55,7 @@ class DefaultContext implements Context
         $this->kernel = $kernel;
     }
 
-    public function setTester(CommandTester $tester)
+    public function setTester(CommandTester $tester): void
     {
         static::$sharedTester = $tester;
     }

@@ -32,28 +32,28 @@ class ServicesPass implements CompilerPassInterface
     /**
      * @param ContainerBuilder $container
      */
-    protected function processFactories(ContainerBuilder $container)
+    protected function processFactories(ContainerBuilder $container): void
     {
     }
 
     /**
      * @param ContainerBuilder $container
      */
-    protected function processFormTypes(ContainerBuilder $container)
+    protected function processFormTypes(ContainerBuilder $container): void
     {
     }
 
     /**
      * @param ContainerBuilder $container
      */
-    protected function processRepositories(ContainerBuilder $container)
+    protected function processRepositories(ContainerBuilder $container): void
     {
     }
 
     /**
      * @param ContainerBuilder $container
      */
-    private function processListeners(ContainerBuilder $container)
+    private function processListeners(ContainerBuilder $container): void
     {
         $listenerPasswordUpdaterDefinition = $container->getDefinition('sylius.listener.password_updater');
         $listenerPasswordUpdaterDefinition

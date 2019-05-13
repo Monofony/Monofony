@@ -65,7 +65,7 @@ class UserContext implements Context
      * @Given there was account of :email with password :password
      * @Given there is a user :email
      */
-    public function thereIsUserIdentifiedBy($email, $password = 'sylius')
+    public function thereIsUserIdentifiedBy($email, $password = 'sylius'): void
     {
         $user = $this->userFactory->create(['email' => $email, 'password' => $password, 'enabled' => true]);
 
@@ -78,7 +78,7 @@ class UserContext implements Context
      * @Given the account of :email was deleted
      * @Given my account :email was deleted
      */
-    public function accountWasDeleted($email)
+    public function accountWasDeleted($email): void
     {
         /** @var AppUser $user */
         $user = $this->appUserRepository->findOneByEmail($email);
@@ -91,7 +91,7 @@ class UserContext implements Context
     /**
      * @Given /^(?:(I) have|(this user) has) already received a resetting password email$/
      */
-    public function iHaveReceivedResettingPasswordEmail(UserInterface $user)
+    public function iHaveReceivedResettingPasswordEmail(UserInterface $user): void
     {
         $this->prepareUserPasswordResetToken($user);
     }
@@ -99,7 +99,7 @@ class UserContext implements Context
     /**
      * @param UserInterface $user
      */
-    private function prepareUserPasswordResetToken(UserInterface $user)
+    private function prepareUserPasswordResetToken(UserInterface $user): void
     {
         $token = 'itotallyforgotmypassword';
 
