@@ -67,7 +67,8 @@
         "se/selenium-server-standalone": " ^2.52",
         "symfony/debug-bundle": "^4.2",
         "symfony/web-profiler-bundle": "^4.2",
-        "symfony/web-server-bundle": "^4.2"
+        "symfony/web-server-bundle": "^4.2",
+        "vimeo/psalm": "^3.2"
     },
     "conflict": {
         "symfony/symfony": "*"
