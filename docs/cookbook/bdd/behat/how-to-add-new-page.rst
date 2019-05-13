@@ -4,7 +4,7 @@ How to add a new page object?
 Sylius uses a solution inspired by ``SensioLabs/PageObjectExtension``, which provides an infrastructure to create
 pages that encapsulates all the user interface manipulation in page objects.
 
-To create a new page object it is needed to add a service in Behat container in ``src/Behat/Resources/services/pages.yml`` file:
+To create a new page object it is needed to add a service in Behat container in ``src/Behat/Resources/services/pages.yaml`` file:
 
 .. code-block:: yaml
 
