@@ -5,10 +5,10 @@ app_backend_dashboard:
         template:     'backend/index.html.twig'
 
 sylius_backend_admin_user:
-    resource: "backend/admin_user.yml"
+    resource: "backend/admin_user.yaml"
 
 sylius_backend_customer:
-    resource: "backend/customer.yml"
+    resource: "backend/customer.yaml"
 
 sylius_backend_security:
-    resource: "backend/security.yml"
+    resource: "backend/security.yaml"

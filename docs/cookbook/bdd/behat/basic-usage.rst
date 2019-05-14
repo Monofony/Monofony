@@ -46,11 +46,11 @@ filling fields on forms and similar, but also we want to check this action regar
 Choosing a correct suite
 ------------------------
 
-After we are done with a feature file, we have to create a new suite for it. At the beginning we have decided that it will be a frontend/user interface feature, that is why we are placing it in "src/Behat/Resources/suites/ui/addressing/managing_countries.yml".
+After we are done with a feature file, we have to create a new suite for it. At the beginning we have decided that it will be a frontend/user interface feature, that is why we are placing it in "src/Behat/Resources/suites/ui/addressing/managing_countries.yaml".
 
 .. code-block:: yaml
 
-    # src/Behat/Resources/suites/ui/addressing/managing_countries.yml
+    # src/Behat/Resources/suites/ui/addressing/managing_countries.yaml
 
     default:
         suites:
@@ -84,7 +84,7 @@ We have mentioned with the generic steps we can easily switch our testing contex
 
 .. code-block:: yaml
 
-    # src/Behat/Resources/config/suites/domain/addressing/managing_countries.yml
+    # src/Behat/Resources/config/suites/domain/addressing/managing_countries.yaml
 
     default:
         suites:

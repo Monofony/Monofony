@@ -1,0 +1,8 @@
+imports:
+    - suites/cli/installer.yaml
+
+    - suites/ui/account/customer.yaml
+    - suites/ui/account/login.yaml
+    - suites/ui/account/registration.yaml
+    - suites/ui/customer/managing_customers.yaml
+    - suites/ui/user/managing_administrators.yaml
