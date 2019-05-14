@@ -1,6 +1,6 @@
 imports:
-    - { resource: services/contexts.yml }
-    - { resource: services/pages.yml }
+    - { resource: services/contexts.yaml }
+    - { resource: services/pages.yaml }
 
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html

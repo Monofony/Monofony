@@ -25,7 +25,7 @@ Administration Security
 -----------------------
 
 In **Monofony** by default you have got the administration panel routes (``/admin/*``) secured by a firewall - its configuration
-can be found in the ``security.yml`` file.
+can be found in the ``config/packages/security.yaml`` file.
 
 Only the logged in **AdminUsers** are eligible to enter these routes.
 
