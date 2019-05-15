@@ -48,7 +48,7 @@ Import this to sylius_grid configuration file
     # config/packages/sylius_grid.yaml
 
     imports:
-        - { resource: 'grids/backend/article.aml' }
+        - { resource: 'grids/backend/article.yaml' }
         - { resource: 'grids/backend/admin_user.yaml' }
         - { resource: 'grids/backend/customer.yaml' }
 
