@@ -18,7 +18,7 @@ class CommandContext extends DefaultContext
     /**
      * @Then the command should finish successfully
      */
-    public function commandSuccess()
+    public function commandSuccess(): void
     {
         Assert::same($this->getTester()->getStatusCode(), 0);
     }
@@ -26,7 +26,7 @@ class CommandContext extends DefaultContext
     /**
      * @Then I should see output :text
      */
-    public function iShouldSeeOutput($text)
+    public function iShouldSeeOutput($text): void
     {
         Assert::contains($this->getTester()->getDisplay(), $text);
     }

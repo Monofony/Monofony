@@ -29,7 +29,7 @@ class ChangePasswordPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function checkValidationMessageFor($element, $message)
+    public function checkValidationMessageFor($element, $message): bool
     {
         $errorLabel = $this->getElement($element)->getParent()->find('css', '.sylius-validation-error');
 
@@ -43,7 +43,7 @@ class ChangePasswordPage extends SymfonyPage
     /**
      * @param string $password
      */
-    public function specifyCurrentPassword($password)
+    public function specifyCurrentPassword($password): void
     {
         $this->getElement('current_password')->setValue($password);
     }
@@ -51,7 +51,7 @@ class ChangePasswordPage extends SymfonyPage
     /**
      * @param string $password
      */
-    public function specifyNewPassword($password)
+    public function specifyNewPassword($password): void
     {
         $this->getElement('new_password')->setValue($password);
     }
@@ -59,7 +59,7 @@ class ChangePasswordPage extends SymfonyPage
     /**
      * @param string $password
      */
-    public function specifyConfirmationPassword($password)
+    public function specifyConfirmationPassword($password): void
     {
         $this->getElement('confirmation')->setValue($password);
     }
