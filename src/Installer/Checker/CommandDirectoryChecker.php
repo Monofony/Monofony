@@ -37,14 +37,14 @@ final class CommandDirectoryChecker
         $this->filesystem = $filesystem;
     }
 
-    public function ensureDirectoryExists($directory, OutputInterface $output)
+    public function ensureDirectoryExists($directory, OutputInterface $output): void
     {
         if (!is_dir($directory)) {
             $this->createDirectory($directory, $output);
         }
     }
 
-    public function ensureDirectoryIsWritable($directory, OutputInterface $output)
+    public function ensureDirectoryIsWritable($directory, OutputInterface $output): void
     {
         try {
             $this->changePermissionsRecursively($directory, $output);
@@ -55,7 +55,7 @@ final class CommandDirectoryChecker
         }
     }
 
-    public function setCommandName($name)
+    public function setCommandName($name): void
     {
         $this->name = $name;
     }
@@ -64,7 +64,7 @@ final class CommandDirectoryChecker
      * @param string          $directory
      * @param OutputInterface $output
      */
-    private function createDirectory($directory, OutputInterface $output)
+    private function createDirectory($directory, OutputInterface $output): void
     {
         try {
             $this->filesystem->mkdir($directory, 0755);
@@ -81,7 +81,7 @@ final class CommandDirectoryChecker
      * @param string          $directory
      * @param OutputInterface $output
      */
-    private function changePermissionsRecursively($directory, OutputInterface $output)
+    private function changePermissionsRecursively($directory, OutputInterface $output): void
     {
         if (is_file($directory) && is_writable($directory)) {
             return;
@@ -106,7 +106,7 @@ final class CommandDirectoryChecker
      *
      * @throws AccessDeniedException if directory/file permissions cannot be changed
      */
-    private function changePermissions($directory, OutputInterface $output)
+    private function changePermissions($directory, OutputInterface $output): void
     {
         try {
             $this->filesystem->chmod($directory, 0755, 0000, true);

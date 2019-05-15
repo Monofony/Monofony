@@ -23,7 +23,7 @@ class RequestPasswordResetPage extends SymfonyPage
      *
      * @throws ElementNotFoundException
      */
-    public function checkValidationMessageFor($element, $message)
+    public function checkValidationMessageFor($element, $message): bool
     {
         $errorLabel = $this->getElement($element)->getParent()->getParent()->find('css', '.sylius-validation-error');
 
@@ -42,7 +42,7 @@ class RequestPasswordResetPage extends SymfonyPage
         return 'sylius_user_request_password_reset_token';
     }
 
-    public function reset()
+    public function reset(): void
     {
         $this->getDocument()->pressButton('Reset');
     }
@@ -50,7 +50,7 @@ class RequestPasswordResetPage extends SymfonyPage
     /**
      * @param string $email
      */
-    public function specifyEmail($email)
+    public function specifyEmail($email): void
     {
         $this->getDocument()->fillField('Email', $email);
     }

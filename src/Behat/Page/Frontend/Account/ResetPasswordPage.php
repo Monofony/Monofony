@@ -26,7 +26,7 @@ class ResetPasswordPage extends SymfonyPage
         return 'app_frontend_password_reset';
     }
 
-    public function reset()
+    public function reset(): void
     {
         $this->getDocument()->pressButton('Reset');
     }
@@ -34,7 +34,7 @@ class ResetPasswordPage extends SymfonyPage
     /**
      * @param string|null $password
      */
-    public function specifyNewPassword(?string $password)
+    public function specifyNewPassword(?string $password): void
     {
         $this->getElement('password')->setValue($password);
     }
@@ -42,7 +42,7 @@ class ResetPasswordPage extends SymfonyPage
     /**
      * @param string|null $password
      */
-    public function specifyConfirmPassword(?string $password)
+    public function specifyConfirmPassword(?string $password): void
     {
         $this->getElement('confirm_password')->setValue($password);
     }

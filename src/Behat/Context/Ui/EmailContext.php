@@ -45,7 +45,7 @@ final class EmailContext implements Context
      * @Then the email with reset token should be sent to :recipient
      * @Then the email with contact request should be sent to :recipient
      */
-    public function anEmailShouldBeSentTo($recipient)
+    public function anEmailShouldBeSentTo($recipient): void
     {
         Assert::true($this->emailChecker->hasRecipient($recipient));
     }
@@ -53,7 +53,7 @@ final class EmailContext implements Context
     /**
      * @Then :count email(s) should be sent to :recipient
      */
-    public function numberOfEmailsShouldBeSentTo($count, $recipient)
+    public function numberOfEmailsShouldBeSentTo($count, $recipient): void
     {
         Assert::same($this->emailChecker->countMessagesTo($recipient), (int) $count);
     }
@@ -61,7 +61,7 @@ final class EmailContext implements Context
     /**
      * @Then an email to verify your email validity should have been sent to :recipient
      */
-    public function anEmailToVerifyYourEmailValidityShouldHaveBeenSentTo($recipient)
+    public function anEmailToVerifyYourEmailValidityShouldHaveBeenSentTo($recipient): void
     {
         $this->assertEmailContainsMessageTo('To verify your email address', $recipient);
     }
@@ -69,7 +69,7 @@ final class EmailContext implements Context
     /**
      * @Then a welcoming email should have been sent to :recipient
      */
-    public function aWelcomingEmailShouldHaveBeenSentTo($recipient)
+    public function aWelcomingEmailShouldHaveBeenSentTo($recipient): void
     {
         $this->assertEmailContainsMessageTo('Welcome to our website', $recipient);
     }
@@ -78,7 +78,7 @@ final class EmailContext implements Context
      * @param string $message
      * @param string $recipient
      */
-    private function assertEmailContainsMessageTo($message, $recipient)
+    private function assertEmailContainsMessageTo($message, $recipient): void
     {
         Assert::true($this->emailChecker->hasMessageTo($message, $recipient));
     }

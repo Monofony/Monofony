@@ -11,6 +11,8 @@
 
 namespace App\Fixture\Factory;
 
+use App\Entity\AppUserInterface;
+use App\Entity\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -61,13 +63,13 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
     {
         $options = $this->optionsResolver->resolve($options);
 
-        /** @var Customer $customer */
+        /** @var CustomerInterface $customer */
         $customer = $this->customerFactory->createNew();
         $customer->setEmail($options['email']);
         $customer->setFirstName($options['first_name']);
         $customer->setLastName($options['last_name']);
 
-        /** @var User $user */
+        /** @var AppUserInterface $user */
         $user = $this->appUserFactory->createNew();
         $user->setUsername($options['username']);
         $user->setPlainPassword($options['password']);

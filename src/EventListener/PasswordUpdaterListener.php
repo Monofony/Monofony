@@ -21,7 +21,7 @@ final class PasswordUpdaterListener extends BasePasswordUpdaterListener
     /**
      * @param GenericEvent $event
      */
-    public function customerUpdateEvent(GenericEvent $event)
+    public function customerUpdateEvent(GenericEvent $event): void
     {
         $customer = $event->getSubject();
 

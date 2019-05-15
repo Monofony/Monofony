@@ -32,7 +32,7 @@ class RegisterPage extends SymfonyPage
      *
      * @throws ElementNotFoundException
      */
-    public function checkValidationMessageFor($element, $message)
+    public function checkValidationMessageFor($element, $message): bool
     {
         $errorLabel = $this
             ->getElement(StringInflector::nameToCode($element))
@@ -47,7 +47,7 @@ class RegisterPage extends SymfonyPage
         return $message === $errorLabel->getText();
     }
 
-    public function register()
+    public function register(): void
     {
         $this->getDocument()->pressButton('Create an account');
     }
@@ -55,7 +55,7 @@ class RegisterPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function specifyEmail($email)
+    public function specifyEmail($email): void
     {
         $this->getDocument()->fillField('Email', $email);
     }
@@ -63,7 +63,7 @@ class RegisterPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function specifyPassword($password)
+    public function specifyPassword($password): void
     {
         $this->getDocument()->fillField('Password', $password);
     }
@@ -73,7 +73,7 @@ class RegisterPage extends SymfonyPage
      *
      * @throws ElementNotFoundException
      */
-    public function specifyFirstName(?string $firstName)
+    public function specifyFirstName(?string $firstName): void
     {
         $this->getDocument()->fillField('First name', $firstName);
     }
@@ -91,12 +91,12 @@ class RegisterPage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function verifyPassword($password)
+    public function verifyPassword($password): void
     {
         $this->getDocument()->fillField('Verification', $password);
     }
 
-    public function subscribeToTheNewsletter()
+    public function subscribeToTheNewsletter(): void
     {
         $this->getDocument()->checkField('Subscribe to the newsletter');
     }
