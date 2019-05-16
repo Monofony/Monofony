@@ -16,7 +16,6 @@ To configure backend menu for your entity, you have to edit `src/Menu/AdminMenuB
         return $menu;
     }
 
-
     /**
      * @param ItemInterface $menu
      *
