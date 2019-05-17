@@ -46,6 +46,55 @@ As an example we will take an **Article entity**.
         }
     }
 
+
+If you don't add a form type, it uses a `default form type`_. But it is a good practice to have one.
+
+.. code-block:: php
+
+    // src/Form/Type/ArticleType.php
+
+    namespace App\Form\Type;
+
+    use App\Entity\Article;
+    use Symfony\Component\Form\AbstractType;
+    use Symfony\Component\Form\Extension\Core\Type\TextType;
+    use Symfony\Component\Form\FormBuilderInterface;
+    use Symfony\Component\OptionsResolver\OptionsResolver;
+
+    class ArticleType extends AbstractType
+    {
+        /**
+        * {@inheritdoc}
+        */
+        public function buildForm(FormBuilderInterface $builder, array $options)
+        {
+            parent::buildForm($builder, $options);
+            $builder
+                ->add('title', TextType::class, [
+                    'label' => 'sylius.ui.title',
+                ]);
+        }
+
+        /**
+        * {@inheritdoc}
+        */
+        public function getBlockPrefix()
+        {
+            return 'app_article';
+        }
+
+        /**
+         * {@inheritdoc}
+         */
+        public function configureOptions(OptionsResolver $resolver): void
+        {
+            $resolver->setDefaults([
+                'data_class' => Article::class
+            ]);
+        }
+    }
+
+
 You now have to add it on Sylius Resource configuration.
 
 .. code-block:: yaml
@@ -81,3 +130,4 @@ Learn More
 
 .. _`Sylius Resource Bundle`: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusResourceBundle/configuration.html
 .. _`Doctrine migrations`: https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html
+.. _`default form type`: https://github.com/Sylius/SyliusResourceBundle/blob/master/src/Bundle/Form/Type/DefaultResourceType.php
