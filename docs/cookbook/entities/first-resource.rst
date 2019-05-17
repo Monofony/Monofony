@@ -55,9 +55,11 @@ If you don't add a form type, it uses a `default form type`_. But it is a good p
 
     namespace App\Form\Type;
 
+    use App\Entity\Article;
     use Symfony\Component\Form\AbstractType;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
     use Symfony\Component\Form\FormBuilderInterface;
+    use Symfony\Component\OptionsResolver\OptionsResolver;
 
     class ArticleType extends AbstractType
     {
@@ -79,6 +81,16 @@ If you don't add a form type, it uses a `default form type`_. But it is a good p
         public function getBlockPrefix()
         {
             return 'app_article';
+        }
+
+        /**
+         * {@inheritdoc}
+         */
+        public function configureOptions(OptionsResolver $resolver): void
+        {
+            $resolver->setDefaults([
+                'data_class' => Article::class
+            ]);
         }
     }
 
