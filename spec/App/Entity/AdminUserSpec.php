@@ -37,9 +37,14 @@ class AdminUserSpec extends ObjectBehavior
         $this->getOAuthAccounts()->shouldHaveType(Collection::class);
     }
 
-    function its_not_enabled_by_default()
+    function its_not_enabled_by_default(): void
     {
         $this->shouldNotBeEnabled();
+    }
+
+    function it_has_admin_role_by_default(): void
+    {
+        $this->getRoles()->shouldReturn([AdminUser::DEFAULT_ADMIN_ROLE]);
     }
 
     function it_has_no_first_name_by_default(): void
