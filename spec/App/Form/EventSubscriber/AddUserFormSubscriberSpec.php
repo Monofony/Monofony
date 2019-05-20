@@ -12,6 +12,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Validator\Constraints\Valid;
 
 final class AddUserFormSubscriberSpec extends ObjectBehavior
@@ -26,14 +27,28 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
         $this->shouldImplement(EventSubscriberInterface::class);
     }
 
+    function it_subscribes_to_events(): void
+    {
+        $this::getSubscribedEvents()->shouldReturn([
+            FormEvents::PRE_SET_DATA => 'preSetData',
+            FormEvents::SUBMIT => 'submit',
+        ]);
+    }
+
     function it_adds_user_form_type_and_create_user_check(
         FormEvent $event,
         Form $form
     ): void {
         $event->getForm()->willReturn($form);
 
-        $form->add('user', '\Fully\Qualified\ClassName', Argument::type('array'))->shouldBeCalled();
-        $form->add('createUser', Argument::type('string'), Argument::type('array'))->shouldBeCalled();
+        $form->add('user', '\Fully\Qualified\ClassName', [
+            'constraints' => [new Valid()],
+        ])->shouldBeCalled();
+        $form->add('createUser', Argument::type('string'), [
+            'label' => 'app.ui.create_user',
+            'required' => false,
+            'mapped' => false,
+        ])->shouldBeCalled();
 
         $this->preSetData($event);
     }
@@ -58,7 +73,7 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
         $event->setData($customer)->shouldBeCalled();
 
         $form->remove('user')->shouldBeCalled();
-        $form->add('user', '\Fully\Qualified\ClassName', Argument::type('array'))->shouldBeCalled();
+        $form->add('user', '\Fully\Qualified\ClassName', ['constraints' => [new Valid()]])->shouldBeCalled();
 
         $this->submit($event);
     }
