@@ -22,7 +22,11 @@ class DateTypeExtensionSpec extends ObjectBehavior
 
     function it_configures_options(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(Argument::type('array'))->shouldBeCalled();
+        $resolver->setDefaults([
+            'widget' => 'single_text',
+            'html5' => false,
+            'format' => 'dd/MM/yyyy',
+        ])->shouldBeCalled();
 
         $this->configureOptions($resolver);
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f97fc9f57527924251fdbd37cd377827",
+    "content-hash": "25bcbee2fe6315b8253f0be3f8e1ea41",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -9527,16 +9527,16 @@
         },
         {
             "name": "infection/infection",
-            "version": "0.12.2",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infection/infection.git",
-                "reference": "0c028b4b69bbead4b9d6702b36c0d25b9e016785"
+                "reference": "add7355edff8229195e4311a9c83cc6b42224d8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infection/infection/zipball/0c028b4b69bbead4b9d6702b36c0d25b9e016785",
-                "reference": "0c028b4b69bbead4b9d6702b36c0d25b9e016785",
+                "url": "https://api.github.com/repos/infection/infection/zipball/add7355edff8229195e4311a9c83cc6b42224d8a",
+                "reference": "add7355edff8229195e4311a9c83cc6b42224d8a",
                 "shasum": ""
             },
             "require": {
@@ -9545,7 +9545,7 @@
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "justinrainbow/json-schema": "^5.2",
-                "nikic/php-parser": "^4.1",
+                "nikic/php-parser": "^4.2.1",
                 "ocramius/package-versions": "^1.2",
                 "padraic/phar-updater": "^1.0.4",
                 "php": "^7.1.3",
@@ -9554,7 +9554,7 @@
                 "symfony/console": "^3.4 || ^4.0",
                 "symfony/filesystem": "^3.4 || ^4.0",
                 "symfony/finder": "^3.4 || ^4.0",
-                "symfony/process": "^3.4|| ^4.0",
+                "symfony/process": "^3.4 || ^4.0",
                 "symfony/yaml": "^3.4 || ^4.0",
                 "webmozart/assert": "^1.3"
             },
@@ -9563,7 +9563,7 @@
                 "symfony/process": "3.4.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2"
+                "phpunit/phpunit": "^7.5"
             },
             "bin": [
                 "bin/infection"
@@ -9612,7 +9612,7 @@
                 "testing",
                 "unit testing"
             ],
-            "time": "2019-02-10T18:24:30+00:00"
+            "time": "2019-05-18T15:24:49+00:00"
         },
         {
             "name": "instaclick/php-webdriver",
