@@ -75,9 +75,9 @@ final class SetupCommand extends Command
     {
         $this
             ->setName('app:install:setup')
-            ->setDescription('Sylius configuration setup.')
+            ->setDescription('AppName configuration setup.')
             ->setHelp(<<<EOT
-The <info>%command.name%</info> command allows user to configure basic Sylius data.
+The <info>%command.name%</info> command allows user to configure basic AppName data.
 EOT
             )
         ;

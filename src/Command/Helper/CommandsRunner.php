@@ -9,47 +9,40 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace App\Command\Helper;
 
 use App\Command\Installer\CommandExecutor;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 
-trait RunCommands
+final class CommandsRunner
 {
-    use CreateProgressBar;
-
-    /**
-     * @var CommandExecutor
-     */
-    private $commandExecutor;
-
-    /**
-     * @var EntityManagerInterface
-     */
+    /** @var EntityManagerInterface */
     private $entityManager;
 
-    /**
-     * @param CommandExecutor        $commandExecutor
-     * @param EntityManagerInterface $entityManager
-     */
-    public function __construct(CommandExecutor $commandExecutor, EntityManagerInterface $entityManager)
-    {
-        $this->commandExecutor = $commandExecutor;
+    /** @var ProgressBarCreator */
+    private $progressBarCreator;
+
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        ProgressBarCreator $progressBarCreator
+    ) {
         $this->entityManager = $entityManager;
+        $this->progressBarCreator = $progressBarCreator;
     }
 
     /**
-     * @param array           $commands
-     * @param OutputInterface $output
-     * @param bool            $displayProgress
-     *
      * @throws \Exception
      */
-    private function runCommands(array $commands, OutputInterface $output, bool $displayProgress = true): void
+    public function run(array $commands, InputInterface $input, OutputInterface $output, Application $application, bool $displayProgress = true): void
     {
-        $progress = $this->createProgressBar($displayProgress ? $output : new NullOutput(), count($commands));
+        $progress = $this->progressBarCreator->create($displayProgress ? $output : new NullOutput(), count($commands));
+        $commandExecutor = new CommandExecutor($input, $output, $application);
 
         foreach ($commands as $key => $value) {
             if (is_string($key)) {
@@ -60,7 +53,7 @@ trait RunCommands
                 $parameters = [];
             }
 
-            $this->commandExecutor->runCommand($command, $parameters);
+            $commandExecutor->runCommand($command, $parameters);
 
             // PDO does not always close the connection after Doctrine commands.
             // See https://github.com/symfony/symfony/issues/11750.

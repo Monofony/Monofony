@@ -13,10 +13,8 @@ declare(strict_types=1);
 
 namespace App\Command\Installer;
 
-use App\Command\Helper\EnsureDirectoryExistsAndIsWritable;
-use App\Command\Helper\RunCommands;
-use App\Installer\Checker\CommandDirectoryChecker;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Command\Helper\CommandsRunner;
+use App\Command\Helper\DirectoryChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
@@ -26,47 +24,27 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class InstallSampleDataCommand extends Command
 {
-    const WEB_MEDIA_DIRECTORY = 'public/media/';
-    const WEB_MEDIA_IMAGE_DIRECTORY = 'public/media/image/';
+    /** @var DirectoryChecker */
+    private $directoryChecker;
 
-    use EnsureDirectoryExistsAndIsWritable {
-        EnsureDirectoryExistsAndIsWritable::__construct as private initializeEnsureDirectoryExistsAndIsWritable;
-    }
-    use RunCommands {
-        RunCommands::__construct as private initializeRunCommands;
-    }
+    /** @var CommandsRunner */
+    private $commandsRunner;
 
-    /**
-     * @var CommandDirectoryChecker
-     */
-    private $commandDirectoryChecker;
+    /** @var string */
+    private $publicDir;
 
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
-
-    /**
-     * @var string
-     */
-    private $projectDir;
-
-    /**
-     * @var string
-     */
+    /** @var string */
     private $environment;
 
-    /**
-     * @param CommandDirectoryChecker $commandDirectoryChecker
-     * @param EntityManagerInterface  $entityManager
-     * @param string                  $projectDir
-     * @param string                  $environment
-     */
-    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, EntityManagerInterface $entityManager, string $projectDir, string $environment)
-    {
-        $this->commandDirectoryChecker = $commandDirectoryChecker;
-        $this->entityManager = $entityManager;
-        $this->projectDir = $projectDir;
+    public function __construct(
+        DirectoryChecker $directoryChecker,
+        CommandsRunner $commandsRunner,
+        string $publicDir,
+        string $environment
+    ) {
+        $this->directoryChecker = $directoryChecker;
+        $this->commandsRunner = $commandsRunner;
+        $this->publicDir = $publicDir;
         $this->environment = $environment;
 
         parent::__construct();
@@ -90,17 +68,6 @@ EOT
     /**
      * {@inheritdoc}
      */
-    protected function initialize(InputInterface $input, OutputInterface $output)
-    {
-        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
-
-        $this->initializeEnsureDirectoryExistsAndIsWritable($this->commandDirectoryChecker, $this->getName());
-        $this->initializeRunCommands($commandExecutor, $this->entityManager);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /** @var QuestionHelper $questionHelper */
@@ -112,6 +79,7 @@ EOT
             'Loading sample data for environment <info>%s</info>.',
             $this->environment
         ));
+
         $outputStyle->writeln('<error>Warning! This action will erase your database.</error>');
 
         if (!$questionHelper->ask($input, $output, new ConfirmationQuestion('Continue? (y/N) ', false))) {
@@ -121,8 +89,8 @@ EOT
         }
 
         try {
-            $this->ensureDirectoryExistsAndIsWritable($this->projectDir.'/'.self::WEB_MEDIA_DIRECTORY, $output);
-            $this->ensureDirectoryExistsAndIsWritable($this->projectDir.'/'.self::WEB_MEDIA_IMAGE_DIRECTORY, $output);
+            $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->publicDir.'/media/', $output, $this->getName());
+            $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->publicDir.'/media/image/', $output, $this->getName());
         } catch (\RuntimeException $exception) {
             $outputStyle->writeln($exception->getMessage());
 
@@ -133,7 +101,9 @@ EOT
             'sylius:fixtures:load' => ['--no-interaction' => true],
         ];
 
-        $this->runCommands($commands, $output);
+        $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
         $outputStyle->newLine(2);
+
+        return null;
     }
 }

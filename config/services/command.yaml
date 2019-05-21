@@ -17,9 +17,10 @@ services:
 
     App\Command\Installer\InstallAssetsCommand:
         arguments:
+            $publicDir: '%kernel.project_dir%/public'
             $environment: '%kernel.environment%'
 
     App\Command\Installer\InstallSampleDataCommand:
         arguments:
-            $projectDir: '%kernel.project_dir%'
+            $publicDir: '%kernel.project_dir%/public'
             $environment: '%kernel.environment%'
