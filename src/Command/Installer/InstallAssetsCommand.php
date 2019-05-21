@@ -2,64 +2,43 @@
 
 namespace App\Command\Installer;
 
-use App\Command\Helper\EnsureDirectoryExistsAndIsWritable;
-use App\Command\Helper\RunCommands;
-use App\Installer\Checker\CommandDirectoryChecker;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Command\Helper\CommandsRunner;
+use App\Command\Helper\DirectoryChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class InstallAssetsCommand extends Command
 {
-    const WEB_ASSETS_DIRECTORY = 'public/assets/';
-    const WEB_BUNDLES_DIRECTORY = 'public/bundles/';
-
-    use EnsureDirectoryExistsAndIsWritable {
-        EnsureDirectoryExistsAndIsWritable::__construct as private initializeEnsureDirectoryExistsAndIsWritable;
-    }
-    use RunCommands {
-        RunCommands::__construct as private initializeRunCommands;
-    }
-
     /**
-     * @var CommandDirectoryChecker
+     * @var DirectoryChecker
      */
-    private $commandDirectoryChecker;
-
+    private $directoryChecker;
     /**
-     * @var EntityManagerInterface
+     * @var CommandsRunner
      */
-    private $entityManager;
-
+    private $commandsRunner;
+    /**
+     * @var string
+     */
+    private $publicDir;
     /**
      * @var string
      */
     private $environment;
 
-    /**
-     * @param CommandDirectoryChecker $commandDirectoryChecker
-     * @param EntityManagerInterface  $entityManager
-     * @param string                  $environment
-     */
-    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, EntityManagerInterface $entityManager, string $environment)
-    {
-        $this->commandDirectoryChecker = $commandDirectoryChecker;
-        $this->entityManager = $entityManager;
+    public function __construct(
+        DirectoryChecker $directoryChecker,
+        CommandsRunner $commandsRunner,
+        string $publicDir,
+        string $environment
+    ) {
+        $this->directoryChecker = $directoryChecker;
+        $this->commandsRunner = $commandsRunner;
+        $this->publicDir = $publicDir;
         $this->environment = $environment;
 
         parent::__construct();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function initialize(InputInterface $input, OutputInterface $output)
-    {
-        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
-
-        $this->initializeEnsureDirectoryExistsAndIsWritable($this->commandDirectoryChecker, $this->getName());
-        $this->initializeRunCommands($commandExecutor, $this->entityManager);
     }
 
     /**
@@ -79,14 +58,16 @@ EOT
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \Exception
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln(sprintf('Installing AppName assets for environment <info>%s</info>.', $this->environment));
 
         try {
-            $this->ensureDirectoryExistsAndIsWritable(self::WEB_ASSETS_DIRECTORY, $output);
-            $this->ensureDirectoryExistsAndIsWritable(self::WEB_BUNDLES_DIRECTORY, $output);
+            $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->publicDir.'/assets/', $output, $this->getName());
+            $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->publicDir.'/bundles/', $output, $this->getName());
         } catch (\RuntimeException $exception) {
             return 1;
         }
@@ -95,6 +76,6 @@ EOT
             'assets:install',
         ];
 
-        $this->runCommands($commands, $output);
+        $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
     }
 }
