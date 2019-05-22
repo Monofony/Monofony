@@ -13,6 +13,7 @@ namespace App\Installer\Provider;
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -143,7 +144,10 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
      */
     private function getDatabaseName()
     {
-        return $this->doctrineRegistry->getManager()->getConnection()->getDatabase();
+        /** @var EntityManagerInterface $manager */
+        $manager = $this->doctrineRegistry->getManager();
+
+        return $manager->getConnection()->getDatabase();
     }
 
     /**
@@ -151,6 +155,9 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
      */
     private function getSchemaManager()
     {
-        return $this->doctrineRegistry->getManager()->getConnection()->getSchemaManager();
+        /** @var EntityManagerInterface $manager */
+        $manager = $this->doctrineRegistry->getManager();
+
+        return $manager->getConnection()->getSchemaManager();
     }
 }

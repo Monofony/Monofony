@@ -15,6 +15,7 @@ use App\Entity\AdminUser;
 use Doctrine\Common\Persistence\ObjectManager;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
+use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
@@ -28,36 +29,22 @@ use Webmozart\Assert\Assert;
 
 final class SetupCommand extends Command
 {
-    /**
-     * @var ObjectManager
-     */
+    /** @var ObjectManager */
     private $adminUserManager;
 
-    /**
-     * @var FactoryInterface
-     */
+    /** @var FactoryInterface */
     private $adminUserFactory;
 
-    /**
-     * @var RepositoryInterface
-     */
+    /** @var UserRepositoryInterface */
     private $adminUserRepository;
 
-    /**
-     * @var ValidatorInterface
-     */
+    /** @var ValidatorInterface */
     private $validator;
 
-    /**
-     * @param ObjectManager       $adminUserManager
-     * @param FactoryInterface    $adminUserFactory
-     * @param RepositoryInterface $adminUserRepository
-     * @param ValidatorInterface  $validator
-     */
     public function __construct(
         ObjectManager $adminUserManager,
         FactoryInterface $adminUserFactory,
-        RepositoryInterface $adminUserRepository,
+        UserRepositoryInterface $adminUserRepository,
         ValidatorInterface $validator
     ) {
         $this->adminUserManager = $adminUserManager;
@@ -94,17 +81,15 @@ EOT
     /**
      * @param InputInterface  $input
      * @param OutputInterface $output
-     *
-     * @return int
      */
-    protected function setupAdministratorUser(InputInterface $input, OutputInterface $output)
+    protected function setupAdministratorUser(InputInterface $input, OutputInterface $output): void
     {
         $output->writeln('Create your administrator account.');
 
         try {
             $user = $this->configureNewUser($this->adminUserFactory->createNew(), $input, $output);
         } catch (\InvalidArgumentException $exception) {
-            return 0;
+            return;
         }
 
         $user->setEnabled(true);
