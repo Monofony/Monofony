@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\Form\EventSubscriber;
 
-use App\Entity\Customer;
+use App\Entity\CustomerInterface;
 use PhpSpec\ObjectBehavior;
 use App\Entity\AppUser;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
@@ -33,9 +33,9 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
     function it_sets_user_for_existing_customer(
         FormEvent $event,
         FormInterface $form,
-        Customer $customer,
+        CustomerInterface $customer,
         RepositoryInterface $customerRepository,
-        Customer $existingCustomer,
+        CustomerInterface $existingCustomer,
         AppUser $user
     ): void {
         $event->getForm()->willReturn($form);
@@ -68,9 +68,9 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
     function it_does_not_set_user_if_customer_with_given_email_has_set_user(
         FormEvent $event,
         FormInterface $form,
-        Customer $customer,
+        CustomerInterface $customer,
         RepositoryInterface $customerRepository,
-        Customer $existingCustomer,
+        CustomerInterface $existingCustomer,
         AppUser $user
     ): void {
         $event->getForm()->willReturn($form);
@@ -90,9 +90,9 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
     function it_does_not_set_user_if_email_is_empty(
         FormEvent $event,
         FormInterface $form,
-        Customer $customer,
+        CustomerInterface $customer,
         RepositoryInterface $customerRepository,
-        Customer $existingCustomer,
+        CustomerInterface $existingCustomer,
         AppUser $user
     ): void {
         $event->getForm()->willReturn($form);

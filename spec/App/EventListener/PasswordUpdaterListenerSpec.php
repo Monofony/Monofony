@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\EventListener;
 
-use App\Entity\Customer;
+use App\Entity\CustomerInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\PasswordUpdaterInterface;
@@ -21,7 +21,7 @@ final class PasswordUpdaterListenerSpec extends ObjectBehavior
         PasswordUpdaterInterface $passwordUpdater,
         GenericEvent $event,
         UserInterface $user,
-        Customer $customer
+        CustomerInterface $customer
     ): void {
         $event->getSubject()->willReturn($customer);
         $customer->getUser()->willReturn($user);
@@ -44,7 +44,7 @@ final class PasswordUpdaterListenerSpec extends ObjectBehavior
     function it_does_not_update_password_if_customer_does_not_have_user(
         PasswordUpdaterInterface $passwordUpdater,
         GenericEvent $event,
-        Customer $customer
+        CustomerInterface $customer
     ): void {
         $event->getSubject()->willReturn($customer);
         $customer->getUser()->willReturn(null);
