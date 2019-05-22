@@ -4224,16 +4224,16 @@
         },
         {
             "name": "sylius/grid-bundle",
-            "version": "v1.5.0",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusGridBundle.git",
-                "reference": "dfc5f4a0920010550b1af60801179bea7ada5632"
+                "reference": "1cbdbfa56a538b0fe8da53c0d0aef9885bd7120e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/dfc5f4a0920010550b1af60801179bea7ada5632",
-                "reference": "dfc5f4a0920010550b1af60801179bea7ada5632",
+                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/1cbdbfa56a538b0fe8da53c0d0aef9885bd7120e",
+                "reference": "1cbdbfa56a538b0fe8da53c0d0aef9885bd7120e",
                 "shasum": ""
             },
             "require": {
@@ -4317,7 +4317,7 @@
                 "sylius",
                 "webshop"
             ],
-            "time": "2019-05-01T07:08:18+00:00"
+            "time": "2019-05-21T14:01:07+00:00"
         },
         {
             "name": "sylius/mailer-bundle",
