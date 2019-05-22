@@ -2,58 +2,34 @@
 
 namespace App\Command\Installer;
 
-use App\Command\Helper\RunCommands;
+use App\Command\Helper\CommandsRunner;
 use App\Installer\Provider\DatabaseSetupCommandsProviderInterface;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class InstallDatabaseCommand extends Command
 {
-    use RunCommands {
-        __construct as private initializeRunCommands;
-    }
-
-    /**
-     * @var DatabaseSetupCommandsProviderInterface
-     */
+    /** @var DatabaseSetupCommandsProviderInterface */
     private $databaseSetupCommandsProvider;
 
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
+    /** @var CommandsRunner */
+    private $commandsRunner;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $environment;
 
-    /**
-     * @param DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider
-     * @param EntityManagerInterface                 $entityManager
-     * @param string                                 $environment
-     */
     public function __construct(
         DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider,
-        EntityManagerInterface $entityManager,
+        CommandsRunner $commandsRunner,
         string $environment
     ) {
         $this->databaseSetupCommandsProvider = $databaseSetupCommandsProvider;
-        $this->entityManager = $entityManager;
+        $this->commandsRunner = $commandsRunner;
         $this->environment = $environment;
 
         parent::__construct();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function initialize(InputInterface $input, OutputInterface $output)
-    {
-        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
-        $this->initializeRunCommands($commandExecutor, $this->entityManager);
     }
 
     /**
@@ -73,16 +49,23 @@ EOT
 
     /**
      * {@inheritdoc}
+     *
+     * @throws \Exception
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Creating AppName database for environment <info>%s</info>.', $this->environment));
-
-        $commands = $this->databaseSetupCommandsProvider->getCommands($input, $output, $this->getHelper('question'));
-
-        $this->runCommands($commands, $output);
-        $output->writeln('');
-
-        $this->commandExecutor->runCommand('app:install:sample-data', [], $output);
+        $outputStyle = new SymfonyStyle($input, $output);
+        $outputStyle->writeln(sprintf(
+            'Creating AppName database for environment <info>%s</info>.',
+            $this->environment
+        ));
+        $commands = $this
+            ->databaseSetupCommandsProvider
+            ->getCommands($input, $output, $this->getHelper('question'))
+        ;
+        $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
+        $outputStyle->newLine();
+        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+        $commandExecutor->runCommand('app:install:sample-data', [], $output);
     }
 }

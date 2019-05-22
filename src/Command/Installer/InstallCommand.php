@@ -2,37 +2,25 @@
 
 namespace App\Command\Installer;
 
-use App\Command\Helper\EnsureDirectoryExistsAndIsWritable;
-use App\Installer\Checker\CommandDirectoryChecker;
+use App\Command\Helper\DirectoryChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Process\Exception\RuntimeException;
 
 class InstallCommand extends Command
 {
-    use EnsureDirectoryExistsAndIsWritable {
-        __construct as private initializeEnsureDirectoryExistsAndIsWritable;
-    }
+    /** @var DirectoryChecker */
+    private $directoryChecker;
 
-    /**
-     * @var CommandDirectoryChecker
-     */
-    private $commandDirectoryChecker;
-
-    /**
-     * @var string
-     */
+    /** @var string */
     private $cacheDir;
 
-    /**
-     * @var CommandExecutor
-     */
+    /** @var CommandExecutor */
     private $commandExecutor;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     private $commands = [
         [
             'command' => 'database',
@@ -48,26 +36,12 @@ class InstallCommand extends Command
         ],
     ];
 
-    /**
-     * @param CommandDirectoryChecker $commandDirectoryChecker
-     * @param string                  $cacheDir
-     */
-    public function __construct(CommandDirectoryChecker $commandDirectoryChecker, string $cacheDir)
+    public function __construct(DirectoryChecker $directoryChecker, string $cacheDir)
     {
-        $this->commandDirectoryChecker = $commandDirectoryChecker;
+        $this->directoryChecker = $directoryChecker;
         $this->cacheDir = $cacheDir;
 
         parent::__construct();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function initialize(InputInterface $input, OutputInterface $output)
-    {
-        $this->commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
-
-        $this->initializeEnsureDirectoryExistsAndIsWritable($this->commandDirectoryChecker, $this->getName());
     }
 
     /**
@@ -87,17 +61,34 @@ EOT
     /**
      * {@inheritdoc}
      */
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+        $this->commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \Exception
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('<info>Installing AppName...</info>');
-        $output->writeln($this->getLogo());
+        $outputStyle = new SymfonyStyle($input, $output);
+        $outputStyle->writeln('<info>Installing AppName...</info>');
+        $outputStyle->writeln($this->getLogo());
 
-        $this->ensureDirectoryExistsAndIsWritable($this->cacheDir, $output);
+        $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->cacheDir, $output, $this->getName());
 
         $errored = false;
         foreach ($this->commands as $step => $command) {
             try {
-                $output->writeln(sprintf('<comment>Step %d of %d.</comment> <info>%s</info>', $step + 1, count($this->commands), $command['message']));
+                $outputStyle->newLine();
+                $outputStyle->section(sprintf(
+                    'Step %d of %d. <info>%s</info>',
+                    $step + 1,
+                    count($this->commands),
+                    $command['message']
+                ));
                 $this->commandExecutor->runCommand('app:install:'.$command['command'], [], $output);
                 $output->writeln('');
             } catch (RuntimeException $exception) {
