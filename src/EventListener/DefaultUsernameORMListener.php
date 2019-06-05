@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
-use Sylius\Component\Customer\Model\CustomerInterface;
+use App\Entity\CustomerInterface;
 use Sylius\Component\User\Model\UserInterface;
 
 /**
