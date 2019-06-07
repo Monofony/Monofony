@@ -9,11 +9,6 @@
         <directory name="src" />
         <ignoreFiles>
             <directory name="src/Behat" />
-
-            <!-- psr\eventdispatcher\eventdispatcherinterface not found -->
-            <directory name="src/EventListener" />
-            <directory name="src/Menu" />
-
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>

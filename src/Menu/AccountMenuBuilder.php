@@ -55,7 +55,7 @@ final class AccountMenuBuilder
             ->setLabelAttribute('icon', 'lock')
         ;
 
-        $this->eventDispatcher->dispatch(self::EVENT_NAME, new MenuBuilderEvent($this->factory, $menu));
+        $this->eventDispatcher->dispatch(new MenuBuilderEvent($this->factory, $menu), self::EVENT_NAME);
 
         return $menu;
     }
