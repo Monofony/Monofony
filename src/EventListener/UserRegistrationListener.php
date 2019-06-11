@@ -79,6 +79,6 @@ final class UserRegistrationListener
         $this->userManager->persist($user);
         $this->userManager->flush();
 
-        $this->eventDispatcher->dispatch(UserEvents::REQUEST_VERIFICATION_TOKEN, new GenericEvent($user));
+        $this->eventDispatcher->dispatch(new GenericEvent($user), UserEvents::REQUEST_VERIFICATION_TOKEN);
     }
 }
