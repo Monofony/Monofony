@@ -57,7 +57,7 @@ final class UserRegistrationListenerSpec extends ObjectBehavior
         $userManager->flush()->shouldBeCalled();
 
         $eventDispatcher
-            ->dispatch(UserEvents::REQUEST_VERIFICATION_TOKEN, Argument::type(GenericEvent::class))
+            ->dispatch(Argument::type(GenericEvent::class), UserEvents::REQUEST_VERIFICATION_TOKEN)
             ->shouldBeCalled()
         ;
 
