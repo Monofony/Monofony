@@ -1,0 +1,16 @@
+validate-all: validate-composer validate-security validate-doctrine-schema validate-twig validate-yaml-files
+
+validate-composer:
+	composer validate --strict
+
+validate-doctrine-schema:
+	bin/console doctrine:schema:validate
+
+validate-security:
+	vendor/bin/security-checker security:check
+
+validate-twig:
+	bin/console lint:twig templates
+
+validate-yaml-files:
+	bin/console lint:yaml config

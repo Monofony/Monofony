@@ -1,0 +1,42 @@
+TAGS?=~todo
+CHROMEDRIVER_PATH=../chromedriver
+FORMAT?=progress
+VERBOSITY?=-vvv
+
+test-all-default: test-phpspec test-phpstan test-psalm test-phpunit test-infection test-all-behat
+
+test-behat-default:
+	APP_ENV=test vendor/bin/behat --tags=${TAGS} ${ARGS} -f ${FORMAT} ${VERBOSITY}
+
+test-all-behat-default: test-behat-without-javascript test-behat-with-javascript test-behat-with-cli
+
+test-behat-without-javascript-default:
+	APP_ENV=test vendor/bin/behat --tags=~javascript --tags=${TAGS} -f ${FORMAT} ${VERBOSITY}
+
+test-behat-with-javascript-default:
+	vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=${CHROMEDRIVER_PATH} > /dev/null 2>&1 &
+	sleep 5
+	APP_ENV=test vendor/bin/behat --tags=javascript --tags=${TAGS} -f ${FORMAT} ${VERBOSITY}
+
+test-behat-with-cli-default:
+	APP_ENV=test vendor/bin/behat --tags=cli --tags=${TAGS} -f ${FORMAT} ${VERBOSITY}
+
+test-infection-default:
+	phpdbg -qrr vendor/bin/infection ${ARGS}
+
+test-phpspec-default:
+	phpdbg -qrr vendor/bin/phpspec run -n ${ARGS}
+
+test-phpstan-default:
+	APP_ENV=dev bin/console cache:clear
+	APP_ENV=dev bin/console cache:warmup
+	vendor/bin/phpstan analyse -c phpstan.neon -l 1 src
+
+test-phpunit-default:
+	APP_ENV=test vendor/bin/phpunit ${ARGS}
+
+test-psalm-default:
+	vendor/bin/psalm --show-info=false
+
+%:  %-default
+	@  true
