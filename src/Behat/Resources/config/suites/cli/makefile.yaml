@@ -1,0 +1,7 @@
+default:
+    suites:
+        cli_makefile:
+            contexts:
+                - App\Behat\Context\Cli\MakefileContext
+            filters:
+                tags: "@makefile && @cli"

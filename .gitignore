@@ -22,8 +22,8 @@
 /behat.yml
 /phpspec.yml
 
-Makefile*
-!Makefile*.dist
+/Makefile*
+/!Makefile*.dist
 
 ###> symfony/framework-bundle ###
 /.env.*.local
