@@ -23,7 +23,6 @@
         "friendsofsymfony/oauth-server-bundle": "^1.6",
         "fzaninotto/faker": "^1.8",
         "guzzlehttp/guzzle": "^6.2",
-        "incenteev/composer-parameter-handler": "~2.0",
         "knplabs/doctrine-behaviors": "~1.1",
         "sensio/framework-extra-bundle": "^5.1",
         "sensiolabs/security-checker": "^5.0",
