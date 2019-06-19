@@ -40,16 +40,19 @@ EOM
     }
 
     /**
-     * @When I override makefile :commandName command with :data
+     * @When I override makefile :commandName command with :firstData
+     * @When I override makefile :commandName command with :firstdata and :secondData
      */
-    public function overrideCommandWithData(string $commandName, string $data)
+    public function overrideCommandWithData(string $commandName, ...$data)
     {
+        $commandData = implode("\n\t", $data);
+
         $this->ensureMakeFileDirExist();
         $this->writeMakefileData(<<<EOM
 include Makefile.dist
 
 $commandName:
-\t$data
+\t$commandData
 
 EOM
         );

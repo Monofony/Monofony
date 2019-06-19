@@ -39,7 +39,8 @@ Feature: Use make test command
         And it should execute "behat"
 
     Scenario: Override make test command
-        When I override makefile test command with "echo 'test'"
+        When I override makefile test command with "echo 'test'" and "make test-default"
         Then the command make test should exist
-        Then it should execute "echo 'test'"
+        And it should execute "echo 'test'"
+        And it should execute "make test-default"
         But it should not execute "composer validate"
