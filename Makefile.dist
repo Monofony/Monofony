@@ -1,74 +1,19 @@
-TAGS?=~todo
-CHROMEDRIVER_PATH=../chromedriver
+include Makefile.install.dist
+include Makefile.test.dist
+include Makefile.validation.dist
 
-build-docs:
+docs-build-default:
 	cd docs && sphinx-build -b html . build -a
 
-install:
-	composer install --no-interaction
-	bin/console app:install -n
-	bin/console sylius:fixtures:load -n
-	yarn install && yarn build
+install-default: composer-install app-install fixtures-load yarn-install yarn-build
 
-load-fixtures:
-	bin/console sylius:fixtures:load default --no-interaction
-
-start:
+start-default:
 	symfony server:start --no-tls || bin/console server:start ${ARGS}
 
-stop:
+stop-default:
 	symfony server:stop || bin/console server:stop
 
-test: validate-all test-all
+test-default: validate-all test-all
 
-test-all: test-phpspec test-phpstan test-phpstan test-phpunit test-infection test-all-behat
-
-test-behat:
-	APP_ENV=test vendor/bin/behat --tags=${TAGS} ${ARGS}
-
-test-all-behat: test-behat-without-javascript test-behat-with-javascript test-behat-with-cli
-
-test-behat-without-javascript:
-	APP_ENV=test vendor/bin/behat --tags=~javascript --tags=${TAGS}
-
-test-behat-with-javascript:
-	vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=${CHROMEDRIVER_PATH} > /dev/null 2>&1 &
-	sleep 5
-	APP_ENV=test vendor/bin/behat --tags=javascript --tags=${TAGS}
-
-test-behat-with-cli:
-	APP_ENV=test vendor/bin/behat --tags=cli --tags=${TAGS}
-
-test-infection:
-	phpdbg -qrr vendor/bin/infection ${ARGS}
-
-test-phpspec:
-	phpdbg -qrr vendor/bin/phpspec run -n ${ARGS}
-
-test-phpstan:
-	APP_ENV=dev bin/console cache:clear
-	APP_ENV=dev bin/console cache:warmup
-	vendor/bin/phpstan analyse -c phpstan.neon -l 1 src
-
-test-psalm:
-	vendor/bin/psalm --show-info=false
-
-test-phpunit:
-	APP_ENV=test vendor/bin/phpunit ${ARGS}
-
-validate-all: validate-composer validate-security validate-doctrine-schema validate-twig validate-yaml-files
-
-validate-composer:
-	composer validate --strict
-
-validate-doctrine-schema:
-	bin/console doctrine:schema:validate
-
-validate-security:
-	vendor/bin/security-checker security:check
-
-validate-twig:
-	bin/console lint:twig templates
-
-validate-yaml-files:
-	bin/console lint:yaml config
+%:  %-default
+	@  true
