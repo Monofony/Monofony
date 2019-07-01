@@ -30,8 +30,8 @@ default:
                                 - "start-fullscreen"
                                 - "start-maximized"
                                 - "no-sandbox"
-                        extra_capabilities:
-                            unexpectedAlertBehaviour: accept
+                            extra_capabilities:
+                                unexpectedAlertBehaviour: accept
 
         FriendsOfBehat\SymfonyExtension: ~
 
