@@ -3,4 +3,4 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 print_header "Testing prod requirements (Composer)" "Sylius"
-run_command "composer install --no-dev --no-interaction --prefer-dist"
+run_command "APP_ENV=prod composer install --no-dev --no-interaction --prefer-dist"
