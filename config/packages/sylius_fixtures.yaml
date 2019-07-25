@@ -29,6 +29,7 @@ sylius_fixtures:
                                first_name: "Harry"
                                last_name: "Cover"
                                enabled: true
+                       random: 10
 
                 oauth_client:
                     options:
