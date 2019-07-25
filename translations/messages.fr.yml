@@ -4,7 +4,9 @@ app:
         forgotten_password: Mot de passe oublié
         legal_notices: Mentions légales
         overview_of_your_website: Aperçu de votre site web
+        search_customers: Chercher des clients
         validate: Valider
+        view_website: Voir le site
     text:
         error:
             500:

@@ -6,4 +6,13 @@
 
 {% block content %}
     {{ headers.default('sylius.ui.dashboard'|trans, 'home', 'app.ui.overview_of_your_website'|trans) }}
+
+    {% include 'backend/dashboard/_statistics.html.twig' %}
+    {% include 'backend/dashboard/_menu.html.twig' %}
+
+    <div class="ui one column stackable grid">
+        <div class="column">
+            {{ render(url('sylius_backend_partial_customer_latest', {'count': 5, 'template': 'backend/dashboard/_customers.html.twig'})) }}
+        </div>
+    </div>
 {% endblock %}

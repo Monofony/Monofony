@@ -1,8 +1,12 @@
 app_backend_dashboard:
     path: /
     defaults:
-        _controller:  FrameworkBundle:Template:template
+        _controller:  App\Controller\DashboardController:indexAction
         template:     'backend/index.html.twig'
+
+app_backend_partial:
+    resource: "backend/partial.yaml"
+    prefix: /_partial
 
 sylius_backend_admin_user:
     resource: "backend/admin_user.yaml"
