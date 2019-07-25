@@ -3,3 +3,4 @@ sylius_customer:
         customer:
             classes:
                 model: App\Entity\Customer
+                repository: App\Repository\CustomerRepository

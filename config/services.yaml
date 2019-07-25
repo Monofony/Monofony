@@ -8,6 +8,17 @@ services:
     _defaults:
         autoconfigure: true
 
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        autowire: true
+        tags: ['controller.service_arguments']
+
+    App\Dashboard\:
+        resource: '../src/Dashboard'
+        autowire: true
+
     sylius.controller.security:
         class: Sylius\Bundle\UiBundle\Controller\SecurityController
         public: true
