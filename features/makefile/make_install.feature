@@ -1,10 +1,10 @@
 @makefile @cli
-Feature: Use make install command
+Feature: Using make install command
     In order to install application
     As a developer
     I want to use make install command
 
-    Scenario: Use make install command
+    Scenario: Using make install command
         Given I use default makefile commands
         Then the command make install should exist
         And it should execute "composer install"
@@ -13,7 +13,7 @@ Feature: Use make install command
         And it should execute "yarn install"
         And it should execute "yarn build"
 
-    Scenario: Override make install command
+    Scenario: Overriding make install command
         When I override makefile install command with "echo 'test'" and "make install-default"
         Then the command make install should exist
         And it should execute "echo 'test'"
