@@ -1,3 +1,14 @@
+imports:
+    - { resource: services/command.yaml }
+    - { resource: services/context.yaml }
+    - { resource: services/fixtures.yaml }
+    - { resource: services/fixtures_factories.yaml }
+    - { resource: services/form.yaml }
+    - { resource: services/installer.yaml }
+    - { resource: services/listener.yaml }
+    - { resource: services/menu.yaml }
+    - { resource: services/validator.yaml }
+
 parameters:
     email_contact: contact@app_name.com
     email_name: Contact AppName
@@ -31,14 +42,3 @@ services:
 
     Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
     Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
-
-imports:
-    - { resource: services/command.yaml }
-    - { resource: services/context.yaml }
-    - { resource: services/fixtures.yaml }
-    - { resource: services/fixtures_factories.yaml }
-    - { resource: services/form.yaml }
-    - { resource: services/installer.yaml }
-    - { resource: services/listener.yaml }
-    - { resource: services/menu.yaml }
-    - { resource: services/validator.yaml }

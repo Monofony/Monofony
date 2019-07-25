@@ -22,8 +22,7 @@ class CustomerRepository extends EntityRepository
         return (int) $this->createQueryBuilder('o')
             ->select('COUNT(o.id)')
             ->getQuery()
-            ->getSingleScalarResult()
-            ;
+            ->getSingleScalarResult();
     }
 
     public function findLatest(int $count): array
