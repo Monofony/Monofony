@@ -1,6 +1,7 @@
 imports:
     - { resource: backend/administrator.yaml }
     - { resource: backend/customer.yaml }
+    - { resource: backend/dashboard.yaml }
 
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html

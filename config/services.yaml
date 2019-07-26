@@ -1,3 +1,14 @@
+imports:
+    - { resource: services/command.yaml }
+    - { resource: services/context.yaml }
+    - { resource: services/fixtures.yaml }
+    - { resource: services/fixtures_factories.yaml }
+    - { resource: services/form.yaml }
+    - { resource: services/installer.yaml }
+    - { resource: services/listener.yaml }
+    - { resource: services/menu.yaml }
+    - { resource: services/validator.yaml }
+
 parameters:
     email_contact: contact@app_name.com
     email_name: Contact AppName
@@ -7,6 +18,17 @@ services:
     # default configuration for services in *this* file
     _defaults:
         autoconfigure: true
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        autowire: true
+        tags: ['controller.service_arguments']
+
+    App\Dashboard\:
+        resource: '../src/Dashboard'
+        autowire: true
 
     sylius.controller.security:
         class: Sylius\Bundle\UiBundle\Controller\SecurityController
@@ -20,14 +42,3 @@ services:
 
     Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
     Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
-
-imports:
-    - { resource: services/command.yaml }
-    - { resource: services/context.yaml }
-    - { resource: services/fixtures.yaml }
-    - { resource: services/fixtures_factories.yaml }
-    - { resource: services/form.yaml }
-    - { resource: services/installer.yaml }
-    - { resource: services/listener.yaml }
-    - { resource: services/menu.yaml }
-    - { resource: services/validator.yaml }

@@ -50,8 +50,7 @@ services:
         arguments:
             - "%kernel.cache_dir%/spool"
 
-    App\Behat\Service\EmailCheckerInterface:
-        alias: app.behat.email_checker
+    App\Behat\Service\EmailCheckerInterface: '@app.behat.email_checker'
 
     app.behat.notification_accessor:
         class: App\Behat\Service\Accessor\NotificationAccessor
@@ -65,15 +64,15 @@ services:
         arguments:
             - "@app.behat.notification_accessor"
 
-    App\Behat\Service\NotificationCheckerInterface:
-        alias: app.behat.notification_checker
+    App\Behat\Service\NotificationCheckerInterface: '@app.behat.notification_checker'
 
     App\Behat\Service\SharedStorage:
         public: false
 
-    App\Behat\Service\SharedStorageInterface:
-        alias: App\Behat\Service\SharedStorage
+    App\Behat\Service\SharedStorageInterface: '@App\Behat\Service\SharedStorage'
 
     app.behat.table_accessor:
         class: App\Behat\Service\Accessor\TableAccessor
         public: false
+
+    App\Behat\Service\Accessor\TableAccessorInterface: '@app.behat.table_accessor'

@@ -4,6 +4,8 @@ app:
         forgotten_password: Forgotten password
         legal_notices: Legal notices
         overview_of_your_website: Overview of you website
+        search_customers: Search customers
         validate: Validate
+        view_website: View website
 sylius:
     ui: ~
