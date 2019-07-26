@@ -94,10 +94,10 @@ final class CustomerContext implements Context
      */
     public function thereAreCustomers(int $numberOfCustomers): void
     {
-        for ($i=0; $i<$numberOfCustomers; ++$i) {
+        for ($i = 0; $i < $numberOfCustomers; ++$i) {
             $customer = $this->createCustomer(sprintf('john%s@doe.com', uniqid()));
             $customer->setFirstname('John');
-            $customer->setLastname('Doe' . $i);
+            $customer->setLastname('Doe'.$i);
 
             $this->customerRepository->add($customer);
         }
