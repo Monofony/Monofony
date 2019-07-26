@@ -1,10 +1,10 @@
 @makefile @cli
-Feature: Use make test command
+Feature: Using make test command
     In order to test application
     As a developer
     I want to use make test command
 
-    Scenario: Use make validate all command
+    Scenario: Using make validate all command
         Given I use default makefile commands
         Then the command make "validate-all" should exist
         And it should execute "composer validate"
@@ -13,7 +13,7 @@ Feature: Use make test command
         And it should execute "lint:twig"
         And it should execute "lint:yaml"
 
-    Scenario: Use make test all command
+    Scenario: Using make test all command
         Given I use default makefile commands
         Then the command make "test-all" should exist
         And it should execute "phpspec run"
@@ -23,7 +23,7 @@ Feature: Use make test command
         And it should execute "infection"
         And it should execute "behat"
 
-    Scenario: Use make test command
+    Scenario: Using make test command
         Given I use default makefile commands
         Then the command make test should exist
         And it should execute "composer validate"
@@ -38,7 +38,7 @@ Feature: Use make test command
         And it should execute "infection"
         And it should execute "behat"
 
-    Scenario: Override make test command
+    Scenario: Overriding make test command
         When I override makefile test command with "echo 'test'" and "make test-default"
         Then the command make test should exist
         And it should execute "echo 'test'"
