@@ -15,5 +15,8 @@ stop-default:
 
 test-default: validate-all test-all
 
+lint-default:
+	vendor/bin/php-cs-fixer fix src
+
 %:  %-default
 	@  true
