@@ -7,6 +7,7 @@
         "excludes": [
             "Behat",
             "Command",
+            "Controller",
             "DependencyInjection",
             "Formatter",
             "Menu",

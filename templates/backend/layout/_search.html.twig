@@ -1,0 +1,9 @@
+<div class="item">
+    <form method="get" action="{{ path('sylius_backend_customer_index') }}">
+        <div class="ui inverted transparent left icon input">
+            <input type="text" name="criteria[search][value]" placeholder="{{ 'app.ui.search_customers'|trans }}...">
+            <input type="hidden" name="criteria[search][type]" value="contains">
+            <i class="search link icon"></i>
+        </div>
+    </form>
+</div>

@@ -90,6 +90,20 @@ final class CustomerContext implements Context
     }
 
     /**
+     * @Given there are :numberOfCustomers customers
+     */
+    public function thereAreCustomers(int $numberOfCustomers): void
+    {
+        for ($i=0; $i<$numberOfCustomers; ++$i) {
+            $customer = $this->createCustomer(sprintf('john%s@doe.com', uniqid()));
+            $customer->setFirstname('John');
+            $customer->setLastname('Doe' . $i);
+
+            $this->customerRepository->add($customer);
+        }
+    }
+
+    /**
      * @Given there is customer :email with first name :firstName
      */
     public function thereIsCustomerWithFirstName($email, $firstName): void
