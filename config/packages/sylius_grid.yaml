@@ -1,6 +1,6 @@
 imports:
-  - { resource: 'grids/backend/admin_user.yml' }
-  - { resource: 'grids/backend/customer.yml' }
+  - { resource: 'grids/backend/admin_user.yaml' }
+  - { resource: 'grids/backend/customer.yaml' }
 
 sylius_grid:
     templates:

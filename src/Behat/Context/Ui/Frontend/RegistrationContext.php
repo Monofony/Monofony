@@ -125,7 +125,6 @@ class RegistrationContext implements Context
         $this->registerPage->specifyLastName($lastName);
     }
 
-
     /**
      * @When I specify the email as :email
      * @When I do not specify the email

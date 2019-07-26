@@ -31,7 +31,7 @@ final class DoctrineORMContext implements Context
     }
 
     /**
-     * @BeforeScenario 
+     * @BeforeScenario
      */
     public function purgeDatabase(): void
     {

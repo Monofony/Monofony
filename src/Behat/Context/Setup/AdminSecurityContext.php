@@ -15,7 +15,6 @@ use App\Behat\Service\SecurityServiceInterface;
 use App\Behat\Service\SharedStorageInterface;
 use App\Entity\User;
 use App\Fixture\Factory\AdminUserExampleFactory;
-use App\Fixture\Factory\ExampleFactoryInterface;
 use Behat\Behat\Context\Context;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;

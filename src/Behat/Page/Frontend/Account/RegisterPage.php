@@ -69,7 +69,7 @@ class RegisterPage extends SymfonyPage
     }
 
     /**
-     * @param null|string $firstName
+     * @param string|null $firstName
      *
      * @throws ElementNotFoundException
      */
@@ -79,7 +79,7 @@ class RegisterPage extends SymfonyPage
     }
 
     /**
-     * @param null|string $lastName
+     * @param string|null $lastName
      *
      * @throws ElementNotFoundException
      */

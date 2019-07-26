@@ -17,25 +17,15 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 final class AdminMenuBuilder
 {
-    /**
-     * @var FactoryInterface
-     */
+    /** @var FactoryInterface */
     private $factory;
 
-    /**
-     * @param FactoryInterface $factory
-     */
     public function __construct(FactoryInterface $factory)
     {
         $this->factory = $factory;
     }
 
-    /**
-     * @param RequestStack $requestStack
-     *
-     * @return ItemInterface
-     */
-    public function createMenu(RequestStack $requestStack)
+    public function createMenu(RequestStack $requestStack): ItemInterface
     {
         $menu = $this->factory->createItem('root');
 
@@ -45,12 +35,7 @@ final class AdminMenuBuilder
         return $menu;
     }
 
-    /**
-     * @param ItemInterface $menu
-     *
-     * @return ItemInterface
-     */
-    private function addCustomerSubMenu(ItemInterface $menu)
+    private function addCustomerSubMenu(ItemInterface $menu): ItemInterface
     {
         $customer = $menu
             ->addChild('customer')
@@ -64,12 +49,7 @@ final class AdminMenuBuilder
         return $customer;
     }
 
-    /**
-     * @param ItemInterface $menu
-     *
-     * @return ItemInterface
-     */
-    private function addConfigurationSubMenu(ItemInterface $menu)
+    private function addConfigurationSubMenu(ItemInterface $menu): ItemInterface
     {
         $configuration = $menu
             ->addChild('configuration')
