@@ -245,9 +245,6 @@
     "monolog/monolog": {
         "version": "1.23.0"
     },
-    "muglug/package-versions-56": {
-        "version": "1.2.4"
-    },
     "myclabs/deep-copy": {
         "version": "1.8.1"
     },
@@ -329,9 +326,6 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
-    "phpmyadmin/sql-parser": {
-        "version": "v4.3.1"
-    },
     "phpoption/phpoption": {
         "version": "1.5.0"
     },
@@ -409,9 +403,6 @@
     },
     "psr/log": {
         "version": "1.0.2"
-    },
-    "psr/simple-cache": {
-        "version": "1.0.1"
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
@@ -568,9 +559,6 @@
             "version": "3.3",
             "ref": "f3a28efb32f20b8740fd763651cabd780bce43da"
         }
-    },
-    "symfony/contracts": {
-        "version": "v1.0.1"
     },
     "symfony/css-selector": {
         "version": "v4.2.0"
