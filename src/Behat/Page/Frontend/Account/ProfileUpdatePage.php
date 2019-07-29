@@ -26,10 +26,7 @@ class ProfileUpdatePage extends SymfonyPage
         return 'sylius_frontend_account_profile_update';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function checkValidationMessageFor($element, $message): bool
+    public function checkValidationMessageFor(string $element, string $message): bool
     {
         $errorLabel = $this->getElement($element)->getParent()->find('css', '.sylius-validation-error');
 
@@ -40,33 +37,21 @@ class ProfileUpdatePage extends SymfonyPage
         return $message === $errorLabel->getText();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyFirstName($firstName): void
+    public function specifyFirstName(?string $firstName): void
     {
         $this->getDocument()->fillField('First name', $firstName);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyLastName($lastName): void
+    public function specifyLastName(?string $lastName): void
     {
         $this->getDocument()->fillField('Last name', $lastName);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyEmail($email): void
+    public function specifyEmail(?string $email): void
     {
         $this->getDocument()->fillField('Email', $email);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function saveChanges(): void
     {
         $this->getDocument()->pressButton('Save changes');
@@ -77,9 +62,6 @@ class ProfileUpdatePage extends SymfonyPage
         $this->getDocument()->checkField('Subscribe to the newsletter');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function isSubscribedToTheNewsletter(): bool
     {
         return $this->getDocument()->hasCheckedField('Subscribe to the newsletter');
