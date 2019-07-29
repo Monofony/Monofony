@@ -17,10 +17,7 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class LoginPage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function hasValidationErrorWith($message): bool
+    public function hasValidationErrorWith(string $message): bool
     {
         return $this->getElement('validation_error')->getText() === $message;
     }
@@ -30,22 +27,12 @@ class LoginPage extends SymfonyPage
         $this->getDocument()->pressButton('Login');
     }
 
-    /**
-     * @param string|null $password
-     *
-     * @throws \Behat\Mink\Exception\ElementNotFoundException
-     */
     public function specifyPassword(?string $password): void
     {
         $this->getElement('password')->setValue($password);
     }
 
-    /**
-     * @param string $username
-     *
-     * @throws \Behat\Mink\Exception\ElementNotFoundException
-     */
-    public function specifyUsername(string $username): void
+    public function specifyUsername(?string $username): void
     {
         $this->getElement('username')->setValue($username);
     }
