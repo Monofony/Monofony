@@ -3,7 +3,7 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 
-if [[ "${TRAVIS_PULL_REQUEST}" == "false" ]]; then
+if [[ "${CI}" == "" ]]; then
     INFECTION_FILTER="";
 else
     git remote set-branches --add origin $TRAVIS_BRANCH;
