@@ -31,30 +31,16 @@ class ResetPasswordPage extends SymfonyPage
         $this->getDocument()->pressButton('Reset');
     }
 
-    /**
-     * @param string|null $password
-     */
     public function specifyNewPassword(?string $password): void
     {
         $this->getElement('password')->setValue($password);
     }
 
-    /**
-     * @param string|null $password
-     */
     public function specifyConfirmPassword(?string $password): void
     {
         $this->getElement('confirm_password')->setValue($password);
     }
 
-    /**
-     * @param string $element
-     * @param string $message
-     *
-     * @return bool
-     *
-     * @throws ElementNotFoundException
-     */
     public function checkValidationMessageFor(string $element, string $message): bool
     {
         $errorLabel = $this->getElement($element)->getParent()->find('css', '.sylius-validation-error');

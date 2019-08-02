@@ -25,41 +25,26 @@ class DashboardPage extends SymfonyPage
         return 'sylius_frontend_account_dashboard';
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function hasCustomerName($name): bool
+    public function hasCustomerName(string $name): bool
     {
         return $this->hasValueInCustomerSection($name);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function hasCustomerEmail($email): bool
+    public function hasCustomerEmail(string $email): bool
     {
         return $this->hasValueInCustomerSection($email);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function isVerified(): bool
     {
         return !$this->hasElement('verification');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function hasResendVerificationEmailButton(): bool
     {
         return $this->getDocument()->hasButton('Verify');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function pressResendVerificationEmail(): void
     {
         $this->getDocument()->pressButton('Verify');
@@ -76,11 +61,6 @@ class DashboardPage extends SymfonyPage
         ]);
     }
 
-    /**
-     * @param string $value
-     *
-     * @return bool
-     */
     private function hasValueInCustomerSection($value): bool
     {
         $customerText = $this->getElement('customer')->getText();

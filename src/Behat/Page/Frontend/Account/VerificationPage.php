@@ -17,10 +17,7 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class VerificationPage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function verifyAccount($token): void
+    public function verifyAccount(string $token): void
     {
         $this->tryToOpen(['token' => $token]);
     }

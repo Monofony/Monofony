@@ -14,13 +14,14 @@ declare(strict_types=1);
 namespace App\Behat\Page\Backend\Customer;
 
 use App\Behat\Page\Backend\Crud\IndexPage as BaseIndexPage;
+use App\Entity\CustomerInterface;
 
 class IndexPage extends BaseIndexPage
 {
     /**
      * {@inheritdoc}
      */
-    public function getCustomerAccountStatus($customer): string
+    public function getCustomerAccountStatus(CustomerInterface $customer): string
     {
         $tableAccessor = $this->getTableAccessor();
         $table = $this->getElement('table');
