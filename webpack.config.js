@@ -47,8 +47,8 @@ Encore
         to: 'img/[path][name].[ext]',
     })
     .configureFilenames({
-             js: 'js/[name].[contenthash].js',
-             css: 'css/[name].[contenthash].css',
+             js: 'js/[name].[hash:8].js',
+             css: 'css/[name].[hash:8].css',
              images: 'img/[name].[hash:8].[ext]',
              fonts: 'font/[name].[hash:8].[ext]'
     });
@@ -83,8 +83,8 @@ Encore
         to: 'img/[path][name].[ext]',
     })
     .configureFilenames({
-        js: 'js/[name].[contenthash].js',
-        css: 'css/[name].[contenthash].css',
+        js: 'js/[name].[hash:8].js',
+        css: 'css/[name].[hash:8].css',
         images: 'img/[name].[hash:8].[ext]',
         fonts: 'font/[name].[hash:8].[ext]'
     });
