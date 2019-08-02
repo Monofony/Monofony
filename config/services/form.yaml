@@ -14,9 +14,6 @@ services:
 
     App\Form\EventSubscriber\CustomerRegistrationFormSubscriber: ~
 
-    App\Form\EventSubscriber\AddUserFormSubscriber:
-        autowire: false
-
     App\Form\Type\User\AdminUserType:
         arguments:
             $dataClass: "%sylius.model.admin_user.class%"
