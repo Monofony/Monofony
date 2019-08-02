@@ -16,7 +16,6 @@ namespace App\Behat\Context\Setup;
 use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;
 use App\Behat\Service\SharedStorageInterface;
-use App\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 final class AdminUserContext implements Context

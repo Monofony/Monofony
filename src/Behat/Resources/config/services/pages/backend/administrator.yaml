@@ -19,7 +19,6 @@ services:
           arguments: ["sylius_backend_admin_user_index"]
 
       App\Behat\Page\Backend\Administrator\UpdatePage:
-          class: App\Behat\Page\Backend\Administrator\UpdatePage
           parent: app.behat.page.backend.crud.update
           public: false
           arguments: ["sylius_backend_admin_user_update"]

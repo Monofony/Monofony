@@ -18,12 +18,7 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class RequestPasswordResetPage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     *
-     * @throws ElementNotFoundException
-     */
-    public function checkValidationMessageFor($element, $message): bool
+    public function checkValidationMessageFor(string $element, string $message): bool
     {
         $errorLabel = $this->getElement($element)->getParent()->getParent()->find('css', '.sylius-validation-error');
 
@@ -34,25 +29,22 @@ class RequestPasswordResetPage extends SymfonyPage
         return $message === $errorLabel->getText();
     }
 
+    public function reset(): void
+    {
+        $this->getDocument()->pressButton('Reset');
+    }
+
+    public function specifyEmail(?string $email): void
+    {
+        $this->getDocument()->fillField('Email', $email);
+    }
+
     /**
      * {@inheritdoc}
      */
     public function getRouteName(): string
     {
         return 'sylius_user_request_password_reset_token';
-    }
-
-    public function reset(): void
-    {
-        $this->getDocument()->pressButton('Reset');
-    }
-
-    /**
-     * @param string $email
-     */
-    public function specifyEmail($email): void
-    {
-        $this->getDocument()->fillField('Email', $email);
     }
 
     /**

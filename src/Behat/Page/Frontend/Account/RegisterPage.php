@@ -27,12 +27,7 @@ class RegisterPage extends SymfonyPage
         return 'app_frontend_register';
     }
 
-    /**
-     * {@inheritdoc}
-     *
-     * @throws ElementNotFoundException
-     */
-    public function checkValidationMessageFor($element, $message): bool
+    public function checkValidationMessageFor(string $element, string $message): bool
     {
         $errorLabel = $this
             ->getElement(StringInflector::nameToCode($element))
@@ -52,45 +47,26 @@ class RegisterPage extends SymfonyPage
         $this->getDocument()->pressButton('Create an account');
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyEmail($email): void
+    public function specifyEmail(?string $email): void
     {
         $this->getDocument()->fillField('Email', $email);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyPassword($password): void
+    public function specifyPassword(?string $password): void
     {
         $this->getDocument()->fillField('Password', $password);
     }
 
-    /**
-     * @param null|string $firstName
-     *
-     * @throws ElementNotFoundException
-     */
     public function specifyFirstName(?string $firstName): void
     {
         $this->getDocument()->fillField('First name', $firstName);
     }
 
-    /**
-     * @param null|string $lastName
-     *
-     * @throws ElementNotFoundException
-     */
     public function specifyLastName(?string $lastName): void
     {
         $this->getDocument()->fillField('Last name', $lastName);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function verifyPassword($password): void
     {
         $this->getDocument()->fillField('Verification', $password);

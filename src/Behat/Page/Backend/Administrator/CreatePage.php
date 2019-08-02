@@ -23,34 +23,22 @@ class CreatePage extends BaseCreatePage implements CreatePageInterface
         $this->getElement('enabled')->check();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyUsername($username): void
+    public function specifyUsername(?string $username): void
     {
         $this->getElement('name')->setValue($username);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyEmail($email): void
+    public function specifyEmail(?string $email): void
     {
         $this->getElement('email')->setValue($email);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyPassword($password): void
+    public function specifyPassword(?string $password): void
     {
         $this->getElement('password')->setValue($password);
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function specifyLocale($localeCode): void
+    public function specifyLocale(?string $localeCode): void
     {
         $this->getElement('locale_code')->selectOption($localeCode);
     }

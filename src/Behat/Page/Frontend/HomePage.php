@@ -23,17 +23,11 @@ class HomePage extends SymfonyPage
         return 'app_frontend_homepage';
     }
 
-    /**
-     * @throws \Behat\Mink\Exception\ElementNotFoundException
-     */
     public function logOut(): void
     {
         $this->getElement('logout_button')->click();
     }
 
-    /**
-     * @return bool
-     */
     public function hasLogoutButton(): bool
     {
         return $this->hasElement('logout_button');
