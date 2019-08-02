@@ -1,29 +1,20 @@
-import 'semantic-ui-calendar/dist/calendar';
-import 'semantic-ui-css/components/accordion';
-import $ from 'jquery';
+import '../../common/js/app';
 
-import 'sylius/ui/app';
-import 'sylius/ui/sylius-auto-complete';
-import 'sylius/ui/sylius-product-attributes';
-import 'sylius/ui/sylius-product-auto-complete';
-import 'sylius/ui/sylius-prototype-handler';
+import 'semantic-ui-calendar/dist/calendar';
 
 import './app-date-time-picker';
 import './sylius-compound-form-errors';
 
-(function ($) {
-    $(document).ready(function () {
-        $('.sylius-autocomplete').autoComplete();
-        $('.sylius-tabular-form').addTabErrors();
-        $('.ui.accordion').addAccordionErrors();
-        $('#sylius_customer_createUser').change(function () {
-            $('#user-form').toggle();
-        });
+import '../scss/main.scss';
 
-        $('.app-date-picker').datePicker();
-        $('.app-date-time-picker').dateTimePicker();
+$(document).ready(function () {
+    $('.sylius-autocomplete').autoComplete();
+    $('.sylius-tabular-form').addTabErrors();
+    $('.ui.accordion').addAccordionErrors();
+    $('#sylius_customer_createUser').change(function () {
+        $('#user-form').toggle();
     });
-})(jQuery);
 
-window.$ = $;
-window.jQuery = $;
+    $('.app-date-picker').datePicker();
+    $('.app-date-time-picker').dateTimePicker();
+});
