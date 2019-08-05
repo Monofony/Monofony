@@ -11,4 +11,4 @@ run_command "bin/console doctrine:migrations:migrate --no-interaction -vvv" || e
 
 print_header "Setting the web assets up" "AppName"
 run_command "bin/console assets:install public -vvv" || exit $?
-run_command "yarn install && yarn run gulp" || exit $?
+run_command "yarn install && yarn run encore production" || exit $?

@@ -22,7 +22,7 @@ $ composer install
 Install project :
 ```bash
 $ bin/console app:install
-$ yarn install && yarn run gulp
+$ yarn install && yarn run encore production (or yarn run encore dev-server --hot for developpement)
 $ php bin/console server:start
 ```
 
