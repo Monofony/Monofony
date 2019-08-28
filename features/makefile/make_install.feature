@@ -11,7 +11,7 @@ Feature: Using make install command
         And it should execute "app:install"
         And it should execute "fixtures:load"
         And it should execute "yarn install"
-        And it should execute "yarn build"
+        And it should execute "yarn encore production"
 
     Scenario: Overriding make install command
         When I override makefile install command with "echo 'test'" and "make install-default"
