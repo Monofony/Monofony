@@ -22,6 +22,7 @@ App\Entity\AppUser:
         roles: [ROLE_API_ACCESS]
         enabled: true
         customer: "@customer"
+        username: sylius
 
 App\Entity\Customer:
     customer:
