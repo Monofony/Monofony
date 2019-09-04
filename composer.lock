@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77b729d629b5ba30319ea7fd3b5a578c",
+    "content-hash": "3a1e3f9758423f0f35e05d183b804860",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3915,16 +3915,16 @@
         },
         {
             "name": "sylius/customer",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Customer.git",
-                "reference": "b22fefc91c2a34a21439a4358e3e6508583d61ff"
+                "reference": "4ea00adeb4c16601e06bab04cd8edd4baf92eb0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Customer/zipball/b22fefc91c2a34a21439a4358e3e6508583d61ff",
-                "reference": "b22fefc91c2a34a21439a4358e3e6508583d61ff",
+                "url": "https://api.github.com/repos/Sylius/Customer/zipball/4ea00adeb4c16601e06bab04cd8edd4baf92eb0d",
+                "reference": "4ea00adeb4c16601e06bab04cd8edd4baf92eb0d",
                 "shasum": ""
             },
             "require": {
@@ -3938,7 +3938,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -3952,24 +3952,24 @@
             ],
             "authors": [
                 {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
                     "name": "Paweł Jędrzejewski",
                     "homepage": "http://pjedrzejewski.com"
-                },
-                {
-                    "name": "Łukasz Chruściel",
-                    "email": "lukasz.chrusciel@lakion.com"
                 },
                 {
                     "name": "Michał Marcinkowski",
                     "email": "michal.marcinkowski@lakion.com"
                 },
                 {
+                    "name": "Łukasz Chruściel",
+                    "email": "lukasz.chrusciel@lakion.com"
+                },
+                {
                     "name": "Sylius project",
                     "homepage": "http://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "http://github.com/Sylius/Sylius/contributors"
                 }
             ],
             "description": "Customer handling for PHP applications.",
@@ -3978,20 +3978,20 @@
                 "customer",
                 "groups"
             ],
-            "time": "2019-02-08T13:20:09+00:00"
+            "time": "2019-05-07T12:44:46+00:00"
         },
         {
             "name": "sylius/customer-bundle",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusCustomerBundle.git",
-                "reference": "85b788a35ad9f1e66538877f7f99f58bb22a49e0"
+                "reference": "10c1578b2fb061481f32954bf162d3d4f20cb6ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusCustomerBundle/zipball/85b788a35ad9f1e66538877f7f99f58bb22a49e0",
-                "reference": "85b788a35ad9f1e66538877f7f99f58bb22a49e0",
+                "url": "https://api.github.com/repos/Sylius/SyliusCustomerBundle/zipball/10c1578b2fb061481f32954bf162d3d4f20cb6ab",
+                "reference": "10c1578b2fb061481f32954bf162d3d4f20cb6ab",
                 "shasum": ""
             },
             "require": {
@@ -4000,21 +4000,21 @@
                 "php": "^7.2",
                 "sylius/customer": "^1.2",
                 "sylius/resource-bundle": "^1.2",
-                "symfony/framework-bundle": "^3.4|^4.1.1",
+                "symfony/framework-bundle": "^3.4|^4.3",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "^5.0",
                 "phpunit/phpunit": "^7.0",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
-                "symfony/browser-kit": "^3.4|^4.1.1",
-                "symfony/dependency-injection": "^3.4|^4.1.1",
-                "symfony/form": "^3.4|^4.1.1"
+                "symfony/browser-kit": "^3.4|^4.3",
+                "symfony/dependency-injection": "^3.4|^4.3",
+                "symfony/form": "^3.4|^4.3"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -4028,20 +4028,16 @@
             ],
             "authors": [
                 {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
                     "name": "Paweł Jędrzejewski",
                     "homepage": "http://pjedrzejewski.com"
                 },
                 {
-                    "name": "Łukasz Chruściel",
-                    "email": "lukasz.chrusciel@lakion.com"
-                },
-                {
                     "name": "Michał Marcinkowski",
                     "email": "michal.marcinkowski@lakion.com"
+                },
+                {
+                    "name": "Łukasz Chruściel",
+                    "email": "lukasz.chrusciel@lakion.com"
                 },
                 {
                     "name": "Bartosz Siejka",
@@ -4050,6 +4046,10 @@
                 {
                     "name": "Sylius project",
                     "homepage": "http://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "http://github.com/Sylius/Sylius/contributors"
                 }
             ],
             "description": "Customers management for Symfony projects.",
@@ -4058,7 +4058,7 @@
                 "customer",
                 "groups"
             ],
-            "time": "2019-02-11T15:28:39+00:00"
+            "time": "2019-07-04T15:25:54+00:00"
         },
         {
             "name": "sylius/fixtures-bundle",
@@ -4135,16 +4135,16 @@
         },
         {
             "name": "sylius/grid-bundle",
-            "version": "v1.5.1",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusGridBundle.git",
-                "reference": "1cbdbfa56a538b0fe8da53c0d0aef9885bd7120e"
+                "reference": "9286164d0d3a7e3f9d8d46dea121c632e8a97074"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/1cbdbfa56a538b0fe8da53c0d0aef9885bd7120e",
-                "reference": "1cbdbfa56a538b0fe8da53c0d0aef9885bd7120e",
+                "url": "https://api.github.com/repos/Sylius/SyliusGridBundle/zipball/9286164d0d3a7e3f9d8d46dea121c632e8a97074",
+                "reference": "9286164d0d3a7e3f9d8d46dea121c632e8a97074",
                 "shasum": ""
             },
             "require": {
@@ -4172,6 +4172,7 @@
                 "doctrine/orm": "^2.5",
                 "doctrine/phpcr-odm": "^1.3",
                 "jackalope/jackalope-doctrine-dbal": "^1.2",
+                "lchrusciel/api-test-case": "^4.1",
                 "matthiasnoback/symfony-config-test": "^4.0",
                 "matthiasnoback/symfony-dependency-injection-test": "^3.0",
                 "pagerfanta/pagerfanta": "^1.0|^2.0",
@@ -4204,16 +4205,16 @@
             ],
             "authors": [
                 {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
                     "name": "Paweł Jędrzejewski",
                     "homepage": "http://pjedrzejewski.com"
                 },
                 {
                     "name": "Sylius project",
                     "homepage": "http://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "http://github.com/Sylius/Sylius/contributors"
                 }
             ],
             "description": "Amazing grids with support of filters and custom fields integrated into Symfony.",
@@ -4228,7 +4229,7 @@
                 "sylius",
                 "webshop"
             ],
-            "time": "2019-05-21T14:01:07+00:00"
+            "time": "2019-08-28T14:07:33+00:00"
         },
         {
             "name": "sylius/mailer-bundle",
@@ -4472,16 +4473,16 @@
         },
         {
             "name": "sylius/ui-bundle",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusUiBundle.git",
-                "reference": "177a572024cae8abcea7de93419e87e86094f49a"
+                "reference": "4781e9ab22d929a12e2c41ca81dc77793b97b7c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/177a572024cae8abcea7de93419e87e86094f49a",
-                "reference": "177a572024cae8abcea7de93419e87e86094f49a",
+                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/4781e9ab22d929a12e2c41ca81dc77793b97b7c0",
+                "reference": "4781e9ab22d929a12e2c41ca81dc77793b97b7c0",
                 "shasum": ""
             },
             "require": {
@@ -4490,23 +4491,23 @@
                 "php": "^7.2",
                 "sonata-project/block-bundle": "^3.3",
                 "sylius/grid-bundle": "^1.2",
-                "symfony/framework-bundle": "^3.4|^4.1.1",
-                "symfony/security": "^3.4|^4.1.1",
-                "symfony/templating": "^3.4|^4.1.1"
+                "symfony/framework-bundle": "^3.4|^4.3",
+                "symfony/security": "^3.4|^4.3",
+                "symfony/templating": "^3.4|^4.3"
             },
             "conflict": {
                 "twig/twig": "^1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "^5.0",
-                "symfony/dependency-injection": "^3.4|^4.1.1",
-                "symfony/form": "^3.4|^4.1.1",
+                "symfony/dependency-injection": "^3.4|^4.3",
+                "symfony/form": "^3.4|^4.3",
                 "twig/twig": "^2.0"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -4520,16 +4521,16 @@
             ],
             "authors": [
                 {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
                     "name": "Paweł Jędrzejewski",
                     "homepage": "http://pjedrzejewski.com"
                 },
                 {
                     "name": "Sylius project",
                     "homepage": "http://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "http://github.com/Sylius/Sylius/contributors"
                 }
             ],
             "description": "Generic UI bundle for Sylius eCommerce components.",
@@ -4543,20 +4544,20 @@
                 "user interface",
                 "webshop"
             ],
-            "time": "2019-06-12T18:11:35+00:00"
+            "time": "2019-08-08T06:18:08+00:00"
         },
         {
             "name": "sylius/user",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/User.git",
-                "reference": "c2a6b15fb01cd3338ad852c6abce90c4dacec9dc"
+                "reference": "f0b971f4b329d9d62118fb3e1b3be0ee53482a43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/User/zipball/c2a6b15fb01cd3338ad852c6abce90c4dacec9dc",
-                "reference": "c2a6b15fb01cd3338ad852c6abce90c4dacec9dc",
+                "url": "https://api.github.com/repos/Sylius/User/zipball/f0b971f4b329d9d62118fb3e1b3be0ee53482a43",
+                "reference": "f0b971f4b329d9d62118fb3e1b3be0ee53482a43",
                 "shasum": ""
             },
             "require": {
@@ -4564,7 +4565,7 @@
                 "php": "^7.2",
                 "sylius/resource": "^1.2",
                 "symfony/polyfill-mbstring": "^1.6",
-                "symfony/security": "^3.4|^4.1.1"
+                "symfony/security": "^3.4|^4.3"
             },
             "require-dev": {
                 "phpspec/phpspec": "^5.0"
@@ -4575,7 +4576,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -4589,24 +4590,24 @@
             ],
             "authors": [
                 {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
                     "name": "Paweł Jędrzejewski",
                     "homepage": "http://pjedrzejewski.com"
-                },
-                {
-                    "name": "Łukasz Chruściel",
-                    "email": "lukasz.chrusciel@lakion.com"
                 },
                 {
                     "name": "Michał Marcinkowski",
                     "email": "michal.marcinkowski@lakion.com"
                 },
                 {
+                    "name": "Łukasz Chruściel",
+                    "email": "lukasz.chrusciel@lakion.com"
+                },
+                {
                     "name": "Sylius project",
                     "homepage": "http://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "http://github.com/Sylius/Sylius/contributors"
                 }
             ],
             "description": "User handling for PHP applications.",
@@ -4617,20 +4618,20 @@
                 "registration",
                 "user"
             ],
-            "time": "2019-02-08T13:20:09+00:00"
+            "time": "2019-06-25T08:09:35+00:00"
         },
         {
             "name": "sylius/user-bundle",
-            "version": "v1.5.2",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusUserBundle.git",
-                "reference": "400cf6ccc8c0760867ea8ff7ae57b7b764a05f8d"
+                "reference": "774b51b7c19479f12f2a5cd13b714bded012db50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusUserBundle/zipball/400cf6ccc8c0760867ea8ff7ae57b7b764a05f8d",
-                "reference": "400cf6ccc8c0760867ea8ff7ae57b7b764a05f8d",
+                "url": "https://api.github.com/repos/Sylius/SyliusUserBundle/zipball/774b51b7c19479f12f2a5cd13b714bded012db50",
+                "reference": "774b51b7c19479f12f2a5cd13b714bded012db50",
                 "shasum": ""
             },
             "require": {
@@ -4640,7 +4641,7 @@
                 "sylius/mailer-bundle": "^1.2",
                 "sylius/resource-bundle": "^1.2",
                 "sylius/user": "^1.2",
-                "symfony/framework-bundle": "^3.4|^4.1.1",
+                "symfony/framework-bundle": "^3.4|^4.3",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
@@ -4649,8 +4650,8 @@
                 "php-http/guzzle6-adapter": "^1.1",
                 "phpspec/phpspec": "^5.0",
                 "phpunit/phpunit": "^7.0",
-                "symfony/dependency-injection": "^3.4|^4.1.1",
-                "symfony/security-bundle": "^3.4|^4.1.1",
+                "symfony/dependency-injection": "^3.4|^4.3",
+                "symfony/security-bundle": "^3.4|^4.3",
                 "symfony/swiftmailer-bundle": "^3.1"
             },
             "suggest": {
@@ -4659,7 +4660,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -4676,20 +4677,16 @@
             ],
             "authors": [
                 {
-                    "name": "Community contributions",
-                    "homepage": "http://github.com/Sylius/Sylius/contributors"
-                },
-                {
                     "name": "Paweł Jędrzejewski",
                     "homepage": "http://pjedrzejewski.com"
                 },
                 {
-                    "name": "Łukasz Chruściel",
-                    "email": "lukasz.chrusciel@lakion.com"
-                },
-                {
                     "name": "Michał Marcinkowski",
                     "email": "michal.marcinkowski@lakion.com"
+                },
+                {
+                    "name": "Łukasz Chruściel",
+                    "email": "lukasz.chrusciel@lakion.com"
                 },
                 {
                     "name": "Bartosz Siejka",
@@ -4698,6 +4695,10 @@
                 {
                     "name": "Sylius project",
                     "homepage": "http://sylius.com"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "http://github.com/Sylius/Sylius/contributors"
                 }
             ],
             "description": "Users management for Symfony projects.",
@@ -4708,7 +4709,7 @@
                 "registration",
                 "user"
             ],
-            "time": "2019-04-03T11:05:43+00:00"
+            "time": "2019-06-25T08:09:35+00:00"
         },
         {
             "name": "symfony/asset",
