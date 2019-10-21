@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Entity;
+namespace App\Entity\Customer;
 
+use App\Entity\User\AppUserInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;
@@ -23,7 +24,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Customer extends BaseCustomer implements CustomerInterface
 {
     /**
-     * @var AppUser
+     * @var AppUserInterface|UserInterface
      *
      * @ORM\OneToOne(targetEntity="App\Entity\AppUser", mappedBy="customer", cascade={"persist"})
      *
@@ -32,7 +33,7 @@ class Customer extends BaseCustomer implements CustomerInterface
     private $user;
 
     /**
-     * @return AppUser
+     * @return AppUserInterface|UserInterface
      */
     public function getUser(): ?UserInterface
     {
@@ -40,7 +41,7 @@ class Customer extends BaseCustomer implements CustomerInterface
     }
 
     /**
-     * @param UserInterface|null $user
+     * @param AppUserInterface|UserInterface|null $user
      */
     public function setUser(?UserInterface $user): void
     {

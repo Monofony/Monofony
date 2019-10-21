@@ -2,11 +2,9 @@
 
 namespace spec\App\Entity;
 
-use App\Entity\AppUser;
-use App\Entity\AppUserInterface;
-use App\Entity\CustomerInterface;
+use App\Entity\User\AppUserInterface;
+use App\Entity\Customer\CustomerInterface;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;
 

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace spec\App\Form\EventSubscriber;
 
-use App\Entity\CustomerInterface;
+use App\Entity\Customer\CustomerInterface;
+use App\Entity\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
-use App\Entity\AppUser;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvent;
@@ -36,7 +36,7 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
         CustomerInterface $customer,
         RepositoryInterface $customerRepository,
         CustomerInterface $existingCustomer,
-        AppUser $user
+        AppUserInterface $user
     ): void {
         $event->getForm()->willReturn($form);
         $form->getData()->willReturn($customer);
@@ -56,7 +56,7 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
     function it_throws_unexpected_type_exception_if_data_is_not_customer_type(
         FormEvent $event,
         FormInterface $form,
-        AppUser $user
+        AppUserInterface $user
     ): void {
         $event->getForm()->willReturn($form);
         $form->getData()->willReturn($user);
@@ -71,7 +71,7 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
         CustomerInterface $customer,
         RepositoryInterface $customerRepository,
         CustomerInterface $existingCustomer,
-        AppUser $user
+        AppUserInterface $user
     ): void {
         $event->getForm()->willReturn($form);
         $form->getData()->willReturn($customer);
@@ -93,7 +93,7 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
         CustomerInterface $customer,
         RepositoryInterface $customerRepository,
         CustomerInterface $existingCustomer,
-        AppUser $user
+        AppUserInterface $user
     ): void {
         $event->getForm()->willReturn($form);
         $form->getData()->willReturn($customer);

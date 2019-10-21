@@ -11,7 +11,7 @@
 
 namespace App\Form\EventSubscriber;
 
-use App\Entity\CustomerInterface;
+use App\Entity\Customer\CustomerInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;

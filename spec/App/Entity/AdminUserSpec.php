@@ -2,11 +2,9 @@
 
 namespace spec\App\Entity;
 
-use App\Entity\AdminUser;
-use App\Entity\AdminUserInterface;
+use App\Entity\User\AdminUserInterface;
 use Doctrine\Common\Collections\Collection;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Sylius\Component\User\Model\User;
 use Sylius\Component\User\Model\UserInterface;
 
@@ -44,7 +42,7 @@ class AdminUserSpec extends ObjectBehavior
 
     function it_has_admin_role_by_default(): void
     {
-        $this->getRoles()->shouldReturn([AdminUser::DEFAULT_ADMIN_ROLE]);
+        $this->getRoles()->shouldReturn([AdminUserInterface::DEFAULT_ADMIN_ROLE]);
     }
 
     function it_has_no_first_name_by_default(): void

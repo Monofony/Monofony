@@ -18,7 +18,7 @@ use App\Behat\Page\Backend\Administrator\CreatePage;
 use App\Behat\Page\Backend\Administrator\UpdatePage;
 use App\Behat\Page\Backend\Administrator\IndexPage;
 use App\Behat\Service\NotificationCheckerInterface;
-use App\Entity\AdminUser;
+use App\Entity\User\AdminUserInterface;
 use Behat\Behat\Context\Context;
 use Webmozart\Assert\Assert;
 
@@ -75,7 +75,7 @@ final class ManagingAdministratorsContext implements Context
      *
      * @When /^I want to edit (this administrator)$/
      */
-    public function iWantToEditThisAdministrator(AdminUser $adminUser): void
+    public function iWantToEditThisAdministrator(AdminUserInterface $adminUser): void
     {
         $this->updatePage->open(['id' => $adminUser->getId()]);
     }

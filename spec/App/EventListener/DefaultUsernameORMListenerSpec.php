@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\EventListener;
 
-use App\Entity\CustomerInterface;
+use App\Entity\Customer\CustomerInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
