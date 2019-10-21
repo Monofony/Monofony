@@ -3,13 +3,13 @@ sylius_user:
         app:
             user:
                 classes:
-                    model: App\Entity\AppUser
+                    model: App\Entity\User\AppUser
                     repository: App\Repository\UserRepository
                     form: App\Form\Type\User\AppUserType
         admin:
             user:
                 classes:
-                    model: App\Entity\AdminUser
+                    model: App\Entity\User\AdminUser
                     repository: Sylius\Bundle\UserBundle\Doctrine\ORM\UserRepository
                     form: App\Form\Type\User\AdminUserType
         admin_oauth:
