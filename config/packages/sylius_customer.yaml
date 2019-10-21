@@ -2,5 +2,5 @@ sylius_customer:
     resources:
         customer:
             classes:
-                model: App\Entity\Customer
+                model: App\Entity\Customer\Customer
                 repository: App\Repository\CustomerRepository
