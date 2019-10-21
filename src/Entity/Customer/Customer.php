@@ -26,7 +26,7 @@ class Customer extends BaseCustomer implements CustomerInterface
     /**
      * @var AppUserInterface|UserInterface
      *
-     * @ORM\OneToOne(targetEntity="App\Entity\AppUser", mappedBy="customer", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="App\Entity\User\AppUser", mappedBy="customer", cascade={"persist"})
      *
      * @Assert\Valid
      */
