@@ -3,7 +3,7 @@
 {% block title %}AppName | {% endblock %}
 
 {% block stylesheets %}
-    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/backend/css/style.css'} %}
+    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/backend/app.css'} %}
 {% endblock %}
 
 {% block topbar %}
@@ -46,5 +46,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'assets/backend/js/app.js'} %}
+    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'assets/backend/app.js'} %}
 {% endblock %}

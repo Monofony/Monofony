@@ -11,7 +11,7 @@ yarn-install-default:
 	yarn install
 
 yarn-build-default:
-	yarn build
+	yarn encore production
 
 %:  %-default
 	@  true
