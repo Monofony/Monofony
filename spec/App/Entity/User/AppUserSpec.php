@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\App\Entity;
+namespace spec\App\Entity\User;
 
 use App\Entity\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
