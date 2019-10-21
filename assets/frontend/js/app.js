@@ -1,14 +1,7 @@
-import 'semantic-ui-css/components/accordion';
-import $ from 'jquery';
+import '../../common/js/app';
+import '../scss/main.scss';
 
-import 'sylius/ui/app';
-import 'sylius/ui/sylius-auto-complete';
 
-(function($) {
-    $(document).ready(function () {
-        $('.sylius-autocomplete').autoComplete();
-    });
+$(document).ready(function () {
+    $('.sylius-autocomplete').autoComplete();
 });
-
-window.$ = $;
-window.jQuery = $;

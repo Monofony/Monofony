@@ -3,7 +3,7 @@
 {% block title %}AppName | {{ 'sylius.ui.administration_panel_login'|trans }}{% endblock %}
 
 {% block stylesheets %}
-    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/backend/css/style.css'} %}
+    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/backend/app.css'} %}
 {% endblock %}
 
 {% block content %}
@@ -11,5 +11,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/backend/js/app.js'} %}
+    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/backend/app.js'} %}
 {% endblock %}

@@ -40,6 +40,7 @@
         "symfony/proxy-manager-bridge": "^4.3",
         "symfony/swiftmailer-bundle": "^3.0",
         "symfony/twig-bundle": "^4.2",
+        "symfony/webpack-encore-bundle": "^1.6",
         "twig/extensions": "^1.5",
         "twig/twig": "^2.7"
     },
