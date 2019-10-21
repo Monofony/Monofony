@@ -11,7 +11,7 @@
 
 namespace App\Command\Installer;
 
-use App\Entity\AdminUser;
+use App\Entity\User\AdminUserInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
@@ -99,15 +99,11 @@ EOT
         $output->writeln('Administrator account successfully registered.');
     }
 
-    /**
-     * @param AdminUser       $user
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     *
-     * @return AdminUser
-     */
-    private function configureNewUser(AdminUser $user, InputInterface $input, OutputInterface $output)
-    {
+    private function configureNewUser(
+        AdminUserInterface $user,
+        InputInterface $input,
+        OutputInterface $output
+    ): AdminUserInterface {
         if ($input->getOption('no-interaction')) {
             Assert::null($this->adminUserRepository->findOneByEmail('admin@example.com'));
 
@@ -137,10 +133,7 @@ EOT
         return $user;
     }
 
-    /**
-     * @return Question
-     */
-    private function createEmailQuestion()
+    private function createEmailQuestion(): Question
     {
         return (new Question('E-mail:'))
             ->setValidator(function ($value) {

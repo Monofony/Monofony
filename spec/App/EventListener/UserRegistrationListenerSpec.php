@@ -13,11 +13,9 @@ declare(strict_types=1);
 
 namespace spec\App\EventListener;
 
-use App\Entity\Customer;
 use Doctrine\Common\Persistence\ObjectManager;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Sylius\Bundle\UserBundle\Security\UserLoginInterface;
 use Sylius\Bundle\UserBundle\UserEvents;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Model\UserInterface;
@@ -44,7 +42,7 @@ final class UserRegistrationListenerSpec extends ObjectBehavior
         GeneratorInterface $tokenGenerator,
         EventDispatcherInterface $eventDispatcher,
         GenericEvent $event,
-        Customer $customer,
+        CustomerInterface $customer,
         UserInterface $user
     ): void {
         $event->getSubject()->willReturn($customer);
@@ -75,7 +73,7 @@ final class UserRegistrationListenerSpec extends ObjectBehavior
 
     function it_throws_an_invalid_argument_exception_if_user_is_null(
         GenericEvent $event,
-        Customer $customer
+        CustomerInterface $customer
     ): void {
         $event->getSubject()->willReturn($customer);
         $customer->getUser()->willReturn(null);

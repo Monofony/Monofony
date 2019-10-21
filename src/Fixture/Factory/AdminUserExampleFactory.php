@@ -11,7 +11,7 @@
 
 namespace App\Fixture\Factory;
 
-use App\Entity\AdminUser;
+use App\Entity\User\AdminUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -55,7 +55,7 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
     {
         $options = $this->optionsResolver->resolve($options);
 
-        /** @var AdminUser $user */
+        /** @var AdminUserInterface $user */
         $user = $this->adminUserFactory->createNew();
         $user->setEmail($options['email']);
         $user->setUsername($options['username']);

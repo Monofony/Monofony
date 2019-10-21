@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\EventListener;
 
-use App\Entity\CustomerInterface;
+use App\Entity\Customer\CustomerInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\PasswordUpdaterInterface;

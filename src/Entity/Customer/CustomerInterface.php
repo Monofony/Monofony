@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Entity;
+namespace App\Entity\Customer;
 
+use App\Entity\User\AppUserInterface;
 use Sylius\Component\Customer\Model\CustomerInterface as BaseCustomerInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
@@ -18,12 +19,12 @@ use Sylius\Component\User\Model\UserInterface;
 interface CustomerInterface extends BaseCustomerInterface, UserAwareInterface
 {
     /**
-     * @return AppUser|Userinterface|null
+     * @return AppUserInterface|Userinterface|null
      */
     public function getUser(): ?UserInterface;
 
     /**
-     * @param AppUser|UserInterface|null $user
+     * @param AppUserInterface|UserInterface|null $user
      *
      * @return $this
      */
