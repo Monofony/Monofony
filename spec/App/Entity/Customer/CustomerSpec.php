@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\App\Entity;
+namespace spec\App\Entity\Customer;
 
 use App\Entity\User\AppUserInterface;
 use App\Entity\Customer\CustomerInterface;
