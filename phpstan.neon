@@ -1,10 +1,13 @@
 includes:
 	- vendor/phpstan/phpstan-doctrine/extension.neon
+	- vendor/proget-hq/phpstan-phpspec/extension.neon
 	- vendor/phpstan/phpstan-symfony/extension.neon
 	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
 
 parameters:
     reportUnmatchedIgnoredErrors: false
+
+    specDir: 'spec/'
 
     symfony:
          container_xml_path: var/cache/dev/srcApp_KernelDevDebugContainer.xml
