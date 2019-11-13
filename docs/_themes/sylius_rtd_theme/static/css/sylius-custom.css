@@ -5,7 +5,7 @@ body {
 
 a,
 a:visited {
-    color: #1abb9c;
+    color: #4BAEB4;
 }
 
 .wy-nav-content-wrap {
@@ -133,11 +133,11 @@ div[class^='highlight'] {
 }
 
 .wy-nav-side {
-    background: #f8f8f8;
+    background: #F2F7F8;
 }
 
 .wy-side-nav-search {
-    background: #f8f8f8;
+    background: #F2F7F8;
 }
 
 .wy-menu-vertical li a {
@@ -149,9 +149,10 @@ div[class^='highlight'] {
 
 .wy-menu-vertical ul,
 .wy-menu-vertical li,
-.wy-menu-vertical a {
+.wy-menu-vertical a,
+.wy-menu-vertical a:visited {
     background: none !important;
-    color: #333 !important;
+    color: #4BAEB4 !important;
 }
 
 .wy-menu-vertical > ul.current {
@@ -163,7 +164,7 @@ div[class^='highlight'] {
 }
 
 .wy-menu-vertical > ul.current > li > a {
-    color: #1abb9c !important;
+    color: #4BAEB4 !important;
 }
 
 .wy-menu-vertical > ul.current > li > ul > li > a {
@@ -181,7 +182,7 @@ div[class^='highlight'] {
 }
 
 .wy-menu-vertical > ul.current > li > ul.current > li.current > a {
-    color: #1abb9c !important;
+    color: #4BAEB4 !important;
 }
 
 div[class^='highlight'] {
