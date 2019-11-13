@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/Monofony/SymfonyStarter/blob/master/docs/_images/logo_big.png" />
+    <img src="https://github.com/Monofony/SymfonyStarter/blob/master/docs/_images/github_banner.png" />
     <br />
     <a href="http://travis-ci.org/Monofony/SymfonyStarter" title="Build status" target="_blank">
         <img src="https://img.shields.io/travis/Monofony/SymfonyStarter/master.svg" />
