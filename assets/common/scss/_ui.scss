@@ -1,18 +1,20 @@
-$app-brand-color: #1abb9c;
+$app-brand-color: #4BAEB4;
 $segment-spacing: 1.8em;
 $segment-title-spacing: 1.2em 1.8em;
 $accordion-title-spacing: 1.2em 1.8em;
+$body-background: #F2F7F8;
+$sidebar-background: #133E56;
 
 // ----------------------------------
 // ------------ Globals
 // ----------------------------------
 
 .ui.inverted.menu {
-  background: #1d212b;
+  background: $sidebar-background;
 }
 
-body.pushable .pusher {
-  background: #f9f9f9;
+body.pushable .pusher, body.centered {
+  background: $body-background;
 }
 
 #wrapper.full.height {
@@ -66,6 +68,11 @@ a {
 // ----------------------------------
 // ------------ Sidebar menu
 // ----------------------------------
+
+#sidebar .sidebar-logo {
+  max-width: 150px;
+  margin: 0 auto;
+}
 
 #sidebar.ui.sidebar.vertical.menu {
   > .item:first-child {
