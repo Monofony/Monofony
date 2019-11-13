@@ -1,7 +1,7 @@
 Monofony Documentation
 ======================
 
-.. image:: /_images/logo_big.png
+.. image:: /_images/doc_logo.png
    :alt:   Monofony Welcome Page
 
 `Monofony`_ is a project based on
