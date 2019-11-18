@@ -4,7 +4,7 @@
     "jquery": "^3.4.0",
     "lightbox2": "^2.9.0",
     "semantic-ui-calendar": "^0.0.8",
-    "semantic-ui-css": "^2.2.0"
+    "semantic-ui-css": "npm:fomantic-ui-css@^2.7.0"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.27.0",
