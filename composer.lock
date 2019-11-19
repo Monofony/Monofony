@@ -4469,16 +4469,16 @@
         },
         {
             "name": "sylius/ui-bundle",
-            "version": "v1.6.0",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/SyliusUiBundle.git",
-                "reference": "4781e9ab22d929a12e2c41ca81dc77793b97b7c0"
+                "reference": "c24067d561e5f1c8a331b6a2407eda89c562f921"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/4781e9ab22d929a12e2c41ca81dc77793b97b7c0",
-                "reference": "4781e9ab22d929a12e2c41ca81dc77793b97b7c0",
+                "url": "https://api.github.com/repos/Sylius/SyliusUiBundle/zipball/c24067d561e5f1c8a331b6a2407eda89c562f921",
+                "reference": "c24067d561e5f1c8a331b6a2407eda89c562f921",
                 "shasum": ""
             },
             "require": {
@@ -4540,7 +4540,7 @@
                 "user interface",
                 "webshop"
             ],
-            "time": "2019-08-08T06:18:08+00:00"
+            "time": "2019-10-10T16:19:58+00:00"
         },
         {
             "name": "sylius/user",
@@ -10470,7 +10470,7 @@
                     "email": "shelburt02@gmail.com"
                 },
                 {
-                    "name": "Théo Fidry",
+                    "name": "Théo FIDRY",
                     "email": "theo.fidry@gmail.com"
                 }
             ],
