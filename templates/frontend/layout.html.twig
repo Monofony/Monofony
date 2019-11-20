@@ -37,6 +37,7 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('assets/frontend/app.js', 'frontend') }}"></script>
+    {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
 {% endblock %}
 {% include '@SyliusUi/Modal/_confirmation.html.twig' %}
 </body>
