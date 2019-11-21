@@ -23,6 +23,7 @@ set :assets_install_path, "public"
 set :assets_install_flags,  '--symlink'
 
 # Share files/directories between releases
+set :linked_files, ['.env.local']
 set :linked_dirs, ["var/log", "var/sessions", "public/uploads", "public/media"]
 
 set :application, 'AppName'
@@ -89,9 +90,15 @@ before "deploy:updated", "deploy:set_permissions:acl"
 after 'deploy:updated', :build_assets do
     on roles(:web) do
         puts "Build assets"
-        execute "cd #{release_path} && yarn install && GULP_ENV=prod yarn run gulp"
-        execute "cd #{release_path} && composer dump-env prod"
+        execute "cd #{release_path} && yarn install && yarn build"
     end
+end
+
+after 'deploy:updated', :post_deploy do
+   on roles(:web) do
+       puts "Dump env vars"
+       execute "cd #{release_path} && composer dump-env prod"
+   end
 end
 
 after 'deploy:updated', 'symfony:assets:install'
