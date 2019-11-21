@@ -47,4 +47,5 @@
 
 {% block javascripts %}
     {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'assets/backend/app.js'} %}
+    {{ sonata_block_render_event('sylius.admin.layout.javascripts') }}
 {% endblock %}
