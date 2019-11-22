@@ -31,6 +31,23 @@ Documentation
  
 Documentation is available at [https://monofony.readthedocs.io/en/latest/](https://monofony.readthedocs.io/en/latest/).
 
+Demo
+----
+
+A Demo is available.
+
+Admin:
+- Username: admin@example.com
+- Password: admin
+
+[View admin](https://monofony.mobizel.com/admin)
+
+Front: 
+- Username: customer@example.com
+- Password: password
+
+[View front](https://monofony.mobizel.com)
+
 Community
 ---------
 
@@ -40,7 +57,6 @@ Contributing
 ------------
 
 Would like to help us and build the best symfony-starter using Sylius? Feel free to open a pull-request!
-
 
 License
 -------
