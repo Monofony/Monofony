@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-lock '3.11.0'
+lock '>= 3.11.0'
 
 set :symfony_directory_structure, 3
 set :sensio_distribution_version, 5
