@@ -36,17 +36,17 @@ Demo
 
 A Demo is available.
 
-Admin:
+**Admin**
 - Username: admin@example.com
 - Password: admin
 
-[View admin](https://monofony.mobizel.com/admin)
+[View Monofony admin](https://monofony.mobizel.com/admin)
 
-Front: 
+**Front** 
 - Username: customer@example.com
 - Password: password
 
-[View front](https://monofony.mobizel.com)
+[View Monofony front](https://monofony.mobizel.com)
 
 Community
 ---------
