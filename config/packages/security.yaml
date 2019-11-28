@@ -53,6 +53,7 @@ security:
             provider: sylius_app_user_provider
             fos_oauth: true
             stateless: true
+            anonymous: true
 
         app:
             switch_user: true
@@ -88,4 +89,3 @@ security:
         - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/dashboard, role: ROLE_ADMIN }
         - { path: "^/admin.*", role: ROLE_ADMIN }
-        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
