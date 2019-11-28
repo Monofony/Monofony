@@ -44,11 +44,15 @@ security:
                 target: sylius_backend_login
             anonymous: true
 
+        oauth_token:
+            pattern: ^/api/oauth/v2/token
+            security: false
+
         api:
-            pattern:    ^/api
+            pattern: ^/api
             provider: sylius_app_user_provider
-            fos_oauth:  true
-            stateless:  true
+            fos_oauth: true
+            stateless: true
 
         app:
             switch_user: true
