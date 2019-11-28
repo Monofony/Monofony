@@ -15,6 +15,7 @@
     },
     "require": {
         "php": "^7.2",
+        "api-platform/api-pack": "^1.2",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^2.0",
