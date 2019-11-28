@@ -4,6 +4,9 @@ imports:
     - { resource: "@FOSOAuthServerBundle/Resources/config/security.xml" }
 
 parameters:
+    app.security.admin_regex: "^/admin"
+    app.security.api_regex: "^/api"
+    app.security.app_regex: "^/(?!admin|api/.*|api$|media/.*)[^/]++"
     secret: '%env(resolve:APP_SECRET)%'
 
 security:
@@ -23,7 +26,7 @@ security:
     firewalls:
         admin:
             context: admin
-            pattern: /admin(?:/.*)?$
+            pattern: '%app.security.admin_regex%'
             provider: sylius_admin_user_provider
             form_login:
                 provider: sylius_admin_user_provider
@@ -44,16 +47,21 @@ security:
                 target: sylius_backend_login
             anonymous: true
 
+        oauth_token:
+            pattern: '%app.security.api_regex%/oauth/v2/token'
+            security: false
+
         api:
-            pattern:    ^/api
+            pattern: '%app.security.api_regex%/.*'
             provider: sylius_app_user_provider
             fos_oauth:  true
             stateless:  true
+            anonymous: true
 
         app:
             switch_user: true
             context: app
-            pattern: /.*
+            pattern: '%app.security.app_regex%'
             provider: sylius_app_user_provider
             form_login:
                 provider: sylius_app_user_provider
@@ -79,9 +87,18 @@ security:
             security: false
 
     access_control:
-        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/dashboard, role: ROLE_ADMIN }
-        - { path: "^/admin.*", role: ROLE_ADMIN }
-        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
+        - { path: "%app.security.admin_regex%/_partial", role: IS_AUTHENTICATED_ANONYMOUSLY, ips: [127.0.0.1, ::1] }
+        - { path: "%app.security.admin_regex%/_partial", role: ROLE_NO_ACCESS }
+        - { path: "%app.security.app_regex%/_partial", role: IS_AUTHENTICATED_ANONYMOUSLY, ips: [127.0.0.1, ::1] }
+        - { path: "%app.security.app_regex%/_partial", role: ROLE_NO_ACCESS }
+
+        - { path: "%app.security.admin_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "%app.security.api_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "%app.security.app_regex%/login", role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: "%app.security.app_regex%/register", role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "%app.security.app_regex%/verify", role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: "%app.security.admin_regex%", role: ROLE_ADMIN }
+        - { path: "%app.security.api_regex%/.*", role: ROLE_USER }
+        - { path: "%app.security.app_regex%/account", role: ROLE_USER }

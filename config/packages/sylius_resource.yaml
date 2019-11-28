@@ -1,5 +1,2 @@
 sylius_resource:
-    resources:
-        app.oauth_client:
-            classes:
-                model: App\Entity\OAuth\Client
+    resources: ~
