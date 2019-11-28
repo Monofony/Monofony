@@ -31,7 +31,7 @@ sylius_fixtures:
                                enabled: true
                        random: 10
 
-                oauth_client:
+                api_client:
                     options:
                         custom:
                             client:
