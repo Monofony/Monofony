@@ -1,2 +1,8 @@
 #app_api_your_respource:
 #    resource: "api/your_resource.yaml"
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
