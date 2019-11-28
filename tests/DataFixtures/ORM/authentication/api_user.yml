@@ -19,7 +19,7 @@ App\Entity\OAuth\RefreshToken:
 App\Entity\AppUser:
     user:
         plainPassword: sylius
-        roles: [ROLE_API_ACCESS]
+        roles: [ROLE_USER]
         enabled: true
         customer: "@customer"
         username: sylius

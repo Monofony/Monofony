@@ -25,5 +25,8 @@ services:
         resource: '../../src/Controller'
         tags: ['controller.service_arguments']
 
+    App\Entity\OAuth\ClientManager:
+        $class: '%fos_oauth_server.model.client.class%'
+
     Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
     Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
