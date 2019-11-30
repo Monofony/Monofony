@@ -4,5 +4,5 @@ namespace App\Dashboard\Statistics;
 
 interface StatisticInterface
 {
-    public function generate();
+    public function generate() : string;
 }
