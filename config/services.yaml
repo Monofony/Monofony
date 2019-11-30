@@ -9,3 +9,5 @@ imports:
     - { resource: services/listener.yaml }
     - { resource: services/menu.yaml }
     - { resource: services/validator.yaml }
+    - { resource: services/dashboard.yaml }
+
