@@ -13,23 +13,30 @@ declare(strict_types=1);
 
 namespace App\Dashboard;
 
-use App\Repository\CustomerRepository;
-use Sylius\Component\Resource\Repository\RepositoryInterface;
+use App\Dashboard\Statistics\StatisticInterface;
+use Webmozart\Assert\Assert;
 
 class DashboardStatisticsProvider
 {
-    /** @var CustomerRepository */
-    private $customerRepository;
+    /**
+     * @var StatisticInterface[]
+     */
+    private $statistics;
 
-    public function __construct(RepositoryInterface $customerRepository)
+    public function __construct(iterable $statistics)
     {
-        $this->customerRepository = $customerRepository;
+        $this->statistics = $statistics;
     }
 
-    public function getStatistics(): DashboardStatistics
+    public function getStatistics(): array
     {
-        return new DashboardStatistics(
-            $this->customerRepository->countCustomers()
-        );
+        $statistics = [];
+        foreach ($this->statistics as $statistic) {
+
+            Assert::implementsInterface($statistic, StatisticInterface::class, sprintf('Class %s must implement %s', get_class($statistic), StatisticInterface::class));
+            $statistics[] = $statistic->generate();
+        }
+
+        return $statistics;
     }
 }
