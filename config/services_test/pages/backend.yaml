@@ -1,0 +1,34 @@
+imports:
+    - { resource: backend/administrator.yaml }
+    - { resource: backend/customer.yaml }
+    - { resource: backend/dashboard.yaml }
+
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: App\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+      app.behat.page.backend.crud.index:
+          class: App\Tests\Behat\Page\Backend\Crud\IndexPage
+          parent: app.behat.symfony_page
+          abstract: true
+          public: false
+          arguments:
+              - "@app.behat.table_accessor"
+
+      app.behat.page.backend.crud.create:
+          class: App\Tests\Behat\Page\Backend\Crud\CreatePage
+          parent: app.behat.symfony_page
+          abstract: true
+          public: false
+
+      app.behat.page.backend.crud.update:
+          class: App\Tests\Behat\Page\Backend\Crud\UpdatePage
+          parent: app.behat.symfony_page
+          abstract: true
+          public: false

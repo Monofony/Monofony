@@ -1,0 +1,5 @@
+services:
+    App\Tests\Behat\Page\Frontend\:
+        resource: '../../../tests/Behat/Page/Frontend/*'
+        parent: app.behat.symfony_page
+        public: false
