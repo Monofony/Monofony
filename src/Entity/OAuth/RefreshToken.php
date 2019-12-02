@@ -34,7 +34,7 @@ class RefreshToken extends BaseRefreshToken
     protected $client;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\AppUser")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User\AppUser")
      */
     protected $user;
 }

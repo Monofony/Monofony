@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace App\Behat\Context\Setup;
 
+use App\Entity\Customer\CustomerInterface;
+use App\Entity\User\AppUserInterface;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Behat\Service\SharedStorageInterface;
-use App\Entity\Customer;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
-use Sylius\Component\User\Model\User;
 
 final class CustomerContext implements Context
 {
@@ -113,23 +113,14 @@ final class CustomerContext implements Context
         $this->customerRepository->add($customer);
     }
 
-    /**
-     * @param string                  $email
-     * @param string|null             $firstName
-     * @param string|null             $lastName
-     * @param \DateTimeInterface|null $createdAt
-     * @param string|null             $phoneNumber
-     *
-     * @return Customer
-     */
     private function createCustomer(
-        $email,
-        $firstName = null,
-        $lastName = null,
+        string $email,
+        string $firstName = null,
+        string $lastName = null,
         \DateTimeInterface $createdAt = null,
-        $phoneNumber = null
-    ) {
-        /** @var Customer $customer */
+        string $phoneNumber = null
+    ): CustomerInterface {
+        /** @var CustomerInterface $customer */
         $customer = $this->customerFactory->createNew();
 
         $customer->setFirstName($firstName);
@@ -145,27 +136,17 @@ final class CustomerContext implements Context
         return $customer;
     }
 
-    /**
-     * @param string      $email
-     * @param string      $password
-     * @param bool        $enabled
-     * @param string|null $firstName
-     * @param string|null $lastName
-     * @param string|null $role
-     *
-     * @return Customer
-     */
     private function createCustomerWithUserAccount(
-        $email,
-        $password,
-        $enabled = true,
-        $firstName = null,
-        $lastName = null,
-        $role = null
-    ) {
-        /** @var User $user */
+        string $email,
+        string $password,
+        bool $enabled = true,
+        string $firstName = null,
+        string $lastName = null,
+        string $role = null
+    ): CustomerInterface {
+        /** @var AppUserInterface $user */
         $user = $this->appUserFactory->createNew();
-        /** @var Customer $customer */
+        /** @var CustomerInterface $customer */
         $customer = $this->customerFactory->createNew();
 
         $customer->setFirstName($firstName);

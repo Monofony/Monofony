@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace spec\App\Context;
 
-use App\Entity\Customer;
-use App\Entity\AppUser;
+use App\Entity\Customer\CustomerInterface;
+use App\Entity\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -31,8 +31,8 @@ final class CustomerContextSpec extends ObjectBehavior
         TokenStorageInterface $tokenStorage,
         AuthorizationCheckerInterface $authorizationChecker,
         TokenInterface $token,
-        AppUser $user,
-        Customer $customer
+        AppUserInterface $user,
+        CustomerInterface $customer
     ): void {
         $tokenStorage->getToken()->willReturn($token);
         $authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')->willReturn(true);

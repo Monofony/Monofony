@@ -12,7 +12,7 @@
 namespace App\Behat\Context\Setup;
 
 use App\Behat\Service\SharedStorageInterface;
-use App\Entity\AppUser;
+use App\Entity\User\AppUserInterface;
 use App\Fixture\Factory\AppUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -79,7 +79,7 @@ class UserContext implements Context
      */
     public function accountWasDeleted($email): void
     {
-        /** @var AppUser $user */
+        /** @var AppUserInterface $user */
         $user = $this->appUserRepository->findOneByEmail($email);
 
         $this->sharedStorage->set('customer', $user->getCustomer());

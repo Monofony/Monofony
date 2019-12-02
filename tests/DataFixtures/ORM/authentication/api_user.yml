@@ -16,7 +16,7 @@ App\Entity\OAuth\RefreshToken:
         user: "@user"
         token: SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng
 
-App\Entity\AppUser:
+App\Entity\User\AppUser:
     user:
         plainPassword: sylius
         roles: [ROLE_USER]
@@ -24,7 +24,7 @@ App\Entity\AppUser:
         customer: "@customer"
         username: sylius
 
-App\Entity\Customer:
+App\Entity\Customer\Customer:
     customer:
         email: api@sylius.com
         firstName: Sam

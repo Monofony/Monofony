@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace App\Behat\Context\Ui\Frontend;
 
-use App\Entity\CustomerInterface;
+use App\Entity\Customer\CustomerInterface;
 use Behat\Behat\Context\Context;
 use App\Behat\NotificationType;
 use App\Behat\Page\Frontend\Account\DashboardPage;

@@ -13,7 +13,7 @@ namespace App\Behat\Context\Setup;
 
 use App\Behat\Service\SecurityServiceInterface;
 use App\Behat\Service\SharedStorageInterface;
-use App\Entity\AppUser;
+use App\Entity\User\AppUserInterface;
 use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
@@ -75,7 +75,7 @@ final class AppSecurityContext implements Context
      */
     public function iAmLoggedInAsACustomer(): void
     {
-        /** @var AppUser $user */
+        /** @var AppUserInterface $user */
         $user = $this->userFactory->create(['email' => 'customer@example.com', 'password' => 'password', 'roles' => ['ROLE_USER']]);
         $this->appUserRepository->add($user);
 
