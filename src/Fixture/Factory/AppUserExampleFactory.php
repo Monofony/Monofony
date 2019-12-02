@@ -11,8 +11,8 @@
 
 namespace App\Fixture\Factory;
 
-use App\Entity\AppUserInterface;
-use App\Entity\CustomerInterface;
+use App\Entity\User\AppUserInterface;
+use App\Entity\Customer\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;

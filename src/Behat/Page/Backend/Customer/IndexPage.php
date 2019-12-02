@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace App\Behat\Page\Backend\Customer;
 
 use App\Behat\Page\Backend\Crud\IndexPage as BaseIndexPage;
-use App\Entity\CustomerInterface;
+use App\Entity\Customer\CustomerInterface;
 
 class IndexPage extends BaseIndexPage
 {

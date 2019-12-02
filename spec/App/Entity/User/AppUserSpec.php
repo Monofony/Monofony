@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\App\Entity;
+namespace spec\App\Entity\User;
 
-use App\Entity\AppUserInterface;
+use App\Entity\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
