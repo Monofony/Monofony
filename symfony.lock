@@ -5,6 +5,23 @@
     "amphp/byte-stream": {
         "version": "v1.5.1"
     },
+    "api-platform/api-pack": {
+        "version": "v1.2.1"
+    },
+    "api-platform/core": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "a93061567140e386f107be75340ac2aee3f86cbf"
+        },
+        "files": [
+            "config/packages/api_platform.yaml",
+            "config/routes/api_platform.yaml",
+            "src/Entity/.gitignore"
+        ]
+    },
     "behat/behat": {
         "version": "v3.4.3"
     },
@@ -137,6 +154,9 @@
     "felixfbecker/language-server-protocol": {
         "version": "v1.2.0"
     },
+    "fig/link-util": {
+        "version": "1.0.0"
+    },
     "friends-of-behat/page-object-extension": {
         "version": "v0.2.1"
     },
@@ -256,6 +276,18 @@
             "version": "3.2",
             "ref": "aaf440eb4d289ead8e2ef986c4f25c97fffec4ac"
         }
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
+        },
+        "files": [
+            "config/packages/nelmio_cors.yaml"
+        ]
     },
     "netresearch/jsonmapper": {
         "version": "v1.4.0"
@@ -403,6 +435,9 @@
     },
     "psr/http-message": {
         "version": "1.0.1"
+    },
+    "psr/link": {
+        "version": "1.0.0"
     },
     "psr/log": {
         "version": "1.0.2"
@@ -686,6 +721,9 @@
     "symfony/property-access": {
         "version": "v4.2.0"
     },
+    "symfony/property-info": {
+        "version": "v4.4.0"
+    },
     "symfony/proxy-manager-bridge": {
         "version": "v4.2.0"
     },
@@ -709,6 +747,9 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/serializer": {
+        "version": "v4.4.0"
     },
     "symfony/service-contracts": {
         "version": "v1.1.2"
@@ -766,6 +807,9 @@
     },
     "symfony/var-exporter": {
         "version": "v4.2.0"
+    },
+    "symfony/web-link": {
+        "version": "v4.4.0"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
