@@ -1,0 +1,15 @@
+default:
+    suites:
+        ui_managing_administrators:
+            contexts:
+                - App\Tests\Behat\Context\Hook\DoctrineORMContext
+
+                - App\Tests\Behat\Context\Setup\AdminSecurityContext
+                - App\Tests\Behat\Context\Setup\AdminUserContext
+
+                - App\Tests\Behat\Context\Transform\SharedStorageContext
+
+                - App\Tests\Behat\Context\Ui\Backend\ManagingAdministratorsContext
+                - App\Tests\Behat\Context\Ui\Backend\NotificationContext
+            filters:
+                tags: "@managing_administrators && @ui"

@@ -1,5 +1,0 @@
-services:
-    App\Behat\Page\Frontend\:
-        resource: '../../../../Page/Frontend/*'
-        parent: app.behat.symfony_page
-        public: false

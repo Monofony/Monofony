@@ -1,0 +1,16 @@
+default:
+    suites:
+        ui_managing_customers:
+            contexts:
+                - App\Tests\Behat\Context\Hook\DoctrineORMContext
+
+                - App\Tests\Behat\Context\Setup\CustomerContext
+                - App\Tests\Behat\Context\Setup\AdminSecurityContext
+
+                - App\Tests\Behat\Context\Transform\CustomerContext
+                - App\Tests\Behat\Context\Transform\SharedStorageContext
+
+                - App\Tests\Behat\Context\Ui\Backend\ManagingCustomersContext
+                - App\Tests\Behat\Context\Ui\Backend\NotificationContext
+            filters:
+                tags: "@managing_customers && @ui"

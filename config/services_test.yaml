@@ -1,2 +1,78 @@
 imports:
-    - { resource: "../src/Behat/Resources/config/services.yaml" }
+    - { resource: services_test/contexts.yaml }
+    - { resource: services_test/pages.yaml }
+
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    #    service_name:
+    #        class: App\Directory\ClassName
+    #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+    app.behat.admin_security:
+        class: App\Tests\Behat\Service\SecurityService
+        public: false
+        arguments:
+            - "@session"
+            - "@app.behat.cookie_setter"
+            - "admin"
+
+    app.behat.app_security:
+        class: App\Tests\Behat\Service\SecurityService
+        public: false
+        arguments:
+            - "@session"
+            - "@app.behat.cookie_setter"
+            - "app"
+
+    app.behat.cookie_setter:
+        class: App\Tests\Behat\Service\Setter\CookieSetter
+        public: false
+        arguments:
+            - "@behat.mink.default_session"
+            - "@behat.mink.parameters"
+
+    app.behat.current_page_resolver:
+        class: App\Tests\Behat\Service\Resolver\CurrentPageResolver
+        public: false
+        arguments:
+            - "@behat.mink.default_session"
+            - "@router"
+
+    App\Tests\Behat\Service\Resolver\CurrentPageResolverInterface:
+        alias: app.behat.current_page_resolver
+
+    app.behat.email_checker:
+        class: App\Tests\Behat\Service\EmailChecker
+        arguments:
+            - "%kernel.cache_dir%/spool"
+
+    App\Tests\Behat\Service\EmailCheckerInterface: '@app.behat.email_checker'
+
+    app.behat.notification_accessor:
+        class: App\Tests\Behat\Service\Accessor\NotificationAccessor
+        public: false
+        arguments:
+            - "@behat.mink.default_session"
+
+    app.behat.notification_checker:
+        class: App\Tests\Behat\Service\NotificationChecker
+        public: false
+        arguments:
+            - "@app.behat.notification_accessor"
+
+    App\Tests\Behat\Service\NotificationCheckerInterface: '@app.behat.notification_checker'
+
+    App\Tests\Behat\Service\SharedStorage:
+        public: false
+
+    App\Tests\Behat\Service\SharedStorageInterface: '@App\Tests\Behat\Service\SharedStorage'
+
+    app.behat.table_accessor:
+        class: App\Tests\Behat\Service\Accessor\TableAccessor
+        public: false
+
+    App\Tests\Behat\Service\Accessor\TableAccessorInterface: '@app.behat.table_accessor'
