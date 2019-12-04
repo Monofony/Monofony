@@ -8,7 +8,6 @@
     <projectFiles>
         <directory name="src" />
         <ignoreFiles>
-            <directory name="src/Behat" />
             <directory name="vendor" />
         </ignoreFiles>
     </projectFiles>

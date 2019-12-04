@@ -1,0 +1,19 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+default:
+    suites:
+        ui_customer_account:
+            contexts:
+                - App\Tests\Behat\Context\Hook\DoctrineORMContext
+
+                - App\Tests\Behat\Context\Transform\CustomerContext
+                - App\Tests\Behat\Context\Transform\SharedStorageContext
+
+                - App\Tests\Behat\Context\Setup\CustomerContext
+                - App\Tests\Behat\Context\Setup\AppSecurityContext
+                - App\Tests\Behat\Context\Setup\UserContext
+
+                - App\Tests\Behat\Context\Ui\Frontend\AccountContext
+            filters:
+                tags: "@customer_account && @ui"

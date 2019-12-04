@@ -1,0 +1,12 @@
+default:
+    suites:
+        ui_dashboard:
+            contexts:
+                - App\Tests\Behat\Context\Hook\DoctrineORMContext
+
+                - App\Tests\Behat\Context\Setup\CustomerContext
+                - App\Tests\Behat\Context\Setup\AdminSecurityContext
+
+                - App\Tests\Behat\Context\Ui\Backend\DashboardContext
+            filters:
+                tags: "@admin_dashboard && @ui"

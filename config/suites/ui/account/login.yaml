@@ -1,0 +1,14 @@
+default:
+    suites:
+        ui_customer_login:
+            contexts:
+                - App\Tests\Behat\Context\Hook\DoctrineORMContext
+
+                - App\Tests\Behat\Context\Transform\UserContext
+
+                - App\Tests\Behat\Context\Setup\UserContext
+
+                - App\Tests\Behat\Context\Ui\EmailContext
+                - App\Tests\Behat\Context\Ui\Frontend\LoginContext
+            filters:
+                tags: "@customer_login && @ui"
