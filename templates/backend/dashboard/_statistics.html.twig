@@ -1,7 +1,5 @@
 <div class="ui grid">
-    <div class="center aligned doubling four column row">
-        {% for statistic in statistics %}
-            {{ statistic | raw }}
-        {% endfor %}
-    </div>
+    {% for statistic in statistics %}
+        {{ statistic | raw }}
+    {% endfor %}
 </div>
