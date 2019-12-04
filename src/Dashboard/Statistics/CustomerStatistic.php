@@ -7,14 +7,10 @@ use Symfony\Component\Templating\EngineInterface;
 
 class CustomerStatistic implements StatisticInterface
 {
-    /**
-     * @var CustomerRepository
-     */
+    /** @var CustomerRepository */
     private $customerRepository;
 
-    /**
-     * @var EngineInterface
-     */
+    /** @var EngineInterface */
     private $engine;
 
     public function __construct(CustomerRepository $customerRepository, EngineInterface $engine)
