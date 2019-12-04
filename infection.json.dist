@@ -5,7 +5,6 @@
             "src"
         ],
         "excludes": [
-            "Behat",
             "Command",
             "Controller",
             "DependencyInjection",
