@@ -18,9 +18,7 @@ use Webmozart\Assert\Assert;
 
 class DashboardStatisticsProvider
 {
-    /**
-     * @var StatisticInterface[]
-     */
+    /** @var StatisticInterface[] */
     private $statistics;
 
     public function __construct(iterable $statistics)
@@ -32,7 +30,6 @@ class DashboardStatisticsProvider
     {
         $statistics = [];
         foreach ($this->statistics as $statistic) {
-
             Assert::implementsInterface($statistic, StatisticInterface::class, sprintf('Class %s must implement %s', get_class($statistic), StatisticInterface::class));
             $statistics[] = $statistic->generate();
         }
