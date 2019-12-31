@@ -7,6 +7,7 @@ default:
                 - App\Tests\Behat\Context\Setup\AdminSecurityContext
                 - App\Tests\Behat\Context\Setup\AdminUserContext
 
+                - App\Tests\Behat\Context\Transform\AdminUserContext
                 - App\Tests\Behat\Context\Transform\SharedStorageContext
 
                 - App\Tests\Behat\Context\Ui\Backend\ManagingAdministratorsContext

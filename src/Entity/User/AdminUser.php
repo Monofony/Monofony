@@ -21,22 +21,26 @@ use Sylius\Component\User\Model\User as BaseUser;
 class AdminUser extends BaseUser implements AdminUserInterface
 {
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $lastName;
+    private $lastName;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $firstName;
+    private $firstName;
 
     /**
-     * AdminUser constructor.
+     * @var AdminAvatar|null
+     *
+     * @ORM\OneToOne(targetEntity="App\Entity\User\AdminAvatar", cascade={"persist"})
      */
+    private $avatar;
+
     public function __construct()
     {
         parent::__construct();
@@ -74,5 +78,21 @@ class AdminUser extends BaseUser implements AdminUserInterface
     public function setFirstName(?string $firstName): void
     {
         $this->firstName = $firstName;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getAvatar(): ?AdminAvatar
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setAvatar(?AdminAvatar $avatar): void
+    {
+        $this->avatar = $avatar;
     }
 }

@@ -1,5 +1,6 @@
 app:
     ui:
+        avatar: Avatar
         create_user: Create an user
         forgotten_password: Forgotten password
         legal_notices: Legal notices

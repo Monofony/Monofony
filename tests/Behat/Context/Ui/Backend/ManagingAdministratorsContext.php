@@ -13,53 +13,57 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Ui\Backend;
 
+use App\Tests\Behat\Element\Backend\TopBarElement;
 use App\Tests\Behat\NotificationType;
 use App\Tests\Behat\Page\Backend\Administrator\CreatePage;
 use App\Tests\Behat\Page\Backend\Administrator\UpdatePage;
 use App\Tests\Behat\Page\Backend\Administrator\IndexPage;
 use App\Tests\Behat\Service\NotificationCheckerInterface;
 use App\Entity\User\AdminUserInterface;
+use App\Tests\Behat\Service\SharedStorageInterface;
 use Behat\Behat\Context\Context;
+use Doctrine\Common\Persistence\ObjectManager;
 use Webmozart\Assert\Assert;
 
 final class ManagingAdministratorsContext implements Context
 {
-    /**
-     * @var CreatePage
-     */
+    /** @var CreatePage */
     private $createPage;
 
-    /**
-     * @var IndexPage
-     */
+    /** @var IndexPage */
     private $indexPage;
 
-    /**
-     * @var UpdatePage
-     */
+    /** @var UpdatePage */
     private $updatePage;
 
-    /**
-     * @var NotificationCheckerInterface
-     */
+    /** @var TopBarElement */
+    private $topBarElement;
+
+    /** @var NotificationCheckerInterface */
     private $notificationChecker;
 
-    /**
-     * @param CreatePage                   $createPage
-     * @param IndexPage                    $indexPage
-     * @param UpdatePage                   $updatePage
-     * @param NotificationCheckerInterface $notificationChecker
-     */
+    /** @var SharedStorageInterface */
+    private $sharedStorage;
+
+    /** @var ObjectManager */
+    private $objectManager;
+
     public function __construct(
         CreatePage $createPage,
         IndexPage $indexPage,
         UpdatePage $updatePage,
-        NotificationCheckerInterface $notificationChecker
+        TopBarElement $topBarElement,
+        NotificationCheckerInterface $notificationChecker,
+        SharedStorageInterface $sharedStorage,
+        ObjectManager $objectManager
     ) {
         $this->createPage = $createPage;
         $this->indexPage = $indexPage;
         $this->updatePage = $updatePage;
+        $this->topBarElement = $topBarElement;
         $this->notificationChecker = $notificationChecker;
+        $this->sharedStorage = $sharedStorage;
+        $this->objectManager = $objectManager;
     }
 
     /**
@@ -71,8 +75,7 @@ final class ManagingAdministratorsContext implements Context
     }
 
     /**
-     * @Given /^I am editing (my) details$/
-     *
+     * @When /^I am editing (my) details$/
      * @When /^I want to edit (this administrator)$/
      */
     public function iWantToEditThisAdministrator(AdminUserInterface $adminUser): void
@@ -190,6 +193,16 @@ final class ManagingAdministratorsContext implements Context
     }
 
     /**
+     * @When /^I (?:|upload|update) the "([^"]+)" image as (my) avatar$/
+     */
+    public function iUploadTheImageAsMyAvatar(string $avatar, AdminUserInterface $administrator): void
+    {
+        $path = $this->updateAvatar($avatar, $administrator);
+
+        $this->sharedStorage->set($avatar, $path);
+    }
+
+    /**
      * @Then the administrator :email should appear in the store
      * @Then I should see the administrator :email in the list
      * @Then there should still be only one administrator with an email :email
@@ -280,5 +293,43 @@ final class ManagingAdministratorsContext implements Context
             'Cannot remove currently logged in user.',
             NotificationType::failure()
         );
+    }
+
+    /**
+     * @Then /^I should see the "([^"]*)" image as (my) avatar$/
+     */
+    public function iShouldSeeTheImageAsMyAvatar(string $avatar, AdminUserInterface $administrator): void
+    {
+        $this->objectManager->refresh($administrator);
+
+        Assert::same($this->sharedStorage->get($avatar), $administrator->getAvatar()->getPath());
+    }
+
+    /**
+     * @Then /^I should see the "([^"]*)" avatar image in the top bar next to my name$/
+     */
+    public function iShouldSeeTheAvatarImageInTheTopBarNextToMyName(string $avatar): void
+    {
+        Assert::true($this->topBarElement->hasAvatarInMainBar($avatar));
+    }
+
+    private function getPath(AdminUserInterface $administrator): string
+    {
+        $this->objectManager->refresh($administrator);
+
+        $avatar = $administrator->getAvatar();
+        if (null === $avatar) {
+            return '';
+        }
+
+        return $avatar->getPath() ?? '';
+    }
+
+    private function updateAvatar(string $avatar, AdminUserInterface $administrator): string
+    {
+        $this->updatePage->attachAvatar($avatar);
+        $this->updatePage->saveChanges();
+
+        return $this->getPath($administrator);
     }
 }
