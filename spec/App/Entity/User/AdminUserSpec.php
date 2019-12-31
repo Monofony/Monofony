@@ -2,6 +2,7 @@
 
 namespace spec\App\Entity\User;
 
+use App\Entity\User\AdminAvatar;
 use App\Entity\User\AdminUserInterface;
 use Doctrine\Common\Collections\Collection;
 use PhpSpec\ObjectBehavior;
@@ -65,5 +66,17 @@ class AdminUserSpec extends ObjectBehavior
     {
         $this->setLastName('Doe');
         $this->getLastName()->shouldReturn('Doe');
+    }
+
+    function it_has_no_avatar_by_default(): void
+    {
+        $this->getAvatar()->shouldReturn(null);
+    }
+
+    function its_avatar_is_mutable(AdminAvatar $avatar): void
+    {
+        $this->setAvatar($avatar);
+
+        $this->getAvatar()->shouldReturn($avatar);
     }
 }

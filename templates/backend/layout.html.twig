@@ -14,22 +14,8 @@
         <i class="ui icon world"></i>
         {{ 'app.ui.view_website'|trans }}
     </a>
-    {% include 'backend/layout/_search.html.twig' %}
-    <div class="ui right floated simple dropdown item">
-        <img class="ui avatar image" src="{{ asset('assets/backend/img/avatar.png') }}">
-        <span>{{ app.user.username }}</span>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-            <a href="{{ path('sylius_backend_admin_user_update', {'id': app.user.id}) }}" class="item">
-                <i class="user icon"></i>
-                {{ 'sylius.ui.my_account'|trans }}
-            </a>
-            <a href="{{ path('sylius_backend_logout') }}" id="sylius-logout-button" class="item">
-                <i class="sign out icon"></i>
-                {{ 'sylius.ui.logout'|trans }}
-            </a>
-        </div>
-    </div>
+    {% include 'backend/_search.html.twig' %}
+    {% include 'backend/_security.html.twig' %}
 {% endblock %}
 
 {% block sidebar %}
