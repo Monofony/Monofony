@@ -27,8 +27,6 @@ abstract class File implements ResourceInterface
     use IdentifiableTrait;
     use TimestampableTrait;
 
-    protected static $uri = '/media/file';
-
     /** @var \SplFileInfo|null */
     protected $file;
 
@@ -86,14 +84,5 @@ abstract class File implements ResourceInterface
     public function setPath(?string $path): void
     {
         $this->path = $path;
-    }
-
-    public function getWebPath(): ?string
-    {
-        if (null == $path = $this->path) {
-            return null;
-        }
-
-        return static::$uri.'/'.$path;
     }
 }

@@ -26,8 +26,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class AdminAvatar extends Image
 {
-    protected static $uri = '/media/avatar';
-
     /**
      * {@inheritdoc}
      *

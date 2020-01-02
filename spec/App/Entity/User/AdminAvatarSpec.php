@@ -42,16 +42,4 @@ class AdminAvatarSpec extends ObjectBehavior
 
         $this->getPath()->shouldReturn('avatar.png');
     }
-
-    function it_has_no_web_path_by_defaut(): void
-    {
-        $this->getWebPath()->shouldReturn(null);
-    }
-
-    function it_can_get_web_path(): void
-    {
-        $this->setPath('avatar.png');
-
-        $this->getWebPath()->shouldReturn('/media/avatar/avatar.png');
-    }
 }
