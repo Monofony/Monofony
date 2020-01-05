@@ -29,7 +29,7 @@ final class AdminUserContext implements Context
     /**
      * @Transform /^(I|my)$/
      */
-    public function getLoggedAdminUser()
+    public function getLoggedAdminUser(): ?AdminUserInterface
     {
         return $this->sharedStorage->get('administrator');
     }
