@@ -50,7 +50,7 @@ final class AdminAvatarType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'app_admin_avatar';
     }
