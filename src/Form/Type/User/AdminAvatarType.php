@@ -19,7 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class AdminAvatarType extends AbstractType
+final class AdminAvatarType extends AbstractType
 {
     /**
      * {@inheritdoc}
