@@ -2,10 +2,9 @@
 
 namespace spec\App\Entity\User;
 
-use App\Entity\Media\Image;
+use App\Entity\Media\File;
 use App\Entity\User\AdminAvatar;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class AdminAvatarSpec extends ObjectBehavior
 {
@@ -14,9 +13,9 @@ class AdminAvatarSpec extends ObjectBehavior
         $this->shouldHaveType(AdminAvatar::class);
     }
 
-    function it_is_an_image(): void
+    function it_is_a_file(): void
     {
-        $this->shouldHaveType(Image::class);
+        $this->shouldHaveType(File::class);
     }
 
     function it_has_no_file_by_default(): void
