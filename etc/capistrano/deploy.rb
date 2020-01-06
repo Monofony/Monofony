@@ -47,9 +47,9 @@ set :deploy_to, '/home/app_name/'
 set :pty, true
 
 append :linked_files, fetch(:web_path) + '/robots.txt'
-append :linked_dirs, fetch(:web_path) + '/uploads', fetch(:web_path) + '/media'
+append :linked_dirs, fetch(:web_path) + '/media'
 
-set :file_permissions_paths, ["var", "public/uploads"]
+set :file_permissions_paths, ["var", "public/media"]
 set :file_permissions_users, ["app_name"]
 
 set :permission_method,   :acl
