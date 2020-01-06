@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace App\Entity\User;
 
-use App\Entity\Media\Image;
+use App\Entity\Media\File;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -24,7 +24,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @Vich\Uploadable
  */
-class AdminAvatar extends Image
+class AdminAvatar extends File implements AdminAvatarInterface
 {
     /**
      * {@inheritdoc}

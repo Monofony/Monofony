@@ -11,13 +11,10 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Media;
+namespace App\Entity\User;
 
-use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Media\FileInterface;
 
-/**
- * @ORM\MappedSuperclass
- */
-abstract class Image extends File
+interface AdminAvatarInterface extends FileInterface
 {
 }
