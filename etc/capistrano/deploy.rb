@@ -24,7 +24,7 @@ set :assets_install_flags,  '--symlink'
 
 # Share files/directories between releases
 set :linked_files, ['.env.local']
-set :linked_dirs, ["var/log", "var/sessions", "public/uploads", "public/media"]
+set :linked_dirs, ["var/log", "var/sessions", "public/media"]
 
 set :application, 'AppName'
 set :repo_url, 'https://github.com/AppName/AppName.git'
