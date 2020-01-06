@@ -25,6 +25,7 @@
         "fzaninotto/faker": "^1.8",
         "guzzlehttp/guzzle": "^6.2",
         "knplabs/doctrine-behaviors": "~1.1",
+        "liip/imagine-bundle": "^2.2",
         "sensio/framework-extra-bundle": "^5.1",
         "sensiolabs/security-checker": "^5.0",
         "sonata-project/block-bundle": "^3.3",
@@ -43,7 +44,8 @@
         "symfony/twig-bundle": "^4.2",
         "symfony/webpack-encore-bundle": "^1.6",
         "twig/extensions": "^1.5",
-        "twig/twig": "^2.7"
+        "twig/twig": "^2.7",
+        "vich/uploader-bundle": "^1.8"
     },
     "require-dev": {
         "behat/behat": "^3.2",

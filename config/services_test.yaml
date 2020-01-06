@@ -1,5 +1,6 @@
 imports:
     - { resource: services_test/contexts.yaml }
+    - { resource: services_test/elements.yaml }
     - { resource: services_test/pages.yaml }
 
 # Learn more about services, parameters and containers at

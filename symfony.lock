@@ -211,6 +211,9 @@
     "hamcrest/hamcrest-php": {
         "version": "v2.0.0"
     },
+    "imagine/imagine": {
+        "version": "1.2.3"
+    },
     "infection/infection": {
         "version": "0.10.6"
     },
@@ -258,6 +261,19 @@
     },
     "lchrusciel/api-test-case": {
         "version": "v3.1.3"
+    },
+    "liip/imagine-bundle": {
+        "version": "1.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.8",
+            "ref": "1d42bc3f713130582e6e0c475c49bc327ab0a2a2"
+        },
+        "files": [
+            "config/packages/liip_imagine.yaml",
+            "config/routes/liip_imagine.yaml"
+        ]
     },
     "mockery/mockery": {
         "version": "1.1.0"
@@ -873,6 +889,18 @@
     },
     "twig/twig": {
         "version": "v2.4.8"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "c4f5755b37fb65b9c6a3cbdae91205c15a137ed4"
+        },
+        "files": [
+            "config/packages/vich_uploader.yaml"
+        ]
     },
     "vimeo/psalm": {
         "version": "3.2.11"
