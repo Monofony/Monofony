@@ -35,7 +35,7 @@ class AdminUser extends BaseUser implements AdminUserInterface
     private $firstName;
 
     /**
-     * @var AdminAvatar|null
+     * @var AdminAvatarInterface|null
      *
      * @ORM\OneToOne(targetEntity="App\Entity\User\AdminAvatar", cascade={"persist"})
      */
@@ -83,7 +83,7 @@ class AdminUser extends BaseUser implements AdminUserInterface
     /**
      * {@inheritdoc}
      */
-    public function getAvatar(): ?AdminAvatar
+    public function getAvatar(): ?AdminAvatarInterface
     {
         return $this->avatar;
     }
@@ -91,7 +91,7 @@ class AdminUser extends BaseUser implements AdminUserInterface
     /**
      * {@inheritdoc}
      */
-    public function setAvatar(?AdminAvatar $avatar): void
+    public function setAvatar(?AdminAvatarInterface $avatar): void
     {
         $this->avatar = $avatar;
     }

@@ -22,7 +22,7 @@ use Symfony\Component\Serializer\Annotation as Serializer;
 /**
  * @ORM\MappedSuperclass
  */
-abstract class File implements ResourceInterface
+abstract class File implements FileInterface, ResourceInterface
 {
     use IdentifiableTrait;
     use TimestampableTrait;
@@ -58,11 +58,17 @@ abstract class File implements ResourceInterface
         $this->createdAt = new \DateTime();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getFile(): ?\SplFileInfo
     {
         return $this->file;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setFile(?\SplFileInfo $file): void
     {
         $this->file = $file;
@@ -76,11 +82,17 @@ abstract class File implements ResourceInterface
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getPath(): ?string
     {
         return $this->path;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setPath(?string $path): void
     {
         $this->path = $path;

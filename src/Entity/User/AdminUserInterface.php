@@ -27,7 +27,7 @@ interface AdminUserInterface extends BaseUserInterface
 
     public function setLastName(?string $lastName): void;
 
-    public function getAvatar(): ?AdminAvatar;
+    public function getAvatar(): ?AdminAvatarInterface;
 
-    public function setAvatar(?AdminAvatar $avatar): void;
+    public function setAvatar(?AdminAvatarInterface $avatar): void;
 }

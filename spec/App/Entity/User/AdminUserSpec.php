@@ -2,7 +2,7 @@
 
 namespace spec\App\Entity\User;
 
-use App\Entity\User\AdminAvatar;
+use App\Entity\User\AdminAvatarInterface;
 use App\Entity\User\AdminUserInterface;
 use Doctrine\Common\Collections\Collection;
 use PhpSpec\ObjectBehavior;
@@ -73,7 +73,7 @@ class AdminUserSpec extends ObjectBehavior
         $this->getAvatar()->shouldReturn(null);
     }
 
-    function its_avatar_is_mutable(AdminAvatar $avatar): void
+    function its_avatar_is_mutable(AdminAvatarInterface $avatar): void
     {
         $this->setAvatar($avatar);
 
