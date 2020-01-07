@@ -8,7 +8,7 @@ To create a new page object it is needed to add a service in Behat container in 
 
 .. code-block:: yaml
 
-    App\Behat\Page\PAGE_NAME:
+    App\Tests\Behat\Page\PAGE_NAME:
         parent: app.behat.page
         public: false
 
@@ -28,7 +28,7 @@ The simplest Symfony-based page looks like:
 
     class LoginPage extends SymfonyPage
     {
-        public function getRouteName()
+        public function getRouteName(): string
         {
             return 'sylius_user_security_login';
         }
