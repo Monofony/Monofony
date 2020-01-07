@@ -87,7 +87,7 @@ etc. You're free to use them in your own behat scenarios.
 
 .. note::
 
-    All transformers definitions are currently kept in ``App\Behat\Context\Transform`` namespace.
+    All transformers definitions are currently kept in ``App\Tests\Behat\Context\Transform`` namespace.
 
 .. warning::
 

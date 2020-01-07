@@ -50,7 +50,7 @@ After we are done with a feature file, we have to create a new suite for it. At 
 
 .. code-block:: yaml
 
-    # src/Behat/Resources/suites/ui/addressing/managing_countries.yaml
+    # config/suites/ui/addressing/managing_countries.yaml
 
     default:
         suites:
@@ -58,22 +58,22 @@ After we are done with a feature file, we have to create a new suite for it. At 
                 contexts:
                     # This service is responsible for clearing database before each scenario,
                     # so that only data from the current and its background is available.
-                    - App\Behat\Context\Hook\DoctrineORMContext
+                    - App\Tests\Behat\Context\Hook\DoctrineORMContext
 
                     # The transformer contexts services are responsible for all the transformations of data in steps:
                     # For instance "And the country "France" should appear in the store" transforms "(the country "France")" to a proper Country object, which is from now on available in the scope of the step.
-                    - App\Behat\Context\Transform\CountryContext
-                    - App\Behat\Context\Transform\SharedStorageContext
+                    - App\Tests\Behat\Context\Transform\CountryContext
+                    - App\Tests\Behat\Context\Transform\SharedStorageContext
 
                     # The setup contexts here are preparing the background, adding available countries and users or administrators.
                     # These contexts have steps like "I am logged in as an administrator" already implemented.
-                    - App\Behat\Context\Setup\GeographicalContext
-                    - App\Behat\Context\Setup\SecurityContext
+                    - App\Tests\Behat\Context\Setup\GeographicalContext
+                    - App\Tests\Behat\Context\Setup\SecurityContext
 
                     # Lights, Camera, Action!
                     # Those contexts are essential here we are placing all action steps like "When I choose "France" and I add it Then I should ne notified that...".
-                    - App\Behat\Context\Ui\Backend\ManagingCountriesContext
-                    - App\Behat\Context\Ui\Backend\NotificationContext
+                    - App\Tests\Behat\Context\Ui\Backend\ManagingCountriesContext
+                    - App\Tests\Behat\Context\Ui\Backend\NotificationContext
                 filters:
                     tags: "@managing_countries && @ui"
 
@@ -84,22 +84,22 @@ We have mentioned with the generic steps we can easily switch our testing contex
 
 .. code-block:: yaml
 
-    # src/Behat/Resources/config/suites/domain/addressing/managing_countries.yaml
+    # config/suites/domain/addressing/managing_countries.yaml
 
     default:
         suites:
             domain_managing_countries:
                 contexts_services:
-                    - App\Behat\Context\Hook\DoctrineORMContext
+                    - App\Tests\Behat\Context\Hook\DoctrineORMContext
 
-                    - App\Behat\Context\Transform\CountryContext
-                    - App\Behat\Context\Transform\SharedStorageContext
+                    - App\Tests\Behat\Context\Transform\CountryContext
+                    - App\Tests\Behat\Context\Transform\SharedStorageContext
 
-                    - App\Behat\Context\Setup\GeographicalContext
-                    - App\Behat\Context\Setup\SecurityContext
+                    - App\Tests\Behat\Context\Setup\GeographicalContext
+                    - App\Tests\Behat\Context\Setup\SecurityContext
 
                     # Domain step implementation.
-                    - App\Behat\Context\Domain\Backend\ManagingCountriesContext
+                    - App\Tests\Behat\Context\Domain\Backend\ManagingCountriesContext
                 filters:
                     tags: "@managing_countries && @domain"
 
@@ -163,15 +163,12 @@ Let's get back to our main example and analyze our scenario. We have steps like:
 
 .. code-block:: php
 
-    namespace App\Behat\Page\Backend\Country;
+    namespace App\Tests\Behat\Page\Backend\Country;
 
-    use App\Behat\Page\Backend\Crud\CreatePage as BaseCreatePage;
+    use App\Tests\Behat\Page\Backend\Crud\CreatePage as BaseCreatePage;
 
     final class CreatePage extends BaseCreatePage implements CreatePageInterface
     {
-        /**
-         * @param string $name
-         */
         public function chooseName(string $name): void
         {
             $this->getDocument()->selectFieldOption('Name', $name);
@@ -185,15 +182,12 @@ Let's get back to our main example and analyze our scenario. We have steps like:
 
 .. code-block:: php
 
-    namespace App\Behat\Page\Backend\Country;
+    namespace App\Tests\Behat\Page\Backend\Country;
 
-    use App\Behat\Page\Backend\Crud\IndexPage as BaseIndexPage;
+    use App\Tests\Behat\Page\Backend\Crud\IndexPage as BaseIndexPage;
 
     final class IndexPage extends BaseIndexPage implements IndexPageInterface
     {
-        /**
-         * @return bool
-         */
         public function isSingleResourceOnPage(array $parameters): bool
         {
             try {
@@ -299,32 +293,21 @@ Ui contexts
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Ui\Backend
+    namespace App\Tests\Behat\Context\Ui\Backend
 
     use Behat\Behat\Context\Context;
 
     final class ManagingCountriesContext implements Context
     {
-        /**
-         * @var IndexPageInterface
-         */
+        /** @var IndexPageInterface */
         private $indexPage;
 
-        /**
-         * @var CreatePageInterface
-         */
+        /** @var CreatePageInterface */
         private $createPage;
 
-        /**
-         * @var UpdatePageInterface
-         */
+        /** @var UpdatePageInterface */
         private $updatePage;
 
-        /**
-         * @param IndexPageInterface $indexPage
-         * @param CreatePageInterface $createPage
-         * @param UpdatePageInterface $updatePage
-         */
         public function __construct(
             IndexPageInterface $indexPage,
             CreatePageInterface $createPage,
@@ -378,7 +361,7 @@ Ui contexts
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Ui\Backend
+    namespace App\Tests\Behat\Context\Ui\Backend
 
     use Behat\Behat\Context\Context;
 
@@ -413,26 +396,18 @@ Transformer contexts
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Transform;
+    namespace App\Tests\Behat\Context\Transform;
 
     use Behat\Behat\Context\Context;
 
     final class CountryContext implements Context
     {
-        /**
-         * @var CountryNameConverterInterface
-         */
+        /** @var CountryNameConverterInterface */
         private $countryNameConverter;
 
-        /**
-         * @var RepositoryInterface
-         */
+        /** @var RepositoryInterface */
         private $countryRepository;
 
-        /**
-         * @param CountryNameConverterInterface $countryNameConverter
-         * @param RepositoryInterface $countryRepository
-         */
         public function __construct(
             CountryNameConverterInterface $countryNameConverter,
             RepositoryInterface $countryRepository
@@ -462,21 +437,16 @@ Transformer contexts
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Ui\Backend;
+    namespace App\Tests\Behat\Context\Ui\Backend;
 
-    use App\Behat\Page\Backend\Country\UpdatePageInterface;
+    use App\Tests\Behat\Page\Backend\Country\UpdatePageInterface;
     use Behat\Behat\Context\Context;
 
     final class ManagingCountriesContext implements Context
     {
-        /**
-         * @var UpdatePageInterface
-         */
+        /** @var UpdatePageInterface */
         private $updatePage;
 
-        /**
-         * @param UpdatePageInterface $updatePage
-         */
         public function __construct(UpdatePageInterface $updatePage)
         {
             $this->updatePage = $updatePage;
@@ -495,20 +465,15 @@ Transformer contexts
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Transform;
+    namespace App\Tests\Behat\Context\Transform;
 
     use Behat\Behat\Context\Context;
 
     final class ShippingMethodContext implements Context
     {
-        /**
-         * @var ShippingMethodRepositoryInterface
-         */
+        /** @var ShippingMethodRepositoryInterface */
         private $shippingMethodRepository;
 
-        /**
-         * @param ShippingMethodRepositoryInterface $shippingMethodRepository
-         */
         public function __construct(ShippingMethodRepositoryInterface $shippingMethodRepository)
         {
             $this->shippingMethodRepository = $shippingMethodRepository;
@@ -530,21 +495,16 @@ Transformer contexts
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Ui\Admin;
+    namespace App\Tests\Behat\Context\Ui\Admin;
 
-    use App\Behat\Page\Admin\ShippingMethod\UpdatePageInterface;
+    use App\Tests\Behat\Page\Admin\ShippingMethod\UpdatePageInterface;
     use Behat\Behat\Context\Context;
 
     final class ShippingMethodContext implements Context
     {
-        /**
-         * @var UpdatePageInterface
-         */
+        /** @var UpdatePageInterface */
         private $updatePage;
 
-        /**
-         * @param UpdatePageInterface $updatePage
-         */
         public function __construct(UpdatePageInterface $updatePage)
         {
             $this->updatePage = $updatePage;
@@ -580,38 +540,24 @@ Scenario::
 
 .. code-block:: php
 
-    namespace App\Behat\Context\Setup;
+    namespace App\Tests\Behat\Context\Setup;
 
     use Behat\Behat\Context\Context;
 
     final class GeographicalContext implements Context
     {
-        /**
-         * @var SharedStorageInterface
-         */
+        /** @var SharedStorageInterface */
         private $sharedStorage;
 
-        /**
-         * @var FactoryInterface
-         */
+        /** @var FactoryInterface */
         private $countryFactory;
 
-        /**
-         * @var RepositoryInterface
-         */
+        /** @var RepositoryInterface */
         private $countryRepository;
 
-        /**
-         * @var CountryNameConverterInterface
-         */
+        /** @var CountryNameConverterInterface */
         private $countryNameConverter;
 
-        /**
-         * @param SharedStorageInterface $sharedStorage
-         * @param FactoryInterface $countryFactory
-         * @param RepositoryInterface $countryRepository
-         * @param CountryNameConverterInterface $countryNameConverter
-         */
         public function __construct(
             SharedStorageInterface $sharedStorage,
             FactoryInterface $countryFactory,
@@ -639,12 +585,7 @@ Scenario::
             $this->countryRepository->add($country);
         }
 
-        /**
-         * @param string $name
-         *
-         * @return CountryInterface
-         */
-        private function createCountryNamed($name)
+        private function createCountryNamed(string $name): CountryInterface
         {
             /** @var CountryInterface $country */
             $country = $this->countryFactory->createNew();

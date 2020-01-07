@@ -7,7 +7,7 @@ But if you need to manually route an argument, it is needed to add a service in 
 
 .. code-block:: yaml
 
-    App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME:
+    App\Tests\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME:
         arguments:
             $specificArgument: App\SpecificArgument
 
@@ -19,7 +19,7 @@ Then you can use it in your suite configuration:
         suites:
             SUITE_NAME:
                 contexts:
-                    - 'App\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME'
+                    - 'App\Tests\Behat\Context\CONTEXT_CATEGORY\CONTEXT_NAME'
                 filters:
                     tags: "@SUITE_TAG"
 
