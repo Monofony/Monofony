@@ -1,3 +1,6 @@
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        app_name_meta:
+            version: !php/const App\Kernel::VERSION
