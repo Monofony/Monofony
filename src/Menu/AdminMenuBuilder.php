@@ -13,7 +13,6 @@ namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 final class AdminMenuBuilder
 {
@@ -25,7 +24,7 @@ final class AdminMenuBuilder
         $this->factory = $factory;
     }
 
-    public function createMenu(RequestStack $requestStack): ItemInterface
+    public function createMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');
 
