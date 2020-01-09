@@ -4,9 +4,5 @@ services:
         autoconfigure: true
 
     App\Dashboard\DashboardStatisticsProvider:
-        arguments: [ !tagged app.dashboard_statistic ]
-
-#    Uncomment if you need to sort statistics using priority level
-#    App\Dashboard\Statistics\CustomerStatistic:
-#        tags:
-#            - { name: app.dashboard_statistic, priority: 0 }
+        # arguments: [ !tagged app.dashboard_statistic ]
+        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
