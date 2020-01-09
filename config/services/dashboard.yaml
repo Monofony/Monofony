@@ -6,8 +6,7 @@ services:
     App\Dashboard\DashboardStatisticsProvider:
         arguments: [ !tagged app.dashboard_statistic ]
 
-    App\Dashboard\Statistics\CustomerStatistic:
-        arguments:
-            $engine : '@templating.engine.twig'
-        tags:
-            - { name: app.dashboard_statistic, priority: 0 }
+#    Uncomment if you need to sort statistics using priority level
+#    App\Dashboard\Statistics\CustomerStatistic:
+#        tags:
+#            - { name: app.dashboard_statistic, priority: 0 }
