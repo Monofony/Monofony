@@ -27,4 +27,9 @@ class CustomerStatistic implements StatisticInterface
             'amountOfCustomers' => $amountCustomers,
         ]);
     }
+
+    public static function getDefaultPriority(): int
+    {
+        return -1;
+    }
 }
