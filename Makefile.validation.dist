@@ -13,4 +13,4 @@ validate-twig:
 	bin/console lint:twig templates
 
 validate-yaml-files:
-	bin/console lint:yaml config
+	bin/console lint:yaml config --parse-tags
