@@ -18,7 +18,7 @@ use Webmozart\Assert\Assert;
 
 class DashboardStatisticsProvider
 {
-    /** @var StatisticInterface[] */
+    /** @var iterable&StatisticInterface[] */
     private $statistics;
 
     public function __construct(iterable $statistics)
