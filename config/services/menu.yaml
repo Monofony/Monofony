@@ -1,19 +1,11 @@
 services:
-    app.menu_builder:
-        class: App\Menu\AdminMenuBuilder
-        arguments: ["@knp_menu.factory"]
+    _defaults:
+        autowire: true
 
-    app.admin_menu:
-        class: Knp\Menu\MenuItem # the service definition requires setting the class
-        factory: ["@app.menu_builder", createMenu]
-        arguments: ["@request_stack"]
+    App\Menu\AdminMenuBuilder:
         tags:
-            - { name: knp_menu.menu, alias: app.admin.main } # The alias is what is used to retrieve the menu
+            - { name: knp_menu.menu_builder, method: createMenu, alias: app.admin.main } # The alias is what is used to retrieve the menu
 
-    app.account_menu:
-        class: App\Menu\AccountMenuBuilder
-        arguments:
-            - "@knp_menu.factory"
-            - "@event_dispatcher"
+    App\Menu\AccountMenuBuilder:
         tags:
             - { name: knp_menu.menu_builder, method: createMenu, alias: app.account } # The alias is what is used to retrieve the menu
