@@ -104,6 +104,6 @@ EOT
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
         $outputStyle->newLine(2);
 
-        return null;
+        return 0;
     }
 }

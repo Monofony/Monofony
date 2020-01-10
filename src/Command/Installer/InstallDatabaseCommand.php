@@ -67,5 +67,7 @@ EOT
         $outputStyle->newLine();
         $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
         $commandExecutor->runCommand('app:install:sample-data', [], $output);
+
+        return 0;
     }
 }
