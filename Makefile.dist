@@ -8,10 +8,10 @@ docs-build-default:
 install-default: composer-install app-install fixtures-load yarn-install yarn-build
 
 start-default:
-	symfony server:start --no-tls || bin/console server:start ${ARGS}
+	symfony server:start --no-tls ${ARGS}
 
 stop-default:
-	symfony server:stop || bin/console server:stop
+	symfony server:stop
 
 test-default: validate-all test-all
 
