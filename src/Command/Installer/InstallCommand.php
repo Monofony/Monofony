@@ -98,6 +98,8 @@ EOT
 
         $output->writeln($this->getProperFinalMessage($errored));
         $output->writeln('You can now open your website at the following path under the website root.');
+
+        return 0;
     }
 
     /**
