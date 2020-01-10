@@ -75,6 +75,8 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->setupAdministratorUser($input, $output);
+
+        return 0;
     }
 
     /**

@@ -77,5 +77,7 @@ EOT
         ];
 
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
+
+        return 0;
     }
 }
