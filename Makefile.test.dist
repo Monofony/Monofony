@@ -1,7 +1,10 @@
 TAGS?=~todo
-CHROMEDRIVER_PATH=../chromedriver
+CHROMEDRIVER_PATH?=/usr/local/bin/chromedriver
 FORMAT?=progress
 VERBOSITY?=-vvv
+
+start-selenium-default:
+	vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=${CHROMEDRIVER_PATH}
 
 test-all-default: test-phpspec test-phpstan test-psalm test-phpunit test-infection test-all-behat
 
@@ -14,8 +17,7 @@ test-behat-without-javascript-default:
 	APP_ENV=test vendor/bin/behat --tags=~javascript --tags=${TAGS} -f ${FORMAT} ${VERBOSITY}
 
 test-behat-with-javascript-default:
-	vendor/bin/selenium-server-standalone -Dwebdriver.chrome.driver=${CHROMEDRIVER_PATH} > /dev/null 2>&1 &
-	sleep 5
+	make start-selenium > /dev/null 2>&1 & sleep 5
 	APP_ENV=test vendor/bin/behat --tags=javascript --tags=${TAGS} -f ${FORMAT} ${VERBOSITY}
 
 test-behat-with-cli-default:
