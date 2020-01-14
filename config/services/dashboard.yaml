@@ -1,0 +1,7 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\Dashboard\DashboardStatisticsProvider:
+        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]

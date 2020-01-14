@@ -2,6 +2,7 @@ imports:
     - { resource: services/_main.yaml }
     - { resource: services/command.yaml }
     - { resource: services/context.yaml }
+    - { resource: services/dashboard.yaml }
     - { resource: services/fixtures.yaml }
     - { resource: services/fixtures_factories.yaml }
     - { resource: services/form.yaml }
@@ -9,3 +10,4 @@ imports:
     - { resource: services/listener.yaml }
     - { resource: services/menu.yaml }
     - { resource: services/validator.yaml }
+

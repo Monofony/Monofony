@@ -2,16 +2,15 @@
 
 namespace spec\App\Dashboard;
 
-use App\Dashboard\DashboardStatistics;
 use App\Dashboard\DashboardStatisticsProvider;
-use App\Repository\CustomerRepository;
+use App\Dashboard\Statistics\StatisticInterface;
 use PhpSpec\ObjectBehavior;
 
 class DashboardStatisticsProviderSpec extends ObjectBehavior
 {
-    function let(CustomerRepository $customerRepository): void
+    function let(StatisticInterface $firstStatistic, StatisticInterface $secondStatistic): void
     {
-        $this->beConstructedWith($customerRepository);
+        $this->beConstructedWith([$firstStatistic, $secondStatistic]);
     }
 
     function it_is_initializable()
@@ -19,13 +18,20 @@ class DashboardStatisticsProviderSpec extends ObjectBehavior
         $this->shouldHaveType(DashboardStatisticsProvider::class);
     }
 
-    function it_obtains_statistics(
-        CustomerRepository $customerRepository
+    function it_generate_statistics_for_each_providers(
+        StatisticInterface $firstStatistic, StatisticInterface $secondStatistic
     ): void {
-        $expectedStats = new DashboardStatistics(6);
+        $firstStatistic->generate()->shouldBeCalled();
+        $secondStatistic->generate()->shouldBeCalled();
 
-        $customerRepository->countCustomers()->willReturn(6);
+        $this->getStatistics();
+    }
 
-        $this->getStatistics()->shouldBeLike($expectedStats);
+    function it_throws_an_invalid_argument_exception_when_statistic_provider_does_not_implements_the_interface(
+        \stdClass $statistic
+    ): void {
+        $this->beConstructedWith([$statistic]);
+
+        $this->shouldThrow(\InvalidArgumentException::class)->during('getStatistics');
     }
 }
