@@ -4,5 +4,4 @@ services:
         autoconfigure: true
 
     App\Dashboard\DashboardStatisticsProvider:
-        # arguments: [ !tagged app.dashboard_statistic ]
         arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
