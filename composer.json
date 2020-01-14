@@ -36,12 +36,12 @@
         "sylius/resource-bundle": "^1.6",
         "sylius/ui-bundle": "^1.6",
         "sylius/user-bundle": "^1.6",
-        "symfony/dotenv": "^4.3.1",
+        "symfony/dotenv": "4.4.*",
         "symfony/flex": "^1.2",
         "symfony/monolog-bundle": "^3.3",
-        "symfony/proxy-manager-bridge": "^4.3",
+        "symfony/proxy-manager-bridge": "4.4.*",
         "symfony/swiftmailer-bundle": "^3.0",
-        "symfony/twig-bundle": "^4.2",
+        "symfony/twig-bundle": "4.4.*",
         "symfony/webpack-encore-bundle": "^1.6",
         "twig/extensions": "^1.5",
         "twig/twig": "^2.7",
@@ -70,8 +70,8 @@
         "proget-hq/phpstan-phpspec": "^0.2.0",
         "psr/event-dispatcher": "^1.0",
         "se/selenium-server-standalone": " ^2.52",
-        "symfony/debug-bundle": "^4.3.1",
-        "symfony/web-profiler-bundle": "^4.2",
+        "symfony/debug-bundle": "4.4.*",
+        "symfony/web-profiler-bundle": "4.4.*",
         "vimeo/psalm": "^3.4"
     },
     "conflict": {
@@ -89,7 +89,8 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": true
+            "allow-contrib": true,
+            "require": "4.4.*"
         }
     },
     "minimum-stability": "dev",
