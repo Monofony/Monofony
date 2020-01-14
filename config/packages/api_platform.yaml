@@ -1,4 +1,5 @@
 api_platform:
+    version: !php/const App\Kernel::VERSION
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     patch_formats:

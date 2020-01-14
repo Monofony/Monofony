@@ -38,6 +38,11 @@ services:
         resource: '../../src/Controller'
         tags: ['controller.service_arguments']
 
+    # Data collectors
+    App\Collector\AppCollector:
+        tags:
+            - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
+
     App\Entity\OAuth\ClientManager:
         $class: '%fos_oauth_server.model.client.class%'
 
