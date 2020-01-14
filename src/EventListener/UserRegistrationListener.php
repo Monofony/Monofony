@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace App\EventListener;
 
+use App\Entity\Customer\CustomerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Sylius\Bundle\UserBundle\UserEvents;
-use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
