@@ -15,7 +15,7 @@ security:
         sylius_app_user_provider:
             id: sylius.app_user_provider.email_or_name_based
     encoders:
-        Sylius\Component\User\Model\UserInterface: argon2i
+        Sylius\Component\User\Model\UserInterface: auto
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER
