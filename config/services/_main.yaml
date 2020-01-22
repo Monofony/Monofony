@@ -1,7 +1,3 @@
-imports:
-    - { resource: "@SyliusCustomerBundle/Resources/config/app/config.yml" }
-    - { resource: "@SyliusUserBundle/Resources/config/app/config.yml" }
-
 parameters:
     email_contact: contact@app_name.com
     email_name: Contact AppName
