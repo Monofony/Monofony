@@ -57,5 +57,6 @@ Dashboard
     :hidden:
 
     dashboard/index
+    dashboard/basic-example
 
 .. include:: /cookbook/dashboard/map.rst.inc
