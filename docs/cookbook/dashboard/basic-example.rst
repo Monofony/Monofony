@@ -1,5 +1,5 @@
 Basic example
-==============
+=============
 
 This is a basic example. It fetches and renders the amount of registered customers.
 
