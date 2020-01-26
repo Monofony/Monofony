@@ -21,6 +21,14 @@ Order your statistics
 Since Symfony 4.4 it is possible to sort your services with a static function called ``getDefaultPriority``.
 Here you need to return an integer to set the weight of the service. Statistics with a higher priority will be displayed first.
 
+.. code-block:: php
+
+    public static function getDefaultPriority(): int
+    {
+        return -1;
+    }
+
+
 .. note::
     If you change the priority it is necessary to clear your cache. Otherwise you won't see the difference.
 
@@ -29,5 +37,3 @@ Add custom logic to your statistic
 
 Because all statistics are services it's perfectly possible to do anything with them as long as the generate function
 returns a string. So you can inject any service you want trough Dependency Injection to build your statistic.
-Go see `CustomerStatistic <https://github.com/Monofony/SymfonyStarter/blob/master/src/Dashboard/Statistics/CustomerStatistic.php>`_
-if you want a basic example of how you can create your own statistic.
