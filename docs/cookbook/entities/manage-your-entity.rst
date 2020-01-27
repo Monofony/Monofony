@@ -8,7 +8,7 @@ Create a new grid configuration file
 
 .. code-block:: yaml
 
-    # config/packages/grids/backend/article.yaml
+    # config/grids/backend/article.yaml
 
     sylius_grid:
         grids:
@@ -48,9 +48,9 @@ Import this to sylius_grid configuration file
     # config/packages/sylius_grid.yaml
 
     imports:
-        - { resource: 'grids/backend/article.yaml' }
-        - { resource: 'grids/backend/admin_user.yaml' }
-        - { resource: 'grids/backend/customer.yaml' }
+        - { resource: '../grids/backend/article.yaml' }
+        - { resource: '../grids/backend/admin_user.yaml' }
+        - { resource: '../grids/backend/customer.yaml' }
 
 Learn More
 ----------
