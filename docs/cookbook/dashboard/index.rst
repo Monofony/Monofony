@@ -20,6 +20,8 @@ Order your statistics
 
 Since Symfony 4.4 it is possible to sort your services with a static function called ``getDefaultPriority``.
 Here you need to return an integer to set the weight of the service. Statistics with a higher priority will be displayed first.
+This is why we chose to work with negative values. (-1 for the first element, -2 for the second,...).
+But feel free to use your own sequence when adding more statistics.
 
 .. code-block:: php
 
