@@ -31,7 +31,7 @@ But feel free to use your own sequence when adding more statistics.
     }
 
 
-.. note::
+.. warning::
     If you change the priority it is necessary to clear your cache. Otherwise you won't see the difference.
 
 Add custom logic to your statistic
