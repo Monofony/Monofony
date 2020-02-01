@@ -5,7 +5,7 @@ The mechanism behind the displaying of statistics relies on tagged services whic
 
 Create your own statistic
 -------------------------
-Add a new class to ``/src/Dashboad/Statistic`` and make sure it implement the ``App\Dashboard\Statistics\StatisticInterface``.
+Add a new class to ``/src/Dashboard/Statistic`` and make sure it implement the ``App\Dashboard\Statistics\StatisticInterface``.
 This way it will be automatically tagged with ``app.dashboard_statistic`` which is used to fetch all existing statistics.
 
 It also enforces you to implement a function called ``generate()`` which need to return a string.
