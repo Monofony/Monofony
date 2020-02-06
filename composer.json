@@ -10,6 +10,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "App\\Command\\": "recipes/monofony-core/src/Command/",
             "App\\Entity\\": "recipes/monofony-core/src/Entity/",
             "App\\Fixture\\": "recipes/monofony-fixtures/src/Fixture/",
             "App\\Tests\\": "tests/"
