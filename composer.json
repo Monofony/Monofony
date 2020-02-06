@@ -10,8 +10,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Entity\\": "recipe/monofony-core/src/Entity/",
-            "App\\Fixture\\": "recipe/monofony-fixtures/src/Fixture/",
+            "App\\Entity\\": "recipes/monofony-core/src/Entity/",
+            "App\\Fixture\\": "recipes/monofony-fixtures/src/Fixture/",
             "App\\Tests\\": "tests/"
         }
     },
