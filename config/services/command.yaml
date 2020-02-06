@@ -5,7 +5,7 @@ services:
 
     command_handlers:
         namespace: App\Command\
-        resource: '../../src/Command/*'
+        resource: '../../recipes/monofony-core/src/Command/*'
 
     App\Command\Installer\InstallCommand:
         arguments:
