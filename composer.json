@@ -10,6 +10,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "App\\Entity\\": "recipe/monofony-core/src/Entity/",
             "App\\Tests\\": "tests/"
         }
     },
