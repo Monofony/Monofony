@@ -49,3 +49,14 @@ Deployment
     deployment/capistrano
 
 .. include:: /cookbook/deployment/map.rst.inc
+
+Dashboard
+---------
+
+.. toctree::
+    :hidden:
+
+    dashboard/index
+    dashboard/basic-example
+
+.. include:: /cookbook/dashboard/map.rst.inc
