@@ -16,6 +16,8 @@
             "App\\EventListener\\": "recipes/monofony-core/src/EventListener/",
             "App\\Fixture\\": "recipes/monofony-fixtures/src/Fixture/",
             "App\\Form\\": "recipes/monofony-core/src/Form/",
+            "App\\Installer\\": "recipes/monofony-core/src/Installer/",
+            "App\\Installer\\Checker\\": "recipes/monofony-core/src/Installer/Checker/",
             "App\\Migrations\\": "recipes/monofony-fixtures/src/Migrations/",
             "App\\Repository\\": "recipes/monofony-core/src/Repository/",
             "App\\Tests\\": "tests/"
