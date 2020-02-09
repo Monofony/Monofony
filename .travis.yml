@@ -15,7 +15,7 @@ matrix:
             php: 7.2
             env:
                 - APP_NAME_SUITE="application"
-                - TRAVIS_NODE_VERSION="7.5"
+                - TRAVIS_NODE_VERSION="8.16"
             services:
                 - memcached
         -
