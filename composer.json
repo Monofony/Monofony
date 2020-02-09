@@ -11,6 +11,7 @@
     "autoload-dev": {
         "psr-4": {
             "App\\Collector\\": "recipes/monofony-core/src/Collector/",
+            "App\\Controller\\": "recipes/monofony-admin/src/Controller/",
             "App\\Context\\": "recipes/monofony-core/src/Context/",
             "App\\Command\\": "recipes/monofony-core/src/Command/",
             "App\\Dashboard\\": "recipes/monofony-admin/src/Dashboard/",
