@@ -10,7 +10,7 @@ services:
         autoconfigure: true
 
     App\Form\Extension\:
-        resource: '../../src/Form/Extension'
+        resource: '../../recipes/monofony-core/src/Form/Extension'
 
     App\Form\EventSubscriber\CustomerRegistrationFormSubscriber: ~
 
