@@ -3,7 +3,7 @@ app_backend:
     prefix: admin
 
 app_frontend:
-    resource: "routes/frontend.yaml"
+    resource: "../recipes/monofony-frontend/config/routes/frontend.yaml"
 
 app_api:
     resource: "routes/api.yaml"
