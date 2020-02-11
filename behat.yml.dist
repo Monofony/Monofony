@@ -41,6 +41,11 @@ default:
 
         FriendsOfBehat\VariadicExtension: ~
 
+        FriendsOfBehat\SuiteSettingsExtension:
+            paths:
+                - "recipes/monofony-backend/features"
+                - "features"
+
     gherkin:
         filters:
             tags: "~@todo"
