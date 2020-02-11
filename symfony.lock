@@ -160,6 +160,9 @@
     "friends-of-behat/page-object-extension": {
         "version": "v0.2.1"
     },
+    "friends-of-behat/suite-settings-extension": {
+        "version": "v1.0.1"
+    },
     "friends-of-behat/symfony-extension": {
         "version": "v1.2.1"
     },
