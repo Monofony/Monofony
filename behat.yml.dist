@@ -43,6 +43,7 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
+                - "recipes/monofony-core/features"
                 - "recipes/monofony-backend/features"
                 - "recipes/monofony-frontend/features"
                 - "features"
