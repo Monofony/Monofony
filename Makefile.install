@@ -1,17 +1,14 @@
-composer-install-default:
+composer-install:
 	composer install --no-interaction
 
-app-install-default:
+app-install:
 	bin/console app:install -n
 
-fixtures-load-default:
+fixtures-load:
 	bin/console sylius:fixtures:load default --no-interaction
 
-yarn-install-default:
+yarn-install:
 	yarn install
 
-yarn-build-default:
+yarn-build:
 	yarn encore production
-
-%:  %-default
-	@  true
