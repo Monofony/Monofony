@@ -40,16 +40,6 @@ BDD
 .. include:: /cookbook/bdd/map.rst.inc
 
 
-Deployment
-----------
-
-.. toctree::
-    :hidden:
-
-    deployment/capistrano
-
-.. include:: /cookbook/deployment/map.rst.inc
-
 Dashboard
 ---------
 
