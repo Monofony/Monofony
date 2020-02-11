@@ -1,6 +1,5 @@
 imports:
     - suites/cli/installer.yaml
-    - suites/cli/makefile.yaml
 
     - suites/ui/account/customer.yaml
     - suites/ui/account/login.yaml
