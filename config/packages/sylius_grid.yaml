@@ -1,6 +1,6 @@
 imports:
-  - { resource: '../grids/backend/admin_user.yaml' }
-  - { resource: '../grids/backend/customer.yaml' }
+  - { resource: '../../recipes/monofony-admin/config/grids/backend/admin_user.yaml' }
+  - { resource: '../../recipes/monofony-admin/config/grids/backend/customer.yaml' }
 
 sylius_grid:
     templates:
