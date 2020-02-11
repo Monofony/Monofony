@@ -44,6 +44,7 @@ default:
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
                 - "recipes/monofony-backend/features"
+                - "recipes/monofony-frontend/features"
                 - "features"
 
     gherkin:
