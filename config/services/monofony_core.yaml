@@ -1,19 +1,18 @@
-# Learn more about services, parameters and containers at
-# http://symfony.com/doc/current/book/service_container.html
-parameters:
-#    parameter_name: value
-     sylius.form.type.admin_user.validation_groups: ["sylius"]
-
 services:
     _defaults:
-        autowire: true
-        autoconfigure: true
+        autowire: true      # Automatically injects dependencies in your services
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $publicDir: '%kernel.project_dir%/public'
+            $cacheDir: '%kernel.cache_dir%'
+            $environment: '%kernel.environment%'
 
-    App\Form\Extension\:
-        resource: '../../recipes/monofony-core/src/Form/Extension'
+    app_core:
+        namespace: App\
+        resource: '../../recipes/monofony-core/src/*'
+        exclude: '../../recipes/monofony-core/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
 
-    App\Form\EventSubscriber\CustomerRegistrationFormSubscriber: ~
-
+    # Forms
     App\Form\Type\User\AdminUserType:
         arguments:
             $dataClass: "%sylius.model.admin_user.class%"

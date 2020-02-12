@@ -13,7 +13,8 @@ declare(strict_types=1);
 
 namespace App\Installer\Provider;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
+use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Helper\QuestionHelper;
@@ -24,10 +25,10 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProviderInterface
 {
-    /** @var Registry */
+    /** @var ManagerRegistry */
     private $doctrineRegistry;
 
-    public function __construct(Registry $doctrineRegistry)
+    public function __construct(ManagerRegistry $doctrineRegistry)
     {
         $this->doctrineRegistry = $doctrineRegistry;
     }
@@ -125,7 +126,10 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
         return $this->getEntityManager()->getConnection()->getSchemaManager();
     }
 
-    private function getEntityManager(): EntityManagerInterface
+    /**
+     * @return EntityManagerInterface|ObjectManager
+     */
+    private function getEntityManager(): ObjectManager
     {
         return $this->doctrineRegistry->getManager();
     }
