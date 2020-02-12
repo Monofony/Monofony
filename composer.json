@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/"
-        }
+        },
+        "classmap": [
+            "recipes/monofony-backend/src/DependencyInjection/RegisterDashboardStatisticsProviderPass.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

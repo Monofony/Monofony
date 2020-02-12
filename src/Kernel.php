@@ -12,6 +12,7 @@
 namespace App;
 
 use App\DependencyInjection\Compiler\ServicesPass;
+use App\DependencyInjection\RegisterDashboardStatisticsProviderPass;
 use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -84,5 +85,9 @@ class Kernel extends BaseKernel
     protected function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new ServicesPass());
+
+        if (class_exists(RegisterDashboardStatisticsProviderPass::class)) {
+            $container->addCompilerPass(new RegisterDashboardStatisticsProviderPass());
+        }
     }
 }
