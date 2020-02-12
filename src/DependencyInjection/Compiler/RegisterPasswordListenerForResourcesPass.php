@@ -11,50 +11,16 @@
 
 namespace App\DependencyInjection\Compiler;
 
-use App\Context\CustomerContext;
 use App\EventListener\PasswordUpdaterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class ServicesPass implements CompilerPassInterface
+class RegisterPasswordListenerForResourcesPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}
      */
     public function process(ContainerBuilder $container)
-    {
-        $this->processFactories($container);
-        $this->processRepositories($container);
-        $this->processListeners($container);
-
-        $container->setAlias('sylius.context.customer', CustomerContext::class)->setPublic(true);
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    protected function processFactories(ContainerBuilder $container): void
-    {
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    protected function processFormTypes(ContainerBuilder $container): void
-    {
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    protected function processRepositories(ContainerBuilder $container): void
-    {
-    }
-
-    /**
-     * @param ContainerBuilder $container
-     */
-    private function processListeners(ContainerBuilder $container): void
     {
         $listenerPasswordUpdaterDefinition = $container->getDefinition('sylius.listener.password_updater');
         $listenerPasswordUpdaterDefinition
