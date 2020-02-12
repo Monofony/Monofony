@@ -1,6 +1,5 @@
 app_backend:
     resource: "../recipes/monofony-backend/config/routes/backend.yaml"
-    prefix: admin
 
 app_frontend:
     resource: "../recipes/monofony-frontend/config/routes/frontend.yaml"
