@@ -11,6 +11,7 @@
 
 namespace App\Form\Type\User;
 
+use App\Entity\User\AppUser;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -18,6 +19,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class AppUserRegistrationType extends AbstractResourceType
 {
+    public function __construct()
+    {
+        parent::__construct(AppUser::class, ['sylius', 'sylius_user_registration']);
+    }
+
     /**
      * {@inheritdoc}
      */
