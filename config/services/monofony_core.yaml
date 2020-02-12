@@ -25,29 +25,3 @@ services:
     App\EventListener\UserRegistrationListener:
         tags:
             - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }
-
-    # Forms
-    App\Form\Type\User\AdminUserType:
-        arguments:
-            $dataClass: "%sylius.model.admin_user.class%"
-            $validationGroups: [sylius]
-
-    App\Form\Type\User\AppUserType:
-        arguments:
-            $dataClass: "%sylius.model.app_user.class%"
-            $validationGroups: [sylius]
-
-    App\Form\Type\User\AppUserRegistrationType:
-        arguments:
-            $dataClass: "%sylius.model.app_user.class%"
-            $validationGroups: [sylius, sylius_user_registration]
-
-    App\Form\Type\Customer\CustomerSimpleRegistrationType:
-        arguments:
-            $dataClass: "%sylius.model.customer.class%"
-            $validationGroups: [sylius, sylius_user_registration]
-
-    App\Form\Type\Customer\CustomerRegistrationType:
-        arguments:
-            $dataClass: "%sylius.model.customer.class%"
-            $validationGroups: [sylius, sylius_user_registration, sylius_customer_profile]
