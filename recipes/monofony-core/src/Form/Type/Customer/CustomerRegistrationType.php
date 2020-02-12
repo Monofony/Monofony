@@ -13,21 +13,18 @@ namespace App\Form\Type\Customer;
 
 use App\Entity\Customer\Customer;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
-use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 final class CustomerRegistrationType extends AbstractResourceType
 {
-    public function __construct(RepositoryInterface $customerRepository)
+    public function __construct()
     {
         parent::__construct(Customer::class, [
             'sylius',
             'sylius_user_registration',
             'sylius_customer_profile',
         ]);
-
-        $this->customerRepository = $customerRepository;
     }
 
     /**

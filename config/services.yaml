@@ -2,6 +2,3 @@ imports:
     - { resource: services/_main.yaml }
     - { resource: services/monofony_core.yaml }
     - { resource: services/monofony_fixtures.yaml }
-    - { resource: services/context.yaml }
-    - { resource: services/validator.yaml }
-
