@@ -1,4 +1,5 @@
 imports:
+    - { resource: services/_main.yaml }
     - { resource: '../recipes/monofony-core/config/services.yaml' }
     - { resource: services/context.yaml }
     - { resource: services/dashboard.yaml }
@@ -9,4 +10,3 @@ imports:
     - { resource: services/listener.yaml }
     - { resource: services/menu.yaml }
     - { resource: services/validator.yaml }
-
