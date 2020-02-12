@@ -46,20 +46,6 @@ services:
     App\Entity\OAuth\ClientManager:
         $class: '%fos_oauth_server.model.client.class%'
 
-    App\EventListener\CanonicalizerListener:
-        tags:
-            - { name: doctrine.event_listener, event: prePersist }
-            - { name: doctrine.event_listener, event: preUpdate }
-
-    # Listeners
-    App\EventListener\DefaultUsernameORMListener:
-        tags:
-            - { name: doctrine.event_listener, event: onFlush }
-
-    App\EventListener\UserRegistrationListener:
-        tags:
-            - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }
-
     # Menus
     App\Menu\AdminMenuBuilder:
         tags:

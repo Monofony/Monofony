@@ -12,6 +12,20 @@ services:
         resource: '../../recipes/monofony-core/src/*'
         exclude: '../../recipes/monofony-core/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
 
+    # Listeners
+    App\EventListener\CanonicalizerListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+
+    App\EventListener\DefaultUsernameORMListener:
+        tags:
+            - { name: doctrine.event_listener, event: onFlush }
+
+    App\EventListener\UserRegistrationListener:
+        tags:
+            - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }
+
     # Forms
     App\Form\Type\User\AdminUserType:
         arguments:
