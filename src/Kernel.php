@@ -11,7 +11,7 @@
 
 namespace App;
 
-use App\DependencyInjection\Compiler\ServicesPass;
+use App\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
 use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -83,6 +83,6 @@ class Kernel extends BaseKernel
 
     protected function build(ContainerBuilder $container): void
     {
-        $container->addCompilerPass(new ServicesPass());
+        $container->addCompilerPass(new RegisterPasswordListenerForResourcesPass());
     }
 }
