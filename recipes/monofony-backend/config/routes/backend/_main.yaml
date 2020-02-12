@@ -1,0 +1,18 @@
+app_backend_dashboard:
+    path: /
+    defaults:
+        _controller:  App\Controller\DashboardController:indexAction
+        template:     'backend/index.html.twig'
+
+app_backend_partial:
+    resource: "partial.yaml"
+    prefix: /_partial
+
+sylius_backend_admin_user:
+    resource: "admin_user.yaml"
+
+sylius_backend_customer:
+    resource: "customer.yaml"
+
+sylius_backend_security:
+    resource: "security.yaml"
