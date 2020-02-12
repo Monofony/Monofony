@@ -11,6 +11,7 @@
 
 namespace App\Form\Type\Customer;
 
+use App\Entity\Customer\Customer;
 use App\Form\EventSubscriber\CustomerRegistrationFormSubscriber;
 use App\Form\Type\User\AppUserRegistrationType;
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
@@ -22,19 +23,12 @@ use Symfony\Component\Validator\Constraints\Valid;
 
 class CustomerSimpleRegistrationType extends AbstractResourceType
 {
-    /**
-     * @var RepositoryInterface
-     */
+    /** @var RepositoryInterface */
     private $customerRepository;
 
-    /**
-     * @param string              $dataClass
-     * @param array               $validationGroups
-     * @param RepositoryInterface $customerRepository
-     */
-    public function __construct($dataClass, array $validationGroups, RepositoryInterface $customerRepository)
+    public function __construct(RepositoryInterface $customerRepository)
     {
-        parent::__construct($dataClass, $validationGroups);
+        parent::__construct(Customer::class, ['sylius', 'sylius_user_registration']);
 
         $this->customerRepository = $customerRepository;
     }
