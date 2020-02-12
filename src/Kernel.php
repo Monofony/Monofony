@@ -11,6 +11,7 @@
 
 namespace App;
 
+use App\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use App\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
 use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
@@ -84,5 +85,6 @@ class Kernel extends BaseKernel
     protected function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new RegisterPasswordListenerForResourcesPass());
+        $container->addCompilerPass(new ChangeCustomerContextVisibilityPass());
     }
 }
