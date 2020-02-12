@@ -1,0 +1,26 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    app_fixture:
+        namespace: App\
+        resource: '../../recipes/monofony-fixtures/src/*'
+        exclude: '../../recipes/monofony-fixtures/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+
+    # Fixtures
+    App\Fixture\AdminUserFixture:
+        arguments:
+            $exampleFactory: '@App\Fixture\Factory\AdminUserExampleFactory'
+
+    App\Fixture\AppUserFixture:
+        arguments:
+            $exampleFactory: '@App\Fixture\Factory\AppUserExampleFactory'
+
+    App\Fixture\ApiClientFixture:
+        arguments:
+            $exampleFactory: '@App\Fixture\Factory\ApiClientExampleFactory'
+
+    core_fixtures_factories:
+        namespace: App\Fixture\Factory\
+        resource: '../../recipes/monofony-fixtures/src/Fixture/Factory/*'
