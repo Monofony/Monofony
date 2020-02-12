@@ -21,7 +21,7 @@ sylius_frontend_account_profile_update:
             repository:
                 method: find
                 arguments:
-                    - "expr:service('App\\Context\\CustomerContext').getCustomer()"
+                    - expr:service('App\\Context\\CustomerContext').getCustomer()
             flash: sylius.customer.update_profile
             redirect:
                 route: sylius_frontend_account_dashboard
