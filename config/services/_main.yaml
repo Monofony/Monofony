@@ -6,15 +6,12 @@ parameters:
 services:
     # default configuration for services in *this* file
     _defaults:
-        # Automatically injects dependencies in your services
-        autowire: true
-
-        # Automatically registers your services as commands, event subscribers, etc.
-        autoconfigure: true
-
-        # Allows optimizing the container by removing unused services; this also means
-        # fetching services directly from the container via $container->get() won't work
-        public: false
+        autowire: true      # Automatically injects dependencies in your services
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $publicDir: '%kernel.project_dir%/public'
+            $cacheDir: '%kernel.cache_dir%'
+            $environment: '%kernel.environment%'
 
     _instanceof:
         Sylius\Bundle\ResourceBundle\Controller\ResourceController:
@@ -42,8 +39,21 @@ services:
         tags:
             - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
 
+    # Dashboard
+    App\Dashboard\DashboardStatisticsProvider:
+        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
+
     App\Entity\OAuth\ClientManager:
         $class: '%fos_oauth_server.model.client.class%'
+
+    # Menus
+    App\Menu\AdminMenuBuilder:
+        tags:
+            - { name: knp_menu.menu_builder, method: createMenu, alias: app.admin.main } # The alias is what is used to retrieve the menu
+
+    App\Menu\AccountMenuBuilder:
+        tags:
+            - { name: knp_menu.menu_builder, method: createMenu, alias: app.account } # The alias is what is used to retrieve the menu
 
     Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
     Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'

@@ -1,5 +1,0 @@
-services:
-    App\Fixture\Factory\:
-        resource: '../../recipes/monofony-fixtures/src/Fixture/Factory/*'
-        autowire: true
-        public: true

@@ -1,0 +1,53 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $publicDir: '%kernel.project_dir%/public'
+            $cacheDir: '%kernel.cache_dir%'
+            $environment: '%kernel.environment%'
+
+    app_core:
+        namespace: App\
+        resource: '../../recipes/monofony-core/src/*'
+        exclude: '../../recipes/monofony-core/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+
+    # Listeners
+    App\EventListener\CanonicalizerListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+
+    App\EventListener\DefaultUsernameORMListener:
+        tags:
+            - { name: doctrine.event_listener, event: onFlush }
+
+    App\EventListener\UserRegistrationListener:
+        tags:
+            - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }
+
+    # Forms
+    App\Form\Type\User\AdminUserType:
+        arguments:
+            $dataClass: "%sylius.model.admin_user.class%"
+            $validationGroups: [sylius]
+
+    App\Form\Type\User\AppUserType:
+        arguments:
+            $dataClass: "%sylius.model.app_user.class%"
+            $validationGroups: [sylius]
+
+    App\Form\Type\User\AppUserRegistrationType:
+        arguments:
+            $dataClass: "%sylius.model.app_user.class%"
+            $validationGroups: [sylius, sylius_user_registration]
+
+    App\Form\Type\Customer\CustomerSimpleRegistrationType:
+        arguments:
+            $dataClass: "%sylius.model.customer.class%"
+            $validationGroups: [sylius, sylius_user_registration]
+
+    App\Form\Type\Customer\CustomerRegistrationType:
+        arguments:
+            $dataClass: "%sylius.model.customer.class%"
+            $validationGroups: [sylius, sylius_user_registration, sylius_customer_profile]
