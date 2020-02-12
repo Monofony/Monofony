@@ -11,6 +11,7 @@
 
 namespace App\DependencyInjection\Compiler;
 
+use App\Context\CustomerContext;
 use App\EventListener\PasswordUpdaterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -26,7 +27,7 @@ class ServicesPass implements CompilerPassInterface
         $this->processRepositories($container);
         $this->processListeners($container);
 
-        $container->setAlias('sylius.context.customer', 'app.context.customer')->setPublic(true);
+        $container->setAlias('sylius.context.customer', CustomerContext::class)->setPublic(true);
     }
 
     /**
