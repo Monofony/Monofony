@@ -42,9 +42,5 @@ services:
     App\Entity\OAuth\ClientManager:
         $class: '%fos_oauth_server.model.client.class%'
 
-    App\Menu\AccountMenuBuilder:
-        tags:
-            - { name: knp_menu.menu_builder, method: createMenu, alias: app.account } # The alias is what is used to retrieve the menu
-
     Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
     Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
