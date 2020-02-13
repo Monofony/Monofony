@@ -39,17 +39,8 @@ services:
         tags:
             - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
 
-    # Dashboard
-    App\Dashboard\DashboardStatisticsProvider:
-        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
-
     App\Entity\OAuth\ClientManager:
         $class: '%fos_oauth_server.model.client.class%'
-
-    # Menus
-    App\Menu\AdminMenuBuilder:
-        tags:
-            - { name: knp_menu.menu_builder, method: createMenu, alias: app.admin.main } # The alias is what is used to retrieve the menu
 
     App\Menu\AccountMenuBuilder:
         tags:

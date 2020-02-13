@@ -1,4 +1,5 @@
 imports:
     - { resource: services/_main.yaml }
     - { resource: services/monofony_core.yaml }
+    - { resource: services/monofony_backend.yaml }
     - { resource: services/monofony_fixtures.yaml }
