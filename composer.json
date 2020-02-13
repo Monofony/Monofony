@@ -22,7 +22,8 @@
         },
         "classmap": [
             "recipes/monofony-backend/src/Controller/DashboardController.php",
-            "recipes/monofony-backend/src/Menu/AdminMenuBuilder.php"
+            "recipes/monofony-backend/src/Menu/AdminMenuBuilder.php",
+            "recipes/monofony-frontend/src/Menu/AccountMenuBuilder.php"
         ]
     },
     "autoload-dev": {
