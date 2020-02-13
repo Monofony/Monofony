@@ -2,7 +2,10 @@
     "timeout": 10,
     "source": {
         "directories": [
-            "src"
+            "recipes/monofony-core/src",
+            "recipes/monofony-backend/src",
+            "recipes/monofony-frontend/src",
+            "recipes/monofony-fixtures/src"
         ],
         "excludes": [
             "Command",

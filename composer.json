@@ -18,7 +18,8 @@
             "App\\Installer\\": "recipes/monofony-core/src/Installer/",
             "App\\Installer\\Checker\\": "recipes/monofony-core/src/Installer/Checker/",
             "App\\Migrations\\": "recipes/monofony-fixtures/src/Migrations/",
-            "App\\Repository\\": "recipes/monofony-core/src/Repository/"
+            "App\\Repository\\": "recipes/monofony-core/src/Repository/",
+            "App\\Validator\\": "recipes/monofony-core/src/Validator/"
         },
         "classmap": [
             "recipes/monofony-backend/src/Controller/DashboardController.php",
