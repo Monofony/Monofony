@@ -5,14 +5,11 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
+            "App\\": "src/",
             "App\\Collector\\": "recipes/monofony-core/src/Collector/",
             "App\\Context\\": "recipes/monofony-core/src/Context/",
             "App\\Command\\": "recipes/monofony-core/src/Command/",
+            "App\\Dashboard\\": "recipes/monofony-backend/src/Dashboard/",
             "App\\Entity\\": "recipes/monofony-core/src/Entity/",
             "App\\EventListener\\": "recipes/monofony-core/src/EventListener/",
             "App\\Fixture\\": "recipes/monofony-fixtures/src/Fixture/",
@@ -21,7 +18,15 @@
             "App\\Installer\\": "recipes/monofony-core/src/Installer/",
             "App\\Installer\\Checker\\": "recipes/monofony-core/src/Installer/Checker/",
             "App\\Migrations\\": "recipes/monofony-fixtures/src/Migrations/",
-            "App\\Repository\\": "recipes/monofony-core/src/Repository/",
+            "App\\Repository\\": "recipes/monofony-core/src/Repository/"
+        },
+        "classmap": [
+            "recipes/monofony-backend/src/Controller/DashboardController.php",
+            "recipes/monofony-backend/src/Menu/AdminMenuBuilder.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
             "App\\Tests\\": "tests/"
         }
     },
