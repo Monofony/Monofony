@@ -1,2 +1,9 @@
+suites:
+    Core: { spec_path: recipes/monofony-core, src_path: recipes/monofony-core/src }
+    Backend: { spec_path: recipes/monofony-backend, src_path: recipes/monofony-backend/src }
+
 extensions:
-    LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
+    LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
+        whitelist:
+            - recipes/monofony-core/src
+            - recipes/monofony-backend/src
