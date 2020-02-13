@@ -1,0 +1,39 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $publicDir: '%kernel.project_dir%/public'
+            $cacheDir: '%kernel.cache_dir%'
+            $environment: '%kernel.environment%'
+
+    _instanceof:
+        Sylius\Bundle\ResourceBundle\Controller\ResourceController:
+            autowire: false
+        Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType:
+            autowire: false
+        App\Dashboard\Statistics\StatisticInterface:
+            tags:
+                - { name: 'app.dashboard_statistic' }
+
+    app_backend:
+        namespace: App\
+        resource: '../../recipes/monofony-backend/src/*'
+        exclude: '../../recipes/monofony-backend/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    controller_backend:
+        namespace: App\Controller\
+        resource: '../../recipes/monofony-backend/src/Controller'
+        tags: ['controller.service_arguments']
+
+    # Menus
+    App\Menu\AdminMenuBuilder:
+        tags:
+            - { name: knp_menu.menu_builder, method: createMenu, alias: app.admin.main } # The alias is what is used to retrieve the menu
+
+    # Dashboard
+    App\Dashboard\DashboardStatisticsProvider:
+        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
+
