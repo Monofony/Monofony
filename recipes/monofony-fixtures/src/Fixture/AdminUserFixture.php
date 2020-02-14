@@ -11,10 +11,17 @@
 
 namespace App\Fixture;
 
+use App\Fixture\Factory\AdminUserExampleFactory;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 class AdminUserFixture extends AbstractResourceFixture
 {
+    public function __construct(ObjectManager $objectManager, AdminUserExampleFactory $adminUserExampleFactory)
+    {
+        parent::__construct($objectManager, $adminUserExampleFactory);
+    }
+
     /**
      * {@inheritdoc}
      */

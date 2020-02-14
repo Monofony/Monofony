@@ -11,10 +11,17 @@
 
 namespace App\Fixture;
 
+use App\Fixture\Factory\ApiClientExampleFactory;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 class ApiClientFixture extends AbstractResourceFixture
 {
+    public function __construct(ObjectManager $objectManager, ApiClientExampleFactory $apiClientExampleFactory)
+    {
+        parent::__construct($objectManager, $apiClientExampleFactory);
+    }
+
     /**
      * {@inheritdoc}
      */

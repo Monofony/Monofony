@@ -7,16 +7,3 @@ services:
         namespace: App\
         resource: '../../recipes/monofony-fixtures/src/*'
         exclude: '../../recipes/monofony-fixtures/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
-
-    # Fixtures
-    App\Fixture\AdminUserFixture:
-        arguments:
-            $exampleFactory: '@App\Fixture\Factory\AdminUserExampleFactory'
-
-    App\Fixture\AppUserFixture:
-        arguments:
-            $exampleFactory: '@App\Fixture\Factory\AppUserExampleFactory'
-
-    App\Fixture\ApiClientFixture:
-        arguments:
-            $exampleFactory: '@App\Fixture\Factory\ApiClientExampleFactory'
