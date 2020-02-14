@@ -17,7 +17,7 @@
             "App\\Formatter\\": "recipes/monofony-core/src/Formatter/",
             "App\\Installer\\": "recipes/monofony-core/src/Installer/",
             "App\\Installer\\Checker\\": "recipes/monofony-core/src/Installer/Checker/",
-            "App\\Migrations\\": "recipes/monofony-fixtures/src/Migrations/",
+            "App\\Migrations\\": "recipes/monofony-core/src/Migrations/",
             "App\\Repository\\": "recipes/monofony-core/src/Repository/",
             "App\\Validator\\": "recipes/monofony-core/src/Validator/"
         },
