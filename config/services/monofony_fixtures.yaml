@@ -20,7 +20,3 @@ services:
     App\Fixture\ApiClientFixture:
         arguments:
             $exampleFactory: '@App\Fixture\Factory\ApiClientExampleFactory'
-
-    core_fixtures_factories:
-        namespace: App\Fixture\Factory\
-        resource: '../../recipes/monofony-fixtures/src/Fixture/Factory/*'
