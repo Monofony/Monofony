@@ -4,8 +4,8 @@ twig:
     globals:
         app_name_meta:
             version: !php/const App\Kernel::VERSION
+    default_path:  '%kernel.project_dir%/recipes/monofony-core/templates'
     paths:
-        - '%kernel.project_dir%/templates'
         - '%kernel.project_dir%/recipes/monofony-core/templates'
         - '%kernel.project_dir%/recipes/monofony-backend/templates'
         - '%kernel.project_dir%/recipes/monofony-frontend/templates'
