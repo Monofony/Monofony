@@ -2,11 +2,11 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
-prepare_phpstan_for_test() {
-    run_command "bin/console cache:clear --no-warmup --env=dev"
-    run_command "bin/console cache:warmup --env=dev"
-}
+local code=0
 
 print_header "Testing (PHPStan)" "AppName"
-prepare_phpstan_for_test
-run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 src"
+run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 recipes/monofony-core/src" || code=$?
+run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 recipes/monofony-backend/src" || code=$?
+run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 recipes/monofony-frontend/src" || code=$?
+
+exit ${code}
