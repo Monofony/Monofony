@@ -22,8 +22,12 @@
             "App\\Validator\\": "recipes/monofony-core/src/Validator/"
         },
         "classmap": [
+            "recipes/monofony-core/src/DependencyInjection/Builder/CoreContainerBuilder.php",
+            "recipes/monofony-backend/src/DependencyInjection/Builder/BackendContainerBuilder.php",
+            "recipes/monofony-frontend/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
             "recipes/monofony-core/src/DependencyInjection/Compiler/ChangeCustomerContextVisibilityPass.php",
             "recipes/monofony-core/src/DependencyInjection/Compiler/RegisterPasswordListenerForResourcesPass.php",
+            "recipes/monofony-backend/src/DependencyInjection/Compiler/ConfigureDashboardStatisticsProviderPass.php",
             "recipes/monofony-backend/src/Controller/DashboardController.php",
             "recipes/monofony-backend/src/Menu/AdminMenuBuilder.php",
             "recipes/monofony-frontend/src/Menu/AccountMenuBuilder.php"
