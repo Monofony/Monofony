@@ -2,5 +2,11 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
+code=0
+
 print_header "Validating (Twig templates)" "AppName"
-run_command "bin/console lint:twig templates"
+run_command "bin/console lint:twig recipes/monofony-core/templates" || code=$?
+run_command "bin/console lint:twig recipes/monofony-backend/templates" || code=$?
+run_command "bin/console lint:twig recipes/monofony-frontend/templates" || code=$?
+
+exit ${code}
