@@ -12,6 +12,11 @@ services:
         resource: '../../recipes/monofony-core/src/*'
         exclude: '../../recipes/monofony-core/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
 
+    # Data collectors
+    App\Collector\AppCollector:
+        tags:
+            - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
+
     # Listeners
     App\EventListener\CanonicalizerListener:
         tags:
