@@ -1,7 +1,7 @@
 api_platform:
     version: !php/const App\Kernel::VERSION
     mapping:
-        paths: ['%kernel.project_dir%/recipes/monofony-core/src/Entity']
+        paths: ['%kernel.project_dir%/src/monofony-core/src/Entity']
     patch_formats:
         json: ['application/merge-patch+json']
     swagger:
