@@ -1,5 +1,5 @@
 services:
     App\Tests\Behat\Context\Cli\:
-        resource: '../../../tests/Behat/Context/Cli/*'
+        resource: '../../../recipes/monofony-core/tests/Behat/Context/Cli/*'
         autowire: true
         public: true
