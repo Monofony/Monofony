@@ -7,6 +7,10 @@ services:
             $cacheDir: '%kernel.cache_dir%'
             $environment: '%kernel.environment%'
 
+    _instanceof:
+        Doctrine\Common\EventSubscriber:
+            tags: [doctrine.event_subscriber]
+
     app_core:
         namespace: App\
         resource: '../../recipes/monofony-core/src/*'
