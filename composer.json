@@ -12,6 +12,7 @@
             "App\\Dashboard\\": "recipes/monofony-backend/src/Dashboard/",
             "App\\Entity\\": "recipes/monofony-core/src/Entity/",
             "App\\EventListener\\": "recipes/monofony-core/src/EventListener/",
+            "App\\EventSubscriber\\": "recipes/monofony-core/src/EventSubscriber/",
             "App\\Fixture\\": "recipes/monofony-fixtures/src/Fixture/",
             "App\\Form\\": "recipes/monofony-core/src/Form/",
             "App\\Formatter\\": "recipes/monofony-core/src/Formatter/",
