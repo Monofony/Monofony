@@ -1,5 +1,5 @@
 services:
     App\Tests\Behat\Context\Hook\:
-        resource: '../../../src/monofony-core/tests/Behat/Context/Hook/*'
+        resource: '../../../src/monofony-core/recipe/tests/Behat/Context/Hook/*'
         autowire: true
         public: true
