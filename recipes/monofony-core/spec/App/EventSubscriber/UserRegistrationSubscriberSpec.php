@@ -11,19 +11,22 @@
 
 declare(strict_types=1);
 
-namespace spec\App\EventListener;
+namespace spec\App\EventSubscriber;
 
 use App\Entity\Customer\CustomerInterface;
+use Doctrine\Common\EventSubscriber;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\Events;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Bundle\UserBundle\UserEvents;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 
-final class UserRegistrationListenerSpec extends ObjectBehavior
+final class UserRegistrationSubscriberSpec extends ObjectBehavior
 {
     function let(
         ObjectManager $userManager,
@@ -35,6 +38,18 @@ final class UserRegistrationListenerSpec extends ObjectBehavior
             $tokenGenerator,
             $eventDispatcher
         );
+    }
+
+    function it_is_a_subscriber(): void
+    {
+        $this->shouldImplement(EventSubscriberInterface::class);
+    }
+
+    function it_subscribes_to_events(): void
+    {
+        $this::getSubscribedEvents()->shouldReturn([
+            'sylius.customer.post_register' => 'handleUserVerification',
+        ]);
     }
 
     function it_sends_an_user_verification_email(
