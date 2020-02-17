@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace App\EventListener;
+namespace App\EventSubscriber;
 
 use App\Entity\Customer\CustomerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -19,31 +19,21 @@ use Sylius\Bundle\UserBundle\UserEvents;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\EventDispatcher\GenericEvent;
 use Webmozart\Assert\Assert;
 
-final class UserRegistrationListener
+final class UserRegistrationSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var ObjectManager
-     */
+    /** @var ObjectManager */
     private $userManager;
 
-    /**
-     * @var GeneratorInterface
-     */
+    /** @var GeneratorInterface */
     private $tokenGenerator;
 
-    /**
-     * @var EventDispatcherInterface
-     */
+    /** @var EventDispatcherInterface */
     private $eventDispatcher;
 
-    /**
-     * @param ObjectManager            $userManager
-     * @param GeneratorInterface       $tokenGenerator
-     * @param EventDispatcherInterface $eventDispatcher
-     */
     public function __construct(
         ObjectManager $userManager,
         GeneratorInterface $tokenGenerator,
@@ -55,8 +45,15 @@ final class UserRegistrationListener
     }
 
     /**
-     * @param GenericEvent $event
+     * {@inheritdoc}
      */
+    public static function getSubscribedEvents(): array
+    {
+        return [
+            'sylius.customer.post_register' => 'handleUserVerification',
+        ];
+    }
+
     public function handleUserVerification(GenericEvent $event): void
     {
         $customer = $event->getSubject();
@@ -68,9 +65,6 @@ final class UserRegistrationListener
         $this->sendVerificationEmail($user);
     }
 
-    /**
-     * @param UserInterface $user
-     */
     private function sendVerificationEmail(UserInterface $user): void
     {
         $token = $this->tokenGenerator->generate();
