@@ -4,6 +4,6 @@ services:
         autowire: true
 
     App\Tests\Behat\Context\Transform\:
-        resource: '../../../src/monofony-core/recipe/tests/Behat/Context/Transform/*'
+        resource: '../../../src/CorePack/recipe/tests/Behat/Context/Transform/*'
         autowire: true
         public: true

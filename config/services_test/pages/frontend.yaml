@@ -1,5 +1,5 @@
 services:
     App\Tests\Behat\Page\Frontend\:
-        resource: '../../../src/monofony-frontend/recipe/tests/Behat/Page/Frontend/*'
+        resource: '../../../src/FrontPack/recipe/tests/Behat/Page/Frontend/*'
         parent: app.behat.symfony_page
         public: false
