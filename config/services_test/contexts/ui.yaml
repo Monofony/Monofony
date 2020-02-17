@@ -4,16 +4,16 @@ services:
         autowire: true
 
     App\Tests\Behat\Context\Ui\:
-        resource: '../../../recipes/monofony-core/tests/Behat/Context/Ui/*'
+        resource: '../../../src/monofony-core/tests/Behat/Context/Ui/*'
         autowire: true
         public: true
 
     App\Tests\Behat\Context\Ui\Backend\:
-        resource: '../../../recipes/monofony-backend/tests/Behat/Context/Ui/Backend/*'
+        resource: '../../../src/monofony-backend/tests/Behat/Context/Ui/Backend/*'
         autowire: true
         public: true
 
     App\Tests\Behat\Context\Ui\Frontend\:
-        resource: '../../../recipes/monofony-frontend/tests/Behat/Context/Ui/Frontend/*'
+        resource: '../../../src/monofony-frontend/tests/Behat/Context/Ui/Frontend/*'
         autowire: true
         public: true
