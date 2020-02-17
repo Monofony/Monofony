@@ -1,7 +1,7 @@
 imports:
     - config/suites.yaml
-    - src/monofony-backend/recipe/config/suites.yaml
-    - src/monofony-frontend/recipe/config/suites.yaml
+    - src/AdminPack/recipe/config/suites.yaml
+    - src/FrontPack/recipe/config/suites.yaml
 
 default:
     formatters:
@@ -45,9 +45,9 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
-                - "src/monofony-core/recipe/features"
-                - "src/monofony-backend/recipe/features"
-                - "src/monofony-frontend/recipe/features"
+                - "src/CorePack/recipe/features"
+                - "src/AdminPack/recipe/features"
+                - "src/FrontPack/recipe/features"
                 - "features"
 
     gherkin:

@@ -1,6 +1,6 @@
 framework:
     default_locale: '%locale%'
     translator:
-        default_path: '%kernel.project_dir%/src/monofony-core/recipe/translations'
+        default_path: '%kernel.project_dir%/src/CorePack/recipe/translations'
         fallbacks:
             - '%locale%'
