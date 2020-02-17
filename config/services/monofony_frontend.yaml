@@ -2,22 +2,8 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
-        bind:
-            $publicDir: '%kernel.project_dir%/public'
-            $cacheDir: '%kernel.cache_dir%'
-            $environment: '%kernel.environment%'
 
     app_frontend:
         namespace: App\
         resource: '../../recipes/monofony-frontend/src/*'
         exclude: '../../recipes/monofony-frontend/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
-
-    # Menus
-    App\Menu\AccountMenuBuilder:
-        tags:
-            - { name: knp_menu.menu_builder, method: createMenu, alias: app.account } # The alias is what is used to retrieve the menu
-
-    # Dashboard
-    App\Dashboard\DashboardStatisticsProvider:
-        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
-

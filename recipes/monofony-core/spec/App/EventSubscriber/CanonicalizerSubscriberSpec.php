@@ -2,20 +2,35 @@
 
 declare(strict_types=1);
 
-namespace spec\App\EventListener;
+namespace spec\App\EventSubscriber;
 
+use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Events;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
 use Sylius\Component\User\Model\UserInterface;
 
-class CanonicalizerListenerSpec extends ObjectBehavior
+class CanonicalizerSubscriberSpec extends ObjectBehavior
 {
     function let(CanonicalizerInterface $canonicalizer): void
     {
         $this->beConstructedWith($canonicalizer);
+    }
+
+    function it_is_a_subscriber(): void
+    {
+        $this->shouldImplement(EventSubscriber::class);
+    }
+
+    function it_subscribes_to_events(): void
+    {
+        $this->getSubscribedEvents()->shouldReturn([
+            Events::prePersist,
+            Events::preUpdate,
+        ]);
     }
 
     function it_canonicalize_user_username($canonicalizer, LifecycleEventArgs $event, UserInterface $user): void
