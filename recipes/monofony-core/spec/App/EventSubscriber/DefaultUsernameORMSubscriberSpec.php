@@ -2,19 +2,33 @@
 
 declare(strict_types=1);
 
-namespace spec\App\EventListener;
+namespace spec\App\EventSubscriber;
 
 use App\Entity\Customer\CustomerInterface;
+use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\OnFlushEventArgs;
+use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Component\User\Model\UserInterface;
 
-final class DefaultUsernameORMListenerSpec extends ObjectBehavior
+final class DefaultUsernameORMSubscriberSpec extends ObjectBehavior
 {
+    function it_is_a_subscriber(): void
+    {
+        $this->shouldImplement(EventSubscriber::class);
+    }
+
+    function it_subscribes_to_events(): void
+    {
+        $this->getSubscribedEvents()->shouldReturn([
+            Events::onFlush,
+        ]);
+    }
+
     function it_sets_usernames_on_customer_create(
         OnFlushEventArgs $onFlushEventArgs,
         EntityManager $entityManager,
