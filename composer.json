@@ -41,7 +41,8 @@
             "App\\Tests\\Behat\\Context\\Cli\\": "recipes/monofony-core/tests/Behat/Context/Cli/",
             "App\\Tests\\Behat\\Context\\Hook\\": "recipes/monofony-core/tests/Behat/Context/Hook/",
             "App\\Tests\\Behat\\Context\\Setup\\": "recipes/monofony-core/tests/Behat/Context/Setup/",
-            "App\\Tests\\Behat\\Context\\Transform\\": "recipes/monofony-core/tests/Behat/Context/Transform/"
+            "App\\Tests\\Behat\\Context\\Transform\\": "recipes/monofony-core/tests/Behat/Context/Transform/",
+            "App\\Tests\\Behat\\Service\\": "recipes/monofony-core/tests/Behat/Service/"
         }
     },
     "require": {
