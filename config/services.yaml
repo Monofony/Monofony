@@ -1,5 +1,5 @@
 imports:
-    - { resource: ../src/monofony-core/recipe/config/services.yaml }
+    - { resource: ../src/CorePack/recipe/config/services.yaml }
     - { resource: services/monofony_core.yaml }
     - { resource: services/monofony_backend.yaml }
     - { resource: services/monofony_frontend.yaml }

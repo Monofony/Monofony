@@ -13,8 +13,8 @@ services:
 
     app_core:
         namespace: App\
-        resource: '../../src/monofony-core/recipe/src/*'
-        exclude: '../../src/monofony-core/recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+        resource: '../../src/CorePack/recipe/src/*'
+        exclude: '../../src/CorePack/recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
 
     # Data collectors
     App\Collector\AppCollector:

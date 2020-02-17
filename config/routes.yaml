@@ -1,8 +1,8 @@
 app_backend:
-    resource: "../src/monofony-backend/recipe/config/routes/backend.yaml"
+    resource: "../src/AdminPack/recipe/config/routes/backend.yaml"
 
 app_frontend:
-    resource: "../src/monofony-frontend/recipe/config/routes/frontend.yaml"
+    resource: "../src/FrontPack/recipe/config/routes/frontend.yaml"
 
 app_api:
     resource: "routes/api.yaml"
