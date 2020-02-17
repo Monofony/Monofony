@@ -1,5 +1,6 @@
 imports:
     - config/suites.yaml
+    - recipes/monofony-backend/config/suites.yaml
 
 default:
     formatters:
