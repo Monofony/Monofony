@@ -8,6 +8,6 @@ services:
             $minkParameters: '@behat.mink.parameters'
 
     App\Tests\Behat\Element\:
-        resource: '../../recipes/monofony-backend/tests/Behat/Element/*'
+        resource: '../../src/monofony-backend/tests/Behat/Element/*'
         parent: app.behat.element
         public: false
