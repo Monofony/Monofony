@@ -20,7 +20,3 @@ services:
     App\Collector\AppCollector:
         tags:
             - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
-
-    App\EventListener\UserRegistrationListener:
-        tags:
-            - { name: kernel.event_listener, event: sylius.customer.post_register, method: handleUserVerification }
