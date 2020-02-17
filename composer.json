@@ -37,11 +37,19 @@
     "autoload-dev": {
         "psr-4": {
             "App\\Tests\\": "tests/",
+            "App\\Tests\\Behat\\": "recipes/monofony-core/tests/Behat/",
             "App\\Tests\\Behat\\Behaviour\\": "recipes/monofony-core/tests/Behat/Behaviour/",
             "App\\Tests\\Behat\\Context\\Cli\\": "recipes/monofony-core/tests/Behat/Context/Cli/",
             "App\\Tests\\Behat\\Context\\Hook\\": "recipes/monofony-core/tests/Behat/Context/Hook/",
             "App\\Tests\\Behat\\Context\\Setup\\": "recipes/monofony-core/tests/Behat/Context/Setup/",
             "App\\Tests\\Behat\\Context\\Transform\\": "recipes/monofony-core/tests/Behat/Context/Transform/",
+            "App\\Tests\\Behat\\Context\\Ui\\": "recipes/monofony-core/tests/Behat/Context/Ui/",
+            "App\\Tests\\Behat\\Context\\Ui\\Backend\\": "recipes/monofony-backend/tests/Behat/Context/Ui/Backend/",
+            "App\\Tests\\Behat\\Context\\Ui\\Frontend\\": "recipes/monofony-frontend/tests/Behat/Context/Ui/Frontend/",
+            "App\\Tests\\Behat\\Element\\Backend\\": "recipes/monofony-backend/tests/Behat/Element/Backend/",
+            "App\\Tests\\Behat\\Exception\\": "recipes/monofony-core/tests/Behat/Exception/",
+            "App\\Tests\\Behat\\Page\\Backend\\": "recipes/monofony-backend/tests/Behat/Page/Backend/",
+            "App\\Tests\\Behat\\Page\\Frontend\\": "recipes/monofony-frontend/tests/Behat/Page/Frontend/",
             "App\\Tests\\Behat\\Service\\": "recipes/monofony-core/tests/Behat/Service/"
         }
     },
