@@ -6,10 +6,10 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="src/monofony-core/recipe/src" />
-        <directory name="src/monofony-backend/recipe/src" />
-        <directory name="src/monofony-frontend/recipe/src" />
-        <directory name="src/monofony-fixtures/recipe/src" />
+        <directory name="src/CorePack/recipe/src" />
+        <directory name="src/AdminPack/recipe/src" />
+        <directory name="src/FrontPack/recipe/src" />
+        <directory name="src/FixturesPack/recipe/src" />
         <ignoreFiles>
             <directory name="vendor" />
         </ignoreFiles>
