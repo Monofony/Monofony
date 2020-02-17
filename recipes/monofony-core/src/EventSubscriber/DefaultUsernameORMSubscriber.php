@@ -9,10 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace App\EventListener;
+namespace App\EventSubscriber;
 
+use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Event\OnFlushEventArgs;
+use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
 use App\Entity\Customer\CustomerInterface;
@@ -21,8 +23,18 @@ use Sylius\Component\User\Model\UserInterface;
 /**
  * Keeps user's username synchronized with email.
  */
-final class DefaultUsernameORMListener
+final class DefaultUsernameORMSubscriber implements EventSubscriber
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function getSubscribedEvents(): array
+    {
+        return [
+            Events::onFlush,
+        ];
+    }
+
     /**
      * @param OnFlushEventArgs $onFlushEventArgs
      */
