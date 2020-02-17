@@ -9,31 +9,36 @@
  * file that was distributed with this source code.
  */
 
-namespace App\EventListener;
+namespace App\EventSubscriber;
 
+use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Events;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
 use Sylius\Component\User\Model\UserInterface;
 
-final class CanonicalizerListener
+final class CanonicalizerSubscriber implements EventSubscriber
 {
-    /**
-     * @var CanonicalizerInterface
-     */
+    /** @var CanonicalizerInterface */
     private $canonicalizer;
 
-    /**
-     * @param CanonicalizerInterface $canonicalizer
-     */
     public function __construct(CanonicalizerInterface $canonicalizer)
     {
         $this->canonicalizer = $canonicalizer;
     }
 
     /**
-     * @param LifecycleEventArgs $event
+     * {@inheritdoc}
      */
+    public function getSubscribedEvents(): array
+    {
+        return [
+            Events::prePersist,
+            Events::preUpdate,
+        ];
+    }
+
     public function canonicalize(LifecycleEventArgs $event): void
     {
         $item = $event->getEntity();
@@ -46,17 +51,11 @@ final class CanonicalizerListener
         }
     }
 
-    /**
-     * @param LifecycleEventArgs $event
-     */
     public function prePersist(LifecycleEventArgs $event): void
     {
         $this->canonicalize($event);
     }
 
-    /**
-     * @param LifecycleEventArgs $event
-     */
     public function preUpdate(LifecycleEventArgs $event): void
     {
         $this->canonicalize($event);

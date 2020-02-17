@@ -17,12 +17,6 @@ services:
         tags:
             - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
 
-    # Listeners
-    App\EventListener\CanonicalizerListener:
-        tags:
-            - { name: doctrine.event_listener, event: prePersist }
-            - { name: doctrine.event_listener, event: preUpdate }
-
     App\EventListener\DefaultUsernameORMListener:
         tags:
             - { name: doctrine.event_listener, event: onFlush }
