@@ -13,6 +13,10 @@ services:
             $cacheDir: '%kernel.cache_dir%'
             $environment: '%kernel.environment%'
 
+    _instanceof:
+        Doctrine\Common\EventSubscriber:
+            tags: [doctrine.event_subscriber]
+
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
