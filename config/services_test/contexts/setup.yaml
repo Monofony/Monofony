@@ -13,7 +13,7 @@ services:
         autowire: true
 
     App\Tests\Behat\Context\Setup\:
-        resource: '../../../src/monofony-core/tests/Behat/Context/Setup/*'
+        resource: '../../../src/monofony-core/recipe/tests/Behat/Context/Setup/*'
         autowire: true
         public: true
 
