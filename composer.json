@@ -23,6 +23,7 @@
             "App\\Validator\\": "src/CorePack/recipe/src/Validator/"
         },
         "classmap": [
+            "src/CorePack/recipe/src/Kernel.php",
             "src/CorePack/recipe/src/DependencyInjection/Builder/CoreContainerBuilder.php",
             "src/AdminPack/recipe/src/DependencyInjection/Builder/BackendContainerBuilder.php",
             "src/FrontPack/recipe/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
