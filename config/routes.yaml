@@ -5,7 +5,7 @@ app_frontend:
     resource: "../src/FrontPack/recipe/config/routes/frontend.yaml"
 
 app_api:
-    resource: "routes/api.yaml"
+    resource: "../src/ApiPack/recipe/config/routes/api.yaml"
     prefix: /api
     defaults:
         _format: json

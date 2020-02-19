@@ -21,7 +21,7 @@ class RefreshTokenApiTest extends JsonApiTestCase
      */
     public function it_allows_to_refresh_an_access_token()
     {
-        $this->loadFixturesFromFile('authentication/api_user.yml');
+        $this->loadFixturesFromFile('resources/fixtures.yaml');
 
         $data =
             <<<EOT
