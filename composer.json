@@ -51,7 +51,8 @@
             "App\\Tests\\Behat\\Exception\\": "src/CorePack/recipe/tests/Behat/Exception/",
             "App\\Tests\\Behat\\Page\\Backend\\": "src/AdminPack/recipe/tests/Behat/Page/Backend/",
             "App\\Tests\\Behat\\Page\\Frontend\\": "src/FrontPack/recipe/tests/Behat/Page/Frontend/",
-            "App\\Tests\\Behat\\Service\\": "src/CorePack/recipe/tests/Behat/Service/"
+            "App\\Tests\\Behat\\Service\\": "src/CorePack/recipe/tests/Behat/Service/",
+            "App\\Tests\\Controller\\": "src/ApiPack/recipe/tests/Controller/"
         }
     },
     "require": {
