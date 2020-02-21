@@ -1,0 +1,7 @@
+{
+    "name": "monofony/fixtures-pack",
+    "require": {
+        "php": "^7.1",
+        "symfony/http-kernel": "^4.1"
+    }
+}
