@@ -1,12 +1,17 @@
-import '../../common/js/app';
+import 'babel-polyfill';
+import './shim-semantic-ui';
 
 import 'semantic-ui-calendar/dist/calendar';
+
+import 'sylius/ui/js/app';
+import 'sylius/ui/js/sylius-auto-complete';
 
 import './app-date-time-picker';
 import './app-images-preview';
 import './sylius-compound-form-errors';
 
 import '../scss/main.scss';
+import "sylius/ui/sass/main";
 
 $(document).ready(function () {
     $(document).previewUploadedImage('#sylius_admin_user_avatar');
