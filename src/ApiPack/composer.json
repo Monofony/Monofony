@@ -1,7 +1,17 @@
 {
     "name": "monofony/api-pack",
+    "type": "library",
+    "description": "Monofony api pack.",
     "require": {
         "php": "^7.1",
-        "symfony/http-kernel": "^4.1"
+        "api-platform/api-pack": "^1.2",
+        "monofony/core-pack": "^0.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
     }
 }
