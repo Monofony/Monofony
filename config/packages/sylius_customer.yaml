@@ -1,9 +1,2 @@
 imports:
-    - { resource: "@SyliusCustomerBundle/Resources/config/app/config.yml" }
-
-sylius_customer:
-    resources:
-        customer:
-            classes:
-                model: App\Entity\Customer\Customer
-                repository: App\Repository\CustomerRepository
+    - { resource: "../../src/CorePack/recipe/config/packages/sylius_customer.yaml" }
