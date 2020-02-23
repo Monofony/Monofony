@@ -1,0 +1,39 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_fixtures:
+    suites:
+        default:
+            listeners:
+                orm_purger: ~
+                logger: ~
+
+            fixtures:
+                admin_user:
+                    name: "admin_user"
+                    options:
+                        custom:
+                            -
+                                email: "admin@example.com"
+                                password: "admin"
+                                enabled: true
+                                first_name: "John"
+                                last_name: "Doe"
+
+                app_user:
+                   options:
+                       custom:
+                           -
+                               email: "customer@example.com"
+                               password: "password"
+                               first_name: "Harry"
+                               last_name: "Cover"
+                               enabled: true
+                       random: 10
+
+                api_client:
+                    options:
+                        custom:
+                            client:
+                                random_id: 5rbhrb0iiukokcwk8gow0w4ocgww0oco8g8gsgokwc0wcssg4w
+                                secret: 2rlxzhijcx448ow4c0gksw4wo8oo4k8kkwwg0osskk8g0k8kw8
