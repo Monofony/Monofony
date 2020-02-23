@@ -2,6 +2,7 @@
     "name": "monofony/api-pack",
     "type": "library",
     "description": "Monofony api pack.",
+    "license": "MIT",
     "require": {
         "php": "^7.1",
         "api-platform/api-pack": "^1.2",

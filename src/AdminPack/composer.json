@@ -2,6 +2,7 @@
     "name": "monofony/admin-pack",
     "type": "library",
     "description": "Monofony admin pack.",
+    "license": "MIT",
     "require": {
         "php": "^7.1",
         "monofony/core-pack": "^0.1"
