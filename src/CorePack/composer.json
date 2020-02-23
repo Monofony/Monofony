@@ -2,6 +2,7 @@
     "name": "monofony/core-pack",
     "type": "library",
     "description": "Monofony core package.",
+    "license": "MIT",
     "require": {
         "php": "^7.1",
         "doctrine/doctrine-bundle": "^1.6",
