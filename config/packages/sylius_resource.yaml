@@ -1,2 +1,2 @@
-imports:
-    - { resource: "../../src/CorePack/recipe/config/packages/sylius_resource.yaml" }
+sylius_resource:
+    resources: ~
