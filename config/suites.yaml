@@ -1,2 +1,10 @@
 imports:
-    - suites/cli/installer.yaml
+    - ../src/CorePack/recipe/config/suites/cli/installer.yaml
+
+    - ../src/AdminPack/recipe/config/suites/ui/admin/dashboard.yaml
+    - ../src/AdminPack/recipe/config/suites/ui/customer/managing_customers.yaml
+    - ../src/AdminPack/recipe/config/suites/ui/user/managing_administrators.yaml
+
+    - ../src/FrontPack/recipe/config/suites/ui/account/customer.yaml
+    - ../src/FrontPack/recipe/config/suites/ui/account/login.yaml
+    - ../src/FrontPack/recipe/config/suites/ui/account/registration.yaml
