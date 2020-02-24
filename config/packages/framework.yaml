@@ -1,11 +1,7 @@
-parameters:
-    locale: fr_FR
-    secret: '%env(resolve:APP_SECRET)%'
-
 framework:
     #esi:             ~
     translator:      { fallbacks: ["%locale%"] }
-    secret:          "%secret%"
+    secret:          '%env(APP_SECRET)%'
     form:            ~
     csrf_protection: ~
     validation:      { enable_annotations: true }
