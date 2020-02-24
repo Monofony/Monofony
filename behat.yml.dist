@@ -1,7 +1,5 @@
 imports:
     - config/suites.yaml
-    - src/AdminPack/recipe/config/suites.yaml
-    - src/FrontPack/recipe/config/suites.yaml
 
 default:
     formatters:
