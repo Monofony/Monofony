@@ -20,31 +20,20 @@ use Webmozart\Assert\Assert;
 
 class IndexPage extends SymfonyPage implements IndexPageInterface
 {
-    /**
-     * @var TableAccessorInterface
-     */
+    /** @var TableAccessorInterface */
     private $tableAccessor;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $routeName;
 
-    /**
-     * @param Session                $session
-     * @param \ArrayAccess           $parameters
-     * @param RouterInterface        $router
-     * @param TableAccessorInterface $tableAccessor
-     * @param string                 $routeName
-     */
     public function __construct(
         Session $session,
-        \ArrayAccess $parameters,
+        \ArrayAccess $minkParameters,
         RouterInterface $router,
         TableAccessorInterface $tableAccessor,
         $routeName
     ) {
-        parent::__construct($session, $parameters, $router);
+        parent::__construct($session, $minkParameters, $router);
 
         $this->tableAccessor = $tableAccessor;
         $this->routeName = $routeName;
