@@ -1,5 +1,0 @@
-services:
-    App\Tests\Behat\Context\Cli\:
-        resource: '../../../src/CorePack/recipe/tests/Behat/Context/Cli/*'
-        autowire: true
-        public: true

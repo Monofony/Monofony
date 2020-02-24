@@ -1,5 +1,0 @@
-services:
-    App\Tests\Behat\Page\Backend\DashboardPage:
-        parent: app.behat.symfony_page
-        public: false
-        autowire: true
