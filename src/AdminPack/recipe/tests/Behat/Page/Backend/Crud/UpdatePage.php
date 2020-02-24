@@ -19,20 +19,12 @@ use Symfony\Component\Routing\RouterInterface;
 
 class UpdatePage extends SymfonyPage implements UpdatePageInterface
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $routeName;
 
-    /**
-     * @param Session         $session
-     * @param \ArrayAccess    $parameters
-     * @param RouterInterface $router
-     * @param string          $routeName
-     */
-    public function __construct(Session $session, \ArrayAccess $parameters, RouterInterface $router, $routeName)
+    public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router, $routeName)
     {
-        parent::__construct($session, $parameters, $router);
+        parent::__construct($session, $minkParameters, $router);
 
         $this->routeName = $routeName;
     }
