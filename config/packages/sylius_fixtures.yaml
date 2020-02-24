@@ -1,0 +1,2 @@
+imports:
+    - { resource: "../../src/FixturesPack/recipe/config/packages/sylius_fixtures.yaml" }
