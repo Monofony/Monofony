@@ -4,7 +4,7 @@ sylius_grid:
             driver:
                 name: doctrine/orm
                 options:
-                    class: "%sylius.model.customer.class%"
+                    class: App\Entity\Customer\Customer
             sorting:
                 createdAt: desc
             fields:
