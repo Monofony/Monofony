@@ -1,3 +1,9 @@
+parameters:
+    locale: fr_FR
+    email_contact: contact@app_name.com
+    email_name: Contact AppName
+    email_sender: no-reply@app_name.com
+
 services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services
@@ -20,3 +26,9 @@ services:
     App\Collector\AppCollector:
         tags:
             - { name: data_collector, template: 'data_collector/app.html.twig', id: app, priority: -513 }
+
+    App\Entity\OAuth\ClientManager:
+        $class: '%fos_oauth_server.model.client.class%'
+
+    Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
+    Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'
