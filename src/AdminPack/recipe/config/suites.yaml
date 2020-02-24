@@ -1,4 +1,0 @@
-imports:
-    - suites/ui/admin/dashboard.yaml
-    - suites/ui/customer/managing_customers.yaml
-    - suites/ui/user/managing_administrators.yaml
