@@ -4,7 +4,7 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.li
 
 code=0
 
-print_header "Validating (Twig templates)" "AppName"
+print_header "Validating (Twig templates)" "Monofony"
 run_command "bin/console lint:twig src/CorePack/recipe/templates" || code=$?
 run_command "bin/console lint:twig src/AdminPack/recipe/templates" || code=$?
 run_command "bin/console lint:twig src/FrontPack/recipe/templates" || code=$?

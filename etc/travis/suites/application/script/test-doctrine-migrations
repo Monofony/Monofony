@@ -4,7 +4,7 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.li
 
 code=0
 
-print_header "Testing (Doctrine Migrations)" "AppName"
+print_header "Testing (Doctrine Migrations)" "Monofony"
 run_command "bin/console doctrine:migrations:migrate first --no-interaction" || code=$?
 run_command "bin/console doctrine:migrations:migrate latest --no-interaction" || code=$?
 

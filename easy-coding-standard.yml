@@ -1,0 +1,7 @@
+services:
+    PhpCsFixer\Fixer\Comment\HeaderCommentFixer:
+        header: ''
+        location: 'after_open'
+
+parameters:
+    exclude_files: ~
