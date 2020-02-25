@@ -1,6 +1,6 @@
 <?php
 
-
+declare(strict_types=1);
 
 namespace App\Tests\Behat\Service;
 
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 
-final class SecurityService implements SecurityServiceInterface
+abstract class AbstractSecurityService implements SecurityServiceInterface
 {
     /**
      * @var SessionInterface

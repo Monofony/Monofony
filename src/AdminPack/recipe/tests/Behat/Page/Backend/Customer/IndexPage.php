@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Page\Backend\Customer;
 
-use App\Tests\Behat\Page\Backend\Crud\IndexPage as BaseIndexPage;
+use App\Tests\Behat\Page\Backend\Crud\AbstractIndexPage;
 use App\Entity\Customer\CustomerInterface;
 
-class IndexPage extends BaseIndexPage
+class IndexPage extends AbstractIndexPage
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function getRouteName(): string
+    {
+        return 'sylius_backend_customer_index';
+    }
+
     /**
      * {@inheritdoc}
      */
