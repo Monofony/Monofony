@@ -2,5 +2,5 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
-print_header "Testing (Phpunit)" "AppName"
+print_header "Testing (Phpunit)" "Monofony"
 run_command "vendor/bin/phpunit"

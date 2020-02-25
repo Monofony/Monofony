@@ -1,5 +1,5 @@
 {
-    "name": "monofony/symfony_starter",
+    "name": "monofony/monofony",
     "description": "Starter project for Symfony projects",
     "license": "MIT",
     "type": "project",
@@ -114,18 +114,25 @@
         "se/selenium-server-standalone": " ^2.52",
         "symfony/debug-bundle": "4.4.*",
         "symfony/web-profiler-bundle": "4.4.*",
-        "symplify/monorepo-builder": "^7.2",
+        "symplify/easy-coding-standard": "^6.0||^7.0",
+        "symplify/monorepo-builder": "^7.0",
         "vimeo/psalm": "^3.4"
     },
     "conflict": {
-        "symfony/symfony": "*"
+        "symfony/symfony": "*",
+        "symplify/package-builder": "^7.2",
+        "symplify/smart-file-system": "^7.2",
+        "symplify/monorepo-builder": "^7.2"
     },
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
             "security-checker security:check": "script"
-        }
+        },
+        "fix": [
+            "@php vendor/bin/ecs check src --fix"
+        ]
     },
     "config": {
         "sort-packages": true
