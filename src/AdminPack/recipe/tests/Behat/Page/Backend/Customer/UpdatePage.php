@@ -5,12 +5,20 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Page\Backend\Customer;
 
 use App\Tests\Behat\Behaviour\Toggles;
-use App\Tests\Behat\Page\Backend\Crud\UpdatePage as BaseUpdatePage;
+use App\Tests\Behat\Page\Backend\Crud\AbstractUpdatePage;
 use Behat\Mink\Element\NodeElement;
 
-class UpdatePage extends BaseUpdatePage
+class UpdatePage extends AbstractUpdatePage
 {
     use Toggles;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRouteName(): string
+    {
+        return 'sylius_backend_customer_update';
+    }
 
     public function getFullName(): string
     {

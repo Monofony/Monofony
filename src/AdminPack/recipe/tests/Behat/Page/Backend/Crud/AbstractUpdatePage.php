@@ -4,31 +4,26 @@
 
 namespace App\Tests\Behat\Page\Backend\Crud;
 
+use Behat\Mink\Element\NodeElement;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
+use App\Formatter\StringInflector;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use Symfony\Component\Routing\RouterInterface;
 
-class CreatePage extends SymfonyPage
+abstract class AbstractUpdatePage extends SymfonyPage implements UpdatePageInterface
 {
-    /**
-     * @var string
-     */
-    private $routeName;
-
-    public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router, $routeName)
+    public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router)
     {
         parent::__construct($session, $minkParameters, $router);
-
-        $this->routeName = $routeName;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function create(): void
+    public function saveChanges(): void
     {
-        $this->getDocument()->pressButton('Create');
+        $this->getDocument()->pressButton('sylius_save_changes_button');
     }
 
     /**
@@ -52,21 +47,23 @@ class CreatePage extends SymfonyPage
     /**
      * {@inheritdoc}
      */
-    public function getRouteName(): string
+    public function hasResourceValues(array $parameters): bool
     {
-        return $this->routeName;
+        foreach ($parameters as $element => $value) {
+            if ($this->getElement($element)->getValue() !== (string) $value) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
-     * @param string $element
-     *
-     * @return \Behat\Mink\Element\NodeElement|null
-     *
      * @throws ElementNotFoundException
      */
-    private function getFieldElement($element)
+    private function getFieldElement(string $element): ?NodeElement
     {
-        $element = $this->getElement($element);
+        $element = $this->getElement(StringInflector::nameToCode($element));
         while (null !== $element && !$element->hasClass('field')) {
             $element = $element->getParent();
         }

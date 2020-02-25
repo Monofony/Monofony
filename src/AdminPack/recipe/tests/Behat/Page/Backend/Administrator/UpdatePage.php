@@ -5,10 +5,18 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Page\Backend\Administrator;
 
 use App\Tests\Behat\Page\Backend\Crud\UpdatePageInterface;
-use App\Tests\Behat\Page\Backend\Crud\UpdatePage as BaseUpdatePage;
+use App\Tests\Behat\Page\Backend\Crud\AbstractUpdatePage;
 
-class UpdatePage extends BaseUpdatePage implements UpdatePageInterface
+class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function getRouteName(): string
+    {
+        return 'sylius_backend_admin_user_update';
+    }
+
     public function attachAvatar(string $path): void
     {
         $filesPath = $this->getParameter('files_path');

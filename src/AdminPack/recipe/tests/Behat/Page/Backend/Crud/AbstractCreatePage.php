@@ -5,35 +5,29 @@
 namespace App\Tests\Behat\Page\Backend\Crud;
 
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
-use App\Formatter\StringInflector;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use Symfony\Component\Routing\RouterInterface;
 
-class UpdatePage extends SymfonyPage implements UpdatePageInterface
+abstract class AbstractCreatePage extends SymfonyPage
 {
-    /** @var string */
-    private $routeName;
-
-    public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router, $routeName)
+    public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router)
     {
         parent::__construct($session, $minkParameters, $router);
-
-        $this->routeName = $routeName;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function saveChanges()
+    public function create(): void
     {
-        $this->getDocument()->pressButton('sylius_save_changes_button');
+        $this->getDocument()->pressButton('Create');
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getValidationMessage($element)
+    public function getValidationMessage(string $element): string
     {
         $foundElement = $this->getFieldElement($element);
         if (null === $foundElement) {
@@ -49,28 +43,6 @@ class UpdatePage extends SymfonyPage implements UpdatePageInterface
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function hasResourceValues(array $parameters)
-    {
-        foreach ($parameters as $element => $value) {
-            if ($this->getElement($element)->getValue() !== (string) $value) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getRouteName(): string
-    {
-        return $this->routeName;
-    }
-
-    /**
      * @param string $element
      *
      * @return \Behat\Mink\Element\NodeElement|null
@@ -79,7 +51,7 @@ class UpdatePage extends SymfonyPage implements UpdatePageInterface
      */
     private function getFieldElement($element)
     {
-        $element = $this->getElement(StringInflector::nameToCode($element));
+        $element = $this->getElement($element);
         while (null !== $element && !$element->hasClass('field')) {
             $element = $element->getParent();
         }
