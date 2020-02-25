@@ -2,5 +2,5 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
-print_header "Validating (Doctrine schema)" "AppName"
+print_header "Validating (Doctrine schema)" "Monofony"
 run_command "bin/console doctrine:schema:validate -vvv"

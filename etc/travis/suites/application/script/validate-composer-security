@@ -2,5 +2,5 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
-print_header "Validating (Composer package security)" "AppName"
+print_header "Validating (Composer package security)" "Monofony"
 run_command "vendor/bin/security-checker security:check"
