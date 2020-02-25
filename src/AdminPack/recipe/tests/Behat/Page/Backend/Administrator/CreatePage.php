@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Page\Backend\Administrator;
 
-use App\Tests\Behat\Page\Backend\Crud\CreatePage as BaseCreatePage;
+use App\Tests\Behat\Page\Backend\Crud\AbstractCreatePage;
 use App\Tests\Behat\Page\Backend\Crud\CreatePageInterface;
 
-class CreatePage extends BaseCreatePage implements CreatePageInterface
+class CreatePage extends AbstractCreatePage implements CreatePageInterface
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function getRouteName(): string
+    {
+        return 'sylius_backend_admin_user_create';
+    }
+
     public function enable(): void
     {
         $this->getElement('enabled')->check();

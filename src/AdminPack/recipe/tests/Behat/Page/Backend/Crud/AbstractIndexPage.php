@@ -4,6 +4,7 @@
 
 namespace App\Tests\Behat\Page\Backend\Crud;
 
+use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
@@ -11,31 +12,26 @@ use App\Tests\Behat\Service\Accessor\TableAccessorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Webmozart\Assert\Assert;
 
-class IndexPage extends SymfonyPage implements IndexPageInterface
+abstract class AbstractIndexPage extends SymfonyPage implements IndexPageInterface
 {
     /** @var TableAccessorInterface */
     private $tableAccessor;
-
-    /** @var string */
-    private $routeName;
 
     public function __construct(
         Session $session,
         \ArrayAccess $minkParameters,
         RouterInterface $router,
-        TableAccessorInterface $tableAccessor,
-        $routeName
+        TableAccessorInterface $tableAccessor
     ) {
         parent::__construct($session, $minkParameters, $router);
 
         $this->tableAccessor = $tableAccessor;
-        $this->routeName = $routeName;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function isSingleResourceOnPage(array $parameters)
+    public function isSingleResourceOnPage(array $parameters): bool
     {
         try {
             $rows = $this->tableAccessor->getRowsWithFields($this->getElement('table'), $parameters);
@@ -51,7 +47,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    public function getColumnFields($columnName)
+    public function getColumnFields($columnName): array
     {
         return $this->tableAccessor->getIndexedColumn($this->getElement('table'), $columnName);
     }
@@ -59,7 +55,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    public function sortBy($fieldName)
+    public function sortBy($fieldName): void
     {
         $sortableHeaders = $this->tableAccessor->getSortableHeaders($this->getElement('table'));
         Assert::keyExists($sortableHeaders, $fieldName, sprintf('Column "%s" is not sortable.', $fieldName));
@@ -70,7 +66,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    public function isSingleResourceWithSpecificElementOnPage(array $parameters, $element)
+    public function isSingleResourceWithSpecificElementOnPage(array $parameters, $element): bool
     {
         try {
             $rows = $this->tableAccessor->getRowsWithFields($this->getElement('table'), $parameters);
@@ -88,9 +84,9 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     }
 
     /**
-     * @return int
+     * {@inheritdoc}
      */
-    public function countItems()
+    public function countItems(): int
     {
         try {
             return $this->getTableAccessor()->countTableBodyRows($this->getElement('table'));
@@ -102,7 +98,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    public function deleteResourceOnPage(array $parameters)
+    public function deleteResourceOnPage(array $parameters): void
     {
         $tableAccessor = $this->getTableAccessor();
         $table = $this->getElement('table');
@@ -116,7 +112,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     /**
      * {@inheritdoc}
      */
-    public function getActionsForResource(array $parameters)
+    public function getActionsForResource(array $parameters): NodeElement
     {
         $tableAccessor = $this->getTableAccessor();
         $table = $this->getElement('table');
@@ -142,7 +138,7 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
         $bulkCheckbox->check();
     }
 
-    public function filter()
+    public function filter(): void
     {
         $this->getElement('filter')->press();
     }
@@ -151,14 +147,6 @@ class IndexPage extends SymfonyPage implements IndexPageInterface
     {
         $this->getElement('bulk_actions')->pressButton('Delete');
         $this->getElement('confirmation_button')->click();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getRouteName(): string
-    {
-        return $this->routeName;
     }
 
     /**
