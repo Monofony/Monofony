@@ -4,9 +4,8 @@
 
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Tests\Behat\Service\SecurityServiceInterface;
+use App\Tests\Behat\Service\AdminSecurityServiceInterface;
 use App\Tests\Behat\Service\SharedStorageInterface;
-use App\Entity\User;
 use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Sylius\Component\User\Model\UserInterface;
@@ -21,7 +20,7 @@ final class AdminSecurityContext implements Context
     private $sharedStorage;
 
     /**
-     * @var SecurityServiceInterface
+     * @var AdminSecurityServiceInterface
      */
     private $securityService;
 
@@ -35,15 +34,9 @@ final class AdminSecurityContext implements Context
      */
     private $adminUserRepository;
 
-    /**
-     * @param SharedStorageInterface   $sharedStorage
-     * @param SecurityServiceInterface $securityService
-     * @param AdminUserExampleFactory  $userFactory
-     * @param UserRepositoryInterface  $adminUserRepository
-     */
     public function __construct(
         SharedStorageInterface $sharedStorage,
-        SecurityServiceInterface $securityService,
+        AdminSecurityServiceInterface $securityService,
         AdminUserExampleFactory $userFactory,
         UserRepositoryInterface $adminUserRepository
     ) {

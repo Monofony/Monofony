@@ -1,10 +1,8 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Tests\Behat\Service\SecurityServiceInterface;
+use App\Tests\Behat\Service\AppSecurityServiceInterface;
 use App\Tests\Behat\Service\SharedStorageInterface;
 use App\Entity\User\AppUserInterface;
 use App\Fixture\Factory\AdminUserExampleFactory;
@@ -20,7 +18,7 @@ final class AppSecurityContext implements Context
     private $sharedStorage;
 
     /**
-     * @var SecurityServiceInterface
+     * @var AppSecurityServiceInterface
      */
     private $securityService;
 
@@ -34,15 +32,9 @@ final class AppSecurityContext implements Context
      */
     private $appUserRepository;
 
-    /**
-     * @param SharedStorageInterface   $sharedStorage
-     * @param SecurityServiceInterface $securityService
-     * @param AdminUserExampleFactory  $userFactory
-     * @param UserRepositoryInterface  $appUserRepository
-     */
     public function __construct(
         SharedStorageInterface $sharedStorage,
-        SecurityServiceInterface $securityService,
+        AppSecurityServiceInterface $securityService,
         AdminUserExampleFactory $userFactory,
         UserRepositoryInterface $appUserRepository
     ) {
