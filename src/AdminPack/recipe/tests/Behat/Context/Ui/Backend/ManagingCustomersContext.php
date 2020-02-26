@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Ui\Backend;
 
+use App\Tests\Behat\Page\Backend\Customer\ShowPage;
 use Behat\Behat\Context\Context;
 use App\Tests\Behat\Page\Backend\Customer\IndexPage;
 use App\Tests\Behat\Page\Backend\Customer\UpdatePage;
@@ -13,33 +14,27 @@ use Webmozart\Assert\Assert;
 
 final class ManagingCustomersContext implements Context
 {
-    /**
-     * @var IndexPage
-     */
+    /** @var IndexPage */
     private $indexPage;
 
-    /**
-     * @var UpdatePage
-     */
+    /** @var UpdatePage */
     private $updatePage;
 
-    /**
-     * @var CurrentPageResolverInterface
-     */
+    /** @var ShowPage */
+    private $showPage;
+
+    /** @var CurrentPageResolverInterface */
     private $currentPageResolver;
 
-    /**
-     * @param IndexPage                    $indexPage
-     * @param UpdatePage                   $updatePage
-     * @param CurrentPageResolverInterface $currentPageResolver
-     */
     public function __construct(
         IndexPage $indexPage,
         UpdatePage $updatePage,
+        ShowPage $showPage,
         CurrentPageResolverInterface $currentPageResolver
     ) {
         $this->indexPage = $indexPage;
         $this->updatePage = $updatePage;
+        $this->showPage = $showPage;
         $this->currentPageResolver = $currentPageResolver;
     }
 
@@ -122,6 +117,46 @@ final class ManagingCustomersContext implements Context
     public function iShouldSeeCustomersInTheList($amountOfCustomers): void
     {
         Assert::same($this->indexPage->countItems(), (int) $amountOfCustomers);
+    }
+
+    /**
+     * @When I view details of the customer :customer
+     */
+    public function iViewDetailsOfTheCustomer(CustomerInterface $customer)
+    {
+        $this->showPage->open(['id' => $customer->getId()]);
+    }
+
+    /**
+     * @Then his name should be :name
+     */
+    public function hisNameShouldBe($name)
+    {
+        Assert::same($this->showPage->getCustomerName(), $name);
+    }
+
+    /**
+     * @Then he should be registered since :registrationDate
+     */
+    public function hisRegistrationDateShouldBe($registrationDate)
+    {
+        Assert::eq($this->showPage->getRegistrationDate(), new \DateTime($registrationDate));
+    }
+
+    /**
+     * @Then his email should be :email
+     */
+    public function hisEmailShouldBe($email)
+    {
+        Assert::same($this->showPage->getCustomerEmail(), $email);
+    }
+
+    /**
+     * @Then his phone number should be :phoneNumber
+     */
+    public function hisPhoneNumberShouldBe($phoneNumber)
+    {
+        Assert::same($this->showPage->getCustomerPhoneNumber(), $phoneNumber);
     }
 
     /**
