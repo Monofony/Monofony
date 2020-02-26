@@ -17,21 +17,21 @@ Feature: Editing an administrator
         Then I should be notified that it has been successfully edited
         And this administrator with name "Jon Snow" should appear in the store
 
-    @ui @todo
+    @ui
     Scenario: Changing password of an existing administrator and trying sign in with old password
         When I want to edit this administrator
         And I change its password to "example"
         And I save my changes
         Then I should not be able to log in as "ted@example.com" authenticated by "bear" password
 
-    @ui @todo
+    @ui
     Scenario: Changing only a password of an existing administrator and sign in again
         When I want to edit this administrator
         And I change its password to "example"
         And I save my changes
         Then I should be able to log in as "ted@example.com" authenticated by "example" password
 
-    @ui @todo
+    @ui
     Scenario: Changing password and name of an existing administrator and sign in again
         When I want to edit this administrator
         And I change its name to "ted"

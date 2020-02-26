@@ -11,6 +11,7 @@ default:
                 - App\Tests\Behat\Context\Transform\SharedStorageContext
 
                 - App\Tests\Behat\Context\Ui\Backend\ManagingAdministratorsContext
+                - App\Tests\Behat\Context\Ui\Backend\LoginContext
                 - App\Tests\Behat\Context\Ui\Backend\NotificationContext
             filters:
                 tags: "@managing_administrators && @ui"
