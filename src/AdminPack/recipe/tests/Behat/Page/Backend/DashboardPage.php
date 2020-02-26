@@ -40,10 +40,16 @@ class DashboardPage extends SymfonyPage
         return (int) $this->getElement('new_customers')->getText();
     }
 
+    public function logOut(): void
+    {
+        $this->getElement('logout')->click();
+    }
+
     protected function getDefinedElements(): array
     {
         return array_merge(parent::getDefinedElements(), [
             'customer_list' => '#customers',
+            'logout' => '#sylius-logout-button',
             'new_customers' => '#new-customers',
         ]);
     }
