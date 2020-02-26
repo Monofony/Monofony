@@ -9,4 +9,5 @@ app:
         validate: Valider
         view_website: Voir le site
 sylius:
-    ui: ~
+    ui:
+        show: Afficher

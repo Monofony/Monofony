@@ -14,38 +14,21 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 final class CustomerContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
+    /** @var SharedStorageInterface */
     private $sharedStorage;
 
-    /**
-     * @var RepositoryInterface
-     */
+    /** @var RepositoryInterface */
     private $customerRepository;
 
-    /**
-     * @var ObjectManager
-     */
+    /** @var ObjectManager */
     private $customerManager;
 
-    /**
-     * @var FactoryInterface
-     */
+    /** @var FactoryInterface */
     private $customerFactory;
 
-    /**
-     * @var FactoryInterface
-     */
+    /** @var FactoryInterface */
     private $appUserFactory;
 
-    /**
-     * @param SharedStorageInterface $sharedStorage
-     * @param RepositoryInterface    $customerRepository
-     * @param ObjectManager          $customerManager
-     * @param FactoryInterface       $customerFactory
-     * @param FactoryInterface       $appUserFactory
-     */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         RepositoryInterface $customerRepository,
@@ -100,6 +83,21 @@ final class CustomerContext implements Context
     public function thereIsCustomerWithFirstName($email, $firstName): void
     {
         $customer = $this->createCustomer($email, $firstName);
+
+        $this->customerRepository->add($customer);
+    }
+
+    /**
+     * @Given there is a customer :email with name :fullName and phone number :phoneNumber since :since
+     */
+    public function theStoreHasCustomerWithNameAndPhoneNumber(
+        string $email,
+        string $fullName,
+        string $phoneNumber,
+        string $since
+    ): void {
+        $names = explode(' ', $fullName);
+        $customer = $this->createCustomer($email, $names[0], $names[1], new \DateTime($since), $phoneNumber);
 
         $this->customerRepository->add($customer);
     }
