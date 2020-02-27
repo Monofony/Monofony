@@ -1,6 +1,6 @@
+# Clear cache to refresh new grid configuration files
 imports:
-   - { resource: '../../src/AdminPack/recipe/config/grids/backend/admin_user.yaml' }
-   - { resource: '../../src/AdminPack/recipe/config/grids/backend/customer.yaml' }
+   - { resource: '../../src/AdminPack/recipe/config/grids/backend/*' }
 
 sylius_grid:
     templates:
