@@ -320,13 +320,7 @@
     "netresearch/jsonmapper": {
         "version": "v1.4.0"
     },
-    "nette/application": {
-        "version": "v3.0.2"
-    },
     "nette/bootstrap": {
-        "version": "v3.0.0"
-    },
-    "nette/component-model": {
         "version": "v3.0.0"
     },
     "nette/di": {
@@ -334,9 +328,6 @@
     },
     "nette/finder": {
         "version": "v2.5.0"
-    },
-    "nette/http": {
-        "version": "v3.0.3"
     },
     "nette/neon": {
         "version": "v3.0.0"
@@ -346,9 +337,6 @@
     },
     "nette/robot-loader": {
         "version": "v3.2.0"
-    },
-    "nette/routing": {
-        "version": "v3.0.0"
     },
     "nette/schema": {
         "version": "v1.0.0"
@@ -598,6 +586,9 @@
     },
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"
+    },
+    "sylius-labs/polyfill-symfony-event-dispatcher": {
+        "version": "v1.0.0"
     },
     "sylius/customer": {
         "version": "v1.2.1"
