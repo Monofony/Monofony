@@ -1,6 +1,5 @@
 imports:
-   - { resource: '../../src/AdminPack/recipe/config/grids/backend/admin_user.yaml' }
-   - { resource: '../../src/AdminPack/recipe/config/grids/backend/customer.yaml' }
+    - { resource: '../../src/AdminPack/recipe/config/grids/**/*.yaml' }
 
 sylius_grid:
     templates:
