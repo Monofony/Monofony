@@ -20,14 +20,13 @@
             "App\\Installer\\Checker\\": "src/Core/recipe/src/Installer/Checker/",
             "App\\Migrations\\": "src/Core/recipe/src/Migrations/",
             "App\\Repository\\": "src/Core/recipe/src/Repository/",
-            "App\\Validator\\": "src/Core/recipe/src/Validator/"
+            "App\\Validator\\": "src/Core/recipe/src/Validator/",
+            "Monofony\\Bundle\\": "src/Monofony/Bundle/",
+            "Monofony\\Component\\": "src/Monofony/Component/"
         },
         "classmap": [
-            "src/Core/recipe/src/DependencyInjection/Builder/CoreContainerBuilder.php",
             "src/Admin/recipe/src/DependencyInjection/Builder/BackendContainerBuilder.php",
             "src/Front/recipe/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
-            "src/Core/recipe/src/DependencyInjection/Compiler/ChangeCustomerContextVisibilityPass.php",
-            "src/Core/recipe/src/DependencyInjection/Compiler/RegisterPasswordListenerForResourcesPass.php",
             "src/Admin/recipe/src/DependencyInjection/Compiler/ConfigureDashboardStatisticsProviderPass.php",
             "src/Admin/recipe/src/Controller/DashboardController.php",
             "src/Admin/recipe/src/Menu/AdminMenuBuilder.php",

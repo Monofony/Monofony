@@ -4,8 +4,8 @@
 
 namespace App\Fixture\Factory;
 
-use App\Entity\User\AppUserInterface;
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;

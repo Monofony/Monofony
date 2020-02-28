@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace spec\App\Form\EventSubscriber;
 
-use App\Entity\Customer\CustomerInterface;
-use App\Entity\User\AppUserInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

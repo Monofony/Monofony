@@ -78,8 +78,6 @@ class Kernel extends BaseKernel
 
     protected function build(ContainerBuilder $container): void
     {
-        CoreContainerBuilder::build($container);
-
         if (class_exists(BackendContainerBuilder::class)) {
             BackendContainerBuilder::build($container);
         }

@@ -1,10 +1,8 @@
 <?php
 
+namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
-
-namespace App\DependencyInjection\Compiler;
-
-use App\EventListener\PasswordUpdaterListener;
+use Monofony\Bundle\CoreBundle\EventListener\PasswordUpdaterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Ui\Frontend;
 
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Behat\Behat\Context\Context;
 use App\Tests\Behat\NotificationType;
 use App\Tests\Behat\Page\Frontend\Account\DashboardPage;

@@ -10,7 +10,7 @@ use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Sylius\Component\User\Model\UserInterface;
 
 /**

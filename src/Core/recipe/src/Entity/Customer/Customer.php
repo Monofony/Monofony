@@ -4,8 +4,9 @@
 
 namespace App\Entity\Customer;
 
-use App\Entity\User\AppUserInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -26,7 +27,7 @@ class Customer extends BaseCustomer implements CustomerInterface
     private $user;
 
     /**
-     * @return AppUserInterface|UserInterface
+     * {@inheritdoc}
      */
     public function getUser(): ?UserInterface
     {
@@ -34,7 +35,7 @@ class Customer extends BaseCustomer implements CustomerInterface
     }
 
     /**
-     * @param AppUserInterface|UserInterface|null $user
+     * {@inheritdoc}
      */
     public function setUser(?UserInterface $user): void
     {

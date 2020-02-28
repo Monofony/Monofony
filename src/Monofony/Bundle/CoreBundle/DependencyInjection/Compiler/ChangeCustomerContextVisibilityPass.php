@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\DependencyInjection\Compiler;
+namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
 use App\Context\CustomerContext;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -15,6 +15,8 @@ final class ChangeCustomerContextVisibilityPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $container->getDefinition(CustomerContext::class)->setPublic(true);
+        if (class_exists(CustomerContext::class)) {
+            $container->getDefinition(CustomerContext::class)->setPublic(true);
+        }
     }
 }
