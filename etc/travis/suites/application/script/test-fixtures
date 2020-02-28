@@ -3,4 +3,4 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 print_header "Testing (Fixtures)" "Monofony"
-retry_run_command "bin/console sylius:fixtures:load default --no-interaction"
+retry_run_command "make test-fixtures"
