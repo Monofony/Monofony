@@ -2,10 +2,10 @@
     "timeout": 10,
     "source": {
         "directories": [
-            "src/CorePack/recipe/src",
-            "src/AdminPack/recipe/src",
-            "src/FrontPack/recipe/src",
-            "src/FixturesPack/recipe/src"
+            "src/Core/recipe/src",
+            "src/Admin/recipe/src",
+            "src/Front/recipe/src",
+            "src/Fixtures/recipe/src"
         ],
         "excludes": [
             "Command",
