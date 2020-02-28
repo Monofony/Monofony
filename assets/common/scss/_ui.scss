@@ -4,6 +4,8 @@ $segment-title-spacing: 1.2em 1.8em;
 $accordion-title-spacing: 1.2em 1.8em;
 $body-background: #F2F7F8;
 $sidebar-background: #133E56;
+$body-font-family: 'Inter regular','Helvetica Neue', Arial, Helvetica, sans-serif;
+$header-font-family: 'Inter bold','Helvetica Neue', Arial, Helvetica, sans-serif;
 
 // ----------------------------------
 // ------------ Globals
@@ -24,6 +26,29 @@ body.pushable .pusher, body.centered {
 a {
   color: $app-brand-color;
   &:hover { color: $app-brand-color; }
+}
+
+// ----------------------------------
+// ------------ Fonts
+// ----------------------------------
+
+body,
+.ui.menu,
+.ui.button,
+.ui.input>input{
+    font-family: $body-font-family;
+    font-weight: normal;
+}
+b,
+strong,
+.ui.header,
+.ui.accordion .title:not(.ui),
+.ui.statistic>.value,
+.ui.statistics .statistic>.value,
+.ui.statistic>.label,
+.ui.statistics .statistic>.label{
+    font-family: $header-font-family;
+    font-weight: normal;
 }
 
 // ----------------------------------

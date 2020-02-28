@@ -166,6 +166,9 @@
     "friends-of-behat/mink": {
         "version": "v1.8.0"
     },
+    "friends-of-behat/mink-extension": {
+        "version": "v2.4.0"
+    },
     "friends-of-behat/page-object-extension": {
         "version": "v0.2.1"
     },
