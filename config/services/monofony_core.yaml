@@ -17,6 +17,11 @@ services:
         Doctrine\Common\EventSubscriber:
             tags: [doctrine.event_subscriber]
 
+    app_core_bundle:
+        namespace: App\
+        resource: '../../src/Monofony/Bundle/CoreBundle/Recipe/src/*'
+        exclude: '../../src/Monofony/Bundle/CoreBundle/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+
     app_core:
         namespace: App\
         resource: '../../src/Core/recipe/src/*'
