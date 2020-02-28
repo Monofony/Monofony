@@ -1,5 +1,6 @@
 suites:
-    CoreBundle: { spec_path: src/Bundle/CoreBundle, src_path: src/Bundle/CoreBundle }
+    CoreBundle: { spec_path: src/Monofony/Bundle/CoreBundle, src_path: src/Monofony/Bundle/CoreBundle }
+    CoreBundleRecipe: { namespace: App, psr4_prefix: App, spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
     Core: { spec_path: src/Core/recipe, src_path: src/Core/recipe/src }
     Backend: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
 
