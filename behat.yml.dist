@@ -43,7 +43,7 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
-                - "src/Core/recipe/features"
+                - "src/Monofony/Bundle/CoreBundle/Recipe/features"
                 - "src/Admin/recipe/features"
                 - "src/Front/recipe/features"
                 - "features"
