@@ -1,11 +1,11 @@
 app_backend:
-    resource: "../src/AdminPack/recipe/config/routes/backend.yaml"
+    resource: "../src/Admin/recipe/config/routes/backend.yaml"
 
 app_frontend:
-    resource: "../src/FrontPack/recipe/config/routes/frontend.yaml"
+    resource: "../src/Front/recipe/config/routes/frontend.yaml"
 
 app_api:
-    resource: "../src/ApiPack/recipe/config/routes/api.yaml"
+    resource: "../src/Api/recipe/config/routes/api.yaml"
     prefix: /api
     defaults:
         _format: json

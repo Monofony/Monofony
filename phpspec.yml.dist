@@ -1,9 +1,9 @@
 suites:
-    Core: { spec_path: src/CorePack/recipe, src_path: src/CorePack/recipe/src }
-    Backend: { spec_path: src/AdminPack/recipe, src_path: src/AdminPack/recipe/src }
+    Core: { spec_path: src/Core/recipe, src_path: src/Core/recipe/src }
+    Backend: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
 
 extensions:
     LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
         whitelist:
-            - src/CorePack/recipe/src
-            - src/AdminPack/recipe/src
+            - src/Core/recipe/src
+            - src/Admin/recipe/src

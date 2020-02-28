@@ -11,12 +11,12 @@ services:
 
     app_tests_behat_core:
         namespace: App\Tests\Behat\
-        resource: '../src/CorePack/recipe/tests/Behat/*'
+        resource: '../src/Core/recipe/tests/Behat/*'
 
     app_tests_behat_admin:
         namespace: App\Tests\Behat\
-        resource: '../src/AdminPack/recipe/tests/Behat/*'
+        resource: '../src/Admin/recipe/tests/Behat/*'
 
     app_tests_behat_front:
         namespace: App\Tests\Behat\
-        resource: '../src/FrontPack/recipe/tests/Behat/*'
+        resource: '../src/Front/recipe/tests/Behat/*'
