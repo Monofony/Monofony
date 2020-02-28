@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Entity\Customer\CustomerInterface;
-use App\Entity\User\AppUserInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Tests\Behat\Service\SharedStorageInterface;
