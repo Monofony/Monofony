@@ -2,8 +2,8 @@
 
 namespace spec\App\Entity\Customer;
 
-use App\Entity\User\AppUserInterface;
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;

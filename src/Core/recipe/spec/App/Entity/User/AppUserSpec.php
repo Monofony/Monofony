@@ -2,7 +2,7 @@
 
 namespace spec\App\Entity\User;
 
-use App\Entity\User\AppUserInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;

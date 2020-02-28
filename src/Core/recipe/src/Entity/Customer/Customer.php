@@ -6,7 +6,7 @@ namespace App\Entity\Customer;
 
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Component\Core\Model\Customer\CustomerInterface;
-use Monofony\Component\User\Model\User\AppUserInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
