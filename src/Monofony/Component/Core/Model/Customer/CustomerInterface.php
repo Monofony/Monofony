@@ -4,7 +4,7 @@
 
 namespace Monofony\Component\Core\Model\Customer;
 
-use Monofony\Component\User\Model\User\AppUserInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\CustomerInterface as BaseCustomerInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
