@@ -9,7 +9,7 @@
             "App\\Collector\\": "src/Core/recipe/src/Collector/",
             "App\\Context\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Context/",
             "App\\Command\\": "src/Core/recipe/src/Command/",
-            "App\\Dashboard\\": "src/Admin/recipe/src/Dashboard/",
+            "App\\Dashboard\\": "src/Monofony/Bundle/AdminBundle/Recipe/src/Dashboard/",
             "App\\Entity\\": "src/Core/recipe/src/Entity/",
             "App\\EventListener\\": "src/Core/recipe/src/EventListener/",
             "App\\EventSubscriber\\": "src/Core/recipe/src/EventSubscriber/",
