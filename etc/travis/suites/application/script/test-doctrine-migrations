@@ -2,10 +2,5 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
-code=0
-
 print_header "Testing (Doctrine Migrations)" "Monofony"
-run_command "bin/console doctrine:migrations:migrate first --no-interaction" || code=$?
-run_command "bin/console doctrine:migrations:migrate latest --no-interaction" || code=$?
-
-exit ${code}
+run_command "make test-doctrine-migrations"

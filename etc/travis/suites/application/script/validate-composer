@@ -3,4 +3,4 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 print_header "Validating (Composer)" "Monofony"
-run_command "composer validate --strict"
+run_command "make validate-composer"
