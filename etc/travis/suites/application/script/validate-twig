@@ -5,7 +5,7 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.li
 code=0
 
 print_header "Validating (Twig templates)" "Monofony"
-run_command "bin/console lint:twig src/Core/recipe/templates" || code=$?
+run_command "bin/console lint:twig src/Monofony/Bundle/CoreBundle/Recipe/templates" || code=$?
 run_command "bin/console lint:twig src/Admin/recipe/templates" || code=$?
 run_command "bin/console lint:twig src/Front/recipe/templates" || code=$?
 
