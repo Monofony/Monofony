@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Page\Backend\Customer;
 
 use App\Tests\Behat\Page\Backend\Crud\AbstractIndexPage;
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
 
 class IndexPage extends AbstractIndexPage
 {

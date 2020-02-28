@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\App\EventListener;
+namespace spec\Monofony\Bundle\CoreBundle\EventListener;
 
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\PasswordUpdaterInterface;

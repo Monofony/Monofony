@@ -5,7 +5,7 @@
 namespace App\Tests\Behat\Context\Setup;
 
 use App\Tests\Behat\Service\SharedStorageInterface;
-use App\Entity\User\AppUserInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use App\Fixture\Factory\AppUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
