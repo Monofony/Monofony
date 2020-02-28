@@ -17,6 +17,11 @@ services:
         Doctrine\Common\EventSubscriber:
             tags: [doctrine.event_subscriber]
 
+    app_core_bundle:
+        namespace: App\
+        resource: '../../src/Monofony/Bundle/CoreBundle/Recipe/src/*'
+        exclude: '../../src/Monofony/Bundle/CoreBundle/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+
     app_core:
         namespace: App\
         resource: '../../src/Core/recipe/src/*'
@@ -29,6 +34,3 @@ services:
 
     App\Entity\OAuth\ClientManager:
         $class: '%fos_oauth_server.model.client.class%'
-
-    Sylius\Component\User\Canonicalizer\CanonicalizerInterface: '@sylius.canonicalizer'
-    Sylius\Component\User\Security\Generator\GeneratorInterface: '@sylius.app_user.token_generator.email_verification'

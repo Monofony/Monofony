@@ -5,7 +5,6 @@
 namespace App;
 
 use App\DependencyInjection\Builder\BackendContainerBuilder;
-use App\DependencyInjection\Builder\CoreContainerBuilder;
 use App\DependencyInjection\Builder\FrontendContainerBuilder;
 use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
