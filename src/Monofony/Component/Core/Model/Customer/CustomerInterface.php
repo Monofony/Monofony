@@ -2,9 +2,9 @@
 
 
 
-namespace App\Entity\Customer;
+namespace Monofony\Component\Core\Model\Customer;
 
-use App\Entity\User\AppUserInterface;
+use Monofony\Component\User\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\CustomerInterface as BaseCustomerInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
