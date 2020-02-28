@@ -6,7 +6,7 @@ code=0
 
 print_header "Validating (Twig templates)" "Monofony"
 run_command "bin/console lint:twig src/Monofony/Bundle/CoreBundle/Recipe/templates" || code=$?
-run_command "bin/console lint:twig src/Admin/recipe/templates" || code=$?
+run_command "bin/console lint:twig src/Monofony/Bundle/AdminBundle/Recipe/templates" || code=$?
 run_command "bin/console lint:twig src/Front/recipe/templates" || code=$?
 
 exit ${code}

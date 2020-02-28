@@ -42,4 +42,5 @@ return [
     Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
     Monofony\Bundle\CoreBundle\MonofonyCoreBundle::class => ['all' => true],
+    Monofony\Bundle\AdminBundle\MonofonyAdminBundle::class => ['all' => true],
 ];
