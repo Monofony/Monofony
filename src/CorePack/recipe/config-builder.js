@@ -2,9 +2,7 @@ var upath = require('upath');
 var path = require('path');
 var Encore = require('@symfony/webpack-encore');
 
-const vendorUiPath = '../../vendor/sylius/ui-bundle';
-
-var build = (name) => {
+var build = (name, assetPath, vendorUiPath) => {
     Encore
     // the project directory where compiled assets will be stored
         .setOutputPath(`public/assets/${name}`)
@@ -14,7 +12,7 @@ var build = (name) => {
         .enableSourceMaps(!Encore.isProduction())
         .enableVersioning(Encore.isProduction())
         // uncomment to define the assets of the project
-        .addEntry('app', `./assets/${name}/js/app.js`)
+        .addEntry('app', `${assetPath}/js/app.js`)
         // uncomment if you use Sass/SCSS files
         .enableSassLoader((options) => {
             options.data = '@import "~semantic-ui-css/semantic.min.css";';
@@ -23,7 +21,7 @@ var build = (name) => {
         .configureBabel()
         .disableSingleRuntimeChunk()
         .copyFiles({
-            from: `./assets/${name}/img`,
+            from: `${assetPath}/img`,
             to: 'img/[path][name].[ext]',
         }, {
             from: upath.joinSafe(vendorUiPath, 'Resources/private/img'),
@@ -40,7 +38,8 @@ var build = (name) => {
     const config = Encore.getWebpackConfig();
     config.name = name;
     config.resolve.alias = {
-        '~': path.resolve(__dirname, '../../')
+        '~': path.resolve(__dirname, '../../'),
+        'sylius/ui': vendorUiPath + '/Resources/private',
     };
 
     Encore.reset();
