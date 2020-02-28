@@ -7,7 +7,7 @@
         "psr-4": {
             "App\\": "src/",
             "App\\Collector\\": "src/Core/recipe/src/Collector/",
-            "App\\Context\\": "src/Core/recipe/src/Context/",
+            "App\\Context\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Context/",
             "App\\Command\\": "src/Core/recipe/src/Command/",
             "App\\Dashboard\\": "src/Admin/recipe/src/Dashboard/",
             "App\\Entity\\": "src/Core/recipe/src/Entity/",

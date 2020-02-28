@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Context;
 
 use Sylius\Component\Customer\Context\CustomerContextInterface;
