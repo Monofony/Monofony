@@ -1,10 +1,8 @@
 <?php
 
+namespace Monofony\Bundle\CoreBundle\EventListener;
 
-
-namespace App\EventListener;
-
-use App\Entity\Customer\CustomerInterface;
+use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Sylius\Bundle\UserBundle\EventListener\PasswordUpdaterListener as BasePasswordUpdaterListener;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Symfony\Component\EventDispatcher\GenericEvent;

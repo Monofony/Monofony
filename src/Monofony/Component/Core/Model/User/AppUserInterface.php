@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\User;
+namespace Monofony\Component\Core\Model\User;
 
 use Sylius\Component\Customer\Model\CustomerAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
