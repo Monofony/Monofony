@@ -4,4 +4,4 @@ source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.li
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/application.sh"
 
 print_header "Validating (Yarn packages)" "Monofony"
-run_command "yarn check"
+run_command "make validate-yarn-packages"

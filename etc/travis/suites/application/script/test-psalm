@@ -3,4 +3,4 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 print_header "Testing (Psalm)" "Monofony"
-run_command "vendor/bin/psalm --show-info=false"
+run_command "make test-psalm"
