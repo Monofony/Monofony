@@ -11,7 +11,7 @@ services:
 
     app_tests_behat_core:
         namespace: App\Tests\Behat\
-        resource: '../src/Core/recipe/tests/Behat/*'
+        resource: '../src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/*'
 
     app_tests_behat_admin:
         namespace: App\Tests\Behat\
