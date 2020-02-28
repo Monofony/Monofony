@@ -3,7 +3,6 @@
     "babel-polyfill": "^6.26.0",
     "jquery": "^3.4.0",
     "lightbox2": "^2.9.0",
-    "semantic-ui-calendar": "^0.0.8",
     "semantic-ui-css": "npm:fomantic-ui-css@^2.7.0"
   },
   "devDependencies": {
