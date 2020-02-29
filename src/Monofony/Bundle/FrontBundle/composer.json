@@ -1,7 +1,7 @@
 {
-    "name": "monofony/front-pack",
+    "name": "monofony/front-bundle",
     "type": "library",
-    "description": "Monofony front pack.",
+    "description": "Monofony front bundle.",
     "license": "MIT",
     "require": {
         "php": "^7.1",

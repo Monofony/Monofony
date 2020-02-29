@@ -7,8 +7,8 @@
 >
     <projectFiles>
         <directory name="src/Core/recipe/src" />
-        <directory name="src/Admin/recipe/src" />
-        <directory name="src/Front/recipe/src" />
+        <directory name="src/Monofony/Bundle/AdminBundle/Recipe/src" />
+        <directory name="src/Monofony/Bundle/FrontBundle/Recipe/src" />
         <directory name="src/Fixtures/recipe/src" />
         <ignoreFiles>
             <directory name="vendor" />

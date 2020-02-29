@@ -3,6 +3,6 @@ const vendorUiPath = path.resolve(__dirname, 'vendor/sylius/ui-bundle');
 const build = require('./src/CorePack/recipe/config-builder');
 
 const backendConfig = build('backend', `./src/Monofony/Bundle/AdminBundle/Recipe/assets/backend/`, vendorUiPath);
-const frontendConfig = build('frontend', `./src/FrontPack/recipe/assets/frontend/`, vendorUiPath);
+const frontendConfig = build('frontend', `./src/Monofony/Bundle/FrontBundle/Recipe/assets/frontend/`, vendorUiPath);
 
 module.exports = [backendConfig, frontendConfig];
