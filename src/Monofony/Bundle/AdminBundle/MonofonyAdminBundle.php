@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\AdminBundle;
 
+use App\Monofony\Bundle\AdminBundle\DependencyInjection\MonofonyAdminBundleExtension;
 use App\Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -11,6 +12,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class MonofonyAdminBundle extends Bundle
 {
+    public function getContainerExtension()
+    {
+        return new MonofonyAdminBundleExtension();
+    }
+
     public function build(ContainerBuilder $container): void
     {
         self::buildDashboardServices($container);
@@ -21,8 +27,6 @@ class MonofonyAdminBundle extends Bundle
     {
         $container->registerForAutoconfiguration(StatisticInterface::class)
             ->addTag('app.dashboard_statistic');
-
-        // $container->addCompilerPass(new ConfigureDashboardStatisticsProviderPass());
     }
 
     private static function buildAdminMenu(ContainerBuilder $container): void
