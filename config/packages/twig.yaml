@@ -8,4 +8,4 @@ twig:
     paths:
         - '%kernel.project_dir%/src/Monofony/Bundle/CoreBundle/Recipe/templates'
         - '%kernel.project_dir%/src/Monofony/Bundle/AdminBundle/Recipe/templates'
-        - '%kernel.project_dir%/src/Front/recipe/templates'
+        - '%kernel.project_dir%/src/Monofony/Bundle/FrontBundle/Recipe/templates'
