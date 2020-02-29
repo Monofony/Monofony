@@ -7,9 +7,10 @@ parameters:
 
     # for "split" command
     directories_to_repositories:
+        src/Monofony/Component/Core: 'git@github.com:Monofony/Core.git'
         src/Monofony/Bundle/AdminBundle: 'git@github.com:Monofony/AdminBundle.git'
-        # src/Api: 'git@github.com:Monofony/Api.git'
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
-        # src/Fixtures: 'git@github.com:Monofony/Fixtures.git'
         src/Monofony/Bundle/FrontBundle: 'git@github.com:Monofony/FrontBundle.git'
         src/Monofony/TestPack: 'git@github.com:Monofony/TestPack.git'
+        # src/Api: 'git@github.com:Monofony/Api.git'
+        # src/Fixtures: 'git@github.com:Monofony/Fixtures.git'

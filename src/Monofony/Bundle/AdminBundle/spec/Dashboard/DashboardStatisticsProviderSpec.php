@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\App\Dashboard;
+namespace spec\Monofony\Bundle\AdminBundle\Dashboard;
 
-use App\Dashboard\DashboardStatisticsProvider;
+use Monofony\Bundle\AdminBundle\Dashboard\DashboardStatisticsProvider;
 use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use PhpSpec\ObjectBehavior;
 
