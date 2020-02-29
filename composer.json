@@ -9,7 +9,7 @@
             "App\\Collector\\": "src/Core/recipe/src/Collector/",
             "App\\Context\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Context/",
             "App\\Command\\": "src/Core/recipe/src/Command/",
-            "App\\Dashboard\\": "src/Admin/recipe/src/Dashboard/",
+            "App\\Dashboard\\": "src/Monofony/Bundle/AdminBundle/Recipe/src/Dashboard/",
             "App\\Entity\\": "src/Core/recipe/src/Entity/",
             "App\\EventListener\\": "src/Core/recipe/src/EventListener/",
             "App\\EventSubscriber\\": "src/Core/recipe/src/EventSubscriber/",
@@ -25,11 +25,11 @@
             "Monofony\\Component\\": "src/Monofony/Component/"
         },
         "classmap": [
-            "src/Admin/recipe/src/DependencyInjection/Builder/BackendContainerBuilder.php",
+            "src/Monofony/Bundle/AdminBundle/Recipe/src/DependencyInjection/Builder/BackendContainerBuilder.php",
             "src/Front/recipe/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
-            "src/Admin/recipe/src/DependencyInjection/Compiler/ConfigureDashboardStatisticsProviderPass.php",
-            "src/Admin/recipe/src/Controller/DashboardController.php",
-            "src/Admin/recipe/src/Menu/AdminMenuBuilder.php",
+            "src/Monofony/Bundle/AdminBundle/Recipe/src/DependencyInjection/Compiler/ConfigureDashboardStatisticsProviderPass.php",
+            "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",
+            "src/Monofony/Bundle/AdminBundle/Recipe/src/Menu/AdminMenuBuilder.php",
             "src/Front/recipe/src/Menu/AccountMenuBuilder.php"
         ]
     },
