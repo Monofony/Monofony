@@ -2,7 +2,7 @@ app_backend:
     resource: "../src/Monofony/Bundle/AdminBundle/Recipe/config/routes/backend.yaml"
 
 app_frontend:
-    resource: "../src/Front/recipe/config/routes/frontend.yaml"
+    resource: "../src/Monofony/Bundle/FrontBundle/Recipe/config/routes/frontend.yaml"
 
 app_api:
     resource: "../src/Api/recipe/config/routes/api.yaml"
