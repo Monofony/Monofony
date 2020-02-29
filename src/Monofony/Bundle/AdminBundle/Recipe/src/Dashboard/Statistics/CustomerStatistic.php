@@ -3,6 +3,7 @@
 namespace App\Dashboard\Statistics;
 
 use App\Repository\CustomerRepository;
+use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use Symfony\Component\Templating\EngineInterface;
 
 class CustomerStatistic implements StatisticInterface

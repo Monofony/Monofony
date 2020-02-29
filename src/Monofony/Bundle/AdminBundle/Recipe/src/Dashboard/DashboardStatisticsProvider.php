@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Dashboard;
 
-use App\Dashboard\Statistics\StatisticInterface;
+use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use Webmozart\Assert\Assert;
 
 class DashboardStatisticsProvider

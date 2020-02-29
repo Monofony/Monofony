@@ -1,12 +1,12 @@
 suites:
     CoreBundle: { spec_path: src/Monofony/Bundle/CoreBundle, src_path: src/Monofony/Bundle/CoreBundle }
-    CoreBundleRecipe: { namespace: App, psr4_prefix: App, spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
+    CoreBundleRecipe: { spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
     Core: { spec_path: src/Core/recipe, src_path: src/Core/recipe/src }
     Admin: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
-    AdminBundleRecipe: { namespace: App, psr4_prefix: App, spec_path: src/Monofony/Bundle/AdminBundle/Recipe, src_path: src/Monofony/Bundle/AdminBundle/Recipe }
+    AdminBundleRecipe: { spec_path: src/Monofony/Bundle/AdminBundle/Recipe, src_path: src/Monofony/Bundle/AdminBundle/Recipe }
 
 extensions:
     LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
         whitelist:
-            - src/Core/recipe/src
+            - src/Monofony/Bundle/CoreBundle/Recipe/src
             - src/Admin/recipe/src
