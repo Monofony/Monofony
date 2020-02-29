@@ -1,9 +1,9 @@
 imports:
     - ../src/Monofony/Bundle/CoreBundle/Recipe/config/suites/cli/installer.yaml
 
-    - ../src/Admin/recipe/config/suites/ui/admin/dashboard.yaml
-    - ../src/Admin/recipe/config/suites/ui/customer/managing_customers.yaml
-    - ../src/Admin/recipe/config/suites/ui/user/managing_administrators.yaml
+    - ../src/Monofony/Bundle/AdminBundle/Recipe/config/suites/ui/admin/dashboard.yaml
+    - ../src/Monofony/Bundle/AdminBundle/Recipe/config/suites/ui/customer/managing_customers.yaml
+    - ../src/Monofony/Bundle/AdminBundle/Recipe/config/suites/ui/user/managing_administrators.yaml
 
     - ../src/Front/recipe/config/suites/ui/account/customer.yaml
     - ../src/Front/recipe/config/suites/ui/account/login.yaml

@@ -1,5 +1,5 @@
 imports:
-    - { resource: '../../src/Admin/recipe/config/grids/**/*.yaml' }
+    - { resource: '../../src/Monofony/Bundle/AdminBundle/Recipe/config/grids/**/*.yaml' }
 
 sylius_grid:
     templates:
