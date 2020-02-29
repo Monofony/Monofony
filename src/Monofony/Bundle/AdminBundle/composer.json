@@ -1,6 +1,6 @@
 {
     "name": "monofony/admin-bundle",
-    "type": "library",
+    "type": "symfony-bundle",
     "description": "Monofony admin bundle.",
     "license": "MIT",
     "require": {

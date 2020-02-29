@@ -1,6 +1,6 @@
 {
     "name": "monofony/front-bundle",
-    "type": "library",
+    "type": "symfony-bundle",
     "description": "Monofony front bundle.",
     "license": "MIT",
     "require": {
