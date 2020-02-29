@@ -45,7 +45,7 @@ default:
             paths:
                 - "src/Monofony/Bundle/CoreBundle/Recipe/features"
                 - "src/Monofony/Bundle/AdminBundle/Recipe/features"
-                - "src/Front/recipe/features"
+                - "src/Monofony/Bundle/FrontBundle/Recipe/features"
                 - "features"
 
     gherkin:
