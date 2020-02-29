@@ -1,6 +1,6 @@
 {
     "name": "monofony/core-bundle",
-    "type": "library",
+    "type": "symfony-bundle",
     "description": "Monofony core bundle.",
     "license": "MIT",
     "require": {
