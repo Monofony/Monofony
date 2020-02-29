@@ -26,11 +26,11 @@
         },
         "classmap": [
             "src/Monofony/Bundle/AdminBundle/Recipe/src/DependencyInjection/Builder/BackendContainerBuilder.php",
-            "src/Front/recipe/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
+            "src/Monofony/Bundle/FrontBundle/Recipe/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
             "src/Monofony/Bundle/AdminBundle/Recipe/src/DependencyInjection/Compiler/ConfigureDashboardStatisticsProviderPass.php",
             "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",
             "src/Monofony/Bundle/AdminBundle/Recipe/src/Menu/AdminMenuBuilder.php",
-            "src/Front/recipe/src/Menu/AccountMenuBuilder.php"
+            "src/Monofony/Bundle/FrontBundle/Recipe/src/Menu/AccountMenuBuilder.php"
         ]
     },
     "autoload-dev": {
