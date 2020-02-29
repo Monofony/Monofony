@@ -3,7 +3,7 @@
 namespace spec\App\Dashboard;
 
 use App\Dashboard\DashboardStatisticsProvider;
-use App\Dashboard\Statistics\StatisticInterface;
+use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use PhpSpec\ObjectBehavior;
 
 class DashboardStatisticsProviderSpec extends ObjectBehavior

@@ -4,10 +4,11 @@
 
 namespace App\Menu;
 
+use App\Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 
-final class AdminMenuBuilder
+final class AdminMenuBuilder implements AdminMenuBuilderInterface
 {
     /** @var FactoryInterface */
     private $factory;
@@ -17,6 +18,9 @@ final class AdminMenuBuilder
         $this->factory = $factory;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function createMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');

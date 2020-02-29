@@ -26,7 +26,6 @@
         },
         "classmap": [
             "src/Monofony/Bundle/AdminBundle/Recipe/src/DependencyInjection/Builder/BackendContainerBuilder.php",
-            "src/Monofony/Bundle/FrontBundle/Recipe/src/DependencyInjection/Builder/FrontendContainerBuilder.php",
             "src/Monofony/Bundle/AdminBundle/Recipe/src/DependencyInjection/Compiler/ConfigureDashboardStatisticsProviderPass.php",
             "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",
             "src/Monofony/Bundle/AdminBundle/Recipe/src/Menu/AdminMenuBuilder.php",
