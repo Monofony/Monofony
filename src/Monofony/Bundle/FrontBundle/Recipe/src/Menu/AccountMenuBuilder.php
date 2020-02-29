@@ -6,10 +6,11 @@ namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
+use Monofony\Bundle\FrontBundle\Menu\AccountMenuBuilderInterface;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-final class AccountMenuBuilder
+final class AccountMenuBuilder implements AccountMenuBuilderInterface
 {
     public const EVENT_NAME = 'sylius.menu.app.account';
 
@@ -25,6 +26,9 @@ final class AccountMenuBuilder
         $this->eventDispatcher = $eventDispatcher;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function createMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');
