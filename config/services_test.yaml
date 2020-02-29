@@ -19,4 +19,4 @@ services:
 
     app_tests_behat_front:
         namespace: App\Tests\Behat\
-        resource: '../src/Front/recipe/tests/Behat/*'
+        resource: '../src/Monofony/Bundle/FrontBundle/Recipe/tests/Behat/*'
