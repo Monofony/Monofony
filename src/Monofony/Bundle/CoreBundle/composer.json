@@ -1,7 +1,7 @@
 {
-    "name": "monofony/core-pack",
+    "name": "monofony/core-bundle",
     "type": "library",
-    "description": "Monofony core package.",
+    "description": "Monofony core bundle.",
     "license": "MIT",
     "require": {
         "php": "^7.1",
