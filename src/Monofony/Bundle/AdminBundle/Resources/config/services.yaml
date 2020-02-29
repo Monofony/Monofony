@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: false
+
+    Monofony\Bundle\AdminBundle\Dashboard\DashboardStatisticsProvider:
+        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
+
+    Monofony\Bundle\AdminBundle\Dashboard\DashboardStatisticsProviderInterface: '@Monofony\Bundle\AdminBundle\Dashboard\DashboardStatisticsProvider'

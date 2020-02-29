@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Dashboard;
+namespace Monofony\Bundle\AdminBundle\Dashboard;
 
 use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use Webmozart\Assert\Assert;
 
-class DashboardStatisticsProvider
+final class DashboardStatisticsProvider implements DashboardStatisticsProviderInterface
 {
     /** @var iterable&StatisticInterface[] */
     private $statistics;
