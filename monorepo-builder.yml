@@ -12,4 +12,4 @@ parameters:
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
         src/Fixtures: 'git@github.com:Monofony/Fixtures.git'
         src/Monofony/Bundle/FrontBundle: 'git@github.com:Monofony/FrontBundle.git'
-        src/TestPack: 'git@github.com:Monofony/TestPack.git'
+        src/Monofony/TestPack: 'git@github.com:Monofony/TestPack.git'
