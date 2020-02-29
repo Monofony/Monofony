@@ -1,7 +1,7 @@
 {
-    "name": "monofony/admin-pack",
+    "name": "monofony/admin-bundle",
     "type": "library",
-    "description": "Monofony admin pack.",
+    "description": "Monofony admin bundle.",
     "license": "MIT",
     "require": {
         "php": "^7.1",
