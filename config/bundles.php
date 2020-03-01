@@ -44,5 +44,6 @@ return [
     Monofony\Bundle\CoreBundle\MonofonyCoreBundle::class => ['all' => true],
     Monofony\Bundle\AdminBundle\MonofonyAdminBundle::class => ['all' => true],
     Monofony\Bundle\FrontBundle\MonofonyFrontBundle::class => ['all' => true],
+    Monofony\Bundle\ApiBundle\MonofonyApiBundle::class => ['all' => true],
     Monofony\Plugin\FixturesPlugin\MonofonyFixturesPlugin::class => ['all' => true],
 ];
