@@ -1,7 +1,14 @@
 services:
     PhpCsFixer\Fixer\Comment\HeaderCommentFixer:
-        header: ''
+        header: |
+            This file is part of the Monofony package.
+
+            (c) Monofony
+
+            For the full copyright and license information, please view the LICENSE
+            file that was distributed with this source code.
         location: 'after_open'
 
 parameters:
-    exclude_files: ~
+    exclude_files:
+        - '**/Recipe/**'
