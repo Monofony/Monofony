@@ -1,0 +1,16 @@
+{
+    "name": "monofony/core",
+    "type": "library",
+    "description": "Monofony core.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
