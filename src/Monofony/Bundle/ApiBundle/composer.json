@@ -1,12 +1,15 @@
 {
-    "name": "monofony/api-pack",
-    "type": "library",
-    "description": "Monofony api pack.",
+    "name": "monofony/api-bundle",
+    "type": "symfony-bundle",
+    "description": "Monofony API bundle.",
     "license": "MIT",
     "require": {
         "php": "^7.1",
         "api-platform/api-pack": "^1.2",
-        "monofony/core-pack": "^0.1"
+        "monofony/core-bundle": "^0.1"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Bundle\\ApiBundle\\": "" }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
