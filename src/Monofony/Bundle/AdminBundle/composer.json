@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.1",
-        "monofony/core-pack": "^0.1"
+        "monofony/core-bundle": "^0.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
