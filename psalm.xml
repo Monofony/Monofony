@@ -9,7 +9,7 @@
         <directory name="src/Core/recipe/src" />
         <directory name="src/Monofony/Bundle/AdminBundle/Recipe/src" />
         <directory name="src/Monofony/Bundle/FrontBundle/Recipe/src" />
-        <directory name="src/Fixtures/recipe/src" />
+        <directory name="src/Monofony/Bundle/FixturesBundle/Recipe/src" />
         <ignoreFiles>
             <directory name="vendor" />
         </ignoreFiles>

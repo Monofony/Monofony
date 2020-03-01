@@ -5,5 +5,5 @@ services:
 
     app_fixture:
         namespace: App\
-        resource: '../../src/Fixtures/recipe/src/*'
-        exclude: '../../src/Fixtures/recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/Bundle/FixturesBundle/Recipe/src/*'
+        exclude: '../../src/Monofony/Bundle/FixturesBundle/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
