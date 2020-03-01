@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Monofony\Bundle\AdminBundle\Menu;
+namespace Monofony\Bundle\AdminBundle\Menu;
 
 use Knp\Menu\ItemInterface;
 
