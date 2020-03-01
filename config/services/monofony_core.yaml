@@ -13,10 +13,6 @@ services:
             $cacheDir: '%kernel.cache_dir%'
             $environment: '%kernel.environment%'
 
-    _instanceof:
-        Doctrine\Common\EventSubscriber:
-            tags: [doctrine.event_subscriber]
-
     app_core_bundle:
         namespace: App\
         resource: '../../src/Monofony/Bundle/CoreBundle/Recipe/src/*'
