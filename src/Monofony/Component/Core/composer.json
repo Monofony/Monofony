@@ -6,6 +6,9 @@
     "require": {
         "php": "^7.1"
     },
+    "autoload": {
+        "psr-4": { "Monofony\\Component\\Core\\": "" }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
