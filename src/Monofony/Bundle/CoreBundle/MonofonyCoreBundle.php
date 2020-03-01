@@ -2,7 +2,7 @@
 
 namespace Monofony\Bundle\CoreBundle;
 
-use App\Monofony\Bundle\CoreBundle\DependencyInjection\MonofonyCoreBundleExtension;
+use Monofony\Bundle\CoreBundle\DependencyInjection\MonofonyCoreBundleExtension;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
