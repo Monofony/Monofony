@@ -25,6 +25,7 @@
         "sylius/resource-bundle": "^1.6",
         "sylius/ui-bundle": "^1.6",
         "sylius/user-bundle": "^1.6",
+        "monofony/core": "^0.1",
         "symfony/dotenv": "4.4.*",
         "symfony/flex": "^1.2",
         "symfony/monolog-bundle": "^3.3",
