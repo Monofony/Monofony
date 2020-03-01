@@ -40,6 +40,9 @@
     "conflict": {
         "symfony/symfony": "*"
     },
+    "autoload": {
+        "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" }
+    },
     "config": {
         "sort-packages": true
     },
