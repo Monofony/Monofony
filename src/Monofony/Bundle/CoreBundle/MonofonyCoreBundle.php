@@ -2,9 +2,9 @@
 
 namespace Monofony\Bundle\CoreBundle;
 
+use App\Monofony\Bundle\CoreBundle\DependencyInjection\MonofonyCoreBundleExtension;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
-use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;
 use Symfony\Component\Config\FileLocator;
@@ -14,6 +14,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class MonofonyCoreBundle extends Bundle
 {
+    public function getContainerExtension()
+    {
+        return new MonofonyCoreBundleExtension();
+    }
+
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new YamlFileLoader(
