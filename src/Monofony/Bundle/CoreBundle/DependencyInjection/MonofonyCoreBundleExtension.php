@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Monofony\Bundle\CoreBundle\DependencyInjection;
+namespace Monofony\Bundle\CoreBundle\DependencyInjection;
 
 use Doctrine\Common\EventSubscriber;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
