@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Monofony\Bundle\AdminBundle\DependencyInjection;
+namespace Monofony\Bundle\AdminBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

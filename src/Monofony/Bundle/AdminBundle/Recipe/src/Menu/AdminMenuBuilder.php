@@ -4,7 +4,7 @@
 
 namespace App\Menu;
 
-use App\Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
+use Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 

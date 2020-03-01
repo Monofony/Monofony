@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\AdminBundle;
 
-use App\Monofony\Bundle\AdminBundle\DependencyInjection\MonofonyAdminBundleExtension;
-use App\Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
+use Monofony\Bundle\AdminBundle\DependencyInjection\MonofonyAdminBundleExtension;
+use Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
