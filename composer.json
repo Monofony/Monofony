@@ -13,7 +13,7 @@
             "App\\Entity\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Entity/",
             "App\\EventListener\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/EventListener/",
             "App\\EventSubscriber\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/EventSubscriber/",
-            "App\\Fixture\\": "src/Fixtures/recipe/src/Fixture/",
+            "App\\Fixture\\": "src/Monofony/Bundle/FixturesBundle/Recipe/src/Fixture/",
             "App\\Form\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Form/",
             "App\\Formatter\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Formatter/",
             "App\\Installer\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Installer/",
