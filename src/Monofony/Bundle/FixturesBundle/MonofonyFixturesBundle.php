@@ -11,11 +11,10 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Bundle\FrontBundle\Menu;
+namespace Monofony\Bundle\FixturesBundle;
 
-use Knp\Menu\ItemInterface;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-interface AccountMenuBuilderInterface
+class MonofonyFixturesBundle extends Bundle
 {
-    public function createMenu(array $options): ItemInterface;
 }
