@@ -2,8 +2,11 @@ services:
     _defaults:
         autowire: true      # Automatically injects dependencies in your services
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $publicDir: '%kernel.project_dir%/public'
+            $environment: '%kernel.environment%'
 
     app_fixture:
         namespace: App\
-        resource: '../../src/Monofony/Bundle/FixturesBundle/Recipe/src/*'
-        exclude: '../../src/Monofony/Bundle/FixturesBundle/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/*'
+        exclude: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'

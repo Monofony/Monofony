@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Bundle\FixturesBundle;
+namespace Monofony\Plugin\FixturesPlugin;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class MonofonyFixturesBundle extends Bundle
+class MonofonyFixturesPlugin extends Bundle
 {
 }
