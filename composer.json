@@ -13,7 +13,7 @@
             "App\\Entity\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Entity/",
             "App\\EventListener\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/EventListener/",
             "App\\EventSubscriber\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/EventSubscriber/",
-            "App\\Fixture\\": "src/Monofony/Bundle/FixturesBundle/Recipe/src/Fixture/",
+            "App\\Fixture\\": "src/Monofony/Plugin/FixturesPlugin/Recipe/src/Fixture/",
             "App\\Form\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Form/",
             "App\\Formatter\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Formatter/",
             "App\\Installer\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Installer/",
@@ -22,7 +22,8 @@
             "App\\Repository\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Repository/",
             "App\\Validator\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Validator/",
             "Monofony\\Bundle\\": "src/Monofony/Bundle/",
-            "Monofony\\Component\\": "src/Monofony/Component/"
+            "Monofony\\Component\\": "src/Monofony/Component/",
+            "Monofony\\Plugin\\": "src/Monofony/Plugin/"
         },
         "classmap": [
             "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",

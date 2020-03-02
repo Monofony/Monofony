@@ -5,7 +5,7 @@
             "src/Monofony/Bundle/CoreBundle/Recipe/src",
             "src/Admin/recipe/src",
             "src/Monofony/Bundle/FrontBundle/Recipe/src",
-            "src/Monofony/Bundle/FixturesBundle/Recipe/src"
+            "src/Monofony/Plugin/FixturesPlugin/Recipe/src"
         ],
         "excludes": [
             "Command",

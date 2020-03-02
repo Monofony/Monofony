@@ -65,8 +65,12 @@ EOT
         ;
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
         $outputStyle->newLine();
-        $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
-        $commandExecutor->runCommand('app:install:sample-data', [], $output);
+
+        // Install Sample data command is available on monofony/fixtures-plugin
+        if (class_exists(InstallSampleDataCommand::class)) {
+            $commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
+            $commandExecutor->runCommand('app:install:sample-data', [], $output);
+        }
 
         return 0;
     }
