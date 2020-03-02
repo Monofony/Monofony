@@ -1,7 +1,7 @@
 {
-    "name": "monofony/fixtures-bundle",
+    "name": "monofony/fixtures-plugin",
     "type": "symfony-bundle",
-    "description": "Monofony fixtures bundle.",
+    "description": "Monofony fixtures plugin.",
     "license": "MIT",
     "require": {
         "php": "^7.1",
@@ -9,7 +9,7 @@
         "sylius/fixtures-bundle": "^1.4"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bundle\\FixturesBundle\\": "" }
+        "psr-4": { "Monofony\\Plugin\\FixturesPlugin\\": "" }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
