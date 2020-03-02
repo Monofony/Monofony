@@ -30,6 +30,7 @@
         "symfony/flex": "^1.2",
         "symfony/monolog-bundle": "^3.3",
         "symfony/proxy-manager-bridge": "4.4.*",
+        "symfony/serializer": "4.4.*",
         "symfony/swiftmailer-bundle": "^3.0",
         "symfony/twig-bundle": "4.4.*",
         "symfony/webpack-encore-bundle": "^1.6",
