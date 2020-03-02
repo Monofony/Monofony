@@ -21,7 +21,7 @@ class JsonApiTestCase extends BaseJsonApiTestCase
     {
         parent::__construct($name, $data, $dataName);
 
-        $this->dataFixturesPath = __DIR__ . '/../DataFixtures/ORM';
-        $this->expectedResponsesPath = __DIR__ . '/../Responses/Expected';
+        $this->dataFixturesPath = __DIR__.'/../DataFixtures/ORM';
+        $this->expectedResponsesPath = __DIR__.'/../Responses/Expected';
     }
 }

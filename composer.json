@@ -48,7 +48,7 @@
             "App\\Tests\\Behat\\Exception\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Exception/",
             "App\\Tests\\Behat\\Page\\Frontend\\": "src/Monofony/Bundle/FrontBundle/Recipe/tests/Behat/Page/Frontend/",
             "App\\Tests\\Behat\\Service\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Service/",
-            "App\\Tests\\Controller\\": "src/Api/recipe/tests/Controller/"
+            "App\\Tests\\Controller\\": "src/Monofony/Bundle/ApiBundle/Recipe/tests/Controller/"
         }
     },
     "require": {
