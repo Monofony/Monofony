@@ -13,8 +13,8 @@ use App\Tests\Behat\Page\Frontend\Account\ProfileUpdatePage;
 use App\Tests\Behat\Page\Frontend\Account\RegisterPage;
 use App\Tests\Behat\Page\Frontend\Account\VerificationPage;
 use App\Tests\Behat\Page\Frontend\HomePage;
-use App\Tests\Behat\Service\NotificationCheckerInterface;
-use App\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\NotificationCheckerInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Webmozart\Assert\Assert;
 

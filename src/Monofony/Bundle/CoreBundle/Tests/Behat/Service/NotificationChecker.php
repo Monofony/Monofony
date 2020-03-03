@@ -1,12 +1,19 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 
-namespace App\Tests\Behat\Service;
-
-use App\Tests\Behat\Exception\NotificationExpectationMismatchException;
 use App\Tests\Behat\NotificationType;
-use App\Tests\Behat\Service\Accessor\NotificationAccessorInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Exception\NotificationExpectationMismatchException;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\Accessor\NotificationAccessorInterface;
 
 final class NotificationChecker implements NotificationCheckerInterface
 {
@@ -15,9 +22,6 @@ final class NotificationChecker implements NotificationCheckerInterface
      */
     private $notificationAccessor;
 
-    /**
-     * @param NotificationAccessorInterface $notificationAccessor
-     */
     public function __construct(NotificationAccessorInterface $notificationAccessor)
     {
         $this->notificationAccessor = $notificationAccessor;
@@ -32,17 +36,10 @@ final class NotificationChecker implements NotificationCheckerInterface
             return;
         }
 
-        throw new NotificationExpectationMismatchException(
-            $type,
-            $message,
-            $this->notificationAccessor->getType(),
-            $this->notificationAccessor->getMessage()
-        );
+        throw new NotificationExpectationMismatchException($type, $message, $this->notificationAccessor->getType(), $this->notificationAccessor->getMessage());
     }
 
     /**
-     * @param NotificationType $type
-     *
      * @return bool
      */
     private function hasType(NotificationType $type)

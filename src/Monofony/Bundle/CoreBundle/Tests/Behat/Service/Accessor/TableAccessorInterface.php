@@ -1,6 +1,26 @@
 <?php
 
-namespace App\Tests\Behat\Service\Accessor;
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service\Accessor;
 
 use Behat\Mink\Element\NodeElement;
 

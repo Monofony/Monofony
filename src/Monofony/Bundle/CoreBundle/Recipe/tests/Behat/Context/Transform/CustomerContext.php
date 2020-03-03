@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Context\Transform;
 
 use Behat\Behat\Context\Context;
-use App\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
@@ -27,11 +27,6 @@ final class CustomerContext implements Context
      */
     private $sharedStorage;
 
-    /**
-     * @param RepositoryInterface    $customerRepository
-     * @param FactoryInterface       $customerFactory
-     * @param SharedStorageInterface $sharedStorage
-     */
     public function __construct(
         RepositoryInterface $customerRepository,
         FactoryInterface $customerFactory,
