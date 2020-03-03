@@ -1,6 +1,6 @@
 {
     "name": "monofony/test-pack",
-    "type": "library",
+    "type": "metapackage",
     "description": "Monofony test pack.",
     "license": "MIT",
     "require": {
