@@ -20,5 +20,5 @@ abstract class AbstractExampleFactory implements ExampleFactoryInterface
     /**
      * @param OptionsResolver $resolver
      */
-    abstract protected function configureOptions(OptionsResolver $resolver);
+    abstract protected function configureOptions(OptionsResolver $resolver): void;
 }
