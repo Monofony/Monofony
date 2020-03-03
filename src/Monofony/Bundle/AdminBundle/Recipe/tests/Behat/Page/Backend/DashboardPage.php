@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Page\Backend;
 
-use App\Tests\Behat\Service\Accessor\TableAccessorInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\Accessor\TableAccessorInterface;
 use Behat\Mink\Session;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Symfony\Component\Routing\RouterInterface;

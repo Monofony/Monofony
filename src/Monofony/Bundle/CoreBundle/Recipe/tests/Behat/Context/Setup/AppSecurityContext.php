@@ -2,8 +2,8 @@
 
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Tests\Behat\Service\AppSecurityServiceInterface;
-use App\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\AppSecurityServiceInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 use Monofony\Component\Core\Model\User\AppUserInterface;
 use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;

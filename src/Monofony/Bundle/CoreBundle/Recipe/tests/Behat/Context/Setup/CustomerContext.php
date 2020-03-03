@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Setup;
 
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Monofony\Component\Core\Model\User\AppUserInterface;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
-use App\Tests\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 

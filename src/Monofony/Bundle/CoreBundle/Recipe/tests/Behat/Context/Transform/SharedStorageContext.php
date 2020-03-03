@@ -1,12 +1,10 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Context\Transform;
 
-use App\Tests\Behat\Service\SharedStorageInterface;
 use App\Formatter\StringInflector;
 use Behat\Behat\Context\Context;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 
 final class SharedStorageContext implements Context
 {

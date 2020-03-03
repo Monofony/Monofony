@@ -1,8 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-
-namespace App\Tests\Behat\Service;
+namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 
 class SharedStorage implements SharedStorageInterface
 {
@@ -31,7 +38,7 @@ class SharedStorage implements SharedStorageInterface
     /**
      * {@inheritdoc}
      */
-    public function has($key)
+    public function has($key): bool
     {
         return isset($this->clipboard[$key]);
     }
@@ -39,7 +46,7 @@ class SharedStorage implements SharedStorageInterface
     /**
      * {@inheritdoc}
      */
-    public function set($key, $resource)
+    public function set(string $key, $resource): void
     {
         $this->clipboard[$key] = $resource;
         $this->latestKey = $key;

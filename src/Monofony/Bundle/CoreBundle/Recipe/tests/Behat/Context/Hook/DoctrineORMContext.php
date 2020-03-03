@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Context\Hook;
 
 use Behat\Behat\Context\Context;
