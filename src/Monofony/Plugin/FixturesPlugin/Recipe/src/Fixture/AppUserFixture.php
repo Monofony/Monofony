@@ -1,11 +1,12 @@
 <?php
 
-
+declare(strict_types=1);
 
 namespace App\Fixture;
 
 use App\Fixture\Factory\AppUserExampleFactory;
 use Doctrine\Common\Persistence\ObjectManager;
+use Monofony\Plugin\FixturesPlugin\Fixture\AbstractResourceFixture;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 class AppUserFixture extends AbstractResourceFixture
