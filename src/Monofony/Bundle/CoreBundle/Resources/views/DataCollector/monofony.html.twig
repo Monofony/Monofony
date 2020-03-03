@@ -9,8 +9,16 @@
     {% set text %}
         <div class="sf-toolbar-info-group">
             <div class="sf-toolbar-info-piece">
-                <b>AppName</b>
+                <b>Monofony</b>
                 <span>{{ collector.version }}</span>
+            </div>
+            <div class="sf-toolbar-info-piece">
+                <b>Extensions</b>
+                {% for extension in collector.extensions %}
+                    <span class="sf-toolbar-status sf-toolbar-status-{{ extension.enabled ? 'green' : 'red' }}">
+                        {{ extension.name }}
+                    </span>
+                {% endfor %}
             </div>
         </div>
     {% endset %}
