@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Plugin\FixturesPlugin\Fixture;
 
-use App\Fixture\Factory\ExampleFactoryInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Monofony\Plugin\FixturesPlugin\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Bundle\FixturesBundle\Fixture\FixtureInterface;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

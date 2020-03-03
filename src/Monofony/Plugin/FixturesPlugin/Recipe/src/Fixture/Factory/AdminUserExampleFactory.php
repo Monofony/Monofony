@@ -70,7 +70,7 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
     /**
      * {@inheritdoc}
      */
-    protected function configureOptions(OptionsResolver $resolver)
+    protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
             ->setDefault('email', function (Options $options) {
