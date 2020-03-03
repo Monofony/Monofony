@@ -1,11 +1,12 @@
 <?php
 
-
+declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
 use FOS\OAuthServerBundle\Model\ClientInterface;
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
+use Monofony\Plugin\FixturesPlugin\Fixture\Factory\AbstractExampleFactory;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
