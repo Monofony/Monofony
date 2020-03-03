@@ -1,15 +1,22 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Monofony\Bundle\AdminBundle\Tests\Behat\Crud;
 
-namespace App\Tests\Behat\Page\Backend\Crud;
-
-use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Symfony\Component\Routing\RouterInterface;
 
-abstract class AbstractCreatePage extends SymfonyPage
+abstract class AbstractCreatePage extends SymfonyPage implements CreatePageInterface
 {
     public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router)
     {

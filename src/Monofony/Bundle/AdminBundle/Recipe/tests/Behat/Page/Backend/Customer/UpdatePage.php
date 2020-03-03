@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Page\Backend\Customer;
 
 use App\Tests\Behat\Behaviour\Toggles;
-use App\Tests\Behat\Page\Backend\Crud\AbstractUpdatePage;
 use Behat\Mink\Element\NodeElement;
+use Monofony\Bundle\AdminBundle\Tests\Behat\Crud\AbstractUpdatePage;
+use Monofony\Bundle\AdminBundle\Tests\Behat\Crud\UpdatePageInterface;
 
-class UpdatePage extends AbstractUpdatePage
+class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
 {
     use Toggles;
 

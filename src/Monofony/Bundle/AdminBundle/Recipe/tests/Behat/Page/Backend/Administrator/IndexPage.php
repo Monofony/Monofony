@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Page\Backend\Administrator;
 
-use App\Tests\Behat\Page\Backend\Crud\AbstractIndexPage;
+use Monofony\Bundle\AdminBundle\Tests\Behat\Crud\AbstractIndexPage;
+use Monofony\Bundle\AdminBundle\Tests\Behat\Crud\IndexPageInterface;
 
-class IndexPage extends AbstractIndexPage
+class IndexPage extends AbstractIndexPage implements IndexPageInterface
 {
     /**
      * {@inheritdoc}
