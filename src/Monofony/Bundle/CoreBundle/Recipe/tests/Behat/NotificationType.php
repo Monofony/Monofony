@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Tests\Behat;
 
 final class NotificationType

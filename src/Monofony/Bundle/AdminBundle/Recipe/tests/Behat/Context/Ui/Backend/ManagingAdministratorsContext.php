@@ -9,11 +9,11 @@ use App\Tests\Behat\NotificationType;
 use App\Tests\Behat\Page\Backend\Administrator\CreatePage;
 use App\Tests\Behat\Page\Backend\Administrator\UpdatePage;
 use App\Tests\Behat\Page\Backend\Administrator\IndexPage;
-use App\Tests\Behat\Service\NotificationCheckerInterface;
 use App\Entity\User\AdminUserInterface;
-use App\Tests\Behat\Service\SharedStorageInterface;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\NotificationCheckerInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 use Webmozart\Assert\Assert;
 
 final class ManagingAdministratorsContext implements Context

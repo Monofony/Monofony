@@ -10,7 +10,7 @@ use App\Tests\Behat\Page\Frontend\Account\ChangePasswordPage;
 use App\Tests\Behat\Page\Frontend\Account\DashboardPage;
 use App\Tests\Behat\Page\Frontend\Account\LoginPage;
 use App\Tests\Behat\Page\Frontend\Account\ProfileUpdatePage;
-use App\Tests\Behat\Service\NotificationCheckerInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\NotificationCheckerInterface;
 use App\Formatter\StringInflector;
 use Webmozart\Assert\Assert;
 

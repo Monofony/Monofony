@@ -1,8 +1,17 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
-namespace App\Tests\Behat\Behaviour;
+namespace Monofony\Bundle\CoreBundle\Tests\Behat\Behaviour;
 
 use Behat\Mink\Element\NodeElement;
 
@@ -36,12 +45,9 @@ trait Toggles
     }
 
     /**
-     * @param NodeElement $toggleableElement
-     * @param bool        $expectedState
-     *
      * @throws \RuntimeException
      */
-    private function assertCheckboxState(NodeElement $toggleableElement, $expectedState): void
+    private function assertCheckboxState(NodeElement $toggleableElement, bool $expectedState): void
     {
         if ($toggleableElement->isChecked() !== $expectedState) {
             throw new \RuntimeException(sprintf(

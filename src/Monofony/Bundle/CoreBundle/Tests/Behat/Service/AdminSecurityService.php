@@ -1,10 +1,19 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
-namespace App\Tests\Behat\Service;
+namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 
-use App\Tests\Behat\Service\Setter\CookieSetterInterface;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\Setter\CookieSetterInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 final class AdminSecurityService extends AbstractSecurityService implements AdminSecurityServiceInterface
