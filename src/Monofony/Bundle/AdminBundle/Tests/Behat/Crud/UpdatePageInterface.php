@@ -1,8 +1,6 @@
 <?php
 
-
-
-namespace App\Tests\Behat\Page\Backend\Crud;
+namespace Monofony\Bundle\AdminBundle\Tests\Behat\Crud;
 
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 use Behat\Mink\Exception\ElementNotFoundException;
