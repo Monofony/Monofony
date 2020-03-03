@@ -1,14 +1,12 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Tests\Behat\Service\SharedStorageInterface;
-use Monofony\Component\Core\Model\User\AppUserInterface;
 use App\Fixture\Factory\AppUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 
@@ -34,12 +32,6 @@ class UserContext implements Context
      */
     private $userManager;
 
-    /**
-     * @param SharedStorageInterface  $sharedStorage
-     * @param UserRepositoryInterface $appUserRepository
-     * @param AppUserExampleFactory   $userFactory
-     * @param ObjectManager           $appUserManager
-     */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         UserRepositoryInterface $appUserRepository,
@@ -88,9 +80,6 @@ class UserContext implements Context
         $this->prepareUserPasswordResetToken($user);
     }
 
-    /**
-     * @param UserInterface $user
-     */
     private function prepareUserPasswordResetToken(UserInterface $user): void
     {
         $token = 'itotallyforgotmypassword';

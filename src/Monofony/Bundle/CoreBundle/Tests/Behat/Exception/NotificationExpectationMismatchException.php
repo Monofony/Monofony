@@ -1,8 +1,15 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-
-namespace App\Tests\Behat\Exception;
+namespace Monofony\Bundle\CoreBundle\Tests\Behat\Exception;
 
 use App\Tests\Behat\NotificationType;
 
