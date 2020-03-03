@@ -7,7 +7,7 @@ Feature: Resetting a password
     Background:
         Given there is a user "goodman@example.com" identified by "heisenberg"
 
-    @ui @email @todo
+    @ui @email
     Scenario: Resetting an account password
         When I want to reset password
         And I specify the email as "goodman@example.com"
