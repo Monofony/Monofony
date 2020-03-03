@@ -1,11 +1,13 @@
 <?php
 
-
+declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
 use Monofony\Component\Core\Model\User\AppUserInterface;
 use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Plugin\FixturesPlugin\Fixture\Factory\AbstractExampleFactory;
+use Monofony\Plugin\FixturesPlugin\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -81,7 +83,7 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
     /**
      * {@inheritdoc}
      */
-    protected function configureOptions(OptionsResolver $resolver)
+    protected function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
             ->setDefault('username', function (Options $options) {
