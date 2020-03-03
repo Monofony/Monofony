@@ -1,1 +1,7 @@
 services:
+    # Data collectors
+    Monofony\Bundle\CoreBundle\DataCollector\MonofonyDataCollector:
+        arguments:
+            $bundles: '%kernel.bundles%'
+        tags:
+            - { name: data_collector, template: '@MonofonyCore/DataCollector/monofony.html.twig', id: app, priority: -513 }

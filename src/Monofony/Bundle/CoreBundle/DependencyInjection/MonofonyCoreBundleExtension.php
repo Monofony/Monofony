@@ -17,8 +17,10 @@ use Doctrine\Common\EventSubscriber;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class MonofonyCoreBundleExtension extends Extension
 {
@@ -27,6 +29,12 @@ class MonofonyCoreBundleExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__.'/../Resources/config')
+        );
+        $loader->load('services.yaml');
+
         $this->registerSomeSyliusAliases($container);
         $this->tagCustomerContext($container);
         $this->tagDoctrineEventSubscribers($container);
