@@ -9,18 +9,16 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 
-class SharedStorage implements SharedStorageInterface
+final class SharedStorage implements SharedStorageInterface
 {
-    /**
-     * @var array
-     */
+    /** @var array */
     private $clipboard = [];
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $latestKey;
 
     /**
