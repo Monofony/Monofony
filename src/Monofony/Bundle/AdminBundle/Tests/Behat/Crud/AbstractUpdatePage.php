@@ -1,14 +1,12 @@
 <?php
 
+namespace Monofony\Bundle\AdminBundle\Tests\Behat\Crud;
 
-
-namespace App\Tests\Behat\Page\Backend\Crud;
-
-use Behat\Mink\Element\NodeElement;
-use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use App\Formatter\StringInflector;
+use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Symfony\Component\Routing\RouterInterface;
 
 abstract class AbstractUpdatePage extends SymfonyPage implements UpdatePageInterface

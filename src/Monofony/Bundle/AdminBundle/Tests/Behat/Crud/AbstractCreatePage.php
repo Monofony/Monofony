@@ -1,15 +1,13 @@
 <?php
 
+namespace Monofony\Bundle\AdminBundle\Tests\Behat\Crud;
 
-
-namespace App\Tests\Behat\Page\Backend\Crud;
-
-use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Symfony\Component\Routing\RouterInterface;
 
-abstract class AbstractCreatePage extends SymfonyPage
+abstract class AbstractCreatePage extends SymfonyPage implements CreatePageInterface
 {
     public function __construct(Session $session, \ArrayAccess $minkParameters, RouterInterface $router)
     {
