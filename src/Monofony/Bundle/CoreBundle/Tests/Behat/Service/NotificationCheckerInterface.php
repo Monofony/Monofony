@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 
 use App\Tests\Behat\Exception\NotificationExpectationMismatchException;
