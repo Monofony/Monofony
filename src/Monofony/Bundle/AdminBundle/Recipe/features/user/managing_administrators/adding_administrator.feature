@@ -17,7 +17,7 @@ Feature: Adding a new administrator
         Then I should be notified that it has been successfully created
         And the administrator "l.skywalker@gmail.com" should appear in the store
 
-    @ui @todo
+    @ui
     Scenario: Adding a new administrator and log in with its credentials
         Given I want to create a new administrator
         When I specify its email as "l.skywalker@gmail.com"
