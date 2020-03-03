@@ -18,6 +18,11 @@ use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 
 class MonofonyDataCollectorSpec extends ObjectBehavior
 {
+    function let(): void
+    {
+        $this->beConstructedWith([]);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(MonofonyDataCollector::class);
