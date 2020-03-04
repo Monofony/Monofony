@@ -1,15 +1,23 @@
 <?php
 
-namespace spec\App\Entity\OAuth;
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-use App\Entity\OAuth\ClientManager;
+namespace spec\Monofony\Bundle\CoreBundle\Entity\OAuth;
+
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use FOS\OAuthServerBundle\Entity\ClientManager as FOSClientManager;
 use FOS\OAuthServerBundle\Model\ClientInterface;
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
+use Monofony\Bundle\CoreBundle\Entity\OAuth\ClientManager;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ClientManagerSpec extends ObjectBehavior
 {

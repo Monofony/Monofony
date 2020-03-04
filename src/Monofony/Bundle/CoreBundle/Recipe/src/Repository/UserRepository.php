@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Repository;
 
 use Sylius\Bundle\UserBundle\Doctrine\ORM\UserRepository as BaseUserRepository;

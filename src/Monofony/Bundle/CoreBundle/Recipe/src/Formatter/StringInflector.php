@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Formatter;
 
 final class StringInflector

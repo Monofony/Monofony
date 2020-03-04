@@ -1,7 +1,14 @@
 services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+
     # Data collectors
     Monofony\Bundle\CoreBundle\DataCollector\MonofonyDataCollector:
         arguments:
             $bundles: '%kernel.bundles%'
         tags:
-            - { name: data_collector, template: '@MonofonyCore/DataCollector/monofony.html.twig', id: app, priority: -513 }
+            - { name: data_collector, template: '@MonofonyCore/DataCollector/monofony.html.twig', id: monofony_core, priority: -513 }
+
+    Monofony\Bundle\CoreBundle\Entity\OAuth\ClientManager:
+        $class: '%fos_oauth_server.model.client.class%'
