@@ -1,0 +1,2 @@
+imports:
+    - { resource: "../../src/Monofony/Plugin/FixturesPlugin/Recipe/config/packages/monofony_fixtures_plugin.yaml" }
