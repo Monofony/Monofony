@@ -1,0 +1,4 @@
+imports:
+    - { resource: '../../src/Monofony/Bundle/CoreBundle/Recipe/config/packages/monofony_core.yaml' }
+    - { resource: '../../src/Monofony/Bundle/AdminBundle/Recipe/config/grids/**/*.yaml' }
+
