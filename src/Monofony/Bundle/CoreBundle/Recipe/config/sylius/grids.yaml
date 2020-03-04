@@ -1,1 +1,2 @@
-- { resource: '../grids/**/*.yaml' }
+imports:
+    - { resource: 'grids/**/*.yaml' }
