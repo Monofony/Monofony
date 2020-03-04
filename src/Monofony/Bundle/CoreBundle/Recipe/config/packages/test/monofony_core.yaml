@@ -1,0 +1,4 @@
+swiftmailer:
+    spool:
+        type: file
+        path: "%kernel.cache_dir%/spool"
