@@ -1,0 +1,2 @@
+imports:
+    - { resource: '../../../src/Monofony/Bundle/CoreBundle/Recipe/config/packages/test/monofony_core.yaml' }
