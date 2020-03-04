@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\Form\EventSubscriber;
 
+use App\Form\Type\User\AppUserType;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Component\User\Model\UserAwareInterface;
@@ -17,11 +18,6 @@ use Symfony\Component\Validator\Constraints\Valid;
 
 final class AddUserFormSubscriberSpec extends ObjectBehavior
 {
-    function let(): void
-    {
-        $this->beConstructedWith('\Fully\Qualified\ClassName');
-    }
-
     function it_is_event_subscriber_instance(): void
     {
         $this->shouldImplement(EventSubscriberInterface::class);
@@ -41,7 +37,7 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
     ): void {
         $event->getForm()->willReturn($form);
 
-        $form->add('user', '\Fully\Qualified\ClassName', [
+        $form->add('user', AppUserType::class, [
             'constraints' => [new Valid()],
         ])->shouldBeCalled();
         $form->add('createUser', Argument::type('string'), [
@@ -73,7 +69,7 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
         $event->setData($customer)->shouldBeCalled();
 
         $form->remove('user')->shouldBeCalled();
-        $form->add('user', '\Fully\Qualified\ClassName', ['constraints' => [new Valid()]])->shouldBeCalled();
+        $form->add('user', AppUserType::class, ['constraints' => [new Valid()]])->shouldBeCalled();
 
         $this->submit($event);
     }
@@ -98,7 +94,7 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
         $event->setData($customer)->shouldNotBeCalled();
 
         $form->remove('user')->shouldNotBeCalled();
-        $form->add('user', '\Fully\Qualified\ClassName', Argument::type('array'))->shouldNotBeCalled();
+        $form->add('user', AppUserType::class, Argument::type('array'))->shouldNotBeCalled();
 
         $this->submit($event);
     }
@@ -123,7 +119,7 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
         $event->setData($customer)->shouldNotBeCalled();
 
         $form->remove('user')->shouldNotBeCalled();
-        $form->add('user', '\Fully\Qualified\ClassName', Argument::type('array'))->shouldNotBeCalled();
+        $form->add('user', AppUserType::class, Argument::type('array'))->shouldNotBeCalled();
 
         $this->submit($event);
     }

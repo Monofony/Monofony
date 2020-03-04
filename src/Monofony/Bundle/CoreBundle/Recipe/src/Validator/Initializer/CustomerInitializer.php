@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Validator\Initializer;
 
 use Sylius\Component\Customer\Model\CustomerInterface;

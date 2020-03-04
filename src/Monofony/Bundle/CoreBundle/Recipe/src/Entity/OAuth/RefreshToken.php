@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Entity\OAuth;
 
 use FOS\OAuthServerBundle\Entity\RefreshToken as BaseRefreshToken;

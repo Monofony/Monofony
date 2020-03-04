@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Command\Installer;
 
 use App\Entity\User\AdminUserInterface;
