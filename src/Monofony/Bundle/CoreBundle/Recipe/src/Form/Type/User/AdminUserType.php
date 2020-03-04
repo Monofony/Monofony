@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Form\Type\User;
 
 use App\Entity\User\AdminAvatar;

@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Page\Frontend;
 
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;

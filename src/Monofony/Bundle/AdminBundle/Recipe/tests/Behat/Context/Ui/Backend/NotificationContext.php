@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Context\Ui\Backend;
 
 use App\Tests\Behat\NotificationType;

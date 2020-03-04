@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Command\OauthServer;
 
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;

@@ -2,6 +2,7 @@
 
 namespace App\Form\EventSubscriber;
 
+use App\Form\Type\User\AppUserType;
 use Sylius\Component\User\Model\UserAwareInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -12,23 +13,7 @@ use Webmozart\Assert\Assert;
 
 final class AddUserFormSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var string
-     */
-    private $entryType;
-
-    /**
-     * @param string $entryType
-     */
-    public function __construct($entryType)
-    {
-        $this->entryType = $entryType;
-    }
-
-    /**
-     * @return array
-     */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             FormEvents::PRE_SET_DATA => 'preSetData',
@@ -42,7 +27,7 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
     public function preSetData(FormEvent $event): void
     {
         $form = $event->getForm();
-        $form->add('user', $this->entryType, ['constraints' => [new Valid()]]);
+        $form->add('user', AppUserType::class, ['constraints' => [new Valid()]]);
         $form->add('createUser', CheckboxType::class, [
             'label' => 'app.ui.create_user',
             'required' => false,
@@ -66,7 +51,7 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
             $event->setData($data);
 
             $form->remove('user');
-            $form->add('user', $this->entryType, ['constraints' => [new Valid()]]);
+            $form->add('user', AppUserType::class, ['constraints' => [new Valid()]]);
         }
     }
 }

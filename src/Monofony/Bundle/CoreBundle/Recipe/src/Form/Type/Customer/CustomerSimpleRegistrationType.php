@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Form\Type\Customer;
 
 use App\Entity\Customer\Customer;

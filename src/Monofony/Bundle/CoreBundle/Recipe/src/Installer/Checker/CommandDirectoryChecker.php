@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Installer\Checker;
 
 use Symfony\Component\Console\Output\OutputInterface;

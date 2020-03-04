@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Form\EventSubscriber;
 
 use Monofony\Component\Core\Model\Customer\CustomerInterface;
@@ -13,14 +11,10 @@ use Symfony\Component\Form\FormEvents;
 
 final class CustomerRegistrationFormSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var RepositoryInterface
-     */
+    /** @var RepositoryInterface */
     private $customerRepository;
 
-    /**
-     * @param RepositoryInterface $customerRepository
-     */
+    /** @param RepositoryInterface $customerRepository */
     public function __construct(RepositoryInterface $customerRepository)
     {
         $this->customerRepository = $customerRepository;
@@ -29,7 +23,7 @@ final class CustomerRegistrationFormSubscriber implements EventSubscriberInterfa
     /**
      * {@inheritdoc}
      */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             FormEvents::PRE_SUBMIT => 'preSubmit',
