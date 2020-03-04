@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace App\Tests\Behat\Context\Ui\Frontend;
 
 use App\Tests\Behat\Page\Frontend\HomePage;

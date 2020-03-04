@@ -1,12 +1,10 @@
 <?php
 
-
-
 namespace App\Menu;
 
-use Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
+use Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 
 final class AdminMenuBuilder implements AdminMenuBuilderInterface
 {

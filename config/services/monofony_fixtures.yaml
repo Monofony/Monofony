@@ -9,4 +9,4 @@ services:
     app_fixture:
         namespace: App\
         resource: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/*'
-        exclude: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+        exclude: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

@@ -6,4 +6,4 @@ services:
     app_frontend:
         namespace: App\
         resource: '../../src/Monofony/Bundle/FrontBundle/Recipe/src/*'
-        exclude: '../../src/Monofony/Bundle/FrontBundle/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+        exclude: '../../src/Monofony/Bundle/FrontBundle/Recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
