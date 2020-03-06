@@ -6,6 +6,3 @@ app_frontend:
 
 app_api:
     resource: "../src/Monofony/Bundle/ApiBundle/Recipe/config/routes/api.yaml"
-    prefix: /api
-    defaults:
-        _format: json
