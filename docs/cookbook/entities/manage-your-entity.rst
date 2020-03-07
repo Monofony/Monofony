@@ -8,7 +8,7 @@ Create a new grid configuration file
 
 .. code-block:: yaml
 
-    # config/grids/backend/article.yaml
+    # config/sylius/grids/backend/article.yaml
 
     sylius_grid:
         grids:
@@ -23,7 +23,7 @@ Create a new grid configuration file
                     title:
                         type: string
                         label: sylius.ui.title
-                        sortable: ~
+                        sortable: null
                 filters:
                     search:
                         type: string
@@ -40,17 +40,23 @@ Create a new grid configuration file
                         delete:
                             type: delete
 
-Import this to sylius_grid configuration file
----------------------------------------------
+.. warning::
+    You need to clear the Symfony cache when creating a new sylius grid configuration file.
+
+Manually importing you sylius_grid configuration (optional)
+-----------------------------------------------------------
+
+Grids configuration files are automatically detected when clearing the cache.
+You can manually add them if you prefer.
 
 .. code-block:: yaml
 
-    # config/packages/sylius_grid.yaml
+    # config/sylius/grids.yaml
 
     imports:
-        - { resource: '../grids/backend/article.yaml' }
-        - { resource: '../grids/backend/admin_user.yaml' }
-        - { resource: '../grids/backend/customer.yaml' }
+        - { resource: 'grids/backend/article.yaml' }
+        - { resource: 'grids/backend/admin_user.yaml' }
+        - { resource: 'grids/backend/customer.yaml' }
 
 Learn More
 ----------
