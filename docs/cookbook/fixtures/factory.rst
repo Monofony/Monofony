@@ -9,30 +9,22 @@ This allows to combine random and custom data on your data fixtures.
     namespace App\Fixture\Factory;
 
     use App\Entity\Article;
+    use Monofony\Plugin\FixturesPlugin\Fixture\Factory\AbstractExampleFactory;
     use Sylius\Component\Resource\Factory\FactoryInterface;
     use Symfony\Component\OptionsResolver\Options;
     use Symfony\Component\OptionsResolver\OptionsResolver;
 
-    class ArticleExampleFactory extends AbstractExampleFactory
+    final class ArticleExampleFactory extends AbstractExampleFactory
     {
-        /**
-         * @var FactoryInterface
-         */
+        /** @var FactoryInterface */
         private $articleFactory;
 
-        /**
-         * @var \Faker\Generator
-         */
+        /** @var \Faker\Generator */
         private $faker;
 
-        /**
-         * @var OptionsResolver
-         */
+        /** @var OptionsResolver */
         private $optionsResolver;
 
-        /**
-         * @param FactoryInterface $articleFactory
-         */
         public function __construct(FactoryInterface $articleFactory)
         {
             $this->articleFactory = $articleFactory;
@@ -46,7 +38,7 @@ This allows to combine random and custom data on your data fixtures.
         /**
          * {@inheritdoc}
          */
-        protected function configureOptions(OptionsResolver $resolver)
+        protected function configureOptions(OptionsResolver $resolver): void
         {
             $resolver
                 ->setDefault('title', function (Options $options) {
@@ -57,7 +49,7 @@ This allows to combine random and custom data on your data fixtures.
         /**
          * {@inheritdoc}
          */
-        public function create(array $options = [])
+        public function create(array $options = []): Article
         {
             $options = $this->optionsResolver->resolve($options);
 
@@ -69,8 +61,8 @@ This allows to combine random and custom data on your data fixtures.
         }
     }
 
-Thanks to dependency injection auto configuration, your service is already registered and ready to use:
+Thanks to services configuration, your new service is already registered and ready to use:
 
 .. code-block:: bash
 
-    $ bin/console debug:container | grep ExampleFactory
+$ bin/console debug:container App\Fixture\Factory\ArticleExampleFactory

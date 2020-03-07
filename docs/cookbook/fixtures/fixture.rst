@@ -7,10 +7,16 @@ Now you have to create a fixture service. This defines options you can use on `f
 
     namespace App\Fixture;
 
+    use Monofony\Plugin\FixturesPlugin\Fixture\AbstractResourceFixture;
     use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
     class ArticleFixture extends AbstractResourceFixture
     {
+        public function __construct(ObjectManager $objectManager, ArticleExampleFactory $articleExampleFactory)
+        {
+            parent::__construct($objectManager, $articleExampleFactory);
+        }
+
         /**
          * {@inheritdoc}
          */
@@ -32,21 +38,11 @@ Now you have to create a fixture service. This defines options you can use on `f
     }
 
 In this file we have only one custom option which is the article title.
-Now Register it on Symfony on ``config/services/fixtures.yaml``
 
-.. code-block:: yaml
+Thanks to autowiring system, you can already use it.
 
-    # config/services/fixtures.yaml
+.. code-block:: bash
 
-    services:
-        _defaults:
-            autowire: true
-            tags: [sylius_fixtures.fixture]
+    $ bin/console debug:container App\Fixture\ArticleFixture
 
-        # [...]
-
-        App\Fixture\ArticleFixture:
-                arguments:
-                    $exampleFactory: '@App\Fixture\Factory\ArticleExampleFactory'
-
-.. _fixtures bundle configurations yaml files: https://github.com/Monofony/SymfonyStarter/blob/master/config/packages/sylius_fixtures.yaml
+.. _fixtures bundle configurations yaml files: https://github.com/Monofony/Monofony/blob/master/src/Monofony/Plugin/FixturesPlugin/Recipe/config/sylius/fixtures.yaml
