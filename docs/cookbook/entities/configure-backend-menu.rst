@@ -7,7 +7,7 @@ To configure backend menu for your entity, you have to edit `src/Menu/AdminMenuB
 
     // src/Menu/AdminMenuBuilder.php
 
-    public function createMenu(RequestStack $requestStack)
+    public function createMenu(array $options): ItemInterface
     {
         // add method ...
         $this->addContentSubMenu($menu);
@@ -21,15 +21,17 @@ To configure backend menu for your entity, you have to edit `src/Menu/AdminMenuB
      *
      * @return ItemInterface
      */
-    private function addContentSubMenu(ItemInterface $menu)
+    private function addContentSubMenu(ItemInterface $menu): ItemInterface
     {
-        $customer = $menu
+        $content = $menu
             ->addChild('content')
             ->setLabel('sylius.ui.content')
         ;
-        $customer->addChild('backend_article', ['route' => 'app_backend_article_index'])
+
+        $content->addChild('backend_article', ['route' => 'app_backend_article_index'])
             ->setLabel('app.ui.articles')
             ->setLabelAttribute('icon', 'newspaper');
-        return $customer;
+
+        return $content;
     }
 
