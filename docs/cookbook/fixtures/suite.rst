@@ -3,7 +3,7 @@ How to use it on your suite
 
 .. code-block:: yaml
 
-    # config/packages/sylius_fixtures.yaml
+    # config/sylius/fixtures.yaml
 
     sylius_fixtures:
         suites:
