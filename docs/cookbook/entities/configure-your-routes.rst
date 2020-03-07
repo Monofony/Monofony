@@ -28,7 +28,7 @@ And add it on backend routes configuration.
 
 .. code-block:: yaml
 
-    # config/routes/backend.yaml
+    # config/routes/backend/_main.yaml
 
     [...]
 

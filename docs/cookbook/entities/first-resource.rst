@@ -78,7 +78,7 @@ If you don't add a form type, it uses a `default form type`_. But it is a good p
         /**
         * {@inheritdoc}
         */
-        public function getBlockPrefix()
+        public function getBlockPrefix(): string
         {
             return 'app_article';
         }
@@ -99,7 +99,7 @@ You now have to add it on Sylius Resource configuration.
 
 .. code-block:: yaml
 
-    # config/packages/sylius_resource.yaml
+    # config/sylius/resources.yaml
 
     sylius_resource:
         resources:
@@ -107,9 +107,6 @@ You now have to add it on Sylius Resource configuration.
                 classes:
                     model: App\Entity\Article
                     form: App\Form\Type\ArticleType
-            app.oauth_client:
-                classes:
-                    model: App\Entity\OAuth\Client
 
 .. warning::
 

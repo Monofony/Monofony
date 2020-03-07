@@ -8,6 +8,7 @@ This is a basic example. It fetches and renders the amount of registered custome
     namespace App\Dashboard\Statistics;
 
     use App\Repository\CustomerRepository;
+    use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
     use Symfony\Component\Templating\EngineInterface;
 
     class CustomerStatistic implements StatisticInterface
