@@ -33,7 +33,7 @@ And add it on backend routes configuration.
     [...]
 
     app_backend_article:
-        resource: "backend/article.yaml"
+        resource: "article.yaml"
 
 And that’s all!
 
