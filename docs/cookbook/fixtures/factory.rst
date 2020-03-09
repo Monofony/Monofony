@@ -65,4 +65,4 @@ Thanks to services configuration, your new service is already registered and rea
 
 .. code-block:: bash
 
-$ bin/console debug:container App\Fixture\Factory\ArticleExampleFactory
+    $ bin/console debug:container App\Fixture\Factory\ArticleExampleFactory
