@@ -2,8 +2,8 @@
 
 namespace App\Command\Installer;
 
-use App\Entity\User\AdminUserInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Monofony\Component\Core\Model\User\AdminUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Symfony\Component\Console\Command\Command;
@@ -70,10 +70,6 @@ EOT
         return 0;
     }
 
-    /**
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     */
     protected function setupAdministratorUser(InputInterface $input, OutputInterface $output): void
     {
         $output->writeln('Create your administrator account.');
@@ -143,9 +139,6 @@ EOT
     }
 
     /**
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     *
      * @return mixed
      */
     private function getAdministratorPassword(InputInterface $input, OutputInterface $output)
@@ -186,7 +179,7 @@ EOT
     }
 
     /**
-     * @param string   $message
+     * @param string $message
      * @param \Closure $validator
      *
      * @return Question

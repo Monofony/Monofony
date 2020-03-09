@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Transform;
 
-use App\Entity\User\AdminUserInterface;
+use Monofony\Component\Core\Model\User\AdminUserInterface;
 use Behat\Behat\Context\Context;
 use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 

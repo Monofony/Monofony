@@ -2,9 +2,9 @@
 
 namespace spec\App\Entity\User;
 
-use App\Entity\User\AdminAvatarInterface;
-use App\Entity\User\AdminUserInterface;
 use Doctrine\Common\Collections\Collection;
+use Monofony\Component\Core\Model\User\AdminAvatarInterface;
+use Monofony\Component\Core\Model\User\AdminUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\User;
 use Sylius\Component\User\Model\UserInterface;
