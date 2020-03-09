@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\User;
+namespace Monofony\Component\Core\Model\User;
 
 use Sylius\Component\User\Model\UserInterface as BaseUserInterface;
 
@@ -12,7 +12,7 @@ interface AdminUserInterface extends BaseUserInterface
 
     public function getFirstName(): ?string;
 
-    function setFirstName(?string $firstName): void;
+    public function setFirstName(?string $firstName): void;
 
     public function getLastName(): ?string;
 
