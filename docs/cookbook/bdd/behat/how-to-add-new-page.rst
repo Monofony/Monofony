@@ -4,21 +4,7 @@ How to add a new page object?
 Sylius uses a solution inspired by ``SensioLabs/PageObjectExtension``, which provides an infrastructure to create
 pages that encapsulates all the user interface manipulation in page objects.
 
-To create a new page object it is needed to add a service in Behat container in ``config/services_test/pages.yaml`` file:
-
-.. code-block:: yaml
-
-    App\Tests\Behat\Page\PAGE_NAME:
-        parent: app.behat.page
-        public: false
-
-.. note::
-
-    There are some boilerplates for common pages, which you may use. The available parents are ``app.behat.page`` (``FriendsOfBehat\PageObjectExtension\Page\Page``)
-    and ``app.behat.symfony_page`` (``FriendsOfBehat\PageObjectExtension\Page\SymfonyPage``). It is not required for a page to extend any class as
-    pages are POPOs (Plain Old PHP Objects).
-
-Then you will need to add that service as a regular argument in context service.
+To create a new page object it is needed to add a service.
 
 The simplest Symfony-based page looks like:
 
@@ -30,6 +16,12 @@ The simplest Symfony-based page looks like:
     {
         public function getRouteName(): string
         {
-            return 'sylius_user_security_login';
+            return 'app_frontend_security_login';
         }
     }
+
+.. note::
+
+    There are some boilerplates for common pages, which you may use. The available parents are ``FriendsOfBehat\PageObjectExtension\Page\Page``
+    and ``FriendsOfBehat\PageObjectExtension\Page\SymfonyPage``. It is not required for a page to extend any class as
+    pages are POPOs (Plain Old PHP Objects).
