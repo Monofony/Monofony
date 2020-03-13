@@ -9,7 +9,8 @@
         "sylius/fixtures-bundle": "^1.4"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Plugin\\FixturesPlugin\\": "" }
+        "psr-4": { "Monofony\\Plugin\\FixturesPlugin\\": "" },
+        "exclude-from-classmap": ["Recipe/"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

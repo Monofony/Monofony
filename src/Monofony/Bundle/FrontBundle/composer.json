@@ -8,7 +8,8 @@
         "monofony/core-bundle": "^0.1"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bundle\\FrontBundle\\": "" }
+        "psr-4": { "Monofony\\Bundle\\FrontBundle\\": "" },
+        "exclude-from-classmap": ["Recipe/"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
