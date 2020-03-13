@@ -1,6 +1,6 @@
 {
     "name": "monofony/fixtures-plugin",
-    "type": "symfony-bundle",
+    "type": "library",
     "description": "Monofony fixtures plugin.",
     "license": "MIT",
     "require": {
