@@ -9,7 +9,8 @@
         "monofony/core-bundle": "^0.1"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bundle\\ApiBundle\\": "" }
+        "psr-4": { "Monofony\\Bundle\\ApiBundle\\": "" },
+        "exclude-from-classmap": ["Recipe/"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

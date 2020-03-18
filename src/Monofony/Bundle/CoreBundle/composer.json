@@ -42,7 +42,8 @@
         "symfony/symfony": "*"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" }
+        "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" },
+        "exclude-from-classmap": ["Recipe/"]
     },
     "config": {
         "sort-packages": true
