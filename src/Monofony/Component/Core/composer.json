@@ -4,7 +4,7 @@
     "description": "Monofony core.",
     "license": "MIT",
     "require": {
-        "php": "^7.1"
+        "php": "^7.2"
     },
     "autoload": {
         "psr-4": { "Monofony\\Component\\Core\\": "" }
@@ -13,7 +13,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "0.2-dev"
         }
     }
 }
