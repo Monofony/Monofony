@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
-use App\Entity\User\AdminUserInterface;
+use Monofony\Component\Core\Model\User\AdminUserInterface;
 use Monofony\Plugin\FixturesPlugin\Fixture\Factory\AbstractExampleFactory;
 use Monofony\Plugin\FixturesPlugin\Fixture\Factory\ExampleFactoryInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;

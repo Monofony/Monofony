@@ -1,8 +1,17 @@
 <?php
 
+/*
+ * This file is part of the Monofony package.
+ *
+ * (c) Monofony
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
-namespace App\Entity\User;
+namespace Monofony\Component\Core\Model\User;
 
 use Sylius\Component\User\Model\UserInterface as BaseUserInterface;
 
@@ -12,7 +21,7 @@ interface AdminUserInterface extends BaseUserInterface
 
     public function getFirstName(): ?string;
 
-    function setFirstName(?string $firstName): void;
+    public function setFirstName(?string $firstName): void;
 
     public function getLastName(): ?string;
 
