@@ -4,9 +4,9 @@
     "description": "Monofony API bundle.",
     "license": "MIT",
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "api-platform/api-pack": "^1.2",
-        "monofony/core-bundle": "^0.1"
+        "monofony/core-bundle": "^0.2"
     },
     "autoload": {
         "psr-4": { "Monofony\\Bundle\\ApiBundle\\": "" },
@@ -16,7 +16,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "0.2-dev"
         }
     }
 }
