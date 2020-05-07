@@ -2,6 +2,7 @@
 
 namespace App\Context;
 
+use Monofony\Component\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Model\UserInterface;
@@ -41,8 +42,12 @@ class CustomerContext implements CustomerContextInterface
             return null;
         }
 
-        if ($this->authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED') && $token->getUser() instanceof UserInterface) {
-            return $token->getUser()->getCustomer();
+        $user = $token->getUser();
+        if (
+            $user instanceof AppUserInterface &&
+            $this->authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')
+        ) {
+            return $user->getCustomer();
         }
 
         return null;
