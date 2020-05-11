@@ -25,7 +25,7 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    public const VERSION = '0.2.1-dev';
+    public const VERSION = '0.2.3';
 
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
