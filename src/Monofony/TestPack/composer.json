@@ -28,7 +28,6 @@
         "se/selenium-server-standalone": " ^2.52",
         "symfony/debug-bundle": "4.4.*",
         "symfony/web-profiler-bundle": "4.4.*",
-        "symplify/monorepo-builder": "^7.2",
         "vimeo/psalm": "^3.4"
     },
     "minimum-stability": "dev",
