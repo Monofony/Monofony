@@ -69,7 +69,7 @@
     <div id="{{ form.vars.id }}">
         <label for="{{ form.file.vars.id }}" class="ui icon labeled button"><i class="cloud upload icon"></i> {{ 'sylius.ui.choose_file'|trans }}</label>
         {% if file.path|default(null) is not null %}
-            <img class="ui medium bordered image" src="{{ vich_uploader_asset(file, 'file')|imagine_filter('default') }}" alt="{{ form.vars.value.type }}" />
+            <img class="ui medium bordered image" src="{{ vich_uploader_asset(file, 'file')|imagine_filter('default') }}" alt="{{ form.vars.value.path }}" />
         {% endif %}
         <div class="ui hidden element">
             {{ form_widget(form.file) }}
