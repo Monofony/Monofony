@@ -9,7 +9,7 @@ Fixtures are used mainly for testing, but also for having your website in a cert
 
 .. note::
 
-   The way Fixtures are designed in Monofony is well described in the `FixturesBundle documentation <http://docs.sylius.org/en/latest/components_and_bundles/bundles/SyliusFixturesBundle/index.html>`_.
+   The way Fixtures are designed in Monofony is well described in the `FixturesBundle documentation <https://github.com/Sylius/SyliusFixturesBundle/blob/master/docs/index.md>`_.
 
 What are the available fixtures in Monofony?
 --------------------------------------------

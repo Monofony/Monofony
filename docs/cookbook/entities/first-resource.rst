@@ -125,6 +125,6 @@ Learn More
 * `Sylius Resource Bundle`_ documentation
 * `Doctrine migrations`_ documentation
 
-.. _`Sylius Resource Bundle`: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusResourceBundle/configuration.html
+.. _`Sylius Resource Bundle`: https://github.com/Sylius/SyliusResourceBundle/blob/master/docs/index.md
 .. _`Doctrine migrations`: https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html
 .. _`default form type`: https://github.com/Sylius/SyliusResourceBundle/blob/master/src/Bundle/Form/Type/DefaultResourceType.php
