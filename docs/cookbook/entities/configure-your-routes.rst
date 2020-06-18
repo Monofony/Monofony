@@ -42,4 +42,4 @@ Learn More
 
 * `Configuring routes in sylius documentation`_
 
-.. _Configuring routes in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html#generating-the-crud-routing
+.. _Configuring routes in sylius documentation: https://github.com/Sylius/SyliusResourceBundle/blob/master/docs/routing.md

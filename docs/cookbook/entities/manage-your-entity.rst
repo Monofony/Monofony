@@ -64,5 +64,5 @@ Learn More
 * `Configuring grid in sylius documentation`_
 * `The whole configuration reference in sylius documentation`_
 
-.. _The whole configuration reference in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/configuration.html
-.. _Configuring grid in sylius documentation: https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusGridBundle/your_first_grid.html
+.. _The whole configuration reference in sylius documentation: https://github.com/Sylius/SyliusGridBundle/blob/master/docs/configuration.md
+.. _Configuring grid in sylius documentation: https://github.com/Sylius/SyliusGridBundle/blob/master/docs/index.md
