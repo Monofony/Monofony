@@ -61,7 +61,7 @@ class ApiClientExampleFactory extends AbstractExampleFactory
             ->setDefault('secret', function (Options $options): string {
                 return $this->faker->uuid;
             })
-            ->setDefault('allowed_grant_types', [])
+            ->setDefault('allowed_grant_types', ['password', 'access_token', 'refresh_token'])
             ->setAllowedTypes('allowed_grant_types', ['array'])
         ;
     }
