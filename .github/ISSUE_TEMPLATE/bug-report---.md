@@ -5,7 +5,7 @@ about: Report a problem or error
 ---
 
 
-**ApiCore version affected**: 1.x.y
+**Monofony version affected**: 0.x.y
 
 **Description**  
 <!-- A clear and concise description of the bug you are experiencing. -->
