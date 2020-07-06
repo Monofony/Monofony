@@ -38,8 +38,6 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
     private $sessionTokenVariable;
 
     /**
-     * @param SessionInterface      $session
-     * @param CookieSetterInterface $cookieSetter
      * @param string                $firewallContextName
      */
     public function __construct(SessionInterface $session, CookieSetterInterface $cookieSetter, $firewallContextName)
@@ -89,7 +87,6 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
     }
 
     /**
-     * @param TokenInterface $token
      */
     private function setToken(TokenInterface $token): void
     {

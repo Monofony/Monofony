@@ -16,7 +16,6 @@ namespace Monofony\Plugin\FixturesPlugin\Fixture\Factory;
 interface ExampleFactoryInterface
 {
     /**
-     * @param array $options
      *
      * @return object
      */

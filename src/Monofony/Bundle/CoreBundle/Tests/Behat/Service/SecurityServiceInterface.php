@@ -20,7 +20,6 @@ use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 interface SecurityServiceInterface
 {
     /**
-     * @param UserInterface $user
      *
      * @throws \InvalidArgumentException
      */
@@ -36,7 +35,6 @@ interface SecurityServiceInterface
     public function getCurrentToken();
 
     /**
-     * @param TokenInterface $token
      */
     public function restoreToken(TokenInterface $token);
 }

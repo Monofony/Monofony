@@ -19,7 +19,6 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 final class PasswordUpdaterListener extends BasePasswordUpdaterListener
 {
     /**
-     * @param GenericEvent $event
      */
     public function customerUpdateEvent(GenericEvent $event): void
     {

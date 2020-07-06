@@ -16,7 +16,6 @@ namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 interface SharedStorageInterface
 {
     /**
-     * @param string $key
      *
      * @return mixed
      */
@@ -32,7 +31,6 @@ interface SharedStorageInterface
     public function getLatestResource();
 
     /**
-     * @param array $clipboard
      *
      * @throws \RuntimeException
      */
