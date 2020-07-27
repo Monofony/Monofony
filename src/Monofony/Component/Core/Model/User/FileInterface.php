@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Media;
+namespace Monofony\Component\Core\Model\User;
 
 interface FileInterface
 {
