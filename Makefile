@@ -64,9 +64,8 @@ test-doctrine-migrations:
 .PHONY: test-doctrine-migrations
 
 test-prod-requirements:
-	composer install --no-dev --no-interaction --prefer-dist
-	APP_ENV=prod bin/console cache:clear
-	composer install --no-interaction --prefer-dist
+	composer dump-env prod
+	composer install --no-dev --no-interaction --prefer-dist --no-scripts
 .PHONY: test-prod-requirements
 
 test-behat-without-javascript:

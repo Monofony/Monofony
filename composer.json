@@ -130,6 +130,12 @@
         },
         "fix": [
             "@php vendor/bin/ecs check src --fix"
+        ],
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
         ]
     },
     "config": {
