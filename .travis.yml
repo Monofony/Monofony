@@ -7,6 +7,7 @@ env:
         - APP_ENV=test
         - APP_NAME_CACHE_DIR=$HOME/.app_name-cache
         - APP_NAME_BUILD_DIR=etc/build
+        - MAIN_BRANCH=0.x
 
 matrix:
     include:
