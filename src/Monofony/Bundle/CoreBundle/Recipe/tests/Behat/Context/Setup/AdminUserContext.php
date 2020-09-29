@@ -11,19 +11,8 @@ use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 final class AdminUserContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
     private $sharedStorage;
-
-    /**
-     * @var AdminUserExampleFactory
-     */
     private $userFactory;
-
-    /**
-     * @var UserRepositoryInterface
-     */
     private $adminUserRepository;
 
     public function __construct(

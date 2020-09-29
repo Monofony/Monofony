@@ -8,7 +8,6 @@ use Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
 
 final class AdminMenuBuilder implements AdminMenuBuilderInterface
 {
-    /** @var FactoryInterface */
     private $factory;
 
     public function __construct(FactoryInterface $factory)

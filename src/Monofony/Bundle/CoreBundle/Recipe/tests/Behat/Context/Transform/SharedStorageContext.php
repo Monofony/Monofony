@@ -8,14 +8,8 @@ use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 
 final class SharedStorageContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
     private $sharedStorage;
 
-    /**
-     * @param SharedStorageInterface $sharedStorage
-     */
     public function __construct(SharedStorageInterface $sharedStorage)
     {
         $this->sharedStorage = $sharedStorage;

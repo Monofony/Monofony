@@ -12,24 +12,9 @@ use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 class UserContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
     private $sharedStorage;
-
-    /**
-     * @var UserRepositoryInterface
-     */
     private $appUserRepository;
-
-    /**
-     * @var AppUserExampleFactory
-     */
     private $userFactory;
-
-    /**
-     * @var ObjectManager
-     */
     private $userManager;
 
     public function __construct(

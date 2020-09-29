@@ -11,7 +11,6 @@ use Symfony\Component\Routing\RouterInterface;
 
 class DashboardPage extends SymfonyPage
 {
-    /** @var TableAccessorInterface */
     private $tableAccessor;
 
     public function __construct(

@@ -11,16 +11,9 @@ use Symfony\Component\Process\Exception\RuntimeException;
 
 class InstallCommand extends Command
 {
-    /** @var DirectoryChecker */
     private $directoryChecker;
-
-    /** @var string */
     private $cacheDir;
-
-    /** @var CommandExecutor */
     private $commandExecutor;
-
-    /** @var array */
     private $commands = [
         [
             'command' => 'database',

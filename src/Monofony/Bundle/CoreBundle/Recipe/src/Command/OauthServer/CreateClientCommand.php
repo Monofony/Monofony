@@ -11,14 +11,8 @@ use App\Entity\OAuth\Client;
 
 class CreateClientCommand extends Command
 {
-    /**
-     * @var ClientManagerInterface
-     */
     private $clientManager;
 
-    /**
-     * @param ClientManagerInterface $clientManager
-     */
     public function __construct(ClientManagerInterface $clientManager)
     {
         $this->clientManager = $clientManager;

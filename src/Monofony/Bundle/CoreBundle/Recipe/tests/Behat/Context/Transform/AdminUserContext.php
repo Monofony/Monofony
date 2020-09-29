@@ -10,7 +10,6 @@ use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
 
 final class AdminUserContext implements Context
 {
-    /** @var SharedStorageInterface */
     private $sharedStorage;
 
     public function __construct(SharedStorageInterface $sharedStorage)
