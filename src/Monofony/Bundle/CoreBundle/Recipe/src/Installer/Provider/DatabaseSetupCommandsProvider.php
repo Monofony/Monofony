@@ -16,7 +16,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProviderInterface
 {
-    /** @var ManagerRegistry */
     private $doctrineRegistry;
 
     public function __construct(ManagerRegistry $doctrineRegistry)

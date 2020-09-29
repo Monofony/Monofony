@@ -15,16 +15,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class InstallSampleDataCommand extends Command
 {
-    /** @var DirectoryChecker */
     private $directoryChecker;
-
-    /** @var CommandsRunner */
     private $commandsRunner;
-
-    /** @var string */
     private $publicDir;
-
-    /** @var string */
     private $environment;
 
     public function __construct(

@@ -19,16 +19,9 @@ use Webmozart\Assert\Assert;
 
 final class SetupCommand extends Command
 {
-    /** @var ObjectManager */
     private $adminUserManager;
-
-    /** @var FactoryInterface */
     private $adminUserFactory;
-
-    /** @var UserRepositoryInterface */
     private $adminUserRepository;
-
-    /** @var ValidatorInterface */
     private $validator;
 
     public function __construct(
@@ -162,10 +155,7 @@ EOT
         return $password;
     }
 
-    /**
-     * @return \Closure
-     */
-    private function getPasswordQuestionValidator()
+    private function getPasswordQuestionValidator(): \Closure
     {
         return function ($value) {
             /** @var ConstraintViolationListInterface $errors */
@@ -178,13 +168,7 @@ EOT
         };
     }
 
-    /**
-     * @param string $message
-     * @param \Closure $validator
-     *
-     * @return Question
-     */
-    private function createPasswordQuestion($message, \Closure $validator)
+    private function createPasswordQuestion(string $message, \Closure $validator): Question
     {
         return (new Question($message))
             ->setValidator($validator)

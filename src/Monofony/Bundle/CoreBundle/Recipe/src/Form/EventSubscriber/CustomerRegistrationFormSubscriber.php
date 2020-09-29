@@ -11,10 +11,8 @@ use Symfony\Component\Form\FormEvents;
 
 final class CustomerRegistrationFormSubscriber implements EventSubscriberInterface
 {
-    /** @var RepositoryInterface */
     private $customerRepository;
 
-    /** @param RepositoryInterface $customerRepository */
     public function __construct(RepositoryInterface $customerRepository)
     {
         $this->customerRepository = $customerRepository;

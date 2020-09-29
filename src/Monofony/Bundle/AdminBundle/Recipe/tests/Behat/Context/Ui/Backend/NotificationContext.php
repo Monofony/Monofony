@@ -8,14 +8,8 @@ use Monofony\Bundle\CoreBundle\Tests\Behat\Service\NotificationCheckerInterface;
 
 final class NotificationContext implements Context
 {
-    /**
-     * @var NotificationCheckerInterface
-     */
     private $notificationChecker;
 
-    /**
-     * @param NotificationCheckerInterface $notificationChecker
-     */
     public function __construct(NotificationCheckerInterface $notificationChecker)
     {
         $this->notificationChecker = $notificationChecker;

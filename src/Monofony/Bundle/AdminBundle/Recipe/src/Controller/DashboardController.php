@@ -10,10 +10,7 @@ use Symfony\Component\Templating\EngineInterface;
 
 final class DashboardController
 {
-    /** @var DashboardStatisticsProviderInterface */
     private $statisticsProvider;
-
-    /** @var EngineInterface */
     private $templating;
 
     public function __construct(DashboardStatisticsProviderInterface $statisticsProvider, EngineInterface $templating)

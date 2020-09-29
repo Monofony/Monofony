@@ -13,34 +13,12 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class DefaultContext implements Context
 {
-    /**
-     * @var KernelInterface
-     */
     protected $kernel;
-
-    /**
-     * @var Application
-     */
     protected $application;
-
-    /**
-     * @var CommandTester
-     */
     protected static $sharedTester;
-
-    /**
-     * @var Command
-     */
     protected $command;
-
-    /**
-     * @var QuestionHelper
-     */
     protected $questionHelper;
 
-    /**
-     * @param KernelInterface $kernel
-     */
     public function __construct(KernelInterface $kernel)
     {
         $this->kernel = $kernel;
@@ -51,36 +29,25 @@ class DefaultContext implements Context
         static::$sharedTester = $tester;
     }
 
-    /**
-     * @return CommandTester
-     */
-    public function getTester()
+    public function getTester(): CommandTester
     {
         return static::$sharedTester;
     }
 
-    /**
-     * @return ObjectManager
-     */
-    protected function getEntityManager()
+    protected function getEntityManager(): ObjectManager
     {
         return $this->getService('doctrine')->getManager();
     }
 
     /**
-     * @param string $id
-     *
      * @return object
      */
-    protected function getService($id)
+    protected function getService(string $id)
     {
         return $this->getContainer()->get($id);
     }
 
-    /**
-     * @return ContainerInterface
-     */
-    protected function getContainer()
+    protected function getContainer(): ContainerInterface
     {
         return $this->kernel->getContainer();
     }

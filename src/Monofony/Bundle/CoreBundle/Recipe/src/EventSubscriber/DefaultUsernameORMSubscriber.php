@@ -26,9 +26,6 @@ final class DefaultUsernameORMSubscriber implements EventSubscriber
         ];
     }
 
-    /**
-     * @param OnFlushEventArgs $onFlushEventArgs
-     */
     public function onFlush(OnFlushEventArgs $onFlushEventArgs): void
     {
         $entityManager = $onFlushEventArgs->getEntityManager();
@@ -38,11 +35,7 @@ final class DefaultUsernameORMSubscriber implements EventSubscriber
         $this->processEntities($unitOfWork->getScheduledEntityUpdates(), $entityManager, $unitOfWork);
     }
 
-    /**
-     * @param array                  $entities
-     * @param EntityManagerInterface $entityManager
-     */
-    private function processEntities($entities, EntityManagerInterface $entityManager, UnitOfWork $unitOfWork): void
+    private function processEntities(array $entities, EntityManagerInterface $entityManager, UnitOfWork $unitOfWork): void
     {
         foreach ($entities as $customer) {
             if (!$customer instanceof CustomerInterface) {

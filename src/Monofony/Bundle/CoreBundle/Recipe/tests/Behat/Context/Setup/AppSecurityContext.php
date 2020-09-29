@@ -12,24 +12,9 @@ use Webmozart\Assert\Assert;
 
 final class AppSecurityContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
     private $sharedStorage;
-
-    /**
-     * @var AppSecurityServiceInterface
-     */
     private $securityService;
-
-    /**
-     * @var AdminUserExampleFactory
-     */
     private $userFactory;
-
-    /**
-     * @var UserRepositoryInterface
-     */
     private $appUserRepository;
 
     public function __construct(

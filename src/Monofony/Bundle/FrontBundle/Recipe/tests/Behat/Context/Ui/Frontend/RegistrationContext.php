@@ -20,56 +20,15 @@ use Webmozart\Assert\Assert;
 
 class RegistrationContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
     private $sharedStorage;
-
-    /**
-     * @var DashboardPage
-     */
     private $dashboardPage;
-
-    /**
-     * @var HomePage
-     */
     private $homePage;
-
-    /**
-     * @var LoginPage
-     */
     private $loginPage;
-
-    /**
-     * @var RegisterPage
-     */
     private $registerPage;
-
-    /**
-     * @var VerificationPage
-     */
     private $verificationPage;
-
-    /**
-     * @var ProfileUpdatePage
-     */
     private $profileUpdatePage;
-
-    /**
-     * @var NotificationCheckerInterface
-     */
     private $notificationChecker;
 
-    /**
-     * @param SharedStorageInterface       $sharedStorage
-     * @param DashboardPage                $dashboardPage
-     * @param HomePage                     $homePage
-     * @param LoginPage                    $loginPage
-     * @param RegisterPage                 $registerPage
-     * @param VerificationPage             $verificationPage
-     * @param ProfileUpdatePage            $profileUpdatePage
-     * @param NotificationCheckerInterface $notificationChecker
-     */
     public function __construct(
         SharedStorageInterface $sharedStorage,
         DashboardPage $dashboardPage,

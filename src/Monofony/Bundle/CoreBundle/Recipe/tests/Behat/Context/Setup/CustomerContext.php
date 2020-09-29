@@ -14,19 +14,10 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 final class CustomerContext implements Context
 {
-    /** @var SharedStorageInterface */
     private $sharedStorage;
-
-    /** @var RepositoryInterface */
     private $customerRepository;
-
-    /** @var ObjectManager */
     private $customerManager;
-
-    /** @var FactoryInterface */
     private $customerFactory;
-
-    /** @var FactoryInterface */
     private $appUserFactory;
 
     public function __construct(

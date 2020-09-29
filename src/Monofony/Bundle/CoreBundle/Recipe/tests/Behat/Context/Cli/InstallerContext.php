@@ -9,24 +9,13 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class InstallerContext extends DefaultContext
 {
-    /**
-     * @var SetupCommand
-     */
     private $setupCommand;
-
-    /**
-     * @var array
-     */
     private $inputChoices = [
         'e-mail' => 'test@email.com',
         'password' => 'pswd',
         'confirmation' => 'pswd',
     ];
 
-    /**
-     * @param KernelInterface $kernel
-     * @param SetupCommand    $setupCommand
-     */
     public function __construct(KernelInterface $kernel, SetupCommand $setupCommand)
     {
         $this->setupCommand = $setupCommand;

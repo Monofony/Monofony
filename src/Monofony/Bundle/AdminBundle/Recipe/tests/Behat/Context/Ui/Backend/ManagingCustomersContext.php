@@ -14,16 +14,9 @@ use Webmozart\Assert\Assert;
 
 final class ManagingCustomersContext implements Context
 {
-    /** @var IndexPage */
     private $indexPage;
-
-    /** @var UpdatePage */
     private $updatePage;
-
-    /** @var ShowPage */
     private $showPage;
-
-    /** @var CurrentPageResolverInterface */
     private $currentPageResolver;
 
     public function __construct(

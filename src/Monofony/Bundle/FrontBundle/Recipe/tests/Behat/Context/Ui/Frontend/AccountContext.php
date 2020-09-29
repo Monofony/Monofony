@@ -16,38 +16,12 @@ use Webmozart\Assert\Assert;
 
 final class AccountContext implements Context
 {
-    /**
-     * @var DashboardPage
-     */
     private $dashboardPage;
-
-    /**
-     * @var ProfileUpdatePage
-     */
     private $profileUpdatePage;
-
-    /**
-     * @var ChangePasswordPage
-     */
     private $changePasswordPage;
-
-    /**
-     * @var LoginPage
-     */
     private $loginPage;
-
-    /**
-     * @var NotificationCheckerInterface
-     */
     private $notificationChecker;
 
-    /**
-     * @param DashboardPage                $dashboardPage
-     * @param ProfileUpdatePage            $profileUpdatePage
-     * @param ChangePasswordPage           $changePasswordPage
-     * @param LoginPage                    $loginPage
-     * @param NotificationCheckerInterface $notificationChecker
-     */
     public function __construct(
         DashboardPage $dashboardPage,
         ProfileUpdatePage $profileUpdatePage,
