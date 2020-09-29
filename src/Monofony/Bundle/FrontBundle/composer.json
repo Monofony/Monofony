@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "monofony/core-bundle": "^0.2"
+        "monofony/core-bundle": "^0.3"
     },
     "autoload": {
         "psr-4": { "Monofony\\Bundle\\FrontBundle\\": "" },
@@ -15,7 +15,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "0.3-dev"
         }
     }
 }
