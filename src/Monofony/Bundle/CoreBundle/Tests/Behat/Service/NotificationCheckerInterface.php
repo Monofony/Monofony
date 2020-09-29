@@ -19,8 +19,6 @@ use App\Tests\Behat\NotificationType;
 interface NotificationCheckerInterface
 {
     /**
-     * @param string           $message
-     * @param NotificationType $type
      *
      * @throws NotificationExpectationMismatchException
      */

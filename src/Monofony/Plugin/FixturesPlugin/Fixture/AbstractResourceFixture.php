@@ -39,8 +39,6 @@ abstract class AbstractResourceFixture implements FixtureInterface
     private $optionsResolver;
 
     /**
-     * @param ObjectManager           $objectManager
-     * @param ExampleFactoryInterface $exampleFactory
      */
     public function __construct(ObjectManager $objectManager, ExampleFactoryInterface $exampleFactory)
     {
@@ -66,7 +64,6 @@ abstract class AbstractResourceFixture implements FixtureInterface
     }
 
     /**
-     * @param array $options
      */
     final public function load(array $options): void
     {
@@ -111,7 +108,6 @@ abstract class AbstractResourceFixture implements FixtureInterface
     }
 
     /**
-     * @param ArrayNodeDefinition $resourceNode
      */
     protected function configureResourceNode(ArrayNodeDefinition $resourceNode)
     {
