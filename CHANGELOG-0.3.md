@@ -1,0 +1,17 @@
+## Change Log
+
+### v0.3.0 (2020/09/30 07:44 +00:00)
+- [#163](https://github.com/Monofony/Monofony/pull/163) Prepare v0.3.0 dev (@loic425)
+- [#164](https://github.com/Monofony/Monofony/pull/164) [WIP] Remove useless phpdoc (@loic425)
+- [#158](https://github.com/Monofony/Monofony/pull/158) [Fix] move file interface into core component (@loic425)
+- [#147](https://github.com/Monofony/Monofony/pull/147) Bump websocket-extensions from 0.1.3 to 0.1.4 (@dependabot[bot])
+- [#162](https://github.com/Monofony/Monofony/pull/162) Fix allowed grand types values on fixtures (@loic425)
+- [#157](https://github.com/Monofony/Monofony/pull/157) Fix autoscripts after post install and update commands (@loic425)
+- [#156](https://github.com/Monofony/Monofony/pull/156) No superfluous phpdoc tags (@loic425)
+- [#137](https://github.com/Monofony/Monofony/pull/137) Bump jquery from 3.4.1 to 3.5.0 (@dependabot[bot])
+- [#159](https://github.com/Monofony/Monofony/pull/159) Bump elliptic from 6.5.2 to 6.5.3 (@dependabot[bot])
+- [#160](https://github.com/Monofony/Monofony/pull/160) Bump http-proxy from 1.18.0 to 1.18.1 (@dependabot[bot])
+- [#161](https://github.com/Monofony/Monofony/pull/161) Fix security issues (@loic425)
+- [#149](https://github.com/Monofony/Monofony/pull/149) Fix Sylius bundles documentation links (@loic425)
+- [#148](https://github.com/Monofony/Monofony/pull/148) Fix build (@loic425)
+- [#145](https://github.com/Monofony/Monofony/pull/145) Fix image widget (@loic425)
