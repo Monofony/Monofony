@@ -1,6 +1,9 @@
 framework:
     #esi:             ~
-    translator:      { fallbacks: ["%locale%"] }
+    translator:
+        fallbacks: ["%locale%"]
+        paths:
+            - '%kernel.project_dir%/src/Monofony/Bundle/CoreBundle/Recipe/translations'
     secret:          '%env(APP_SECRET)%'
     form:            ~
     csrf_protection: ~
@@ -17,3 +20,4 @@ framework:
     http_method_override: true
     php_errors:
         log: true
+

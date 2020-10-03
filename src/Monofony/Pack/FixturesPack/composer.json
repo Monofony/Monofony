@@ -1,0 +1,19 @@
+{
+    "name": "monofony/fixtures-pack",
+    "type": "symfony-pack",
+    "description": "A pack for Monofony.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2",
+        "monofony/core-bundle": "^0.3",
+        "sylius/fixtures-bundle": "^1.4"
+    },
+    "autoload": {
+        "exclude-from-classmap": ["Recipe/"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3-dev"
+        }
+    }
+}

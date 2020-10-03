@@ -8,5 +8,5 @@ services:
 
     app_fixture:
         namespace: App\
-        resource: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/*'
-        exclude: '../../src/Monofony/Plugin/FixturesPlugin/Recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/Pack/FixturesPack/Recipe/src/*'
+        exclude: '../../src/Monofony/Pack/FixturesPack/Recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

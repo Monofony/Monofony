@@ -1,0 +1,4 @@
+sylius:
+    user:
+        email:
+            unique: This email is already used.
