@@ -1,6 +1,6 @@
 {
     "name": "monofony/api-pack",
-    "type": "symfony-bundle",
+    "type": "symfony-pack",
     "description": "A pack for Monofony.",
     "license": "MIT",
     "require": {

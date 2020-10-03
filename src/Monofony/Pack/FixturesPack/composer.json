@@ -1,7 +1,7 @@
 {
-    "name": "monofony/fixtures-plugin",
-    "type": "symfony-bundle",
-    "description": "Monofony fixtures plugin.",
+    "name": "monofony/fixtures-pack",
+    "type": "symfony-pack",
+    "description": "A pack for Monofony.",
     "license": "MIT",
     "require": {
         "php": "^7.2",
@@ -11,8 +11,6 @@
     "autoload": {
         "exclude-from-classmap": ["Recipe/"]
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "extra": {
         "branch-alias": {
             "dev-master": "0.3-dev"
