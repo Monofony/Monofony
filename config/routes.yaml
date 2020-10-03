@@ -5,4 +5,4 @@ app_frontend:
     resource: "../src/Monofony/Bundle/FrontBundle/Recipe/config/routes/frontend.yaml"
 
 app_api:
-    resource: "../src/Monofony/Bundle/ApiBundle/Recipe/config/routes/api.yaml"
+    resource: "../src/Monofony/Pack/ApiPack/Recipe/config/routes/api.yaml"

@@ -1,0 +1,11 @@
+{
+    "type": "https://tools.ietf.org/html/rfc2616#section-10",
+    "title": "An error occurred",
+    "detail": "email: This email is already used.",
+    "violations": [
+        {
+            "propertyPath": "email",
+            "message": "This email is already used."
+        }
+    ]
+}

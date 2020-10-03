@@ -1,0 +1,12 @@
+App\Message\RegisterAppUser:
+    attributes:
+        messenger: true
+        output: false
+        validation_groups: ["Default", "sylius"]
+    itemOperations: []
+    collectionOperations:
+        post:
+            path: /register
+            openapi_context:
+                summary: Registers an app user
+            validation_groups: ["Default", "sylius"]
