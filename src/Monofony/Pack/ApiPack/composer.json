@@ -5,7 +5,8 @@
     "license": "MIT",
     "require": {
         "api-platform/api-pack": "^1.2",
-        "monofony/core-bundle": "^0.3"
+        "monofony/core-bundle": "^0.3",
+        "symfony/messenger": "4.4.*"
     },
     "autoload": {
         "exclude-from-classmap": ["Recipe/"]
