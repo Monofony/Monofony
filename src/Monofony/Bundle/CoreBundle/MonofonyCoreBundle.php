@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class MonofonyCoreBundle extends Bundle
 {
-    public const VERSION = '0.3.1';
+    public const VERSION = '0.3.2';
 
     public function getContainerExtension()
     {
