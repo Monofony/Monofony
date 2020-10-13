@@ -39,10 +39,7 @@ class DefaultContext implements Context
         return $this->getService('doctrine')->getManager();
     }
 
-    /**
-     * @return object
-     */
-    protected function getService(string $id)
+    protected function getService(string $id): ?object
     {
         return $this->getContainer()->get($id);
     }

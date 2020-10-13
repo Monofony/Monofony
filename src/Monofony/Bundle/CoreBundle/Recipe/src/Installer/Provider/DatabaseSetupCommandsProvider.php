@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Installer\Provider;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Helper\QuestionHelper;
@@ -18,14 +17,11 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
 {
     private $doctrineRegistry;
 
-    public function __construct(ManagerRegistry $doctrineRegistry)
+    public function __construct(Registry $doctrineRegistry)
     {
         $this->doctrineRegistry = $doctrineRegistry;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCommands(InputInterface $input, OutputInterface $output, QuestionHelper $questionHelper): array
     {
         if (!$this->isDatabasePresent()) {
@@ -116,10 +112,7 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
         return $this->getEntityManager()->getConnection()->getSchemaManager();
     }
 
-    /**
-     * @return EntityManagerInterface|ObjectManager
-     */
-    private function getEntityManager(): ObjectManager
+    private function getEntityManager(): EntityManagerInterface
     {
         return $this->doctrineRegistry->getManager();
     }

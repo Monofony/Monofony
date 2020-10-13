@@ -13,13 +13,12 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle\Tests\Behat\Service;
 
-use App\Tests\Behat\Exception\NotificationExpectationMismatchException;
+use Monofony\Bundle\CoreBundle\Tests\Behat\Exception\NotificationExpectationMismatchException;
 use App\Tests\Behat\NotificationType;
 
 interface NotificationCheckerInterface
 {
     /**
-     *
      * @throws NotificationExpectationMismatchException
      */
     public function checkNotification(string $message, NotificationType $type);
