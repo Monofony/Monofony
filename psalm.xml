@@ -6,12 +6,15 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="src/Core/recipe/src" />
-        <directory name="src/Monofony/Bundle/AdminBundle/Recipe/src" />
-        <directory name="src/Monofony/Bundle/FrontBundle/Recipe/src" />
-        <directory name="src/Monofony/Plugin/FixturesPlugin/Recipe/src" />
+        <directory name="src" />
         <ignoreFiles>
             <directory name="vendor" />
+            <directory name="src/Monofony/Bundle/AdminBundle/Recipe/spec" />
+            <directory name="src/Monofony/Bundle/AdminBundle/Recipe/tests" />
+            <directory name="src/Monofony/Bundle/AdminBundle/spec" />
+            <directory name="src/Monofony/Bundle/CoreBundle/Recipe/spec" />
+            <directory name="src/Monofony/Bundle/CoreBundle/spec" />
+            <file name="src/Kernel.php"/>
         </ignoreFiles>
     </projectFiles>
 

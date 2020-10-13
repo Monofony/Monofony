@@ -6,6 +6,13 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
+            "Monofony\\Bundle\\": "src/Monofony/Bundle/",
+            "Monofony\\Component\\": "src/Monofony/Component/",
+            "Monofony\\Plugin\\": "src/Monofony/Plugin/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "App\\Collector\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Collector/",
             "App\\Context\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Context/",
             "App\\Command\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Command/",
@@ -20,20 +27,8 @@
             "App\\Installer\\Checker\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Installer/Checker/",
             "App\\Migrations\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Migrations/",
             "App\\Repository\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Repository/",
-            "App\\Validator\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Validator/",
-            "Monofony\\Bundle\\": "src/Monofony/Bundle/",
-            "Monofony\\Component\\": "src/Monofony/Component/",
-            "Monofony\\Plugin\\": "src/Monofony/Plugin/"
-        },
-        "classmap": [
-            "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",
-            "src/Monofony/Bundle/AdminBundle/Recipe/src/Menu/AdminMenuBuilder.php",
-            "src/Monofony/Bundle/FrontBundle/Recipe/src/Menu/AccountMenuBuilder.php"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
             "App\\Tests\\": "tests/",
+            "App\\Validator\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Validator/",
             "App\\Tests\\Behat\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/",
             "App\\Tests\\Behat\\Behaviour\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Behaviour/",
             "App\\Tests\\Behat\\Context\\Cli\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Context/Cli/",
@@ -49,7 +44,13 @@
             "App\\Tests\\Behat\\Page\\Frontend\\": "src/Monofony/Bundle/FrontBundle/Recipe/tests/Behat/Page/Frontend/",
             "App\\Tests\\Behat\\Service\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Service/",
             "App\\Tests\\Controller\\": "src/Monofony/Bundle/ApiBundle/Recipe/tests/Controller/"
-        }
+        },
+        "classmap": [
+            "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",
+            "src/Monofony/Bundle/AdminBundle/Recipe/src/Menu/AdminMenuBuilder.php",
+            "src/Monofony/Bundle/FrontBundle/Recipe/src/Menu/AccountMenuBuilder.php",
+            "src/Monofony/Plugin/FixturesPlugin/Recipe/src/Command/Installer/InstallSampleDataCommand.php"
+        ]
     },
     "require": {
         "php": "^7.2",
@@ -114,7 +115,7 @@
         "symfony/web-profiler-bundle": "4.4.*",
         "symplify/easy-coding-standard": "^6.0||^7.0",
         "symplify/monorepo-builder": "^7.0",
-        "vimeo/psalm": "^3.4"
+        "vimeo/psalm": "^3.16"
     },
     "conflict": {
         "symfony/symfony": "*",
