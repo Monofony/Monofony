@@ -1,19 +1,9 @@
 <?php
 
-/*
- * This file is part of Capsolo.
- *
- * (c) Mobizel
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace App\Tests\Controller\Customer;
 
-use App\Entity\User\AppUser;
 use App\Tests\Controller\JsonApiTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
