@@ -13,7 +13,7 @@ matrix:
     include:
         -
             sudo: required
-            php: 7.2
+            php: 7.3
             env:
                 - APP_NAME_SUITE="application"
                 - TRAVIS_NODE_VERSION="8.16"
@@ -21,7 +21,7 @@ matrix:
                 - memcached
         -
             sudo: false
-            php: 7.2
+            php: 7.3
             env: APP_NAME_SUITE="docs packages"
             addons:
                 apt:

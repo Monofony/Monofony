@@ -1,5 +1,11 @@
 ## Change Log
 
+### v0.3.2 (2020/10/13 14:55 +00:00)
+- [#167](https://github.com/Monofony/Monofony/pull/167) Fix psalm & composer autoload (@loic425)
+
+### v0.3.1 (2020/10/05 12:42 +00:00)
+- [#166](https://github.com/Monofony/Monofony/pull/166) Fix file interface media namespace (@loic425)
+
 ### v0.3.0 (2020/09/30 07:44 +00:00)
 - [#163](https://github.com/Monofony/Monofony/pull/163) Prepare v0.3.0 dev (@loic425)
 - [#164](https://github.com/Monofony/Monofony/pull/164) [WIP] Remove useless phpdoc (@loic425)

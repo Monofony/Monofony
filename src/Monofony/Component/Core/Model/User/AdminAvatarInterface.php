@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Component\Core\Model\User;
 
+use Monofony\Component\Core\Model\Media\FileInterface;
+
 interface AdminAvatarInterface extends FileInterface
 {
 }

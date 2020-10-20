@@ -41,6 +41,6 @@ class DashboardStatisticsProviderSpec extends ObjectBehavior
     ): void {
         $this->beConstructedWith([$statistic]);
 
-        $this->shouldThrow(\InvalidArgumentException::class)->during('getStatistics');
+        $this->shouldThrow(\LogicException::class)->during('getStatistics');
     }
 }

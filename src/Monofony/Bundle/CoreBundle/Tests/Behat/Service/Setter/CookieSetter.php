@@ -32,7 +32,7 @@ final class CookieSetter implements CookieSetterInterface
 
     /**
      */
-    public function __construct(Session $minkSession, \ArrayAccess $minkParameters)
+    public function __construct(Session $minkSession, $minkParameters)
     {
         $this->minkSession = $minkSession;
         $this->minkParameters = $minkParameters;
