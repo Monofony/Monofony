@@ -1,16 +1,8 @@
 {
     "type": "https://tools.ietf.org/html/rfc2616#section-10",
     "title": "An error occurred",
-    "detail": "firstName: Please enter your first name.\nlastName: Please enter your last name.\nemail: Please enter your email.\npassword: Please enter your password.\npassword: Password must be at least 4 characters long.",
+    "detail": "email: Please enter your email.\npassword: Please enter your password.\npassword: Password must be at least 4 characters long.",
     "violations": [
-        {
-            "propertyPath": "firstName",
-            "message": "Please enter your first name."
-        },
-        {
-            "propertyPath": "lastName",
-            "message": "Please enter your last name."
-        },
         {
             "propertyPath": "email",
             "message": "Please enter your email."

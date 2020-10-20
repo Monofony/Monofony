@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    app_fixture:
+        namespace: App\
+        resource: '../../src/Monofony/Pack/ApiPack/Recipe/src/*'
+        exclude: '../../src/Monofony/Pack/ApiPack/Recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

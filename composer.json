@@ -28,6 +28,7 @@
             "App\\Message\\": "src/Monofony/Pack/ApiPack/Recipe/src/Message/",
             "App\\MessageHandler\\": "src/Monofony/Pack/ApiPack/Recipe/src/MessageHandler/",
             "App\\Migrations\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Migrations/",
+            "App\\Provider\\": "src/Monofony/Pack/ApiPack/Recipe/src/Provider/",
             "App\\Repository\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Repository/",
             "App\\Tests\\": "tests/",
             "App\\Validator\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Validator/",

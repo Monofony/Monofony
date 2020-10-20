@@ -5,6 +5,7 @@ suites:
     Admin: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
     AdminBundle: { namespace: Monofony\Bundle\AdminBundle, psr4_prefix: Monofony\Bundle\AdminBundle, spec_path: src/Monofony/Bundle/AdminBundle, src_path: src/Monofony/Bundle/AdminBundle }
     AdminBundleRecipe: { spec_path: src/Monofony/Bundle/AdminBundle/Recipe, src_path: src/Monofony/Bundle/AdminBundle/Recipe }
+    ApiPackRecipe: { spec_path: src/Monofony/Pack/ApiPack/Recipe, src_path: src/Monofony/Pack/ApiPack/Recipe }
 
 extensions:
     LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
