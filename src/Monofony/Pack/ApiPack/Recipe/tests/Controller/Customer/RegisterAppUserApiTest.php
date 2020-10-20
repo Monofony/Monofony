@@ -17,8 +17,6 @@ final class RegisterAppUserApiTest extends JsonApiTestCase
         $data =
             <<<EOT
         {
-            "firstName": "",
-            "lastName": "",
             "email": "",
             "password": ""
         }
@@ -40,8 +38,6 @@ EOT;
         $data =
             <<<EOT
         {
-            "firstName": "Anne",
-            "lastName": "Onymous",
             "email": "api@sylius.com",
             "password": "p@ssw0rd"
         }
@@ -61,8 +57,6 @@ EOT;
         $data =
             <<<EOT
         {
-            "firstName": "Anne",
-            "lastName": "Onymous",
             "email": "anne.onymous@example.com",
             "password": "p@ssw0rd"
         }

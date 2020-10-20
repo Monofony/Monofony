@@ -21,20 +21,6 @@ final class RegisterAppUser
     /**
      * @var string
      *
-     * @Assert\NotBlank(message="sylius.customer.first_name.not_blank")
-     */
-    public $firstName;
-
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank(message="sylius.customer.last_name.not_blank")
-     */
-    public $lastName;
-
-    /**
-     * @var string
-     *
      * @Assert\NotBlank(message="sylius.customer.email.not_blank")
      * @Assert\Email(mode="strict", message="sylius.customer.email.invalid")
      * @Assert\Length(
@@ -59,19 +45,26 @@ final class RegisterAppUser
     public $password;
 
     /** @var string|null */
+    public $firstName;
+
+    /**
+     * @var string|null */
+    public $lastName;
+
+    /** @var string|null */
     public $phoneNumber;
 
     public function __construct(
-        string $firstName,
-        string $lastName,
         string $email,
         string $password,
+        ?string $firstName = null,
+        ?string $lastName = null,
         ?string $phoneNumber = null
     ) {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
         $this->email = $email;
         $this->password = $password;
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
         $this->phoneNumber = $phoneNumber;
     }
 }

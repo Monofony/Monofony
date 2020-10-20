@@ -3,3 +3,4 @@ imports:
     - { resource: services/monofony_backend.yaml }
     - { resource: services/monofony_frontend.yaml }
     - { resource: services/monofony_fixtures.yaml }
+    - { resource: services/monofony_api.yaml }
