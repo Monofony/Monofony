@@ -16,7 +16,7 @@
         <!-- ###- symfony/framework-bundle ### -->
 
         <!-- ###+ doctrine/doctrine-bundle ### -->
-        <env name="DATABASE_URL" value="mysql://root@127.0.0.1:3306/app_name_%kernel.environment%"/>
+        <env name="DATABASE_URL" value="mysql://root@127.0.0.1:3306/monofony_%kernel.environment%"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
 
         <server name="IS_DOCTRINE_ORM_SUPPORTED" value="true" />
