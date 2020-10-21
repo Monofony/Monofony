@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Monofony\Bundle\AdminBundle\Dashboard;
+namespace spec\Monofony\Component\Admin\Dashboard;
 
-use Monofony\Bundle\AdminBundle\Dashboard\DashboardStatisticsProvider;
-use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
+use Monofony\Component\Admin\Dashboard\DashboardStatisticsProvider;
+use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
 use PhpSpec\ObjectBehavior;
 
 class DashboardStatisticsProviderSpec extends ObjectBehavior

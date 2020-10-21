@@ -9,9 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Monofony\Bundle\AdminBundle\Dashboard\Statistics;
+declare(strict_types=1);
 
-interface StatisticInterface
+namespace Monofony\Component\Admin\Menu;
+
+use Knp\Menu\ItemInterface;
+
+interface AdminMenuBuilderInterface
 {
-    public function generate(): string;
+    public function createMenu(array $options): ItemInterface;
 }

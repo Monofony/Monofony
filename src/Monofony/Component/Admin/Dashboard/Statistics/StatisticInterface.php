@@ -9,11 +9,9 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
+namespace Monofony\Component\Admin\Dashboard\Statistics;
 
-namespace Monofony\Bundle\AdminBundle\Dashboard;
-
-interface DashboardStatisticsProviderInterface
+interface StatisticInterface
 {
-    public function getStatistics(): array;
+    public function generate(): string;
 }
