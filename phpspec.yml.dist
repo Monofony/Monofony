@@ -1,4 +1,5 @@
 suites:
+    FOSOAuthServerBridge: { namespace: Monofony\Bridge\FOS\OAuthServer, psr4_prefix: Monofony\Bridge\FOS\OAuthServer, spec_path: src/Monofony/Bridge/FOS/OAuthServer, src_path: src/Monofony/Bridge//FOS/OAuthServer }
     SyliusUserBridge: { namespace: Monofony\Bridge\Sylius\User, psr4_prefix: Monofony\Bridge\Sylius\User, spec_path: src/Monofony/Bridge/Sylius/User, src_path: src/Monofony/Bridge/Sylius/User }
     CoreBundle: { namespace: Monofony\Bundle\CoreBundle, psr4_prefix: Monofony\Bundle\CoreBundle, spec_path: src/Monofony/Bundle/CoreBundle, src_path: src/Monofony/Bundle/CoreBundle }
     CoreBundleRecipe: { spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
