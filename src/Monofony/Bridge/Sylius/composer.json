@@ -1,7 +1,7 @@
 {
-    "name": "monofony/sylius-user-bridge",
+    "name": "monofony/sylius-bridge",
     "type": "symfony-bridge",
-    "description": "Monofony Sylius User Bridge",
+    "description": "Monofony Sylius Bridge",
     "keywords": [],
     "license": "MIT",
     "require": {
@@ -9,7 +9,7 @@
         "sylius/user-bundle": "^1.8"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bridge\\Sylius\\User\\": "" },
+        "psr-4": { "Monofony\\Bridge\\Sylius\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

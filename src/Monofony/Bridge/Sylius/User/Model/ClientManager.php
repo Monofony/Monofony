@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Monofony\Bundle\CoreBundle\Entity\OAuth;
+namespace Monofony\Bridge\Sylius\User\Model;
 
 use FOS\OAuthServerBundle\Entity\ClientManager as BaseClientManager;
 use FOS\OAuthServerBundle\Model\ClientInterface;
