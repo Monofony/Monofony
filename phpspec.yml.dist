@@ -4,7 +4,8 @@ suites:
     CoreBundle: { namespace: Monofony\Bundle\CoreBundle, psr4_prefix: Monofony\Bundle\CoreBundle, spec_path: src/Monofony/Bundle/CoreBundle, src_path: src/Monofony/Bundle/CoreBundle }
     CoreBundleRecipe: { spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
     Core: { spec_path: src/Core/recipe, src_path: src/Core/recipe/src }
-    Admin: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
+    Admin: { namespace: Monofony\Component\Admin, psr4_prefix: Monofony\Component\Admin, spec_path: src/Monofony/Component/Admin, src_path: src/Monofony/Component/Admin }
+    AdminRecipe: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
     AdminBundle: { namespace: Monofony\Bundle\AdminBundle, psr4_prefix: Monofony\Bundle\AdminBundle, spec_path: src/Monofony/Bundle/AdminBundle, src_path: src/Monofony/Bundle/AdminBundle }
     AdminBundleRecipe: { spec_path: src/Monofony/Bundle/AdminBundle/Recipe, src_path: src/Monofony/Bundle/AdminBundle/Recipe }
     ApiPackRecipe: { spec_path: src/Monofony/Pack/ApiPack/Recipe, src_path: src/Monofony/Pack/ApiPack/Recipe }

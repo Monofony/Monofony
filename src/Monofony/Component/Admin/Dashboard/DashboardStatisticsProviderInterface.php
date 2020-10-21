@@ -11,11 +11,9 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Bundle\AdminBundle\Menu;
+namespace Monofony\Component\Admin\Dashboard;
 
-use Knp\Menu\ItemInterface;
-
-interface AdminMenuBuilderInterface
+interface DashboardStatisticsProviderInterface
 {
-    public function createMenu(array $options): ItemInterface;
+    public function getStatistics(): array;
 }

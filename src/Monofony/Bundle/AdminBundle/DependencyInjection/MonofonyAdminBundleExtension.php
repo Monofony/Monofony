@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\AdminBundle\DependencyInjection;
 
-use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
-use Monofony\Bundle\AdminBundle\Menu\AdminMenuBuilderInterface;
+use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
+use Monofony\Component\Admin\Menu\AdminMenuBuilderInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;

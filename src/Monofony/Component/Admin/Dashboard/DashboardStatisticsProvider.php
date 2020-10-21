@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Bundle\AdminBundle\Dashboard;
+namespace Monofony\Component\Admin\Dashboard;
 
-use Monofony\Bundle\AdminBundle\Dashboard\Statistics\StatisticInterface;
+use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
 
 final class DashboardStatisticsProvider implements DashboardStatisticsProviderInterface
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Monofony\Bundle\AdminBundle\Dashboard\DashboardStatisticsProviderInterface;
+use Monofony\Component\Admin\Dashboard\DashboardStatisticsProviderInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Templating\EngineInterface;
 
