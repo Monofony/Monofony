@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "api-platform/api-pack": "^1.2",
-        "monofony/core-bundle": "^0.3",
+        "monofony/core-bundle": "^0.4",
         "symfony/messenger": "4.4.*"
     },
     "autoload": {
@@ -13,7 +13,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3-dev"
+            "dev-master": "0.4-dev"
         }
     }
 }
