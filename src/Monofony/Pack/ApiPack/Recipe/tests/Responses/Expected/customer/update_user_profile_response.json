@@ -1,1 +1,7 @@
-[]
+{
+    "id": @integer@,
+    "email": "inigo.montoya@prepare-to-die.com",
+    "firstName": "Inigo",
+    "lastName": "Montoya",
+    "subscribedToNewsletter": true
+}

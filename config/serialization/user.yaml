@@ -1,2 +1,0 @@
-imports:
-    - { resource: '../../src/Monofony/Pack/ApiPack/Recipe/config/serialization/user.yaml' }

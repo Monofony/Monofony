@@ -40,9 +40,9 @@ final class UpdateUserProfileApiTest extends JsonApiTestCase
         $data =
             <<<EOT
         {
-            "email": "touffik.martin@example.com",
-            "firstName": "Touffik",
-            "lastName": "Martin",
+            "email": "inigo.montoya@prepare-to-die.com",
+            "firstName": "Inigo",
+            "lastName": "Montoya",
             "subscribedToNewsletter": true
         }
 EOT;
@@ -65,9 +65,9 @@ EOT;
         $data =
             <<<EOT
         {
-            "email": "touffik.martin@example.com",
-            "firstName": "Touffik",
-            "lastName": "Martin",
+            "email": "inigo.montoya@prepare-to-die.com",
+            "firstName": "Inigo",
+            "lastName": "Montoya",
             "subscribedToNewsletter": true
         }
 EOT;
@@ -77,7 +77,7 @@ EOT;
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/update_user_profile_response', Response::HTTP_OK);
 
-        $this->assertLoginWithCredentials('touffik.martin@example.com', 'sylius');
+        $this->assertLoginWithCredentials('inigo.montoya@prepare-to-die.com', 'sylius');
     }
 
     private function assertLoginWithCredentials($username, $password): void
