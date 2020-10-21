@@ -1,4 +1,4 @@
-dist: trusty
+dist: bionic
 
 language: php
 
@@ -16,7 +16,6 @@ matrix:
             php: 7.3
             env:
                 - APP_NAME_SUITE="application"
-                - TRAVIS_NODE_VERSION="8.16"
             services:
                 - memcached
         -
