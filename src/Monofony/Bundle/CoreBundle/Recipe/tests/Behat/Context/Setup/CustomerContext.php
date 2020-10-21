@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Setup;
 
-use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Monofony\Component\Core\Model\User\AppUserInterface;
 use Behat\Behat\Context\Context;

@@ -4,7 +4,7 @@ namespace App\Tests\Behat\Context\Ui\Backend;
 
 use App\Tests\Behat\NotificationType;
 use Behat\Behat\Context\Context;
-use Monofony\Bundle\CoreBundle\Tests\Behat\Service\NotificationCheckerInterface;
+use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 
 final class NotificationContext implements Context
 {

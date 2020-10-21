@@ -6,5 +6,5 @@ services:
             $spoolDirectory: '%kernel.cache_dir%/spool'
             $minkParameters: '@behat.mink.parameters'
 
-    Monofony\Bundle\CoreBundle\Tests\Behat\:
+    Monofony\Bridge\Behat\:
         resource: '../../Tests/Behat/*'

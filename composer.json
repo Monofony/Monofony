@@ -6,9 +6,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
+            "Monofony\\Bridge\\": "src/Monofony/Bridge/",
             "Monofony\\Bundle\\": "src/Monofony/Bundle/",
-            "Monofony\\Component\\": "src/Monofony/Component/",
-            "Monofony\\Plugin\\": "src/Monofony/Plugin/"
+            "Monofony\\Component\\": "src/Monofony/Component/"
         }
     },
     "autoload-dev": {

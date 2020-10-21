@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Context\Transform;
 
 use Behat\Behat\Context\Context;
-use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 
 class UserContext implements Context
 {
