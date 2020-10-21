@@ -1,0 +1,18 @@
+App\Entity\Customer\Customer:
+    attributes:
+        validation_groups: ["Default", "sylius"]
+        pagination_enabled: false
+        denormalization_context:
+            groups: ["customer:write", "user:write"]
+        normalization_context:
+            groups:
+                - "customer:read"
+                - "user:read"
+    collectionOperations: []
+    itemOperations:
+        get:
+            controller: ApiPlatform\Core\Action\NotFoundAction
+            read: false
+            output: false
+        put:
+            security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
