@@ -23,10 +23,23 @@ App\Entity\User\AppUser:
         enabled: true
         customer: "@customer"
         username: sylius
+        password_reset_token: 't0ken'
+        password_requested_at: '<(new DateTime())>'
+    expired_token_user:
+        plainPassword: sylius
+        roles: [ROLE_USER]
+        enabled: true
+        username: expired_user
+        customer: '@expired_customer'
+        password_reset_token: 'expired_t0ken'
+        password_requested_at: "<(new DateTime('2 days ago'))>"
 
 App\Entity\Customer\Customer:
     customer:
         email: api@sylius.com
         firstName: Sam
         lastName: Identifie
-
+    expired_customer:
+        email: expired-customer@example.com
+        firstName: Expired
+        lastName: Customer
