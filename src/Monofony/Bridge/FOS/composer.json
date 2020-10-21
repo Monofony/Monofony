@@ -1,0 +1,21 @@
+{
+    "name": "monofony/fos-bridge",
+    "type": "symfony-bridge",
+    "description": "Monofony FOS Bridge",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3",
+        "friendsofsymfony/oauth-server-bundle": "^1.6"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Bridge\\FOS\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-version": "0.4"
+    }
+}
