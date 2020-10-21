@@ -13,3 +13,7 @@ if [ ! -f $APP_NAME_CACHE_DIR/symfony ]; then
     run_command "mv ~/.symfony/bin/symfony $APP_NAME_CACHE_DIR"
 fi
 run_command "$APP_NAME_CACHE_DIR/symfony version"
+
+nvm install ${NODE_VERSION}
+nvm alias default ${NODE_VERSION}
+nvm use ${NODE_VERSION}
