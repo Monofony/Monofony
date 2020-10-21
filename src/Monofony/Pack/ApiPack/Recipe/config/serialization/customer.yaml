@@ -1,0 +1,34 @@
+Sylius\Component\Customer\Model\Customer:
+    attributes:
+        id:
+            expose: true
+            type: integer
+            groups: [customer:read]
+        email:
+            expose: true
+            type: string
+            groups: [customer:read, customer:write]
+        emailCanonical:
+            expose: false
+            type: string
+        firstName:
+            expose: true
+            type: string
+            groups: [customer:read, customer:write]
+        lastName:
+            expose: true
+            type: string
+            groups: [customer:read, customer:write]
+        gender:
+            expose: false
+            type: string
+        birthday:
+            expose: false
+            type: DateTime
+        group:
+            expose: false
+        phoneNumber:
+            expose: false
+        subscribedToNewsletter:
+            expose: true
+            groups: [customer:read, customer:write]

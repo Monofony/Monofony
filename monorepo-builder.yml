@@ -12,5 +12,6 @@ parameters:
         src/Monofony/Bundle/ApiBundle: 'git@github.com:Monofony/ApiBundle.git'
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
         src/Monofony/Bundle/FrontBundle: 'git@github.com:Monofony/FrontBundle.git'
-        src/Monofony/Plugin/FixturesPlugin: 'git@github.com:Monofony/FixturesPlugin.git'
+        src/Monofony/Pack/ApiPack: 'git@github.com:Monofony/FixturesPack.git'
+        src/Monofony/Pack/FixturesPack: 'git@github.com:Monofony/ApiPack.git'
         src/Monofony/TestPack: 'git@github.com:Monofony/TestPack.git'

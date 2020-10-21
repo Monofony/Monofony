@@ -1,5 +1,5 @@
 imports:
-    resource: "../src/Monofony/Bundle/CoreBundle/Resources/config/services_test.yaml"
+    resource: "../src/Monofony/Bridge/Behat/services_test.yaml"
 
 parameters:
     locale: en_US

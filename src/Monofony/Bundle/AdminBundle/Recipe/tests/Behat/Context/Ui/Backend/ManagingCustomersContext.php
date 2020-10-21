@@ -8,7 +8,7 @@ use App\Tests\Behat\Page\Backend\Customer\ShowPage;
 use App\Tests\Behat\Page\Backend\Customer\IndexPage;
 use App\Tests\Behat\Page\Backend\Customer\UpdatePage;
 use Behat\Behat\Context\Context;
-use Monofony\Bundle\CoreBundle\Tests\Behat\Service\Resolver\CurrentPageResolverInterface;
+use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Monofony\Component\Core\Model\Customer\CustomerInterface;
 use Webmozart\Assert\Assert;
 

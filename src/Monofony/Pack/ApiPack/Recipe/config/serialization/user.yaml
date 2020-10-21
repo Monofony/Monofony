@@ -1,0 +1,25 @@
+Sylius\Component\User\Model\User:
+    attributes:
+        id:
+            expose: false
+            type: integer
+        username:
+            expose: false
+            type: string
+        usernameCanonical:
+            expose: false
+            type: string
+        email:
+            expose: false
+            type: string
+        emailCanonical:
+            expose: false
+            type: string
+        enabled:
+            expose: false
+            type: boolean
+        plainPassword:
+            groups: [user:write]
+        roles:
+            expose: false
+            type: array

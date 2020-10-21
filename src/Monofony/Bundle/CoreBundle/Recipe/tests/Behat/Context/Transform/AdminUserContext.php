@@ -6,7 +6,7 @@ namespace App\Tests\Behat\Context\Transform;
 
 use Monofony\Component\Core\Model\User\AdminUserInterface;
 use Behat\Behat\Context\Context;
-use Monofony\Bundle\CoreBundle\Tests\Behat\Service\SharedStorageInterface;
+use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 
 final class AdminUserContext implements Context
 {

@@ -6,9 +6,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
+            "Monofony\\Bridge\\": "src/Monofony/Bridge/",
             "Monofony\\Bundle\\": "src/Monofony/Bundle/",
-            "Monofony\\Component\\": "src/Monofony/Component/",
-            "Monofony\\Plugin\\": "src/Monofony/Plugin/"
+            "Monofony\\Component\\": "src/Monofony/Component/"
         }
     },
     "autoload-dev": {
@@ -106,13 +106,12 @@
         "infection/infection": "^0.13",
         "lakion/mink-debug-extension": "^1.2",
         "lchrusciel/api-test-case": "^3.1",
-        "phpspec/phpspec": "^5.0",
-        "phpstan/phpstan": "^0.11",
-        "phpstan/phpstan-doctrine": "^0.11",
-        "phpstan/phpstan-nette": "^0.11",
-        "phpstan/phpstan-symfony": "^0.11",
-        "phpstan/phpstan-webmozart-assert": "^0.11",
-        "proget-hq/phpstan-phpspec": "^0.2.0",
+        "phpspec/phpspec": "^6.2",
+        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan-doctrine": "^0.12",
+        "phpstan/phpstan-nette": "^0.12",
+        "phpstan/phpstan-symfony": "^0.12",
+        "phpstan/phpstan-webmozart-assert": "^0.12",
         "psr/event-dispatcher": "^1.0",
         "se/selenium-server-standalone": " ^2.52",
         "symfony/debug-bundle": "4.4.*",

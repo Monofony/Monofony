@@ -455,9 +455,6 @@
     "polishsymfonycommunity/symfony-mocker-container": {
         "version": "v1.0.2"
     },
-    "proget-hq/phpstan-phpspec": {
-        "version": "0.2.0"
-    },
     "psr/cache": {
         "version": "1.0.1"
     },
