@@ -18,6 +18,7 @@ matrix:
                 - APP_NAME_SUITE="application"
             services:
                 - memcached
+                - mysql
         -
             sudo: false
             php: 7.3
