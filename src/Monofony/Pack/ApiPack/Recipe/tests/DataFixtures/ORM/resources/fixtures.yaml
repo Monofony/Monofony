@@ -33,6 +33,12 @@ App\Entity\User\AppUser:
         customer: '@expired_customer'
         password_reset_token: 'expired_t0ken'
         password_requested_at: "<(new DateTime('2 days ago'))>"
+    another_user:
+        plainPassword: sylius
+        roles: [ROLE_USER]
+        enabled: true
+        customer: "@another_customer"
+        username: sylius
 
 App\Entity\Customer\Customer:
     customer:
@@ -42,4 +48,8 @@ App\Entity\Customer\Customer:
     expired_customer:
         email: expired-customer@example.com
         firstName: Expired
+        lastName: Customer
+    another_customer:
+        email: another-customer@example.com
+        firstName: Another
         lastName: Customer
