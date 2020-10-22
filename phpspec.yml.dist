@@ -1,14 +1,21 @@
 suites:
+    # Bridges
+    FOSOAuthServerBridge: { namespace: Monofony\Bridge\FOS\OAuthServer, psr4_prefix: Monofony\Bridge\FOS\OAuthServer, spec_path: src/Monofony/Bridge/FOS/OAuthServer, src_path: src/Monofony/Bridge//FOS/OAuthServer }
+    SyliusUserBridge: { namespace: Monofony\Bridge\Sylius\User, psr4_prefix: Monofony\Bridge\Sylius\User, spec_path: src/Monofony/Bridge/Sylius/User, src_path: src/Monofony/Bridge/Sylius/User }
+
+    # Bundles
     CoreBundle: { namespace: Monofony\Bundle\CoreBundle, psr4_prefix: Monofony\Bundle\CoreBundle, spec_path: src/Monofony/Bundle/CoreBundle, src_path: src/Monofony/Bundle/CoreBundle }
-    CoreBundleRecipe: { spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
-    Core: { spec_path: src/Core/recipe, src_path: src/Core/recipe/src }
-    Admin: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
-    AdminBundle: { namespace: Monofony\Bundle\AdminBundle, psr4_prefix: Monofony\Bundle\AdminBundle, spec_path: src/Monofony/Bundle/AdminBundle, src_path: src/Monofony/Bundle/AdminBundle }
-    AdminBundleRecipe: { spec_path: src/Monofony/Bundle/AdminBundle/Recipe, src_path: src/Monofony/Bundle/AdminBundle/Recipe }
-    ApiPackRecipe: { spec_path: src/Monofony/Pack/ApiPack/Recipe, src_path: src/Monofony/Pack/ApiPack/Recipe }
+
+    # Components
+    Admin: { namespace: Monofony\Component\Admin, psr4_prefix: Monofony\Component\Admin, spec_path: src/Monofony/Component/Admin, src_path: src/Monofony/Component/Admin }
+
+    # Packs
+    AdminPack.recipe: { spec_path: src/Monofony/Pack/AdminPack/.recipe, src_path: src/Monofony/Pack/AdminPack/.recipe }
+    ApiPack.recipe: { spec_path: src/Monofony/Pack/ApiPack/.recipe, src_path: src/Monofony/Pack/ApiPack/.recipe }
+    CorePack.recipe: { spec_path: src/Monofony/Pack/CorePack/.recipe, src_path: src/Monofony/Pack/CorePack/.recipe }
 
 extensions:
     LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
         whitelist:
-            - src/Monofony/Bundle/CoreBundle/Recipe/src
+            - src/Monofony/Pack/CorePack/.recipe/src
             - src/Admin/recipe/src

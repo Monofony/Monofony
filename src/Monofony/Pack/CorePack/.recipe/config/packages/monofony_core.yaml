@@ -1,0 +1,141 @@
+imports:
+    - { resource: '../sylius/grids.yaml' }
+    - { resource: '../sylius/resources.yaml' }
+    - { resource: "@SyliusCustomerBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusUserBundle/Resources/config/app/config.yml" }
+
+fos_oauth_server:
+    db_driver: orm
+    client_class:        App\Entity\OAuth\Client
+    access_token_class:  App\Entity\OAuth\AccessToken
+    refresh_token_class: App\Entity\OAuth\RefreshToken
+    auth_code_class:     App\Entity\OAuth\AuthCode
+    service:
+        user_provider: sylius.app_user_provider.email_or_name_based
+        client_manager: Monofony\Bridge\FOS\OAuthServer\Entity\ClientManager
+
+framework:
+    assets:
+        json_manifest_path: '%kernel.project_dir%/public/assets/backend/manifest.json'
+        packages:
+            backend:
+                json_manifest_path: '%kernel.project_dir%/public/assets/backend/manifest.json'
+            frontend:
+                json_manifest_path: '%kernel.project_dir%/public/assets/frontend/manifest.json'
+    templating:
+        engines: ['twig']
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks:
+            - '%locale%'
+liip_imagine:
+    loaders:
+        default:
+            filesystem:
+                locator: filesystem_insecure
+                data_root:
+                    - '%kernel.project_dir%/public'
+    filter_sets:
+        # @see http://symfony.com/doc/current/bundles/LiipImagineBundle/filters.html
+        cache: ~
+        default:
+            quality: 100
+            filters:
+                auto_rotate: ~
+                relative_resize: { scale: 1 }
+        app_backend_admin_user_avatar_thumbnail:
+            filters:
+                thumbnail: { size: [50, 50], mode: outbound }
+
+sonata_block:
+    blocks:
+        sonata.block.service.template:
+            settings:
+                customer: ~
+                form: ~
+                resource: ~
+                resources: ~
+
+sylius_customer:
+    resources:
+        customer:
+            classes:
+                model: App\Entity\Customer\Customer
+                repository: App\Repository\CustomerRepository
+
+sylius_grid:
+    templates:
+        action:
+            default: "@SyliusUi/Grid/Action/default.html.twig"
+            create: "@SyliusUi/Grid/Action/create.html.twig"
+            delete: "@SyliusUi/Grid/Action/delete.html.twig"
+            show: "@SyliusUi/Grid/Action/show.html.twig"
+            update: "@SyliusUi/Grid/Action/update.html.twig"
+            apply_transition: "@SyliusUi/Grid/Action/applyTransition.html.twig"
+            links: "@SyliusUi/Grid/Action/links.html.twig"
+            archive: "@SyliusUi/Grid/Action/archive.html.twig"
+        bulk_action:
+            delete: "@SyliusUi/Grid/BulkAction/delete.html.twig"
+        filter:
+            string: "@SyliusUi/Grid/Filter/string.html.twig"
+            boolean: "@SyliusUi/Grid/Filter/boolean.html.twig"
+            date: "@SyliusUi/Grid/Filter/date.html.twig"
+            entity: "@SyliusUi/Grid/Filter/entity.html.twig"
+            money: "@SyliusUi/Grid/Filter/money.html.twig"
+            exists: "@SyliusUi/Grid/Filter/exists.html.twig"
+            select: "@SyliusUi/Grid/Filter/select.html.twig"
+
+sylius_mailer:
+    sender:
+        name: '%email_name%'
+        address: '%email_sender%'
+    emails:
+        contact_request:
+            subject: app.emails.contact_request.subject
+            template: emails/contactRequest.html.twig
+        user_registration:
+            subject: app.emails.user_registration.subject
+            template: emails/userRegistration.html.twig
+        reset_password_token:
+            subject: app.emails.user.password_reset.subject
+            template: emails/passwordReset.html.twig
+        verification_token:
+            subject: app.emails.user.verification_token.subject
+            template: emails/verification.html.twig
+
+security:
+    encoders:
+        argon2i: argon2id
+
+sylius_user:
+    resources:
+        app:
+            user:
+                classes:
+                    model: App\Entity\User\AppUser
+                    repository: App\Repository\UserRepository
+                    form: App\Form\Type\User\AppUserType
+        admin:
+            user:
+                classes:
+                    model: App\Entity\User\AdminUser
+                    repository: Sylius\Bundle\UserBundle\Doctrine\ORM\UserRepository
+                    form: App\Form\Type\User\AdminUserType
+        admin_oauth:
+            user:
+                classes:
+                    model: Sylius\Component\User\Model\UserOAuth
+                    interface: Sylius\Component\User\Model\UserOAuthInterface
+                    controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
+
+twig:
+    globals:
+        app_name_meta:
+            version: !php/const App\Kernel::VERSION
+
+vich_uploader:
+    mappings:
+        admin_avatar:
+            uri_prefix: /media/avatar
+            upload_destination: '%kernel.project_dir%/public/media/avatar'
+            namer: Vich\UploaderBundle\Naming\OrignameNamer

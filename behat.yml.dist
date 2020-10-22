@@ -15,7 +15,7 @@ default:
             screenshot: true
 
         Behat\MinkExtension:
-            files_path: "%paths.base%/src/Monofony/Bundle/CoreBundle/Recipe/tests/Resources/"
+            files_path: "%paths.base%/src/Monofony/Pack/CorePack/.recipe/tests/Resources/"
             base_url: "https://localhost:8080/"
             default_session: symfony
             javascript_session: chrome
@@ -43,9 +43,9 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
-                - "src/Monofony/Bundle/CoreBundle/Recipe/features"
-                - "src/Monofony/Bundle/AdminBundle/Recipe/features"
-                - "src/Monofony/Bundle/FrontBundle/Recipe/features"
+                - "src/Monofony/Pack/CorePack/.recipe/features"
+                - "src/Monofony/Pack/AdminPack/.recipe/features"
+                - "src/Monofony/Pack/FrontPack/.recipe/features"
                 - "features"
 
     gherkin:

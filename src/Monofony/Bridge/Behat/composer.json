@@ -1,0 +1,21 @@
+{
+    "name": "monofony/behat-bridge",
+    "type": "symfony-bridge",
+    "description": "Monofony Behat Bridge",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3",
+        "behat/behat": "^3.7"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Bridge\\Behat\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-version": "0.4"
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "name": "monofony/front-pack",
+    "type": "symfony-pack",
+    "description": "Monofony front pack.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2",
+        "monofony/core-bundle": "^0.4"
+    },
+    "autoload": {
+        "exclude-from-classmap": ["/.recipe/"]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.4-dev"
+        }
+    }
+}

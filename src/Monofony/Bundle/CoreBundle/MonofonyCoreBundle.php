@@ -11,20 +11,15 @@
 
 namespace Monofony\Bundle\CoreBundle;
 
+use App\Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterDashboardStatisticsPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
-use Monofony\Bundle\CoreBundle\DependencyInjection\MonofonyCoreBundleExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class MonofonyCoreBundle extends Bundle
 {
     public const VERSION = '0.4.0';
-
-    public function getContainerExtension()
-    {
-        return new MonofonyCoreBundleExtension();
-    }
 
     /**
      * {@inheritdoc}
@@ -33,5 +28,6 @@ class MonofonyCoreBundle extends Bundle
     {
         $container->addCompilerPass(new RegisterPasswordListenerForResourcesPass());
         $container->addCompilerPass(new ChangeCustomerContextVisibilityPass());
+        $container->addCompilerPass(new RegisterDashboardStatisticsPass());
     }
 }

@@ -1,5 +1,5 @@
 imports:
-    resource: "../src/Monofony/Bundle/CoreBundle/Resources/config/services_test.yaml"
+    resource: "../src/Monofony/Bridge/Behat/services_test.yaml"
 
 parameters:
     locale: en_US
@@ -13,12 +13,12 @@ services:
 
     app_tests_behat_core:
         namespace: App\Tests\Behat\
-        resource: '../src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/*'
+        resource: '../src/Monofony/Pack/CorePack/.recipe/tests/Behat/*'
 
     app_tests_behat_admin:
         namespace: App\Tests\Behat\
-        resource: '../src/Monofony/Bundle/AdminBundle/Recipe/tests/Behat/*'
+        resource: '../src/Monofony/Pack/AdminPack/.recipe/tests/Behat/*'
 
     app_tests_behat_front:
         namespace: App\Tests\Behat\
-        resource: '../src/Monofony/Bundle/FrontBundle/Recipe/tests/Behat/*'
+        resource: '../src/Monofony/Pack/FrontPack/.recipe/tests/Behat/*'

@@ -3,7 +3,7 @@ framework:
     translator:
         fallbacks: ["%locale%"]
         paths:
-            - '%kernel.project_dir%/src/Monofony/Bundle/CoreBundle/Recipe/translations'
+            - '%kernel.project_dir%/src/Monofony/Pack/CorePack/.recipe/translations'
     secret:          '%env(APP_SECRET)%'
     form:            ~
     csrf_protection: ~
@@ -11,7 +11,7 @@ framework:
     serializer:
         enabled: true
         mapping:
-            paths: ['%kernel.project_dir%/src/Monofony/Pack/ApiPack/Recipe/config/serialization/']
+            paths: ['%kernel.project_dir%/src/Monofony/Pack/ApiPack/.recipe/config/serialization/']
     templating:
         engines: ['twig']
     default_locale:  "%locale%"

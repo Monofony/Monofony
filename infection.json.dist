@@ -2,11 +2,11 @@
     "timeout": 10,
     "source": {
         "directories": [
-            "src/Monofony/Bundle/CoreBundle/Recipe/src",
+            "src/Monofony/Pack/CorePack/.recipe/src",
             "src/Admin/recipe/src",
-            "src/Monofony/Bundle/FrontBundle/Recipe/src",
-            "src/Monofony/Pack/FixturesPack/Recipe/src",
-            "src/Monofony/Pack/ApiPack/Recipe/src"
+            "src/Monofony/Pack/FrontPack/.recipe/src",
+            "src/Monofony/Pack/FixturesPack/.recipe/src",
+            "src/Monofony/Pack/ApiPack/.recipe/src"
         ],
         "excludes": [
             "Command",

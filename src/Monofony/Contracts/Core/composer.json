@@ -1,0 +1,17 @@
+{
+    "name": "monofony/core",
+    "type": "library",
+    "description": "Monofony core.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Component\\Core\\": "" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-version": "0.4"
+    }
+}

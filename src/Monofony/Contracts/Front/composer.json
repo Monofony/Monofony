@@ -1,0 +1,20 @@
+{
+    "name": "monofony/front-contracts",
+    "type": "library",
+    "description": "Generic abstractions related to Front",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Contracts\\Front\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-version": "0.4"
+    }
+}

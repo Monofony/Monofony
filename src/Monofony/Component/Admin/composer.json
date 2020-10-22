@@ -1,0 +1,17 @@
+{
+    "name": "monofony/admin",
+    "type": "library",
+    "description": "Monofony admin.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Component\\Admin\\": "" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-version": "0.4"
+    }
+}

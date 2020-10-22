@@ -9,7 +9,7 @@
         "symfony/messenger": "4.4.*"
     },
     "autoload": {
-        "exclude-from-classmap": ["Recipe/"]
+        "exclude-from-classmap": ["/.recipe/"]
     },
     "extra": {
         "branch-alias": {
