@@ -34,6 +34,10 @@ validate-yarn-packages:
 	yarn check
 .PHONY: validate-yarn-packages
 
+validate-package-version:
+	vendor/bin/monorepo-builder validate
+.PHONY: validate-package-version
+
 test-phpspec:
 	phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
 .PHONY: test-phpspec
