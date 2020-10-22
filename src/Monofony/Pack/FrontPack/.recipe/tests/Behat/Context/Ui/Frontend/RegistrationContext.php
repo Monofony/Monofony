@@ -6,7 +6,7 @@ namespace App\Tests\Behat\Context\Ui\Frontend;
 
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Behat\Behat\Context\Context;
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 use App\Tests\Behat\Page\Frontend\Account\DashboardPage;
 use App\Tests\Behat\Page\Frontend\Account\LoginPage;
 use App\Tests\Behat\Page\Frontend\Account\ProfileUpdatePage;

@@ -11,7 +11,7 @@
 
 namespace Monofony\Bridge\Behat\Exception;
 
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 
 final class NotificationExpectationMismatchException extends \RuntimeException
 {

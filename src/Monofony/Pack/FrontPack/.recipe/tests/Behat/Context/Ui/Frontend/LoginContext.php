@@ -7,7 +7,7 @@ namespace App\Tests\Behat\Context\Ui\Frontend;
 use App\Tests\Behat\Page\Frontend\Account\ResetPasswordPage;
 use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Behat\Behat\Context\Context;
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 use App\Tests\Behat\Page\Frontend\Account\LoginPage;
 use App\Tests\Behat\Page\Frontend\Account\RegisterPage;
 use App\Tests\Behat\Page\Frontend\Account\RequestPasswordResetPage;

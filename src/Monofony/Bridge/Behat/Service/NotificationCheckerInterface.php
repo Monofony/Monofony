@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Monofony\Bridge\Behat\Service;
 
 use Monofony\Bridge\Behat\Exception\NotificationExpectationMismatchException;
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 
 interface NotificationCheckerInterface
 {
