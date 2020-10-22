@@ -3,7 +3,7 @@
 namespace App\Entity\User;
 
 use Doctrine\ORM\Mapping as ORM;
-use Monofony\Component\Core\Model\User\AppUserInterface;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Sylius\Component\User\Model\User as BaseUser;

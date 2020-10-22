@@ -15,7 +15,7 @@ namespace App\MessageHandler;
 
 use App\Message\RegisterAppUser;
 use App\Provider\CustomerProviderInterface;
-use Monofony\Component\Core\Model\User\AppUserInterface;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;

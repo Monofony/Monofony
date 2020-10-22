@@ -6,7 +6,7 @@ namespace App\Tests\Behat\Page\Backend\Customer;
 
 use Monofony\Component\Admin\Behat\Crud\AbstractIndexPage;
 use Monofony\Component\Admin\Behat\Crud\IndexPageInterface;
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 
 class IndexPage extends AbstractIndexPage implements IndexPageInterface
 {

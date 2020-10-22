@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Component\Core\Model\User;
+namespace Monofony\Contracts\Core\Model\User;
 
 use Sylius\Component\User\Model\UserInterface as BaseUserInterface;
 

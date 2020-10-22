@@ -6,7 +6,7 @@ namespace App\Entity\Media;
 
 use App\Entity\IdentifiableTrait;
 use Doctrine\ORM\Mapping as ORM;
-use Monofony\Component\Core\Model\Media\FileInterface;
+use Monofony\Contracts\Core\Model\Media\FileInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\TimestampableTrait;
 use Symfony\Component\Serializer\Annotation as Serializer;

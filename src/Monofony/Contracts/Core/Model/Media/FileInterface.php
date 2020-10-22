@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Component\Core\Model\Media;
+namespace Monofony\Contracts\Core\Model\Media;
 
 interface FileInterface
 {

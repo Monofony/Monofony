@@ -11,11 +11,10 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Component\Core\Model\User;
+namespace Monofony\Contracts\Core\Model\User;
 
-use Sylius\Component\Customer\Model\CustomerAwareInterface;
-use Sylius\Component\User\Model\UserInterface;
+use Monofony\Contracts\Core\Model\Media\FileInterface;
 
-interface AppUserInterface extends UserInterface, CustomerAwareInterface
+interface AdminAvatarInterface extends FileInterface
 {
 }
