@@ -44,7 +44,7 @@
     },
     "autoload": {
         "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" },
-        "exclude-from-classmap": ["Recipe/"]
+        "exclude-from-classmap": [".recipe/"]
     },
     "config": {
         "sort-packages": true

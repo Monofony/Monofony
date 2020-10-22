@@ -45,4 +45,4 @@ Thanks to autowiring system, you can already use it.
 
     $ bin/console debug:container App\Fixture\ArticleFixture
 
-.. _fixtures bundle configurations yaml files: https://github.com/Monofony/Monofony/blob/0.x/src/Monofony/Pack/FixturesPack/Recipe/config/sylius/fixtures.yaml
+.. _fixtures bundle configurations yaml files: https://github.com/Monofony/Monofony/blob/0.x/src/Monofony/Pack/FixturesPack/.recipe/config/sylius/fixtures.yaml

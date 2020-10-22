@@ -1,6 +1,6 @@
 {
     "name": "monofony/test-pack",
-    "type": "metapackage",
+    "type": "symfony-pack",
     "description": "Monofony test pack.",
     "license": "MIT",
     "require": {

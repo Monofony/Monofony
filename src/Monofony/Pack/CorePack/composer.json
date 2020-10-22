@@ -8,7 +8,7 @@
         "monofony/core-bundle": "^0.4"
     },
     "autoload": {
-        "exclude-from-classmap": ["/Recipe/"]
+        "exclude-from-classmap": ["/.recipe/"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
