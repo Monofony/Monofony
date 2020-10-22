@@ -5,6 +5,6 @@ imports:
     - ../src/Monofony/Bundle/AdminBundle/Recipe/config/suites/ui/customer/managing_customers.yaml
     - ../src/Monofony/Bundle/AdminBundle/Recipe/config/suites/ui/user/managing_administrators.yaml
 
-    - ../src/Monofony/Bundle/FrontBundle/Recipe/config/suites/ui/account/customer.yaml
-    - ../src/Monofony/Bundle/FrontBundle/Recipe/config/suites/ui/account/login.yaml
-    - ../src/Monofony/Bundle/FrontBundle/Recipe/config/suites/ui/account/registration.yaml
+    - ../src/Monofony/Pack/FrontPack/Recipe/config/suites/ui/account/customer.yaml
+    - ../src/Monofony/Pack/FrontPack/Recipe/config/suites/ui/account/login.yaml
+    - ../src/Monofony/Pack/FrontPack/Recipe/config/suites/ui/account/registration.yaml
