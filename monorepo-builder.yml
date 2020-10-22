@@ -8,7 +8,7 @@ parameters:
     # for "split" command
     directories_to_repositories:
         src/Monofony/Component/Core: 'git@github.com:Monofony/Core.git'
-        src/Monofony/Bundle/AdminBundle: 'git@github.com:Monofony/AdminBundle.git'
+        src/Monofony/Pack/AdminPack: 'git@github.com:Monofony/AdminBundle.git'
         src/Monofony/Bundle/ApiBundle: 'git@github.com:Monofony/ApiBundle.git'
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
         src/Monofony/Pack/FrontPack: 'git@github.com:Monofony/FrontBundle.git'

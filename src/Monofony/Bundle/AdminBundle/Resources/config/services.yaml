@@ -1,9 +1,0 @@
-services:
-    _defaults:
-        autoconfigure: true
-        autowire: false
-
-    Monofony\Component\Admin\Dashboard\DashboardStatisticsProvider:
-        arguments: [!tagged_iterator { tag: app.dashboard_statistic }]
-
-    Monofony\Component\Admin\Dashboard\DashboardStatisticsProviderInterface: '@Monofony\Component\Admin\Dashboard\DashboardStatisticsProvider'
