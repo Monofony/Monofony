@@ -5,10 +5,18 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "monofony/core-bundle": "^0.4"
+        "sylius/resource": "^1.6",
+        "sylius/user": "^1.6"
+    },
+    "require-dev": {
+        "behat/behat": "^3.2",
+        "phpstan/phpstan": "^0.12"
     },
     "autoload": {
         "exclude-from-classmap": ["/.recipe/"]
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
