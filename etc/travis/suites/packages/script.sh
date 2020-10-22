@@ -21,7 +21,7 @@ run_phpstan() {
 }
 
 clean_package() {
-  rm -rf ${package_dir}/vendors
+  rm -rf ${package_dir}/vendor
   rm -rf ${package_dir}/composer.lock
 }
 
@@ -33,5 +33,3 @@ for package in ${packages[@]}; do
 done
 
 exit ${code}
-
-}
