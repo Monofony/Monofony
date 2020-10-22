@@ -8,7 +8,7 @@ code=0
 for package in ${packages[@]}; do
     print_header "Installing ${package}" "Monofony"
 
-    run_command "(cd $(dirname ${BASH_SOURCE[0]})/../../../../src/Monofony/${package} && composer install)"
+    run_command "(cd $(dirname ${BASH_SOURCE[0]})/../../../../src/Monofony/${package} && composer install --no-scripts --no-plugins)"
 done
 
 exit ${code}

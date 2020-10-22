@@ -4,14 +4,28 @@
     "description": "Generic abstractions related to Core",
     "license": "MIT",
     "require": {
-        "php": "^7.2"
+        "php": ">=7.3",
+        "sylius/customer": "^1.8",
+        "sylius/user": "^1.8"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12"
     },
     "autoload": {
         "psr-4": { "Monofony\\Component\\Core\\": "" }
     },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
-        "branch-version": "0.4"
+        "branch-version": "0.4",
+        "branch-alias": {
+            "dev-master": "0.4-dev"
+        }
     }
 }

@@ -1,4 +1,7 @@
 parameters:
+    package_directories:
+        - 'src'
+
     # for "merge" command
     data_to_append:
         require-dev:
@@ -7,11 +10,18 @@ parameters:
 
     # for "split" command
     directories_to_repositories:
-        src/Monofony/Component/Core: 'git@github.com:Monofony/Core.git'
-        src/Monofony/Pack/AdminPack: 'git@github.com:Monofony/AdminBundle.git'
-        src/Monofony/Bundle/ApiBundle: 'git@github.com:Monofony/ApiBundle.git'
+        # Bundles
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
-        src/Monofony/Pack/FrontPack: 'git@github.com:Monofony/FrontBundle.git'
-        src/Monofony/Pack/ApiPack: 'git@github.com:Monofony/FixturesPack.git'
-        src/Monofony/Pack/FixturesPack: 'git@github.com:Monofony/ApiPack.git'
+
+        # Contracts
+        src/Monofony/Contracts/Admin: 'git@github.com:Monofony/AdminContracts.git'
+        src/Monofony/Contracts/Core: 'git@github.com:Monofony/CoreContracts.git'
+        src/Monofony/Contracts/Front: 'git@github.com:Monofony/FrontContracts.git'
+
+        # Packs
+        src/Monofony/Pack/AdminPack: 'git@github.com:Monofony/AdminPack.git'
+        src/Monofony/Pack/ApiPack: 'git@github.com:Monofony/ApiPack.git'
+        src/Monofony/Pack/CorePack: 'git@github.com:Monofony/CorePack.git'
+        src/Monofony/Pack/FixturesPack: 'git@github.com:Monofony/FixturesPack.git'
+        src/Monofony/Pack/FrontPack: 'git@github.com:Monofony/FrontPack.git'
         src/Monofony/Pack/TestPack: 'git@github.com:Monofony/TestPack.git'

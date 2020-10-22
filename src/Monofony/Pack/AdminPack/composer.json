@@ -4,7 +4,7 @@
     "description": "Monofony admin pack.",
     "license": "MIT",
     "require": {
-        "php": "^7.2",
+        "php": ">=7.3",
         "monofony/core-bundle": "^0.4"
     },
     "autoload": {
