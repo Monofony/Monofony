@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Monofony\Bundle\CoreBundle\DependencyInjection;
 
 use Doctrine\Common\EventSubscriber;
+use Monofony\Contracts\Front\Menu\AccountMenuBuilderInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;
@@ -38,6 +39,7 @@ class MonofonyCoreBundleExtension extends Extension
         $this->registerSomeSyliusAliases($container);
         $this->tagCustomerContext($container);
         $this->tagDoctrineEventSubscribers($container);
+        $this->buildAccountMenu($container);
     }
 
     private function registerSomeSyliusAliases(ContainerBuilder $container): void
@@ -56,5 +58,18 @@ class MonofonyCoreBundleExtension extends Extension
     {
         $container->registerForAutoconfiguration(EventSubscriber::class)
             ->addTag('doctrine.event_subscriber');
+    }
+
+    private function buildAccountMenu(ContainerBuilder $container): void
+    {
+        if (!interface_exists(AccountMenuBuilderInterface::class)) {
+            return;
+        }
+
+        $container->registerForAutoconfiguration(AccountMenuBuilderInterface::class)
+            ->addTag('knp_menu.menu_builder', [
+                'method' => 'createMenu',
+                'alias' => 'app.account',
+            ]);
     }
 }

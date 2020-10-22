@@ -1,15 +1,14 @@
 {
-    "name": "monofony/front-bundle",
-    "type": "symfony-bundle",
-    "description": "Monofony front bundle.",
+    "name": "monofony/front-pack",
+    "type": "symfony-pack",
+    "description": "Monofony front pack.",
     "license": "MIT",
     "require": {
         "php": "^7.2",
         "monofony/core-bundle": "^0.4"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bundle\\FrontBundle\\": "" },
-        "exclude-from-classmap": ["Recipe/"]
+        "exclude-from-classmap": ["/Recipe/"]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

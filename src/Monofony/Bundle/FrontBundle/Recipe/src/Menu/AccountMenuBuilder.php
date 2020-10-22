@@ -6,7 +6,7 @@ namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-use Monofony\Bundle\FrontBundle\Menu\AccountMenuBuilderInterface;
+use Monofony\Contracts\Front\Menu\AccountMenuBuilderInterface;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
