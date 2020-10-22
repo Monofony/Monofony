@@ -2,7 +2,7 @@
 
 namespace App\Form\EventSubscriber;
 
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;

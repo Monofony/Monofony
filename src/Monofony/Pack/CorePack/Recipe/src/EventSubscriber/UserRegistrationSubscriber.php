@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\EventSubscriber;
 
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Sylius\Bundle\UserBundle\UserEvents;
 use Sylius\Component\User\Model\UserInterface;

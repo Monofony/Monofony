@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace spec\App\Context;
 
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
-use Monofony\Component\Core\Model\User\AppUserInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;

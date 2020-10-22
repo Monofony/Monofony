@@ -6,7 +6,7 @@ namespace App\MessageHandler;
 
 use App\Message\ResetPasswordRequest;
 use Doctrine\ORM\EntityManagerInterface;
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Sylius\Bundle\UserBundle\UserEvents;
 use Sylius\Component\Resource\Repository\RepositoryInterface;

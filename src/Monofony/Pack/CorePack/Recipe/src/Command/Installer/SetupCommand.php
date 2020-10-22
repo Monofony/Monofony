@@ -3,7 +3,7 @@
 namespace App\Command\Installer;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Monofony\Component\Core\Model\User\AdminUserInterface;
+use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Symfony\Component\Console\Command\Command;

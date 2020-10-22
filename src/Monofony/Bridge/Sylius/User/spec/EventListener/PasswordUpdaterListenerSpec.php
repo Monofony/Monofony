@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace spec\Monofony\Bridge\Sylius\User\EventListener;
 
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\PasswordUpdaterInterface;

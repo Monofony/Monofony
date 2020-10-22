@@ -3,8 +3,8 @@
 namespace spec\App\Entity\User;
 
 use Doctrine\Common\Collections\Collection;
-use Monofony\Component\Core\Model\User\AdminAvatarInterface;
-use Monofony\Component\Core\Model\User\AdminUserInterface;
+use Monofony\Contracts\Core\Model\User\AdminAvatarInterface;
+use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\User;
 use Sylius\Component\User\Model\UserInterface;

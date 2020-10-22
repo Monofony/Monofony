@@ -3,8 +3,8 @@
 namespace App\Entity\User;
 
 use Doctrine\ORM\Mapping as ORM;
-use Monofony\Component\Core\Model\User\AdminAvatarInterface;
-use Monofony\Component\Core\Model\User\AdminUserInterface;
+use Monofony\Contracts\Core\Model\User\AdminAvatarInterface;
+use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Sylius\Component\User\Model\User as BaseUser;
 
 /**

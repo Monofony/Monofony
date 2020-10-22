@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Monofony\Component\Core\Model\Customer;
+namespace Monofony\Contracts\Core\Model\Customer;
 
-use Monofony\Component\Core\Model\User\AppUserInterface;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\CustomerInterface as BaseCustomerInterface;
 use Sylius\Component\User\Model\UserAwareInterface;
 use Sylius\Component\User\Model\UserInterface;

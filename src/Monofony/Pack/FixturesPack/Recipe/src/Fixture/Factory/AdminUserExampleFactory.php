@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
-use Monofony\Component\Core\Model\User\AdminUserInterface;
+use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;

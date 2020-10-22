@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace spec\App\EventSubscriber;
 
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\OnFlushEventArgs;

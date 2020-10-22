@@ -9,7 +9,7 @@ use App\Tests\Behat\Page\Backend\Customer\IndexPage;
 use App\Tests\Behat\Page\Backend\Customer\UpdatePage;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
-use Monofony\Component\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Webmozart\Assert\Assert;
 
 final class ManagingCustomersContext implements Context
