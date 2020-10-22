@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Context\Ui\Backend;
 
 use App\Tests\Behat\Element\Backend\TopBarElement;
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 use App\Tests\Behat\Page\Backend\Administrator\CreatePage;
 use App\Tests\Behat\Page\Backend\Administrator\IndexPage;
 use App\Tests\Behat\Page\Backend\Administrator\UpdatePage;

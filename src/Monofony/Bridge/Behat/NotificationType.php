@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Behat;
+namespace Monofony\Bridge\Behat;
 
 final class NotificationType
 {

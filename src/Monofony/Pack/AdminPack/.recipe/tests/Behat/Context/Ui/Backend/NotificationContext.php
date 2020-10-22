@@ -2,7 +2,7 @@
 
 namespace App\Tests\Behat\Context\Ui\Backend;
 
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 

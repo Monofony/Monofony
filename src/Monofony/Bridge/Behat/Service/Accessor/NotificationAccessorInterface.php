@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service\Accessor;
 
-use App\Tests\Behat\NotificationType;
+use Monofony\Bridge\Behat\NotificationType;
 
 interface NotificationAccessorInterface
 {

@@ -15,14 +15,22 @@ matrix:
             sudo: required
             php: 7.3
             env:
-                - APP_NAME_SUITE="application"
+                - MONOFONY_SUITE="application"
                 - NODE_VERSION="10.16.0"
             services:
                 - memcached
         -
             sudo: false
             php: 7.3
-            env: APP_NAME_SUITE="docs packages"
+            env: MONOFONY_SUITE="docs packages"
+            addons:
+                apt:
+                    packages:
+                        - parallel
+        -
+            php: 7.3
+            env:
+                - MONOFONY_SUITE="packages"
             addons:
                 apt:
                     packages:
@@ -38,28 +46,28 @@ cache:
         - $APP_NAME_CACHE_DIR
 
 before_install:
-    - etc/travis/run-suite before_install "${APP_NAME_SUITE}"
+    - etc/travis/run-suite before_install "${MONOFONY_SUITE}"
 
 install:
-    - etc/travis/run-suite install "${APP_NAME_SUITE}"
+    - etc/travis/run-suite install "${MONOFONY_SUITE}"
 
 before_script:
-    - etc/travis/run-suite before_script "${APP_NAME_SUITE}"
+    - etc/travis/run-suite before_script "${MONOFONY_SUITE}"
 
 script:
-    - etc/travis/run-suite script "${APP_NAME_SUITE}"
+    - etc/travis/run-suite script "${MONOFONY_SUITE}"
 
 before_cache:
-    - etc/travis/run-suite before_cache "${APP_NAME_SUITE}"
+    - etc/travis/run-suite before_cache "${MONOFONY_SUITE}"
 
 after_success:
-    - etc/travis/run-suite after_success "${APP_NAME_SUITE}"
+    - etc/travis/run-suite after_success "${MONOFONY_SUITE}"
 
 after_failure:
-    - etc/travis/run-suite after_failure "${APP_NAME_SUITE}"
+    - etc/travis/run-suite after_failure "${MONOFONY_SUITE}"
 
 after_script:
-    - etc/travis/run-suite after_script "${APP_NAME_SUITE}"
+    - etc/travis/run-suite after_script "${MONOFONY_SUITE}"
 
 notifications:
     email: false
