@@ -1,7 +1,7 @@
 {
-    "name": "monofony/admin-pack",
+    "name": "monofony/core-pack",
     "type": "symfony-pack",
-    "description": "Monofony admin pack.",
+    "description": "Monofony core pack.",
     "license": "MIT",
     "require": {
         "php": "^7.2",

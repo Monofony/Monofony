@@ -2,7 +2,7 @@ api_platform:
     version: !php/const App\Kernel::VERSION
     mapping:
         paths:
-            - '%kernel.project_dir%/src/Monofony/Bundle/CoreBundle/Recipe/src/Entity'
+            - '%kernel.project_dir%/src/Monofony/Pack/CorePack/Recipe/src/Entity'
             - '%kernel.project_dir%/src/Monofony/Pack/ApiPack/Recipe/config/api_platform/resources'
     patch_formats:
         json: ['application/merge-patch+json']

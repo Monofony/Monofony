@@ -1,5 +1,5 @@
 imports:
-    - ../src/Monofony/Bundle/CoreBundle/Recipe/config/suites/cli/installer.yaml
+    - ../src/Monofony/Pack/CorePack/Recipe/config/suites/cli/installer.yaml
 
     - ../src/Monofony/Pack/AdminPack/Recipe/config/suites/ui/admin/dashboard.yaml
     - ../src/Monofony/Pack/AdminPack/Recipe/config/suites/ui/customer/managing_customers.yaml

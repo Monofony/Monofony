@@ -1,17 +1,21 @@
 suites:
+    # Bridges
     FOSOAuthServerBridge: { namespace: Monofony\Bridge\FOS\OAuthServer, psr4_prefix: Monofony\Bridge\FOS\OAuthServer, spec_path: src/Monofony/Bridge/FOS/OAuthServer, src_path: src/Monofony/Bridge//FOS/OAuthServer }
     SyliusUserBridge: { namespace: Monofony\Bridge\Sylius\User, psr4_prefix: Monofony\Bridge\Sylius\User, spec_path: src/Monofony/Bridge/Sylius/User, src_path: src/Monofony/Bridge/Sylius/User }
+
+    # Bundles
     CoreBundle: { namespace: Monofony\Bundle\CoreBundle, psr4_prefix: Monofony\Bundle\CoreBundle, spec_path: src/Monofony/Bundle/CoreBundle, src_path: src/Monofony/Bundle/CoreBundle }
-    CoreBundleRecipe: { spec_path: src/Monofony/Bundle/CoreBundle/Recipe, src_path: src/Monofony/Bundle/CoreBundle/Recipe }
-    Core: { spec_path: src/Core/recipe, src_path: src/Core/recipe/src }
+
+    # Components
     Admin: { namespace: Monofony\Component\Admin, psr4_prefix: Monofony\Component\Admin, spec_path: src/Monofony/Component/Admin, src_path: src/Monofony/Component/Admin }
-    AdminRecipe: { spec_path: src/Admin/recipe, src_path: src/Admin/recipe/src }
-    AdminBundle: { namespace: Monofony\Pack\AdminPack, psr4_prefix: Monofony\Pack\AdminPack, spec_path: src/Monofony/Pack/AdminPack, src_path: src/Monofony/Pack/AdminPack }
-    AdminBundleRecipe: { spec_path: src/Monofony/Pack/AdminPack/Recipe, src_path: src/Monofony/Pack/AdminPack/Recipe }
+
+    # Packs
+    AdminPackRecipe: { spec_path: src/Monofony/Pack/AdminPack/Recipe, src_path: src/Monofony/Pack/AdminPack/Recipe }
     ApiPackRecipe: { spec_path: src/Monofony/Pack/ApiPack/Recipe, src_path: src/Monofony/Pack/ApiPack/Recipe }
+    CorePackRecipe: { spec_path: src/Monofony/Pack/CorePack/Recipe, src_path: src/Monofony/Pack/CorePack/Recipe }
 
 extensions:
     LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
         whitelist:
-            - src/Monofony/Bundle/CoreBundle/Recipe/src
+            - src/Monofony/Pack/CorePack/Recipe/src
             - src/Admin/recipe/src
