@@ -14,4 +14,4 @@ services:
 
 parameters:
     exclude_files:
-        - '**/Recipe/**'
+        - '**/.recipe/**'

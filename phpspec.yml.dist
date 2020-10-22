@@ -10,12 +10,12 @@ suites:
     Admin: { namespace: Monofony\Component\Admin, psr4_prefix: Monofony\Component\Admin, spec_path: src/Monofony/Component/Admin, src_path: src/Monofony/Component/Admin }
 
     # Packs
-    AdminPackRecipe: { spec_path: src/Monofony/Pack/AdminPack/Recipe, src_path: src/Monofony/Pack/AdminPack/Recipe }
-    ApiPackRecipe: { spec_path: src/Monofony/Pack/ApiPack/Recipe, src_path: src/Monofony/Pack/ApiPack/Recipe }
-    CorePackRecipe: { spec_path: src/Monofony/Pack/CorePack/Recipe, src_path: src/Monofony/Pack/CorePack/Recipe }
+    AdminPack.recipe: { spec_path: src/Monofony/Pack/AdminPack/.recipe, src_path: src/Monofony/Pack/AdminPack/.recipe }
+    ApiPack.recipe: { spec_path: src/Monofony/Pack/ApiPack/.recipe, src_path: src/Monofony/Pack/ApiPack/.recipe }
+    CorePack.recipe: { spec_path: src/Monofony/Pack/CorePack/.recipe, src_path: src/Monofony/Pack/CorePack/.recipe }
 
 extensions:
     LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
         whitelist:
-            - src/Monofony/Pack/CorePack/Recipe/src
+            - src/Monofony/Pack/CorePack/.recipe/src
             - src/Admin/recipe/src

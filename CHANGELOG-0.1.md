@@ -77,7 +77,7 @@
 - [#54](https://github.com/Monofony/Monofony/pull/54) Move kernel into core package (@loic425)
 - [#53](https://github.com/Monofony/Monofony/pull/53) Rename packs (@loic425)
 - [#52](https://github.com/Monofony/Monofony/pull/52) Move packages content into recipe directory (@loic425)
-- [#51](https://github.com/Monofony/Monofony/pull/51) Recipes into src directory (@loic425)
+- [#51](https://github.com/Monofony/Monofony/pull/51) .recipes into src directory (@loic425)
 - [#50](https://github.com/Monofony/Monofony/pull/50) Remove other behat classes (@loic425)
 - [#49](https://github.com/Monofony/Monofony/pull/49) Move Behat services into core package (@loic425)
 - [#48](https://github.com/Monofony/Monofony/pull/48) Move some Behat services into core package (@loic425)

@@ -1,3 +1,3 @@
 imports:
-    - { resource: '../../src/Monofony/Pack/CorePack/Recipe/config/packages/monofony_core.yaml' }
-    - { resource: '../../src/Monofony/Pack/AdminPack/Recipe/config/sylius/grids/**/*.yaml' }
+    - { resource: '../../src/Monofony/Pack/CorePack/.recipe/config/packages/monofony_core.yaml' }
+    - { resource: '../../src/Monofony/Pack/AdminPack/.recipe/config/sylius/grids/**/*.yaml' }

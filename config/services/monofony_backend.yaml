@@ -9,12 +9,12 @@ services:
 
     app_backend:
         namespace: App\
-        resource: '../../src/Monofony/Pack/AdminPack/Recipe/src/*'
-        exclude: '../../src/Monofony/Pack/AdminPack/Recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/Pack/AdminPack/.recipe/src/*'
+        exclude: '../../src/Monofony/Pack/AdminPack/.recipe/src/{DependencyInjection,Entity,Form/EventSubscriber/AddUserFormSubscriber.php,Migrations,Tests,Kernel.php}'
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
     controller_backend:
         namespace: App\Controller\
-        resource: '../../src/Monofony/Pack/AdminPack/Recipe/src/Controller'
+        resource: '../../src/Monofony/Pack/AdminPack/.recipe/src/Controller'
         tags: ['controller.service_arguments']
