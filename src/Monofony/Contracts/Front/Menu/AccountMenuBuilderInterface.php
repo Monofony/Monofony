@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Bundle\FrontBundle\Menu;
+namespace Monofony\Contracts\Front\Menu;
 
 use Knp\Menu\ItemInterface;
 

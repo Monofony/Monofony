@@ -8,7 +8,8 @@
             "App\\": "src/",
             "Monofony\\Bridge\\": "src/Monofony/Bridge/",
             "Monofony\\Bundle\\": "src/Monofony/Bundle/",
-            "Monofony\\Component\\": "src/Monofony/Component/"
+            "Monofony\\Component\\": "src/Monofony/Component/",
+            "Monofony\\Contracts\\": "src/Monofony/Contracts/"
         }
     },
     "autoload-dev": {
