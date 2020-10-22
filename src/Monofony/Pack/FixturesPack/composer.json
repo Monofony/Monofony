@@ -4,7 +4,7 @@
     "description": "A pack for Monofony.",
     "license": "MIT",
     "require": {
-        "php": "^7.2",
+        "php": ">=7.3",
         "monofony/core-bundle": "^0.4",
         "sylius/fixtures-bundle": "^1.4"
     },

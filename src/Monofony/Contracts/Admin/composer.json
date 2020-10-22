@@ -13,8 +13,18 @@
             "/Tests/"
         ]
     },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "branch-version": "0.4"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12"
     }
 }

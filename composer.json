@@ -57,7 +57,7 @@
         ]
     },
     "require": {
-        "php": "^7.2",
+        "php": ">=7.3",
         "api-platform/api-pack": "^1.2",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-fixtures-bundle": "^2.3",

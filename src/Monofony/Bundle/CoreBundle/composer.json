@@ -4,7 +4,7 @@
     "description": "Monofony core bundle.",
     "license": "MIT",
     "require": {
-        "php": "^7.1",
+        "php": ">=7.3",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^2.0",
@@ -15,6 +15,8 @@
         "guzzlehttp/guzzle": "^6.2",
         "knplabs/doctrine-behaviors": "~1.1",
         "liip/imagine-bundle": "^2.2",
+        "monofony/admin-contracts": "^0.4",
+        "monofony/sylius-bridge": "^0.4",
         "sensio/framework-extra-bundle": "^5.1",
         "sensiolabs/security-checker": "^5.0",
         "sonata-project/block-bundle": "^3.3",
@@ -38,12 +40,19 @@
         "twig/twig": "^2.7",
         "vich/uploader-bundle": "^1.8"
     },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12"
+    },
     "conflict": {
         "symfony/symfony": "*"
     },
     "autoload": {
         "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" },
         "exclude-from-classmap": [".recipe/"]
+    },
+    "replace": {
+        "monofony/admin-contracts": "self.version",
+        "monofony/sylius-bridge": "self.version"
     },
     "config": {
         "sort-packages": true
@@ -52,5 +61,12 @@
     "prefer-stable": true,
     "extra": {
         "branch-version": "0.4"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
+        }
     }
 }
