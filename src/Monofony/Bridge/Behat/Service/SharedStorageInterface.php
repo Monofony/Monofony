@@ -16,7 +16,6 @@ namespace Monofony\Bridge\Behat\Service;
 interface SharedStorageInterface
 {
     /**
-     *
      * @return mixed
      */
     public function get(string $key);

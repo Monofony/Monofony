@@ -18,7 +18,6 @@ use Behat\Mink\Element\NodeElement;
 interface TableAccessorInterface
 {
     /**
-     *
      * @return NodeElement
      *
      * @throws \InvalidArgumentException If row cannot be found
@@ -26,7 +25,6 @@ interface TableAccessorInterface
     public function getRowWithFields(NodeElement $table, array $fields);
 
     /**
-     *
      * @return NodeElement[]
      *
      * @throws \InvalidArgumentException If there is no rows fulfilling given conditions
@@ -34,7 +32,7 @@ interface TableAccessorInterface
     public function getRowsWithFields(NodeElement $table, array $fields);
 
     /**
-     * @param string      $fieldName
+     * @param string $fieldName
      *
      * @return array
      *
@@ -43,20 +41,18 @@ interface TableAccessorInterface
     public function getIndexedColumn(NodeElement $table, $fieldName);
 
     /**
-     *
      * @return NodeElement[]
      */
     public function getSortableHeaders(NodeElement $table);
 
     /**
-     * @param string      $field
+     * @param string $field
      *
      * @return NodeElement
      */
     public function getFieldFromRow(NodeElement $table, NodeElement $row, $field);
 
     /**
-     *
      * @return int
      */
     public function countTableBodyRows(NodeElement $table);

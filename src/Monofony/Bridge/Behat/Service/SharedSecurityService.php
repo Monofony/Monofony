@@ -39,8 +39,6 @@ final class SharedSecurityService implements SharedSecurityServiceInterface
         $this->performActionAs($this->adminSecurityService, $adminUser, $action);
     }
 
-    /**
-     */
     private function performActionAs(SecurityServiceInterface $securityService, UserInterface $user, callable $action): void
     {
         try {
