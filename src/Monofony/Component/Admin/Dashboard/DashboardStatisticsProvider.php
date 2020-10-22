@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Monofony\Component\Admin\Dashboard;
 
 use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
+use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 
 final class DashboardStatisticsProvider implements DashboardStatisticsProviderInterface
 {

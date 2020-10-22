@@ -7,5 +7,5 @@ twig:
     default_path:  '%kernel.project_dir%/src/Monofony/Bundle/CoreBundle/Recipe/templates'
     paths:
         - '%kernel.project_dir%/src/Monofony/Bundle/CoreBundle/Recipe/templates'
-        - '%kernel.project_dir%/src/Monofony/Bundle/AdminBundle/Recipe/templates'
+        - '%kernel.project_dir%/src/Monofony/Pack/AdminPack/Recipe/templates'
         - '%kernel.project_dir%/src/Monofony/Pack/FrontPack/Recipe/templates'

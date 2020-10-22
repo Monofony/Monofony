@@ -17,7 +17,7 @@
             "App\\Collector\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Collector/",
             "App\\Context\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Context/",
             "App\\Command\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Command/",
-            "App\\Dashboard\\": "src/Monofony/Bundle/AdminBundle/Recipe/src/Dashboard/",
+            "App\\Dashboard\\": "src/Monofony/Pack/AdminPack/Recipe/src/Dashboard/",
             "App\\Entity\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/Entity/",
             "App\\EventListener\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/EventListener/",
             "App\\EventSubscriber\\": "src/Monofony/Bundle/CoreBundle/Recipe/src/EventSubscriber/",
@@ -40,18 +40,18 @@
             "App\\Tests\\Behat\\Context\\Setup\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Context/Setup/",
             "App\\Tests\\Behat\\Context\\Transform\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Context/Transform/",
             "App\\Tests\\Behat\\Context\\Ui\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Context/Ui/",
-            "App\\Tests\\Behat\\Context\\Ui\\Backend\\": "src/Monofony/Bundle/AdminBundle/Recipe/tests/Behat/Context/Ui/Backend/",
+            "App\\Tests\\Behat\\Context\\Ui\\Backend\\": "src/Monofony/Pack/AdminPack/Recipe/tests/Behat/Context/Ui/Backend/",
             "App\\Tests\\Behat\\Context\\Ui\\Frontend\\": "src/Monofony/Pack/FrontPack/Recipe/tests/Behat/Context/Ui/Frontend/",
-            "App\\Tests\\Behat\\Element\\Backend\\": "src/Monofony/Bundle/AdminBundle/Recipe/tests/Behat/Element/Backend/",
-            "App\\Tests\\Behat\\Page\\Backend\\": "src/Monofony/Bundle/AdminBundle/Recipe/tests/Behat/Page/Backend/",
+            "App\\Tests\\Behat\\Element\\Backend\\": "src/Monofony/Pack/AdminPack/Recipe/tests/Behat/Element/Backend/",
+            "App\\Tests\\Behat\\Page\\Backend\\": "src/Monofony/Pack/AdminPack/Recipe/tests/Behat/Page/Backend/",
             "App\\Tests\\Behat\\Exception\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Exception/",
             "App\\Tests\\Behat\\Page\\Frontend\\": "src/Monofony/Pack/FrontPack/Recipe/tests/Behat/Page/Frontend/",
             "App\\Tests\\Behat\\Service\\": "src/Monofony/Bundle/CoreBundle/Recipe/tests/Behat/Service/",
             "App\\Tests\\Controller\\": "src/Monofony/Pack/ApiPack/Recipe/tests/Controller/"
         },
         "classmap": [
-            "src/Monofony/Bundle/AdminBundle/Recipe/src/Controller/DashboardController.php",
-            "src/Monofony/Bundle/AdminBundle/Recipe/src/Menu/AdminMenuBuilder.php",
+            "src/Monofony/Pack/AdminPack/Recipe/src/Controller/DashboardController.php",
+            "src/Monofony/Pack/AdminPack/Recipe/src/Menu/AdminMenuBuilder.php",
             "src/Monofony/Pack/FrontPack/Recipe/src/Menu/AccountMenuBuilder.php",
             "src/Monofony/Pack/FixturesPack/Recipe/src/Command/Installer/InstallSampleDataCommand.php"
         ]

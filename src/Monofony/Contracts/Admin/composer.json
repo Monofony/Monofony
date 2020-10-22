@@ -1,0 +1,20 @@
+{
+    "name": "monofony/admin-contracts",
+    "type": "library",
+    "description": "Generic abstractions related to Admin",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Contracts\\Admin\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-version": "0.4"
+    }
+}

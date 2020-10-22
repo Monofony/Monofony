@@ -44,7 +44,7 @@ default:
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
                 - "src/Monofony/Bundle/CoreBundle/Recipe/features"
-                - "src/Monofony/Bundle/AdminBundle/Recipe/features"
+                - "src/Monofony/Pack/AdminPack/Recipe/features"
                 - "src/Monofony/Pack/FrontPack/Recipe/features"
                 - "features"
 

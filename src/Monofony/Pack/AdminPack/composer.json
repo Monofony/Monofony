@@ -1,0 +1,21 @@
+{
+    "name": "monofony/admin-bundle",
+    "type": "symfony-bundle",
+    "description": "Monofony admin bundle.",
+    "license": "MIT",
+    "require": {
+        "php": "^7.2",
+        "monofony/core-bundle": "^0.4"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Pack\\AdminPack\\": "" },
+        "exclude-from-classmap": ["Recipe/"]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.4-dev"
+        }
+    }
+}
