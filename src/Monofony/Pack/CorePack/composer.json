@@ -13,7 +13,9 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "exclude-from-classmap": ["/.recipe/"]
+        "exclude-from-classmap": [
+            "/.recipe/"
+        ]
     },
     "config": {
         "sort-packages": true
@@ -22,7 +24,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.4-dev"
+            "dev-master": "0.5-dev"
         }
     }
 }

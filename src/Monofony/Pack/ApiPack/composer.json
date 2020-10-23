@@ -16,7 +16,9 @@
         "lchrusciel/api-test-case": "^3.1"
     },
     "autoload": {
-        "exclude-from-classmap": ["/.recipe/"]
+        "exclude-from-classmap": [
+            "/.recipe/"
+        ]
     },
     "replace": {
         "monofony/core-contracts": "self.version"
@@ -26,7 +28,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.4-dev"
+            "dev-master": "0.5-dev"
         }
     }
 }

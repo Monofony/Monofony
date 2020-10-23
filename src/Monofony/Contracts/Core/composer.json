@@ -12,7 +12,9 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Component\\Core\\": "" }
+        "psr-4": {
+            "Monofony\\Contracts\\Core\\": ""
+        }
     },
     "config": {
         "preferred-install": {
@@ -25,7 +27,7 @@
     "extra": {
         "branch-version": "0.4",
         "branch-alias": {
-            "dev-master": "0.4-dev"
+            "dev-master": "0.5-dev"
         }
     }
 }
