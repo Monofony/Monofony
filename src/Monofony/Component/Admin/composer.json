@@ -8,8 +8,7 @@
         "monofony/admin-contracts": "^0.4",
         "knplabs/knp-menu": "^3.1",
         "symfony/routing": "^4.4 || ^5.1",
-        "monofony/core": "^0.4",
-        "monofony/behat-bridge": "^0.4"
+        "monofony/core": "^0.4"
     },
     "autoload": {
         "psr-4": { "Monofony\\Component\\Admin\\": "" }
