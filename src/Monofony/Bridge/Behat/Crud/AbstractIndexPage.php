@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Monofony\Component\Admin\Behat\Crud;
+namespace Monofony\Bridge\Behat\Crud;
 
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;

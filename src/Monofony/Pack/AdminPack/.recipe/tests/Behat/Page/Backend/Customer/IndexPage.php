@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Page\Backend\Customer;
 
-use Monofony\Component\Admin\Behat\Crud\AbstractIndexPage;
-use Monofony\Component\Admin\Behat\Crud\IndexPageInterface;
+use Monofony\Bridge\Behat\Crud\AbstractIndexPage;
+use Monofony\Bridge\Behat\Crud\IndexPageInterface;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 
 class IndexPage extends AbstractIndexPage implements IndexPageInterface

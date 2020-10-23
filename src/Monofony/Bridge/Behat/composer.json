@@ -12,6 +12,7 @@
         "friends-of-behat/mink": "^1.8",
         "friends-of-behat/page-object-extension": "^0.3",
         "friends-of-behat/symfony-extension": "^2.0",
+        "monofony/core": "^0.4",
         "sylius/user": "^1.6",
         "symfony/finder": "^4.4 || ^5.1",
         "symfony/routing": "^4.4 || ^5.1",

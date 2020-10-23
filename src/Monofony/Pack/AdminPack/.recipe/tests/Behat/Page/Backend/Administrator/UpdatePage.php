@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Page\Backend\Administrator;
 
-use Monofony\Component\Admin\Behat\Crud\AbstractUpdatePage;
-use Monofony\Component\Admin\Behat\Crud\UpdatePageInterface;
+use Monofony\Bridge\Behat\Crud\AbstractUpdatePage;
+use Monofony\Bridge\Behat\Crud\UpdatePageInterface;
 
 class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
 {

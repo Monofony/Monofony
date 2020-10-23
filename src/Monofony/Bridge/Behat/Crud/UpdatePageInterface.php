@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Monofony\Component\Admin\Behat\Crud;
+namespace Monofony\Bridge\Behat\Crud;
 
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 use Behat\Mink\Exception\ElementNotFoundException;
 
-interface CreatePageInterface extends SymfonyPageInterface
+interface UpdatePageInterface extends SymfonyPageInterface
 {
     /**
      * @throws ElementNotFoundException
@@ -22,7 +22,9 @@ interface CreatePageInterface extends SymfonyPageInterface
     public function getValidationMessage(string $element): string;
 
     /**
-     * @throws ElementNotFoundException
+     * @param array $parameters where keys are some of arbitrary elements defined by user and values are expected values
      */
-    public function create(): void;
+    public function hasResourceValues(array $parameters): bool;
+
+    public function saveChanges(): void;
 }
