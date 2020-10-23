@@ -11,7 +11,7 @@
 
 namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
-use Monofony\Bridge\Sylius\User\EventListener\PasswordUpdaterListener;
+use Monofony\Bridge\SyliusUser\EventListener\PasswordUpdaterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

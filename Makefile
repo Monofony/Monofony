@@ -1,3 +1,5 @@
+PHPSTAN_LEVEL?=1
+
 test: validate test-phpspec analyse test-phpunit test-installer test-fixtures test-behat test-doctrine-migrations
 .PHONY: test
 
@@ -43,7 +45,7 @@ test-phpspec:
 .PHONY: test-phpspec
 
 test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l 1 src
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL}
 .PHONY: test-phpstan
 
 test-psalm:
@@ -83,3 +85,16 @@ test-behat-with-javascript:
 test-fixtures:
 	bin/console sylius:fixtures:load default --no-interaction
 .PHONY: test-fixtures
+
+install-package:
+	(cd $(path) && composer install --no-interaction --prefer-dist --no-scripts --no-plugins)
+.PHONY: test-fixtures
+
+test-package-phpstan:
+	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL})
+.PHONY: test-package-phpstan
+
+clean-package:
+	(rm -rf $(path)/vendor)
+	(rm $(path)/composer.lock)
+.PHONY: clearn-package

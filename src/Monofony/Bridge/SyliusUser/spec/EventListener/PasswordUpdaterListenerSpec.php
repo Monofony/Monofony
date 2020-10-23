@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace spec\Monofony\Bridge\Sylius\User\EventListener;
+namespace spec\Monofony\Bridge\SyliusUser\EventListener;
 
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use PhpSpec\ObjectBehavior;

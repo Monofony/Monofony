@@ -2,9 +2,10 @@
 
 packages=(
     Bridge/Behat
-    Bridge/FOS
-    # Bridge/Sylius
+    Bridge/FOSOAuthServer
+    # Bridge/SyliusUser
     # Bundle/CoreBundle
+    # Component/Admin
     Contracts/Admin
     Contracts/Core
     Contracts/Front

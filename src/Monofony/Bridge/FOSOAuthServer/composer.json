@@ -1,7 +1,7 @@
 {
-    "name": "monofony/fos-bridge",
+    "name": "monofony/fos-oauth-server-bridge",
     "type": "symfony-bridge",
-    "description": "Monofony FOS Bridge",
+    "description": "Monofony FOS OAuth Server Bridge",
     "keywords": [],
     "license": "MIT",
     "require": {

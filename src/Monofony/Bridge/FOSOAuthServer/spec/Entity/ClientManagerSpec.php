@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Monofony\Bridge\FOS\OAuthServer\Entity;
+namespace spec\Monofony\Bridge\FOSOAuthServer\Entity;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use FOS\OAuthServerBundle\Entity\ClientManager as FOSClientManager;
 use FOS\OAuthServerBundle\Model\ClientInterface;
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
-use Monofony\Bridge\FOS\OAuthServer\Entity\ClientManager;
+use Monofony\Bridge\FOSOAuthServer\Entity\ClientManager;
 use PhpSpec\ObjectBehavior;
 
 class ClientManagerSpec extends ObjectBehavior

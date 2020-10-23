@@ -4,6 +4,9 @@ includes:
 	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
 
 parameters:
+    paths:
+        - src
+
     reportUnmatchedIgnoredErrors: false
 
     symfony:

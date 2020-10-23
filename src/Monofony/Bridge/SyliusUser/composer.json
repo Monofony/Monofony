@@ -1,7 +1,7 @@
 {
-    "name": "monofony/sylius-bridge",
+    "name": "monofony/sylius-user-bridge",
     "type": "symfony-bridge",
-    "description": "Monofony Sylius Bridge",
+    "description": "Monofony Sylius User Bridge",
     "keywords": [],
     "license": "MIT",
     "require": {
