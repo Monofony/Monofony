@@ -3,4 +3,4 @@
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
 print_header "Validating (Package versions)" "Monofony"
-run_command "vendor/bin/monorepo-builder validate"
+run_command "make validate-package-version"
