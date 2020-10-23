@@ -8,13 +8,15 @@
         "monofony/core-bundle": "^0.4"
     },
     "autoload": {
-        "exclude-from-classmap": ["/.recipe/"]
+        "exclude-from-classmap": [
+            "/.recipe/"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.4-dev"
+            "dev-master": "0.5-dev"
         }
     }
 }

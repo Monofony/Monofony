@@ -16,10 +16,14 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "exclude-from-classmap": ["/.recipe/"]
+        "exclude-from-classmap": [
+            "/.recipe/"
+        ]
     },
     "autoload-dev": {
-        "psr-4": { "App\\": ".recipe/src" }
+        "psr-4": {
+            "App\\": ".recipe/src"
+        }
     },
     "replace": {
         "monofony/admin": "self.version",
@@ -32,7 +36,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.4-dev"
+            "dev-master": "0.5-dev"
         }
     }
 }
