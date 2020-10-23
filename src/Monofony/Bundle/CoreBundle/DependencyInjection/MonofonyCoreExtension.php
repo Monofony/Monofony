@@ -105,7 +105,10 @@ class MonofonyCoreExtension extends Extension
 
     private function registerDashboardStatisticsProvider(ContainerBuilder $container): void
     {
-        if (!class_exists(DashboardStatisticsProvider::class)) {
+        if (
+            !class_exists(DashboardStatisticsProvider::class)
+            || !interface_exists(DashboardStatisticsProviderInterface::class)
+        ) {
             return;
         }
 

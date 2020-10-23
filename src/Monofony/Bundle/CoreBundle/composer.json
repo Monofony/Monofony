@@ -15,8 +15,6 @@
         "guzzlehttp/guzzle": "^6.2",
         "knplabs/doctrine-behaviors": "~1.1",
         "liip/imagine-bundle": "^2.2",
-        "monofony/admin-contracts": "^0.4",
-        "monofony/sylius-bridge": "^0.4",
         "sensio/framework-extra-bundle": "^5.1",
         "sensiolabs/security-checker": "^5.0",
         "sonata-project/block-bundle": "^3.3",
@@ -49,10 +47,6 @@
     "autoload": {
         "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" },
         "exclude-from-classmap": [".recipe/"]
-    },
-    "replace": {
-        "monofony/admin-contracts": "self.version",
-        "monofony/sylius-bridge": "self.version"
     },
     "config": {
         "sort-packages": true

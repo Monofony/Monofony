@@ -20,8 +20,12 @@ class RegisterPasswordListenerForResourcesPass implements CompilerPassInterface
     /**
      * {@inheritdoc}
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
+        if (!class_exists(PasswordUpdaterListener::class)) {
+            return;
+        }
+
         $listenerPasswordUpdaterDefinition = $container->getDefinition('sylius.listener.password_updater');
         $listenerPasswordUpdaterDefinition
             ->setClass(PasswordUpdaterListener::class)
