@@ -22,7 +22,7 @@ matrix:
         -
             sudo: false
             php: 7.3
-            env: MONOFONY_SUITE="docs packages"
+            env: MONOFONY_SUITE="docs"
             addons:
                 apt:
                     packages:
