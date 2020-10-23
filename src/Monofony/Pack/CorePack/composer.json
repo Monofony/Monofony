@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
+        "monofony/core": "^0.4",
         "sylius/resource": "^1.6",
         "sylius/user": "^1.6"
     },

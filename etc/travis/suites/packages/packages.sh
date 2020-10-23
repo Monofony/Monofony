@@ -10,4 +10,10 @@ packages=(
     Contracts/Admin
     Contracts/Core
     Contracts/Front
+    # Pack/AdminPack
+    # Pack/ApiPack
+    Pack/CorePack
+    # Pack/FixturesPack
+    # Pack/FrontPack
+    # Pack/TestPack
 )
