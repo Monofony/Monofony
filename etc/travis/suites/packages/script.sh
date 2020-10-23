@@ -14,22 +14,21 @@ run_phpstan() {
       return 0
   fi
 
-  PHPSTAN_LEVEL=1
-
   print_header "Testing (PHPStan) ${package}" "Monofony"
-  run_command "(cd ${package_dir} && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} ./)"
+  run_command "make test-package-phpstan path=src/Monofony/${package}"
 }
 
 clean_package() {
-  rm -rf ${package_dir}/vendor
-  rm -rf ${package_dir}/composer.lock
+  print_header "Cleaning ${package}" "Monofony"
+
+  run_command "make clean-package path=src/Monofony/${package}"
 }
 
 for package in ${packages[@]}; do
     package_dir=$(dirname ${BASH_SOURCE[0]})/../../../../src/Monofony/${package}
 
     run_test || code=$?
-    clean_package
+    clean_package || code=$?
 done
 
 exit ${code}

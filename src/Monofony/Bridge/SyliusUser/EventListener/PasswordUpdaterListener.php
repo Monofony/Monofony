@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Monofony\Bridge\Sylius\User\EventListener;
+namespace Monofony\Bridge\SyliusUser\EventListener;
 
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Sylius\Bundle\UserBundle\EventListener\PasswordUpdaterListener as BasePasswordUpdaterListener;

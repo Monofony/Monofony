@@ -12,7 +12,7 @@ fos_oauth_server:
     auth_code_class:     App\Entity\OAuth\AuthCode
     service:
         user_provider: sylius.app_user_provider.email_or_name_based
-        client_manager: Monofony\Bridge\FOS\OAuthServer\Entity\ClientManager
+        client_manager: Monofony\Bridge\FOSOAuthServer\Entity\ClientManager
 
 framework:
     assets:

@@ -10,6 +10,11 @@ parameters:
 
     # for "split" command
     directories_to_repositories:
+        # Bridges
+        src/Monofony/Bridge/Behat: 'git@github.com:Monofony/BehatBridge.git'
+        src/Monofony/Bridge/FOSOAuthServer: 'git@github.com:Monofony/FOSOAuthServerBridge.git'
+        src/Monofony/Bridge/SyliusUser: 'git@github.com:Monofony/SyliusUserBridge.git'
+
         # Bundles
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
 
