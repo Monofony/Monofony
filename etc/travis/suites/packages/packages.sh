@@ -5,7 +5,7 @@ packages=(
     Bridge/FOSOAuthServer
     Bridge/SyliusUser
     Bundle/CoreBundle
-    # Component/Admin
+    Component/Admin
     Component/Core
     Contracts/Admin
     Contracts/Core
