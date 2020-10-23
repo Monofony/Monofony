@@ -11,7 +11,7 @@ use App\Tests\Behat\Page\Frontend\Account\DashboardPage;
 use App\Tests\Behat\Page\Frontend\Account\LoginPage;
 use App\Tests\Behat\Page\Frontend\Account\ProfileUpdatePage;
 use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
-use App\Formatter\StringInflector;
+use Monofony\Component\Core\Formatter\StringInflector;
 use Webmozart\Assert\Assert;
 
 final class AccountContext implements Context

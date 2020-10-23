@@ -3,4 +3,4 @@ parameters:
         - ./
     excludes_analyse:
         - 'vendor/**.php'
-        - '**/spec/**.php'
+        - 'spec/**.php'
