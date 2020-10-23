@@ -18,6 +18,10 @@ parameters:
         # Bundles
         src/Monofony/Bundle/CoreBundle: 'git@github.com:Monofony/CoreBundle.git'
 
+        # Components
+        src/Monofony/Component/Admin: 'git@github.com:Monofony/Admin.git'
+        src/Monofony/Component/Core: 'git@github.com:Monofony/Core.git'
+
         # Contracts
         src/Monofony/Contracts/Admin: 'git@github.com:Monofony/AdminContracts.git'
         src/Monofony/Contracts/Core: 'git@github.com:Monofony/CoreContracts.git'

@@ -6,7 +6,7 @@ namespace App\Tests\Behat\Page\Frontend\Account;
 
 use Behat\Mink\Exception\ElementNotFoundException;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
-use App\Formatter\StringInflector;
+use Monofony\Component\Core\Formatter\StringInflector;
 
 class RegisterPage extends SymfonyPage
 {

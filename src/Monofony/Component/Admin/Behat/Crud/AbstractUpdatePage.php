@@ -11,7 +11,7 @@
 
 namespace Monofony\Component\Admin\Behat\Crud;
 
-use App\Formatter\StringInflector;
+use Monofony\Component\Core\Formatter\StringInflector;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;

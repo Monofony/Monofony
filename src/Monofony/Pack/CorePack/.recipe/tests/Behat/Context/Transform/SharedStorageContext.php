@@ -2,7 +2,7 @@
 
 namespace App\Tests\Behat\Context\Transform;
 
-use App\Formatter\StringInflector;
+use Monofony\Component\Core\Formatter\StringInflector;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 
