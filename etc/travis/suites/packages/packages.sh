@@ -4,7 +4,7 @@ packages=(
     Bridge/Behat
     Bridge/FOSOAuthServer
     Bridge/SyliusUser
-    # Bundle/CoreBundle
+    Bundle/CoreBundle
     # Component/Admin
     Component/Core
     Contracts/Admin
