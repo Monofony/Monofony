@@ -9,6 +9,3 @@ services:
             $bundles: '%kernel.bundles%'
         tags:
             - { name: data_collector, template: '@MonofonyCore/DataCollector/monofony.html.twig', id: monofony_core, priority: -513 }
-
-    Monofony\Bridge\FOSOAuthServer\Entity\ClientManager:
-        $class: '%fos_oauth_server.model.client.class%'

@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle\DependencyInjection;
 
+use App\Entity\Customer\Customer;
 use Doctrine\Common\EventSubscriber;
 use Monofony\Component\Admin\Dashboard\DashboardStatisticsProvider;
 use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
@@ -51,18 +52,31 @@ class MonofonyCoreExtension extends Extension
 
     private function registerSomeSyliusAliases(ContainerBuilder $container): void
     {
-        $container->setAlias(CanonicalizerInterface::class, 'sylius.canonicalizer');
-        $container->setAlias(GeneratorInterface::class, 'sylius.app_user.token_generator.email_verification');
+        if (interface_exists(CanonicalizerInterface::class)) {
+            $container->setAlias(CanonicalizerInterface::class, 'sylius.canonicalizer');
+        }
+
+        if (interface_exists(GeneratorInterface::class)) {
+            $container->setAlias(GeneratorInterface::class, 'sylius.app_user.token_generator.email_verification');
+        }
     }
 
     private function tagCustomerContext(ContainerBuilder $container): void
     {
+        if (!interface_exists(CustomerContextInterface::class)) {
+            return;
+        }
+
         $container->registerForAutoconfiguration(CustomerContextInterface::class)
             ->addTag('monofony.customer_context');
     }
 
     private function tagDoctrineEventSubscribers(ContainerBuilder $container): void
     {
+        if (!interface_exists(EventSubscriber::class)) {
+            return;
+        }
+
         $container->registerForAutoconfiguration(EventSubscriber::class)
             ->addTag('doctrine.event_subscriber');
     }
