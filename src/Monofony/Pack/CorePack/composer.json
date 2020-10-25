@@ -5,11 +5,24 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
+        "doctrine/doctrine-migrations-bundle": "^2.0",
+        "doctrine/orm": "^2.4.8",
+        "fzaninotto/faker": "^1.8",
+        "monofony/core-bundle": "^0.4",
+        "monofony/core-contracts": "^0.4",
+        "monofony/fos-oauth-server-bridge": "^0.4",
+        "sylius/customer-bundle": "^1.4",
+        "sylius/fixtures-bundle": "^1.4",
         "sylius/resource": "^1.6",
-        "sylius/user": "^1.6"
+        "sylius/resource-bundle": "^1.6",
+        "sylius/user": "^1.6",
+        "sylius/user-bundle": "^1.6",
+        "symfony/process": "^4.5 || ^5.1",
+        "symfony/validator": "^4.4 || ^5.1"
     },
     "require-dev": {
         "behat/behat": "^3.2",
+        "monofony/behat-bridge": "^0.4",
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
