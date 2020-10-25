@@ -11,7 +11,6 @@
 
 namespace Monofony\Bundle\CoreBundle\DataCollector;
 
-use App\Kernel;
 use Monofony\Bundle\CoreBundle\MonofonyCoreBundle;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,7 +49,7 @@ final class MonofonyDataCollector extends DataCollector
     /**
      * {@inheritdoc}
      */
-    public function collect(Request $request, Response $response, \Exception $exception = null): void
+    public function collect(Request $request, Response $response, \Throwable $exception = null): void
     {
     }
 
