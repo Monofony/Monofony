@@ -6,10 +6,11 @@
     "require": {
         "api-platform/api-pack": "^1.2",
         "monofony/core-contracts": "^0.4",
-        "symfony/messenger": "^4.4 || ^5.1",
+        "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.6",
+        "sylius/user": "^1.6",
         "sylius/user-bundle": "^1.6",
-        "psr/event-dispatcher": "^1.0"
+        "symfony/messenger": "^4.4 || ^5.1"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
@@ -20,9 +21,8 @@
             "/.recipe/"
         ]
     },
-    "replace": {
-        "monofony/core-contracts": "self.version"
-    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "sort-packages": true
     },
