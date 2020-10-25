@@ -21,7 +21,7 @@
             "App\\Entity\\": "src/Monofony/Pack/CorePack/.recipe/src/Entity/",
             "App\\EventListener\\": "src/Monofony/Pack/CorePack/.recipe/src/EventListener/",
             "App\\EventSubscriber\\": "src/Monofony/Pack/CorePack/.recipe/src/EventSubscriber/",
-            "App\\Fixture\\": "src/Monofony/Pack/FixturesPack/.recipe/src/Fixture/",
+            "App\\Fixture\\": "src/Monofony/Pack/CorePack/.recipe/src/Fixture/",
             "App\\Form\\": "src/Monofony/Pack/CorePack/.recipe/src/Form/",
             "App\\Installer\\": "src/Monofony/Pack/CorePack/.recipe/src/Installer/",
             "App\\Installer\\Checker\\": "src/Monofony/Pack/CorePack/.recipe/src/Installer/Checker/",
@@ -52,7 +52,7 @@
             "src/Monofony/Pack/AdminPack/.recipe/src/Controller/DashboardController.php",
             "src/Monofony/Pack/AdminPack/.recipe/src/Menu/AdminMenuBuilder.php",
             "src/Monofony/Pack/FrontPack/.recipe/src/Menu/AccountMenuBuilder.php",
-            "src/Monofony/Pack/FixturesPack/.recipe/src/Command/Installer/InstallSampleDataCommand.php"
+            "src/Monofony/Pack/CorePack/.recipe/src/Command/Installer/InstallSampleDataCommand.php"
         ]
     },
     "require": {

@@ -1,2 +1,2 @@
 imports:
-    - { resource: "../../src/Monofony/Pack/FixturesPack/.recipe/config/packages/monofony_fixtures.yaml" }
+    - { resource: "../../src/Monofony/Pack/CorePack/.recipe/config/packages/monofony_fixtures.yaml" }

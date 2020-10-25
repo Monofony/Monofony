@@ -31,6 +31,5 @@ parameters:
         src/Monofony/Pack/AdminPack: 'git@github.com:Monofony/AdminPack.git'
         src/Monofony/Pack/ApiPack: 'git@github.com:Monofony/ApiPack.git'
         src/Monofony/Pack/CorePack: 'git@github.com:Monofony/CorePack.git'
-        src/Monofony/Pack/FixturesPack: 'git@github.com:Monofony/FixturesPack.git'
         src/Monofony/Pack/FrontPack: 'git@github.com:Monofony/FrontPack.git'
         src/Monofony/Pack/TestPack: 'git@github.com:Monofony/TestPack.git'
