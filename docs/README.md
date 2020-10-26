@@ -3,7 +3,7 @@ Monofony Documentation
 
 This directory contains documentation for Monofony. 
 
-This documentation is inspired by [Sylius documentation](http://docs.sylius.org). 
+This documentation is inspired by [Sylius documentation](https://docs.sylius.com). 
 
 Build
 -----

@@ -111,5 +111,5 @@ Learn more:
 .. note::
 
     To learn more read:
-    * the `SyliusUserBundle documentation <http://docs.sylius.org/en/latest/components_and_bundles/bundles/SyliusUserBundle/index.html>`_.
-    * the `SyliusCustomerBundle documentation <http://docs.sylius.org/en/latest/components_and_bundles/bundles/SyliusCustomerBundle/index.html>`_.
+    * the `SyliusUserBundle documentation <https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusUserBundle/index.html>`_.
+    * the `SyliusCustomerBundle documentation <https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusCustomerBundle/index.html>`_.

@@ -47,7 +47,7 @@ Third Party Libraries
 
 Monofony uses a lot of libraries for various tasks:
 
-* `Sylius <http://docs.sylius.org/en/latest/>`_ for routing, controllers, data fixtures, grids
+* `Sylius <https://docs.sylius.com/en/latest/>`_ for routing, controllers, data fixtures, grids
 * `KnpMenu <http://symfony.com/doc/current/bundles/KnpMenuBundle/index.html>`_ - for backend menus
 * `Imagine <https://github.com/liip/LiipImagineBundle>`_ for images processing, generating thumbnails and cropping
 * `Pagerfanta <https://github.com/whiteoctober/Pagerfanta>`_ for pagination
