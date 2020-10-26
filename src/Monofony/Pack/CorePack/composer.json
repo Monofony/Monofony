@@ -8,17 +8,21 @@
         "doctrine/doctrine-migrations-bundle": "^2.0",
         "doctrine/orm": "^2.4.8",
         "fzaninotto/faker": "^1.8",
+        "liip/imagine-bundle": "^2.2",
         "monofony/core-bundle": "^0.4",
         "monofony/core-contracts": "^0.4",
         "monofony/fos-oauth-server-bridge": "^0.4",
         "sylius/customer-bundle": "^1.7",
         "sylius/fixtures-bundle": "^1.4",
+        "sylius/mailer": "^1.5",
         "sylius/resource": "^1.6",
         "sylius/resource-bundle": "^1.6",
         "sylius/user": "^1.7",
         "sylius/user-bundle": "^1.7",
         "symfony/process": "^4.4 || ^5.1",
-        "symfony/validator": "^4.4 || ^5.1"
+        "symfony/translation": "^4.4 || ^5.1",
+        "symfony/validator": "^4.4 || ^5.1",
+        "vich/uploader-bundle": "^1.8"
     },
     "require-dev": {
         "behat/behat": "^3.2",

@@ -1,0 +1,5 @@
+framework:
+    assets:
+        packages:
+            frontend:
+                json_manifest_path: '%kernel.project_dir%/public/assets/frontend/manifest.json'
