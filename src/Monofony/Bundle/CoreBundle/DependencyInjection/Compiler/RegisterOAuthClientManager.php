@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace App\Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
+namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
 use App\Entity\OAuth\Client;
 use Monofony\Bridge\FOSOAuthServer\Entity\ClientManager;
