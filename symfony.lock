@@ -43,9 +43,6 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
-    "cocur/slugify": {
-        "version": "v3.1"
-    },
     "coduo/php-matcher": {
         "version": "3.1.0"
     },
@@ -543,22 +540,28 @@
         "version": "5.0.4"
     },
     "sonata-project/block-bundle": {
-        "version": "3.12.1"
+        "version": "4.2.0"
     },
     "sonata-project/cache": {
         "version": "2.0.1"
     },
-    "sonata-project/core-bundle": {
-        "version": "3.9",
+    "sonata-project/doctrine-extensions": {
+        "version": "1.9.1"
+    },
+    "sonata-project/form-extensions": {
+        "version": "1.0",
         "recipe": {
             "repo": "github.com/symfony/recipes-contrib",
             "branch": "master",
-            "version": "3.9",
-            "ref": "2f69bd1995730b73a5211a9707622fb25a925df7"
-        }
+            "version": "1.0",
+            "ref": "8273133183506fe6ec66895e8890227b0dfba1c7"
+        },
+        "files": [
+            "config/packages/sonata_form.yaml"
+        ]
     },
-    "sonata-project/doctrine-extensions": {
-        "version": "1.3.0"
+    "sonata-project/twig-extensions": {
+        "version": "1.4.1"
     },
     "squizlabs/php_codesniffer": {
         "version": "3.0",
@@ -1017,6 +1020,9 @@
         "version": "3.3.0"
     },
     "zendframework/zend-eventmanager": {
+        "version": "3.2.1"
+    },
+    "zendframework/zend-stdlib": {
         "version": "3.2.1"
     }
 }

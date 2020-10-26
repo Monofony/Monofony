@@ -12,7 +12,7 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bridge\\FOS\\": "" },
+        "psr-4": { "Monofony\\Bridge\\FOSOAuthServer\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]
