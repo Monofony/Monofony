@@ -10,5 +10,7 @@ packages=(
     Contracts/Admin
     Contracts/Core
     Contracts/Front
+    Pack/AdminPack
+    Pack/ApiPack
     Pack/CorePack
 )
