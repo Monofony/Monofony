@@ -13,4 +13,5 @@ packages=(
     Pack/AdminPack
     Pack/ApiPack
     Pack/CorePack
+    Pack/FrontPack
 )
