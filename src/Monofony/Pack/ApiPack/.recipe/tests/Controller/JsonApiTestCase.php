@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Controller;
 
-use Lakion\ApiTestCase\JsonApiTestCase as BaseJsonApiTestCase;
+use ApiTestCase\JsonApiTestCase as BaseJsonApiTestCase;
 
 class JsonApiTestCase extends BaseJsonApiTestCase
 {
