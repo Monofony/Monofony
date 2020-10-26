@@ -1,6 +1,5 @@
 includes:
 	- vendor/phpstan/phpstan-doctrine/extension.neon
-	- vendor/phpstan/phpstan-symfony/extension.neon
 	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
 
 parameters:
@@ -8,9 +7,6 @@ parameters:
         - src
 
     reportUnmatchedIgnoredErrors: false
-
-    symfony:
-         container_xml_path: var/cache/dev/srcApp_KernelDevDebugContainer.xml
 
     excludes_analyse:
         # Makes PHPStan crash

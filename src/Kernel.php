@@ -11,9 +11,6 @@
 
 namespace App;
 
-use App\DependencyInjection\Builder\BackendContainerBuilder;
-use App\DependencyInjection\Builder\FrontendContainerBuilder;
-use PSS\SymfonyMockerContainer\DependencyInjection\MockerContainer;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Config\Resource\FileResource;
@@ -26,18 +23,6 @@ class Kernel extends BaseKernel
     use MicroKernelTrait;
 
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getContainerBaseClass()
-    {
-        if (in_array($this->getEnvironment(), ['test', 'test_cached'], true)) {
-            return MockerContainer::class;
-        }
-
-        return parent::getContainerBaseClass();
-    }
 
     public function getCacheDir()
     {
@@ -78,16 +63,5 @@ class Kernel extends BaseKernel
         $routes->import($confDir.'/{routes}/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}/'.$this->environment.'/**/*'.self::CONFIG_EXTS, '/', 'glob');
         $routes->import($confDir.'/{routes}'.self::CONFIG_EXTS, '/', 'glob');
-    }
-
-    protected function build(ContainerBuilder $container): void
-    {
-        if (class_exists(BackendContainerBuilder::class)) {
-            BackendContainerBuilder::build($container);
-        }
-
-        if (class_exists(FrontendContainerBuilder::class)) {
-            FrontendContainerBuilder::build($container);
-        }
     }
 }
