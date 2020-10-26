@@ -49,7 +49,7 @@ Deployment
 .. include:: /deployment/map.rst.inc
 
 .. _Monofony: https://twitter.com/hashtag/Monofony
-.. _Sylius: http://sylius.org
+.. _Sylius: https://sylius.com
 .. _`Symfony Framework`: http://symfony.com
 .. _`Quick Tour`: http://symfony.com/doc/current/quick_tour
 
