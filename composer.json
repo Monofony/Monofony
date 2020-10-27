@@ -59,7 +59,7 @@
         "php": ">=7.3",
         "api-platform/api-pack": "^1.2",
         "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "doctrine/doctrine-fixtures-bundle": "^3.3",
         "doctrine/doctrine-migrations-bundle": "^2.0",
         "doctrine/orm": "^2.4.8",
         "eightpoints/guzzle-bundle": "^7.3",
