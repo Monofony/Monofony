@@ -20,6 +20,7 @@
         "sylius/user": "^1.7",
         "sylius/user-bundle": "^1.7",
         "symfony/process": "^4.4 || ^5.1",
+        "symfony/serializer": "^4.4 || ^5.1",
         "symfony/translation": "^4.4 || ^5.1",
         "symfony/validator": "^4.4 || ^5.1",
         "vich/uploader-bundle": "^1.8"

@@ -17,6 +17,7 @@
         "infection/infection": "^0.13",
         "lakion/mink-debug-extension": "^1.2",
         "lchrusciel/api-test-case": "^5.0",
+        "monofony/behat-bridge": "^0.4",
         "phpspec/phpspec": "^6.2",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-doctrine": "^0.12",
