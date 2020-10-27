@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
 use App\Entity\OAuth\Client;
@@ -18,7 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Parameter;
 use Symfony\Component\DependencyInjection\Reference;
 
-class RegisterOAuthClientManager implements CompilerPassInterface
+final class RegisterOAuthClientManager implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {

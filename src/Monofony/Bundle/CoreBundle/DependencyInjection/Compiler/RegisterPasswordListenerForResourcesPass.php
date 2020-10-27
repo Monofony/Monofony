@@ -15,7 +15,7 @@ use Monofony\Bridge\SyliusUser\EventListener\PasswordUpdaterListener;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class RegisterPasswordListenerForResourcesPass implements CompilerPassInterface
+final class RegisterPasswordListenerForResourcesPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}
