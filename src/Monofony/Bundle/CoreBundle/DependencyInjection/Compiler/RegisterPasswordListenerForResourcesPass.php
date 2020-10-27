@@ -22,7 +22,10 @@ final class RegisterPasswordListenerForResourcesPass implements CompilerPassInte
      */
     public function process(ContainerBuilder $container): void
     {
-        if (!class_exists(PasswordUpdaterListener::class)) {
+        if (
+            !class_exists(PasswordUpdaterListener::class)
+            || !$container->hasDefinition('sylius.listener.password_updater')
+        ) {
             return;
         }
 
