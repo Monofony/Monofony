@@ -11,6 +11,7 @@
         "symfony/http-kernel": "^4.4 || ^5.1"
     },
     "require-dev": {
+        "matthiasnoback/symfony-dependency-injection-test": "^4.2",
         "phpstan/phpstan": "^0.12"
     },
     "conflict": {
