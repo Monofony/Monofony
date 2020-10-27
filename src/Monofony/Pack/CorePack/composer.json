@@ -12,6 +12,7 @@
         "monofony/core-bundle": "^0.4",
         "monofony/core-contracts": "^0.4",
         "monofony/fos-oauth-server-bridge": "^0.4",
+        "monofony/sylius-user-bridge": "^0.4",
         "sylius/customer-bundle": "^1.7",
         "sylius/fixtures-bundle": "^1.4",
         "sylius/mailer": "^1.5",
