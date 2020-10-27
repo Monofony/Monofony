@@ -106,6 +106,7 @@
         "infection/infection": "^0.13",
         "lakion/mink-debug-extension": "^1.2",
         "lchrusciel/api-test-case": "^5.0",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.2",
         "phpspec/phpspec": "^6.2",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-doctrine": "^0.12",
