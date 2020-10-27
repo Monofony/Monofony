@@ -1,3 +1,8 @@
+api_platform:
+    version: !php/const App\Kernel::VERSION
+    mapping:
+        paths: ['%kernel.project_dir%/config/api_platform/resources/']
+
 framework:
     serializer:
         enabled: true
