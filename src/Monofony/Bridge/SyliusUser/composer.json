@@ -14,7 +14,7 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bridge\\Sylius\\": "" },
+        "psr-4": { "Monofony\\Bridge\\SyliusUser\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]
