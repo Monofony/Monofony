@@ -1,6 +1,6 @@
 | Q               | A
 | --------------- | -----
-| Branch?         | 0.3 or 0.x <!-- see the comment below -->
+| Branch?         | 0.4 or 0.x <!-- see the comment below -->
 | Bug fix?        | no/yes
 | New feature?    | no/yes
 | Related tickets | fixes #X, partially #Y, mentioned in #Z
