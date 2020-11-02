@@ -1,0 +1,176 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+$filesystem = new Filesystem();
+$projectDir = dirname(__DIR__);
+
+removeLegacyConfigFiles($filesystem, $projectDir);
+updateConfig($filesystem, $projectDir);
+updatePhpstanConfig($filesystem, $projectDir);
+removeLegacyBundles($filesystem, $projectDir);
+replaceClasses($filesystem, $projectDir);
+updateKernel($filesystem, $projectDir);
+
+function removeLegacyConfigFiles(Filesystem $filesystem, string $projectDir): void
+{
+    // $filesystem->remove($projectDir.'/config/packages/eight_points_guzzle.yaml');
+    // $filesystem->remove($projectDir.'/config/packages/sensio_framework_extra.yaml');
+    $filesystem->remove($projectDir.'/config/packages/sonata_core.yaml');
+}
+
+function updateConfig(Filesystem $filesystem, string $projectDir): void
+{
+    $finder = new Finder();
+    $finder
+        ->files()
+        ->in($projectDir.'/config');
+
+    $patterns = [
+        'Monofony\\\Bundle\\\CoreBundle\\\Entity\\\OAuth\\\ClientManager' => 'monofony.client_manager',
+        'vendor\/monofony\/core-bundle\/Resources\/config\/services_test.yaml' => 'vendor\/monofony\/behat-bridge\/services_test.yaml',
+    ];
+
+    foreach ($finder as $file) {
+        $content = file_get_contents('config/'.$file->getRelativePathname());
+
+        foreach ($patterns as $pattern => $replacement) {
+            $pattern = '/'.$pattern.'/s';
+
+            if (preg_match($pattern, $content)) {
+                $content = preg_replace($pattern, $replacement, $content);
+                $filesystem->dumpFile('config/'.$file->getRelativePathname(), $content);
+            }
+        }
+    }
+}
+
+function updatePhpstanConfig(Filesystem $filesystem, string $projectDir): void
+{
+    $replacements = [
+        '- vendor/proget-hq/phpstan-phpspec/extension.neon' => '',
+        'specDir: \'spec/\'' => '',
+    ];
+
+    $relativePathname = $projectDir.'/phpstan.neon';
+    $content = file_get_contents($relativePathname);
+
+    foreach ($replacements as $pattern => $replacement) {
+        $content = str_replace($pattern, $replacement, $content);
+        $filesystem->dumpFile($relativePathname, $content);
+    }
+}
+
+function removeLegacyBundles(Filesystem $filesystem, string $projectDir): void
+{
+    $bundles = [
+        'Doctrine\\\Bundle\\\FixturesBundle' => '// Doctrine\\\Bundle\\\FixturesBundle',
+        'Sonata\\\CoreBundle\\\SonataCoreBundle::class' => '// Sonata\\\CoreBundle\\\SonataCoreBundle::class',
+        'Monofony\\\Bundle\\\AdminBundle\\\MonofonyAdminBundle::class' => '// Monofony\\\Bundle\\\AdminBundle\\\MonofonyAdminBundle::class',
+        'Monofony\\\Bundle\\\ApiBundle\\\MonofonyApiBundle::class' => '// Monofony\\\Bundle\\\ApiBundle\\\MonofonyApiBundle::class',
+        'Monofony\\\Plugin\\\FixturesPlugin\\\MonofonyFixturesPlugin::class' => '// Monofony\\\Plugin\\\FixturesPlugin\\\MonofonyFixturesPlugin::class',
+        'Monofony\\\Bundle\\\FrontBundle\\\MonofonyFrontBundle::class' => '// Monofony\\\Bundle\\\FrontBundle\\\MonofonyFrontBundle::class',
+    ];
+
+    $relativePathname = $projectDir.'/config/bundles.php';
+    $content = file_get_contents($relativePathname);
+
+    foreach ($bundles as $pattern => $replacement) {
+        $pattern = '/'.$pattern.'/s';
+        $content = preg_replace($pattern, $replacement, $content);
+        $filesystem->dumpFile($relativePathname, $content);
+    }
+}
+
+function replaceClasses(Filesystem $filesystem, string $projectDir): void
+{
+    $finder = new Finder();
+    $finder
+        ->files()
+        ->in($projectDir)
+        ->in($projectDir)
+        ->exclude(['bin', 'vendor', 'var'])
+    ;
+
+    $classes = [
+        'Monofony\\\Component\\\Core\\\Model\\\User\\\AdminUserInterface' => 'Monofony\\\Contracts\\\Core\\\Model\\\User\\\AdminUserInterface',
+        'Monofony\\\Component\\\Core\\\Model\\\User\\\AdminAvatarInterface' => 'Monofony\\\Contracts\\\Core\\\Model\\\User\\\AdminAvatarInterface',
+        'Monofony\\\Component\\\Core\\\Model\\\Media\\\FileInterface' => 'Monofony\\\Contracts\\\Core\\\Model\\\Media\\\FileInterface',
+        'Monofony\\\Component\\\Core\\\Model\\\User\\\AppUserInterface' => 'Monofony\\\Contracts\\\Core\\\Model\\\User\\\AppUserInterface',
+        'Monofony\\\Component\\\Core\\\Model\\\Customer\\\CustomerInterface' => 'Monofony\\\Contracts\\\Core\\\Model\\\Customer\\\CustomerInterface',
+        'Monofony\\\Bundle\\\AdminBundle\\\Dashboard\\\DashboardStatisticsProviderInterface' => 'Monofony\\\Contracts\\\Admin\\\Dashboard\\\DashboardStatisticsProviderInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\AdminSecurityServiceInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\AdminSecurityServiceInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\SharedStorageInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\SharedStorageInterface',
+        'Monofony\\\Plugin\\\FixturesPlugin\\\Fixture\\\Factory\\\AbstractExampleFactory' => 'App\\\Fixture\\\Factory\\\AbstractExampleFactory',
+        'Monofony\\\Plugin\\\FixturesPlugin\\\Fixture\\\Factory\\\ExampleFactoryInterface' => 'App\\\Fixture\\\Factory\\\ExampleFactoryInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\AppSecurityServiceInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\AppSecurityServiceInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\NotificationCheckerInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\NotificationCheckerInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\Resolver\\\CurrentPageResolverInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\Resolver\\\CurrentPageResolverInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\EmailCheckerInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\EmailCheckerInterface',
+        'Monofony\\\Bundle\\\AdminBundle\\\Tests\\\Behat\\\Crud\\\AbstractCreatePage' => 'Monofony\\\Bridge\\\Behat\\\Crud\\\AbstractCreatePage',
+        'Monofony\\\Bundle\\\AdminBundle\\\Tests\\\Behat\\\Crud\\\AbstractUpdatePage' => 'Monofony\\\Bridge\\\Behat\\\Crud\\\AbstractUpdatePage',
+        'Monofony\\\Bundle\\\AdminBundle\\\Tests\\\Behat\\\Crud\\\AbstractIndexPage' => 'Monofony\\\Bridge\\\Behat\\\Crud\\\AbstractIndexPage',
+        'Monofony\\\Bundle\\\AdminBundle\\\Tests\\\Behat\\\Crud\\\CreatePageInterface' => 'Monofony\\\Bridge\\\Behat\\\Crud\\\CreatePageInterface',
+        'Monofony\\\Bundle\\\AdminBundle\\\Tests\\\Behat\\\Crud\\\IndexPageInterface' => 'Monofony\\\Bridge\\\Behat\\\Crud\\\IndexPageInterface',
+        'Monofony\\\Bundle\\\AdminBundle\\\Tests\\\Behat\\\Crud\\\UpdatePageInterface' => 'Monofony\\\Bridge\\\Behat\\\Crud\\\UpdatePageInterface',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Behaviour\\\Toggles' => 'Monofony\\\Bridge\\\Behat\\\Behaviour\\\Toggles',
+        'Monofony\\\Bundle\\\CoreBundle\\\Tests\\\Behat\\\Service\\\Accessor\\\TableAccessorInterface' => 'Monofony\\\Bridge\\\Behat\\\Service\\\Accessor\\\TableAccessorInterface',
+        'Monofony\\\Bundle\\\AdminBundle\\\Dashboard\\\Statistics\\\StatisticInterface' => 'Monofony\\\Component\\\Admin\\\Dashboard\\\Statistics\\\StatisticInterface',
+        'Monofony\\\Bundle\\\FrontBundle\\\Menu\\\AccountMenuBuilderInterface' => 'Monofony\\\Contracts\\\Front\\\Menu\\\AccountMenuBuilderInterface',
+        'Monofony\\\Bundle\\\AdminBundle\\\Menu\\\AdminMenuBuilderInterface' => 'Monofony\\\Component\\\Admin\\\Menu\\\AdminMenuBuilderInterface',
+        'App\\\Tests\\\Behat\\\NotificationType' => 'Monofony\\\Bridge\\\Behat\\\NotificationType',
+        'Lakion\\\ApiTestCase\\\JsonApiTestCase' => 'ApiTestCase\\\JsonApiTestCase',
+        'use Monofony\\\Plugin\\\FixturesPlugin\\\Fixture\\\AbstractResourceFixture;\n' => '',
+        'use PSS\\\SymfonyMockerContainer\\\DependencyInjection\\\MockerContainer;\n' => '',
+    ];
+
+    $filesystem->remove($projectDir.'/tests/Behat/NotificationType.php');
+
+    if (!is_file($projectDir.'/src/Fixture/Factory/AbstractExampleFactory.php')) {
+        copy(
+            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/src/Fixture/Factory/AbstractExampleFactory.php',
+            $projectDir.'/src/Fixture/Factory/AbstractExampleFactory.php'
+        );
+    }
+
+    if (!is_file($projectDir.'/src/Fixture/Factory/ExampleFactoryInterface.php')) {
+        copy(
+            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/src/Fixture/Factory/ExampleFactoryInterface.php',
+            $projectDir.'/src/Fixture/Factory/ExampleFactoryInterface.php'
+        );
+    }
+
+    if (!is_file($projectDir.'/src/Fixture/AbstractResourceFixture.php')) {
+        copy(
+            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/src/Fixture/AbstractResourceFixture.php',
+            $projectDir.'/src/Fixture/AbstractResourceFixture.php'
+        );
+    }
+
+    foreach ($finder as $file) {
+        $content = file_get_contents($file->getRelativePathname());
+
+        foreach ($classes as $pattern => $replacement) {
+            $pattern = '/'.$pattern.'/s';
+
+            if (preg_match($pattern, $content)) {
+
+                $content = preg_replace($pattern, $replacement, $content);
+                $filesystem->dumpFile($file->getRelativePathname(), $content);
+            }
+        }
+    }
+}
+
+function updateKernel(Filesystem $filesystem, string $projectDir): void
+{
+    $pathName = $projectDir.'/src/Kernel.php';
+    $content = file_get_contents($pathName);
+    $content = str_replace('return MockerContainer::class;', '// return MockerContainer::class;', $content);
+    $filesystem->dumpFile($pathName, $content);
+}
+
