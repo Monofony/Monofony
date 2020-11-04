@@ -8,6 +8,16 @@ composer self-update
 composer self -v
 ```
 
+Ensure you requires Symfony 4.4.*:
+```bash
+composer config extra.symfony.require "4.4.*"
+```
+
+Ensure you use stable releases:
+```bash
+composer config minimum-stability "stable"
+```
+
 Update your dependencies:
 ```bash
 composer remove \
