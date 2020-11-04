@@ -84,6 +84,15 @@ function removeLegacyBundles(Filesystem $filesystem, string $projectDir): void
         $content = preg_replace($pattern, $replacement, $content);
         $filesystem->dumpFile($relativePathname, $content);
     }
+
+    if (!preg_match('/Sonata\\\Doctrine\\\Bridge\\\Symfony\\\SonataDoctrineSymfonyBundle::class/s', $content)) {
+        $content = str_replace(
+            'Sonata\Twig\Bridge\Symfony\SonataTwigSymfonyBundle',
+            'Sonata\Doctrine\Bridge\Symfony\SonataDoctrineSymfonyBundle::class => [\'all\' => true],'."\n".'    Sonata\Twig\Bridge\Symfony\SonataTwigSymfonyBundle',
+            $content
+        );
+        $filesystem->dumpFile($relativePathname, $content);
+    }
 }
 
 function replaceClasses(Filesystem $filesystem, string $projectDir): void
@@ -91,6 +100,7 @@ function replaceClasses(Filesystem $filesystem, string $projectDir): void
     $finder = new Finder();
     $finder
         ->files()
+        ->name('*.php')
         ->in($projectDir)
         ->in($projectDir)
         ->exclude(['bin', 'vendor', 'var'])

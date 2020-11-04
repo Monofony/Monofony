@@ -21,6 +21,7 @@ composer remove \
 
 ```bash
 composer require \
+    php:^7.3 \
     monofony/core-pack \
     monofony/api-pack \
     monofony/admin-pack \
