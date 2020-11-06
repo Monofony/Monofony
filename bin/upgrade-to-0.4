@@ -21,6 +21,7 @@ function removeLegacyConfigFiles(Filesystem $filesystem, string $projectDir): vo
     // $filesystem->remove($projectDir.'/config/packages/eight_points_guzzle.yaml');
     // $filesystem->remove($projectDir.'/config/packages/sensio_framework_extra.yaml');
     $filesystem->remove($projectDir.'/config/packages/sonata_core.yaml');
+    $filesystem->remove($projectDir.'/config/packages/sonata_form.yaml');
 }
 
 function updateConfig(Filesystem $filesystem, string $projectDir): void
@@ -70,6 +71,7 @@ function removeLegacyBundles(Filesystem $filesystem, string $projectDir): void
     $bundles = [
         'Doctrine\\\Bundle\\\FixturesBundle' => '// Doctrine\\\Bundle\\\FixturesBundle',
         'Sonata\\\CoreBundle\\\SonataCoreBundle::class' => '// Sonata\\\CoreBundle\\\SonataCoreBundle::class',
+        'Sonata\\\DatagridBundle\\\SonataDatagridBundle::class' => '// Sonata\\\DatagridBundle\\\SonataDatagridBundle::class',
         'Monofony\\\Bundle\\\AdminBundle\\\MonofonyAdminBundle::class' => '// Monofony\\\Bundle\\\AdminBundle\\\MonofonyAdminBundle::class',
         'Monofony\\\Bundle\\\ApiBundle\\\MonofonyApiBundle::class' => '// Monofony\\\Bundle\\\ApiBundle\\\MonofonyApiBundle::class',
         'Monofony\\\Plugin\\\FixturesPlugin\\\MonofonyFixturesPlugin::class' => '// Monofony\\\Plugin\\\FixturesPlugin\\\MonofonyFixturesPlugin::class',
