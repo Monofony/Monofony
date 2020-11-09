@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class MonofonyCoreBundle extends Bundle
 {
-    public const VERSION = '0.4.0';
+    public const VERSION = '0.4.1';
 
     /**
      * {@inheritdoc}

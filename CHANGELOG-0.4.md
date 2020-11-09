@@ -1,5 +1,11 @@
 ## Change Log
 
+### v0.4.1 (2020/11/09 14:32 +00:00)
+- [#250](https://github.com/Monofony/Monofony/pull/250) Improve coding standard (@loic425)
+- [#249](https://github.com/Monofony/Monofony/pull/249) Fix compound form errors (@loic425)
+- [#248](https://github.com/Monofony/Monofony/pull/248) Fix UI form theme (@loic425)
+- [#247](https://github.com/Monofony/Monofony/pull/247) Fix api pack recipes (@loic425)
+
 ### v0.4.0 (2020/10/28 08:06 +00:00)
 - [#239](https://github.com/Monofony/Monofony/pull/239) Feature/update documentation (@loic425)
 - [#238](https://github.com/Monofony/Monofony/pull/238) Fix monofony api recipes (@loic425)
