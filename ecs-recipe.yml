@@ -1,0 +1,7 @@
+services:
+    PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer:
+        allow_mixed: true
+
+parameters:
+    exclude_files:
+        - '**/spec/**'
