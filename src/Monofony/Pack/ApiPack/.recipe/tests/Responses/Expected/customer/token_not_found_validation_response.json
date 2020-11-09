@@ -1,4 +1,7 @@
 {
-    "code": 404,
-    "message": "Token not found."
+    "@context": "/api/contexts/Error",
+    "@type": "hydra:Error",
+    "hydra:title": "An error occurred",
+    "hydra:description": "Token not found.",
+    "trace": @array@
 }
