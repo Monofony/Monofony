@@ -1,4 +1,7 @@
 {
-    "code": 400,
-    "message": "Token expired."
+    "@context": "/api/contexts/Error",
+    "@type": "hydra:Error",
+    "hydra:title": "An error occurred",
+    "hydra:description": "Token expired.",
+    "trace": @array@
 }

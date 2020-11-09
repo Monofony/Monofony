@@ -1,4 +1,7 @@
 {
+    "@context": "/api/contexts/Customer",
+    "@id": "@string@.startsWith('/api/customers/')",
+    "@type": "Customer",
     "id": @integer@,
     "email": "inigo.montoya@prepare-to-die.com",
     "firstName": "Inigo",

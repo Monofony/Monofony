@@ -33,16 +33,14 @@
         <testsuite name="Project Test Suite">
             <directory>src</directory>
         </testsuite>
+        <testsuite name="Api Recipe Test Suite">
+            <directory>src/Monofony/Pack/ApiPack/.recipe/tests</directory>
+        </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
             <directory>src</directory>
-            <exclude>
-                <directory>src/*Bundle/Resources</directory>
-                <directory>src/*/*Bundle/Resources</directory>
-                <directory>src/*/Bundle/*Bundle/Resources</directory>
-            </exclude>
         </whitelist>
     </filter>
 </phpunit>
