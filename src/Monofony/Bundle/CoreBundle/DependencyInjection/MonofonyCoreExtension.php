@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle\DependencyInjection;
 
-use App\Entity\Customer\Customer;
 use Doctrine\Common\EventSubscriber;
 use Monofony\Component\Admin\Dashboard\DashboardStatisticsProvider;
 use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;

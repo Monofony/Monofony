@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
-use App\Entity\OAuth\Client;
 use Monofony\Bridge\FOSOAuthServer\Entity\ClientManager;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

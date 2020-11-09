@@ -30,7 +30,6 @@ interface SharedStorageInterface
     public function getLatestResource();
 
     /**
-     *
      * @throws \RuntimeException
      */
     public function setClipboard(array $clipboard);

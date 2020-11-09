@@ -6,11 +6,21 @@ test: validate test-phpspec analyse test-phpunit test-installer test-fixtures te
 analyse: test-phpstan test-psalm
 .PHONY: analyse
 
+fix:
+	vendor/bin/ecs check src --fix
+	vendor/bin/ecs check src --set symfony --config=ecs-recipe.yml --fix
+.PHONY: fix
+
 validate: validate-composer validate-composer-security validate-doctrine-schema validate-twig validate-yaml-files validate-yarn-packages
 .PHONY: validate
 
 test-behat: test-behat-without-javascript test-behat-with-javascript test-behat-with-cli
 .PHONY: test-behat
+
+validate-coding-standard:
+	vendor/bin/ecs check src
+	vendor/bin/ecs check src --set symfony --config=ecs-recipe.yml
+.PHONY: validate-coding-standard
 
 validate-composer:
 	composer validate --strict

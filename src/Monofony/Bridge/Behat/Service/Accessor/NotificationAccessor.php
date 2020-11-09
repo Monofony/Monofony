@@ -25,8 +25,6 @@ final class NotificationAccessor implements NotificationAccessorInterface
      */
     private $session;
 
-    /**
-     */
     public function __construct(Session $session)
     {
         $this->session = $session;

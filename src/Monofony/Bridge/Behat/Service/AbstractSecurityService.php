@@ -86,8 +86,6 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
         $this->setToken($token);
     }
 
-    /**
-     */
     private function setToken(TokenInterface $token): void
     {
         $serializedToken = serialize($token);

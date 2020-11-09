@@ -22,8 +22,6 @@ final class EmailContext implements Context
     private $emailChecker;
 
     /**
-     * @param SharedStorageInterface $sharedStorage
-     * @param EmailCheckerInterface  $emailChecker
      */
     public function __construct(SharedStorageInterface $sharedStorage, EmailCheckerInterface $emailChecker)
     {

@@ -22,7 +22,6 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @param FormEvent $event
      */
     public function preSetData(FormEvent $event): void
     {
@@ -36,7 +35,6 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * @param FormEvent $event
      */
     public function submit(FormEvent $event): void
     {

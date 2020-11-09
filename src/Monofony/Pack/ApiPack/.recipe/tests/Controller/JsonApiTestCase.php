@@ -24,4 +24,12 @@ class JsonApiTestCase extends BaseJsonApiTestCase
         $this->dataFixturesPath = __DIR__.'/../DataFixtures/ORM';
         $this->expectedResponsesPath = __DIR__.'/../Responses/Expected';
     }
+
+    /**
+     * @before
+     */
+    public function setUpClient(): void
+    {
+        $this->client = static::createClient([], ['HTTP_ACCEPT' => 'application/ld+json']);
+    }
 }
