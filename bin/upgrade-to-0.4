@@ -90,8 +90,8 @@ function removeLegacyBundles(Filesystem $filesystem, string $projectDir): void
 
     if (!preg_match('/Sonata\\\Doctrine\\\Bridge\\\Symfony\\\SonataDoctrineSymfonyBundle::class/s', $content)) {
         $content = str_replace(
-            'Sonata\Twig\Bridge\Symfony\SonataTwigSymfonyBundle',
-            'Sonata\Doctrine\Bridge\Symfony\SonataDoctrineSymfonyBundle::class => [\'all\' => true],'."\n".'    Sonata\Twig\Bridge\Symfony\SonataTwigSymfonyBundle',
+            '];',
+            'Sonata\Doctrine\Bridge\Symfony\SonataDoctrineSymfonyBundle::class => [\'all\' => true],'."\n".'];',
             $content
         );
         $filesystem->dumpFile($relativePathname, $content);
