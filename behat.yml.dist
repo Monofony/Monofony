@@ -16,7 +16,7 @@ default:
 
         Behat\MinkExtension:
             files_path: "%paths.base%/src/Monofony/Pack/CorePack/.recipe/tests/Resources/"
-            base_url: "https://localhost:8080/"
+            base_url: "https://127.0.0.1:8080/"
             default_session: symfony
             javascript_session: chrome
             sessions:

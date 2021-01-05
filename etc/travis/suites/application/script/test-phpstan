@@ -2,11 +2,5 @@
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../../../../bash/common.lib.sh"
 
-local code=0
-
 print_header "Testing (PHPStan)" "Monofony"
-run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 src/Monofony/Pack/CorePack/.recipe/src" || code=$?
-run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 src/Monofony/Pack/AdminPack/.recipe/src" || code=$?
-run_command "vendor/bin/phpstan analyse -c phpstan.neon -l 1 src/Monofony/Pack/FrontPack/.recipe/src" || code=$?
-
-exit ${code}
+run_command "make test-phpstan"

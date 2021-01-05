@@ -35,7 +35,9 @@ validate-doctrine-schema:
 .PHONY: validate-doctrine-schema
 
 validate-twig:
-	bin/console lint:twig templates
+	bin/console lint:twig src/Monofony/Pack/CorePack/.recipe/templates
+	bin/console lint:twig src/Monofony/Pack/AdminPack/.recipe/templates
+	bin/console lint:twig src/Monofony/Pack/FrontPack/.recipe/templates
 .PHONY: validate-twig
 
 validate-yaml-files:
@@ -55,7 +57,9 @@ test-phpspec:
 .PHONY: test-phpspec
 
 test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL}
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/CorePack/.recipe/src
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/AdminPack/.recipe/src
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/FrontPack/.recipe/src
 .PHONY: test-phpstan
 
 test-psalm:
