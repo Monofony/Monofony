@@ -1,8 +1,8 @@
 <h1 align="center">
     <img src="https://github.com/Monofony/Monofony/raw/0.x/docs/_images/doc_logo.png" alt="Monofony Logo" />
     <br />
-    <a href="http://travis-ci.org/Monofony/Monofony" title="Build status" target="_blank">
-        <img src="https://img.shields.io/travis/Monofony/Monofony/master.svg" />
+    <a href="https://github.com/Monofony/Monofony/actions" title="Build status" target="_blank">
+        <img src="https://github.com/Monofony/Monofony/workflows/Application/badge.svg" />
     </a>
     <a href="https://scrutinizer-ci.com/g/Monofony/Monofony/" title="Scrutinizer" target="_blank">
         <img src="https://img.shields.io/scrutinizer/g/Monofony/Monofony.svg" />
