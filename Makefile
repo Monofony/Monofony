@@ -75,7 +75,7 @@ test-installer:
 .PHONY: test-installer
 
 test-behat-with-cli:
-	vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo"
+	vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="@cli && ~@todo" --rerun
 .PHONY: test-behat-with-cli
 
 test-doctrine-migrations:
@@ -89,7 +89,7 @@ test-prod-requirements:
 .PHONY: test-prod-requirements
 
 test-behat-without-javascript:
-	vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli"
+	vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" || vendor/bin/behat --strict --no-interaction -vvv -f progress --tags="~@javascript && ~@todo && ~@cli" --rerun
 .PHONY: test-behat-without-javascript
 
 test-behat-with-javascript:
