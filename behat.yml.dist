@@ -31,6 +31,7 @@ default:
                             version: ""
                             chrome:
                                 switches:
+                                - "--headless"
                                 - "start-fullscreen"
                                 - "start-maximized"
                                 - "no-sandbox"
