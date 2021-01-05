@@ -157,6 +157,20 @@ jobs:
                     composer dump-env $APP_ENV
 
             -
+                name: Cache Node packages
+                uses: actions/cache@v2
+                with:
+                    path: '**/node_modules'
+                    key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+            -
+                name: Install node packages
+                if: steps.yarn-cache.outputs.cache-hit != 'true'
+                run: |
+                    yarn install
+                    yarn build
+
+            -
                 name: Warmup cache
                 run: bin/console cache:warmup
 
