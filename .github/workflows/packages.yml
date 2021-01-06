@@ -107,7 +107,15 @@ jobs:
                 working-directory: "src/Monofony/${{ matrix.package }}"
 
             -
-                name: Test package
+                name: Check phpstan.neon existence
+                id: check_phpstan_files
+                uses: andstor/file-existence-action@v1
+                with:
+                    files: "src/Monofony/${{ matrix.package }}/phpstan.neon"
+
+            -
+                name: Run PHPStan
+                if: steps.check_phpstan_files.outputs.files_exists == 'true'
                 run: make test-package-phpstan path=src/Monofony/${{ matrix.package }}
 
     notify-about-build-failure:

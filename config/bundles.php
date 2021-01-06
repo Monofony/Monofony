@@ -11,7 +11,6 @@ return [
     JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
     Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle::class => ['all' => true],
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
-    WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle::class => ['all' => true],
     Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle::class => ['all' => true],
     Sylius\Bundle\UiBundle\SyliusUiBundle::class => ['all' => true],
     Sylius\Bundle\UserBundle\SyliusUserBundle::class => ['all' => true],
@@ -43,4 +42,5 @@ return [
     Sonata\Twig\Bridge\Symfony\SonataTwigSymfonyBundle::class => ['all' => true],
     Sonata\Form\Bridge\Symfony\Bundle\SonataFormBundle::class => ['all' => true],
     Sonata\BlockBundle\SonataBlockBundle::class => ['all' => true],
+    BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
 ];

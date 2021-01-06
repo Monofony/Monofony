@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Context\Ui\Backend;
 
 use App\Tests\Behat\Element\Backend\TopBarElement;
-use Monofony\Bridge\Behat\NotificationType;
 use App\Tests\Behat\Page\Backend\Administrator\CreatePage;
 use App\Tests\Behat\Page\Backend\Administrator\IndexPage;
 use App\Tests\Behat\Page\Backend\Administrator\UpdatePage;
 use Behat\Behat\Context\Context;
-use Doctrine\Common\Persistence\ObjectManager;
-use Monofony\Contracts\Core\Model\User\AdminUserInterface;
+use Doctrine\Persistence\ObjectManager;
+use Monofony\Bridge\Behat\NotificationType;
 use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
+use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Webmozart\Assert\Assert;
 
 final class ManagingAdministratorsContext implements Context
