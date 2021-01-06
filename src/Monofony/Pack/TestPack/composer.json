@@ -28,7 +28,7 @@
         "se/selenium-server-standalone": " ^2.52",
         "symfony/debug-bundle": "4.4.*",
         "symfony/web-profiler-bundle": "4.4.*",
-        "vimeo/psalm": "^3.16"
+        "vimeo/psalm": "^4.3"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

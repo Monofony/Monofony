@@ -62,7 +62,6 @@
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^2.0",
         "doctrine/orm": "^2.4.8",
-        "eightpoints/guzzle-bundle": "^7.3",
         "friendsofsymfony/oauth-server-bundle": "^1.6",
         "fzaninotto/faker": "^1.8",
         "guzzlehttp/guzzle": "^6.2",
@@ -73,7 +72,7 @@
         "sonata-project/block-bundle": "^4.2",
         "sylius/customer-bundle": "^1.7",
         "sylius/fixtures-bundle": "^1.4",
-        "sylius/grid-bundle": "^1.6",
+        "sylius/grid-bundle": "^1.8",
         "sylius/mailer-bundle": "^1.5",
         "sylius/resource-bundle": "^1.7",
         "sylius/ui-bundle": "^1.7",
@@ -118,7 +117,7 @@
         "symfony/web-profiler-bundle": "4.4.*",
         "symplify/easy-coding-standard": "^6.0||^7.0",
         "symplify/monorepo-builder": "^7.0",
-        "vimeo/psalm": "^3.16"
+        "vimeo/psalm": "^4.3"
     },
     "conflict": {
         "symfony/symfony": "*",

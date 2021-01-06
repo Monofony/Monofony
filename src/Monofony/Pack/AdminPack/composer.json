@@ -10,7 +10,7 @@
         "monofony/behat-bridge": "^0.4",
         "monofony/core-contracts": "^0.4",
         "sonata-project/block-bundle": "^4.2",
-        "sylius/grid-bundle": "^1.6",
+        "sylius/grid-bundle": "^1.8",
         "sylius/ui-bundle": "^1.7",
         "symfony/asset": "^4.4 || ^5.1",
         "symfony/routing": "^4.4 || ^5.1",

@@ -79,6 +79,10 @@ jobs:
                 if: always() && steps.end-of-setup.outcome == 'success'
 
             -
+                name: Validate Package versions
+                run: make validate-package-version
+
+            -
                 name: Run Psalm
                 run: make test-psalm
                 if: always() && steps.end-of-setup.outcome == 'success'

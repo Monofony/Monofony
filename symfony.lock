@@ -145,15 +145,6 @@
     "egulias/email-validator": {
         "version": "2.1.4"
     },
-    "eightpoints/guzzle-bundle": {
-        "version": "7.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "7.0",
-            "ref": "8be83603226d268ee8a93721b5bb77ec71d8d334"
-        }
-    },
     "felixfbecker/advanced-json-rpc": {
         "version": "v3.0.3"
     },
@@ -1015,9 +1006,6 @@
     },
     "webmozart/assert": {
         "version": "1.3.0"
-    },
-    "webmozart/glob": {
-        "version": "4.1.0"
     },
     "webmozart/path-util": {
         "version": "2.3.0"
