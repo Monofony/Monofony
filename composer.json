@@ -115,7 +115,7 @@
         "psr/event-dispatcher": "^1.0",
         "se/selenium-server-standalone": " ^2.52",
         "symfony/debug-bundle": "4.4.*",
-        "symfony/web-profiler-bundle": "4.4.*",
+        "symfony/web-profiler-bundle": "5.0.*",
         "symplify/easy-coding-standard": "^6.0||^7.0",
         "symplify/monorepo-builder": "^7.0",
         "vimeo/psalm": "^3.16"
