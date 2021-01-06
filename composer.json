@@ -75,7 +75,7 @@
         "sylius/fixtures-bundle": "^1.4",
         "sylius/grid-bundle": "^1.6",
         "sylius/mailer-bundle": "^1.5",
-        "sylius/resource-bundle": "^1.6",
+        "sylius/resource-bundle": "^1.7",
         "sylius/ui-bundle": "^1.7",
         "sylius/user-bundle": "^1.7",
         "symfony/dotenv": "4.4.*",

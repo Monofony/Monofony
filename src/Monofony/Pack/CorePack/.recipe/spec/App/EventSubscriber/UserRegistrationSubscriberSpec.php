@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace spec\App\EventSubscriber;
 
+use Doctrine\Persistence\ObjectManager;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
-use Doctrine\Common\EventSubscriber;
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\ORM\Events;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Bundle\UserBundle\UserEvents;
@@ -19,7 +17,7 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 
 final class UserRegistrationSubscriberSpec extends ObjectBehavior
 {
-    function let(
+    public function let(
         ObjectManager $userManager,
         GeneratorInterface $tokenGenerator,
         EventDispatcherInterface $eventDispatcher
@@ -31,19 +29,19 @@ final class UserRegistrationSubscriberSpec extends ObjectBehavior
         );
     }
 
-    function it_is_a_subscriber(): void
+    public function it_is_a_subscriber(): void
     {
         $this->shouldImplement(EventSubscriberInterface::class);
     }
 
-    function it_subscribes_to_events(): void
+    public function it_subscribes_to_events(): void
     {
         $this::getSubscribedEvents()->shouldReturn([
             'sylius.customer.post_register' => 'handleUserVerification',
         ]);
     }
 
-    function it_sends_an_user_verification_email(
+    public function it_sends_an_user_verification_email(
         ObjectManager $userManager,
         GeneratorInterface $tokenGenerator,
         EventDispatcherInterface $eventDispatcher,
@@ -68,7 +66,7 @@ final class UserRegistrationSubscriberSpec extends ObjectBehavior
         $this->handleUserVerification($event);
     }
 
-    function it_throws_an_invalid_argument_exception_if_event_subject_is_not_customer_type(
+    public function it_throws_an_invalid_argument_exception_if_event_subject_is_not_customer_type(
         GenericEvent $event,
         \stdClass $customer
     ): void {
@@ -77,7 +75,7 @@ final class UserRegistrationSubscriberSpec extends ObjectBehavior
         $this->shouldThrow(\InvalidArgumentException::class)->during('handleUserVerification', [$event]);
     }
 
-    function it_throws_an_invalid_argument_exception_if_user_is_null(
+    public function it_throws_an_invalid_argument_exception_if_user_is_null(
         GenericEvent $event,
         CustomerInterface $customer
     ): void {
