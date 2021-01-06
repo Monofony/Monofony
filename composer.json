@@ -62,7 +62,7 @@
         "doctrine/doctrine-fixtures-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^2.0",
         "doctrine/orm": "^2.4.8",
-        "eightpoints/guzzle-bundle": "^7.3",
+        "eightpoints/guzzle-bundle": "^8.2",
         "friendsofsymfony/oauth-server-bundle": "^1.6",
         "fzaninotto/faker": "^1.8",
         "guzzlehttp/guzzle": "^6.2",
