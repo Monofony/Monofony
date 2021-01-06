@@ -80,7 +80,7 @@
         "sylius/user-bundle": "^1.7",
         "symfony/dotenv": "4.4.*",
         "symfony/flex": "^1.2",
-        "symfony/messenger": "4.4.*",
+        "symfony/messenger": "5.2.*",
         "symfony/monolog-bundle": "^3.3",
         "symfony/polyfill-php80": "^1.15",
         "symfony/proxy-manager-bridge": "4.4.*",
