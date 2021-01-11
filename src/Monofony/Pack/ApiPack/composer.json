@@ -10,7 +10,7 @@
         "sylius/resource": "^1.6",
         "sylius/user": "^1.7",
         "sylius/user-bundle": "^1.8",
-        "symfony/messenger": "4.4.*"
+        "symfony/messenger": "4.4.* || 5.2.*"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",

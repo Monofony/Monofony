@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Installer\Provider;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,7 +17,7 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
 {
     private $doctrineRegistry;
 
-    public function __construct(Registry $doctrineRegistry)
+    public function __construct(ManagerRegistry $doctrineRegistry)
     {
         $this->doctrineRegistry = $doctrineRegistry;
     }

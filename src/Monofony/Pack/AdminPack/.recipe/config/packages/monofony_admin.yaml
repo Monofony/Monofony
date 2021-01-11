@@ -4,8 +4,6 @@ framework:
         packages:
             backend:
                 json_manifest_path: '%kernel.project_dir%/public/assets/backend/manifest.json'
-    templating:
-        engines: [ 'twig' ]
 
 sylius_grid:
     templates:

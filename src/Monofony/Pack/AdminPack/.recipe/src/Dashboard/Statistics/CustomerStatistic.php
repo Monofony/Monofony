@@ -5,23 +5,24 @@ namespace App\Dashboard\Statistics;
 use App\Repository\CustomerRepository;
 use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
 use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 
 class CustomerStatistic implements StatisticInterface
 {
     private $customerRepository;
-    private $engine;
+    private $twig;
 
-    public function __construct(CustomerRepository $customerRepository, EngineInterface $engine)
+    public function __construct(CustomerRepository $customerRepository, Environment $twig)
     {
         $this->customerRepository = $customerRepository;
-        $this->engine = $engine;
+        $this->twig = $twig;
     }
 
     public function generate(): string
     {
         $amountCustomers = $this->customerRepository->countCustomers();
 
-        return $this->engine->render('backend/dashboard/statistics/_amount_of_customers.html.twig', [
+        return $this->twig->render('backend/dashboard/statistics/_amount_of_customers.html.twig', [
             'amountOfCustomers' => $amountCustomers,
         ]);
     }
