@@ -8,7 +8,7 @@
         "php": ">=7.3",
         "monofony/core-contracts": "^0.4",
         "sylius/customer": "^1.8",
-        "sylius/user-bundle": "^1.7"
+        "sylius/user-bundle": "^1.8"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12"

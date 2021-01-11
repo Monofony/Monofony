@@ -9,7 +9,7 @@
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.6",
         "sylius/user": "^1.7",
-        "sylius/user-bundle": "^1.7",
+        "sylius/user-bundle": "^1.8",
         "symfony/messenger": "4.4.*"
     },
     "require-dev": {
