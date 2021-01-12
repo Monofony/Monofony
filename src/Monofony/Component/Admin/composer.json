@@ -5,10 +5,10 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "monofony/admin-contracts": "dev-master",
+        "monofony/admin-contracts": "^0.5",
         "knplabs/knp-menu": "^3.1",
         "symfony/routing": "^4.4 || ^5.1",
-        "monofony/core": "dev-master"
+        "monofony/core": "^0.5"
     },
     "autoload": {
         "psr-4": { "Monofony\\Component\\Admin\\": "" }
