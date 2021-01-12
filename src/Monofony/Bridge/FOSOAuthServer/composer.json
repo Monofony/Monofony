@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "friendsofsymfony/oauth-server-bundle": "^1.6"
+        "friendsofsymfony/oauth-server-bundle": "^2.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12"

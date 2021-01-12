@@ -12,8 +12,6 @@ framework:
         enabled: true
         mapping:
             paths: ['%kernel.project_dir%/src/Monofony/Pack/ApiPack/.recipe/config/serialization/']
-    templating:
-        engines: ['twig']
     default_locale:  "%locale%"
     trusted_hosts:   ~
     session:
@@ -23,4 +21,3 @@ framework:
     http_method_override: true
     php_errors:
         log: true
-

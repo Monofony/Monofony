@@ -1,9 +1,9 @@
-{% extends 'SyliusUiBundle:Layout:sidebar.html.twig' %}
+{% extends '@SyliusUi/Layout/sidebar.html.twig' %}
 
 {% block title %}AppName | {% endblock %}
 
 {% block stylesheets %}
-    {% include 'SyliusUiBundle::_stylesheets.html.twig' with {'path': 'assets/backend/app.css'} %}
+    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/backend/app.css'} %}
 {% endblock %}
 
 {% block topbar %}
@@ -27,7 +27,7 @@
             <img src="{{ asset('assets/backend/img/admin-logo.svg') }}" class="ui fluid image">
         </div>
     </a>
-    {{ knp_menu_render('app.admin.main', {'template': 'SyliusUiBundle:Menu:sidebar.html.twig', 'currentClass': 'active'}) }}
+    {{ knp_menu_render('app.admin.main', {'template': '@SyliusUi/Menu/sidebar.html.twig', 'currentClass': 'active'}) }}
 {% endblock %}
 
 {% block footer %}
@@ -36,6 +36,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% include 'SyliusUiBundle::_javascripts.html.twig' with {'path': 'assets/backend/app.js'} %}
+    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/backend/app.js'} %}
     {{ sonata_block_render_event('sylius.admin.layout.javascripts') }}
 {% endblock %}
