@@ -3617,12 +3617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Monofony/SyliusUserBundle.git",
-                "reference": "84c62da731a2687d003756e29259516d601fb146"
+                "reference": "2fdb51f2fafd5e8887f4f42b20f9861125575ca7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Monofony/SyliusUserBundle/zipball/84c62da731a2687d003756e29259516d601fb146",
-                "reference": "84c62da731a2687d003756e29259516d601fb146",
+                "url": "https://api.github.com/repos/Monofony/SyliusUserBundle/zipball/2fdb51f2fafd5e8887f4f42b20f9861125575ca7",
+                "reference": "2fdb51f2fafd5e8887f4f42b20f9861125575ca7",
                 "shasum": ""
             },
             "require": {
@@ -3707,7 +3707,7 @@
             "support": {
                 "source": "https://github.com/Monofony/SyliusUserBundle/tree/master"
             },
-            "time": "2021-01-05T15:29:57+00:00"
+            "time": "2021-01-12T11:42:59+00:00"
         },
         {
             "name": "monolog/monolog",
