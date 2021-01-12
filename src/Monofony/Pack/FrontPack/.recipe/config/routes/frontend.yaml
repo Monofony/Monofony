@@ -1,7 +1,7 @@
 app_frontend_homepage:
     path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
     defaults:
-        _controller: FrameworkBundle:Template:template
         template: 'frontend/homepage/index.html.twig'
 
 app_account:
