@@ -16,7 +16,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
-        "branch-version": "0.4"
+        "branch-alias": {
+            "dev-master": "0.5-dev"
+        }
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
