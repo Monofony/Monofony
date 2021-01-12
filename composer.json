@@ -62,7 +62,7 @@
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^2.0",
         "doctrine/orm": "^2.4.8",
-        "friendsofsymfony/oauth-server-bundle": "^2.0",
+        "friendsofsymfony/oauth-server-bundle": "^1.6 || >2.0.0-alpha.0 ^2.0@dev",
         "fzaninotto/faker": "^1.8",
         "guzzlehttp/guzzle": "^6.2",
         "liip/imagine-bundle": "^2.2",
@@ -147,8 +147,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": true,
-            "require": "5.2.*"
+            "allow-contrib": true
         }
     },
     "minimum-stability": "dev",
