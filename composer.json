@@ -121,7 +121,8 @@
         "symfony/symfony": "*",
         "symplify/package-builder": "^7.2",
         "symplify/smart-file-system": "^7.2",
-        "symplify/monorepo-builder": "^7.2"
+        "symplify/monorepo-builder": "^7.2",
+        "symfony/polyfill-mbstring": "1.22.0"
     },
     "scripts": {
         "auto-scripts": {
