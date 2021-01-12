@@ -30,6 +30,7 @@
             "App\\Migrations\\": "src/Monofony/Pack/CorePack/.recipe/src/Migrations/",
             "App\\Provider\\": "src/Monofony/Pack/ApiPack/.recipe/src/Provider/",
             "App\\Repository\\": "src/Monofony/Pack/CorePack/.recipe/src/Repository/",
+            "App\\Security\\": "src/Monofony/Pack/CorePack/.recipe/src/Security/",
             "App\\Tests\\": "tests/",
             "App\\Validator\\": "src/Monofony/Pack/CorePack/.recipe/src/Validator/",
             "App\\Tests\\Behat\\": "src/Monofony/Pack/CorePack/.recipe/tests/Behat/",

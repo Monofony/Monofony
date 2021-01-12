@@ -60,6 +60,7 @@ security:
             context: app
             pattern: /.*
             provider: sylius_app_user_provider
+            user_checker: App\Security\UserChecker
             form_login:
                 provider: sylius_app_user_provider
                 login_path: app_frontend_login
