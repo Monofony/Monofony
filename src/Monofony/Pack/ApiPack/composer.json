@@ -8,8 +8,8 @@
         "monofony/core-contracts": "^0.4",
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.6",
-        "sylius/user": "^1.7",
-        "sylius/user-bundle": "^1.8",
+        "monofony/user": "dev-master",
+        "monofony/user-bundle": "dev-master",
         "symfony/messenger": "4.4.* || 5.2.*"
     },
     "require-dev": {
