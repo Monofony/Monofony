@@ -18,8 +18,8 @@
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.6",
         "sylius/resource-bundle": "^1.7",
-        "monofony/user": "^1.7",
-        "monofony/user-bundle": "^1.8",
+        "monofony/user": "dev-master",
+        "monofony/user-bundle": "dev-master",
         "symfony/process": "^4.4 || ^5.1",
         "symfony/serializer": "^4.4 || ^5.1",
         "symfony/translation": "^4.4 || ^5.1",
@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "behat/behat": "^3.2",
-        "monofony/behat-bridge": "^0.4",
+        "monofony/behat-bridge": "dev-master",
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {

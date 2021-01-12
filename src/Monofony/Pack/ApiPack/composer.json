@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "api-platform/api-pack": "^1.2",
-        "monofony/core-contracts": "^0.4",
+        "monofony/core-contracts": "dev-master",
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.6",
         "monofony/user": "dev-master",

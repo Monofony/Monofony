@@ -6,8 +6,8 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "monofony/core-contracts": "^0.4",
-        "monofony/user-bundle": "^1.8",
+        "monofony/core-contracts": "dev-master",
+        "monofony/user-bundle": "dev-master",
         "sylius/customer": "^1.8"
     },
     "require-dev": {
