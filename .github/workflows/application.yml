@@ -13,12 +13,13 @@ jobs:
     static-checks:
         runs-on: ubuntu-latest
 
-        name: "Static checks (PHP ${{ matrix.php }}"
+        name: "Static checks (PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
 
         strategy:
             fail-fast: false
             matrix:
                 php: [ 7.3 ]
+                symfony: [4.4.*, 5.2.*]
 
         steps:
             -
@@ -33,6 +34,11 @@ jobs:
                     extensions: intl, gd, opcache, mysql, pdo_mysql, :xdebug
                     tools: symfony
                     coverage: none
+
+            -
+                name: Restrict Symfony version
+                if: matrix.symfony != ''
+                run: composer config extra.symfony.require "${{ matrix.symfony }}"
 
             -
                 name: Get Composer cache directory
@@ -50,7 +56,7 @@ jobs:
 
             -
                 name: Install PHP dependencies
-                run: composer install --prefer-dist --no-progress --no-scripts
+                run: composer update --no-interaction --no-scripts
                 id: end-of-setup
 
             -
@@ -101,7 +107,7 @@ jobs:
             fail-fast: false
             matrix:
                 php: [7.3]
-                symfony: [^4.4]
+                symfony: [4.4.*, 5.2.*]
                 mysql: [5.7]
 
         env:
@@ -140,6 +146,11 @@ jobs:
                     coverage: none
 
             -
+                name: Restrict Symfony version
+                if: matrix.symfony != ''
+                run: composer config extra.symfony.require "${{ matrix.symfony }}"
+
+            -
                 name: Get Composer cache directory
                 id: composer-cache
                 run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -156,7 +167,7 @@ jobs:
             -
                 name: Install dependencies
                 if: steps.composer-cache.outputs.cache-hit != 'true'
-                run: composer install --prefer-dist --no-progress --no-suggest
+                run: composer update --no-interaction --no-scripts
 
             -
                 name: Dump the environment
@@ -235,7 +246,7 @@ jobs:
             fail-fast: false
             matrix:
                 php: [ 7.3 ]
-                symfony: [ ^4.4 ]
+                symfony: [4.4.*, 5.2.*]
                 node: [ 10.x ]
                 mysql: [ 5.7 ]
 
@@ -274,6 +285,11 @@ jobs:
                 run: composer config extra.symfony.require "${{ matrix.symfony }}"
 
             -
+                name: Restrict Symfony version
+                if: matrix.symfony != ''
+                run: composer config extra.symfony.require "${{ matrix.symfony }}"
+
+            -
                 name: Install certificates
                 run: symfony server:ca:install
 
@@ -297,7 +313,7 @@ jobs:
 
             -
                 name: Install PHP dependencies
-                run: composer install --prefer-dist --no-progress --no-suggest
+                run: composer update --no-interaction --no-scripts
 
             -
                 name: Setup Node

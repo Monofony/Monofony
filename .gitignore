@@ -11,6 +11,7 @@
 /public/js
 /public/media
 
+/composer.lock
 **/node_modules/*
 
 .idea

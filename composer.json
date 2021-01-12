@@ -147,8 +147,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": true,
-            "require": "5.2.*"
+            "allow-contrib": true
         }
     },
     "minimum-stability": "dev",
