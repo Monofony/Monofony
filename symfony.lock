@@ -217,15 +217,6 @@
     "gedmo/doctrine-extensions": {
         "version": "v2.4.35"
     },
-    "guzzlehttp/guzzle": {
-        "version": "6.3.3"
-    },
-    "guzzlehttp/promises": {
-        "version": "v1.3.1"
-    },
-    "guzzlehttp/psr7": {
-        "version": "1.4.2"
-    },
     "hamcrest/hamcrest-php": {
         "version": "v2.0.0"
     },
@@ -506,9 +497,6 @@
     "psr/event-dispatcher": {
         "version": "1.0.0"
     },
-    "psr/http-message": {
-        "version": "1.0.1"
-    },
     "psr/link": {
         "version": "1.0.0"
     },
@@ -517,9 +505,6 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
-    },
-    "ralouphie/getallheaders": {
-        "version": "2.0.5"
     },
     "sanmai/pipeline": {
         "version": "v5.1.0"
