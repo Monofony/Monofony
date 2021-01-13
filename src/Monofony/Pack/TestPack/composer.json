@@ -12,7 +12,7 @@
         "friends-of-behat/page-object-extension": "^0.3",
         "friends-of-behat/symfony-extension": "^2.0",
         "friends-of-behat/variadic-extension": "^1.1",
-        "friends-of-phpspec/phpspec-code-coverage": "^4.3",
+        "friends-of-phpspec/phpspec-code-coverage": "^5.0",
         "friendsofphp/php-cs-fixer": "^2.13",
         "infection/infection": "^0.18",
         "lakion/mink-debug-extension": "^1.2",
