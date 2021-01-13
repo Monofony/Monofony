@@ -5,10 +5,10 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "monofony/core-bundle": "dev-master",
-        "monofony/front-contracts": "dev-master",
-        "monofony/core-contracts": "dev-master",
-        "monofony/ui-bundle": "dev-master",
+        "monofony/core-bundle": "^0.5",
+        "monofony/front-contracts": "^0.5",
+        "monofony/core-contracts": "^0.5",
+        "monofony/ui-bundle": "^1.9",
         "symfony/asset": "^4.4 || ^5.1",
         "symfony/routing": "^4.4 || ^5.1",
         "symfony/templating": "^4.4 || ^5.1",
@@ -16,7 +16,7 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
-        "monofony/behat-bridge": "dev-master"
+        "monofony/behat-bridge": "^0.5"
     },
     "autoload": {
         "exclude-from-classmap": [
