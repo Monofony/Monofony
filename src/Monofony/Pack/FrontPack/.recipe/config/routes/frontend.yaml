@@ -4,13 +4,5 @@ app_frontend_homepage:
     defaults:
         template: 'frontend/homepage/index.html.twig'
 
-app_account:
-    resource: "frontend/account.yaml"
-    prefix: "mon-compte"
-
-sylius_security:
-    resource: "frontend/security.yaml"
-
-app_frontend_partial:
-    resource: "frontend/partial.yaml"
-    prefix: "/_partial"
+app_frontend:
+    resource: "../sylius/routes/frontend/_main.yaml"
