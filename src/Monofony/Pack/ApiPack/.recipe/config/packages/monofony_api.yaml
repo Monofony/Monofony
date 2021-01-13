@@ -2,6 +2,10 @@ api_platform:
     version: !php/const App\Kernel::VERSION
     mapping:
         paths: ['%kernel.project_dir%/config/api_platform/resources/']
+    api_keys:
+        apiKey:
+            name: Authorization
+            type: header
 
 framework:
     serializer:
