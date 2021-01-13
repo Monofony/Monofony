@@ -13,7 +13,7 @@
         "friends-of-behat/page-object-extension": "^0.3",
         "friends-of-behat/symfony-extension": "^2.0",
         "monofony/core": "dev-master",
-        "sylius/user": "^1.7",
+        "monofony/user": "dev-master",
         "symfony/finder": "^4.4 || ^5.1",
         "symfony/routing": "^4.4 || ^5.1",
         "symfony/swiftmailer-bundle": "^3.0",
