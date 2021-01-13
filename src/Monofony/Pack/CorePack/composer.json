@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "doctrine/doctrine-migrations-bundle": "^2.0",
+        "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.4.8",
         "fzaninotto/faker": "^1.8",
         "liip/imagine-bundle": "^2.2",
