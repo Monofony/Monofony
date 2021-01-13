@@ -1,5 +1,5 @@
 imports:
-    - config/suites.yaml
+    - config/behat/suites.yaml
 
 default:
     formatters:
