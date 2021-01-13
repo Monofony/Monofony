@@ -1,0 +1,10 @@
+{
+    "@context": "/api/contexts/Customer",
+    "@id": "@string@.startsWith('/api/customers/')",
+    "@type": "Customer",
+    "id": @integer@,
+    "email": "api@sylius.com",
+    "firstName": "Sam",
+    "lastName": "Identifie",
+    "subscribedToNewsletter": false
+}
