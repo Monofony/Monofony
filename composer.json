@@ -60,7 +60,7 @@
         "php": ">=7.3",
         "api-platform/api-pack": "^1.2",
         "doctrine/doctrine-bundle": "^2.2",
-        "doctrine/doctrine-migrations-bundle": "^2.0",
+        "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.4.8",
         "friendsofsymfony/oauth-server-bundle": "^1.6 || >2.0.0-alpha.0 ^2.0@dev",
         "fzaninotto/faker": "^1.8",
