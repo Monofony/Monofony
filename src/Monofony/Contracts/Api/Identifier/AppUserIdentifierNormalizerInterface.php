@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Monofony\Contracts\Core\Identifier;
+namespace Monofony\Contracts\Api\Identifier;
 
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 

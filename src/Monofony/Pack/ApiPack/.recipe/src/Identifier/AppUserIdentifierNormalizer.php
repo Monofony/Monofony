@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Identifier;
 
-use Monofony\Contracts\Core\Identifier\AppUserIdentifierNormalizerInterface;
+use Monofony\Contracts\Api\Identifier\AppUserIdentifierNormalizerInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\Security\Core\Security;

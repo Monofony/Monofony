@@ -18,7 +18,7 @@ use Monofony\Component\Admin\Dashboard\DashboardStatisticsProvider;
 use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
 use Monofony\Component\Admin\Menu\AdminMenuBuilderInterface;
 use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
-use Monofony\Contracts\Core\Identifier\AppUserIdentifierNormalizerInterface;
+use Monofony\Contracts\Api\Identifier\AppUserIdentifierNormalizerInterface;
 use Monofony\Contracts\Front\Menu\AccountMenuBuilderInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
