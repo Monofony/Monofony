@@ -196,9 +196,6 @@
             "ref": "81dee417d2cc60cd1c9d6208dff2ec22a1103e93"
         }
     },
-    "friendsofphp/proxy-manager-lts": {
-        "version": "v1.0.2"
-    },
     "friendsofsymfony/oauth-server-bundle": {
         "version": "1.6.1"
     },
@@ -273,15 +270,6 @@
     },
     "knplabs/knp-menu-bundle": {
         "version": "v3.1.0"
-    },
-    "laminas/laminas-code": {
-        "version": "3.4.1"
-    },
-    "laminas/laminas-eventmanager": {
-        "version": "3.3.0"
-    },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.1.1"
     },
     "lchrusciel/api-test-case": {
         "version": "v3.1.3"
