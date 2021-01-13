@@ -13,13 +13,14 @@ declare(strict_types=1);
 
 namespace App\Message;
 
+use Symfony\Component\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\Validator\Constraints as CustomConstraints;
 
 final class RegisterAppUser
 {
     /**
-     * @var string
+     * @var string|null
      *
      * @Assert\NotBlank(message="sylius.customer.email.not_blank")
      * @Assert\Email(mode="strict", message="sylius.customer.email.invalid")
@@ -28,11 +29,13 @@ final class RegisterAppUser
      *     maxMessage="sylius.customer.email.max"
      * )
      * @CustomConstraints\UniqueAppUserEmail()
+     *
+     * @Serializer\Groups({"customer:write"})
      */
     public $email;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @Assert\NotBlank(message="sylius.user.plainPassword.not_blank")
      * @Assert\Length(
@@ -41,22 +44,36 @@ final class RegisterAppUser
      *     max=254,
      *     maxMessage="sylius.user.password.max"
      * )
+     *
+     * @Serializer\Groups({"customer:write"})
      */
     public $password;
 
-    /** @var string|null */
+    /**
+     * @var string|null
+     *
+     * @Serializer\Groups({"customer:write"})
+     */
     public $firstName;
 
     /**
-     * @var string|null */
+     *
+     * @var string|null
+     *
+     * @Serializer\Groups({"customer:write"})
+     */
     public $lastName;
 
-    /** @var string|null */
+    /**
+     * @var string|null
+     *
+     * @Serializer\Groups({"customer:write"})
+     */
     public $phoneNumber;
 
     public function __construct(
-        string $email,
-        string $password,
+        ?string $email = null,
+        ?string $password = null,
         ?string $firstName = null,
         ?string $lastName = null,
         ?string $phoneNumber = null
