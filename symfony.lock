@@ -166,6 +166,9 @@
     "friends-of-behat/mink-browserkit-driver": {
         "version": "v1.4.0"
     },
+    "friends-of-behat/mink-debug-extension": {
+        "version": "v2.0.1"
+    },
     "friends-of-behat/mink-extension": {
         "version": "v2.4.0"
     },
@@ -270,9 +273,6 @@
     },
     "knplabs/knp-menu-bundle": {
         "version": "v3.1.0"
-    },
-    "lakion/mink-debug-extension": {
-        "version": "v1.2.3"
     },
     "laminas/laminas-code": {
         "version": "3.4.1"
