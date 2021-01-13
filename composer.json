@@ -102,7 +102,7 @@
         "friends-of-phpspec/phpspec-code-coverage": "^5.0",
         "friendsofphp/php-cs-fixer": "^2.13",
         "infection/infection": "^0.18",
-        "lakion/mink-debug-extension": "^1.2",
+        "lakion/mink-debug-extension": "^2.0",
         "lchrusciel/api-test-case": "^5.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
         "phpspec/phpspec": "^6.2",
