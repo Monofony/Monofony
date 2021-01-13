@@ -8,7 +8,13 @@ App\Entity\Customer\Customer:
             groups:
                 - "customer:read"
                 - "user:read"
-    collectionOperations: []
+    collectionOperations:
+        post:
+            messenger: input
+            input: App\Message\RegisterAppUser
+            output: false
+            openapi_context:
+                summary: Registers an app user
     itemOperations:
         get:
             controller: ApiPlatform\Core\Action\NotFoundAction
