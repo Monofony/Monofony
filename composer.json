@@ -23,6 +23,7 @@
             "App\\EventSubscriber\\": "src/Monofony/Pack/CorePack/.recipe/src/EventSubscriber/",
             "App\\Fixture\\": "src/Monofony/Pack/CorePack/.recipe/src/Fixture/",
             "App\\Form\\": "src/Monofony/Pack/CorePack/.recipe/src/Form/",
+            "App\\Identifier\\": "src/Monofony/Pack/ApiPack/.recipe/src/Identifier/",
             "App\\Installer\\": "src/Monofony/Pack/CorePack/.recipe/src/Installer/",
             "App\\Installer\\Checker\\": "src/Monofony/Pack/CorePack/.recipe/src/Installer/Checker/",
             "App\\Message\\": "src/Monofony/Pack/ApiPack/.recipe/src/Message/",

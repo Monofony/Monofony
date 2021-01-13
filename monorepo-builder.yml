@@ -24,6 +24,7 @@ parameters:
 
         # Contracts
         src/Monofony/Contracts/Admin: 'git@github.com:Monofony/AdminContracts.git'
+        src/Monofony/Contracts/Api: 'git@github.com:Monofony/ApiContracts.git'
         src/Monofony/Contracts/Core: 'git@github.com:Monofony/CoreContracts.git'
         src/Monofony/Contracts/Front: 'git@github.com:Monofony/FrontContracts.git'
 

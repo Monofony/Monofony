@@ -1,0 +1,33 @@
+{
+    "name": "monofony/api-contracts",
+    "type": "library",
+    "description": "Generic abstractions related to Api",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3",
+        "symfony/serializer": "^4.4 || ^5.1"
+    },
+    "autoload": {
+        "psr-4": { "Monofony\\Contracts\\Api\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.5-dev"
+        }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12"
+    }
+}
