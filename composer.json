@@ -64,7 +64,7 @@
         "doctrine/orm": "^2.4.8",
         "friendsofsymfony/oauth-server-bundle": "^1.6 || >2.0.0-alpha.0 ^2.0@dev",
         "fzaninotto/faker": "^1.8",
-        "guzzlehttp/guzzle": "^6.2",
+        "guzzlehttp/guzzle": "^7.2",
         "liip/imagine-bundle": "^2.2",
         "monofony/customer-bundle": "^1.9",
         "monofony/ui-bundle": "^1.9",
