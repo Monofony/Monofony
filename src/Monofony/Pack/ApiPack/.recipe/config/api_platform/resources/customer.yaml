@@ -20,3 +20,14 @@ App\Entity\Customer\Customer:
             security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
         put:
             security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
+        change_password:
+            messenger: input
+            input: App\Message\ChangeAppUserPassword
+            output: false
+            method: PUT
+            path: customers/{id}/password
+            security: 'is_granted("ROLE_USER")'
+            denormalization_context:
+                groups: [ "customer:password:write" ]
+            openapi_context:
+                summary: Change password for logged in customer
