@@ -9,10 +9,12 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bridge\Behat\Crud;
 
-use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 use Behat\Mink\Exception\ElementNotFoundException;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 
 interface UpdatePageInterface extends SymfonyPageInterface
 {

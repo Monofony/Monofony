@@ -9,11 +9,13 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bundle\CoreBundle;
 
+use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterDashboardStatisticsPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterOAuthClientManager;
-use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterObjectManagerAliasPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

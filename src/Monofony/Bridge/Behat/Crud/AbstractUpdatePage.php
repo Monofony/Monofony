@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bridge\Behat\Crud;
 
-use Monofony\Component\Core\Formatter\StringInflector;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
+use Monofony\Component\Core\Formatter\StringInflector;
 use Symfony\Component\Routing\RouterInterface;
 
 abstract class AbstractUpdatePage extends SymfonyPage implements UpdatePageInterface

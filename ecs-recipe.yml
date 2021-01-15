@@ -1,6 +1,11 @@
 services:
+    PhpCsFixer\Fixer\Comment\HeaderCommentFixer:
+        header: ''
+
     PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer:
         allow_mixed: true
+
+    PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer: null
 
 parameters:
     exclude_files:

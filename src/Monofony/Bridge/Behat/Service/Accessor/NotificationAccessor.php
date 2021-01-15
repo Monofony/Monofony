@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service\Accessor;
 
-use Monofony\Bridge\Behat\NotificationType;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
+use Monofony\Bridge\Behat\NotificationType;
 
 final class NotificationAccessor implements NotificationAccessorInterface
 {

@@ -50,11 +50,7 @@ trait Toggles
     private function assertCheckboxState(NodeElement $toggleableElement, bool $expectedState): void
     {
         if ($toggleableElement->isChecked() !== $expectedState) {
-            throw new \RuntimeException(sprintf(
-                "Toggleable element state is '%s' but expected '%s'.",
-                $toggleableElement->isChecked() ? 'true' : 'false',
-                $expectedState ? 'true' : 'false'
-            ));
+            throw new \RuntimeException(sprintf("Toggleable element state is '%s' but expected '%s'.", $toggleableElement->isChecked() ? 'true' : 'false', $expectedState ? 'true' : 'false'));
         }
     }
 }
