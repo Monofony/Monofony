@@ -19,7 +19,7 @@
         "lakion/mink-debug-extension": "^1.2",
         "lchrusciel/api-test-case": "^5.0",
         "monofony/behat-bridge": "^0.5",
-        "phpspec/phpspec": "^6.2",
+        "phpspec/phpspec": "^7.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-doctrine": "^0.12",
         "phpstan/phpstan-nette": "^0.12",
