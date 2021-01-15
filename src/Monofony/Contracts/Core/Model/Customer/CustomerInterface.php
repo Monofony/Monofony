@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Contracts\Core\Model\Customer;
 
 use Monofony\Contracts\Core\Model\User\AppUserInterface;

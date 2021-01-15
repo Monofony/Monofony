@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace Monofony\Bridge\SyliusUser\EventListener;
 
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
@@ -23,10 +25,7 @@ final class PasswordUpdaterListener extends BasePasswordUpdaterListener
         $customer = $event->getSubject();
 
         if (!$customer instanceof CustomerInterface) {
-            throw new UnexpectedTypeException(
-                $customer,
-                CustomerInterface::class
-            );
+            throw new UnexpectedTypeException($customer, CustomerInterface::class);
         }
 
         if (null !== $user = $customer->getUser()) {

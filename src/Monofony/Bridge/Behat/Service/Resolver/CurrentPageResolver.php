@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service\Resolver;
 
-use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 use Behat\Mink\Session;
+use FriendsOfBehat\PageObjectExtension\Page\SymfonyPageInterface;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Webmozart\Assert\Assert;
 

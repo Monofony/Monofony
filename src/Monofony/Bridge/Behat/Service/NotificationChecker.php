@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service;
 
-use Monofony\Bridge\Behat\NotificationType;
 use Monofony\Bridge\Behat\Exception\NotificationExpectationMismatchException;
+use Monofony\Bridge\Behat\NotificationType;
 use Monofony\Bridge\Behat\Service\Accessor\NotificationAccessorInterface;
 
 final class NotificationChecker implements NotificationCheckerInterface
