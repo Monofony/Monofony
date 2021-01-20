@@ -2,12 +2,12 @@
     {{ form_start(form, {'action': path(configuration.vars.route.name|default(configuration.getRouteName('create')), configuration.vars.route.parameters|default({})), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
     {% if configuration.vars.templates.form is defined %}
         {% include configuration.vars.templates.form %}
+        {{ form_row(form._token) }}
     {% else %}
         {{ form_widget(form) }}
     {% endif %}
 
     {% include '@SyliusUi/Form/Buttons/_create.html.twig' with {'paths': {'cancel': path(configuration.getRouteName('index'), configuration.vars.route.parameters|default({}))}} %}
 
-    {{ form_row(form._token) }}
     {{ form_end(form, {'render_rest': false}) }}
 </div>
