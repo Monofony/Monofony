@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.5.1 (2021/01/21 07:06 +00:00)
+- [#296](https://github.com/Monofony/Monofony/pull/296) [HotFix] CRUD templates when there are no form templates configured (@loic425)
+
 ### v0.5.0 (2021/01/18 11:36 +00:00)
 - [#292](https://github.com/Monofony/Monofony/pull/292) Update phpspec/phpspec requirement from ^6.2 to ^7.0 (@loic425, @dependabot-preview[bot])
 - [#294](https://github.com/Monofony/Monofony/pull/294) [API] Change password endpoint (@loic425)
