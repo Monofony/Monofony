@@ -7,7 +7,6 @@
         "php": ">=7.3",
         "monofony/admin": "^0.5",
         "monofony/admin-contracts": "^0.5",
-        "monofony/behat-bridge": "^0.5",
         "monofony/core-contracts": "^0.5",
         "sonata-project/block-bundle": "^4.2",
         "sylius/grid-bundle": "^1.8",
@@ -20,6 +19,7 @@
     },
     "require-dev": {
         "behat/behat": "^3.2",
+        "monofony/behat-bridge": "^0.5",
         "friends-of-behat/page-object-extension": "^0.3",
         "phpstan/phpstan": "^0.12"
     },
