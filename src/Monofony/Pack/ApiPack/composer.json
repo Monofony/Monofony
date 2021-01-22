@@ -17,6 +17,9 @@
         "phpstan/phpstan": "^0.12",
         "lchrusciel/api-test-case": "^5.0"
     },
+    "conflict": {
+        "api-platform/core": "^2.6"
+    },
     "autoload": {
         "exclude-from-classmap": [
             "/.recipe/"
