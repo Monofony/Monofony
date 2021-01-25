@@ -6,11 +6,13 @@
     "violations": [
         {
             "propertyPath": "email",
-            "message": "Please enter your email."
+            "message": "Please enter your email.",
+            "code": "@string@"
         },
         {
             "propertyPath": "password",
-            "message": "Please enter your password."
+            "message": "Please enter your password.",
+            "code": "@string@"
         }
     ]
 }

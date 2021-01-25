@@ -17,7 +17,7 @@ final class RegisterAppUserApiTest extends JsonApiTestCase
         $this->client->request('POST', '/api/customers', [], [], ['CONTENT_TYPE' => 'application/json'], '{}');
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/register_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/register_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -36,7 +36,7 @@ EOT;
         $this->client->request('POST', '/api/customers', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/too_short_password_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/too_short_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -57,7 +57,7 @@ EOT;
         $this->client->request('POST', '/api/customers', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/unique_email_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/unique_email_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
