@@ -122,7 +122,6 @@
         "vimeo/psalm": "^4.3"
     },
     "conflict": {
-        "api-platform/core": "^2.6",
         "symfony/symfony": "*",
         "symplify/package-builder": "^7.2",
         "symplify/smart-file-system": "^7.2",

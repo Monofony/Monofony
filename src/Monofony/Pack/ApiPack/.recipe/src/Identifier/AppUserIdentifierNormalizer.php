@@ -20,11 +20,8 @@ final class AppUserIdentifierNormalizer implements AppUserIdentifierNormalizerIn
 
     /**
      * {@inheritdoc}
-     *
-     * @psalm-suppress InvalidReturnType
-     * @psalm-suppress InvalidReturnStatement
      */
-    public function denormalize($data, $type, $format = null, array $context = [])
+    public function denormalize($data, $type, $format = null, array $context = []): string
     {
         $user = $this->security->getUser();
 
