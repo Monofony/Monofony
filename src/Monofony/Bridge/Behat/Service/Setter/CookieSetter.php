@@ -15,6 +15,7 @@ namespace Monofony\Bridge\Behat\Service\Setter;
 
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
+use DMore\ChromeDriver\ChromeDriver;
 use FriendsOfBehat\SymfonyExtension\Driver\SymfonyDriver;
 use Symfony\Component\BrowserKit\Cookie;
 
@@ -37,13 +38,19 @@ final class CookieSetter implements CookieSetterInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @psalm-suppress UndefinedDocblockClass
      */
     public function setCookie($name, $value)
     {
         $this->prepareMinkSessionIfNeeded($this->minkSession);
 
         $driver = $this->minkSession->getDriver();
+
+        if ($driver instanceof ChromeDriver) {
+            if (!$driver->isStarted()) {
+                $driver->start();
+            }
+        }
 
         if ($driver instanceof SymfonyDriver) {
             $driver->getClient()->getCookieJar()->set(
@@ -72,6 +79,10 @@ final class CookieSetter implements CookieSetterInterface
         }
 
         if ($driver instanceof Selenium2Driver && null === $driver->getWebDriverSession()) {
+            return true;
+        }
+
+        if ($driver instanceof ChromeDriver) {
             return true;
         }
 
