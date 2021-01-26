@@ -6,7 +6,8 @@
     "violations": [
         {
             "propertyPath": "email",
-            "message": "This email is already used."
+            "message": "This email is already used.",
+            "code": null
         }
     ]
 }

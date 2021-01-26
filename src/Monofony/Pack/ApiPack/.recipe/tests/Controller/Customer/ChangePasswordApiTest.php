@@ -52,7 +52,7 @@ EOT;
         $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], $this::$authorizedHeaderWithContentType, $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/change_password_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/change_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -75,7 +75,7 @@ EOT;
         $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], $this::$authorizedHeaderWithContentType, $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/wrong_current_password_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/wrong_current_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**

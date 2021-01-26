@@ -15,6 +15,22 @@ App\Entity\Customer\Customer:
             output: false
             openapi_context:
                 summary: Registers an app user
+        reset_password_request:
+            messenger: input
+            input: App\Message\ResetPasswordRequest
+            output: false
+            method: POST
+            path: /request_password
+            openapi_context:
+                summary: Request a new password
+        reset_password:
+            messenger: input
+            input: App\Message\ResetPassword
+            output: false
+            method: POST
+            path: /reset_password/{token}
+            openapi_context:
+                summary: Reset password
     itemOperations:
         get:
             security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'

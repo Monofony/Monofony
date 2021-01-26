@@ -89,7 +89,7 @@ class MonofonyCoreExtension extends Extension
         }
 
         $container->registerForAutoconfiguration(AppUserIdentifierNormalizerInterface::class)
-            ->addTag('api_platform.identifier.denormalizer');
+            ->addTag('api_platform.identifier.denormalizer', ['priority' => -10]);
     }
 
     private function buildAccountMenu(ContainerBuilder $container): void

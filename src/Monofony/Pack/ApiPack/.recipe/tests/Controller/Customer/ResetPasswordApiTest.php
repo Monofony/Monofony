@@ -24,7 +24,7 @@ EOT;
         $this->client->request('POST', '/api/request_password', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/request_password_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/request_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
@@ -64,7 +64,7 @@ EOT;
         $this->client->request('POST', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/reset_password_validation_response', Response::HTTP_BAD_REQUEST);
+        $this->assertResponse($response, 'customer/reset_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
     /**
