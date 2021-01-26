@@ -354,26 +354,6 @@ jobs:
                 run: bin/console cache:warmup
 
             -
-                name: Download and configure ChromeDriver
-                run: |
-                    curl https://chromedriver.storage.googleapis.com/87.0.4280.88/chromedriver_linux64.zip > chromedriver.zip
-                    unzip chromedriver.zip
-                    chmod +x chromedriver
-
-            -
-                name: Run ChromeDriver
-                run: ./chromedriver > /dev/null 2>&1 &
-
-            -
-                name: Download and configure Selenium
-                run: |
-                    curl http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar > selenium.jar
-
-            -
-                name: Run Selenium
-                run: java -Dwebdriver.chrome.driver=./chromedriver -jar ./selenium.jar > /dev/null 2>&1 &
-
-            -
                 name: Run webserver
                 run: symfony server:start --port=8080 --dir=public --daemon
 
