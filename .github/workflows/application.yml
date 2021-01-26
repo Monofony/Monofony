@@ -356,7 +356,7 @@ jobs:
             -
                 name: Download and configure ChromeDriver
                 run: |
-                    curl https://chromedriver.storage.googleapis.com/87.0.4280.88/chromedriver_linux64.zip > chromedriver.zip
+                    curl https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip > chromedriver.zip
                     unzip chromedriver.zip
                     chmod +x chromedriver
 

@@ -31,10 +31,10 @@ default:
                             version: ""
                             chrome:
                                 switches:
-                                - "--headless"
-                                - "start-fullscreen"
-                                - "start-maximized"
-                                - "no-sandbox"
+                                    - "--headless"
+                                    - "start-fullscreen"
+                                    - "start-maximized"
+                                    - "no-sandbox"
                             extra_capabilities:
                                 acceptSslCerts: true
                                 acceptInsecureCerts: true
