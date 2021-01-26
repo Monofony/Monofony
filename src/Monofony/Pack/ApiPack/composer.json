@@ -4,6 +4,7 @@
     "description": "A pack for Monofony.",
     "license": "MIT",
     "require": {
+        "api-platform/core": "^2.6",
         "api-platform/api-pack": "^1.2",
         "monofony/api-contracts": "^0.5",
         "monofony/core-contracts": "^0.5",
