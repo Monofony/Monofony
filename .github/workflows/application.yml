@@ -95,7 +95,7 @@ jobs:
 
             -
                 name: Run PHPStan
-                run: make test-psalm
+                run: make test-phpstan
                 if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application-without-frontend:

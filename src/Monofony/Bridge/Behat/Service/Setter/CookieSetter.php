@@ -37,6 +37,9 @@ final class CookieSetter implements CookieSetterInterface
         $this->minkParameters = $minkParameters;
     }
 
+    /**
+     * @psalm-suppress UndefinedDocblockClass
+     */
     public function setCookie($name, $value)
     {
         $this->prepareMinkSessionIfNeeded($this->minkSession);
