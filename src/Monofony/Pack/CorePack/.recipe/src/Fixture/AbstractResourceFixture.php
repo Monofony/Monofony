@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of the Monofony package.
- *
- * (c) Monofony
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace App\Fixture;
@@ -41,8 +32,6 @@ abstract class AbstractResourceFixture implements FixtureInterface
      */
     private $optionsResolver;
 
-    /**
-     */
     public function __construct(ObjectManager $objectManager, ExampleFactoryInterface $exampleFactory)
     {
         $this->objectManager = $objectManager;
@@ -66,8 +55,6 @@ abstract class AbstractResourceFixture implements FixtureInterface
         ;
     }
 
-    /**
-     */
     final public function load(array $options): void
     {
         $options = $this->optionsResolver->resolve($options);
@@ -114,8 +101,6 @@ abstract class AbstractResourceFixture implements FixtureInterface
         return $treeBuilder;
     }
 
-    /**
-     */
     protected function configureResourceNode(ArrayNodeDefinition $resourceNode)
     {
         // empty

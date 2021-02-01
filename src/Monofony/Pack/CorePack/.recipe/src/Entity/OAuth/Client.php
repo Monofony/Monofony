@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Entity\OAuth;
 
-use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use FOS\OAuthServerBundle\Model\ClientInterface;
 
 /**

@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Command\OauthServer;
 
+use App\Entity\OAuth\Client;
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use App\Entity\OAuth\Client;
 
 class CreateClientCommand extends Command
 {

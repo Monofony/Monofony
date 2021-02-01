@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Message;
 
+use App\Validator\Constraints as CustomConstraints;
 use Symfony\Component\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
-use App\Validator\Constraints as CustomConstraints;
 
 final class RegisterAppUser
 {
@@ -48,7 +48,6 @@ final class RegisterAppUser
     public $firstName;
 
     /**
-     *
      * @var string|null
      *
      * @Serializer\Groups({"customer:write"})

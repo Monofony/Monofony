@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Page\Backend\Customer;
 
 use Behat\Mink\Element\NodeElement;
+use Monofony\Bridge\Behat\Behaviour\Toggles;
 use Monofony\Bridge\Behat\Crud\AbstractUpdatePage;
 use Monofony\Bridge\Behat\Crud\UpdatePageInterface;
-use Monofony\Bridge\Behat\Behaviour\Toggles;
 
 class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
 {

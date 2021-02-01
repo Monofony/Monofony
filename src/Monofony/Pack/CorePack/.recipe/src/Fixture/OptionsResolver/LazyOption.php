@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Fixture\OptionsResolver;
 
 use Doctrine\Common\Collections\Collection;

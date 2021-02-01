@@ -10,12 +10,12 @@ final class TopBarElement extends Element
 {
     public function hasAvatarInMainBar(string $avatarPath): bool
     {
-        return strpos($this->getAvatarImagePath(), $avatarPath) !== false;
+        return false !== strpos($this->getAvatarImagePath(), $avatarPath);
     }
 
     public function hasDefaultAvatarInMainBar(): bool
     {
-        return strpos($this->getAvatarImagePath(), '//placehold.it/50x50') !== false;
+        return false !== strpos($this->getAvatarImagePath(), '//placehold.it/50x50');
     }
 
     private function getAvatarImagePath(): string

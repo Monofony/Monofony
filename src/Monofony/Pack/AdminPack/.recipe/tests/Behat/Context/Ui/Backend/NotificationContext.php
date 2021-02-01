@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\Behat\Context\Ui\Backend;
 
-use Monofony\Bridge\Behat\NotificationType;
 use Behat\Behat\Context\Context;
+use Monofony\Bridge\Behat\NotificationType;
 use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 
 final class NotificationContext implements Context

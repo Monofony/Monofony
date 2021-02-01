@@ -1,14 +1,5 @@
 <?php
 
-/*
- * This file is part of mz_067_s_ccpa_thermotool.
- *
- * (c) Mobizel
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace App\MessageHandler;
@@ -43,7 +34,7 @@ final class RegisterAppUserHandler implements MessageHandlerInterface
         $user->setPlainPassword($command->password);
 
         $customer = $this->customerProvider->provide($command->email);
-        if ($customer->getUser() !== null) {
+        if (null !== $customer->getUser()) {
             throw new \DomainException(sprintf('User with email "%s" is already registered.', $command->email));
         }
 

@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\Behat\Context\Setup;
 
+use App\Fixture\Factory\AdminUserExampleFactory;
+use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\AppSecurityServiceInterface;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
-use App\Fixture\Factory\AdminUserExampleFactory;
-use Behat\Behat\Context\Context;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Webmozart\Assert\Assert;
 
