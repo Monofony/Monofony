@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Form\Extension;
 
 use Symfony\Component\Form\AbstractTypeExtension;

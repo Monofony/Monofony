@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Ui\Backend;
 
-use App\Tests\Behat\Page\Backend\Customer\ShowPage;
 use App\Tests\Behat\Page\Backend\Customer\IndexPage;
+use App\Tests\Behat\Page\Backend\Customer\ShowPage;
 use App\Tests\Behat\Page\Backend\Customer\UpdatePage;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;

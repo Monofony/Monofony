@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Command\Installer;
 
 use App\Command\Helper\DirectoryChecker;

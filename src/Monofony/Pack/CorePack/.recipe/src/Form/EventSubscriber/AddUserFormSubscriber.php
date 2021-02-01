@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Form\EventSubscriber;
 
 use App\Form\Type\User\AppUserType;
@@ -21,8 +23,6 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
         ];
     }
 
-    /**
-     */
     public function preSetData(FormEvent $event): void
     {
         $form = $event->getForm();
@@ -34,8 +34,6 @@ final class AddUserFormSubscriber implements EventSubscriberInterface
         ]);
     }
 
-    /**
-     */
     public function submit(FormEvent $event): void
     {
         $data = $event->getData();

@@ -7,28 +7,24 @@ analyse: test-phpstan test-psalm
 .PHONY: analyse
 
 fix:
-	vendor/bin/ecs check src --fix
-	vendor/bin/ecs check src --set symfony --config=ecs-recipe.yml --fix
+	vendor/bin/ecs check --fix
+	vendor/bin/ecs check --config=ecs-recipe.php --fix
 .PHONY: fix
 
-validate: validate-composer validate-composer-security validate-doctrine-schema validate-twig validate-yaml-files validate-yarn-packages
+validate: validate-composer validate-doctrine-schema validate-twig validate-yaml-files validate-yarn-packages
 .PHONY: validate
 
 test-behat: test-behat-without-javascript test-behat-with-javascript test-behat-with-cli
 .PHONY: test-behat
 
 validate-coding-standard:
-	vendor/bin/ecs check src
-	vendor/bin/ecs check src --set symfony --config=ecs-recipe.yml
+	vendor/bin/ecs check || true
+	vendor/bin/ecs check --config=ecs-recipe.php || true
 .PHONY: validate-coding-standard
 
 validate-composer:
 	composer validate --strict
 .PHONY: validate-composer
-
-validate-composer-security:
-	vendor/bin/security-checker security:check
-.PHONY: validate-composer-security
 
 validate-doctrine-schema:
 	bin/console doctrine:schema:validate -vvv

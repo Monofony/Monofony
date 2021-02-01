@@ -4,21 +4,20 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Ui\Frontend;
 
-use App\Tests\Behat\Page\Frontend\Account\ResetPasswordPage;
-use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
-use Behat\Behat\Context\Context;
-use Monofony\Bridge\Behat\NotificationType;
 use App\Tests\Behat\Page\Frontend\Account\LoginPage;
 use App\Tests\Behat\Page\Frontend\Account\RegisterPage;
 use App\Tests\Behat\Page\Frontend\Account\RequestPasswordResetPage;
+use App\Tests\Behat\Page\Frontend\Account\ResetPasswordPage;
 use App\Tests\Behat\Page\Frontend\HomePage;
+use Behat\Behat\Context\Context;
+use Monofony\Bridge\Behat\NotificationType;
 use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
+use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Webmozart\Assert\Assert;
 
 final class LoginContext implements Context
 {
-
     private $homePage;
     private $loginPage;
     private $registerPage;

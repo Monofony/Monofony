@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Dashboard\Statistics;
 
 use App\Repository\CustomerRepository;
 use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
-use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 
 class CustomerStatistic implements StatisticInterface

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\EventSubscriber;
 
-use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Doctrine\Persistence\ObjectManager;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Sylius\Bundle\UserBundle\UserEvents;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Security\Generator\GeneratorInterface;

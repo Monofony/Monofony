@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
-use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,7 +34,6 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
 
     /**
      * AppUserExampleFactory constructor.
-     *
      */
     public function __construct(FactoryInterface $appUserFactory, FactoryInterface $customerFactory)
     {

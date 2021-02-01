@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 
 final class DashboardController

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests\Behat\Page\Backend\Customer;
 
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
