@@ -1,5 +1,13 @@
 ## Change Log
 
+### v0.5.2 (2021/02/01 13:13 +00:00)
+- [#304](https://github.com/Monofony/Monofony/pull/304) Migrate to php configuration for symplify packages (@loic425)
+- [#302](https://github.com/Monofony/Monofony/pull/302) Bump api platform core version (@loic425)
+- [#298](https://github.com/Monofony/Monofony/pull/298) Fix API pack to support api platform 2.6 (@loic425)
+- [#301](https://github.com/Monofony/Monofony/pull/301) Use Behat dmore extensions (@loic425)
+- [#299](https://github.com/Monofony/Monofony/pull/299) Move Behat bridge on dev requirements (@loic425)
+- [#297](https://github.com/Monofony/Monofony/pull/297) Update readme for documentation (@loic425)
+
 ### v0.5.1 (2021/01/21 07:06 +00:00)
 - [#296](https://github.com/Monofony/Monofony/pull/296) [HotFix] CRUD templates when there are no form templates configured (@loic425)
 
