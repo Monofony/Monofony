@@ -17,7 +17,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__.'/src/Monofony/Bridge/SyliusUser' => 'git@github.com:Monofony/SyliusUserBridge.git',
 
         // Bundles
-        __DIR__.'/src/Monofony/Bundles/CoreBundle' => 'git@github.com:Monofony/CoreBundle.git',
+        __DIR__.'/src/Monofony/Bundle/CoreBundle' => 'git@github.com:Monofony/CoreBundle.git',
 
         // Components
         __DIR__.'/src/Monofony/Component/Admin' => 'git@github.com:Monofony/Admin.git',
