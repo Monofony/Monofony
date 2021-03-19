@@ -1,4 +1,7 @@
 {
+    "aeon-php/calendar": {
+        "version": "0.16.1"
+    },
     "amphp/amp": {
         "version": "v2.1.1"
     },
