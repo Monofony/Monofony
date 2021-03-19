@@ -21,7 +21,7 @@ final class AppUserIdentifierNormalizer implements AppUserIdentifierNormalizerIn
     /**
      * {@inheritdoc}
      */
-    public function denormalize($data, $type,string $format = null, array $context = []): string
+    public function denormalize($data, $type, string $format = null, array $context = []): string
     {
         $user = $this->security->getUser();
 
@@ -35,7 +35,7 @@ final class AppUserIdentifierNormalizer implements AppUserIdentifierNormalizerIn
     /**
      * {@inheritdoc}
      */
-    public function supportsDenormalization($data, $type,string $format = null)
+    public function supportsDenormalization($data, $type, string $format = null)
     {
         return 'me' === $data;
     }
