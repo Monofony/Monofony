@@ -1,5 +1,10 @@
 ## Change Log
 
+### v0.5.3 (2021/03/25 15:46 +00:00)
+- [#312](https://github.com/Monofony/Monofony/pull/312) Same node dependencies as skeleton (@loic425)
+- [#310](https://github.com/Monofony/Monofony/pull/310) fix ApiPlatform configuration (@smildev)
+- [#306](https://github.com/Monofony/Monofony/pull/306) Fix monorepo-builder configuration (@loic425)
+
 ### v0.5.2 (2021/02/01 13:13 +00:00)
 - [#304](https://github.com/Monofony/Monofony/pull/304) Migrate to php configuration for symplify packages (@loic425)
 - [#302](https://github.com/Monofony/Monofony/pull/302) Bump api platform core version (@loic425)
