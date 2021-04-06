@@ -32,6 +32,6 @@ sylius_fixtures:
                     options:
                         custom:
                             client:
-                                random_id: 5rbhrb0iiukokcwk8gow0w4ocgww0oco8g8gsgokwc0wcssg4w
-                                secret: 2rlxzhijcx448ow4c0gksw4wo8oo4k8kkwwg0osskk8g0k8kw8
+                                random_id: '%env(OAUTH_CLIENT_ID)%'
+                                secret: '%env(OAUTH_SECRET)%'
                                 allowed_grant_types: [password, access_token, refresh_token]

@@ -28,7 +28,7 @@ class CreateClientCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('sylius:oauth-server:create-client')
+            ->setName('app:oauth-server:create-client')
             ->setDescription('Creates a new client')
             ->addOption(
                 'redirect-uri',
@@ -40,7 +40,8 @@ class CreateClientCommand extends Command
                 'grant-type',
                 null,
                 InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
-                'Sets allowed grant type for client.'
+                'Sets allowed grant type for client.',
+                ['password', 'access_token', 'refresh_token']
             )
             ->setHelp(<<<EOT
 The <info>%command.name%</info>command creates a new client.
