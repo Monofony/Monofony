@@ -157,13 +157,6 @@ jobs:
                     coverage: none
 
             -
-                name: Setup PHP
-                uses: shivammathur/setup-php@v2
-                with:
-                    php-version: "7.3"
-                    coverage: none
-
-            -
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
                 run: composer config extra.symfony.require "${{ matrix.symfony }}"
