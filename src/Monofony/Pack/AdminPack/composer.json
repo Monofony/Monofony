@@ -4,12 +4,12 @@
     "description": "Monofony admin pack.",
     "license": "MIT",
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4 || ^8.0",
         "monofony/admin": "^0.5",
         "monofony/admin-contracts": "^0.5",
         "monofony/core-contracts": "^0.5",
         "sonata-project/block-bundle": "^4.2",
-        "sylius/grid-bundle": "^1.8",
+        "sylius/grid-bundle": "^1.9",
         "monofony/ui-bundle": "^1.9",
         "symfony/asset": "^4.4 || ^5.1",
         "symfony/routing": "^4.4 || ^5.1",
@@ -19,8 +19,8 @@
     },
     "require-dev": {
         "behat/behat": "^3.2",
-        "monofony/behat-bridge": "^0.5",
         "friends-of-behat/page-object-extension": "^0.3",
+        "monofony/behat-bridge": "^0.5",
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {

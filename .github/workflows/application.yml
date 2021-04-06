@@ -18,8 +18,16 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ 7.3 ]
-                symfony: [4.4.*, 5.2.*]
+                include:
+                    -
+                        php: 7.4
+                        symfony: 4.4.*
+                    -
+                        php: 7.4
+                        symfony: 5.2.*
+                    -
+                        php: 8.0
+                        symfony: 5.2.*
 
         steps:
             -
@@ -106,9 +114,19 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.3]
-                symfony: [4.4.*, 5.2.*]
-                mysql: [5.7]
+                include:
+                    -
+                        php: 7.4
+                        symfony: 4.4.*
+                        mysql: 5.7
+                    -
+                        php: 7.4
+                        symfony: 5.2.*
+                        mysql: 5.7
+                    -
+                        php: 8.0
+                        symfony: 5.2.*
+                        mysql: 5.7
 
         env:
             APP_ENV: test
@@ -245,10 +263,22 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [ 7.3 ]
-                symfony: [4.4.*, 5.2.*]
-                node: [ 10.x ]
-                mysql: [ 5.7 ]
+                include:
+                    -
+                        php: 7.4
+                        symfony: 4.4.*
+                        mysql: 5.7
+                        node: 10.x
+                    -
+                        php: 7.4
+                        symfony: 5.2.*
+                        mysql: 5.7
+                        node: 10.x
+                    -
+                        php: 8.0
+                        symfony: 5.2.*
+                        mysql: 5.7
+                        node: 10.x
 
         env:
             APP_ENV: test

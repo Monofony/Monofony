@@ -58,7 +58,7 @@
         ]
     },
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4 || ^8.0",
         "api-platform/api-pack": "^1.2",
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
@@ -73,9 +73,9 @@
         "sensiolabs/security-checker": "^6.0",
         "sonata-project/block-bundle": "^4.2",
         "sylius/fixtures-bundle": "^1.7",
-        "sylius/grid-bundle": "^1.8",
+        "sylius/grid-bundle": "^1.9",
         "sylius/mailer-bundle": "^1.6",
-        "sylius/resource-bundle": "^1.7",
+        "sylius/resource-bundle": "^1.8",
         "symfony/dotenv": "4.4.* || 5.2.*",
         "symfony/flex": "^1.2",
         "symfony/framework-bundle": "4.4.* || 5.2.*",

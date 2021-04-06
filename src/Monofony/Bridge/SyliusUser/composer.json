@@ -5,7 +5,7 @@
     "keywords": [],
     "license": "MIT",
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4 || ^8.0",
         "monofony/core-contracts": "^0.5",
         "monofony/user-bundle": "^1.9",
         "sylius/customer": "^1.8"
