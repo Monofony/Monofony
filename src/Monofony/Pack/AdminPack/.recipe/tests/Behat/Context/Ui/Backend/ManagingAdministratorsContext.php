@@ -74,7 +74,7 @@ final class ManagingAdministratorsContext implements Context
      * @When I specify its name as :username
      * @When I do not specify its name
      */
-    public function iSpecifyItsNameAs($username = null): void
+    public function iSpecifyItsNameAs(string $username = null): void
     {
         $this->createPage->specifyUsername($username);
     }
@@ -82,7 +82,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @When I change its name to :username
      */
-    public function iChangeItsNameTo($username): void
+    public function iChangeItsNameTo(string $username): void
     {
         $this->updatePage->changeUsername($username);
     }
@@ -91,7 +91,7 @@ final class ManagingAdministratorsContext implements Context
      * @When I specify its email as :email
      * @When I do not specify its email
      */
-    public function iSpecifyItsEmailAs($email = null): void
+    public function iSpecifyItsEmailAs(string $email = null): void
     {
         $this->createPage->specifyEmail($email);
     }
@@ -99,7 +99,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @When I change its email to :email
      */
-    public function iChangeItsEmailTo($email): void
+    public function iChangeItsEmailTo(string $email): void
     {
         $this->updatePage->changeEmail($email);
     }
@@ -108,7 +108,7 @@ final class ManagingAdministratorsContext implements Context
      * @When I specify its password as :password
      * @When I do not specify its password
      */
-    public function iSpecifyItsPasswordAs($password = null): void
+    public function iSpecifyItsPasswordAs(string $password = null): void
     {
         $this->createPage->specifyPassword($password);
     }
@@ -116,7 +116,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @When I change its password to :password
      */
-    public function iChangeItsPasswordTo($password): void
+    public function iChangeItsPasswordTo(string $password): void
     {
         $this->updatePage->changePassword($password);
     }
@@ -149,7 +149,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @When I delete administrator with email :email
      */
-    public function iDeleteAdministratorWithEmail($email): void
+    public function iDeleteAdministratorWithEmail(string $email): void
     {
         $this->indexPage->deleteResourceOnPage(['email' => $email]);
     }
@@ -181,11 +181,11 @@ final class ManagingAdministratorsContext implements Context
     }
 
     /**
-     * @Then the administrator :email should appear in the store
+     * @Then the administrator :email should appear in the list
      * @Then I should see the administrator :email in the list
      * @Then there should still be only one administrator with an email :email
      */
-    public function theAdministratorShouldAppearInTheStore($email): void
+    public function theAdministratorShouldAppearInTheList(string $email): void
     {
         $this->indexPage->open();
 
@@ -193,10 +193,10 @@ final class ManagingAdministratorsContext implements Context
     }
 
     /**
-     * @Then this administrator with name :username should appear in the store
+     * @Then this administrator with name :username should appear in the list
      * @Then there should still be only one administrator with name :username
      */
-    public function thisAdministratorWithNameShouldAppearInTheStore($username): void
+    public function thisAdministratorWithNameShouldAppearInTheList(string $username): void
     {
         $this->indexPage->open();
 
@@ -205,11 +205,11 @@ final class ManagingAdministratorsContext implements Context
 
     /**
      * @Then I should see a single administrator in the list
-     * @Then /^there should be (\d+) administrators in the list$/
+     * @Then there should be :amount administrators in the list
      */
-    public function iShouldSeeAdministratorsInTheList(int $number = 1): void
+    public function iShouldSeeAdministratorsInTheList(int $amount = 1): void
     {
-        Assert::same($this->indexPage->countItems(), (int) $number);
+        Assert::same($this->indexPage->countItems(), (int) $amount);
     }
 
     /**
@@ -231,7 +231,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @Then I should be notified that the :elementName is required
      */
-    public function iShouldBeNotifiedThatFirstNameIsRequired($elementName): void
+    public function iShouldBeNotifiedThatFirstNameIsRequired(string $elementName): void
     {
         Assert::same($this->createPage->getValidationMessage($elementName), sprintf('Please enter your %s.', $elementName));
     }

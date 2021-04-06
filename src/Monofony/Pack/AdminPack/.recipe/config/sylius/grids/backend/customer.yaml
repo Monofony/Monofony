@@ -17,11 +17,11 @@ sylius_grid:
                 email:
                     type: string
                     label: sylius.ui.email
-                    sortable: email
+                    sortable: true
                 createdAt:
                     type: datetime
                     label: sylius.ui.registration_date
-                    sortable: createdAt
+                    sortable: true
             filters:
                 search:
                     type: string

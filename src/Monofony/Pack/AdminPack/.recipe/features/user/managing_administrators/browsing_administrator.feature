@@ -1,6 +1,6 @@
 @managing_administrators
 Feature: Browsing administrators
-    In order to see all administrators in the store
+    In order to see all administrators in the admin panel
     As an Administrator
     I want to browse administrators
 
@@ -10,7 +10,7 @@ Feature: Browsing administrators
         And I am logged in as "ted@example.com" administrator
 
     @ui
-    Scenario: Browsing administrators in store
+    Scenario: Browsing administrators in the admin panel
         When I want to browse administrators
         Then there should be 2 administrators in the list
         And I should see the administrator "mr.banana@example.com" in the list

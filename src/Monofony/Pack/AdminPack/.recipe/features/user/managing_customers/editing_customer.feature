@@ -15,7 +15,7 @@ Feature: Editing a customer
         And I change their last name to "Snow"
         And I save my changes
         Then I should be notified that it has been successfully edited
-        And this customer with name "Jon Snow" should appear in the store
+        And this customer with name "Jon Snow" should appear in the list
 
     @ui
     Scenario: Removing first and last name from an existing customer

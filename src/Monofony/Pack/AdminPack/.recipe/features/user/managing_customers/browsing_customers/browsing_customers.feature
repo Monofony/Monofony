@@ -1,6 +1,6 @@
 @managing_customers
 Feature: Browsing customers
-    In order to see all customers in the store
+    In order to see all customers in the admin panel
     As an Administrator
     I want to browse customers
 
@@ -11,7 +11,7 @@ Feature: Browsing customers
         And I am logged in as an administrator
 
     @ui
-    Scenario: Browsing customers in store
-        When I want to see all customers in store
+    Scenario: Browsing customers in the admin panel
+        When I want to see all customers in the admin panel
         Then I should see 3 customers in the list
         And I should see the customer "mr.banana@example.com" in the list
