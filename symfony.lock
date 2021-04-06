@@ -1,4 +1,7 @@
 {
+    "aeon-php/calendar": {
+        "version": "0.16.4"
+    },
     "amphp/amp": {
         "version": "v2.1.1"
     },
@@ -94,6 +97,9 @@
     "doctrine/dbal": {
         "version": "v2.7.1"
     },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
+    },
     "doctrine/doctrine-bundle": {
         "version": "1.6",
         "recipe": {
@@ -147,6 +153,9 @@
     },
     "egulias/email-validator": {
         "version": "2.1.4"
+    },
+    "fakerphp/faker": {
+        "version": "v1.14.1"
     },
     "felixfbecker/advanced-json-rpc": {
         "version": "v3.0.3"
@@ -277,6 +286,9 @@
     "laminas/laminas-eventmanager": {
         "version": "3.3.0"
     },
+    "laminas/laminas-stdlib": {
+        "version": "3.3.1"
+    },
     "laminas/laminas-zendframework-bridge": {
         "version": "1.1.1"
     },
@@ -304,6 +316,9 @@
     },
     "mockery/mockery": {
         "version": "1.1.0"
+    },
+    "monofony/customer": {
+        "version": "v1.10.0"
     },
     "monofony/customer-bundle": {
         "version": "1.9-dev"
@@ -602,19 +617,16 @@
             "phpcs.xml.dist"
         ]
     },
-    "stof/doctrine-extensions-bundle": {
-        "version": "1.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "1.2",
-            "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
-        }
-    },
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"
     },
     "sylius-labs/polyfill-symfony-event-dispatcher": {
+        "version": "v1.0.0"
+    },
+    "sylius-labs/polyfill-symfony-framework-bundle": {
+        "version": "v1.0.0"
+    },
+    "sylius-labs/polyfill-symfony-security": {
         "version": "v1.0.0"
     },
     "sylius/customer": {

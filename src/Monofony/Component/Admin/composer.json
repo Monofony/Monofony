@@ -4,7 +4,7 @@
     "description": "Monofony admin.",
     "license": "MIT",
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4 || ^8.0",
         "monofony/admin-contracts": "^0.5",
         "knplabs/knp-menu": "^3.1",
         "symfony/routing": "^4.4 || ^5.1",
