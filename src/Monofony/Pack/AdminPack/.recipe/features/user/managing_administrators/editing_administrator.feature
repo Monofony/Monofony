@@ -15,7 +15,7 @@ Feature: Editing an administrator
         And I change its email to "jon@example.com"
         And I save my changes
         Then I should be notified that it has been successfully edited
-        And this administrator with name "Jon Snow" should appear in the store
+        And this administrator with name "Jon Snow" should appear in the list
 
     @ui
     Scenario: Changing password of an existing administrator and trying sign in with old password

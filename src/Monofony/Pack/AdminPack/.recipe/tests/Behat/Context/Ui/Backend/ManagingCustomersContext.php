@@ -87,9 +87,9 @@ final class ManagingCustomersContext implements Context
     }
 
     /**
-     * @Then /^(this customer) with name "([^"]*)" should appear in the store$/
+     * @Then /^(this customer) with name "([^"]*)" should appear in the list$/
      */
-    public function theCustomerWithNameShouldAppearInTheRegistry(CustomerInterface $customer, $name): void
+    public function theCustomerWithNameShouldAppearInTheList(CustomerInterface $customer, $name): void
     {
         $this->updatePage->open(['id' => $customer->getId()]);
 
@@ -97,33 +97,60 @@ final class ManagingCustomersContext implements Context
     }
 
     /**
-     * @When I want to see all customers in store
+     * @When I want to see all customers in the admin panel
+     * @When I am browsing customers
      */
-    public function iWantToSeeAllCustomersInStore(): void
+    public function iWantToSeeAllCustomersInTheAdminPanel(): void
     {
         $this->indexPage->open();
     }
 
     /**
-     * @Then /^I should see (\d+) customers in the list$/
-     */
-    public function iShouldSeeCustomersInTheList($amountOfCustomers): void
-    {
-        Assert::same($this->indexPage->countItems(), (int) $amountOfCustomers);
-    }
-
-    /**
      * @When I view details of the customer :customer
      */
-    public function iViewDetailsOfTheCustomer(CustomerInterface $customer)
+    public function iViewDetailsOfTheCustomer(CustomerInterface $customer): void
     {
         $this->showPage->open(['id' => $customer->getId()]);
     }
 
     /**
+     * @When I start sorting customers by :field
+     */
+    public function iStartSortingCustomersBy(string $field): void
+    {
+        $this->indexPage->sortBy($field);
+    }
+
+    /**
+     * @Then I should see :amount customers in the list
+     */
+    public function iShouldSeeCustomersInTheList(int $amount): void
+    {
+        Assert::same($this->indexPage->countItems(), $amount);
+    }
+
+    /**
+     * @Then the first customer in the list should have :field :value
+     */
+    public function theFirstCustomerInTheListShouldHave(string $field, string $value): void
+    {
+        Assert::same($this->indexPage->getColumnFields($field)[0], $value);
+    }
+
+    /**
+     * @Then the last customer in the list should have :field :value
+     */
+    public function theLastCustomerInTheListShouldHave(string $field, string $value): void
+    {
+        $values = $this->indexPage->getColumnFields($field);
+
+        Assert::same(end($values), $value);
+    }
+
+    /**
      * @Then his name should be :name
      */
-    public function hisNameShouldBe($name)
+    public function hisNameShouldBe(string $name): void
     {
         Assert::same($this->showPage->getCustomerName(), $name);
     }
@@ -131,7 +158,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then he should be registered since :registrationDate
      */
-    public function hisRegistrationDateShouldBe($registrationDate)
+    public function hisRegistrationDateShouldBe(string $registrationDate): void
     {
         Assert::eq($this->showPage->getRegistrationDate(), new \DateTime($registrationDate));
     }
@@ -139,7 +166,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then his email should be :email
      */
-    public function hisEmailShouldBe($email)
+    public function hisEmailShouldBe(string $email): void
     {
         Assert::same($this->showPage->getCustomerEmail(), $email);
     }
@@ -147,7 +174,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then his phone number should be :phoneNumber
      */
-    public function hisPhoneNumberShouldBe($phoneNumber)
+    public function hisPhoneNumberShouldBe(string $phoneNumber): void
     {
         Assert::same($this->showPage->getCustomerPhoneNumber(), $phoneNumber);
     }
@@ -155,7 +182,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then I should see the customer :email in the list
      */
-    public function iShouldSeeTheCustomerInTheList($email): void
+    public function iShouldSeeTheCustomerInTheList(string $email): void
     {
         Assert::true($this->indexPage->isSingleResourceOnPage(['email' => $email]));
     }
@@ -206,7 +233,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then there should still be only one customer with email :email
      */
-    public function thereShouldStillBeOnlyOneCustomerWithEmail($email): void
+    public function thereShouldStillBeOnlyOneCustomerWithEmail(string $email): void
     {
         $this->indexPage->open();
 
