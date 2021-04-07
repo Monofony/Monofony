@@ -6,7 +6,7 @@
     "require": {
         "php": ">=7.4 || ^8.0",
         "doctrine/doctrine-migrations-bundle": "^3.0",
-        "doctrine/orm": "^2.4.8",
+        "doctrine/orm": "^2.5",
         "fakerphp/faker": "^1.14",
         "liip/imagine-bundle": "^2.2",
         "monofony/core-bundle": "^0.5",

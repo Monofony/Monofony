@@ -62,7 +62,7 @@
         "api-platform/api-pack": "^1.2",
         "doctrine/doctrine-bundle": "^2.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
-        "doctrine/orm": "^2.4.8",
+        "doctrine/orm": "^2.5",
         "friendsofsymfony/oauth-server-bundle": "^1.6 || >2.0.0-alpha.0 ^2.0@dev",
         "fakerphp/faker": "^1.14",
         "liip/imagine-bundle": "^2.2",
