@@ -10,13 +10,15 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Component\\Core\\": "" }
+        "psr-4": {
+            "Monofony\\Component\\Core\\": ""
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     }
 }

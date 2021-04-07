@@ -2,7 +2,6 @@
     "name": "monofony/behat-bridge",
     "type": "symfony-bridge",
     "description": "Monofony Behat Bridge",
-    "keywords": [],
     "license": "MIT",
     "require": {
         "php": ">=7.4 || ^8.0",
@@ -26,7 +25,9 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bridge\\Behat\\": "" },
+        "psr-4": {
+            "Monofony\\Bridge\\Behat\\": ""
+        },
         "exclude-from-classmap": [
             "/Tests/"
         ]
@@ -41,7 +42,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     }
 }

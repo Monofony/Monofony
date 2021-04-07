@@ -16,8 +16,7 @@
         "friends-of-phpspec/phpspec-code-coverage": "^5.0",
         "friendsofphp/php-cs-fixer": "^2.13",
         "infection/infection": "^0.18",
-        "lakion/mink-debug-extension": "^1.2",
-        "lchrusciel/api-test-case": "^5.0",
+        "lchrusciel/api-test-case": "^5.1",
         "monofony/behat-bridge": "^0.5",
         "phpspec/phpspec": "^7.0",
         "phpstan/phpstan": "^0.12",
@@ -35,7 +34,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     }
 }

@@ -2,14 +2,15 @@
     "name": "monofony/front-contracts",
     "type": "library",
     "description": "Generic abstractions related to Front",
-    "keywords": [],
     "license": "MIT",
     "require": {
         "php": ">=7.4 || ^8.0",
         "knplabs/knp-menu": "^3.1"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Contracts\\Front\\": "" },
+        "psr-4": {
+            "Monofony\\Contracts\\Front\\": ""
+        },
         "exclude-from-classmap": [
             "/Tests/"
         ]
@@ -24,7 +25,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     },
     "require-dev": {

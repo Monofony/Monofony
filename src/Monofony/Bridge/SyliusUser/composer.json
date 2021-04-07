@@ -2,7 +2,6 @@
     "name": "monofony/sylius-user-bridge",
     "type": "symfony-bridge",
     "description": "Monofony Sylius User Bridge",
-    "keywords": [],
     "license": "MIT",
     "require": {
         "php": ">=7.4 || ^8.0",
@@ -14,7 +13,9 @@
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bridge\\SyliusUser\\": "" },
+        "psr-4": {
+            "Monofony\\Bridge\\SyliusUser\\": ""
+        },
         "exclude-from-classmap": [
             "/Tests/"
         ]
@@ -29,7 +30,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     }
 }
