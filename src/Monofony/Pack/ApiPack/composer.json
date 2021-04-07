@@ -16,7 +16,7 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
-        "lchrusciel/api-test-case": "^5.0"
+        "lchrusciel/api-test-case": "^5.1"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -30,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     }
 }

@@ -17,8 +17,12 @@
         "symfony/symfony": "*"
     },
     "autoload": {
-        "psr-4": { "Monofony\\Bundle\\CoreBundle\\": "" },
-        "exclude-from-classmap": [".recipe/"]
+        "psr-4": {
+            "Monofony\\Bundle\\CoreBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            ".recipe/"
+        ]
     },
     "config": {
         "sort-packages": true
@@ -27,7 +31,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.5-dev"
+            "dev-master": "0.6-dev"
         }
     },
     "scripts": {
