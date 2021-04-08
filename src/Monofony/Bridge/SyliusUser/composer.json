@@ -5,9 +5,9 @@
     "license": "MIT",
     "require": {
         "php": ">=7.4 || ^8.0",
-        "monofony/core-contracts": "^0.5",
-        "monofony/user-bundle": "^1.9",
-        "monofony/customer": "^1.8"
+        "monofony/core-contracts": "^0.6",
+        "monofony/user-bundle": "^1.10",
+        "monofony/customer": "^1.10"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12"
