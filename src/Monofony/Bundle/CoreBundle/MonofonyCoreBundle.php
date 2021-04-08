@@ -23,7 +23,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class MonofonyCoreBundle extends Bundle
 {
-    public const VERSION = '0.5.3';
+    public const VERSION = '0.6.0';
 
     /**
      * {@inheritdoc}
