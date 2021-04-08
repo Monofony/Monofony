@@ -78,6 +78,11 @@ jobs:
                 if: always() && steps.end-of-setup.outcome == 'success'
 
             -
+                name: Validate Doctrine mapping
+                run: bin/console doctrine:schema:validate -vvv
+                if: always() && steps.end-of-setup.outcome == 'success'
+
+            -
                 name: Validate coding standard
                 run: make validate-coding-standard
                 if: always() && steps.end-of-setup.outcome == 'success'
