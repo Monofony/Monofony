@@ -210,6 +210,11 @@ jobs:
                     bin/console doctrine:migrations:migrate -n -vvv
 
             -
+                name: Validate Doctrine mapping
+                run: make validate-doctrine-schema
+                if: always() && steps.end-of-setup.outcome == 'success'
+
+            -
                 name: Test provided migrations
                 run: make test-doctrine-migrations
 
