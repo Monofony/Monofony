@@ -38,6 +38,12 @@
         },
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../*/*"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "extra": {
