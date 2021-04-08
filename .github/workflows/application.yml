@@ -78,11 +78,6 @@ jobs:
                 if: always() && steps.end-of-setup.outcome == 'success'
 
             -
-                name: Validate Doctrine mapping
-                run: bin/console doctrine:schema:validate -vvv
-                if: always() && steps.end-of-setup.outcome == 'success'
-
-            -
                 name: Validate coding standard
                 run: make validate-coding-standard
                 if: always() && steps.end-of-setup.outcome == 'success'
@@ -213,6 +208,11 @@ jobs:
                 run: |
                     APP_DEBUG=1 bin/console doctrine:database:create -vvv
                     bin/console doctrine:migrations:migrate -n -vvv
+
+            -
+                name: Validate Doctrine mapping
+                run: make validate-doctrine-schema
+                if: always() && steps.end-of-setup.outcome == 'success'
 
             -
                 name: Test provided migrations
