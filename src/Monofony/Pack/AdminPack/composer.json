@@ -20,7 +20,7 @@
     "require-dev": {
         "behat/behat": "^3.2",
         "friends-of-behat/page-object-extension": "^0.3",
-        "monofony/behat-bridge": "^0.5",
+        "monofony/behat-bridge": "^0.6",
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {

@@ -16,7 +16,7 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12",
-        "monofony/behat-bridge": "^0.5"
+        "monofony/behat-bridge": "^0.6"
     },
     "autoload": {
         "exclude-from-classmap": [

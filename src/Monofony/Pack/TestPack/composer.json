@@ -17,7 +17,7 @@
         "friendsofphp/php-cs-fixer": "^2.13",
         "infection/infection": "^0.18",
         "lchrusciel/api-test-case": "^5.1",
-        "monofony/behat-bridge": "^0.5",
+        "monofony/behat-bridge": "^0.6",
         "phpspec/phpspec": "^7.0",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-doctrine": "^0.12",
