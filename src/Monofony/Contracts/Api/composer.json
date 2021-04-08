@@ -23,6 +23,12 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../*/*"
+        }
+    ],
     "extra": {
         "branch-alias": {
             "dev-master": "0.6-dev"
