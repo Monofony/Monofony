@@ -18,7 +18,7 @@
         "monofony/user-bundle": "^1.10",
         "sylius/fixtures-bundle": "^1.7",
         "sylius/mailer": "^1.5",
-        "sylius/resource": "^1.6",
+        "sylius/resource": "^1.8",
         "sylius/resource-bundle": "^1.8",
         "symfony/process": "^4.4 || ^5.1",
         "symfony/serializer": "^4.4 || ^5.1",
