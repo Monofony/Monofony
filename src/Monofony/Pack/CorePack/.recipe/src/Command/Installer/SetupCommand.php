@@ -21,10 +21,10 @@ use Webmozart\Assert\Assert;
 
 final class SetupCommand extends Command
 {
-    private $adminUserManager;
-    private $adminUserFactory;
-    private $adminUserRepository;
-    private $validator;
+    private ObjectManager $adminUserManager;
+    private FactoryInterface $adminUserFactory;
+    private UserRepositoryInterface $adminUserRepository;
+    private ValidatorInterface $validator;
 
     public function __construct(
         ObjectManager $adminUserManager,

@@ -12,9 +12,9 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class DefaultContext implements Context
 {
-    protected $kernel;
+    protected KernelInterface $kernel;
     protected $application;
-    protected static $sharedTester;
+    protected static ?CommandTester $sharedTester;
     protected $command;
     protected $questionHelper;
 

@@ -13,9 +13,9 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class InstallDatabaseCommand extends Command
 {
-    private $databaseSetupCommandsProvider;
-    private $commandsRunner;
-    private $environment;
+    private DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider;
+    private CommandsRunner $commandsRunner;
+    private string $environment;
 
     public function __construct(
         DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider,

@@ -13,7 +13,7 @@ use Sylius\Component\User\Model\UserInterface;
 
 final class CanonicalizerSubscriber implements EventSubscriber
 {
-    private $canonicalizer;
+    private CanonicalizerInterface $canonicalizer;
 
     public function __construct(CanonicalizerInterface $canonicalizer)
     {

@@ -9,7 +9,7 @@ use Behat\Behat\Context\Context;
 
 class HomepageContext implements Context
 {
-    private $homePage;
+    private HomePage $homePage;
 
     public function __construct(HomePage $homePage)
     {

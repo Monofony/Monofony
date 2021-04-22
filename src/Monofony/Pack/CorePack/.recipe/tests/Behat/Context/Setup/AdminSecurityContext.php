@@ -14,10 +14,10 @@ use Webmozart\Assert\Assert;
 
 final class AdminSecurityContext implements Context
 {
-    private $sharedStorage;
-    private $securityService;
-    private $userFactory;
-    private $adminUserRepository;
+    private SharedStorageInterface $sharedStorage;
+    private AdminSecurityServiceInterface $securityService;
+    private AdminUserExampleFactory $userFactory;
+    private UserRepositoryInterface $adminUserRepository;
 
     public function __construct(
         SharedStorageInterface $sharedStorage,

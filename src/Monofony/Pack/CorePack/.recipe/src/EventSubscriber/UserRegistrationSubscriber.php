@@ -16,9 +16,9 @@ use Webmozart\Assert\Assert;
 
 final class UserRegistrationSubscriber implements EventSubscriberInterface
 {
-    private $userManager;
-    private $tokenGenerator;
-    private $eventDispatcher;
+    private ObjectManager $userManager;
+    private GeneratorInterface $tokenGenerator;
+    private EventDispatcherInterface $eventDispatcher;
 
     public function __construct(
         ObjectManager $userManager,

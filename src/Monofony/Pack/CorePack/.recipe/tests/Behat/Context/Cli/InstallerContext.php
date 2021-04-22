@@ -11,7 +11,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class InstallerContext extends DefaultContext
 {
-    private $setupCommand;
+    private SetupCommand $setupCommand;
     private $inputChoices = [
         'e-mail' => 'test@email.com',
         'password' => 'pswd',

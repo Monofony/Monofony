@@ -13,9 +13,9 @@ use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 final class RegisterAppUserHandler implements MessageHandlerInterface
 {
-    private $appUserFactory;
-    private $appUserRepository;
-    private $customerProvider;
+    private FactoryInterface $appUserFactory;
+    private RepositoryInterface $appUserRepository;
+    private CustomerProviderInterface $customerProvider;
 
     public function __construct(
         FactoryInterface $appUserFactory,

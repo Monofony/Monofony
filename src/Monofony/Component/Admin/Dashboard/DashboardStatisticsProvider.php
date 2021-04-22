@@ -18,7 +18,7 @@ use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 
 final class DashboardStatisticsProvider implements DashboardStatisticsProviderInterface
 {
-    private $statistics;
+    private iterable $statistics;
 
     public function __construct(iterable $statistics)
     {

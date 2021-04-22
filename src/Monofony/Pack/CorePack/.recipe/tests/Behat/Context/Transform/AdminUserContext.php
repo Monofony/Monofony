@@ -10,7 +10,7 @@ use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 
 final class AdminUserContext implements Context
 {
-    private $sharedStorage;
+    private SharedStorageInterface $sharedStorage;
 
     public function __construct(SharedStorageInterface $sharedStorage)
     {

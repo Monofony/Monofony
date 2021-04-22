@@ -14,10 +14,10 @@ use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 class UserContext implements Context
 {
-    private $sharedStorage;
-    private $appUserRepository;
-    private $userFactory;
-    private $userManager;
+    private SharedStorageInterface $sharedStorage;
+    private UserRepositoryInterface $appUserRepository;
+    private AppUserExampleFactory $userFactory;
+    private ObjectManager $userManager;
 
     public function __construct(
         SharedStorageInterface $sharedStorage,

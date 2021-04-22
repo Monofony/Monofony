@@ -13,10 +13,20 @@ use Symfony\Component\Process\Exception\RuntimeException;
 
 class InstallCommand extends Command
 {
-    private $directoryChecker;
-    private $cacheDir;
+    private DirectoryChecker $directoryChecker;
+    private string $cacheDir;
+
+    /**
+     * @var CommandExecutor|null
+     */
     private $commandExecutor;
-    private $commands = [
+
+    /**
+     * @var string[][]
+     *
+     * @psalm-var array{0: array{command: string, message: string}, 1: array{command: string, message: string}, 2: array{command: string, message: string}}
+     */
+    private array $commands = [
         [
             'command' => 'database',
             'message' => 'Setting up the database.',

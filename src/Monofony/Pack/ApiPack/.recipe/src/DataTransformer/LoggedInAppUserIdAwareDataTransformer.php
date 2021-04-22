@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\Security;
 
 final class LoggedInAppUserIdAwareDataTransformer implements DataTransformerInterface
 {
-    private $security;
+    private Security $security;
 
     public function __construct(Security $security)
     {
