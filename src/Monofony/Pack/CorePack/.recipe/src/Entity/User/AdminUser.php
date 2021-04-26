@@ -16,25 +16,19 @@ use Sylius\Component\User\Model\User as BaseUser;
 class AdminUser extends BaseUser implements AdminUserInterface
 {
     /**
-     * @var string|null
-     *
      * @ORM\Column(type="string", nullable=true)
      */
-    private $lastName;
+    private ?string $lastName = null;
 
     /**
-     * @var string|null
-     *
      * @ORM\Column(type="string", nullable=true)
      */
-    private $firstName;
+    private ?string $firstName = null;
 
     /**
-     * @var AdminAvatarInterface|null
-     *
      * @ORM\OneToOne(targetEntity="App\Entity\User\AdminAvatar", cascade={"persist"})
      */
-    private $avatar;
+    private ?AdminAvatarInterface $avatar = null;
 
     public function __construct()
     {
