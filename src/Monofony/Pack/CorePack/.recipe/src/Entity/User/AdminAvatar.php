@@ -25,5 +25,5 @@ class AdminAvatar extends File implements AdminAvatarInterface
      *
      * @Assert\File(maxSize="6000000", mimeTypes={"image/*"})
      */
-    protected $file;
+    protected ?\SplFileInfo $file = null;
 }

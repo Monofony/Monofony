@@ -17,12 +17,10 @@ use Sylius\Component\User\Model\User as BaseUser;
 class AppUser extends BaseUser implements AppUserInterface
 {
     /**
-     * @var CustomerInterface
-     *
      * @ORM\OneToOne(targetEntity="Sylius\Component\Customer\Model\CustomerInterface", inversedBy="user", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $customer;
+    private ?CustomerInterface $customer = null;
 
     /**
      * {@inheritdoc}

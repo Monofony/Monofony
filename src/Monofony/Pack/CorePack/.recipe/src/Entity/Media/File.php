@@ -19,8 +19,7 @@ abstract class File implements FileInterface, ResourceInterface
     use IdentifiableTrait;
     use TimestampableTrait;
 
-    /** @var \SplFileInfo|null */
-    protected $file;
+    protected ?\SplFileInfo $file = null;
 
     /**
      * @var string|null
@@ -29,7 +28,7 @@ abstract class File implements FileInterface, ResourceInterface
      *
      * @Serializer\Groups({"Default", "Detailed"})
      */
-    protected $path;
+    protected ?string $path = null;
 
     /**
      * @var \DateTimeInterface|null

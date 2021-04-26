@@ -18,13 +18,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Customer extends BaseCustomer implements CustomerInterface
 {
     /**
-     * @var AppUserInterface|UserInterface
-     *
      * @ORM\OneToOne(targetEntity="App\Entity\User\AppUser", mappedBy="customer", cascade={"persist"})
      *
      * @Assert\Valid
      */
-    private $user;
+    private ?UserInterface $user = null;
 
     /**
      * {@inheritdoc}
