@@ -15,11 +15,7 @@ class InstallCommand extends Command
 {
     private DirectoryChecker $directoryChecker;
     private string $cacheDir;
-
-    /**
-     * @var CommandExecutor|null
-     */
-    private $commandExecutor;
+    private ?CommandExecutor $commandExecutor = null;
 
     /**
      * @var string[][]
@@ -110,7 +106,7 @@ EOT
     /**
      * @return string
      */
-    private function getProperFinalMessage($errored)
+    private function getProperFinalMessage(bool $errored)
     {
         if ($errored) {
             return '<info>AppName has been installed, but some error occurred.</info>';

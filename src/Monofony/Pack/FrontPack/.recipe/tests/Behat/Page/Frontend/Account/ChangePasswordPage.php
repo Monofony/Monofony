@@ -17,7 +17,7 @@ class ChangePasswordPage extends SymfonyPage
         return 'sylius_frontend_account_change_password';
     }
 
-    public function checkValidationMessageFor($element, $message): bool
+    public function checkValidationMessageFor(string $element, string $message): bool
     {
         $errorLabel = $this->getElement($element)->getParent()->find('css', '.sylius-validation-error');
 
