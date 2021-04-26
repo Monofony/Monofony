@@ -9,9 +9,9 @@
         "monofony/front-contracts": "^0.6",
         "monofony/core-contracts": "^0.6",
         "monofony/ui-bundle": "^1.10",
-        "symfony/asset": "^4.4 || ^5.1",
-        "symfony/routing": "^4.4 || ^5.1",
-        "symfony/templating": "^4.4 || ^5.1",
+        "symfony/asset": "^4.4 || ^5.2",
+        "symfony/routing": "^4.4 || ^5.2",
+        "symfony/templating": "^4.4 || ^5.2",
         "twig/twig": "^2.7"
     },
     "require-dev": {
