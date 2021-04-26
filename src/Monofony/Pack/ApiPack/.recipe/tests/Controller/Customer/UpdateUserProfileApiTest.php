@@ -80,7 +80,7 @@ EOT;
         $this->assertLoginWithCredentials('inigo.montoya@prepare-to-die.com', 'sylius');
     }
 
-    private function assertLoginWithCredentials($username, $password): void
+    private function assertLoginWithCredentials(string $username, string $password): void
     {
         $data =
             <<<EOT

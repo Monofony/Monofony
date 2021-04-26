@@ -70,8 +70,10 @@ final class LoginContext implements Context
 
     /**
      * @When I specify the username as :username
+     *
+     * @param null|string $username
      */
-    public function iSpecifyTheUsername($username = null): void
+    public function iSpecifyTheUsername(?string $username = null): void
     {
         $this->loginPage->specifyUsername($username);
     }
@@ -88,8 +90,10 @@ final class LoginContext implements Context
     /**
      * @When I specify the password as :password
      * @When I do not specify the password
+     *
+     * @param null|string $password
      */
-    public function iSpecifyThePasswordAs($password = null): void
+    public function iSpecifyThePasswordAs(?string $password = null): void
     {
         $this->loginPage->specifyPassword($password);
     }

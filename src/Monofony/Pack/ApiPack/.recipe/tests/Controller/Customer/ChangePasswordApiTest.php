@@ -103,7 +103,10 @@ EOT;
         $this->assertLoginWithCredentials($customer->getEmail(), 'monofony');
     }
 
-    private function assertLoginWithCredentials($username, $password): void
+    /**
+     * @param null|string $username
+     */
+    private function assertLoginWithCredentials(?string $username, string $password): void
     {
         $data =
             <<<EOT
