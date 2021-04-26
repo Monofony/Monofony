@@ -10,7 +10,7 @@ use Monofony\Component\Admin\Menu\AdminMenuBuilderInterface;
 
 final class AdminMenuBuilder implements AdminMenuBuilderInterface
 {
-    private $factory;
+    private FactoryInterface $factory;
 
     public function __construct(FactoryInterface $factory)
     {

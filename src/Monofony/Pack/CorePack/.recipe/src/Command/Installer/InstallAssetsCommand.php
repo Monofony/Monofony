@@ -12,10 +12,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InstallAssetsCommand extends Command
 {
-    private $directoryChecker;
-    private $commandsRunner;
-    private $publicDir;
-    private $environment;
+    private DirectoryChecker $directoryChecker;
+    private CommandsRunner $commandsRunner;
+    private string $publicDir;
+    private string $environment;
 
     public function __construct(
         DirectoryChecker $directoryChecker,

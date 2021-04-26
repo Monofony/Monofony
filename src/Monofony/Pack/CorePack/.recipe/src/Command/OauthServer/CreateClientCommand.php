@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateClientCommand extends Command
 {
-    private $clientManager;
+    private ClientManagerInterface $clientManager;
 
     public function __construct(ClientManagerInterface $clientManager)
     {

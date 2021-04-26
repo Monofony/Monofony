@@ -17,7 +17,7 @@ final class CommandDirectoryChecker
      */
     private $name;
 
-    private $filesystem;
+    private Filesystem $filesystem;
 
     public function __construct(Filesystem $filesystem)
     {

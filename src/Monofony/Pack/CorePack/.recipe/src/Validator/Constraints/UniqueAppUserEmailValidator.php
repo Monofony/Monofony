@@ -12,8 +12,8 @@ use Webmozart\Assert\Assert;
 
 final class UniqueAppUserEmailValidator extends ConstraintValidator
 {
-    private $canonicalizer;
-    private $appUserRepository;
+    private CanonicalizerInterface $canonicalizer;
+    private UserRepositoryInterface $appUserRepository;
 
     public function __construct(CanonicalizerInterface $canonicalizer, UserRepositoryInterface $appUserRepository)
     {

@@ -10,7 +10,7 @@ use Symfony\Component\Validator\ObjectInitializerInterface;
 
 final class CustomerInitializer implements ObjectInitializerInterface
 {
-    private $canonicalizer;
+    private CanonicalizerInterface $canonicalizer;
 
     public function __construct(CanonicalizerInterface $canonicalizer)
     {

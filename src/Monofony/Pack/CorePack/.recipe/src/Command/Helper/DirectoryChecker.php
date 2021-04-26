@@ -9,7 +9,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class DirectoryChecker
 {
-    private $commandDirectoryChecker;
+    private CommandDirectoryChecker $commandDirectoryChecker;
 
     public function __construct(CommandDirectoryChecker $commandDirectoryChecker)
     {

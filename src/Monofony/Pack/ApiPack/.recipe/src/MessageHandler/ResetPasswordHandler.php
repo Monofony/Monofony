@@ -17,10 +17,10 @@ use Webmozart\Assert\Assert;
 
 final class ResetPasswordHandler implements MessageHandlerInterface
 {
-    private $appUserRepository;
-    private $entityManager;
-    private $requestStack;
-    private $syliusResources;
+    private RepositoryInterface $appUserRepository;
+    private EntityManagerInterface $entityManager;
+    private RequestStack $requestStack;
+    private array $syliusResources;
 
     public function __construct(
         RepositoryInterface $appUserRepository,

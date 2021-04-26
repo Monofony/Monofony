@@ -1,5 +1,11 @@
 ## Change Log
 
+### v0.6.1 (2021/04/08 13:30 +00:00)
+
+#### Details
+
+- [#324](https://github.com/Monofony/Monofony/pull/324) Fix missing Doctrine migration (@loic425)
+
 ### v0.6.0 (2021/04/08 12:14 +00:00)
 
 TL;DR

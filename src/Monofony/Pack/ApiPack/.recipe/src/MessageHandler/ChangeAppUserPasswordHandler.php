@@ -14,9 +14,9 @@ use Webmozart\Assert\Assert;
 
 final class ChangeAppUserPasswordHandler implements MessageHandlerInterface
 {
-    private $passwordUpdater;
-    private $userRepository;
-    private $entityManager;
+    private PasswordUpdaterInterface $passwordUpdater;
+    private UserRepositoryInterface $userRepository;
+    private EntityManagerInterface $entityManager;
 
     public function __construct(
         PasswordUpdaterInterface $passwordUpdater,

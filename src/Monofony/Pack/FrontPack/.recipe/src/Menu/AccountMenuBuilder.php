@@ -14,8 +14,8 @@ final class AccountMenuBuilder implements AccountMenuBuilderInterface
 {
     public const EVENT_NAME = 'sylius.menu.app.account';
 
-    private $factory;
-    private $eventDispatcher;
+    private FactoryInterface $factory;
+    private EventDispatcherInterface $eventDispatcher;
 
     public function __construct(FactoryInterface $factory, EventDispatcherInterface $eventDispatcher)
     {

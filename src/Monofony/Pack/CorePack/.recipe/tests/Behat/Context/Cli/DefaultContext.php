@@ -12,9 +12,9 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class DefaultContext implements Context
 {
-    protected $kernel;
+    protected KernelInterface $kernel;
     protected $application;
-    protected static $sharedTester;
+    protected static ?CommandTester $sharedTester;
     protected $command;
     protected $questionHelper;
 
@@ -23,12 +23,12 @@ class DefaultContext implements Context
         $this->kernel = $kernel;
     }
 
-    public function setTester(CommandTester $tester): void
+    public function setTester(?CommandTester $tester): void
     {
         static::$sharedTester = $tester;
     }
 
-    public function getTester(): CommandTester
+    public function getTester(): ?CommandTester
     {
         return static::$sharedTester;
     }
