@@ -20,10 +20,10 @@
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",
         "sylius/resource-bundle": "^1.8",
-        "symfony/process": "^4.4 || ^5.1",
-        "symfony/serializer": "^4.4 || ^5.1",
-        "symfony/translation": "^4.4 || ^5.1",
-        "symfony/validator": "^4.4 || ^5.1",
+        "symfony/process": "^4.4 || ^5.2",
+        "symfony/serializer": "^4.4 || ^5.2",
+        "symfony/translation": "^4.4 || ^5.2",
+        "symfony/validator": "^4.4 || ^5.2",
         "vich/uploader-bundle": "^1.8"
     },
     "require-dev": {
