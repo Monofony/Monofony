@@ -115,7 +115,7 @@
         "phpstan/phpstan-webmozart-assert": "^0.12",
         "psr/event-dispatcher": "^1.0",
         "se/selenium-server-standalone": "^3.141",
-        "symfony/debug-bundle": "4.4.* || 5.2.*",
+        "symfony/debug-bundle": "^5.3.0",
         "symfony/web-profiler-bundle": "4.4.* || 5.2.*",
         "symplify/easy-coding-standard": "^8.0",
         "symplify/monorepo-builder": "^8.0",
