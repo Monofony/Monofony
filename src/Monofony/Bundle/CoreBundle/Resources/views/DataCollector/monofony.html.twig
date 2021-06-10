@@ -13,12 +13,12 @@
                 <span>{{ collector.version }}</span>
             </div>
             <div class="sf-toolbar-info-piece">
-                <b>Extensions</b>
-                {% for extension in collector.extensions %}
-                    <span class="sf-toolbar-status sf-toolbar-status-{{ extension.enabled ? 'green' : 'red' }}">
-                        {{ extension.name }}
-                    </span>
-                {% endfor %}
+                <b>Resources</b>
+                <span>
+                    <a href="https://docs.monofony.com" rel="help">
+                        Read Monofony Docs
+                    </a>
+                </span>
             </div>
         </div>
     {% endset %}
