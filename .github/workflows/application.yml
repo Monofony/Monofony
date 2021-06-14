@@ -23,8 +23,10 @@ jobs:
 
                 include:
                     -
-                        php: 7.4
-                        symfony: ""
+                        php: "8.0"
+                        symfony: "^5.2"
+                        node: "10.x"
+                        mysql: "5.7"
 
         steps:
             -
@@ -117,8 +119,10 @@ jobs:
 
                 include:
                     -
-                        php: 7.4
-                        symfony: ""
+                        php: "8.0"
+                        symfony: "^5.2"
+                        node: "10.x"
+                        mysql: "5.7"
 
         env:
             APP_ENV: test
@@ -260,8 +264,10 @@ jobs:
 
                 include:
                     -
-                        php: 7.4
-                        symfony: ""
+                        php: "8.0"
+                        symfony: "^5.2"
+                        node: "10.x"
+                        mysql: "5.7"
 
         env:
             APP_ENV: test
