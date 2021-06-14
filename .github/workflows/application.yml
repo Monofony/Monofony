@@ -406,6 +406,6 @@ jobs:
                 uses: actions/upload-artifact@v2
                 if: failure()
                 with:
-                    name: "Behat logs (JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
+                    name: "Behat logs (JS, PHP ${{ matrix.php }})"
                     path: etc/build/
                     if-no-files-found: ignore
