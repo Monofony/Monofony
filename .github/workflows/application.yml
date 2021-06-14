@@ -18,8 +18,8 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 8.0]
-                symfony: [^4.4, 5.2.*, 5.3.*]
+                php: ["7.4", "8.0"]
+                symfony: ["^4.4", "5.2.*", "5.3.*"]
 
                 include:
                     -
@@ -111,9 +111,9 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 8.0]
-                symfony: [^4.4, 5.2.*, 5.3.*]
-                mysql: 5.7
+                php: ["7.4", "8.0"]
+                symfony: ["^4.4", "5.2.*", "5.3.*"]
+                mysql: ["5.7"]
 
                 include:
                     -
@@ -253,10 +253,10 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: [7.4, 8.0]
-                symfony: [^4.4, 5.2.*, 5.3.*]
-                mysql: 5.7
-                node: 10.x
+                php: ["7.4", "8.0"]
+                symfony: ["^4.4", "5.2.*", "5.3.*"]
+                node: ["10.x"]
+                mysql: ["5.7"]
 
                 include:
                     -
