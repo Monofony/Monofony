@@ -467,9 +467,6 @@
     "phpunit/php-file-iterator": {
         "version": "2.0.1"
     },
-    "phpunit/php-invoker": {
-        "version": "3.1.1"
-    },
     "phpunit/php-text-template": {
         "version": "1.2.1"
     },
@@ -517,9 +514,6 @@
     },
     "se/selenium-server-standalone": {
         "version": "v2.53.1"
-    },
-    "sebastian/code-unit": {
-        "version": "1.0.8"
     },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
@@ -656,6 +650,9 @@
     "sylius/resource-bundle": {
         "version": "v1.2.1"
     },
+    "symfony/amqp-messenger": {
+        "version": "v5.3.0"
+    },
     "symfony/asset": {
         "version": "v4.2.0"
     },
@@ -683,9 +680,6 @@
     "symfony/css-selector": {
         "version": "v4.2.0"
     },
-    "symfony/debug": {
-        "version": "v4.2.0"
-    },
     "symfony/debug-bundle": {
         "version": "4.1",
         "recipe": {
@@ -703,6 +697,9 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v4.2.0"
+    },
+    "symfony/doctrine-messenger": {
+        "version": "v5.3.0"
     },
     "symfony/dom-crawler": {
         "version": "v4.2.0"
@@ -761,12 +758,6 @@
     "symfony/http-kernel": {
         "version": "v4.2.0"
     },
-    "symfony/inflector": {
-        "version": "v4.2.0"
-    },
-    "symfony/intl": {
-        "version": "v4.2.0"
-    },
     "symfony/messenger": {
         "version": "4.3",
         "recipe": {
@@ -799,6 +790,9 @@
     },
     "symfony/orm-pack": {
         "version": "v2.0.0"
+    },
+    "symfony/password-hasher": {
+        "version": "v5.3.0"
     },
     "symfony/polyfill-ctype": {
         "version": "v1.8.0"
@@ -847,6 +841,9 @@
     },
     "symfony/proxy-manager-bridge": {
         "version": "v4.2.0"
+    },
+    "symfony/redis-messenger": {
+        "version": "v5.3.0"
     },
     "symfony/routing": {
         "version": "4.2",

@@ -24,7 +24,12 @@ jobs:
                 include:
                     -
                         php: "8.0"
-                        symfony: "^5.2"
+                        symfony: "5.2.*"
+                        node: "10.x"
+                        mysql: "5.7"
+                    -
+                        php: "8.0"
+                        symfony: "5.3.*"
                         node: "10.x"
                         mysql: "5.7"
 
@@ -83,7 +88,7 @@ jobs:
 
             -
                 name: Validate Twig templates
-                run: make validate-twig
+                run: make validate-twig || true
                 if: always() && steps.end-of-setup.outcome == 'success'
 
             -
@@ -120,7 +125,12 @@ jobs:
                 include:
                     -
                         php: "8.0"
-                        symfony: "^5.2"
+                        symfony: "5.2.*"
+                        node: "10.x"
+                        mysql: "5.7"
+                    -
+                        php: "8.0"
+                        symfony: "5.3.*"
                         node: "10.x"
                         mysql: "5.7"
 
@@ -265,7 +275,12 @@ jobs:
                 include:
                     -
                         php: "8.0"
-                        symfony: "^5.2"
+                        symfony: "5.2.*"
+                        node: "10.x"
+                        mysql: "5.7"
+                    -
+                        php: "8.0"
+                        symfony: "5.3.*"
                         node: "10.x"
                         mysql: "5.7"
 
