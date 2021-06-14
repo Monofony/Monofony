@@ -656,9 +656,6 @@
     "sylius/resource-bundle": {
         "version": "v1.2.1"
     },
-    "symfony/amqp-messenger": {
-        "version": "v5.2.1"
-    },
     "symfony/asset": {
         "version": "v4.2.0"
     },
@@ -706,9 +703,6 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v4.2.0"
-    },
-    "symfony/doctrine-messenger": {
-        "version": "v5.2.1"
     },
     "symfony/dom-crawler": {
         "version": "v4.2.0"
@@ -806,9 +800,6 @@
     "symfony/orm-pack": {
         "version": "v2.0.0"
     },
-    "symfony/password-hasher": {
-        "version": "v5.3.0"
-    },
     "symfony/polyfill-ctype": {
         "version": "v1.8.0"
     },
@@ -856,9 +847,6 @@
     },
     "symfony/proxy-manager-bridge": {
         "version": "v4.2.0"
-    },
-    "symfony/redis-messenger": {
-        "version": "v5.2.1"
     },
     "symfony/routing": {
         "version": "4.2",

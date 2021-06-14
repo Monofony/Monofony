@@ -313,11 +313,6 @@ jobs:
                 run: composer config extra.symfony.require "${{ matrix.symfony }}"
 
             -
-                name: Restrict Symfony version
-                if: matrix.symfony != ''
-                run: composer config extra.symfony.require "${{ matrix.symfony }}"
-
-            -
                 name: Install certificates
                 run: symfony server:ca:install
 
