@@ -20,32 +20,16 @@ use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 
 final class MonofonyDataCollector extends DataCollector
 {
-    public function __construct(array $bundles)
+    public function __construct()
     {
         $this->data = [
             'version' => MonofonyCoreBundle::VERSION,
-            'extensions' => [
-                'MonofonyApiBundle' => ['name' => 'API', 'enabled' => false],
-                'MonofonyAdminBundle' => ['name' => 'Admin', 'enabled' => false],
-                'MonofonyFrontBundle' => ['name' => 'Front', 'enabled' => false],
-            ],
         ];
-
-        foreach (array_keys($this->data['extensions']) as $bundleName) {
-            if (isset($bundles[$bundleName])) {
-                $this->data['extensions'][$bundleName]['enabled'] = true;
-            }
-        }
     }
 
     public function getVersion(): string
     {
         return $this->data['version'];
-    }
-
-    public function getExtensions(): array
-    {
-        return $this->data['extensions'];
     }
 
     /**
@@ -67,6 +51,6 @@ final class MonofonyDataCollector extends DataCollector
      */
     public function getName(): string
     {
-        return 'app';
+        return 'monofony';
     }
 }
