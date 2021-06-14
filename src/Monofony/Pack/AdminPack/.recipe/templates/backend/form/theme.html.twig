@@ -1,5 +1,16 @@
 {% extends '@SyliusUi/Form/theme.html.twig' %}
 
+{% block form_row -%}
+    <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        {{- form_label(form) -}}
+        {{- form_widget(form) -}}
+        {% if form.vars.help ?? false %}
+            {{- form_help(form) -}}
+        {% endif %}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock form_row %}
+
 {%- block date_widget -%}
     <div class="three fields">
         {{- form_widget(form.day) -}}

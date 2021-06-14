@@ -10,8 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 final class ChangeAppUserPassword implements AppUserIdAwareInterface
 {
-    /** @var int|null */
-    public $appUserId;
+    public ?int $appUserId = null;
 
     /**
      * @var string|null
@@ -21,16 +20,14 @@ final class ChangeAppUserPassword implements AppUserIdAwareInterface
      *
      * @Serializer\Groups({"customer:password:write"})
      */
-    public $currentPassword;
+    public ?string $currentPassword;
 
     /**
-     * @var string|null
-     *
      * @Assert\NotBlank
      *
      * @Serializer\Groups({"customer:password:write"})
      */
-    public $newPassword;
+    public ?string $newPassword;
 
     public function __construct(?string $currentPassword = null, ?string $newPassword = null)
     {

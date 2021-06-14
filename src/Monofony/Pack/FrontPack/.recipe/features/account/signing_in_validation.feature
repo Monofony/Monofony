@@ -23,7 +23,7 @@ Feature: Signing in to the website validation
         And I specify the username as "sylius@example.com"
         And I specify the password as "sylius"
         And I try to log in
-        Then I should be notified about disabled account
+        Then I should be notified about bad credentials
         And I should not be logged in
 
     @ui

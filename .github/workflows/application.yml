@@ -313,11 +313,6 @@ jobs:
                 run: composer config extra.symfony.require "${{ matrix.symfony }}"
 
             -
-                name: Restrict Symfony version
-                if: matrix.symfony != ''
-                run: composer config extra.symfony.require "${{ matrix.symfony }}"
-
-            -
                 name: Install certificates
                 run: symfony server:ca:install
 
@@ -406,6 +401,15 @@ jobs:
                 uses: actions/upload-artifact@v2
                 if: failure()
                 with:
-                    name: "Behat logs (JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
+                    name: "Behat logs (JS, PHP ${{ matrix.php }})"
                     path: etc/build/
+                    if-no-files-found: ignore
+
+            -
+                name: Upload Symfony logs
+                uses: actions/upload-artifact@v2
+                if: failure()
+                with:
+                    name: "Symfony logs (JS, PHP ${{ matrix.php }})"
+                    path: var/log/
                     if-no-files-found: ignore
