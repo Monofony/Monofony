@@ -105,7 +105,7 @@
         "friends-of-behat/variadic-extension": "^1.1",
         "friends-of-phpspec/phpspec-code-coverage": "^5.0",
         "friendsofphp/php-cs-fixer": "^2.13",
-        "infection/infection": "^0.18",
+        "infection/infection": "^0.21",
         "lchrusciel/api-test-case": "^5.1",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
         "phpspec/phpspec": "^7.0",
