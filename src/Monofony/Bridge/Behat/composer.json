@@ -14,7 +14,7 @@
         "friends-of-behat/mink-extension": "^2.4",
         "friends-of-behat/page-object-extension": "^0.3",
         "friends-of-behat/symfony-extension": "^2.0",
-        "monofony/core": "^0.6",
+        "monofony/core": "^0.7",
         "monofony/user": "^1.10",
         "symfony/finder": "^4.4 || ^5.2",
         "symfony/routing": "^4.4 || ^5.2",
@@ -48,7 +48,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.6-dev"
+            "dev-master": "0.7-dev"
         }
     }
 }

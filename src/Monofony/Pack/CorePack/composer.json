@@ -9,11 +9,11 @@
         "doctrine/orm": "^2.5",
         "fakerphp/faker": "^1.14",
         "liip/imagine-bundle": "^2.2",
-        "monofony/core-bundle": "^0.6",
-        "monofony/core-contracts": "^0.6",
+        "monofony/core-bundle": "^0.7",
+        "monofony/core-contracts": "^0.7",
         "monofony/customer-bundle": "^1.10",
-        "monofony/fos-oauth-server-bridge": "^0.6",
-        "monofony/sylius-user-bridge": "^0.6",
+        "monofony/fos-oauth-server-bridge": "^0.7",
+        "monofony/sylius-user-bridge": "^0.7",
         "monofony/user": "^1.10",
         "monofony/user-bundle": "^1.10",
         "sylius/fixtures-bundle": "^1.7",
@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "behat/behat": "^3.2",
-        "monofony/behat-bridge": "^0.6",
+        "monofony/behat-bridge": "^0.7",
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
@@ -49,7 +49,7 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "0.6-dev"
+            "dev-master": "0.7-dev"
         }
     }
 }
