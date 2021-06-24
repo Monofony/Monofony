@@ -5,9 +5,9 @@
     "license": "MIT",
     "require": {
         "php": ">=7.4 || ^8.0",
-        "monofony/admin": "^0.6",
-        "monofony/admin-contracts": "^0.6",
-        "monofony/core-contracts": "^0.6",
+        "monofony/admin": "^0.7",
+        "monofony/admin-contracts": "^0.7",
+        "monofony/core-contracts": "^0.7",
         "monofony/ui-bundle": "^1.10",
         "sonata-project/block-bundle": "^4.2",
         "sylius/grid-bundle": "^1.9",
@@ -20,7 +20,7 @@
     "require-dev": {
         "behat/behat": "^3.2",
         "friends-of-behat/page-object-extension": "^0.3",
-        "monofony/behat-bridge": "^0.6",
+        "monofony/behat-bridge": "^0.7",
         "phpstan/phpstan": "^0.12"
     },
     "autoload": {
@@ -46,7 +46,7 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "0.6-dev"
+            "dev-master": "0.7-dev"
         }
     }
 }
