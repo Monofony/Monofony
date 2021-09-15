@@ -8,9 +8,6 @@
     "amphp/byte-stream": {
         "version": "v1.5.1"
     },
-    "api-platform/api-pack": {
-        "version": "v1.2.1"
-    },
     "api-platform/core": {
         "version": "2.5",
         "recipe": {
@@ -54,6 +51,9 @@
     },
     "coduo/php-to-string": {
         "version": "2.0.1"
+    },
+    "composer/package-versions-deprecated": {
+        "version": "1.11.99.2"
     },
     "composer/semver": {
         "version": "1.4.2"
@@ -467,6 +467,9 @@
     "phpunit/php-file-iterator": {
         "version": "2.0.1"
     },
+    "phpunit/php-invoker": {
+        "version": "3.1.1"
+    },
     "phpunit/php-text-template": {
         "version": "1.2.1"
     },
@@ -514,6 +517,9 @@
     },
     "se/selenium-server-standalone": {
         "version": "v2.53.1"
+    },
+    "sebastian/code-unit": {
+        "version": "1.0.8"
     },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
@@ -788,9 +794,6 @@
     "symfony/options-resolver": {
         "version": "v4.2.0"
     },
-    "symfony/orm-pack": {
-        "version": "v2.0.0"
-    },
     "symfony/password-hasher": {
         "version": "v5.3.0"
     },
@@ -880,9 +883,6 @@
     },
     "symfony/serializer": {
         "version": "v4.4.0"
-    },
-    "symfony/serializer-pack": {
-        "version": "v1.0.3"
     },
     "symfony/service-contracts": {
         "version": "v1.1.2"
