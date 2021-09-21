@@ -13,9 +13,9 @@ trait IdentifiableTrait
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected int $id;
+    protected ?int $id = null;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
