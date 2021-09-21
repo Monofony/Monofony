@@ -1,5 +1,11 @@
 ## Change Log
 
+### v0.7.1 (2021/09/21 21:13 +00:00)
+- [#349](https://github.com/Monofony/Monofony/pull/349) Fix identifiable trait (@loic425)
+- [#348](https://github.com/Monofony/Monofony/pull/348) Fix validating composer (@loic425)
+- [#345](https://github.com/Monofony/Monofony/pull/345) Bump path-parse from 1.0.6 to 1.0.7 (@dependabot[bot])
+- [#343](https://github.com/Monofony/Monofony/pull/343) Fix package versions (@loic425)
+- 
 ### v0.7.0 (2021/06/14 15:11 +00:00)
 - [#342](https://github.com/Monofony/Monofony/pull/342) Add support for Symfony 5.3 (@loic425)
 - [#340](https://github.com/Monofony/Monofony/pull/340) Fix data collector (@loic425)
