@@ -4,7 +4,7 @@
     "description": "Monofony FOS OAuth Server Bridge",
     "license": "MIT",
     "require": {
-        "php": ">=7.4 || ^8.0",
+        "php": "^8.0",
         "friendsofsymfony/oauth-server-bundle": "^1.6 || >2.0.0-alpha.0 ^2.0@dev"
     },
     "require-dev": {

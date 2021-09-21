@@ -4,7 +4,7 @@
     "description": "Monofony admin.",
     "license": "MIT",
     "require": {
-        "php": ">=7.4 || ^8.0",
+        "php": "^8.0",
         "knplabs/knp-menu": "^3.1",
         "monofony/admin-contracts": "^0.7",
         "monofony/core": "^0.7",
