@@ -8,7 +8,7 @@
         "knplabs/knp-menu": "^3.1",
         "monofony/admin-contracts": "^0.7",
         "monofony/core": "^0.7",
-        "symfony/routing": "^4.4 || ^5.2"
+        "symfony/routing": "^5.3 || ^6.0"
     },
     "autoload": {
         "psr-4": {
