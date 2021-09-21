@@ -467,9 +467,6 @@
     "phpunit/php-file-iterator": {
         "version": "2.0.1"
     },
-    "phpunit/php-invoker": {
-        "version": "3.1.1"
-    },
     "phpunit/php-text-template": {
         "version": "1.2.1"
     },
@@ -517,9 +514,6 @@
     },
     "se/selenium-server-standalone": {
         "version": "v2.53.1"
-    },
-    "sebastian/code-unit": {
-        "version": "1.0.8"
     },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"

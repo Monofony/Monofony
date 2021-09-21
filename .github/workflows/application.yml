@@ -19,19 +19,9 @@ jobs:
             fail-fast: false
             matrix:
                 php: ["7.4", "8.0"]
-                symfony: ["^4.4", "5.2.*", "5.3.*"]
-
-                include:
-                    -
-                        php: "8.0"
-                        symfony: "5.2.*"
-                        node: "10.x"
-                        mysql: "5.7"
-                    -
-                        php: "8.0"
-                        symfony: "5.3.*"
-                        node: "10.x"
-                        mysql: "5.7"
+                symfony: ["5.3.*", "5.4.*"]
+                node: ["10.x"]
+                mysql: ["5.7"]
 
         steps:
             -
@@ -119,20 +109,9 @@ jobs:
             fail-fast: false
             matrix:
                 php: ["7.4", "8.0"]
-                symfony: ["^4.4", "5.2.*", "5.3.*"]
+                symfony: ["5.3.*", "5.4.*"]
+                node: ["10.x"]
                 mysql: ["5.7"]
-
-                include:
-                    -
-                        php: "8.0"
-                        symfony: "5.2.*"
-                        node: "10.x"
-                        mysql: "5.7"
-                    -
-                        php: "8.0"
-                        symfony: "5.3.*"
-                        node: "10.x"
-                        mysql: "5.7"
 
         env:
             APP_ENV: test
@@ -268,21 +247,9 @@ jobs:
             fail-fast: false
             matrix:
                 php: ["7.4", "8.0"]
-                symfony: ["^4.4", "5.2.*", "5.3.*"]
+                symfony: ["5.3.*", "5.4.*"]
                 node: ["10.x"]
                 mysql: ["5.7"]
-
-                include:
-                    -
-                        php: "8.0"
-                        symfony: "5.2.*"
-                        node: "10.x"
-                        mysql: "5.7"
-                    -
-                        php: "8.0"
-                        symfony: "5.3.*"
-                        node: "10.x"
-                        mysql: "5.7"
 
         env:
             APP_ENV: test
