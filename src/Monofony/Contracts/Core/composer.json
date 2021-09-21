@@ -4,7 +4,7 @@
     "description": "Generic abstractions related to Core",
     "license": "MIT",
     "require": {
-        "php": ">=7.4 || ^8.0",
+        "php": "^8.0",
         "monofony/customer": "^1.10",
         "monofony/user": "^1.10"
     },

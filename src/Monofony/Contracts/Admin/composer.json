@@ -4,7 +4,7 @@
     "description": "Generic abstractions related to Admin",
     "license": "MIT",
     "require": {
-        "php": ">=7.4 || ^8.0"
+        "php": "^8.0"
     },
     "autoload": {
         "psr-4": {
