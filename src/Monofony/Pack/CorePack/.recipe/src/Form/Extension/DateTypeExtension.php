@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Form\Extension;
 
 use Symfony\Component\Form\AbstractTypeExtension;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,7 +20,6 @@ class DateTypeExtension extends AbstractTypeExtension
             ->setDefaults([
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'dd/MM/yyyy',
         ]);
     }
 
@@ -28,6 +28,6 @@ class DateTypeExtension extends AbstractTypeExtension
      */
     public static function getExtendedTypes(): iterable
     {
-        return [DateType::class];
+        return [DateType::class, DateTimeType::class];
     }
 }
