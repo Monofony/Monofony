@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.7.2 (2021/10/12 13:40 +00:00)
+- [#353](https://github.com/Monofony/Monofony/pull/353) Fix date filter (@loic425)
+
 ### v0.7.1 (2021/09/21 21:13 +00:00)
 - [#349](https://github.com/Monofony/Monofony/pull/349) Fix identifiable trait (@loic425)
 - [#348](https://github.com/Monofony/Monofony/pull/348) Fix validating composer (@loic425)
