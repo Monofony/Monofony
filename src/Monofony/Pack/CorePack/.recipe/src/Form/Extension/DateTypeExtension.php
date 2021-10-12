@@ -19,7 +19,6 @@ class DateTypeExtension extends AbstractTypeExtension
             ->setDefaults([
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'dd/MM/yyyy',
         ]);
     }
 
