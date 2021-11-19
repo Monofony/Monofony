@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 Users
 =====
 
@@ -12,3 +18,5 @@ that you need to notice.
     customers
 
 .. include:: /book/user/map.rst.inc
+
+.. _Monofony documentation: https://docs.monofony.com

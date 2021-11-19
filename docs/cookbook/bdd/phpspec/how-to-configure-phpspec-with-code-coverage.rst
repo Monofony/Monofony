@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to configure phpspec with code coverage
 ===========================================
 
@@ -22,3 +28,5 @@ Install phpdbg
     $
     $ # on max
     $ brew install php72-phpdbg
+
+.. _Monofony documentation: https://docs.monofony.com

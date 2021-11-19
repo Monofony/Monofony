@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 Deployment
 ==========
 
@@ -25,3 +31,5 @@ Deploy the production environment
 .. code-block:: bash
 
     $ bundle exec "cap production deploy"
+
+.. _Monofony documentation: https://docs.monofony.com

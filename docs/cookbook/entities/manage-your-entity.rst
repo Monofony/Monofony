@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to manage your new entity on the admin panel
 ================================================
 
@@ -66,3 +72,4 @@ Learn More
 
 .. _The whole configuration reference in sylius documentation: https://github.com/Sylius/SyliusGridBundle/blob/master/docs/configuration.md
 .. _Configuring grid in sylius documentation: https://github.com/Sylius/SyliusGridBundle/blob/master/docs/index.md
+.. _Monofony documentation: https://docs.monofony.com

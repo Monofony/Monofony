@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to use Phpspec to design your code
 --------------------------------------
 
@@ -17,3 +23,5 @@ Learn more
 .. note::
 
     To learn more, read the `Phpspec documentation <http://www.phpspec.net/en/stable/manual/introduction.html>`_.
+
+.. _Monofony documentation: https://docs.monofony.com

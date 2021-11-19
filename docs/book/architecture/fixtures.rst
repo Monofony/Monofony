@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 .. index::
    single: Fixtures
 
@@ -36,3 +42,5 @@ All files that serve for loading fixtures of Monofony are placed in the ``App/Fi
 
 And the specified data for fixtures is stored in the
 ``config/packages/sylius_fixtures.yaml`` file.
+
+.. _Monofony documentation: https://docs.monofony.com

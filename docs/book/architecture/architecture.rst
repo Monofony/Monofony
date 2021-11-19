@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 .. index::
    single: Architecture
 
@@ -52,3 +58,5 @@ Monofony uses a lot of libraries for various tasks:
 * `Imagine <https://github.com/liip/LiipImagineBundle>`_ for images processing, generating thumbnails and cropping
 * `Pagerfanta <https://github.com/whiteoctober/Pagerfanta>`_ for pagination
 * `Winzou State Machine <https://github.com/winzou/StateMachineBundle>`_ -  for the state machines handling
+
+.. _Monofony documentation: https://docs.monofony.com

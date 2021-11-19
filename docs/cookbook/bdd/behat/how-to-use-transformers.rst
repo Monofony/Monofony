@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to use transformers?
 ========================
 
@@ -115,3 +121,5 @@ Why are they so awesome? Let's describe them one by one:
 - ``@Transform /^(it|its|theirs)$/`` -> amazingly useful transformer, that returns last resource saved in ``SharedStorage``. It allows to simplify many steps used after creation/update (and so on) actions. Example: instead of writing ``When I create "Wade Wilson" customer/Then customer "Wade Wilson" should be registered`` just write ``When I create "Wade Wilson" customer/Then it should be registered``
 
 - ``@Transform /^(?:this|that|the) ([^"]+)$/`` -> similar to previous one, but returns resource saved with specific key, for example ``this promotion`` will return resource saved with ``promotion`` key in ``SharedStorage``
+
+.. _Monofony documentation: https://docs.monofony.com

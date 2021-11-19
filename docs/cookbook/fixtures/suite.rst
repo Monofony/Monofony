@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to use it on your suite
 ===========================
 
@@ -23,3 +29,5 @@ How to use it on your suite
                                     title: "Awesome article"
 
 it will generates 10 random articles and one custom with title ``Awesome article``.
+
+.. _Monofony documentation: https://docs.monofony.com

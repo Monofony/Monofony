@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to configure backend routes
 ===============================
 
@@ -43,3 +49,4 @@ Learn More
 * `Configuring routes in sylius documentation`_
 
 .. _Configuring routes in sylius documentation: https://github.com/Sylius/SyliusResourceBundle/blob/master/docs/routing.md
+.. _Monofony documentation: https://docs.monofony.com

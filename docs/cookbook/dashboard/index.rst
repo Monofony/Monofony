@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to create your own statistics
 =================================
 
@@ -39,3 +45,5 @@ Add custom logic to your statistic
 
 Because all statistics are services it's perfectly possible to do anything with them as long as the generate function
 returns a string. So you can inject any service you want trough Dependency Injection to build your statistic.
+
+.. _Monofony documentation: https://docs.monofony.com

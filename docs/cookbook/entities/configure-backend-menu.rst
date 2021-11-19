@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to configure backend menu
 =============================
 
@@ -35,3 +41,4 @@ To configure backend menu for your entity, you have to edit `src/Menu/AdminMenuB
         return $content;
     }
 
+.. _Monofony documentation: https://docs.monofony.com

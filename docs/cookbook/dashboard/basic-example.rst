@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 Basic example
 =============
 
@@ -39,3 +45,5 @@ This is a basic example. It fetches and renders the amount of registered custome
             return -1;
         }
     }
+
+.. _Monofony documentation: https://docs.monofony.com

@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 .. index::
     single: AdminUser
 
@@ -35,3 +41,5 @@ Learn more
 .. note::
 
     To learn more, read the `UserBundle documentation <https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusUserBundle/index.html>`_.
+
+.. _Monofony documentation: https://docs.monofony.com

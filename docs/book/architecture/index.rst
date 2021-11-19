@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 Architecture
 ============
 
@@ -16,3 +22,5 @@ that you need to notice.
     fixtures
 
 .. include:: /book/architecture/map.rst.inc
+
+.. _Monofony documentation: https://docs.monofony.com
