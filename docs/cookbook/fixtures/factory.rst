@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to configure a fixture factory
 ==================================
 
@@ -66,3 +72,5 @@ Thanks to services configuration, your new service is already registered and rea
 .. code-block:: bash
 
     $ bin/console debug:container App\Fixture\Factory\ArticleExampleFactory
+
+.. _Monofony documentation: https://docs.monofony.com

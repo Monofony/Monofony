@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to configure your first resource
 ====================================
 
@@ -128,3 +134,4 @@ Learn More
 .. _`Sylius Resource Bundle`: https://github.com/Sylius/SyliusResourceBundle/blob/master/docs/index.md
 .. _`Doctrine migrations`: https://symfony.com/doc/master/bundles/DoctrineMigrationsBundle/index.html
 .. _`default form type`: https://github.com/Sylius/SyliusResourceBundle/blob/master/src/Bundle/Form/Type/DefaultResourceType.php
+.. _Monofony documentation: https://docs.monofony.com

@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to add a new context?
 =========================
 
@@ -26,3 +32,5 @@ Then you can use it in your suite configuration:
 .. note::
 
     The context categories are usually one of ``cli``, ``hook``, ``setup``, ``transform``, ``ui``.
+
+.. _Monofony documentation: https://docs.monofony.com

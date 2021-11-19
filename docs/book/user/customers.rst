@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 .. index::
     single: Customer and AppUser
 
@@ -113,3 +119,5 @@ Learn more:
     To learn more read:
     * the `SyliusUserBundle documentation <https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusUserBundle/index.html>`_.
     * the `SyliusCustomerBundle documentation <https://docs.sylius.com/en/latest/components_and_bundles/bundles/SyliusCustomerBundle/index.html>`_.
+
+.. _Monofony documentation: https://docs.monofony.com

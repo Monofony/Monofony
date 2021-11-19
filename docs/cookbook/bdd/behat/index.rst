@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to use Behat to design your features
 ----------------------------------------
 
@@ -37,3 +43,4 @@ Learn more
     To learn more, read the `Behat documentation <http://behat.org/en/latest/guides.html>`_.
 
 .. _FriendsOfBehat/SymfonyExtension: https://github.com/FriendsOfBehat/SymfonyExtension
+.. _Monofony documentation: https://docs.monofony.com

@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to add a new page object?
 =============================
 
@@ -25,3 +31,5 @@ The simplest Symfony-based page looks like:
     There are some boilerplates for common pages, which you may use. The available parents are ``FriendsOfBehat\PageObjectExtension\Page\Page``
     and ``FriendsOfBehat\PageObjectExtension\Page\SymfonyPage``. It is not required for a page to extend any class as
     pages are POPOs (Plain Old PHP Objects).
+
+.. _Monofony documentation: https://docs.monofony.com

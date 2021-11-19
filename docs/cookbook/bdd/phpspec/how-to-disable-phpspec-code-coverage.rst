@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to disable phpspec code coverage
 ====================================
 
@@ -11,3 +17,5 @@ And just comment the content
 
     # extensions:
     #    LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension: ~
+
+.. _Monofony documentation: https://docs.monofony.com

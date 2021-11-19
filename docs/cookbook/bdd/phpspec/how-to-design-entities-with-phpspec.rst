@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to design entities with phpspec
 ===================================
 
@@ -205,3 +211,5 @@ Add author on your entity
     }
 
 That's all to design your first entity!
+
+.. _Monofony documentation: https://docs.monofony.com

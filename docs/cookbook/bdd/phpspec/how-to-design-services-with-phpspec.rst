@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 How to design services with phpspec
 ===================================
 
@@ -214,3 +220,5 @@ Add this method on your factory
     }
 
 And that's all to specify this simple article factory.
+
+.. _Monofony documentation: https://docs.monofony.com

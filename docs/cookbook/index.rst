@@ -1,3 +1,10 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
+
 The Cookbook
 ============
 
@@ -50,3 +57,5 @@ Dashboard
     dashboard/basic-example
 
 .. include:: /cookbook/dashboard/map.rst.inc
+
+.. _Monofony documentation: https://docs.monofony.com

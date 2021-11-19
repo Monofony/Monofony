@@ -1,3 +1,9 @@
+.. rst-class:: outdated
+
+.. danger::
+
+   This is an outdated documentation please read the new `Monofony documentation`_ instead.
+
 Monofony Documentation
 ======================
 
@@ -49,6 +55,7 @@ Deployment
 .. include:: /deployment/map.rst.inc
 
 .. _Monofony: https://twitter.com/hashtag/Monofony
+.. _Monofony documentation: https://docs.monofony.com
 .. _Sylius: https://sylius.com
 .. _`Symfony Framework`: http://symfony.com
 .. _`Quick Tour`: http://symfony.com/doc/current/quick_tour
