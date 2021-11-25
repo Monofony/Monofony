@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Command\Installer;
 
 use App\Command\Helper\CommandsRunner;
-use App\Command\Helper\DirectoryChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
@@ -15,27 +14,14 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class InstallSampleDataCommand extends Command
 {
-    /** @var DirectoryChecker */
-    private $directoryChecker;
-
-    /** @var CommandsRunner */
-    private $commandsRunner;
-
-    /** @var string */
-    private $publicDir;
-
-    /** @var string */
-    private $environment;
+    private CommandsRunner $commandsRunner;
+    private string $environment;
 
     public function __construct(
-        DirectoryChecker $directoryChecker,
         CommandsRunner $commandsRunner,
-        string $publicDir,
         string $environment
     ) {
-        $this->directoryChecker = $directoryChecker;
         $this->commandsRunner = $commandsRunner;
-        $this->publicDir = $publicDir;
         $this->environment = $environment;
 
         parent::__construct();
@@ -44,7 +30,7 @@ final class InstallSampleDataCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:install:sample-data')
@@ -59,7 +45,7 @@ EOT
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         /** @var QuestionHelper $questionHelper */
         $questionHelper = $this->getHelper('question');
@@ -77,15 +63,6 @@ EOT
             $outputStyle->writeln('Cancelled loading sample data.');
 
             return 0;
-        }
-
-        try {
-            $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->publicDir.'/media/', $output, $this->getName());
-            $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->publicDir.'/media/image/', $output, $this->getName());
-        } catch (\RuntimeException $exception) {
-            $outputStyle->writeln($exception->getMessage());
-
-            return 1;
         }
 
         $commands = [

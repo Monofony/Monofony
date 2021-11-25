@@ -10,7 +10,6 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             $publicDir: '%kernel.project_dir%/public'
-            $cacheDir: '%kernel.cache_dir%'
             $environment: '%kernel.environment%'
 
     app_core_bundle:

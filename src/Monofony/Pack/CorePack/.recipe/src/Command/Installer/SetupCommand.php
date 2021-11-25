@@ -43,7 +43,7 @@ final class SetupCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:install:setup')
@@ -58,7 +58,7 @@ EOT
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->setupAdministratorUser($input, $output);
 
@@ -133,10 +133,7 @@ EOT
             ;
     }
 
-    /**
-     * @return mixed
-     */
-    private function getAdministratorPassword(InputInterface $input, OutputInterface $output)
+    private function getAdministratorPassword(InputInterface $input, OutputInterface $output): string
     {
         /** @var QuestionHelper $questionHelper */
         $questionHelper = $this->getHelper('question');
