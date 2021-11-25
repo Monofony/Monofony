@@ -25,15 +25,9 @@ final class CommandExecutor
     }
 
     /**
-     * @param $command
-     * @param array           $parameters
-     * @param OutputInterface $output
-     *
-     * @return $this
-     *
      * @throws \Exception
      */
-    public function runCommand(string $command, $parameters = [], OutputInterface $output = null)
+    public function runCommand(string $command, array $parameters = [], OutputInterface $output = null): void
     {
         $parameters = array_merge(
             ['command' => $command],
@@ -53,20 +47,11 @@ final class CommandExecutor
 
             $errorMessage = sprintf('The command terminated with an error code: %u.', $exitCode);
             $this->output->writeln("<error>$errorMessage</error>");
-            $exception = new \Exception($errorMessage, $exitCode);
-
-            throw $exception;
+            throw new \Exception($errorMessage, $exitCode);
         }
-
-        return $this;
     }
 
-    /**
-     * Get default parameters.
-     *
-     * @return array
-     */
-    private function getDefaultParameters()
+    private function getDefaultParameters(): array
     {
         $defaultParameters = ['--no-debug' => true];
 

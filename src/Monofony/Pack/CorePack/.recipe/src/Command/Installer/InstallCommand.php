@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Command\Installer;
 
-use App\Command\Helper\DirectoryChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,8 +12,6 @@ use Symfony\Component\Process\Exception\RuntimeException;
 
 class InstallCommand extends Command
 {
-    private DirectoryChecker $directoryChecker;
-    private string $cacheDir;
     private ?CommandExecutor $commandExecutor = null;
 
     /**
@@ -37,18 +34,10 @@ class InstallCommand extends Command
         ],
     ];
 
-    public function __construct(DirectoryChecker $directoryChecker, string $cacheDir)
-    {
-        $this->directoryChecker = $directoryChecker;
-        $this->cacheDir = $cacheDir;
-
-        parent::__construct();
-    }
-
     /**
      * {@inheritdoc}
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('app:install')
@@ -62,7 +51,7 @@ EOT
     /**
      * {@inheritdoc}
      */
-    protected function initialize(InputInterface $input, OutputInterface $output)
+    protected function initialize(InputInterface $input, OutputInterface $output): void
     {
         $this->commandExecutor = new CommandExecutor($input, $output, $this->getApplication());
     }
@@ -72,13 +61,11 @@ EOT
      *
      * @throws \Exception
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $outputStyle = new SymfonyStyle($input, $output);
         $outputStyle->writeln('<info>Installing AppName...</info>');
         $outputStyle->writeln($this->getLogo());
-
-        $this->directoryChecker->ensureDirectoryExistsAndIsWritable($this->cacheDir, $output, $this->getName());
 
         $errored = false;
         foreach ($this->commands as $step => $command) {
@@ -103,10 +90,7 @@ EOT
         return 0;
     }
 
-    /**
-     * @return string
-     */
-    private function getProperFinalMessage(bool $errored)
+    private function getProperFinalMessage(bool $errored): string
     {
         if ($errored) {
             return '<info>AppName has been installed, but some error occurred.</info>';
@@ -115,10 +99,7 @@ EOT
         return '<info>AppName has been successfully installed.</info>';
     }
 
-    /**
-     * @return string
-     */
-    private function getLogo()
+    private function getLogo(): string
     {
         return '
         
