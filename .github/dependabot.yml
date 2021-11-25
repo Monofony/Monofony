@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: friends-of-phpspec/phpspec-code-coverage
+    versions:
+    - 6.0.0
+  - dependency-name: sensio/framework-extra-bundle
+    versions:
+    - 6.0.0
