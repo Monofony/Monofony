@@ -1,7 +1,7 @@
 parameters:
     paths:
         - ./
-    excludes_analyse:
+    excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
         - 'Tests/**.php'
