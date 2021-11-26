@@ -97,7 +97,7 @@ test-fixtures:
 .PHONY: test-fixtures
 
 install-package:
-	(cd $(path) && composer install --no-interaction --prefer-dist --no-scripts --no-plugins)
+	(cd $(path) && composer update --no-interaction --prefer-dist --no-scripts --no-plugins)
 .PHONY: test-fixtures
 
 test-package-phpstan:

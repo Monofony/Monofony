@@ -115,6 +115,7 @@ final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProvid
 
     private function getEntityManager(): EntityManagerInterface
     {
+        /** @var EntityManagerInterface $entityManager */
         $entityManager = $this->doctrineRegistry->getManager();
         Assert::isInstanceOf($entityManager, EntityManagerInterface::class);
 
