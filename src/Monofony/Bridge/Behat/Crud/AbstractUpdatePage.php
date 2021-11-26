@@ -41,9 +41,6 @@ abstract class AbstractUpdatePage extends SymfonyPage implements UpdatePageInter
     public function getValidationMessage($element): string
     {
         $foundElement = $this->getFieldElement($element);
-        if (null === $foundElement) {
-            throw new ElementNotFoundException($this->getSession(), 'Field element');
-        }
 
         $validationMessage = $foundElement->find('css', '.sylius-validation-error');
         if (null === $validationMessage) {
@@ -70,10 +67,10 @@ abstract class AbstractUpdatePage extends SymfonyPage implements UpdatePageInter
     /**
      * @throws ElementNotFoundException
      */
-    private function getFieldElement(string $element): ?NodeElement
+    private function getFieldElement(string $element): NodeElement
     {
         $element = $this->getElement(StringInflector::nameToCode($element));
-        while (null !== $element && !$element->hasClass('field')) {
+        while (!$element->hasClass('field')) {
             $element = $element->getParent();
         }
 
