@@ -20,10 +20,7 @@ use Monofony\Bridge\Behat\NotificationType;
 
 final class NotificationAccessor implements NotificationAccessorInterface
 {
-    /**
-     * @var Session
-     */
-    private $session;
+    private Session $session;
 
     public function __construct(Session $session)
     {

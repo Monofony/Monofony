@@ -22,20 +22,11 @@ use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 
 abstract class AbstractSecurityService implements SecurityServiceInterface
 {
-    /**
-     * @var SessionInterface
-     */
-    private $session;
+    private SessionInterface $session;
 
-    /**
-     * @var CookieSetterInterface
-     */
-    private $cookieSetter;
+    private CookieSetterInterface $cookieSetter;
 
-    /**
-     * @var string
-     */
-    private $sessionTokenVariable;
+    private string $sessionTokenVariable;
 
     /**
      * @param string $firewallContextName

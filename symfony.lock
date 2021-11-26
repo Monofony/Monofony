@@ -488,6 +488,9 @@
     "psr/log": {
         "version": "1.0.2"
     },
+    "rector/rector": {
+        "version": "0.11.60"
+    },
     "sanmai/pipeline": {
         "version": "v5.1.0"
     },
