@@ -6,8 +6,8 @@
     "require": {
         "api-platform/core": "^2.6",
         "api-platform/api-pack": "^1.2",
-        "monofony/api-contracts": "^0.7",
-        "monofony/core-contracts": "^0.7",
+        "monofony/api-contracts": "^0.8",
+        "monofony/core-contracts": "^0.8",
         "monofony/user": "^1.10",
         "monofony/user-bundle": "^1.10",
         "psr/event-dispatcher": "^1.0",
