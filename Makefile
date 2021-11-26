@@ -52,12 +52,6 @@ test-phpspec:
 	phpdbg -qrr vendor/bin/phpspec run --no-interaction -f dot
 .PHONY: test-phpspec
 
-test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/CorePack/.recipe/src
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/AdminPack/.recipe/src
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/FrontPack/.recipe/src
-.PHONY: test-phpstan
-
 test-psalm:
 	vendor/bin/psalm --show-info=false
 .PHONY: test-psalm

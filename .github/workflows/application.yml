@@ -95,11 +95,6 @@ jobs:
                 run: make test-psalm
                 if: always() && steps.end-of-setup.outcome == 'success'
 
-            -
-                name: Run PHPStan
-                run: make test-phpstan
-                if: always() && steps.end-of-setup.outcome == 'success'
-
     test-application-without-frontend:
         runs-on: ubuntu-18.04
 
