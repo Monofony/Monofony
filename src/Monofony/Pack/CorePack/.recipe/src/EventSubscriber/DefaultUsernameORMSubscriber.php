@@ -44,7 +44,7 @@ final class DefaultUsernameORMSubscriber implements EventSubscriber
                 continue;
             }
 
-            /** @var UserInterface $user */
+            /** @var UserInterface|null $user */
             $user = $customer->getUser();
 
             if (null === $user) {

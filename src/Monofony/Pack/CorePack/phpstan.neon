@@ -4,3 +4,6 @@ parameters:
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
+
+    ignoreErrors:
+        - '/Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::/'

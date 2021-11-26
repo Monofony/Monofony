@@ -1,4 +1,4 @@
-PHPSTAN_LEVEL?=1
+PHPSTAN_LEVEL?=4
 
 test: validate test-phpspec analyse test-phpunit test-installer test-fixtures test-behat test-doctrine-migrations
 .PHONY: test
