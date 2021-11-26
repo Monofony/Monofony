@@ -1,4 +1,5 @@
 PHPSTAN_LEVEL?=4
+PHPSTAN_MEMORY_LIMIT?=4G
 
 test: validate test-phpspec analyse test-phpunit test-installer test-fixtures test-behat test-doctrine-migrations
 .PHONY: test
@@ -53,9 +54,9 @@ test-phpspec:
 .PHONY: test-phpspec
 
 test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/CorePack/.recipe/src
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/AdminPack/.recipe/src
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/FrontPack/.recipe/src
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/CorePack/.recipe/src --memory-limit ${PHPSTAN_MEMORY_LIMIT} --debug
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/AdminPack/.recipe/src --memory-limit ${PHPSTAN_MEMORY_LIMIT} --debug
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/FrontPack/.recipe/src --memory-limit ${PHPSTAN_MEMORY_LIMIT} --debug
 .PHONY: test-phpstan
 
 test-psalm:
@@ -101,7 +102,7 @@ install-package:
 .PHONY: install-package
 
 test-package-phpstan:
-	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL})
+	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} --memory-limit ${PHPSTAN_MEMORY_LIMIT} --debug)
 .PHONY: test-package-phpstan
 
 clean-package:

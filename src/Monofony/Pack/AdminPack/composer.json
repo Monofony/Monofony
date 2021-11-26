@@ -26,7 +26,7 @@
         "behat/behat": "^3.2",
         "friends-of-behat/page-object-extension": "^0.3",
         "monofony/behat-bridge": "^0.8",
-        "phpstan/phpstan": "^0.12"
+        "phpstan/phpstan": "^1.0"
     },
     "autoload": {
         "exclude-from-classmap": [
