@@ -36,7 +36,7 @@ final class ResetPasswordHandler implements MessageHandlerInterface
 
     public function __invoke(ResetPassword $message): void
     {
-        /** @var UserInterface $user */
+        /** @var UserInterface|null $user */
         $user = $this->appUserRepository->findOneBy(['passwordResetToken' => $this->getToken()]);
 
         if (null === $user) {

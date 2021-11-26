@@ -32,9 +32,10 @@ final class CustomerContext implements Context
      */
     public function getOrCreateCustomerByEmail($email): object
     {
-        /** @var CustomerInterface $customer */
+        /** @var CustomerInterface|null $customer */
         $customer = $this->customerRepository->findOneBy(['email' => $email]);
         if (null === $customer) {
+            /** @var CustomerInterface $customer */
             $customer = $this->customerFactory->createNew();
             $customer->setEmail($email);
 

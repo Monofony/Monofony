@@ -24,6 +24,7 @@ parameters:
         - '/Call to an undefined static method Webmozart\\Assert\\Assert::all/'
         - '/Call to an undefined static method Webmozart\\Assert\\Assert::nullOr/'
         - '/Call to an undefined method Faker\\Generator::/'
+        - '/Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::/'
         - '/Access to an undefined property Faker\\Generator::/'
         - '/Method Mockery\\MockInterface::shouldReceive\(\) invoked with 1 parameter, 0 required/'
 

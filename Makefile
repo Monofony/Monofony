@@ -1,4 +1,4 @@
-PHPSTAN_LEVEL?=1
+PHPSTAN_LEVEL?=4
 
 test: validate test-phpspec analyse test-phpunit test-installer test-fixtures test-behat test-doctrine-migrations
 .PHONY: test
@@ -97,7 +97,7 @@ test-fixtures:
 .PHONY: test-fixtures
 
 install-package:
-	(cd $(path) && composer install --no-interaction --prefer-dist --no-scripts --no-plugins)
+	(cd $(path) && composer update --no-interaction --prefer-dist --no-scripts --no-plugins)
 .PHONY: test-fixtures
 
 test-package-phpstan:

@@ -1,6 +1,12 @@
+includes:
+	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
+
 parameters:
     paths:
         - .recipe
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
+
+    ignoreErrors:
+        - '/Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::/'

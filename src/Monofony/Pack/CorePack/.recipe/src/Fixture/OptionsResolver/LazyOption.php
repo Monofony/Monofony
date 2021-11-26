@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Fixture\OptionsResolver;
 
-use Doctrine\Common\Collections\Collection;
-use Sylius\Component\Resource\Repository\RepositoryInterface;
+use Doctrine\Persistence\ObjectRepository;
 use Symfony\Component\OptionsResolver\Options;
 use Webmozart\Assert\Assert;
 
@@ -27,14 +26,10 @@ use Webmozart\Assert\Assert;
  */
 final class LazyOption
 {
-    public static function randomOne(RepositoryInterface $repository): \Closure
+    public static function randomOne(ObjectRepository $repository): \Closure
     {
         return function (Options $options) use ($repository) {
             $objects = $repository->findAll();
-
-            if ($objects instanceof Collection) {
-                $objects = $objects->toArray();
-            }
 
             Assert::notEmpty($objects);
 
@@ -42,7 +37,7 @@ final class LazyOption
         };
     }
 
-    public static function randomOneOrNull(RepositoryInterface $repository, int $chanceOfRandomOne): \Closure
+    public static function randomOneOrNull(ObjectRepository $repository, int $chanceOfRandomOne): \Closure
     {
         return function (Options $options) use ($repository, $chanceOfRandomOne) {
             if (mt_rand(1, 100) > $chanceOfRandomOne) {
@@ -51,22 +46,14 @@ final class LazyOption
 
             $objects = $repository->findAll();
 
-            if ($objects instanceof Collection) {
-                $objects = $objects->toArray();
-            }
-
             return 0 === count($objects) ? null : $objects[array_rand($objects)];
         };
     }
 
-    public static function randomOnes(RepositoryInterface $repository, int $amount): \Closure
+    public static function randomOnes(ObjectRepository $repository, int $amount): \Closure
     {
         return function (Options $options) use ($repository, $amount) {
             $objects = $repository->findAll();
-
-            if ($objects instanceof Collection) {
-                $objects = $objects->toArray();
-            }
 
             $selectedObjects = [];
             for (; $amount > 0 && count($objects) > 0; --$amount) {
@@ -81,14 +68,14 @@ final class LazyOption
         };
     }
 
-    public static function all(RepositoryInterface $repository): \Closure
+    public static function all(ObjectRepository $repository): \Closure
     {
         return function (Options $options) use ($repository) {
             return $repository->findAll();
         };
     }
 
-    public static function findBy(RepositoryInterface $repository, string $field): \Closure
+    public static function findBy(ObjectRepository $repository, string $field): \Closure
     {
         return function (Options $options, $previousValues) use ($repository, $field) {
             if (null === $previousValues || [] === $previousValues) {
@@ -110,7 +97,7 @@ final class LazyOption
         };
     }
 
-    public static function findOneBy(RepositoryInterface $repository, string $field): \Closure
+    public static function findOneBy(ObjectRepository $repository, string $field): \Closure
     {
         return function (Options $options, $previousValue) use ($repository, $field) {
             if (null === $previousValue || [] === $previousValue) {

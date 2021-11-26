@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Crud;
 
+use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
@@ -39,9 +40,6 @@ abstract class AbstractCreatePage extends SymfonyPage implements CreatePageInter
     public function getValidationMessage(string $element): string
     {
         $foundElement = $this->getFieldElement($element);
-        if (null === $foundElement) {
-            throw new ElementNotFoundException($this->getSession(), 'Field element');
-        }
 
         $validationMessage = $foundElement->find('css', '.sylius-validation-error');
         if (null === $validationMessage) {
@@ -52,16 +50,12 @@ abstract class AbstractCreatePage extends SymfonyPage implements CreatePageInter
     }
 
     /**
-     * @param string $element
-     *
-     * @return \Behat\Mink\Element\NodeElement|null
-     *
      * @throws ElementNotFoundException
      */
-    private function getFieldElement($element)
+    private function getFieldElement(string $element): NodeElement
     {
         $element = $this->getElement($element);
-        while (null !== $element && !$element->hasClass('field')) {
+        while (!$element->hasClass('field')) {
             $element = $element->getParent();
         }
 
