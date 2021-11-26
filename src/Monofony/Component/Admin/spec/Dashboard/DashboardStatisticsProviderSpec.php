@@ -30,7 +30,8 @@ class DashboardStatisticsProviderSpec extends ObjectBehavior
     }
 
     function it_generate_statistics_for_each_providers(
-        StatisticInterface $firstStatistic, StatisticInterface $secondStatistic
+        StatisticInterface $firstStatistic,
+        StatisticInterface $secondStatistic
     ): void {
         $firstStatistic->generate()->shouldBeCalled();
         $secondStatistic->generate()->shouldBeCalled();

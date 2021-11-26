@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace spec\App\EventSubscriber;
 
-use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
+use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Component\User\Model\UserInterface;

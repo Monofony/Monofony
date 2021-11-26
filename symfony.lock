@@ -386,6 +386,9 @@
     "nikic/php-parser": {
         "version": "v4.2.2"
     },
+    "ocramius/package-versions": {
+        "version": "2.4.0"
+    },
     "ondram/ci-detector": {
         "version": "3.5.1"
     },

@@ -48,7 +48,8 @@ final class SetupCommand extends Command
         $this
             ->setName('app:install:setup')
             ->setDescription('AppName configuration setup.')
-            ->setHelp(<<<EOT
+            ->setHelp(
+                <<<EOT
 The <info>%command.name%</info> command allows user to configure basic AppName data.
 EOT
             )

@@ -18,8 +18,8 @@ test-behat: test-behat-without-javascript test-behat-with-javascript test-behat-
 .PHONY: test-behat
 
 validate-coding-standard:
-	vendor/bin/ecs check || true
-	vendor/bin/ecs check --config=ecs-recipe.php || true
+	vendor/bin/ecs check
+	vendor/bin/ecs check --config=ecs-recipe.php
 .PHONY: validate-coding-standard
 
 validate-composer:

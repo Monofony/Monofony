@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace spec\App\Form\Extension;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\OptionsResolver\OptionsResolver;

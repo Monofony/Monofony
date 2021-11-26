@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace spec\App\Dashboard\Statistics;
 
 use App\Dashboard\Statistics\CustomerStatistic;
 use App\Repository\CustomerRepository;
 use PhpSpec\ObjectBehavior;
-use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 
 class CustomerStatisticSpec extends ObjectBehavior

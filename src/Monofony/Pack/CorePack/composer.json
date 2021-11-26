@@ -29,7 +29,7 @@
     "require-dev": {
         "behat/behat": "^3.2",
         "monofony/behat-bridge": "^0.7",
-        "phpstan/phpstan": "^0.12"
+        "phpstan/phpstan": "^1.0"
     },
     "autoload": {
         "exclude-from-classmap": [
