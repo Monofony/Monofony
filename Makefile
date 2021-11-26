@@ -95,7 +95,7 @@ install-package:
 .PHONY: test-fixtures
 
 test-package-phpstan:
-	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL})
+	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} --debug)
 .PHONY: test-package-phpstan
 
 clean-package:
