@@ -42,7 +42,8 @@ class InstallCommand extends Command
         $this
             ->setName('app:install')
             ->setDescription('Installs AppName in your preferred environment.')
-            ->setHelp(<<<EOT
+            ->setHelp(
+                <<<EOT
 The <info>%command.name%</info> command installs AppName.
 EOT
             );

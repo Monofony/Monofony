@@ -58,9 +58,6 @@ class RegisterPage extends SymfonyPage
         $this->getDocument()->fillField('Last name', $lastName);
     }
 
-    /**
-     * @param null|string $password
-     */
     public function verifyPassword(?string $password): void
     {
         $this->getDocument()->fillField('Verification', $password);

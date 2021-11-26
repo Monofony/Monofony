@@ -32,7 +32,8 @@ class InstallAssetsCommand extends Command
         $this
             ->setName('app:install:assets')
             ->setDescription('Installs all AppName assets.')
-            ->setHelp(<<<EOT
+            ->setHelp(
+                <<<EOT
 The <info>%command.name%</info> command downloads and installs all AppName media assets.
 EOT
             )

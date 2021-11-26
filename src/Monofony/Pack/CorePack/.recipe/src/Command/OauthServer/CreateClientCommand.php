@@ -43,7 +43,8 @@ class CreateClientCommand extends Command
                 'Sets allowed grant type for client.',
                 ['password', 'access_token', 'refresh_token']
             )
-            ->setHelp(<<<EOT
+            ->setHelp(
+                <<<EOT
 The <info>%command.name%</info>command creates a new client.
 <info>php %command.full_name% [--redirect-uri=...] [--grant-type=...] name</info>
 EOT

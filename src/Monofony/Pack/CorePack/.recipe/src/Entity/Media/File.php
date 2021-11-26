@@ -22,8 +22,6 @@ abstract class File implements FileInterface, ResourceInterface
     protected ?\SplFileInfo $file = null;
 
     /**
-     * @var string|null
-     *
      * @ORM\Column(type="string")
      *
      * @Serializer\Groups({"Default", "Detailed"})

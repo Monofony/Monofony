@@ -115,7 +115,7 @@
         "friends-of-behat/symfony-extension": "^2.0",
         "friends-of-behat/variadic-extension": "^1.1",
         "friends-of-phpspec/phpspec-code-coverage": "^5.0",
-        "friendsofphp/php-cs-fixer": "^2.13",
+        "friendsofphp/php-cs-fixer": "^3.0",
         "infection/infection": "^0.18",
         "lchrusciel/api-test-case": "^5.1",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
@@ -128,7 +128,7 @@
         "se/selenium-server-standalone": "^3.141",
         "symfony/debug-bundle": "^5.3 || ^6.0",
         "symfony/web-profiler-bundle": "^5.3 || ^6.0",
-        "symplify/easy-coding-standard": "^8.0",
+        "symplify/easy-coding-standard": "^9.0",
         "symplify/monorepo-builder": "^8.0",
         "vimeo/psalm": "^4.3"
     },
