@@ -25,7 +25,7 @@ final class AppUserIdentifierNormalizer implements AppUserIdentifierNormalizerIn
     {
         $user = $this->security->getUser();
 
-        if (null === $user || !$user instanceof AppUserInterface) {
+        if (!$user instanceof AppUserInterface) {
             throw new AccessDeniedHttpException();
         }
 

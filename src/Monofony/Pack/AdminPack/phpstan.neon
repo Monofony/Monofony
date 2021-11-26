@@ -1,7 +1,7 @@
 parameters:
     paths:
         - .recipe
-    excludes_analyse:
+    excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
         - .recipe/src/Dashboard/Statistics/CustomerStatistic.php
