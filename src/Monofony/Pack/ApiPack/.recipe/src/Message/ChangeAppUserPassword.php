@@ -13,8 +13,6 @@ final class ChangeAppUserPassword implements AppUserIdAwareInterface
     public ?int $appUserId = null;
 
     /**
-     * @var string|null
-     *
      * @Assert\NotBlank
      * @SecurityAssert\UserPassword(message="sylius.user.plainPassword.wrong_current")
      *

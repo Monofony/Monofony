@@ -17,7 +17,6 @@ use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
 use DMore\ChromeDriver\ChromeDriver;
 use FriendsOfBehat\SymfonyExtension\Driver\SymfonyDriver;
-use FriendsOfBehat\SymfonyExtension\Mink\MinkParameters;
 use Symfony\Component\BrowserKit\Cookie;
 
 final class CookieSetter implements CookieSetterInterface

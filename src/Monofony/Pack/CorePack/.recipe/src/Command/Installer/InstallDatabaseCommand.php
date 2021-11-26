@@ -37,7 +37,8 @@ class InstallDatabaseCommand extends Command
         $this
             ->setName('app:install:database')
             ->setDescription('Install AppName database.')
-            ->setHelp(<<<EOT
+            ->setHelp(
+                <<<EOT
 The <info>%command.name%</info> command creates AppName database.
 EOT
             )

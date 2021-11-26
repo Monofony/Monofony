@@ -17,6 +17,8 @@ For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
 EOM;
 
+    $containerConfigurator->import(SetList::SYMFONY);
+
     $services = $containerConfigurator->services();
     $services
         ->set(DeclareStrictTypesFixer::class)
@@ -32,7 +34,6 @@ EOM;
     ;
 
     $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::SETS, [SetList::SYMFONY]);
     $parameters->set(Option::PATHS, [__DIR__.'/src']);
     $parameters->set(Option::SKIP, [
         __DIR__.'/**/*Spec.php',
