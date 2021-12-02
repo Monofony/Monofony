@@ -10,15 +10,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 final class ResetPassword
 {
     /**
-     * @var string|null
-     *
      * @Assert\NotBlank
-     *
      * @Serializer\Groups({"customer:write"})
      */
-    public $password;
+    public ?string $password = null;
 
-    public function __construct(string $password = null)
+    public function __construct(?string $password = null)
     {
         $this->password = $password;
     }
