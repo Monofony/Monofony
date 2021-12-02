@@ -22,8 +22,7 @@ class AdminAvatar extends File implements AdminAvatarInterface
      * {@inheritdoc}
      *
      * @Vich\UploadableField(mapping="admin_avatar", fileNameProperty="path")
-     *
-     * @Assert\File(maxSize="6000000", mimeTypes={"image/*"})
      */
+    #[\Symfony\Component\Validator\Constraints\File(maxSize: '6000000', mimeTypes: ['image/*'])]
     protected ?\SplFileInfo $file = null;
 }
