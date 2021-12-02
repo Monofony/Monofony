@@ -12,10 +12,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 final class CommandDirectoryChecker
 {
-    /**
-     * @var string
-     */
-    private $name;
+    private ?string $name = null;
 
     private Filesystem $filesystem;
 

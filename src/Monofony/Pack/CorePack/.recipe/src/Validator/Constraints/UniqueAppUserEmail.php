@@ -11,6 +11,5 @@ use Symfony\Component\Validator\Constraint;
  */
 final class UniqueAppUserEmail extends Constraint
 {
-    /** @var string */
-    public $message = 'sylius.user.email.unique';
+    public string $message = 'sylius.user.email.unique';
 }
