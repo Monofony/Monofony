@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
+use Faker\Generator;
+use Faker\Factory;
 use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\OptionsResolver\Options;
@@ -11,20 +13,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleFactoryInterface
 {
-    /**
-     * @var FactoryInterface
-     */
-    private $adminUserFactory;
+    private FactoryInterface $adminUserFactory;
 
-    /**
-     * @var \Faker\Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    /**
-     * @var OptionsResolver
-     */
-    private $optionsResolver;
+    private OptionsResolver $optionsResolver;
 
     /**
      * AdminUserExampleFactory constructor.
@@ -33,7 +26,7 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
     {
         $this->adminUserFactory = $adminUserFactory;
 
-        $this->faker = \Faker\Factory::create();
+        $this->faker = Factory::create();
         $this->optionsResolver = new OptionsResolver();
 
         $this->configureOptions($this->optionsResolver);

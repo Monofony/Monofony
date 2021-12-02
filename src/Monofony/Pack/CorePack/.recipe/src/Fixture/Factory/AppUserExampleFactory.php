@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
+use Faker\Generator;
+use Faker\Factory;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
@@ -12,25 +14,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFactoryInterface
 {
-    /**
-     * @var FactoryInterface
-     */
-    private $appUserFactory;
+    private FactoryInterface $appUserFactory;
 
-    /**
-     * @var FactoryInterface
-     */
-    private $customerFactory;
+    private FactoryInterface $customerFactory;
 
-    /**
-     * @var \Faker\Generator
-     */
-    private $faker;
+    private Generator $faker;
 
-    /**
-     * @var OptionsResolver
-     */
-    private $optionsResolver;
+    private OptionsResolver $optionsResolver;
 
     /**
      * AppUserExampleFactory constructor.
@@ -40,7 +30,7 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
         $this->appUserFactory = $appUserFactory;
         $this->customerFactory = $customerFactory;
 
-        $this->faker = \Faker\Factory::create();
+        $this->faker = Factory::create();
         $this->optionsResolver = new OptionsResolver();
 
         $this->configureOptions($this->optionsResolver);

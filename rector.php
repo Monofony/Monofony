@@ -35,7 +35,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::AUTO_IMPORT_NAMES, true);
     $parameters->set(Option::IMPORT_SHORT_CLASSES, false);
 //
-//    $containerConfigurator->import(SymfonySetList::SYMFONY_44);
+    $containerConfigurator->import(SymfonySetList::SYMFONY_44);
 //    $containerConfigurator->import(SymfonySetList::SYMFONY_52);
 //    $containerConfigurator->import(SymfonySetList::SYMFONY_CODE_QUALITY);
 //    $containerConfigurator->import(SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION);

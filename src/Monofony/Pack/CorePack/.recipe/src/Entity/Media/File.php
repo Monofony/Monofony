@@ -29,11 +29,9 @@ abstract class File implements FileInterface, ResourceInterface
     protected ?string $path = null;
 
     /**
-     * @var \DateTimeInterface|null
-     *
      * @ORM\Column(type="datetime")
      */
-    protected $createdAt;
+    protected \DateTimeInterface|\DateTime $createdAt;
 
     /**
      * @var \DateTimeInterface|null
