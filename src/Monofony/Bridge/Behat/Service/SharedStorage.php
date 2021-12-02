@@ -15,11 +15,9 @@ namespace Monofony\Bridge\Behat\Service;
 
 final class SharedStorage implements SharedStorageInterface
 {
-    /** @var array */
-    private $clipboard = [];
+    private array $clipboard = [];
 
-    /** @var string|null */
-    private $latestKey;
+    private ?string $latestKey = null;
 
     /**
      * {@inheritdoc}

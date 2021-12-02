@@ -23,8 +23,7 @@ use Webmozart\Assert\Assert;
 
 abstract class AbstractIndexPage extends SymfonyPage implements IndexPageInterface
 {
-    /** @var TableAccessorInterface */
-    private $tableAccessor;
+    private TableAccessorInterface $tableAccessor;
 
     public function __construct(
         Session $session,
