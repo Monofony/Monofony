@@ -28,26 +28,28 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
 
     private string $sessionTokenVariable;
 
-    /**
-     * @param string $firewallContextName
-     */
-    public function __construct(SessionInterface $session, CookieSetterInterface $cookieSetter, $firewallContextName)
+    private string $firewallContextName;
+
+    public function __construct(SessionInterface $session, CookieSetterInterface $cookieSetter, string $firewallContextName)
     {
         $this->session = $session;
         $this->cookieSetter = $cookieSetter;
         $this->sessionTokenVariable = sprintf('_security_%s', $firewallContextName);
+        $this->firewallContextName = $firewallContextName;
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @psalm-suppress InvalidArgument
      */
-    public function logIn(UserInterface $user)
+    public function logIn(UserInterface $user): void
     {
-        $token = new UsernamePasswordToken($user, $user->getPassword(), 'randomstringbutnotnull', $user->getRoles());
+        $token = new UsernamePasswordToken($user, $user->getPassword(), $this->firewallContextName, $user->getRoles());
         $this->setToken($token);
     }
 
-    public function logOut()
+    public function logOut(): void
     {
         $this->session->set($this->sessionTokenVariable, null);
         $this->session->save();
@@ -58,7 +60,7 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
     /**
      * {@inheritdoc}
      */
-    public function getCurrentToken()
+    public function getCurrentToken(): TokenInterface
     {
         $serializedToken = $this->session->get($this->sessionTokenVariable);
 
@@ -72,7 +74,7 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
     /**
      * {@inheritdoc}
      */
-    public function restoreToken(TokenInterface $token)
+    public function restoreToken(TokenInterface $token): void
     {
         $this->setToken($token);
     }

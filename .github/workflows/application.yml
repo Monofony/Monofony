@@ -20,7 +20,7 @@ jobs:
             matrix:
                 php: ["8.0"]
                 symfony: ["5.3.*", "5.4.*"]
-                node: ["10.x"]
+                node: ["14.x"]
                 mysql: ["5.7"]
 
         steps:
@@ -40,7 +40,9 @@ jobs:
             -
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
-                run: composer config extra.symfony.require "${{ matrix.symfony }}"
+                run: |
+                    composer global require --no-progress --no-scripts --no-plugins "symfony/flex:1.13.4"
+                    composer config extra.symfony.require "${{ matrix.symfony }}"
 
             -
                 name: Get Composer cache directory
@@ -100,146 +102,10 @@ jobs:
                 run: make test-phpstan
                 if: always() && steps.end-of-setup.outcome == 'success'
 
-    test-application-without-frontend:
+    test-application:
         runs-on: ubuntu-18.04
 
-        name: "Test non-JS application (PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, MySQL ${{ matrix.mysql }})"
-
-        strategy:
-            fail-fast: false
-            matrix:
-                php: ["8.0"]
-                symfony: ["5.3.*", "5.4.*"]
-                node: ["10.x"]
-                mysql: ["5.7"]
-
-        env:
-            APP_ENV: test
-            DATABASE_URL: "mysql://root:root@127.0.0.1/monofony?serverVersion=${{ matrix.mysql }}"
-
-        steps:
-            -   uses: actions/checkout@v2
-
-            -
-                name: Shutdown default MySQL
-                run: sudo service mysql stop
-
-            -
-                name: Setup MySQL
-                uses: mirromutth/mysql-action@v1.1
-                with:
-                    mysql version: "${{ matrix.mysql }}"
-                    mysql root password: "root"
-
-            -
-                name: Setup PHP
-                uses: shivammathur/setup-php@v2
-                with:
-                    php-version: "${{ matrix.php }}"
-                    ini-values: date.timezone=Europe/Paris, opcache.enable=1, opcache.enable_cli=1, opcache.memory_consumption=256, opcache.max_accelerated_files=32531, opcache.interned_strings_buffer=8, opcache.validate_timestamps=0, opcache.save_comments=1, opcache.fast_shutdown=0
-                    extensions: intl, gd, opcache, mysql, pdo_mysql, :xdebug
-                    tools: symfony
-                    coverage: none
-
-            -
-                name: Restrict Symfony version
-                if: matrix.symfony != ''
-                run: composer config extra.symfony.require "${{ matrix.symfony }}"
-
-            -
-                name: Get Composer cache directory
-                id: composer-cache
-                run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            -
-                name: Cache Composer
-                uses: actions/cache@v2
-                with:
-                    path: ${{ steps.composer-cache.outputs.dir }}
-                    key: ${{ runner.os }}-php-${{ matrix.php }}-symfony-${{ matrix.symfony }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
-                    restore-keys: |
-                        ${{ runner.os }}-php-${{ matrix.php }}-symfony-${{ matrix.symfony }}-composer-
-
-            -
-                name: Install dependencies
-                if: steps.composer-cache.outputs.cache-hit != 'true'
-                run: composer update --no-interaction --no-scripts
-
-            -
-                name: Dump the environment
-                run: |
-                    echo "DATABASE_URL=$DATABASE_URL" >> .env.$APP_ENV
-                    composer dump-env $APP_ENV
-
-            -
-                name: Cache Node packages
-                uses: actions/cache@v2
-                with:
-                    path: '**/node_modules'
-                    key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-            -
-                name: Install node packages
-                if: steps.yarn-cache.outputs.cache-hit != 'true'
-                run: |
-                    yarn install
-                    yarn build
-
-            -
-                name: Warmup cache
-                run: bin/console cache:warmup
-
-            -   name: Prepare application database
-                run: |
-                    APP_DEBUG=1 bin/console doctrine:database:create -vvv
-                    bin/console doctrine:migrations:migrate -n -vvv
-
-            -
-                name: Validate Doctrine mapping
-                run: make validate-doctrine-schema
-                if: always() && steps.end-of-setup.outcome == 'success'
-
-            -
-                name: Test provided migrations
-                run: make test-doctrine-migrations
-
-            -
-                name: Test installer
-                run: make test-installer
-
-            -
-                name: Load fixtures
-                run: make test-fixtures
-
-            -
-                name: Run PHPSpec
-                run: make test-phpspec
-
-            -
-                name: Run PHPUnit
-                run: make test-phpunit
-
-            -
-                name: Run CLI Behat
-                run: make test-behat-with-cli
-
-            -
-                name: Run non-JS Behat
-                run: make test-behat-without-javascript
-
-            -
-                name: Upload Behat logs
-                uses: actions/upload-artifact@v2
-                if: failure()
-                with:
-                    name: "Behat logs (non-JS, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }})"
-                    path: etc/build/
-                    if-no-files-found: ignore
-
-    test-application-with-frontend:
-        runs-on: ubuntu-18.04
-
-        name: "Test JS application (PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, MySQL ${{ matrix.mysql }})"
+        name: "Test application (PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, MySQL ${{ matrix.mysql }})"
 
         timeout-minutes: 25
 
@@ -248,7 +114,7 @@ jobs:
             matrix:
                 php: ["8.0"]
                 symfony: ["5.3.*", "5.4.*"]
-                node: ["10.x"]
+                node: ["14.x"]
                 mysql: ["5.7"]
 
         env:
@@ -283,7 +149,9 @@ jobs:
             -
                 name: Restrict Symfony version
                 if: matrix.symfony != ''
-                run: composer config extra.symfony.require "${{ matrix.symfony }}"
+                run: |
+                    composer global require --no-progress --no-scripts --no-plugins "symfony/flex:1.13.4"
+                    composer config extra.symfony.require "${{ matrix.symfony }}"
 
             -
                 name: Install certificates
@@ -364,6 +232,40 @@ jobs:
                 run: |
                     bin/console assets:install public -vvv
                     yarn build
+
+            -
+                name: Validate Doctrine mapping
+                run: make validate-doctrine-schema
+                if: always() && steps.end-of-setup.outcome == 'success'
+
+            -
+                name: Test provided migrations
+                run: make test-doctrine-migrations
+
+
+            -
+                name: Test installer
+                run: make test-installer
+
+            -
+                name: Load fixtures
+                run: make test-fixtures
+
+            -
+                name: Run PHPSpec
+                run: make test-phpspec
+
+            -
+                name: Run PHPUnit
+                run: make test-phpunit
+
+            -
+                name: Run CLI Behat
+                run: make test-behat-with-cli
+
+            -
+                name: Run non-JS Behat
+                run: make test-behat-without-javascript
 
             -
                 name: Run JS Behat
