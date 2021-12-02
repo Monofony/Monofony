@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Fixture\Factory;
 
-use Faker\Generator;
 use Faker\Factory;
+use Faker\Generator;
 use FOS\OAuthServerBundle\Model\ClientInterface;
 use FOS\OAuthServerBundle\Model\ClientManagerInterface;
 use Symfony\Component\OptionsResolver\Options;
