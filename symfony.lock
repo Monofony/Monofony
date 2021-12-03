@@ -52,6 +52,9 @@
     "coduo/php-to-string": {
         "version": "2.0.1"
     },
+    "composer/package-versions-deprecated": {
+        "version": "1.11.99.4"
+    },
     "composer/semver": {
         "version": "1.4.2"
     },
@@ -183,6 +186,18 @@
     },
     "friends-of-behat/variadic-extension": {
         "version": "v1.1.0"
+    },
+    "friendsofphp/php-cs-fixer": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "be2103eb4a20942e28a6dd87736669b757132435"
+        },
+        "files": [
+            ".php-cs-fixer.dist.php"
+        ]
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.2"
@@ -350,9 +365,6 @@
     "nikic/php-parser": {
         "version": "v4.2.2"
     },
-    "ocramius/package-versions": {
-        "version": "2.4.0"
-    },
     "openlss/lib-array2xml": {
         "version": "0.0.10"
     },
@@ -376,6 +388,9 @@
     },
     "php": {
         "version": "7.3"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v2.0.2"
     },
     "phpcollection/phpcollection": {
         "version": "0.5.0"
@@ -428,14 +443,14 @@
     "phpunit/php-file-iterator": {
         "version": "2.0.1"
     },
+    "phpunit/php-invoker": {
+        "version": "3.1.1"
+    },
     "phpunit/php-text-template": {
         "version": "1.2.1"
     },
     "phpunit/php-timer": {
         "version": "2.0.0"
-    },
-    "phpunit/php-token-stream": {
-        "version": "3.0.0"
     },
     "phpunit/phpunit": {
         "version": "4.7",
@@ -473,11 +488,20 @@
     "se/selenium-server-standalone": {
         "version": "v2.53.1"
     },
+    "sebastian/cli-parser": {
+        "version": "1.0.1"
+    },
+    "sebastian/code-unit": {
+        "version": "1.0.8"
+    },
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
     },
     "sebastian/comparator": {
         "version": "3.0.1"
+    },
+    "sebastian/complexity": {
+        "version": "2.0.2"
     },
     "sebastian/diff": {
         "version": "3.0.1"
@@ -490,6 +514,9 @@
     },
     "sebastian/global-state": {
         "version": "2.0.0"
+    },
+    "sebastian/lines-of-code": {
+        "version": "1.0.3"
     },
     "sebastian/object-enumerator": {
         "version": "3.0.3"
