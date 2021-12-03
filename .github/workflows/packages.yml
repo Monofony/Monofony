@@ -96,6 +96,7 @@ jobs:
 
             -
                 name: Validate composer.json
+                if: ${{ true != contains( matrix.package, 'Pack' ) }}
                 run: composer validate --ansi --strict
                 working-directory: "src/Monofony/${{ matrix.package }}"
 

@@ -6,17 +6,19 @@
     "require": {
         "api-platform/core": "^2.6",
         "api-platform/api-pack": "^1.2",
+        "lchrusciel/api-test-case": "^5.1",
         "monofony/api-contracts": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/user": "^1.10",
         "monofony/user-bundle": "^1.10",
+        "phpstan/phpstan": "^0.12",
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.8",
         "symfony/messenger": "^5.3"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.12",
-        "lchrusciel/api-test-case": "^5.1"
+        "lchrusciel/api-test-case": "^5.1",
+        "phpstan/phpstan": "^0.12"
     },
     "autoload": {
         "exclude-from-classmap": [
