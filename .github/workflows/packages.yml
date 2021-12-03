@@ -95,11 +95,6 @@ jobs:
                 working-directory: "src/Monofony/${{ matrix.package }}"
 
             -
-                name: Validate composer.json
-                run: composer validate --ansi --strict
-                working-directory: "src/Monofony/${{ matrix.package }}"
-
-            -
                 name: Install dependencies
                 run: composer install --ansi --no-interaction
                 env:
