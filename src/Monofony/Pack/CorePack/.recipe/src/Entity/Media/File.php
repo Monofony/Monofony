@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Entity\Media;
 
-use Symfony\Component\Serializer\Annotation\Groups;
 use App\Entity\IdentifiableTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Contracts\Core\Model\Media\FileInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use Symfony\Component\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\MappedSuperclass

@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace App\Message;
 
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
-use Symfony\Component\Serializer\Annotation as Serializer;
-use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 final class ChangeAppUserPassword implements AppUserIdAwareInterface
 {
@@ -16,7 +14,6 @@ final class ChangeAppUserPassword implements AppUserIdAwareInterface
 
     /**
      * @SecurityAssert\UserPassword(message="sylius.user.plainPassword.wrong_current")
-     *
      */
     #[NotBlank]
     #[Groups(groups: ['customer:password:write'])]

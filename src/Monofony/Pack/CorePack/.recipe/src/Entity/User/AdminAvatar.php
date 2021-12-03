@@ -7,7 +7,6 @@ namespace App\Entity\User;
 use App\Entity\Media\File;
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Contracts\Core\Model\User\AdminAvatarInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
