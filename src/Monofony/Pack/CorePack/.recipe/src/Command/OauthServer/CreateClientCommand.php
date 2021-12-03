@@ -13,6 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateClientCommand extends Command
 {
+    protected static $defaultName = 'app:oauth-server:create-client';
     private ClientManagerInterface $clientManager;
 
     public function __construct(ClientManagerInterface $clientManager)
@@ -27,9 +28,7 @@ class CreateClientCommand extends Command
      */
     protected function configure(): void
     {
-        $this
-            ->setName('app:oauth-server:create-client')
-            ->setDescription('Creates a new client')
+        $this->setDescription('Creates a new client')
             ->addOption(
                 'redirect-uri',
                 null,

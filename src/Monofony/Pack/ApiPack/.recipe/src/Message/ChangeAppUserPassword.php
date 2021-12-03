@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Message;
 
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
 use Symfony\Component\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -13,18 +15,15 @@ final class ChangeAppUserPassword implements AppUserIdAwareInterface
     public ?int $appUserId = null;
 
     /**
-     * @Assert\NotBlank
      * @SecurityAssert\UserPassword(message="sylius.user.plainPassword.wrong_current")
      *
-     * @Serializer\Groups({"customer:password:write"})
      */
+    #[NotBlank]
+    #[Groups(groups: ['customer:password:write'])]
     public ?string $currentPassword;
 
-    /**
-     * @Assert\NotBlank
-     *
-     * @Serializer\Groups({"customer:password:write"})
-     */
+    #[NotBlank]
+    #[Groups(groups: ['customer:password:write'])]
     public ?string $newPassword;
 
     public function __construct(?string $currentPassword = null, ?string $newPassword = null)

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity\Media;
 
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Entity\IdentifiableTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Contracts\Core\Model\Media\FileInterface;
@@ -21,9 +22,8 @@ abstract class File implements FileInterface, ResourceInterface
 
     /**
      * @ORM\Column(type="string")
-     *
-     * @Serializer\Groups({"Default", "Detailed"})
      */
+    #[Groups(groups: ['Default', 'Detailed'])]
     protected ?string $path = null;
 
     /**

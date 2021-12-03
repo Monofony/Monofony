@@ -21,6 +21,7 @@ use Webmozart\Assert\Assert;
 
 final class SetupCommand extends Command
 {
+    protected static $defaultName = 'app:install:setup';
     private ObjectManager $adminUserManager;
     private FactoryInterface $adminUserFactory;
     private UserRepositoryInterface $adminUserRepository;
@@ -45,9 +46,7 @@ final class SetupCommand extends Command
      */
     protected function configure(): void
     {
-        $this
-            ->setName('app:install:setup')
-            ->setDescription('AppName configuration setup.')
+        $this->setDescription('AppName configuration setup.')
             ->setHelp(
                 <<<EOT
 The <info>%command.name%</info> command allows user to configure basic AppName data.

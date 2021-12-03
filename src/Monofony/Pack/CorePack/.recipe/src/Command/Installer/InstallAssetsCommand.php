@@ -11,6 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InstallAssetsCommand extends Command
 {
+    protected static $defaultName = 'app:install:assets';
     private CommandsRunner $commandsRunner;
     private string $environment;
 
@@ -29,9 +30,7 @@ class InstallAssetsCommand extends Command
      */
     protected function configure(): void
     {
-        $this
-            ->setName('app:install:assets')
-            ->setDescription('Installs all AppName assets.')
+        $this->setDescription('Installs all AppName assets.')
             ->setHelp(
                 <<<EOT
 The <info>%command.name%</info> command downloads and installs all AppName media assets.

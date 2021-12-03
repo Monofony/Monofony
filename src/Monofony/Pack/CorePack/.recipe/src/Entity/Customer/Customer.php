@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity\Customer;
 
+use Symfony\Component\Validator\Constraints\Valid;
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
@@ -19,9 +20,8 @@ class Customer extends BaseCustomer implements CustomerInterface
 {
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\User\AppUser", mappedBy="customer", cascade={"persist"})
-     *
-     * @Assert\Valid
      */
+    #[Valid]
     private ?UserInterface $user = null;
 
     /**

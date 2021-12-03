@@ -13,6 +13,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 class InstallDatabaseCommand extends Command
 {
+    protected static $defaultName = 'app:install:database';
     private DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider;
     private CommandsRunner $commandsRunner;
     private string $environment;
@@ -34,9 +35,7 @@ class InstallDatabaseCommand extends Command
      */
     protected function configure(): void
     {
-        $this
-            ->setName('app:install:database')
-            ->setDescription('Install AppName database.')
+        $this->setDescription('Install AppName database.')
             ->setHelp(
                 <<<EOT
 The <info>%command.name%</info> command creates AppName database.
