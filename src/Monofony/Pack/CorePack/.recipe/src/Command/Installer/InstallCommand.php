@@ -12,6 +12,7 @@ use Symfony\Component\Process\Exception\RuntimeException;
 
 class InstallCommand extends Command
 {
+    protected static $defaultName = 'app:install';
     private ?CommandExecutor $commandExecutor = null;
 
     /**
@@ -39,9 +40,7 @@ class InstallCommand extends Command
      */
     protected function configure(): void
     {
-        $this
-            ->setName('app:install')
-            ->setDescription('Installs AppName in your preferred environment.')
+        $this->setDescription('Installs AppName in your preferred environment.')
             ->setHelp(
                 <<<EOT
 The <info>%command.name%</info> command installs AppName.

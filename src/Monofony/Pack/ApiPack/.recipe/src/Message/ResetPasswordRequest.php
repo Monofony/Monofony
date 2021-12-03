@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace App\Message;
 
-use Symfony\Component\Serializer\Annotation as Serializer;
-use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 final class ResetPasswordRequest
 {
-    /**
-     * @Assert\NotBlank(message="sylius.user.email.not_blank")
-     * @Serializer\Groups({"customer:write"})
-     */
+    #[NotBlank(message: 'sylius.user.email.not_blank')]
+    #[Groups(groups: ['customer:write'])]
     public ?string $email = null;
 
     public function __construct(?string $email = null)

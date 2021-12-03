@@ -13,9 +13,3 @@ suites:
     AdminPack.recipe: { spec_path: src/Monofony/Pack/AdminPack/.recipe, src_path: src/Monofony/Pack/AdminPack/.recipe }
     ApiPack.recipe: { spec_path: src/Monofony/Pack/ApiPack/.recipe, src_path: src/Monofony/Pack/ApiPack/.recipe }
     CorePack.recipe: { spec_path: src/Monofony/Pack/CorePack/.recipe, src_path: src/Monofony/Pack/CorePack/.recipe }
-
-extensions:
-    LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
-        whitelist:
-            - src/Monofony/Pack/CorePack/.recipe/src
-            - src/Admin/recipe/src

@@ -14,7 +14,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // get parameters
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, [
-        __DIR__ . '/src',
+        __DIR__ . '/src/Monofony/Pack/AdminPack/.recipe/src',
+        __DIR__ . '/src/Monofony/Pack/ApiPack/.recipe/src',
+        __DIR__ . '/src/Monofony/Pack/CorePack/.recipe/src',
+        __DIR__ . '/src/Monofony/Pack/FrontPack/.recipe/src',
     ]);
     $parameters->set(Option::SYMFONY_CONTAINER_XML_PATH_PARAMETER,
         __DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml',
@@ -36,8 +39,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::IMPORT_SHORT_CLASSES, false);
 //
     $containerConfigurator->import(SymfonySetList::SYMFONY_44);
-//    $containerConfigurator->import(SymfonySetList::SYMFONY_52);
-//    $containerConfigurator->import(SymfonySetList::SYMFONY_CODE_QUALITY);
+    $containerConfigurator->import(SymfonySetList::SYMFONY_52);
+    $containerConfigurator->import(SymfonySetList::SYMFONY_CODE_QUALITY);
 //    $containerConfigurator->import(SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION);
 //    $containerConfigurator->import(SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES);
 //    $containerConfigurator->import(DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES);

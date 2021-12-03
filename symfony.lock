@@ -184,9 +184,6 @@
     "friends-of-behat/variadic-extension": {
         "version": "v1.1.0"
     },
-    "friends-of-phpspec/phpspec-code-coverage": {
-        "version": "v4.3.1"
-    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.2"
     },

@@ -14,6 +14,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 final class InstallSampleDataCommand extends Command
 {
+    protected static $defaultName = 'app:install:sample-data';
     private CommandsRunner $commandsRunner;
     private string $environment;
 
@@ -32,9 +33,7 @@ final class InstallSampleDataCommand extends Command
      */
     protected function configure(): void
     {
-        $this
-            ->setName('app:install:sample-data')
-            ->setDescription('Install sample data into AppName.')
+        $this->setDescription('Install sample data into AppName.')
             ->setHelp(
                 <<<EOT
 The <info>%command.name%</info> command loads the sample data for AppName.
