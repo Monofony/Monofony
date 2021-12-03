@@ -18,11 +18,8 @@ use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 
 final class DashboardStatisticsProvider implements DashboardStatisticsProviderInterface
 {
-    private iterable $statistics;
-
-    public function __construct(iterable $statistics)
+    public function __construct(private iterable $statistics)
     {
-        $this->statistics = $statistics;
     }
 
     public function getStatistics(): array

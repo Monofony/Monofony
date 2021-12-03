@@ -14,6 +14,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // get parameters
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, [
+        __DIR__ . '/src/Monofony/Component/Admin',
         __DIR__ . '/src/Monofony/Pack/AdminPack/.recipe/src',
         __DIR__ . '/src/Monofony/Pack/ApiPack/.recipe/src',
         __DIR__ . '/src/Monofony/Pack/CorePack/.recipe/src',
@@ -31,7 +32,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // register a single rule
     $services->set(TypedPropertyRector::class);
-    // $services->set(ClassPropertyAssignToConstructorPromotionRector::class);
+    $services->set(ClassPropertyAssignToConstructorPromotionRector::class);
 
     $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_74);
     $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_80);
@@ -40,8 +41,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 //
     $containerConfigurator->import(SymfonySetList::SYMFONY_44);
     $containerConfigurator->import(SymfonySetList::SYMFONY_52);
-    $containerConfigurator->import(SymfonySetList::SYMFONY_CODE_QUALITY);
-//    $containerConfigurator->import(SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION);
-//    $containerConfigurator->import(SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES);
+//    $containerConfigurator->import(SymfonySetList::SYMFONY_CODE_QUALITY);
+    $containerConfigurator->import(SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION);
+    $containerConfigurator->import(SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES);
 //    $containerConfigurator->import(DoctrineSetList::ANNOTATIONS_TO_ATTRIBUTES);
 };

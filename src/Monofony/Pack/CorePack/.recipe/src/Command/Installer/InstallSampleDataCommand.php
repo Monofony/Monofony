@@ -15,16 +15,11 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class InstallSampleDataCommand extends Command
 {
     protected static $defaultName = 'app:install:sample-data';
-    private CommandsRunner $commandsRunner;
-    private string $environment;
 
     public function __construct(
-        CommandsRunner $commandsRunner,
-        string $environment
+        private CommandsRunner $commandsRunner,
+        private string $environment
     ) {
-        $this->commandsRunner = $commandsRunner;
-        $this->environment = $environment;
-
         parent::__construct();
     }
 

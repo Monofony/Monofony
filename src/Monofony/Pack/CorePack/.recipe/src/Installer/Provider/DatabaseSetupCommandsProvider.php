@@ -16,11 +16,8 @@ use Webmozart\Assert\Assert;
 
 final class DatabaseSetupCommandsProvider implements DatabaseSetupCommandsProviderInterface
 {
-    private ManagerRegistry $doctrineRegistry;
-
-    public function __construct(ManagerRegistry $doctrineRegistry)
+    public function __construct(private ManagerRegistry $doctrineRegistry)
     {
-        $this->doctrineRegistry = $doctrineRegistry;
     }
 
     public function getCommands(InputInterface $input, OutputInterface $output, QuestionHelper $questionHelper): array

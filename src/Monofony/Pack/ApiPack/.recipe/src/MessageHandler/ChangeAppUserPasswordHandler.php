@@ -14,18 +14,8 @@ use Webmozart\Assert\Assert;
 
 final class ChangeAppUserPasswordHandler implements MessageHandlerInterface
 {
-    private PasswordUpdaterInterface $passwordUpdater;
-    private UserRepositoryInterface $userRepository;
-    private EntityManagerInterface $entityManager;
-
-    public function __construct(
-        PasswordUpdaterInterface $passwordUpdater,
-        UserRepositoryInterface $appUserRepository,
-        EntityManagerInterface $entityManager
-    ) {
-        $this->passwordUpdater = $passwordUpdater;
-        $this->userRepository = $appUserRepository;
-        $this->entityManager = $entityManager;
+    public function __construct(private PasswordUpdaterInterface $passwordUpdater, private UserRepositoryInterface $userRepository, private EntityManagerInterface $entityManager)
+    {
     }
 
     public function __invoke(ChangeAppUserPassword $message): void

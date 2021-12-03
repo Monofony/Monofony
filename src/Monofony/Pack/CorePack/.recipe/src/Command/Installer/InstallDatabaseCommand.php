@@ -14,19 +14,12 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class InstallDatabaseCommand extends Command
 {
     protected static $defaultName = 'app:install:database';
-    private DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider;
-    private CommandsRunner $commandsRunner;
-    private string $environment;
 
     public function __construct(
-        DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider,
-        CommandsRunner $commandsRunner,
-        string $environment
+        private DatabaseSetupCommandsProviderInterface $databaseSetupCommandsProvider,
+        private CommandsRunner $commandsRunner,
+        private string $environment
     ) {
-        $this->databaseSetupCommandsProvider = $databaseSetupCommandsProvider;
-        $this->commandsRunner = $commandsRunner;
-        $this->environment = $environment;
-
         parent::__construct();
     }
 

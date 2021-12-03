@@ -16,21 +16,8 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 final class ResetPasswordRequestHandler implements MessageHandlerInterface
 {
-    private RepositoryInterface $customerRepository;
-    private GeneratorInterface $generator;
-    private EntityManagerInterface $entityManager;
-    private EventDispatcherInterface $eventDispatcher;
-
-    public function __construct(
-        RepositoryInterface $customerRepository,
-        GeneratorInterface $generator,
-        EntityManagerInterface $entityManager,
-        EventDispatcherInterface $eventDispatcher
-    ) {
-        $this->customerRepository = $customerRepository;
-        $this->generator = $generator;
-        $this->entityManager = $entityManager;
-        $this->eventDispatcher = $eventDispatcher;
+    public function __construct(private RepositoryInterface $customerRepository, private GeneratorInterface $generator, private EntityManagerInterface $entityManager, private EventDispatcherInterface $eventDispatcher)
+    {
     }
 
     public function __invoke(ResetPasswordRequest $message): void

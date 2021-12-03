@@ -14,10 +14,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFactoryInterface
 {
-    private FactoryInterface $appUserFactory;
-
-    private FactoryInterface $customerFactory;
-
     private Generator $faker;
 
     private OptionsResolver $optionsResolver;
@@ -25,11 +21,8 @@ class AppUserExampleFactory extends AbstractExampleFactory implements ExampleFac
     /**
      * AppUserExampleFactory constructor.
      */
-    public function __construct(FactoryInterface $appUserFactory, FactoryInterface $customerFactory)
+    public function __construct(private FactoryInterface $appUserFactory, private FactoryInterface $customerFactory)
     {
-        $this->appUserFactory = $appUserFactory;
-        $this->customerFactory = $customerFactory;
-
         $this->faker = Factory::create();
         $this->optionsResolver = new OptionsResolver();
 
