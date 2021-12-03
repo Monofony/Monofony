@@ -13,16 +13,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ApiClientExampleFactory extends AbstractExampleFactory
 {
-    private ClientManagerInterface $clientManager;
-
     private Generator $faker;
 
     private OptionsResolver $optionsResolver;
 
-    public function __construct(ClientManagerInterface $clientManager)
+    public function __construct(private ClientManagerInterface $clientManager)
     {
-        $this->clientManager = $clientManager;
-
         $this->faker = Factory::create();
         $this->optionsResolver = new OptionsResolver();
 

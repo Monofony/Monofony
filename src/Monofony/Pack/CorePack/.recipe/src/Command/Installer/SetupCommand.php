@@ -22,22 +22,13 @@ use Webmozart\Assert\Assert;
 final class SetupCommand extends Command
 {
     protected static $defaultName = 'app:install:setup';
-    private ObjectManager $adminUserManager;
-    private FactoryInterface $adminUserFactory;
-    private UserRepositoryInterface $adminUserRepository;
-    private ValidatorInterface $validator;
 
     public function __construct(
-        ObjectManager $adminUserManager,
-        FactoryInterface $adminUserFactory,
-        UserRepositoryInterface $adminUserRepository,
-        ValidatorInterface $validator
+        private ObjectManager $adminUserManager,
+        private FactoryInterface $adminUserFactory,
+        private UserRepositoryInterface $adminUserRepository,
+        private ValidatorInterface $validator
     ) {
-        $this->adminUserManager = $adminUserManager;
-        $this->adminUserFactory = $adminUserFactory;
-        $this->adminUserRepository = $adminUserRepository;
-        $this->validator = $validator;
-
         parent::__construct();
     }
 

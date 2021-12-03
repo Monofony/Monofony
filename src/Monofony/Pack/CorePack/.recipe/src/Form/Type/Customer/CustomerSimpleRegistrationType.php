@@ -16,13 +16,9 @@ use Symfony\Component\Validator\Constraints\Valid;
 
 class CustomerSimpleRegistrationType extends AbstractResourceType
 {
-    private RepositoryInterface $customerRepository;
-
-    public function __construct(RepositoryInterface $customerRepository)
+    public function __construct(private RepositoryInterface $customerRepository)
     {
         parent::__construct(Customer::class, ['sylius', 'sylius_user_registration']);
-
-        $this->customerRepository = $customerRepository;
     }
 
     /**

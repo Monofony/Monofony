@@ -13,8 +13,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleFactoryInterface
 {
-    private FactoryInterface $adminUserFactory;
-
     private Generator $faker;
 
     private OptionsResolver $optionsResolver;
@@ -22,10 +20,8 @@ class AdminUserExampleFactory extends AbstractExampleFactory implements ExampleF
     /**
      * AdminUserExampleFactory constructor.
      */
-    public function __construct(FactoryInterface $adminUserFactory)
+    public function __construct(private FactoryInterface $adminUserFactory)
     {
-        $this->adminUserFactory = $adminUserFactory;
-
         $this->faker = Factory::create();
         $this->optionsResolver = new OptionsResolver();
 

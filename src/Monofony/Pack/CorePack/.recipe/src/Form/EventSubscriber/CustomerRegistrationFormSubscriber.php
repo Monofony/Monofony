@@ -13,11 +13,8 @@ use Symfony\Component\Form\FormEvents;
 
 final class CustomerRegistrationFormSubscriber implements EventSubscriberInterface
 {
-    private RepositoryInterface $customerRepository;
-
-    public function __construct(RepositoryInterface $customerRepository)
+    public function __construct(private RepositoryInterface $customerRepository)
     {
-        $this->customerRepository = $customerRepository;
     }
 
     /**

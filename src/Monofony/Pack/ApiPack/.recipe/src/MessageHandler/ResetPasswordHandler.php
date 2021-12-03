@@ -17,21 +17,8 @@ use Webmozart\Assert\Assert;
 
 final class ResetPasswordHandler implements MessageHandlerInterface
 {
-    private RepositoryInterface $appUserRepository;
-    private EntityManagerInterface $entityManager;
-    private RequestStack $requestStack;
-    private array $syliusResources;
-
-    public function __construct(
-        RepositoryInterface $appUserRepository,
-        EntityManagerInterface $entityManager,
-        RequestStack $requestStack,
-        array $syliusResources
-    ) {
-        $this->appUserRepository = $appUserRepository;
-        $this->entityManager = $entityManager;
-        $this->requestStack = $requestStack;
-        $this->syliusResources = $syliusResources;
+    public function __construct(private RepositoryInterface $appUserRepository, private EntityManagerInterface $entityManager, private RequestStack $requestStack, private array $syliusResources)
+    {
     }
 
     public function __invoke(ResetPassword $message): void

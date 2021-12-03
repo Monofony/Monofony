@@ -14,12 +14,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 class CreateClientCommand extends Command
 {
     protected static $defaultName = 'app:oauth-server:create-client';
-    private ClientManagerInterface $clientManager;
 
-    public function __construct(ClientManagerInterface $clientManager)
+    public function __construct(private ClientManagerInterface $clientManager)
     {
-        $this->clientManager = $clientManager;
-
         parent::__construct();
     }
 
