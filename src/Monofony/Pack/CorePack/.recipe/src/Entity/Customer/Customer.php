@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Entity\Customer;
 
-use Webmozart\Assert\Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Validator\Constraints\Valid;
+use Webmozart\Assert\Assert;
 
 /**
  * @ORM\Entity
