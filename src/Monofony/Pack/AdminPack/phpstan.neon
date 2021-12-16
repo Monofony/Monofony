@@ -5,3 +5,4 @@ parameters:
         - 'vendor/**.php'
         - '**/spec/**.php'
         - .recipe/src/Dashboard/Statistics/CustomerStatistic.php
+        - .recipe/src/Grid/**.php
