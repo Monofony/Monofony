@@ -14,7 +14,7 @@
         "monofony/ui-bundle": "^1.10",
         "phpstan/phpstan": "^0.12",
         "sonata-project/block-bundle": "^4.2",
-        "sylius/grid-bundle": "^1.9",
+        "sylius/grid-bundle": "dev-master",
         "symfony/asset": "^5.3",
         "symfony/routing": "^5.3",
         "symfony/templating": "^5.3",
