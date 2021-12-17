@@ -4,7 +4,7 @@
 
 {% set header = configuration.vars.header|default(metadata.applicationName~'.ui.edit_'~metadata.name) %}
 
-{% block title %}{{ parent() }} {{ header|trans }}{% endblock %}
+{% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
 
 {% form_theme form 'backend/form/theme.html.twig' %}
 
