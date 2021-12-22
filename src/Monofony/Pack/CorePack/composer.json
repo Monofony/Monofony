@@ -21,7 +21,6 @@
         "monofony/user-bundle": "^1.10",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-webmozart-assert": "^0.12",
-        "sylius/fixtures-bundle": "^1.7",
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",
         "sylius/resource-bundle": "^1.8",

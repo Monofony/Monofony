@@ -596,9 +596,6 @@
     "sylius/customer": {
         "version": "v1.8.6"
     },
-    "sylius/fixtures-bundle": {
-        "version": "v1.2.1"
-    },
     "sylius/grid": {
         "version": "v1.2.1"
     },

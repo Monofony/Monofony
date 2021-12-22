@@ -81,7 +81,6 @@
         "sensio/framework-extra-bundle": "^6.2",
         "sensiolabs/security-checker": "^6.0",
         "sonata-project/block-bundle": "^4.2",
-        "sylius/fixtures-bundle": "^1.7",
         "sylius/grid-bundle": "dev-master",
         "sylius/mailer-bundle": "^1.6",
         "sylius/resource-bundle": "^1.8",
