@@ -8,17 +8,13 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\OAuthServerBundle\Entity\Client as BaseClient;
 use FOS\OAuthServerBundle\Model\ClientInterface;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="oauth_client")
- */
+#[ORM\Entity]
+#[ORM\Table(name: 'oauth_client')]
 class Client extends BaseClient implements ClientInterface
 {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     protected $id;
 
     /**

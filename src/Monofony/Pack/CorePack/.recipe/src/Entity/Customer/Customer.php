@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity\Customer;
 
+use App\Entity\User\AppUser;
 use Doctrine\ORM\Mapping as ORM;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
@@ -12,15 +13,11 @@ use Sylius\Component\User\Model\UserInterface;
 use Symfony\Component\Validator\Constraints\Valid;
 use Webmozart\Assert\Assert;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="sylius_customer")
- */
+#[ORM\Entity]
+#[ORM\Table(name: 'sylius_customer')]
 class Customer extends BaseCustomer implements CustomerInterface
 {
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User\AppUser", mappedBy="customer", cascade={"persist"})
-     */
+    #[ORM\OneToOne(mappedBy: 'customer', targetEntity: AppUser::class, cascade: ['persist'])]
     #[Valid]
     private ?UserInterface $user = null;
 
