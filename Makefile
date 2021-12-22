@@ -93,7 +93,7 @@ test-behat-with-javascript:
 .PHONY: test-behat-with-javascript
 
 test-fixtures:
-	bin/console sylius:fixtures:load default --no-interaction
+	bin/console doctrine:fixtures:load --no-interaction
 .PHONY: test-fixtures
 
 install-package:
