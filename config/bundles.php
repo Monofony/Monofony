@@ -38,4 +38,7 @@ return [
     Sonata\Form\Bridge\Symfony\Bundle\SonataFormBundle::class => ['all' => true],
     Sonata\BlockBundle\SonataBlockBundle::class => ['all' => true],
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
+    Zenstruck\Foundry\ZenstruckFoundryBundle::class => ['dev' => true, 'test' => true],
+    Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['all' => true],
 ];
