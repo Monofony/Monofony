@@ -3,3 +3,11 @@ framework:
         packages:
             frontend:
                 json_manifest_path: '%kernel.project_dir%/public/assets/frontend/manifest.json'
+
+sylius_ui:
+    events:
+        sylius.admin.layout.topbar_left:
+            blocks:
+                front_link:
+                    template: "backend/layout/_front_link.html.twig"
+                    priority: 30
