@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Context\Setup;
 
 use Behat\Behat\Context\Context;
-use Doctrine\Persistence\ObjectManager;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
@@ -14,24 +13,12 @@ use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 final class CustomerContext implements Context
 {
-    private SharedStorageInterface $sharedStorage;
-    private RepositoryInterface $customerRepository;
-    private ObjectManager $customerManager;
-    private FactoryInterface $customerFactory;
-    private FactoryInterface $appUserFactory;
-
     public function __construct(
-        SharedStorageInterface $sharedStorage,
-        RepositoryInterface $customerRepository,
-        ObjectManager $customerManager,
-        FactoryInterface $customerFactory,
-        FactoryInterface $appUserFactory
+        private SharedStorageInterface $sharedStorage,
+        private RepositoryInterface $customerRepository,
+        private FactoryInterface $customerFactory,
+        private FactoryInterface $appUserFactory,
     ) {
-        $this->sharedStorage = $sharedStorage;
-        $this->customerRepository = $customerRepository;
-        $this->customerManager = $customerManager;
-        $this->customerFactory = $customerFactory;
-        $this->appUserFactory = $appUserFactory;
     }
 
     /**

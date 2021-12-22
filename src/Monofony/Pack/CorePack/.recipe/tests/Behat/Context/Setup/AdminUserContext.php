@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Setup;
 
+use App\Factory\AdminUserFactory;
 use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
@@ -11,18 +12,11 @@ use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 final class AdminUserContext implements Context
 {
-    private SharedStorageInterface $sharedStorage;
-    private AdminUserExampleFactory $userFactory;
-    private UserRepositoryInterface $adminUserRepository;
-
     public function __construct(
-        SharedStorageInterface $sharedStorage,
-        AdminUserExampleFactory $userFactory,
-        UserRepositoryInterface $adminUserRepository
+        private SharedStorageInterface $sharedStorage,
+        private AdminUserFactory $userFactory,
+        private UserRepositoryInterface $adminUserRepository,
     ) {
-        $this->sharedStorage = $sharedStorage;
-        $this->userFactory = $userFactory;
-        $this->adminUserRepository = $adminUserRepository;
     }
 
     /**
