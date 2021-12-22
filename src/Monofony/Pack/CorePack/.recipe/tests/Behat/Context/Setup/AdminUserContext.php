@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests\Behat\Context\Setup;
 
 use App\Factory\AdminUserFactory;
-use App\Fixture\Factory\AdminUserExampleFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;

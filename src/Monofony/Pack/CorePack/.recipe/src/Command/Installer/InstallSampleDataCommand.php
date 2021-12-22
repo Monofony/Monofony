@@ -6,7 +6,6 @@ namespace App\Command\Installer;
 
 use App\Command\Helper\CommandsRunner;
 use Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand;
-use Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
@@ -63,7 +62,7 @@ EOT
         }
 
         $commands = [
-            LoadDataFixturesDoctrineCommand::getDefaultName() => ['--no-interaction' => true],
+            (string) LoadDataFixturesDoctrineCommand::getDefaultName() => ['--no-interaction' => true],
         ];
 
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
