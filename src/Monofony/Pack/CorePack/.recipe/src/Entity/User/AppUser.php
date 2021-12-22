@@ -10,29 +10,19 @@ use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Sylius\Component\User\Model\User as BaseUser;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="sylius_app_user")
- */
+#[ORM\Entity]
+#[ORM\Table(name: 'sylius_app_user')]
 class AppUser extends BaseUser implements AppUserInterface
 {
-    /**
-     * @ORM\OneToOne(targetEntity="Sylius\Component\Customer\Model\CustomerInterface", inversedBy="user", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
-     */
+    #[ORM\OneToOne(inversedBy: 'user', targetEntity: CustomerInterface::class, cascade: ['persist'])]
+    #[ORM\JoinColumn(nullable: false)]
     private ?CustomerInterface $customer = null;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCustomer(): ?CustomerInterface
     {
         return $this->customer;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setCustomer($customer): void
     {
         $this->customer = $customer;

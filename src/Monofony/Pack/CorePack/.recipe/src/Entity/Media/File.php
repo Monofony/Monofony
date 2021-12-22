@@ -19,23 +19,15 @@ abstract class File implements FileInterface, ResourceInterface
 
     protected ?\SplFileInfo $file = null;
 
-    /**
-     * @ORM\Column(type="string")
-     */
+    #[ORM\Column(type: 'string')]
     #[Groups(groups: ['Default', 'Detailed'])]
     protected ?string $path = null;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
+    #[ORM\Column(type: 'datetime')]
     protected \DateTimeInterface $createdAt;
 
-    /**
-     * @var \DateTimeInterface|null
-     *
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    protected $updatedAt;
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    protected ?\DateTimeInterface $updatedAt = null;
 
     public function __construct()
     {
