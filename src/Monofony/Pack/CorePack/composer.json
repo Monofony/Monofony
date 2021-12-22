@@ -24,6 +24,7 @@
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",
         "sylius/resource-bundle": "^1.8",
+        "symfony/config": "^5.3",
         "symfony/process": "^5.3",
         "symfony/serializer": "^5.3",
         "symfony/translation": "^5.3",
