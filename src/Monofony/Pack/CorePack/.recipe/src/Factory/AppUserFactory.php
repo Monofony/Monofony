@@ -56,15 +56,17 @@ final class AppUserFactory extends ModelFactory
     {
         return $this
             ->beforeInstantiate(function (array $attributes): array {
-                $customer = new Customer();
+                $customer = $attributes['customer'];
 
-                $customer->setEmail($attributes['email']);
+                if (null === $customer) {
+                    $customer = new Customer();
+                    $customer->setEmail($attributes['email']);
+                    $customer->setFirstName($attributes['first_name']);
+                    $customer->setLastName($attributes['last_name']);
+                }
+
                 unset($attributes['email']);
-
-                $customer->setFirstName($attributes['first_name']);
                 unset($attributes['first_name']);
-
-                $customer->setLastName($attributes['last_name']);
                 unset($attributes['last_name']);
 
                 $attributes['customer'] = $customer;
