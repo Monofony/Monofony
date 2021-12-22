@@ -98,7 +98,7 @@ test-fixtures:
 
 install-package:
 	(cd $(path) && composer update --no-interaction --prefer-dist --no-scripts --no-plugins)
-.PHONY: test-fixtures
+.PHONY: install-package
 
 test-package-phpstan:
 	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL})
