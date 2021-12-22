@@ -18,6 +18,7 @@ class UserContext implements Context
         private SharedStorageInterface $sharedStorage,
         private UserRepositoryInterface $appUserRepository,
         private AppUserFactory $userFactory,
+        private ObjectManager $appUserManager
     ) {
     }
 
@@ -64,6 +65,6 @@ class UserContext implements Context
         $user->setPasswordResetToken($token);
         $user->setPasswordRequestedAt(new \DateTime());
 
-        $this->userManager->flush();
+        $this->appUserManager->flush();
     }
 }
