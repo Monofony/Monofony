@@ -7,7 +7,6 @@ namespace App\Tests\Behat\Context\Setup;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
-use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 
@@ -17,7 +16,6 @@ final class CustomerContext implements Context
         private SharedStorageInterface $sharedStorage,
         private RepositoryInterface $customerRepository,
         private FactoryInterface $customerFactory,
-        private FactoryInterface $appUserFactory,
     ) {
     }
 
