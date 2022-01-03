@@ -39,8 +39,7 @@ final class AppSecurityContext implements Context
     public function iAmLoggedInAsACustomer(): void
     {
         /** @var AppUserInterface $user */
-        $user = $this->userFactory->create(['email' => 'customer@example.com', 'password' => 'password', 'roles' => ['ROLE_USER']]);
-        $this->appUserRepository->add($user);
+        $user = $this->userFactory->createOne(['email' => 'customer@example.com', 'password' => 'password', 'roles' => ['ROLE_USER']])->object();
 
         $this->securityService->logIn($user);
 

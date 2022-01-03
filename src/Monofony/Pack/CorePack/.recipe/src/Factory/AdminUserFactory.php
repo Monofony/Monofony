@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Factory;
 
 use App\Entity\User\AdminUser;
+use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 
@@ -37,6 +38,16 @@ final class AdminUserFactory extends ModelFactory
             'first_name' => self::faker()->firstName(),
             'last_name' => self::faker()->lastName(),
         ];
+    }
+
+    protected function initialize(): self
+    {
+        return $this
+            ->afterInstantiate(function (AdminUserInterface $adminUser) {
+                $adminUser->setPlainPassword($adminUser->getPassword());
+                $adminUser->setPassword(null);
+            })
+        ;
     }
 
     protected static function getClass(): string

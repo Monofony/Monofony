@@ -7,6 +7,7 @@ namespace App\Factory;
 use App\Entity\Customer\Customer;
 use App\Entity\User\AppUser;
 use App\Repository\UserRepository;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 use Zenstruck\Foundry\RepositoryProxy;
@@ -31,13 +32,6 @@ use Zenstruck\Foundry\RepositoryProxy;
  */
 final class AppUserFactory extends ModelFactory
 {
-    public function __construct()
-    {
-        parent::__construct();
-
-        // TODO inject services if required (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#factories-as-services)
-    }
-
     protected function getDefaults(): array
     {
         return [
@@ -57,6 +51,9 @@ final class AppUserFactory extends ModelFactory
         return $this
             ->beforeInstantiate(function (array $attributes): array {
                 $customer = $attributes['customer'];
+                $roles = $attributes['roles'];
+                $roles[] = 'ROLE_USER';
+                $attributes['roles'] = array_unique($roles);
 
                 if (null === $customer) {
                     $customer = new Customer();
@@ -72,6 +69,10 @@ final class AppUserFactory extends ModelFactory
                 $attributes['customer'] = $customer;
 
                 return $attributes;
+            })
+            ->afterInstantiate(function (AppUserInterface $appUser) {
+                $appUser->setPlainPassword($appUser->getPassword());
+                $appUser->setPassword(null);
             })
         ;
     }

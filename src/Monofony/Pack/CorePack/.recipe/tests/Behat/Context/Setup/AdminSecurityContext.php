@@ -8,7 +8,6 @@ use App\Factory\AdminUserFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\AdminSecurityServiceInterface;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
-use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Webmozart\Assert\Assert;
 
@@ -27,11 +26,11 @@ final class AdminSecurityContext implements Context
      */
     public function iAmLoggedInAsAnAdministrator(): void
     {
-        /** @var UserInterface $user */
-        $user = $this->userFactory->create(['email' => 'admin@example.com', 'password' => 'admin']);
-        $this->adminUserRepository->add($user);
+        $user = $this->userFactory
+            ->createOne(['email' => 'admin@example.com', 'password' => 'admin'])
+            ->disableAutoRefresh();
 
-        $this->securityService->logIn($user);
+        $this->securityService->logIn($user->object());
 
         $this->sharedStorage->set('administrator', $user);
     }

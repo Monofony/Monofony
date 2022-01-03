@@ -15,6 +15,7 @@ use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\User\AdminUserInterface;
 use Webmozart\Assert\Assert;
+use Zenstruck\Foundry\Proxy;
 
 final class ManagingAdministratorsContext implements Context
 {
@@ -56,7 +57,7 @@ final class ManagingAdministratorsContext implements Context
      * @When /^I am editing (my) details$/
      * @When /^I want to edit (this administrator)$/
      */
-    public function iWantToEditThisAdministrator(AdminUserInterface $adminUser): void
+    public function iWantToEditThisAdministrator(AdminUserInterface|Proxy $adminUser): void
     {
         $this->updatePage->open(['id' => $adminUser->getId()]);
     }
@@ -173,7 +174,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @When /^I (?:|upload|update) the "([^"]+)" image as (my) avatar$/
      */
-    public function iUploadTheImageAsMyAvatar(string $avatar, AdminUserInterface $administrator): void
+    public function iUploadTheImageAsMyAvatar(string $avatar, AdminUserInterface|Proxy $administrator): void
     {
         $path = $this->updateAvatar($avatar, $administrator);
 
@@ -276,9 +277,15 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @Then /^I should see the "([^"]*)" image as (my) avatar$/
      */
-    public function iShouldSeeTheImageAsMyAvatar(string $avatar, AdminUserInterface $administrator): void
+    public function iShouldSeeTheImageAsMyAvatar(string $avatar, AdminUserInterface|Proxy $administrator): void
     {
-        $this->objectManager->refresh($administrator);
+        if ($administrator instanceof AdminUserInterface) {
+            $this->objectManager->refresh($administrator);
+        }
+
+        if ($administrator instanceof Proxy) {
+            $administrator->refresh();
+        }
 
         Assert::same($this->sharedStorage->get($avatar), $administrator->getAvatar()->getPath());
     }
@@ -291,9 +298,15 @@ final class ManagingAdministratorsContext implements Context
         Assert::true($this->topBarElement->hasAvatarInMainBar($avatar));
     }
 
-    private function getPath(AdminUserInterface $administrator): string
+    private function getPath(AdminUserInterface|Proxy $administrator): string
     {
-        $this->objectManager->refresh($administrator);
+        if ($administrator instanceof AdminUserInterface) {
+            $this->objectManager->refresh($administrator);
+        }
+
+        if ($administrator instanceof Proxy) {
+            $administrator->refresh();
+        }
 
         $avatar = $administrator->getAvatar();
         if (null === $avatar) {
@@ -303,7 +316,7 @@ final class ManagingAdministratorsContext implements Context
         return $avatar->getPath() ?? '';
     }
 
-    private function updateAvatar(string $avatar, AdminUserInterface $administrator): string
+    private function updateAvatar(string $avatar, AdminUserInterface|Proxy $administrator): string
     {
         $this->updatePage->attachAvatar($avatar);
         $this->updatePage->saveChanges();

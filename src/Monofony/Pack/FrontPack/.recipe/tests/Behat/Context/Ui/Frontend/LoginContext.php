@@ -15,6 +15,7 @@ use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Webmozart\Assert\Assert;
+use Zenstruck\Foundry\Proxy;
 
 final class LoginContext implements Context
 {
@@ -63,7 +64,7 @@ final class LoginContext implements Context
     /**
      * @When /^I follow link on my email to reset (my) password$/
      */
-    public function iFollowLinkOnMyEmailToResetPassword(UserInterface $user): void
+    public function iFollowLinkOnMyEmailToResetPassword(UserInterface|Proxy $user): void
     {
         $this->resetPasswordPage->open(['token' => $user->getPasswordResetToken()]);
     }
