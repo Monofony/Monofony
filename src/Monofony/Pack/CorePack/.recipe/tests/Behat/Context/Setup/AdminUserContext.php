@@ -4,25 +4,16 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Fixture\Factory\AdminUserExampleFactory;
+use App\Factory\AdminUserFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
-use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 final class AdminUserContext implements Context
 {
-    private SharedStorageInterface $sharedStorage;
-    private AdminUserExampleFactory $userFactory;
-    private UserRepositoryInterface $adminUserRepository;
-
     public function __construct(
-        SharedStorageInterface $sharedStorage,
-        AdminUserExampleFactory $userFactory,
-        UserRepositoryInterface $adminUserRepository
+        private SharedStorageInterface $sharedStorage,
+        private AdminUserFactory $adminUserFactory,
     ) {
-        $this->sharedStorage = $sharedStorage;
-        $this->userFactory = $userFactory;
-        $this->adminUserRepository = $adminUserRepository;
     }
 
     /**
@@ -31,8 +22,7 @@ final class AdminUserContext implements Context
      */
     public function thereIsAnAdministratorIdentifiedBy($email, $password = 'admin'): void
     {
-        $adminUser = $this->userFactory->create(['email' => $email, 'password' => $password, 'enabled' => true]);
-        $this->adminUserRepository->add($adminUser);
+        $adminUser = $this->adminUserFactory->createOne(['email' => $email, 'password' => $password, 'enabled' => true])->object();
         $this->sharedStorage->set('administrator', $adminUser);
     }
 
@@ -41,10 +31,8 @@ final class AdminUserContext implements Context
      */
     public function thereIsAnAdministratorWithName($username): void
     {
-        $adminUser = $this->userFactory->create(['username' => $username]);
-        $adminUser->setUsername($username);
+        $adminUser = $this->adminUserFactory->createOne(['username' => $username])->object();
 
-        $this->adminUserRepository->add($adminUser);
         $this->sharedStorage->set('administrator', $adminUser);
     }
 }

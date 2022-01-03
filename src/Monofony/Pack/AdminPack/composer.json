@@ -19,7 +19,8 @@
         "symfony/routing": "^5.3",
         "symfony/templating": "^5.3",
         "twig/twig": "^2.7",
-        "webmozart/assert": "^1.9"
+        "webmozart/assert": "^1.9",
+        "zenstruck/foundry": "^1.14"
     },
     "require-dev": {
         "behat/behat": "^3.2",

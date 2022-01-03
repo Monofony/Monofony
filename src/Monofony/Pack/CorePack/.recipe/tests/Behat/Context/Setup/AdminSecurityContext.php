@@ -4,31 +4,21 @@ declare(strict_types=1);
 
 namespace App\Tests\Behat\Context\Setup;
 
-use App\Fixture\Factory\AdminUserExampleFactory;
+use App\Factory\AdminUserFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\AdminSecurityServiceInterface;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
-use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Webmozart\Assert\Assert;
 
 final class AdminSecurityContext implements Context
 {
-    private SharedStorageInterface $sharedStorage;
-    private AdminSecurityServiceInterface $securityService;
-    private AdminUserExampleFactory $userFactory;
-    private UserRepositoryInterface $adminUserRepository;
-
     public function __construct(
-        SharedStorageInterface $sharedStorage,
-        AdminSecurityServiceInterface $securityService,
-        AdminUserExampleFactory $userFactory,
-        UserRepositoryInterface $adminUserRepository
+        private SharedStorageInterface $sharedStorage,
+        private AdminSecurityServiceInterface $securityService,
+        private AdminUserFactory $userFactory,
+        private UserRepositoryInterface $adminUserRepository,
     ) {
-        $this->sharedStorage = $sharedStorage;
-        $this->securityService = $securityService;
-        $this->userFactory = $userFactory;
-        $this->adminUserRepository = $adminUserRepository;
     }
 
     /**
@@ -36,11 +26,11 @@ final class AdminSecurityContext implements Context
      */
     public function iAmLoggedInAsAnAdministrator(): void
     {
-        /** @var UserInterface $user */
-        $user = $this->userFactory->create(['email' => 'admin@example.com', 'password' => 'admin']);
-        $this->adminUserRepository->add($user);
+        $user = $this->userFactory
+            ->createOne(['email' => 'admin@example.com', 'password' => 'admin'])
+            ->disableAutoRefresh();
 
-        $this->securityService->logIn($user);
+        $this->securityService->logIn($user->object());
 
         $this->sharedStorage->set('administrator', $user);
     }

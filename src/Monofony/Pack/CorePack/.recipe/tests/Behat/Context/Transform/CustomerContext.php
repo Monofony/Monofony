@@ -9,6 +9,7 @@ use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
+use Zenstruck\Foundry\Proxy;
 
 final class CustomerContext implements Context
 {
@@ -48,7 +49,7 @@ final class CustomerContext implements Context
     /**
      * @Transform /^(he|his|she|her|their|the customer of my account)$/
      */
-    public function getLastCustomer()
+    public function getLastCustomer(): CustomerInterface|Proxy
     {
         return $this->sharedStorage->get('customer');
     }

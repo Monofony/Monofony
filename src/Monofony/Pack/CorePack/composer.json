@@ -7,6 +7,7 @@
         "php": "^8.0",
         "behat/behat": "^3.2",
         "doctrine/doctrine-migrations-bundle": "^3.0",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "doctrine/orm": "^2.5",
         "fakerphp/faker": "^1.14",
         "liip/imagine-bundle": "^2.2",
@@ -20,15 +21,16 @@
         "monofony/user-bundle": "^1.10",
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-webmozart-assert": "^0.12",
-        "sylius/fixtures-bundle": "^1.7",
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",
         "sylius/resource-bundle": "^1.8",
+        "symfony/config": "^5.3",
         "symfony/process": "^5.3",
         "symfony/serializer": "^5.3",
         "symfony/translation": "^5.3",
         "symfony/validator": "^5.3",
-        "vich/uploader-bundle": "^1.8"
+        "vich/uploader-bundle": "^1.8",
+        "zenstruck/foundry": "^1.14"
     },
     "require-dev": {
         "behat/behat": "^3.2",
