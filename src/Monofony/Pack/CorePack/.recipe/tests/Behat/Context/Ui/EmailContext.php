@@ -6,25 +6,12 @@ namespace App\Tests\Behat\Context\Ui;
 
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\EmailCheckerInterface;
-use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Webmozart\Assert\Assert;
 
 final class EmailContext implements Context
 {
-    /**
-     * @var SharedStorageInterface
-     */
-    private $sharedStorage;
-
-    /**
-     * @var EmailCheckerInterface
-     */
-    private $emailChecker;
-
-    public function __construct(SharedStorageInterface $sharedStorage, EmailCheckerInterface $emailChecker)
+    public function __construct(private EmailCheckerInterface $emailChecker)
     {
-        $this->sharedStorage = $sharedStorage;
-        $this->emailChecker = $emailChecker;
     }
 
     /**
@@ -61,11 +48,7 @@ final class EmailContext implements Context
         $this->assertEmailContainsMessageTo('Welcome to our website', $recipient);
     }
 
-    /**
-     * @param string $message
-     * @param string $recipient
-     */
-    private function assertEmailContainsMessageTo($message, $recipient): void
+    private function assertEmailContainsMessageTo(string $message, string $recipient): void
     {
         Assert::true($this->emailChecker->hasMessageTo($message, $recipient));
     }

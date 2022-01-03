@@ -102,35 +102,4 @@ final class CustomerContext implements Context
 
         return $customer;
     }
-
-    private function createCustomerWithUserAccount(
-        string $email,
-        string $password,
-        bool $enabled = true,
-        string $firstName = null,
-        string $lastName = null,
-        string $role = null
-    ): CustomerInterface {
-        /** @var AppUserInterface $user */
-        $user = $this->appUserFactory->createNew();
-        /** @var CustomerInterface $customer */
-        $customer = $this->customerFactory->createNew();
-
-        $customer->setFirstName($firstName);
-        $customer->setLastName($lastName);
-        $customer->setEmail($email);
-
-        $user->setUsername($email);
-        $user->setPlainPassword($password);
-        $user->setEnabled($enabled);
-        if (null !== $role) {
-            $user->addRole($role);
-        }
-
-        $customer->setUser($user);
-
-        $this->sharedStorage->set('customer', $customer);
-
-        return $customer;
-    }
 }
