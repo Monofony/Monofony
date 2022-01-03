@@ -8,6 +8,7 @@ use App\Command\Helper\CommandsRunner;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class InstallAssetsCommand extends Command
 {
@@ -41,7 +42,8 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln(sprintf('Installing AppName assets for environment <info>%s</info>.', $this->environment));
+        $io = new SymfonyStyle($input, $output);
+        $io->title(sprintf('Installing AppName assets for environment <info>%s</info>.', $this->environment));
 
         $commands = [
             'assets:install',

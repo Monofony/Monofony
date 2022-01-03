@@ -63,15 +63,15 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $outputStyle = new SymfonyStyle($input, $output);
-        $outputStyle->writeln('<info>Installing AppName...</info>');
-        $outputStyle->writeln($this->getLogo());
+        $io = new SymfonyStyle($input, $output);
+        $io->title('Installing AppName...');
+        $io->writeln($this->getLogo());
 
         $errored = false;
         foreach ($this->commands as $step => $command) {
             try {
-                $outputStyle->newLine();
-                $outputStyle->section(sprintf(
+                $io->newLine();
+                $io->section(sprintf(
                     'Step %d of %d. <info>%s</info>',
                     $step + 1,
                     count($this->commands),
@@ -84,8 +84,9 @@ EOT
             }
         }
 
-        $output->writeln($this->getProperFinalMessage($errored));
-        $output->writeln('You can now open your website at the following path under the website root.');
+        $io->newLine(2);
+        $io->success($this->getProperFinalMessage($errored));
+        $io->info('You can now open your website at the following path under the website root: /');
 
         return 0;
     }
@@ -93,10 +94,10 @@ EOT
     private function getProperFinalMessage(bool $errored): string
     {
         if ($errored) {
-            return '<info>AppName has been installed, but some error occurred.</info>';
+            return 'AppName has been installed, but some error occurred.';
         }
 
-        return '<info>AppName has been successfully installed.</info>';
+        return 'AppName has been successfully installed.';
     }
 
     private function getLogo(): string

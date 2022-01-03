@@ -44,8 +44,8 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $outputStyle = new SymfonyStyle($input, $output);
-        $outputStyle->writeln(sprintf(
+        $io = new SymfonyStyle($input, $output);
+        $io->writeln(sprintf(
             'Creating AppName database for environment <info>%s</info>.',
             $this->environment
         ));
@@ -54,7 +54,7 @@ EOT
             ->getCommands($input, $output, $this->getHelper('question'))
         ;
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
-        $outputStyle->newLine();
+        $io->newLine();
 
         // Install Sample data command is available on monofony/fixtures-plugin
         if (class_exists(InstallSampleDataCommand::class)) {

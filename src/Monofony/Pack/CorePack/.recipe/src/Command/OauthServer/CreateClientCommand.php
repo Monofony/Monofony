@@ -10,6 +10,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class CreateClientCommand extends Command
 {
@@ -52,13 +53,15 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $io = new SymfonyStyle($input, $output);
+
         /** @var Client $client */
         $client = $this->clientManager->createClient();
         $client->setRedirectUris($input->getOption('redirect-uri'));
         $client->setAllowedGrantTypes($input->getOption('grant-type'));
         $this->clientManager->updateClient($client);
 
-        $output->writeln(
+        $io->writeln(
             sprintf(
                 'A new client with public id <info>%s</info>, secret <info>%s</info> has been added',
                 $client->getPublicId(),

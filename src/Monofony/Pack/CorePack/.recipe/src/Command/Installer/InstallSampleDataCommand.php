@@ -46,17 +46,17 @@ EOT
         /** @var QuestionHelper $questionHelper */
         $questionHelper = $this->getHelper('question');
 
-        $outputStyle = new SymfonyStyle($input, $output);
-        $outputStyle->newLine();
-        $outputStyle->writeln(sprintf(
+        $io = new SymfonyStyle($input, $output);
+        $io->newLine();
+        $io->title(sprintf(
             'Loading sample data for environment <info>%s</info>.',
             $this->environment
         ));
 
-        $outputStyle->writeln('<error>Warning! This action will erase your database.</error>');
+        $io->warning('This action will erase your database.');
 
         if (!$questionHelper->ask($input, $output, new ConfirmationQuestion('Continue? (y/N) ', false))) {
-            $outputStyle->writeln('Cancelled loading sample data.');
+            $io->writeln('Cancelled loading sample data.');
 
             return 0;
         }
@@ -66,7 +66,7 @@ EOT
         ];
 
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
-        $outputStyle->newLine(2);
+        $io->newLine(2);
 
         return 0;
     }
