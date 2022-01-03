@@ -52,12 +52,6 @@
     "coduo/php-to-string": {
         "version": "2.0.1"
     },
-    "composer/package-versions-deprecated": {
-        "version": "1.11.99.4"
-    },
-    "composer/pcre": {
-        "version": "1.0.0"
-    },
     "composer/semver": {
         "version": "1.4.2"
     },
@@ -190,18 +184,6 @@
     "friends-of-behat/variadic-extension": {
         "version": "v1.1.0"
     },
-    "friendsofphp/php-cs-fixer": {
-        "version": "3.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "3.0",
-            "ref": "be2103eb4a20942e28a6dd87736669b757132435"
-        },
-        "files": [
-            ".php-cs-fixer.dist.php"
-        ]
-    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.2"
     },
@@ -232,6 +214,18 @@
     "imagine/imagine": {
         "version": "1.2.3"
     },
+    "infection/abstract-testframework-adapter": {
+        "version": "0.3.1"
+    },
+    "infection/extension-installer": {
+        "version": "0.1.1"
+    },
+    "infection/include-interceptor": {
+        "version": "0.2.5"
+    },
+    "infection/infection": {
+        "version": "0.18.2"
+    },
     "instaclick/php-webdriver": {
         "version": "1.4.5"
     },
@@ -258,6 +252,9 @@
             "version": "2.0",
             "ref": "fe60ce509ef04a3f40da96e3979bc8d9b13b2372"
         }
+    },
+    "justinrainbow/json-schema": {
+        "version": "5.2.11"
     },
     "knplabs/knp-menu": {
         "version": "v3.1.2"
@@ -368,6 +365,12 @@
     "nikic/php-parser": {
         "version": "v4.2.2"
     },
+    "ocramius/package-versions": {
+        "version": "2.4.0"
+    },
+    "ondram/ci-detector": {
+        "version": "3.5.1"
+    },
     "openlss/lib-array2xml": {
         "version": "0.0.10"
     },
@@ -391,9 +394,6 @@
     },
     "php": {
         "version": "7.3"
-    },
-    "php-cs-fixer/diff": {
-        "version": "v2.0.2"
     },
     "phpcollection/phpcollection": {
         "version": "0.5.0"
@@ -488,6 +488,9 @@
     "rector/rector": {
         "version": "0.11.60"
     },
+    "sanmai/pipeline": {
+        "version": "v5.2.1"
+    },
     "se/selenium-server-standalone": {
         "version": "v2.53.1"
     },
@@ -538,6 +541,9 @@
     },
     "sebastian/version": {
         "version": "2.0.1"
+    },
+    "seld/jsonlint": {
+        "version": "1.8.3"
     },
     "sensio/framework-extra-bundle": {
         "version": "4.0",
@@ -970,6 +976,9 @@
     },
     "textalk/websocket": {
         "version": "1.5.0"
+    },
+    "thecodingmachine/safe": {
+        "version": "v1.3.3"
     },
     "theofidry/alice-data-fixtures": {
         "version": "1.0",
