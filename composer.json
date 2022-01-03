@@ -87,7 +87,7 @@
         "symfony/asset": "^5.3",
         "symfony/dotenv": "^5.3",
         "symfony/expression-language": "5.3.*",
-        "symfony/flex": "^1.13",
+        "symfony/flex": "^2.0",
         "symfony/framework-bundle": "^5.3",
         "symfony/messenger": "^5.3",
         "symfony/monolog-bundle": "^3.3",
@@ -171,7 +171,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "5.3.*"
+            "require": "5.4.*"
         }
     }
 }
