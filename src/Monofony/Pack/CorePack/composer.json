@@ -19,7 +19,7 @@
         "monofony/sylius-user-bridge": "^0.8",
         "monofony/user": "^1.10",
         "monofony/user-bundle": "^1.10",
-        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-webmozart-assert": "^0.12",
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",

@@ -8,7 +8,6 @@ use App\Tests\Behat\Page\Backend\Customer\IndexPage;
 use App\Tests\Behat\Page\Backend\Customer\ShowPage;
 use App\Tests\Behat\Page\Backend\Customer\UpdatePage;
 use Behat\Behat\Context\Context;
-use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Webmozart\Assert\Assert;
 
@@ -17,18 +16,15 @@ final class ManagingCustomersContext implements Context
     private IndexPage $indexPage;
     private UpdatePage $updatePage;
     private ShowPage $showPage;
-    private CurrentPageResolverInterface $currentPageResolver;
 
     public function __construct(
         IndexPage $indexPage,
         UpdatePage $updatePage,
-        ShowPage $showPage,
-        CurrentPageResolverInterface $currentPageResolver
+        ShowPage $showPage
     ) {
         $this->indexPage = $indexPage;
         $this->updatePage = $updatePage;
         $this->showPage = $showPage;
-        $this->currentPageResolver = $currentPageResolver;
     }
 
     /**
