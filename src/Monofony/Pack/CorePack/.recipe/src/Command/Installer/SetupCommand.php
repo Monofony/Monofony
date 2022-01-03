@@ -13,6 +13,7 @@ use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
@@ -58,7 +59,8 @@ EOT
 
     protected function setupAdministratorUser(InputInterface $input, OutputInterface $output): void
     {
-        $output->writeln('Create your administrator account.');
+        $io = new SymfonyStyle($input, $output);
+        $io->writeln('Create your administrator account.');
 
         try {
             $user = $this->configureNewUser($this->adminUserFactory->createNew(), $input, $output);
@@ -71,7 +73,7 @@ EOT
         $this->adminUserManager->persist($user);
         $this->adminUserManager->flush();
 
-        $output->writeln('Administrator account successfully registered.');
+        $io->success('Administrator account successfully registered.');
     }
 
     private function configureNewUser(
