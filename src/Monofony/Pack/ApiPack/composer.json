@@ -11,7 +11,7 @@
         "monofony/core-contracts": "^0.8",
         "monofony/user": "^1.10",
         "monofony/user-bundle": "^1.10",
-        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan": "^1.0",
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.8",
         "symfony/messenger": "^5.3"
