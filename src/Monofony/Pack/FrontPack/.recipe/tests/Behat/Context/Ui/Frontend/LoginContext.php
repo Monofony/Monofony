@@ -64,7 +64,7 @@ final class LoginContext implements Context
     /**
      * @When /^I follow link on my email to reset (my) password$/
      */
-    public function iFollowLinkOnMyEmailToResetPassword(UserInterface|Proxy $user): void
+    public function iFollowLinkOnMyEmailToResetPassword(UserInterface | Proxy $user): void
     {
         $this->resetPasswordPage->open(['token' => $user->getPasswordResetToken()]);
     }
