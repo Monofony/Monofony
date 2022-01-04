@@ -1,5 +1,4 @@
 imports:
-    - { resource: '../sylius/grids.yaml' }
     - { resource: '../sylius/resources.yaml' }
     - { resource: "@SyliusCustomerBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusUserBundle/Resources/config/app/config.yml" }
