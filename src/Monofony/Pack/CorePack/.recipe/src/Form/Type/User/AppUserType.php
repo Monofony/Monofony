@@ -30,7 +30,7 @@ class AppUserType extends UserType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'sylius_app_user';
     }
