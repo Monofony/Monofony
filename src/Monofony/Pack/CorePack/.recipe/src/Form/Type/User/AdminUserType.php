@@ -39,7 +39,7 @@ class AdminUserType extends UserType
     /**
      * {@inheritdoc}
      */
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'sylius_admin_user';
     }
