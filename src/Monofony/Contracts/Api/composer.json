@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "symfony/serializer": "^5.3"
+        "symfony/serializer": "5.4.*"
     },
     "autoload": {
         "psr-4": {
