@@ -24,8 +24,8 @@
         "phpstan/phpstan-webmozart-assert": "^0.12",
         "psr/event-dispatcher": "^1.0",
         "se/selenium-server-standalone": "^3.141",
-        "symfony/debug-bundle": "^5.3",
-        "symfony/web-profiler-bundle": "^5.3",
+        "symfony/debug-bundle": "5.4.*",
+        "symfony/web-profiler-bundle": "5.4.*",
         "vimeo/psalm": "^4.3"
     },
     "minimum-stability": "dev",
