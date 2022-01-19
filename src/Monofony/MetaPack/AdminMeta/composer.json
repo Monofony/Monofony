@@ -1,0 +1,11 @@
+{
+    "name": "monofony/admin-meta",
+    "type": "metapackage",
+    "license": "MIT",
+    "description": "A meta package providing recipes for administration panel",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        }
+    }
+}

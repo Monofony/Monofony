@@ -13,8 +13,8 @@
             <directory name="src/Monofony/Bridge/FOSOAuthServer/spec" />
             <directory name="src/Monofony/Bridge/FOSOAuthServer/spec" />
             <directory name="src/Monofony/Bridge/SyliusUser/spec" />
-            <directory name="src/Monofony/Pack/AdminPack/.recipe/spec" />
-            <directory name="src/Monofony/Pack/AdminPack/.recipe/tests" />
+            <directory name="src/Monofony/MetaPack/AdminMeta/.recipe/spec" />
+            <directory name="src/Monofony/MetaPack/AdminMeta/.recipe/tests" />
             <directory name="src/Monofony/Pack/CorePack/.recipe/spec" />
             <directory name="src/Monofony/Bundle/CoreBundle/spec" />
             <directory name="src/Monofony/Component/Admin/spec" />

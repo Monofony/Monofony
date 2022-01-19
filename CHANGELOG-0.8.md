@@ -1,6 +1,12 @@
 ## Change Log
 
-### v0.8.0 (2022/01/03 17:24 +00:00)
+### v0.8.0-alpha.2 (2022/01/04 09:36 +00:00)
+- [#380](https://github.com/Monofony/Monofony/pull/380) Fix password reset template if front pack is not installed (@loic425)
+- [#383](https://github.com/Monofony/Monofony/pull/383) Fix return type hints on forms (@loic425)
+- [#382](https://github.com/Monofony/Monofony/pull/382) Remove grid yaml configuration (@loic425)
+- [#381](https://github.com/Monofony/Monofony/pull/381) Remove Symfony 5.3 support (@loic425)
+
+### v0.8.0-alpha.1 (2022/01/03 17:24 +00:00)
 - [#379](https://github.com/Monofony/Monofony/pull/379) Use Symfony style for commands (@loic425)
 - [#378](https://github.com/Monofony/Monofony/pull/378) Bump Symfony flex version from 1.17 to 2.0 (@loic425)
 - [#377](https://github.com/Monofony/Monofony/pull/377) Use Foundry for data fixtures (@loic425)

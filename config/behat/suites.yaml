@@ -1,9 +1,9 @@
 imports:
     - ../../src/Monofony/Pack/CorePack/.recipe/config/behat/suites/cli/installer.yaml
 
-    - ../../src/Monofony/Pack/AdminPack/.recipe/config/behat/suites/ui/admin/dashboard.yaml
-    - ../../src/Monofony/Pack/AdminPack/.recipe/config/behat/suites/ui/customer/managing_customers.yaml
-    - ../../src/Monofony/Pack/AdminPack/.recipe/config/behat/suites/ui/user/managing_administrators.yaml
+    - ../../src/Monofony/MetaPack/AdminMeta/.recipe/config/behat/suites/ui/admin/dashboard.yaml
+    - ../../src/Monofony/MetaPack/AdminMeta/.recipe/config/behat/suites/ui/customer/managing_customers.yaml
+    - ../../src/Monofony/MetaPack/AdminMeta/.recipe/config/behat/suites/ui/user/managing_administrators.yaml
 
     - ../../src/Monofony/Pack/FrontPack/.recipe/config/behat/suites/ui/account/customer.yaml
     - ../../src/Monofony/Pack/FrontPack/.recipe/config/behat/suites/ui/account/login.yaml
