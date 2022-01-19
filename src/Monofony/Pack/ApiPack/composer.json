@@ -8,6 +8,7 @@
         "api-platform/api-pack": "^1.2",
         "lchrusciel/api-test-case": "^5.1",
         "monofony/api-contracts": "^0.8",
+        "monofony/api-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/user": "^1.10",
         "monofony/user-bundle": "^1.10",
