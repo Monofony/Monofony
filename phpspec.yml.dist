@@ -10,6 +10,6 @@ suites:
     Admin: { namespace: Monofony\Component\Admin, psr4_prefix: Monofony\Component\Admin, spec_path: src/Monofony/Component/Admin, src_path: src/Monofony/Component/Admin }
 
     # Packs
-    AdminPack.recipe: { spec_path: src/Monofony/Pack/AdminPack/.recipe, src_path: src/Monofony/Pack/AdminPack/.recipe }
+    AdminPack.recipe: { spec_path: src/Monofony/MetaPack/AdminMeta/.recipe, src_path: src/Monofony/MetaPack/AdminMeta/.recipe }
     ApiPack.recipe: { spec_path: src/Monofony/Pack/ApiPack/.recipe, src_path: src/Monofony/Pack/ApiPack/.recipe }
     CorePack.recipe: { spec_path: src/Monofony/Pack/CorePack/.recipe, src_path: src/Monofony/Pack/CorePack/.recipe }

@@ -52,7 +52,7 @@ default:
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
                 - "src/Monofony/Pack/CorePack/.recipe/features"
-                - "src/Monofony/Pack/AdminPack/.recipe/features"
+                - "src/Monofony/MetaPack/AdminMeta/.recipe/features"
                 - "src/Monofony/Pack/FrontPack/.recipe/features"
                 - "features"
 
