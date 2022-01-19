@@ -22,7 +22,7 @@
     },
     "autoload": {
         "exclude-from-classmap": [
-            "/.recipe/"
+            "/Monofony/MetaPack/ApiMeta/.recipe/"
         ]
     },
     "minimum-stability": "dev",

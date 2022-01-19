@@ -1,0 +1,11 @@
+{
+    "name": "monofony/api-meta",
+    "type": "metapackage",
+    "license": "MIT",
+    "description": "A meta package providing recipes for API",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        }
+    }
+}
