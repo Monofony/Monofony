@@ -1,6 +1,6 @@
 parameters:
     paths:
-        - .recipe
+        - ../../MetaPack/AdminMeta/.recipe
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'

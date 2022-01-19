@@ -9,6 +9,7 @@
         "friends-of-behat/page-object-extension": "^0.3",
         "monofony/admin": "^0.8",
         "monofony/admin-contracts": "^0.8",
+        "monofony/admin-meta": "^0.8",
         "monofony/behat-bridge": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/ui-bundle": "^1.10",
@@ -30,12 +31,12 @@
     },
     "autoload": {
         "exclude-from-classmap": [
-            "/.recipe/"
+            "/Monofony/Metapack/.recipe/"
         ]
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\": ".recipe/src"
+            "App\\": "../../Metapack/AdminPackMeta/.recipe/src"
         }
     },
     "config": {

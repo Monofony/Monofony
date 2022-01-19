@@ -17,7 +17,7 @@ services:
 
     app_tests_behat_admin:
         namespace: App\Tests\Behat\
-        resource: '../src/Monofony/Pack/AdminPack/.recipe/tests/Behat/*'
+        resource: '../src/Monofony/Metapack/AdminMeta/.recipe/tests/Behat/*'
 
     app_tests_behat_front:
         namespace: App\Tests\Behat\
