@@ -5,6 +5,6 @@ imports:
     - ../../src/Monofony/MetaPack/AdminMeta/.recipe/config/behat/suites/ui/customer/managing_customers.yaml
     - ../../src/Monofony/MetaPack/AdminMeta/.recipe/config/behat/suites/ui/user/managing_administrators.yaml
 
-    - ../../src/Monofony/Pack/FrontPack/.recipe/config/behat/suites/ui/account/customer.yaml
-    - ../../src/Monofony/Pack/FrontPack/.recipe/config/behat/suites/ui/account/login.yaml
-    - ../../src/Monofony/Pack/FrontPack/.recipe/config/behat/suites/ui/account/registration.yaml
+    - ../../src/Monofony/MetaPack/FrontMeta/.recipe/config/behat/suites/ui/account/customer.yaml
+    - ../../src/Monofony/MetaPack/FrontMeta/.recipe/config/behat/suites/ui/account/login.yaml
+    - ../../src/Monofony/MetaPack/FrontMeta/.recipe/config/behat/suites/ui/account/registration.yaml

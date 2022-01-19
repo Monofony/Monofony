@@ -2,7 +2,7 @@ app_backend:
     resource: "../src/Monofony/MetaPack/AdminMeta/.recipe/config/routes/backend.yaml"
 
 app_frontend:
-    resource: "../src/Monofony/Pack/FrontPack/.recipe/config/routes/frontend.yaml"
+    resource: "../src/Monofony/MetaPack/FrontMeta/.recipe/config/routes/frontend.yaml"
 
 app_api:
     resource: "../src/Monofony/MetaPack/ApiMeta/.recipe/config/routes/api.yaml"

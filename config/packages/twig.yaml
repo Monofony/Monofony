@@ -8,4 +8,4 @@ twig:
     paths:
         - '%kernel.project_dir%/src/Monofony/MetaPack/CoreMeta/.recipe/templates'
         - '%kernel.project_dir%/src/Monofony/MetaPack/AdminMeta/.recipe/templates'
-        - '%kernel.project_dir%/src/Monofony/Pack/FrontPack/.recipe/templates'
+        - '%kernel.project_dir%/src/Monofony/MetaPack/FrontMeta/.recipe/templates'

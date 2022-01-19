@@ -5,5 +5,5 @@ services:
 
     app_frontend:
         namespace: App\
-        resource: '../../src/Monofony/Pack/FrontPack/.recipe/src/*'
-        exclude: '../../src/Monofony/Pack/FrontPack/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/MetaPack/FrontMeta/.recipe/src/*'
+        exclude: '../../src/Monofony/MetaPack/FrontMeta/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

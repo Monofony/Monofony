@@ -21,4 +21,4 @@ services:
 
     app_tests_behat_front:
         namespace: App\Tests\Behat\
-        resource: '../src/Monofony/Pack/FrontPack/.recipe/tests/Behat/*'
+        resource: '../src/Monofony/MetaPack/FrontMeta/.recipe/tests/Behat/*'

@@ -18,7 +18,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/src/Monofony/MetaPack/AdminMeta/.recipe/src',
         __DIR__ . '/src/Monofony/MetaPack/ApiMeta/.recipe/src',
         __DIR__ . '/src/Monofony/MetaPack/CoreMeta/.recipe/src',
-        __DIR__ . '/src/Monofony/Pack/FrontPack/.recipe/src',
+        __DIR__ . '/src/Monofony/MetaPack/FrontMeta/.recipe/src',
     ]);
     $parameters->set(Option::SYMFONY_CONTAINER_XML_PATH_PARAMETER,
         __DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml',

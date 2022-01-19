@@ -1,0 +1,11 @@
+{
+    "name": "monofony/front-meta",
+    "type": "metapackage",
+    "license": "MIT",
+    "description": "A meta package providing recipes for front",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        }
+    }
+}

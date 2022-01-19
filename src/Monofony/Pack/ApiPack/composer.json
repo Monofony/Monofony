@@ -20,11 +20,6 @@
         "lchrusciel/api-test-case": "^5.1",
         "phpstan/phpstan": "^0.12"
     },
-    "autoload": {
-        "exclude-from-classmap": [
-            "/Monofony/MetaPack/ApiMeta/.recipe/"
-        ]
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
