@@ -4,5 +4,5 @@ parameters:
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
-        - .recipe/src/Dashboard/Statistics/CustomerStatistic.php
-        - .recipe/src/Grid/**.php
+        - '../../MetaPack/AdminMeta/.recipe/src/Dashboard/Statistics/CustomerStatistic.php'
+        - '../../MetaPack/AdminMeta/.recipe/src/Grid/**.php'
