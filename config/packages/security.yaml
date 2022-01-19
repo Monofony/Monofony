@@ -7,6 +7,7 @@ parameters:
     secret: '%env(resolve:APP_SECRET)%'
 
 security:
+    enable_authenticator_manager: true
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
@@ -14,6 +15,7 @@ security:
             id: sylius.admin_user_provider.email_or_name_based
         sylius_app_user_provider:
             id: sylius.app_user_provider.email_or_name_based
+
     password_hashers:
         Sylius\Component\User\Model\UserInterface: auto
 
@@ -42,7 +44,6 @@ security:
             logout:
                 path: sylius_backend_logout
                 target: sylius_backend_login
-            anonymous: true
 
         oauth_token:
             pattern: ^/api/oauth/v2/token
@@ -53,7 +54,6 @@ security:
             provider: sylius_app_user_provider
             fos_oauth: true
             stateless: true
-            anonymous: true
 
         app:
             switch_user: true
@@ -77,7 +77,6 @@ security:
             logout:
                 path: app_frontend_logout
                 target: app_frontend_homepage
-            anonymous: true
 
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -85,8 +84,8 @@ security:
             security: false
 
     access_control:
-        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, role: PUBLIC_ACCESS }
+        - { path: ^/admin/login, role: PUBLIC_ACCESS }
+        - { path: ^/admin/login-check, role: PUBLIC_ACCESS }
         - { path: ^/admin/dashboard, role: ROLE_ADMIN }
         - { path: "^/admin.*", role: ROLE_ADMIN }
