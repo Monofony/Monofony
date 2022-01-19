@@ -135,21 +135,21 @@ function replaceClasses(Filesystem $filesystem, string $projectDir): void
 
     if (!is_file($projectDir.'/src/Fixture/Factory/AbstractExampleFactory.php')) {
         copy(
-            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/src/Fixture/Factory/AbstractExampleFactory.php',
+            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/MetaPack/CoreMeta/.recipe/src/Fixture/Factory/AbstractExampleFactory.php',
             $projectDir.'/src/Fixture/Factory/AbstractExampleFactory.php'
         );
     }
 
     if (!is_file($projectDir.'/src/Fixture/Factory/ExampleFactoryInterface.php')) {
         copy(
-            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/src/Fixture/Factory/ExampleFactoryInterface.php',
+            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/MetaPack/CoreMeta/.recipe/src/Fixture/Factory/ExampleFactoryInterface.php',
             $projectDir.'/src/Fixture/Factory/ExampleFactoryInterface.php'
         );
     }
 
     if (!is_file($projectDir.'/src/Fixture/AbstractResourceFixture.php')) {
         copy(
-            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/src/Fixture/AbstractResourceFixture.php',
+            'https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/MetaPack/CoreMeta/.recipe/src/Fixture/AbstractResourceFixture.php',
             $projectDir.'/src/Fixture/AbstractResourceFixture.php'
         );
     }
@@ -181,7 +181,7 @@ function fixRecipes(Filesystem $filesystem, string $projectDir): void
 {
     $filesystem->dumpFile(
         $projectDir.'/templates/bundles/SyliusUiBundle/Form/theme.html.twig',
-            file_get_contents('https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/Pack/CorePack/.recipe/templates/bundles/SyliusUiBundle/Form/theme.html.twig')
+            file_get_contents('https://raw.githubusercontent.com/Monofony/Monofony/0.4/src/Monofony/MetaPack/CoreMeta/.recipe/templates/bundles/SyliusUiBundle/Form/theme.html.twig')
     );
 
     $filesystem->dumpFile(

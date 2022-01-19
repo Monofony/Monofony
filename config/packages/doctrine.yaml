@@ -25,6 +25,6 @@ doctrine:
             App:
                 is_bundle: false
                 type: attribute
-                dir: '%kernel.project_dir%/src/Monofony/Pack/CorePack/.recipe/src/Entity'
+                dir: '%kernel.project_dir%/src/Monofony/MetaPack/CoreMeta/.recipe/src/Entity'
                 prefix: 'App\Entity'
                 alias: App

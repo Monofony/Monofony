@@ -1,0 +1,11 @@
+{
+    "name": "monofony/core-meta",
+    "type": "metapackage",
+    "license": "MIT",
+    "description": "A meta package providing recipes for core",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        }
+    }
+}

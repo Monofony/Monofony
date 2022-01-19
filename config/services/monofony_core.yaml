@@ -13,5 +13,5 @@ services:
 
     app_core_bundle:
         namespace: App\
-        resource: '../../src/Monofony/Pack/CorePack/.recipe/src/*'
-        exclude: '../../src/Monofony/Pack/CorePack/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/MetaPack/CoreMeta/.recipe/src/*'
+        exclude: '../../src/Monofony/MetaPack/CoreMeta/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

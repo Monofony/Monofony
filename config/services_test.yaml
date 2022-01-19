@@ -13,7 +13,7 @@ services:
 
     app_tests_behat_core:
         namespace: App\Tests\Behat\
-        resource: '../src/Monofony/Pack/CorePack/.recipe/tests/Behat/*'
+        resource: '../src/Monofony/MetaPack/CoreMeta/.recipe/tests/Behat/*'
 
     app_tests_behat_admin:
         namespace: App\Tests\Behat\
