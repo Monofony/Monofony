@@ -7,5 +7,5 @@ services:
 
     app_fixture:
         namespace: App\
-        resource: '../../src/Monofony/Pack/ApiPack/.recipe/src/*'
-        exclude: '../../src/Monofony/Pack/ApiPack/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+        resource: '../../src/Monofony/MetaPack/ApiMeta/.recipe/src/*'
+        exclude: '../../src/Monofony/MetaPack/ApiMeta/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

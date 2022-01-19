@@ -34,7 +34,7 @@
             <directory>src</directory>
         </testsuite>
         <testsuite name="Api Recipe Test Suite">
-            <directory>src/Monofony/Pack/ApiPack/.recipe/tests</directory>
+            <directory>src/Monofony/MetaPack/ApiMeta/.recipe/tests</directory>
         </testsuite>
     </testsuites>
 

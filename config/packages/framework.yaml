@@ -11,7 +11,7 @@ framework:
     serializer:
         enabled: true
         mapping:
-            paths: ['%kernel.project_dir%/src/Monofony/Pack/ApiPack/.recipe/config/serialization/']
+            paths: ['%kernel.project_dir%/src/Monofony/MetaPack/ApiMeta/.recipe/config/serialization/']
     default_locale:  "%locale%"
     trusted_hosts:   ~
     session:
