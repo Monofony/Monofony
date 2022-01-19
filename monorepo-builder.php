@@ -29,6 +29,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__.'/src/Monofony/Contracts/Core' => 'git@github.com:Monofony/CoreContracts.git',
         __DIR__.'/src/Monofony/Contracts/Front' => 'git@github.com:Monofony/FrontContracts.git',
 
+        // MetaPackages
+        __DIR__.'/src/Monofony/MetaPack/AdminMeta' => 'git@github.com:Monofony/AdminMeta.git',
+        __DIR__.'/src/Monofony/MetaPack/ApiMeta' => 'git@github.com:Monofony/ApiMeta.git',
+        __DIR__.'/src/Monofony/MetaPack/CoreMeta' => 'git@github.com:Monofony/CoreMeta.git',
+        __DIR__.'/src/Monofony/MetaPack/FrontMeta' => 'git@github.com:Monofony/FrontMeta.git',
+
         // Packs
         __DIR__.'/src/Monofony/Pack/AdminPack' => 'git@github.com:Monofony/AdminPack.git',
         __DIR__.'/src/Monofony/Pack/ApiPack' => 'git@github.com:Monofony/ApiPack.git',
