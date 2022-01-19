@@ -3,6 +3,11 @@
     "type": "metapackage",
     "license": "MIT",
     "description": "A meta package providing recipes for administration panel",
+    "autoload": {
+        "exclude-from-classmap": [
+            ".recipe/"
+        ]
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "0.8-dev"

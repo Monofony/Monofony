@@ -53,7 +53,7 @@ default:
             paths:
                 - "src/Monofony/MetaPack/CoreMeta/.recipe/features"
                 - "src/Monofony/MetaPack/AdminMeta/.recipe/features"
-                - "src/Monofony/Pack/FrontPack/.recipe/features"
+                - "src/Monofony/MetaPack/FrontMeta/.recipe/features"
                 - "features"
 
     gherkin:

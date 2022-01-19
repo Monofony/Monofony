@@ -29,7 +29,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/src/Monofony/MetaPack/AdminMeta/.recipe',
         __DIR__ . '/src/Monofony/MetaPack/ApiMeta/.recipe',
         __DIR__ . '/src/Monofony/MetaPack/CoreMeta/.recipe',
-        __DIR__.'/src/Monofony/Pack/FrontPack/.recipe',
+        __DIR__ . '/src/Monofony/MetaPack/FrontMeta/.recipe',
     ]);
     $parameters->set(Option::SKIP, [
         __DIR__.'/**/*Spec.php',

@@ -38,11 +38,6 @@
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-webmozart-assert": "^0.12"
     },
-    "autoload": {
-        "exclude-from-classmap": [
-            "/Monofony/MetaPack/CoreMeta/.recipe/"
-        ]
-    },
     "config": {
         "sort-packages": true
     },

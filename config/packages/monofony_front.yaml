@@ -1,2 +1,2 @@
 imports:
-    - { resource: '../../src/Monofony/Pack/FrontPack/.recipe/config/packages/monofony_front.yaml' }
+    - { resource: '../../src/Monofony/MetaPack/FrontMeta/.recipe/config/packages/monofony_front.yaml' }

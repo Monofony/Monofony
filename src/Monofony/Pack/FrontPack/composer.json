@@ -21,11 +21,6 @@
         "phpstan/phpstan": "^0.12",
         "monofony/behat-bridge": "^0.8"
     },
-    "autoload": {
-        "exclude-from-classmap": [
-            "/.recipe/"
-        ]
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [

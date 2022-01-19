@@ -46,18 +46,18 @@
             "App\\Tests\\Behat\\Context\\Transform\\": "src/Monofony/MetaPack/CoreMeta/.recipe/tests/Behat/Context/Transform/",
             "App\\Tests\\Behat\\Context\\Ui\\": "src/Monofony/MetaPack/CoreMeta/.recipe/tests/Behat/Context/Ui/",
             "App\\Tests\\Behat\\Context\\Ui\\Backend\\": "src/Monofony/MetaPack/AdminMeta/.recipe/tests/Behat/Context/Ui/Backend/",
-            "App\\Tests\\Behat\\Context\\Ui\\Frontend\\": "src/Monofony/Pack/FrontPack/.recipe/tests/Behat/Context/Ui/Frontend/",
+            "App\\Tests\\Behat\\Context\\Ui\\Frontend\\": "src/Monofony/MetaPack/FrontMeta/.recipe/tests/Behat/Context/Ui/Frontend/",
             "App\\Tests\\Behat\\Element\\Backend\\": "src/Monofony/MetaPack/AdminMeta/.recipe/tests/Behat/Element/Backend/",
             "App\\Tests\\Behat\\Page\\Backend\\": "src/Monofony/MetaPack/AdminMeta/.recipe/tests/Behat/Page/Backend/",
             "App\\Tests\\Behat\\Exception\\": "src/Monofony/MetaPack/CoreMeta/.recipe/tests/Behat/Exception/",
-            "App\\Tests\\Behat\\Page\\Frontend\\": "src/Monofony/Pack/FrontPack/.recipe/tests/Behat/Page/Frontend/",
+            "App\\Tests\\Behat\\Page\\Frontend\\": "src/Monofony/MetaPack/FrontMeta/.recipe/tests/Behat/Page/Frontend/",
             "App\\Tests\\Behat\\Service\\": "src/Monofony/MetaPack/CoreMeta/.recipe/tests/Behat/Service/",
             "App\\Tests\\Controller\\": "src/Monofony/MetaPack/ApiMeta/.recipe/tests/Controller/"
         },
         "classmap": [
             "src/Monofony/MetaPack/AdminMeta/.recipe/src/Controller/DashboardController.php",
             "src/Monofony/MetaPack/AdminMeta/.recipe/src/Menu/AdminMenuBuilder.php",
-            "src/Monofony/Pack/FrontPack/.recipe/src/Menu/AccountMenuBuilder.php",
+            "src/Monofony/MetaPack/FrontMeta/.recipe/src/Menu/AccountMenuBuilder.php",
             "src/Monofony/MetaPack/CoreMeta/.recipe/src/Command/Installer/InstallSampleDataCommand.php"
         ]
     },

@@ -29,11 +29,6 @@
         "monofony/behat-bridge": "^0.8",
         "phpstan/phpstan": "^0.12"
     },
-    "autoload": {
-        "exclude-from-classmap": [
-            "/Monofony/MetaPack/.recipe/"
-        ]
-    },
     "autoload-dev": {
         "psr-4": {
             "App\\": "../../MetaPack/AdminMeta/.recipe/src"

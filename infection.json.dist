@@ -4,7 +4,7 @@
         "directories": [
             "src/Monofony/MetaPack/CoreMeta/.recipe/src",
             "src/Admin/recipe/src",
-            "src/Monofony/Pack/FrontPack/.recipe/src",
+            "src/Monofony/MetaPack/FrontMeta/.recipe/src",
             "src/Monofony/Pack/FixturesPack/.recipe/src",
             "src/Monofony/MetaPack/ApiMeta/.recipe/src"
         ],
