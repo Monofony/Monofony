@@ -40,7 +40,7 @@
     },
     "autoload": {
         "exclude-from-classmap": [
-            "/.recipe/"
+            "/Monofony/MetaPack/CoreMeta/.recipe/"
         ]
     },
     "config": {

@@ -31,7 +31,7 @@ validate-doctrine-schema:
 .PHONY: validate-doctrine-schema
 
 validate-twig:
-	bin/console lint:twig src/Monofony/Pack/CorePack/.recipe/templates
+	bin/console lint:twig src/Monofony/MetaPack/CoreMeta/.recipe/templates
 	bin/console lint:twig src/Monofony/MetaPack/AdminMeta/.recipe/templates
 	bin/console lint:twig src/Monofony/Pack/FrontPack/.recipe/templates
 .PHONY: validate-twig
@@ -53,7 +53,7 @@ test-phpspec:
 .PHONY: test-phpspec
 
 test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/CorePack/.recipe/src
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/MetaPack/CoreMeta/.recipe/src
 	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/MetaPack/AdminMeta/.recipe/src
 	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/Pack/FrontPack/.recipe/src
 .PHONY: test-phpstan

@@ -12,4 +12,4 @@ suites:
     # Packs
     AdminPack.recipe: { spec_path: src/Monofony/MetaPack/AdminMeta/.recipe, src_path: src/Monofony/MetaPack/AdminMeta/.recipe }
     ApiPack.recipe: { spec_path: src/Monofony/Pack/ApiPack/.recipe, src_path: src/Monofony/Pack/ApiPack/.recipe }
-    CorePack.recipe: { spec_path: src/Monofony/Pack/CorePack/.recipe, src_path: src/Monofony/Pack/CorePack/.recipe }
+    CorePack.recipe: { spec_path: src/Monofony/MetaPack/CoreMeta/.recipe, src_path: src/Monofony/MetaPack/CoreMeta/.recipe }

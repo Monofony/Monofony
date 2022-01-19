@@ -3,7 +3,7 @@ framework:
     translator:
         fallbacks: ["%locale%"]
         paths:
-            - '%kernel.project_dir%/src/Monofony/Pack/CorePack/.recipe/translations'
+            - '%kernel.project_dir%/src/Monofony/MetaPack/CoreMeta/.recipe/translations'
     secret:          '%env(APP_SECRET)%'
     form:            ~
     csrf_protection: ~

@@ -17,7 +17,7 @@ default:
             screenshot: true
 
         Behat\MinkExtension:
-            files_path: "%paths.base%/src/Monofony/Pack/CorePack/.recipe/tests/Resources/"
+            files_path: "%paths.base%/src/Monofony/MetaPack/CoreMeta/.recipe/tests/Resources/"
             base_url: "https://127.0.0.1:8080/"
             default_session: symfony
             javascript_session: chrome_headless
@@ -51,7 +51,7 @@ default:
 
         FriendsOfBehat\SuiteSettingsExtension:
             paths:
-                - "src/Monofony/Pack/CorePack/.recipe/features"
+                - "src/Monofony/MetaPack/CoreMeta/.recipe/features"
                 - "src/Monofony/MetaPack/AdminMeta/.recipe/features"
                 - "src/Monofony/Pack/FrontPack/.recipe/features"
                 - "features"

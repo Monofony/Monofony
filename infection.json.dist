@@ -2,7 +2,7 @@
     "timeout": 10,
     "source": {
         "directories": [
-            "src/Monofony/Pack/CorePack/.recipe/src",
+            "src/Monofony/MetaPack/CoreMeta/.recipe/src",
             "src/Admin/recipe/src",
             "src/Monofony/Pack/FrontPack/.recipe/src",
             "src/Monofony/Pack/FixturesPack/.recipe/src",
