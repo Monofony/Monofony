@@ -26,7 +26,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, [
-        __DIR__ . '/src/Monofony/Pack/AdminPack/.recipe',
+        __DIR__ . '/src/Monofony/Metapack/AdminMeta/.recipe',
         __DIR__.'/src/Monofony/Pack/ApiPack/.recipe',
         __DIR__.'/src/Monofony/Pack/CorePack/.recipe',
         __DIR__.'/src/Monofony/Pack/FrontPack/.recipe',
