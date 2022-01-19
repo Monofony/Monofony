@@ -31,12 +31,12 @@
     },
     "autoload": {
         "exclude-from-classmap": [
-            "/Monofony/Metapack/.recipe/"
+            "/Monofony/MetaPack/.recipe/"
         ]
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\": "../../Metapack/AdminMeta/.recipe/src"
+            "App\\": "../../MetaPack/AdminMeta/.recipe/src"
         }
     },
     "config": {
