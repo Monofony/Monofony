@@ -1,6 +1,6 @@
 {
     "name": "monofony/core-meta",
-    "type": "metapackage",
+    "type": "library",
     "license": "MIT",
     "description": "A meta package providing recipes for core",
     "autoload": {

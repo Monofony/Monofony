@@ -14,6 +14,7 @@
         "monofony/behat-bridge": "^0.8",
         "monofony/core-bundle": "^0.8",
         "monofony/core-contracts": "^0.8",
+        "monofony/core-meta": "^0.8",
         "monofony/customer-bundle": "^1.10",
         "monofony/fos-oauth-server-bridge": "^0.8",
         "monofony/sylius-user-bridge": "^0.8",

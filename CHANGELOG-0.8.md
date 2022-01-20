@@ -1,5 +1,12 @@
 ## Change Log
 
+### v0.8.0-alpha.3 (2022/01/19 16:34 +00:00)
+- [#389](https://github.com/Monofony/Monofony/pull/389) Split meta packages (@loic425)
+- [#388](https://github.com/Monofony/Monofony/pull/388) Front metapackage (@loic425)
+- [#387](https://github.com/Monofony/Monofony/pull/387) API metapackage (@loic425)
+- [#386](https://github.com/Monofony/Monofony/pull/386) Core metapackage (@loic425)
+- [#385](https://github.com/Monofony/Monofony/pull/385) Move admin-pack recipes into admin metapackage (@loic425)
+
 ### v0.8.0-alpha.2 (2022/01/04 09:36 +00:00)
 - [#380](https://github.com/Monofony/Monofony/pull/380) Fix password reset template if front pack is not installed (@loic425)
 - [#383](https://github.com/Monofony/Monofony/pull/383) Fix return type hints on forms (@loic425)

@@ -8,6 +8,7 @@
         "monofony/behat-bridge": "^0.8",
         "monofony/core-bundle": "^0.8",
         "monofony/front-contracts": "^0.8",
+        "monofony/front-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/ui-bundle": "^1.10",
         "phpstan/phpstan": "^0.12",
