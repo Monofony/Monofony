@@ -15,7 +15,9 @@ namespace Monofony\Contracts\Core\Model\User;
 
 use Sylius\Component\Customer\Model\CustomerAwareInterface;
 use Sylius\Component\User\Model\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
-interface AppUserInterface extends UserInterface, CustomerAwareInterface
+interface AppUserInterface extends UserInterface, CustomerAwareInterface, PasswordAuthenticatedUserInterface
 {
+    public function getPassword(): ?string;
 }

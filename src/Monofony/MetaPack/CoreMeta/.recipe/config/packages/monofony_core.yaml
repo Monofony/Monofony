@@ -64,7 +64,7 @@ sylius_mailer:
             template: emails/verification.html.twig
 
 security:
-    encoders:
+    password_hashers:
         argon2i: argon2id
 
 sylius_user:
