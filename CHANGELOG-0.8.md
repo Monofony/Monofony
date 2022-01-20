@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.8.0-alpha.5 (2022/01/20 10:39 +00:00)
+- [#392](https://github.com/Monofony/Monofony/pull/392) Fix password hasher (@loic425)
+
 ### v0.8.0-alpha.4 (2022/01/20 07:47 +00:00)
 - [#391](https://github.com/Monofony/Monofony/pull/391) Fix/meta to library for now (@loic425)
 
