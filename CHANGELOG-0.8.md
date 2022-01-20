@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.8.0-alpha.4 (2022/01/20 07:47 +00:00)
+- [#391](https://github.com/Monofony/Monofony/pull/391) Fix/meta to library for now (@loic425)
+
 ### v0.8.0-alpha.3 (2022/01/19 16:34 +00:00)
 - [#389](https://github.com/Monofony/Monofony/pull/389) Split meta packages (@loic425)
 - [#388](https://github.com/Monofony/Monofony/pull/388) Front metapackage (@loic425)
