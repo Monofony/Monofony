@@ -20,6 +20,8 @@ interface AdminUserInterface extends BaseUserInterface, PasswordAuthenticatedUse
 {
     public const DEFAULT_ADMIN_ROLE = 'ROLE_ADMIN';
 
+    public function getPassword(): ?string;
+
     public function getFirstName(): ?string;
 
     public function setFirstName(?string $firstName): void;

@@ -19,4 +19,5 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 interface AppUserInterface extends UserInterface, CustomerAwareInterface, PasswordAuthenticatedUserInterface
 {
+    public function getPassword(): ?string;
 }
