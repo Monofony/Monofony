@@ -13,7 +13,7 @@
         "monofony/behat-bridge": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/ui-bundle": "^1.10",
-        "pagerfanta/pagerfanta": "^3.0",
+        "pagerfanta/pagerfanta": "^3.5",
         "phpstan/phpstan": "^0.12",
         "sonata-project/block-bundle": "^4.2",
         "sylius/grid-bundle": "^1.11-alpha",
