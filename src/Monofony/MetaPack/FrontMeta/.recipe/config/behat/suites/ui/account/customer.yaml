@@ -13,4 +13,4 @@ default:
 
                 - App\Tests\Behat\Context\Ui\Frontend\AccountContext
             filters:
-                tags: "@customer_account && @ui"
+                tags: "@customer_account&&@ui"
