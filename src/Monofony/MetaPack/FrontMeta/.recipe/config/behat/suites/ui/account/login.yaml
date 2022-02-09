@@ -11,4 +11,4 @@ default:
                 - App\Tests\Behat\Context\Ui\EmailContext
                 - App\Tests\Behat\Context\Ui\Frontend\LoginContext
             filters:
-                tags: "@customer_login && @ui"
+                tags: "@customer_login&&@ui"

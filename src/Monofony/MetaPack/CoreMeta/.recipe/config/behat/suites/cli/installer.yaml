@@ -7,4 +7,4 @@ default:
                 - App\Tests\Behat\Context\Cli\CommandContext
                 - App\Tests\Behat\Context\Cli\InstallerContext
             filters:
-                tags: "@installer && @cli"
+                tags: "@installer&&@cli"

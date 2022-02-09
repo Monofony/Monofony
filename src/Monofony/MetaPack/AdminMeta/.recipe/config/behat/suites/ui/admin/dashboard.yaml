@@ -9,4 +9,4 @@ default:
 
                 - App\Tests\Behat\Context\Ui\Backend\DashboardContext
             filters:
-                tags: "@admin_dashboard && @ui"
+                tags: "@admin_dashboard&&@ui"

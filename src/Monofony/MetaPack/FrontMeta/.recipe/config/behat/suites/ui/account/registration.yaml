@@ -15,4 +15,4 @@ default:
                 - App\Tests\Behat\Context\Ui\EmailContext
                 - App\Tests\Behat\Context\Ui\Frontend\RegistrationContext
             filters:
-                tags: "@customer_registration && @ui"
+                tags: "@customer_registration&&@ui"

@@ -14,4 +14,4 @@ default:
                 - App\Tests\Behat\Context\Ui\Backend\LoginContext
                 - App\Tests\Behat\Context\Ui\Backend\NotificationContext
             filters:
-                tags: "@managing_administrators && @ui"
+                tags: "@managing_administrators&&@ui"
