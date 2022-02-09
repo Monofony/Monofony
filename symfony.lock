@@ -378,7 +378,7 @@
         "version": "v1.0.6"
     },
     "pagerfanta/pagerfanta": {
-        "version": "v1.1.0"
+        "version": "v3.5.2"
     },
     "paragonie/random_compat": {
         "version": "v2.0.15"
