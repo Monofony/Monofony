@@ -1,5 +1,9 @@
 ## Change Log
 
+### v0.8.0-alpha.6 (2022/02/09 17:38 +00:00)
+- [#394](https://github.com/Monofony/Monofony/pull/394) Remove tag whitespaces (@loic425)
+- [#393](https://github.com/Monofony/Monofony/pull/393) Upgrade Sylius dependencies (@loic425)
+
 ### v0.8.0-alpha.5 (2022/01/20 10:39 +00:00)
 - [#392](https://github.com/Monofony/Monofony/pull/392) Fix password hasher (@loic425)
 
