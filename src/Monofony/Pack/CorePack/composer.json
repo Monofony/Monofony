@@ -24,7 +24,7 @@
         "phpstan/phpstan-webmozart-assert": "^0.12",
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",
-        "sylius/resource-bundle": "^1.9@alpha",
+        "sylius/resource-bundle": "^1.9@beta",
         "symfony/config": "5.4.*",
         "symfony/process": "5.4.*",
         "symfony/serializer": "5.4.*",
