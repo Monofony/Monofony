@@ -1,5 +1,8 @@
 ## Change Log
 
+### v0.8.0-beta.1 (2022/02/10 14:10 +00:00)
+- [#395](https://github.com/Monofony/Monofony/pull/395) Bump Resource & grid to beta versions (@loic425)
+
 ### v0.8.0-alpha.6 (2022/02/09 17:38 +00:00)
 - [#394](https://github.com/Monofony/Monofony/pull/394) Remove tag whitespaces (@loic425)
 - [#393](https://github.com/Monofony/Monofony/pull/393) Upgrade Sylius dependencies (@loic425)
