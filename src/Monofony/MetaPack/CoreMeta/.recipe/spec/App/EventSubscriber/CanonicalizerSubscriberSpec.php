@@ -7,6 +7,7 @@ namespace spec\App\EventSubscriber;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Events;
+use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Sylius\Component\Customer\Model\CustomerInterface;
@@ -33,7 +34,7 @@ class CanonicalizerSubscriberSpec extends ObjectBehavior
         ]);
     }
 
-    function it_canonicalize_user_username($canonicalizer, LifecycleEventArgs $event, UserInterface $user): void
+    function it_canonicalize_user_username($canonicalizer, LifecycleEventArgs $event, AppUserInterface $user): void
     {
         $event->getEntity()->willReturn($user);
         $user->getUsername()->willReturn('testUser');
@@ -47,7 +48,7 @@ class CanonicalizerSubscriberSpec extends ObjectBehavior
         $this->canonicalize($event);
     }
 
-    function it_canonicalize_user_username_on_pre_persist_doctrine_event($canonicalizer, LifecycleEventArgs $event, UserInterface $user): void
+    function it_canonicalize_user_username_on_pre_persist_doctrine_event($canonicalizer, LifecycleEventArgs $event, AppUserInterface $user): void
     {
         $event->getEntity()->willReturn($user);
         $user->getUsername()->willReturn('testUser');
@@ -72,7 +73,7 @@ class CanonicalizerSubscriberSpec extends ObjectBehavior
         $this->prePersist($event);
     }
 
-    function it_canonicalize_user_username_on_pre_update_doctrine_event($canonicalizer, LifecycleEventArgs $event, UserInterface $user): void
+    function it_canonicalize_user_username_on_pre_update_doctrine_event($canonicalizer, LifecycleEventArgs $event, AppUserInterface $user): void
     {
         $event->getEntity()->willReturn($user);
         $user->getUsername()->willReturn('testUser');

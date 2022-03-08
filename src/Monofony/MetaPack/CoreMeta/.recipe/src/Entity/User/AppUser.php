@@ -63,4 +63,34 @@ class AppUser extends BaseUser implements AppUserInterface
 
         $this->customer->setEmailCanonical($emailCanonical);
     }
+
+    public function __serialize(): array
+    {
+        return [
+            $this->password,
+            $this->salt,
+            $this->usernameCanonical,
+            $this->username,
+            $this->locked,
+            $this->enabled,
+            $this->id,
+            $this->encoderName,
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $data = array_merge($data, array_fill(0, 2, null));
+
+        [
+            $this->password,
+            $this->salt,
+            $this->usernameCanonical,
+            $this->username,
+            $this->locked,
+            $this->enabled,
+            $this->id,
+            $this->encoderName,
+        ] = $data;
+    }
 }
