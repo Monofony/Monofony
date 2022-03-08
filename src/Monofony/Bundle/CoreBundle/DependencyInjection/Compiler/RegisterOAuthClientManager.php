@@ -21,7 +21,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 final class RegisterOAuthClientManager implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (
             !$container->hasParameter('fos_oauth_server.model.client.class')

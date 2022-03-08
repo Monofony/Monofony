@@ -16,19 +16,13 @@ class ChangePasswordApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_change_password_for_non_authenticated_user()
+    public function it_does_not_allow_to_change_password_for_non_authenticated_user(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
         $customer = $resources['customer'];
 
-        $data =
-            <<<EOT
-        {
-        }
-EOT;
-
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], ['CONTENT_TYPE' => 'application/json'], '{}');
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'error/access_denied_response', Response::HTTP_UNAUTHORIZED);
@@ -37,19 +31,13 @@ EOT;
     /**
      * @test
      */
-    public function it_does_not_allow_to_change_password_without_required_data()
+    public function it_does_not_allow_to_change_password_without_required_data(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
         $customer = $resources['customer'];
 
-        $data =
-            <<<EOT
-        {
-        }
-EOT;
-
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], $this::$authorizedHeaderWithContentType, $data);
+        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, '{}');
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/change_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -58,7 +46,7 @@ EOT;
     /**
      * @test
      */
-    public function it_does_not_allow_to_change_password_with_wrong_current_password()
+    public function it_does_not_allow_to_change_password_with_wrong_current_password(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
@@ -72,7 +60,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], $this::$authorizedHeaderWithContentType, $data);
+        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/wrong_current_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -81,7 +69,7 @@ EOT;
     /**
      * @test
      */
-    public function it_allows_to_change_password()
+    public function it_allows_to_change_password(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
@@ -95,7 +83,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], $this::$authorizedHeaderWithContentType, $data);
+        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, $data);
 
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
@@ -108,15 +96,12 @@ EOT;
         $data =
             <<<EOT
         {
-            "client_id": "client_id",
-            "client_secret": "secret",
-            "grant_type": "password",
             "username": "$username",
             "password": "$password"
         }
 EOT;
 
-        $this->client->request('POST', '/api/oauth/v2/token', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('POST', '/api/authentication_token', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'authentication/new_access_token', Response::HTTP_OK);

@@ -56,3 +56,8 @@ yarn-error.log
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
 ###< friendsofphp/php-cs-fixer ###
+
+###> lexik/jwt-authentication-bundle ###
+/src/Monofony/MetaPack/ApiMeta/.recipe/config/jwt/*.pem
+!/src/Monofony/MetaPack/ApiMeta/.recipe/config/jwt/*-test.pem
+###< lexik/jwt-authentication-bundle ###

@@ -19,15 +19,12 @@ class LoginApiTest extends JsonApiTestCase
         $data =
             <<<EOT
         {
-            "client_id": "client_id",
-            "client_secret": "secret",
-            "grant_type": "password",
             "username": "api@sylius.com",
             "password": "sylius"
         }
 EOT;
 
-        $this->client->request('POST', '/api/oauth/v2/token', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('POST', '/api/authentication_token', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'authentication/new_access_token', Response::HTTP_OK);

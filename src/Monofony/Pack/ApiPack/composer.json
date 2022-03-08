@@ -7,6 +7,8 @@
         "api-platform/core": "^2.6",
         "api-platform/api-pack": "^1.2",
         "lchrusciel/api-test-case": "^5.1",
+        "lexik/jwt-authentication-bundle": "^2.14",
+        "gesdinet/jwt-refresh-token-bundle": "^1.0",
         "monofony/api-contracts": "^0.8",
         "monofony/api-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
