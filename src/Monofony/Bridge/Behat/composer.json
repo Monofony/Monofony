@@ -15,7 +15,7 @@
         "friends-of-behat/page-object-extension": "^0.3",
         "friends-of-behat/symfony-extension": "^2.0",
         "monofony/core": "^0.8",
-        "monofony/user": "^1.10",
+        "sylius/user": "^1.11",
         "symfony/finder": "5.4.*",
         "symfony/routing": "5.4.*",
         "symfony/swiftmailer-bundle": "^3.0",

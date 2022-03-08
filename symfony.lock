@@ -301,21 +301,6 @@
     "matthiasnoback/symfony-dependency-injection-test": {
         "version": "4.2.0"
     },
-    "monofony/customer": {
-        "version": "v1.10.0"
-    },
-    "monofony/customer-bundle": {
-        "version": "1.9-dev"
-    },
-    "monofony/ui-bundle": {
-        "version": "1.9-dev"
-    },
-    "monofony/user": {
-        "version": "1.9-dev"
-    },
-    "monofony/user-bundle": {
-        "version": "1.9-dev"
-    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
@@ -553,6 +538,12 @@
     "sylius-labs/polyfill-symfony-security": {
         "version": "v1.0.0"
     },
+    "sylius/customer": {
+        "version": "v1.10.9"
+    },
+    "sylius/customer-bundle": {
+        "version": "v1.11.1"
+    },
     "sylius/grid-bundle": {
         "version": "v1.2.1"
     },
@@ -564,6 +555,15 @@
     },
     "sylius/resource-bundle": {
         "version": "v1.2.1"
+    },
+    "sylius/ui-bundle": {
+        "version": "v1.11.1"
+    },
+    "sylius/user": {
+        "version": "v1.10.9"
+    },
+    "sylius/user-bundle": {
+        "version": "v1.11.1"
     },
     "symfony/amqp-messenger": {
         "version": "v5.3.0"
