@@ -191,10 +191,24 @@
         "version": "v1.0.2"
     },
     "friendsofsymfony/oauth-server-bundle": {
-        "version": "1.6.1"
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.6",
+            "ref": "7300db1277b1ba025cdc2791171d9bf3e7adcc42"
+        },
+        "files": [
+            "config/packages/fos_oauth_server.yaml",
+            "config/routes/fos_oauth_server.yaml",
+            "src/Entity/AccessToken.php",
+            "src/Entity/AuthCode.php",
+            "src/Entity/Client.php",
+            "src/Entity/RefreshToken.php"
+        ]
     },
     "friendsofsymfony/oauth2-php": {
-        "version": "1.2.3"
+        "version": "1.3.1"
     },
     "friendsofsymfony/rest-bundle": {
         "version": "2.2",

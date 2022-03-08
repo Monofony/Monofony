@@ -1,21 +1,3 @@
-App\Entity\OAuth\Client:
-    oauth:
-        randomId: client_id
-        secret: secret
-        allowedGrantTypes: [password, access_token, refresh_token]
-
-App\Entity\OAuth\AccessToken:
-    oauth_access_token:
-        client: "@oauth"
-        user: "@user"
-        token: SampleTokenNjZkNjY2MDEwMTAzMDkxMGE0OTlhYzU3NzYyMTE0ZGQ3ODcyMDAwM2EwMDZjNDI5NDlhMDdlMQ
-
-App\Entity\OAuth\RefreshToken:
-    oauth_refresh_token:
-        client: "@oauth"
-        user: "@user"
-        token: SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng
-
 Gesdinet\JWTRefreshTokenBundle\Entity\RefreshToken:
     user_refresh_token:
         username: sylius
