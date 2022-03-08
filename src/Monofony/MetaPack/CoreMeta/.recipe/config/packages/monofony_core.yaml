@@ -3,16 +3,6 @@ imports:
     - { resource: "@SyliusCustomerBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusUserBundle/Resources/config/app/config.yml" }
 
-fos_oauth_server:
-    db_driver: orm
-    client_class:        App\Entity\OAuth\Client
-    access_token_class:  App\Entity\OAuth\AccessToken
-    refresh_token_class: App\Entity\OAuth\RefreshToken
-    auth_code_class:     App\Entity\OAuth\AuthCode
-    service:
-        user_provider: sylius.app_user_provider.email_or_name_based
-        client_manager: monofony.client_manager
-
 framework:
     translator:
         default_path: '%kernel.project_dir%/translations'

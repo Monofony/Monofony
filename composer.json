@@ -72,7 +72,6 @@
         "doctrine/doctrine-migrations-bundle": "^3.0",
         "doctrine/orm": "^2.5",
         "fakerphp/faker": "^1.14",
-        "friendsofsymfony/oauth-server-bundle": "^1.6 || >2.0.0-alpha.0 ^2.0@dev",
         "gesdinet/jwt-refresh-token-bundle": "^1.0",
         "lexik/jwt-authentication-bundle": "^2.14",
         "liip/imagine-bundle": "^2.2",

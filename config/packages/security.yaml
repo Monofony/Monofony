@@ -1,13 +1,9 @@
 # To get started with security, check out the documentation:
 # http://symfony.com/doc/current/security.html
-imports:
-    - { resource: "@FOSOAuthServerBundle/Resources/config/security.xml" }
-
 parameters:
     secret: '%env(resolve:APP_SECRET)%'
 
 security:
-
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         sylius_admin_user_provider:
@@ -43,10 +39,6 @@ security:
                 path: sylius_backend_logout
                 target: sylius_backend_login
             anonymous: true
-
-        oauth_token:
-            pattern: ^/api/oauth/v2/token
-            security: false
 
         api_login:
             pattern: ^/api/authentication_token
