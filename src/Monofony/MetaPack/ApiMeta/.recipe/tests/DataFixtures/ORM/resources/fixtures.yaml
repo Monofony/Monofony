@@ -16,9 +16,15 @@ App\Entity\OAuth\RefreshToken:
         user: "@user"
         token: SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng
 
+Gesdinet\JWTRefreshTokenBundle\Entity\RefreshToken:
+    user_refresh_token:
+        username: sylius
+        valid: "<(new DateTimeImmutable('+2 hours'))>"
+        refresh_token: SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng
+
 App\Entity\User\AppUser:
     user:
-        plainPassword: sylius
+        plain_password: sylius
         roles: [ROLE_USER]
         enabled: true
         customer: "@customer"
@@ -26,7 +32,7 @@ App\Entity\User\AppUser:
         password_reset_token: 't0ken'
         password_requested_at: '<(new DateTime())>'
     expired_token_user:
-        plainPassword: sylius
+        plain_password: sylius
         roles: [ROLE_USER]
         enabled: true
         username: expired_user
@@ -34,7 +40,7 @@ App\Entity\User\AppUser:
         password_reset_token: 'expired_t0ken'
         password_requested_at: "<(new DateTime('2 days ago'))>"
     another_user:
-        plainPassword: sylius
+        plain_password: sylius
         roles: [ROLE_USER]
         enabled: true
         customer: "@another_customer"
@@ -43,13 +49,13 @@ App\Entity\User\AppUser:
 App\Entity\Customer\Customer:
     customer:
         email: api@sylius.com
-        firstName: Sam
-        lastName: Identifie
+        first_name: Sam
+        last_name: Identifie
     expired_customer:
         email: expired-customer@example.com
-        firstName: Expired
-        lastName: Customer
+        first_name: Expired
+        last_name: Customer
     another_customer:
         email: another-customer@example.com
-        firstName: Another
-        lastName: Customer
+        first_name: Another
+        last_name: Customer

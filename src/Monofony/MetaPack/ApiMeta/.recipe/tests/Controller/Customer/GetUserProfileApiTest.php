@@ -16,7 +16,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allow_to_get_user_profile_for_non_authenticated_user()
+    public function it_does_not_allow_to_get_user_profile_for_non_authenticated_user(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
@@ -31,13 +31,13 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function it_does_not_allows_to_get_another_profile()
+    public function it_does_not_allows_to_get_another_profile(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
         $customer = $resources['another_customer'];
 
-        $this->client->request('GET', '/api/customers/'.$customer->getId(), [], [], static::$authorizedHeaderWithContentType);
+        $this->client->request('GET', '/api/customers/'.$customer->getId(), [], [], self::$authorizedHeaderWithContentType);
 
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_FORBIDDEN);
@@ -46,7 +46,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function it_allows_to_get_user_profile_when_it_is_myself()
+    public function it_allows_to_get_user_profile_when_it_is_myself(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
         /** @var CustomerInterface $customer */
@@ -61,7 +61,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /**
      * @test
      */
-    public function it_allows_to_get_my_user_profile()
+    public function it_allows_to_get_my_user_profile(): void
     {
         $this->loadFixturesFromFile('resources/fixtures.yaml');
 
