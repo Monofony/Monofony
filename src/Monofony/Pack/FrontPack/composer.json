@@ -10,7 +10,7 @@
         "monofony/front-contracts": "^0.8",
         "monofony/front-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
-        "monofony/ui-bundle": "^1.10",
+        "sylius/ui-bundle": "^1.11",
         "phpstan/phpstan": "^0.12",
         "symfony/asset": "5.4.*",
         "symfony/routing": "5.4.*",

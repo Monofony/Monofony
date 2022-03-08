@@ -6,7 +6,7 @@
     "require": {
         "php": "^8.0",
         "monofony/core-contracts": "^0.8",
-        "monofony/user-bundle": "^1.10",
+        "sylius/user-bundle": "^1.11",
         "monofony/customer": "^1.10"
     },
     "require-dev": {
