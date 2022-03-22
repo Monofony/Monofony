@@ -30,6 +30,7 @@ parameters:
         - '/Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::/'
         - '/Access to an undefined property Faker\\Generator::/'
         - '/Method Mockery\\MockInterface::shouldReceive\(\) invoked with 1 parameter, 0 required/'
+        - '/implements the Serializable interface/'
 
         # These packages aren't in require-dev of the global package
         - '/Class Doctrine\\Bundle\\MongoDBBundle/'
