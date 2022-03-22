@@ -1,3 +1,5 @@
+runner.maintainers.errors.level: 22527 # E_ALL ^ E_STRICT ^ E_DEPRECATED
+
 suites:
     # Bridges
     FOSOAuthServerBridge: { namespace: Monofony\Bridge\FOSOAuthServer, psr4_prefix: Monofony\Bridge\FOSOAuthServer, spec_path: src/Monofony/Bridge/FOSOAuthServer, src_path: src/Monofony/Bridge/FOSOAuthServer }
