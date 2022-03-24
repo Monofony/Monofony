@@ -228,9 +228,9 @@ jobs:
                 name: Warmup cache
                 run: bin/console cache:warmup
 
-#            -
-#                name: Run webserver
-#                run: symfony server:start --port=8080 --dir=public --daemon
+            -
+                name: Run webserver
+                run: symfony server:start --port=8080 --dir=public --daemon
 
             -
                 name: Prepare application database

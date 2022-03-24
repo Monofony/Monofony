@@ -8,6 +8,7 @@ Feature: Deleting multiple administrators
         Given there is an administrator "banana@example.com"
         And there is also an administrator "orange@example.com"
         And there is also an administrator "watermelon@example.com"
+        And I visit login page
         And I am logged in as "watermelon@example.com" administrator
 
     @ui @javascript

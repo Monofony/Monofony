@@ -41,6 +41,14 @@ class LoginContext implements Context
         Assert::false($this->dashboardPage->isOpen());
     }
 
+    /**
+     * @Then I visit login page
+     */
+    public function iVisitLoginPage()
+    {
+        $this->loginPage->open();
+    }
+
     private function logInAgain(string $username, string $password): void
     {
         $this->dashboardPage->open();
