@@ -105,7 +105,7 @@ jobs:
     test-application:
         runs-on: ubuntu-18.04
 
-        name: "Test application (PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, MySQL ${{ matrix.mysql }})"
+        name: "Test application (PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, Behat driver ${{ matrix.behat_driver }}), MySQL ${{ matrix.mysql }})"
 
         timeout-minutes: 25
 
