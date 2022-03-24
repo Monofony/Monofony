@@ -37,6 +37,18 @@ default:
                        manager_options:
                             connection_timeout_in_ms: 5000
                             request_timeout_in_ms: 120000
+                            capabilities:
+                                browserName: chrome
+                                browser: chrome
+                                chrome:
+                                    switches:
+                                    - "start-fullscreen"
+                                    - "start-maximized"
+                                    - "no-sandbox"
+                                extra_capabilities:
+                                    acceptSslCerts: true
+                                    acceptInsecureCerts: true
+                                    unexpectedAlertBehaviour: accept
                 chrome_headless:
                     chrome:
                         api_url: http://127.0.0.1:9222
