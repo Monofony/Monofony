@@ -19,7 +19,7 @@ default:
 
         Behat\MinkExtension:
             files_path: "%paths.base%/src/Monofony/MetaPack/CoreMeta/.recipe/tests/Resources/"
-            base_url: "https://127.0.0.1:8080/"
+            base_url: "http://127.0.0.1:8080/"
             javascript_session: panther
             default_session: symfony
             sessions:
@@ -30,7 +30,8 @@ default:
                        options:
                            browser: 'chrome'
                            webServerDir: '%paths.base%/public' # your custom public dir
-                           external_base_uri: 'https://127.0.0.1:8080'
+                           port: 8080
+                           # external_base_uri: 'https://127.0.0.1:8080'
                        kernel_options:
                             APP_ENV: test
                             APP_DEBUG: false
