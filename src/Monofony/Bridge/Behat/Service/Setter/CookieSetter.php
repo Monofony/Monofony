@@ -16,6 +16,7 @@ namespace Monofony\Bridge\Behat\Service\Setter;
 use Behat\Mink\Driver\PantherDriver;
 use Behat\Mink\Driver\Selenium2Driver;
 use Behat\Mink\Session;
+use DMore\ChromeDriver\ChromeDriver;
 use FriendsOfBehat\SymfonyExtension\Driver\SymfonyDriver;
 use Symfony\Component\BrowserKit\Cookie;
 
@@ -40,7 +41,7 @@ final class CookieSetter implements CookieSetterInterface
 
         $driver = $this->minkSession->getDriver();
 
-        if ($driver instanceof PantherDriver) {
+        if ($driver instanceof PantherDriver || $driver instanceof ChromeDriver) {
             if (!$driver->isStarted()) {
                 $driver->start();
             }
@@ -72,11 +73,10 @@ final class CookieSetter implements CookieSetterInterface
             return false;
         }
 
-        if ($driver instanceof Selenium2Driver) {
-            return true;
-        }
-
-        if ($driver instanceof PantherDriver) {
+        if (
+            $driver instanceof Selenium2Driver
+            || $driver instanceof ChromeDriver
+            || $driver instanceof PantherDriver) {
             return true;
         }
 

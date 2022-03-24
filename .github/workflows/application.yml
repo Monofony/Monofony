@@ -116,6 +116,7 @@ jobs:
                 symfony: ["5.4.*"]
                 node: ["14.x"]
                 mysql: ["5.7"]
+                behat_driver: ["panther", "chrome", "chrome_headless"]
 
         env:
             APP_ENV: test
@@ -158,7 +159,18 @@ jobs:
                 run: symfony server:ca:install
 
             -
+                name: Configure Behat driver
+                run: |
+                    sed -i -e 's/javascript_session: panther/javascript_session: ${{ matrix.behat_driver }}/g' behat.yml.dist
+
+            -
+                name: Run Chrome Headless
+                if: matrix.behat_driver != 'panther'
+                run: google-chrome-stable --enable-automation --disable-background-networking --no-default-browser-check --no-first-run --disable-popup-blocking --disable-default-apps --disable-translate --disable-extensions --no-sandbox --enable-features=Metal --headless --remote-debugging-port=9222 --window-size=2880,1800 --proxy-server='direct://' --proxy-bypass-list='*' https://127.0.0.1 > /dev/null 2>&1 &
+
+            -
                 name: Install chrome driver
+                if: matrix.behat_driver != 'chrome_headless'
                 run: vendor/bin/bdi detect drivers
 
             -
@@ -219,6 +231,7 @@ jobs:
 
             -
                 name: Run webserver
+                if: matrix.behat_driver != 'panther'
                 run: symfony server:start --port=8080 --dir=public --daemon
 
             -

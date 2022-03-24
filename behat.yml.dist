@@ -9,6 +9,7 @@ default:
             snippets: false
 
     extensions:
+        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: null
         Robertfausk\Behat\PantherExtension: null
 
         FriendsOfBehat\MinkDebugExtension:
@@ -18,15 +19,16 @@ default:
 
         Behat\MinkExtension:
             files_path: "%paths.base%/src/Monofony/MetaPack/CoreMeta/.recipe/tests/Resources/"
-            base_url: "http://127.0.0.1:8090/"
+            base_url: "http://127.0.0.1:8080/"
             javascript_session: panther
+            default_session: symfony
             sessions:
-                default:
+                symfony:
                     symfony: ~
                 panther:
                     panther:
                        options:
-                           port: 8090
+                           port: 8080
                            browser: 'chrome'
                            webServerDir: '%paths.base%/public' # your custom public dir
                        kernel_options:
@@ -35,6 +37,26 @@ default:
                        manager_options:
                             connection_timeout_in_ms: 5000
                             request_timeout_in_ms: 120000
+                chrome_headless:
+                    chrome:
+                        api_url: http://127.0.0.1:9222
+                        validate_certificate: false
+                chrome:
+                    selenium2:
+                        browser: chrome
+                        capabilities:
+                            browserName: chrome
+                            browser: chrome
+                            version: ""
+                            chrome:
+                                switches:
+                                - "start-fullscreen"
+                                - "start-maximized"
+                                - "no-sandbox"
+                            extra_capabilities:
+                                acceptSslCerts: true
+                                acceptInsecureCerts: true
+                                unexpectedAlertBehaviour: accept
 
         FriendsOfBehat\SymfonyExtension: ~
 
