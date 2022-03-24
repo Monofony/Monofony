@@ -28,9 +28,9 @@ default:
                 panther:
                     panther:
                        options:
-                           port: 8080
                            browser: 'chrome'
                            webServerDir: '%paths.base%/public' # your custom public dir
+                           external_base_uri: 'https://127.0.0.1:8080/'
                        kernel_options:
                             APP_ENV: test
                             APP_DEBUG: false

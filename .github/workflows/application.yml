@@ -231,7 +231,6 @@ jobs:
 
             -
                 name: Run webserver
-                if: matrix.behat_driver != 'panther'
                 run: symfony server:start --port=8080 --dir=public --daemon
 
             -
