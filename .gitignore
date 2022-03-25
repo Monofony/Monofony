@@ -23,6 +23,8 @@
 /behat.yml
 /phpspec.yml
 
+/drivers/
+
 ###> symfony/framework-bundle ###
 /.env.*.local
 /.env.local

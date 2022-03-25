@@ -9,7 +9,8 @@ default:
             snippets: false
 
     extensions:
-        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: null
+        Robertfausk\Behat\PantherExtension: null
 
         FriendsOfBehat\MinkDebugExtension:
             directory: etc/build
@@ -19,11 +20,37 @@ default:
         Behat\MinkExtension:
             files_path: "%paths.base%/src/Monofony/MetaPack/CoreMeta/.recipe/tests/Resources/"
             base_url: "https://127.0.0.1:8080/"
+            javascript_session: panther
             default_session: symfony
-            javascript_session: chrome_headless
             sessions:
                 symfony:
                     symfony: ~
+                panther:
+                    panther:
+                       options:
+                           browser: 'chrome'
+                           webServerDir: '%paths.base%/public' # your custom public dir
+                           external_base_uri: 'https://127.0.0.1:8080'
+                       kernel_options:
+                            APP_ENV: test
+                            APP_DEBUG: false
+                       manager_options:
+                            connection_timeout_in_ms: 5000
+                            request_timeout_in_ms: 120000
+                            capabilities:
+                                browserName: chrome
+                                browser: chrome
+                                extra_capabilities:
+                                    chromeOptions:
+                                        args:
+                                            - "--window-size=2880,1800"
+                                            - "--headless"
+                                            - "start-fullscreen"
+                                            - "start-maximized"
+                                            - "no-sandbox"
+                                acceptSslCerts: true
+                                acceptInsecureCerts: true
+                                unexpectedAlertBehaviour: accept
                 chrome_headless:
                     chrome:
                         api_url: http://127.0.0.1:9222
@@ -35,12 +62,15 @@ default:
                             browserName: chrome
                             browser: chrome
                             version: ""
-                            chrome:
-                                switches:
-                                - "start-fullscreen"
-                                - "start-maximized"
-                                - "no-sandbox"
                             extra_capabilities:
+                                chromeOptions:
+                                    args:
+                                        - "start-fullscreen"
+                                        - "start-maximized"
+                                        - "no-sandbox"
+                                        - "--headless"
+                                        - "--window-size=1920,1080"
+                                        - "--disable-gpu"
                                 acceptSslCerts: true
                                 acceptInsecureCerts: true
                                 unexpectedAlertBehaviour: accept
