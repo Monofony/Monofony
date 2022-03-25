@@ -5,7 +5,7 @@
     <title>{% block title %}AppName{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('assets/frontend/app.css', 'frontend') }}"/>
+        {{ encore_entry_link_tags('app_frontend') }}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
@@ -36,7 +36,7 @@
 </div>
 
 {% block javascripts %}
-    <script type="text/javascript" src="{{ asset('assets/frontend/app.js', 'frontend') }}"></script>
+    {{ encore_entry_script_tags('app_frontend') }}
     {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
 {% endblock %}
 {% include '@SyliusUi/Modal/_confirmation.html.twig' %}
