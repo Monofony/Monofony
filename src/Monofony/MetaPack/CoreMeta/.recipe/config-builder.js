@@ -25,7 +25,7 @@ var build = (name, assetPath, vendorUiPath) => {
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
     .autoProvidejQuery()
-    .disableSingleRuntimeChunk()
+    .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .copyFiles({
