@@ -68,8 +68,9 @@ default:
                                 - "start-maximized"
                                 - "no-sandbox"
                             acceptSslCerts: true
-                            acceptInsecureCerts: true
-                            unexpectedAlertBehaviour: accept
+                            extra_capabilities:
+                                acceptInsecureCerts: true
+                                unexpectedAlertBehaviour: accept
 
         FriendsOfBehat\SymfonyExtension: ~
 
