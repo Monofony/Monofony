@@ -23,7 +23,7 @@
         "phpstan/phpstan-symfony": "^0.12",
         "phpstan/phpstan-webmozart-assert": "^0.12",
         "psr/event-dispatcher": "^1.0",
-        "se/selenium-server-standalone": "^3.141",
+        "se/selenium-server-standalone": "2.*",
         "symfony/debug-bundle": "5.4.*",
         "symfony/web-profiler-bundle": "5.4.*",
         "vimeo/psalm": "^4.3"

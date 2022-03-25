@@ -62,13 +62,16 @@ default:
                             browserName: chrome
                             browser: chrome
                             version: ""
-                            chrome:
-                                switches:
-                                - "start-fullscreen"
-                                - "start-maximized"
-                                - "no-sandbox"
-                            acceptSslCerts: true
                             extra_capabilities:
+                                chromeOptions:
+                                    args:
+                                        - "start-fullscreen"
+                                        - "start-maximized"
+                                        - "no-sandbox"
+                                        - "--headless"
+                                        - "--window-size=1920,1080"
+                                        - "--disable-gpu"
+                                acceptSslCerts: true
                                 acceptInsecureCerts: true
                                 unexpectedAlertBehaviour: accept
 
