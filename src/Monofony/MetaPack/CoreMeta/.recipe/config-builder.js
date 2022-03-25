@@ -8,7 +8,6 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 
 var build = (name, assetPath, vendorUiPath) => {
-  console.log(`${assetPath}js/controllers.json`)
   Encore
     // the project directory where compiled assets will be stored
     .setOutputPath(`public/assets/${name}`)
@@ -20,7 +19,7 @@ var build = (name, assetPath, vendorUiPath) => {
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
     // uncomment to define the assets of the project
-    .addEntry(`app_${name}`, `${assetPath}/js/app.js`)
+    .addEntry('app', `${assetPath}/js/app.js`)
     // uncomment if you use Sass/SCSS files
     .enableSassLoader()
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
@@ -50,10 +49,8 @@ var build = (name, assetPath, vendorUiPath) => {
 
   const config = Encore.getWebpackConfig();
   config.name = name;
-  config.resolve.alias = {
-    '~': path.resolve(__dirname, '../../'),
-    'sylius/ui': vendorUiPath + '/Resources/private',
-  };
+  config.resolve.alias['~'] = path.resolve(__dirname, '../../')
+  config.resolve.alias['sylius/ui'] = `${vendorUiPath}/Resources/private`
 
   Encore.reset();
 

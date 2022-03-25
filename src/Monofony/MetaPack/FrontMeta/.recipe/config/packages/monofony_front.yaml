@@ -3,6 +3,9 @@ framework:
         packages:
             frontend:
                 json_manifest_path: '%kernel.project_dir%/public/assets/frontend/manifest.json'
+webpack_encore:
+    builds:
+        frontend: '%kernel.project_dir%/public/assets/frontend'
 
 sylius_ui:
     events:

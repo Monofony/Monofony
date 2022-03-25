@@ -9,8 +9,6 @@ import './app-images-preview';
 import './sylius-compound-form-errors';
 
 import '../scss/main.scss';
-// start the Stimulus application
-import './bootstrap';
 
 $(document).ready(function () {
     $(document).previewUploadedImage('#sylius_admin_user_avatar');
