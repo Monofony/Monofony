@@ -18,6 +18,7 @@ use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
 use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Monofony\Bridge\Behat\Service\Accessor\TableAccessorInterface;
+use Monofony\Bridge\Behat\Service\JQueryHelper;
 use Symfony\Component\Routing\RouterInterface;
 use Webmozart\Assert\Assert;
 
@@ -154,6 +155,7 @@ abstract class AbstractIndexPage extends SymfonyPage implements IndexPageInterfa
     public function bulkDelete(): void
     {
         $this->getElement('bulk_actions')->pressButton('Delete');
+        JQueryHelper::waitForAsynchronousActionsToFinish($this->getSession());
         $this->getElement('confirmation_button')->click();
     }
 
