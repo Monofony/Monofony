@@ -48,9 +48,9 @@ default:
                                             - "start-fullscreen"
                                             - "start-maximized"
                                             - "no-sandbox"
-                                    acceptSslCerts: true
-                                    acceptInsecureCerts: true
-                                    unexpectedAlertBehaviour: accept
+                                acceptSslCerts: true
+                                acceptInsecureCerts: true
+                                unexpectedAlertBehaviour: accept
                 chrome_headless:
                     chrome:
                         api_url: http://127.0.0.1:9222
