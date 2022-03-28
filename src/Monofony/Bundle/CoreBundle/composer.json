@@ -19,8 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Monofony\\Bundle\\CoreBundle\\": "",
-            "App\\Controller\\": "../../MetaPack/CoreMeta/.recipe/src/Controller/"
+            "Monofony\\Bundle\\CoreBundle\\": ""
         },
         "exclude-from-classmap": [
             ".recipe/"
