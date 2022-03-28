@@ -1,25 +1,16 @@
 <?php
 
-/*
- * This file is part of the Sylius package.
- *
- * (c) Paweł Jędrzejewski
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
 namespace App\Controller;
 
+use Sylius\Bundle\ResourceBundle\Controller\ResourceController as BaseResourceController;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Sylius\Component\Resource\Exception\UpdateHandlingException;
 use Sylius\Component\Resource\ResourceActions;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Sylius\Bundle\ResourceBundle\Controller\ResourceController as BaseResourceController;
 
 class ResourceController extends BaseResourceController
 {
@@ -89,7 +80,7 @@ class ResourceController extends BaseResourceController
 
         $response = new Response(null, $form->isSubmitted() ? 422 : 200);
 
-        return $this->render($configuration->getTemplate(ResourceActions::CREATE . '.html'), [
+        return $this->render($configuration->getTemplate(ResourceActions::CREATE.'.html'), [
             'configuration' => $configuration,
             'metadata' => $this->metadata,
             'resource' => $newResource,
@@ -178,7 +169,7 @@ class ResourceController extends BaseResourceController
 
         $response = new Response(null, $form->isSubmitted() ? 422 : 200);
 
-        return $this->render($configuration->getTemplate(ResourceActions::UPDATE . '.html'), [
+        return $this->render($configuration->getTemplate(ResourceActions::UPDATE.'.html'), [
             'configuration' => $configuration,
             'metadata' => $this->metadata,
             'resource' => $resource,
