@@ -17,3 +17,4 @@ services:
         exclude:
             - '../../src/Monofony/MetaPack/CoreMeta/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
             - '../../src/Monofony/MetaPack/CoreMeta/.recipe/src/Controller/ResourceController.php'
+            
