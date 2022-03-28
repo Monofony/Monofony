@@ -1,3 +1,5 @@
+{%  set controller = "app" %}
+
 <!DOCTYPE html>
 
 <html>
@@ -24,7 +26,7 @@
 </head>
 
 <body class="pushable">
-<div class="ui sidebar vertical inverted menu visible left" id="sidebar">
+<div class="ui sidebar vertical inverted menu visible left visible" id="sidebar">
     {% block sidebar %}
     {% endblock %}
 </div>
@@ -34,7 +36,7 @@
 </div>
 <div class="pusher">
     <div class="full height" id="wrapper">
-        <div id="content">
+        <div id="content" data-controller="{{controller}}">
             {% block flash_messages %}
                 {% include '@SyliusUi/_flashes.html.twig' %}
             {% endblock %}

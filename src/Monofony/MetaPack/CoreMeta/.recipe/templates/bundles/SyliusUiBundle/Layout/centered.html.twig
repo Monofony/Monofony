@@ -1,3 +1,5 @@
+{%  set controller = "app" %}
+
 <!DOCTYPE html>
 
 <html>
@@ -22,7 +24,7 @@
     {% block javascripts %}
     {% endblock %}
 </head>
-<body class="centered">
+<body class="centered" data-controller="{{controller}}">
 {% block pre_content %}
 {% endblock %}
 
