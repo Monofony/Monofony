@@ -1,5 +1,13 @@
 ## Change Log
 
+### v0.8.0-beta.2 (2022/03/31 11:56 +00:00)
+- [#409](https://github.com/Monofony/Monofony/pull/409) fix jms prod configuration (@smildev)
+- [#407](https://github.com/Monofony/Monofony/pull/407) Add support for panther extension (@smildev, @loic425)
+- [#405](https://github.com/Monofony/Monofony/pull/405) Fix admin avatar path (@loic425)
+- [#403](https://github.com/Monofony/Monofony/pull/403) Remove Sylius forks (@loic425)
+- [#401](https://github.com/Monofony/Monofony/pull/401) Remove FOS Oauth server bundle (@loic425)
+- [#400](https://github.com/Monofony/Monofony/pull/400) JWT authentication (@loic425)
+
 ### v0.8.0-beta.1 (2022/02/10 14:10 +00:00)
 - [#395](https://github.com/Monofony/Monofony/pull/395) Bump Resource & grid to beta versions (@loic425)
 
