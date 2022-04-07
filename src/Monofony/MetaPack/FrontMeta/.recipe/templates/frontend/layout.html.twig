@@ -1,3 +1,4 @@
+{% set controller = 'app' %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,7 +6,12 @@
     <title>{% block title %}AppName{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('assets/frontend/app.css', 'frontend') }}"/>
+        {{ encore_entry_link_tags('app', null, 'frontend') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app', null, 'frontend') }}
+        {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
@@ -17,7 +23,7 @@
         </div>
     {% endblock %}
 
-    <div id="ui container">
+    <div id="ui container" data-controller="{{ controller }}">
         {% block header %}
             <header>
                 {% include 'frontend/_header.html.twig' %}
@@ -34,11 +40,6 @@
         {% include 'frontend/_footer.html.twig' %}
     {% endblock %}
 </div>
-
-{% block javascripts %}
-    <script type="text/javascript" src="{{ asset('assets/frontend/app.js', 'frontend') }}"></script>
-    {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
-{% endblock %}
 {% include '@SyliusUi/Modal/_confirmation.html.twig' %}
 </body>
 </html>

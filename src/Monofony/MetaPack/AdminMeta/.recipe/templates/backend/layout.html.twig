@@ -3,7 +3,7 @@
 {% block title %} | AppName{% endblock %}
 
 {% block stylesheets %}
-    {% include '@SyliusUi/_stylesheets.html.twig' with {'path': 'assets/backend/app.css'} %}
+    {{ encore_entry_link_tags('app', null, 'backend') }}
 {% endblock %}
 
 {% block topbar %}
@@ -29,6 +29,6 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/backend/app.js'} %}
+    {{ encore_entry_script_tags('app', null, 'backend') }}
     {{ sonata_block_render_event('sylius.admin.layout.javascripts') }}
 {% endblock %}

@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle;
 
+use App\Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeResourceControllerPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterDashboardStatisticsPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterDocumentationNormalizersPass;
@@ -37,5 +38,6 @@ class MonofonyCoreBundle extends Bundle
         $container->addCompilerPass(new RegisterOAuthClientManager());
         $container->addCompilerPass(new RegisterObjectManagerAliasPass());
         $container->addCompilerPass(new RegisterDocumentationNormalizersPass());
+        $container->addCompilerPass(new ChangeResourceControllerPass());
     }
 }

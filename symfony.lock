@@ -865,6 +865,9 @@
             "ref": "369b5b29dc52b2c190002825ae7ec24ab6f962dd"
         }
     },
+    "symfony/ux-turbo": {
+        "version": "v2.1.0"
+    },
     "symfony/validator": {
         "version": "4.1",
         "recipe": {
@@ -893,21 +896,22 @@
         }
     },
     "symfony/webpack-encore-bundle": {
-        "version": "1.0",
+        "version": "1.14",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "master",
-            "version": "1.0",
-            "ref": "e8b6b2ac4a1522bd688ea2953fbc264c968b8f39"
+            "version": "1.10",
+            "ref": "2858aeed7e1d81a45365c049eb533cc8827e380b"
         },
         "files": [
-            "assets/css/app.css",
-            "assets/js/app.js",
-            "config/packages/assets.yaml",
-            "config/packages/prod/webpack_encore.yaml",
+            "assets/app.js",
+            "assets/bootstrap.js",
+            "assets/controllers.json",
+            "assets/controllers/hello_controller.js",
+            "assets/styles/app.css",
             "config/packages/webpack_encore.yaml",
             "package.json",
-            "webpack.config.js"
+            "webpack.config.js.old"
         ]
     },
     "symfony/yaml": {
