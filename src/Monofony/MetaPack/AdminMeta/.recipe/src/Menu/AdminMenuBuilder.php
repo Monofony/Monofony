@@ -14,9 +14,6 @@ final class AdminMenuBuilder implements AdminMenuBuilderInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function createMenu(array $options): ItemInterface
     {
         $menu = $this->factory->createItem('root');
@@ -27,7 +24,7 @@ final class AdminMenuBuilder implements AdminMenuBuilderInterface
         return $menu;
     }
 
-    private function addCustomerSubMenu(ItemInterface $menu): ItemInterface
+    private function addCustomerSubMenu(ItemInterface $menu): void
     {
         $customer = $menu
             ->addChild('customer')
@@ -37,11 +34,9 @@ final class AdminMenuBuilder implements AdminMenuBuilderInterface
         $customer->addChild('backend_customer', ['route' => 'sylius_backend_customer_index'])
             ->setLabel('sylius.ui.customers')
             ->setLabelAttribute('icon', 'users');
-
-        return $customer;
     }
 
-    private function addConfigurationSubMenu(ItemInterface $menu): ItemInterface
+    private function addConfigurationSubMenu(ItemInterface $menu): void
     {
         $configuration = $menu
             ->addChild('configuration')
@@ -51,7 +46,5 @@ final class AdminMenuBuilder implements AdminMenuBuilderInterface
         $configuration->addChild('backend_admin_user', ['route' => 'sylius_backend_admin_user_index'])
             ->setLabel('sylius.ui.admin_users')
             ->setLabelAttribute('icon', 'lock');
-
-        return $configuration;
     }
 }

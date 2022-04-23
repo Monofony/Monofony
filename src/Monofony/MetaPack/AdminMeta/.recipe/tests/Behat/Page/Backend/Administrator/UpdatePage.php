@@ -9,9 +9,6 @@ use Monofony\Bridge\Behat\Crud\UpdatePageInterface;
 
 class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_backend_admin_user_update';
@@ -31,25 +28,16 @@ class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
         $this->getElement('username')->setValue($username);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function changeEmail(?string $email): void
     {
         $this->getElement('email')->setValue($email);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function changePassword(?string $password): void
     {
         $this->getElement('password')->setValue($password);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function changeLocale(?string $localeCode): void
     {
         $this->getElement('locale_code')->selectOption($localeCode);

@@ -19,30 +19,15 @@ use Zenstruck\Foundry\Proxy;
 
 final class LoginContext implements Context
 {
-    private HomePage $homePage;
-    private LoginPage $loginPage;
-    private RegisterPage $registerPage;
-    private RequestPasswordResetPage $requestPasswordResetPage;
-    private ResetPasswordPage $resetPasswordPage;
-    private NotificationCheckerInterface $notificationChecker;
-    private CurrentPageResolverInterface $currentPageResolver;
-
     public function __construct(
-        HomePage $homePage,
-        LoginPage $loginPage,
-        RegisterPage $registerPage,
-        RequestPasswordResetPage $requestPasswordResetPage,
-        ResetPasswordPage $resetPasswordPage,
-        NotificationCheckerInterface $notificationChecker,
-        CurrentPageResolverInterface $currentPageResolver
+        private HomePage $homePage,
+        private LoginPage $loginPage,
+        private RegisterPage $registerPage,
+        private RequestPasswordResetPage $requestPasswordResetPage,
+        private ResetPasswordPage $resetPasswordPage,
+        private NotificationCheckerInterface $notificationChecker,
+        private CurrentPageResolverInterface $currentPageResolver,
     ) {
-        $this->homePage = $homePage;
-        $this->loginPage = $loginPage;
-        $this->registerPage = $registerPage;
-        $this->requestPasswordResetPage = $requestPasswordResetPage;
-        $this->resetPasswordPage = $resetPasswordPage;
-        $this->notificationChecker = $notificationChecker;
-        $this->currentPageResolver = $currentPageResolver;
     }
 
     /**

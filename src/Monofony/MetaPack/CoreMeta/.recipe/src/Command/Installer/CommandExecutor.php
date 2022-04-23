@@ -13,8 +13,11 @@ use Symfony\Component\Process\Exception\RuntimeException;
 
 final class CommandExecutor
 {
-    public function __construct(private InputInterface $input, private OutputInterface $output, private Application $application)
-    {
+    public function __construct(
+        private InputInterface $input,
+        private OutputInterface $output,
+        private Application $application,
+    ) {
     }
 
     /**

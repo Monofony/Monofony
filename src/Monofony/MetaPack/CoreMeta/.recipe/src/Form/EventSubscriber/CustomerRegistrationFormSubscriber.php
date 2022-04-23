@@ -27,9 +27,6 @@ final class CustomerRegistrationFormSubscriber implements EventSubscriberInterfa
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function preSubmit(FormEvent $event): void
     {
         $rawData = $event->getData();

@@ -8,7 +8,7 @@ use PhpSpec\ObjectBehavior;
 use Sylius\Component\Customer\Model\Customer as BaseCustomer;
 use Sylius\Component\User\Model\UserInterface;
 
-class CustomerSpec extends ObjectBehavior
+final class CustomerSpec extends ObjectBehavior
 {
     function it_implements_a_customer_interface(): void
     {

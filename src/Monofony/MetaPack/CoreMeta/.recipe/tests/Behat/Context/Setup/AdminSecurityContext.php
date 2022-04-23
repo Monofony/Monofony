@@ -38,7 +38,7 @@ final class AdminSecurityContext implements Context
     /**
      * @Given /^I am logged in as "([^"]+)" administrator$/
      */
-    public function iAmLoggedInAsAdministrator($email): void
+    public function iAmLoggedInAsAdministrator(string $email): void
     {
         $user = $this->adminUserRepository->findOneByEmail($email);
         Assert::notNull($user);

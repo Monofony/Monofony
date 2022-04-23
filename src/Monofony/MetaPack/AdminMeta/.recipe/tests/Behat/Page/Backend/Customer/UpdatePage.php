@@ -13,9 +13,6 @@ class UpdatePage extends AbstractUpdatePage implements UpdatePageInterface
 {
     use Toggles;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_backend_customer_update';

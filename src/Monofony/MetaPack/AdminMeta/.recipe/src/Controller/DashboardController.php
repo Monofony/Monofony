@@ -10,8 +10,10 @@ use Twig\Environment;
 
 final class DashboardController
 {
-    public function __construct(private DashboardStatisticsProviderInterface $statisticsProvider, private Environment $twig)
-    {
+    public function __construct(
+        private DashboardStatisticsProviderInterface $statisticsProvider,
+        private Environment $twig,
+    ) {
     }
 
     public function indexAction(): Response

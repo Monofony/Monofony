@@ -19,7 +19,7 @@ class UserContext implements Context
         private SharedStorageInterface $sharedStorage,
         private UserRepositoryInterface $appUserRepository,
         private AppUserFactory $appUserFactory,
-        private ObjectManager $appUserManager
+        private ObjectManager $appUserManager,
     ) {
     }
 
@@ -28,7 +28,7 @@ class UserContext implements Context
      * @Given there was account of :email with password :password
      * @Given there is a user :email
      */
-    public function thereIsUserIdentifiedBy($email, $password = 'sylius'): void
+    public function thereIsUserIdentifiedBy(string $email, string $password = 'sylius'): void
     {
         $user = $this->appUserFactory
             ->createOne(['email' => $email, 'password' => $password, 'enabled' => true])
@@ -42,7 +42,7 @@ class UserContext implements Context
      * @Given the account of :email was deleted
      * @Given my account :email was deleted
      */
-    public function accountWasDeleted($email): void
+    public function accountWasDeleted(string $email): void
     {
         /** @var AppUserInterface $user */
         $user = $this->appUserRepository->findOneByEmail($email);

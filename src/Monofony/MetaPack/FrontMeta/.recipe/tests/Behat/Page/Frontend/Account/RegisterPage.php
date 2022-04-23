@@ -10,9 +10,6 @@ use Monofony\Component\Core\Formatter\StringInflector;
 
 class RegisterPage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'app_frontend_register';

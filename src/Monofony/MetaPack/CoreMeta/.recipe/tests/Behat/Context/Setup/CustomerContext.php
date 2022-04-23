@@ -24,7 +24,7 @@ final class CustomerContext implements Context
     /**
      * @Given there is a customer :name with email :email
      */
-    public function thereIsCustomerWithNameAndEmail($name, $email): void
+    public function thereIsCustomerWithNameAndEmail(string $name, string $email): void
     {
         $partsOfName = explode(' ', $name);
         $customer = $this->createCustomer($email, $partsOfName[0], $partsOfName[1]);
@@ -34,7 +34,7 @@ final class CustomerContext implements Context
     /**
      * @Given there is (also )a customer :email
      */
-    public function thereIsCustomer($email): void
+    public function thereIsCustomer(string $email): void
     {
         $customer = $this->createCustomer($email);
 
@@ -58,7 +58,7 @@ final class CustomerContext implements Context
     /**
      * @Given there is customer :email with first name :firstName
      */
-    public function thereIsCustomerWithFirstName($email, $firstName): void
+    public function thereIsCustomerWithFirstName(string $email, string $firstName): void
     {
         $customer = $this->createCustomer($email, $firstName);
 

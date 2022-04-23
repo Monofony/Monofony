@@ -19,7 +19,7 @@ class CommandContext extends DefaultContext
     /**
      * @Then I should see output :text
      */
-    public function iShouldSeeOutput($text): void
+    public function iShouldSeeOutput(string $text): void
     {
         Assert::contains($this->getTester()->getDisplay(), $text);
     }

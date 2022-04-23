@@ -8,9 +8,6 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class DashboardPage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_frontend_account_dashboard';

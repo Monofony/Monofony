@@ -8,7 +8,7 @@ use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Exception\UnexpectedTypeException;
 use Sylius\Component\User\Model\User as BaseUser;
 
-class AppUserSpec extends ObjectBehavior
+final class AppUserSpec extends ObjectBehavior
 {
     function it_implements_an_app_user_interface(): void
     {

@@ -13,8 +13,11 @@ use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 final class RegisterAppUserHandler implements MessageHandlerInterface
 {
-    public function __construct(private FactoryInterface $appUserFactory, private RepositoryInterface $appUserRepository, private CustomerProviderInterface $customerProvider)
-    {
+    public function __construct(
+        private FactoryInterface $appUserFactory,
+        private RepositoryInterface $appUserRepository,
+        private CustomerProviderInterface $customerProvider,
+    ) {
     }
 
     public function __invoke(RegisterAppUser $command): void

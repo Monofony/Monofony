@@ -16,13 +16,13 @@ final class RegisterAppUser
      * @CustomConstraints\UniqueAppUserEmail()
      */
     #[NotBlank(message: 'sylius.customer.email.not_blank')]
-    #[Email(mode: 'strict', message: 'sylius.customer.email.invalid')]
+    #[Email(message: 'sylius.customer.email.invalid', mode: 'strict')]
     #[Length(max: 254, maxMessage: 'sylius.customer.email.max')]
     #[Groups(groups: ['customer:write'])]
     public ?string $email = null;
 
     #[NotBlank(message: 'sylius.user.plainPassword.not_blank')]
-    #[Length(min: 4, minMessage: 'sylius.user.password.min', max: 254, maxMessage: 'sylius.user.password.max')]
+    #[Length(min: 4, max: 254, minMessage: 'sylius.user.password.min', maxMessage: 'sylius.user.password.max')]
     #[Groups(groups: ['customer:write'])]
     public ?string $password = null;
 

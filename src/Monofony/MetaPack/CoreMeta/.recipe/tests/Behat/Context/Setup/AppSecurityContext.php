@@ -25,7 +25,7 @@ final class AppSecurityContext implements Context
     /**
      * @Given I am logged in as :email
      */
-    public function iAmLoggedInAs($email): void
+    public function iAmLoggedInAs(string $email): void
     {
         $user = $this->appUserRepository->findOneByEmail($email);
         Assert::notNull($user);

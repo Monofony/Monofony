@@ -9,9 +9,6 @@ use Monofony\Bridge\Behat\Crud\CreatePageInterface;
 
 class CreatePage extends AbstractCreatePage implements CreatePageInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_backend_admin_user_create';

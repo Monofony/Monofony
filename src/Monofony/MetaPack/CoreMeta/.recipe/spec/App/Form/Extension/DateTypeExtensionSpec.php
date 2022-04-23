@@ -8,7 +8,7 @@ use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DateTypeExtensionSpec extends ObjectBehavior
+final class DateTypeExtensionSpec extends ObjectBehavior
 {
     function it_extends_an_abstract_type_extension()
     {

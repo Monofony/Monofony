@@ -19,7 +19,7 @@ class UserContext implements Context
     /**
      * @Transform /^(I|my|he|his|she|her|"this user")$/
      */
-    public function getLoggedUser()
+    public function getLoggedUser(): mixed
     {
         return $this->sharedStorage->get('user');
     }

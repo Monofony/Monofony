@@ -10,8 +10,10 @@ use Twig\Environment;
 
 class CustomerStatistic implements StatisticInterface
 {
-    public function __construct(private CustomerRepository $customerRepository, private Environment $twig)
-    {
+    public function __construct(
+        private CustomerRepository $customerRepository,
+        private Environment $twig,
+    ) {
     }
 
     public function generate(): string
