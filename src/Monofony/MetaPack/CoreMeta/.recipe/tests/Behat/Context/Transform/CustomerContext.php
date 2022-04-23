@@ -9,7 +9,6 @@ use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
-use Zenstruck\Foundry\Proxy;
 
 final class CustomerContext implements Context
 {

@@ -11,7 +11,6 @@ use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
-use Zenstruck\Foundry\Proxy;
 
 class UserContext implements Context
 {

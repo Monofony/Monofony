@@ -7,7 +7,6 @@ namespace App\Tests\Behat\Context\Transform;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\User\AdminUserInterface;
-use Zenstruck\Foundry\Proxy;
 
 final class AdminUserContext implements Context
 {
