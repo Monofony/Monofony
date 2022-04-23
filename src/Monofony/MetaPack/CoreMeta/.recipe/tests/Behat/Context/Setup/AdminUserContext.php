@@ -7,6 +7,7 @@ namespace App\Tests\Behat\Context\Setup;
 use App\Factory\AdminUserFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
+use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 
 final class AdminUserContext implements Context
@@ -24,7 +25,11 @@ final class AdminUserContext implements Context
      */
     public function thereIsAnAdministratorIdentifiedBy(string $email, string $password = 'admin'): void
     {
-        $adminUser = $this->adminUserFactory->createOne(['email' => $email, 'password' => $password, 'enabled' => true])->object();
+        $adminUser = $this->adminUserFactory->createOne(['email' => $email, 'password' => $password, 'enabled' => true]);
+
+        /** @var UserInterface $user */
+        $adminUser = $this->adminUserRepository->find($adminUser->getId());
+
         $this->sharedStorage->set('administrator', $adminUser);
     }
 
@@ -35,6 +40,7 @@ final class AdminUserContext implements Context
     {
         $adminUser = $this->adminUserFactory->createOne(['username' => $username]);
 
+        /** @var UserInterface $user */
         $adminUser = $this->adminUserRepository->find($adminUser->getId());
 
         $this->sharedStorage->set('administrator', $adminUser);
