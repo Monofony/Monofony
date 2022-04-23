@@ -49,7 +49,7 @@ final class CustomerContext implements Context
     /**
      * @Transform /^(he|his|she|her|their|the customer of my account)$/
      */
-    public function getLastCustomer(): CustomerInterface|Proxy
+    public function getLastCustomer(): CustomerInterface
     {
         return $this->sharedStorage->get('customer');
     }

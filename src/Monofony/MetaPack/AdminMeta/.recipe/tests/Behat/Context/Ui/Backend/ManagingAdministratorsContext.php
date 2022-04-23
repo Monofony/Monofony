@@ -42,7 +42,7 @@ final class ManagingAdministratorsContext implements Context
      * @When /^I am editing (my) details$/
      * @When /^I want to edit (this administrator)$/
      */
-    public function iWantToEditThisAdministrator(AdminUserInterface|Proxy $adminUser): void
+    public function iWantToEditThisAdministrator(AdminUserInterface $adminUser): void
     {
         $this->updatePage->open(['id' => $adminUser->getId()]);
     }
