@@ -1,7 +1,7 @@
 Gesdinet\JWTRefreshTokenBundle\Entity\RefreshToken:
     user_refresh_token:
         username: sylius
-        valid: "<(new DateTimeImmutable('+2 hours'))>"
+        valid: "<(new DateTimeImmutable('+4 hours'))>"
         refresh_token: SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng
 
 App\Entity\User\AppUser:

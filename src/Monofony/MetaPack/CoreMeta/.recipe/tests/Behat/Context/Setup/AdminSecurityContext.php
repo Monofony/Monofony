@@ -28,7 +28,9 @@ final class AdminSecurityContext implements Context
     {
         $user = $this->userFactory
             ->createOne(['email' => 'admin@example.com', 'password' => 'admin'])
-            ->disableAutoRefresh();
+        ;
+
+        $user = $this->adminUserRepository->find($user->getId());
 
         $this->securityService->logIn($user->object());
 
