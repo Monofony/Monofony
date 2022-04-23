@@ -10,11 +10,8 @@ use Doctrine\ORM\EntityManagerInterface;
 
 final class DoctrineORMContext implements Context
 {
-    private EntityManagerInterface $entityManager;
-
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(private EntityManagerInterface $entityManager)
     {
-        $this->entityManager = $entityManager;
     }
 
     /**
@@ -22,7 +19,7 @@ final class DoctrineORMContext implements Context
      */
     public function purgeDatabase(): void
     {
-        $this->entityManager->getConnection()->getConfiguration()->setSQLLogger(null);
+        $this->entityManager->getConnection()->getConfiguration()->setSQLLogger();
         $purger = new ORMPurger($this->entityManager);
         $purger->purge();
         $this->entityManager->clear();

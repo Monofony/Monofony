@@ -14,10 +14,7 @@ final class CustomerInitializer implements ObjectInitializerInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function initialize($object)
+    public function initialize(object $object): void
     {
         if ($object instanceof CustomerInterface) {
             $emailCanonical = $this->canonicalizer->canonicalize($object->getEmail());

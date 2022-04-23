@@ -9,9 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LoginApiTest extends JsonApiTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function it_provides_an_access_token()
     {
         $this->loadFixturesFromFile('resources/fixtures.yaml');

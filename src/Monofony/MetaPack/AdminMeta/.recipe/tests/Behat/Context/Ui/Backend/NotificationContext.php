@@ -10,11 +10,8 @@ use Monofony\Bridge\Behat\Service\NotificationCheckerInterface;
 
 final class NotificationContext implements Context
 {
-    private $notificationChecker;
-
-    public function __construct(NotificationCheckerInterface $notificationChecker)
+    public function __construct(private NotificationCheckerInterface $notificationChecker)
     {
-        $this->notificationChecker = $notificationChecker;
     }
 
     /**

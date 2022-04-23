@@ -13,9 +13,6 @@ class VerificationPage extends SymfonyPage
         $this->tryToOpen(['token' => $token]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_frontend_user_verification';

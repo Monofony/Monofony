@@ -9,9 +9,6 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class ResetPasswordPage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'app_frontend_password_reset';

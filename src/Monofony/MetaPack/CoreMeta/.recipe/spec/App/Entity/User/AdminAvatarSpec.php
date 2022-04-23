@@ -6,9 +6,9 @@ use App\Entity\Media\File;
 use App\Entity\User\AdminAvatar;
 use PhpSpec\ObjectBehavior;
 
-class AdminAvatarSpec extends ObjectBehavior
+final class AdminAvatarSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function it_is_initializable(): void
     {
         $this->shouldHaveType(AdminAvatar::class);
     }

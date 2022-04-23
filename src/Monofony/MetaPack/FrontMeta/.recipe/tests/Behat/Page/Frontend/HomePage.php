@@ -8,9 +8,6 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class HomePage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'app_frontend_homepage';

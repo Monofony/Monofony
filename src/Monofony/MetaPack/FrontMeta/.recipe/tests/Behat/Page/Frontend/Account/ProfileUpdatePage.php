@@ -9,9 +9,6 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 
 class ProfileUpdatePage extends SymfonyPage
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_frontend_account_profile_update';

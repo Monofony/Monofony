@@ -12,8 +12,10 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 class CustomerContext implements CustomerContextInterface
 {
-    public function __construct(private TokenStorageInterface $tokenStorage, private AuthorizationCheckerInterface $authorizationChecker)
-    {
+    public function __construct(
+        private TokenStorageInterface $tokenStorage,
+        private AuthorizationCheckerInterface $authorizationChecker,
+    ) {
     }
 
     /**

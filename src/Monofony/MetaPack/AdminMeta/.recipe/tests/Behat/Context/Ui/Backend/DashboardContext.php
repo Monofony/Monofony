@@ -10,11 +10,8 @@ use Webmozart\Assert\Assert;
 
 class DashboardContext implements Context
 {
-    private $dashboardPage;
-
-    public function __construct(DashboardPage $dashboardPage)
+    public function __construct(private DashboardPage $dashboardPage)
     {
-        $this->dashboardPage = $dashboardPage;
     }
 
     /**
@@ -28,16 +25,16 @@ class DashboardContext implements Context
     /**
      * @Then I should see :number new customers in the list
      */
-    public function iShouldSeeNewCustomersInTheList($number)
+    public function iShouldSeeNewCustomersInTheList(int $number)
     {
-        Assert::same($this->dashboardPage->getNumberOfNewCustomersInTheList(), (int) $number);
+        Assert::same($this->dashboardPage->getNumberOfNewCustomersInTheList(), $number);
     }
 
     /**
      * @Then I should see :number new customers
      */
-    public function iShouldSeeNewCustomers($number)
+    public function iShouldSeeNewCustomers(int $number)
     {
-        Assert::same($this->dashboardPage->getNumberOfNewCustomers(), (int) $number);
+        Assert::same($this->dashboardPage->getNumberOfNewCustomers(), $number);
     }
 }

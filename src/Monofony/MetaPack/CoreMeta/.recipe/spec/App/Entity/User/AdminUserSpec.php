@@ -9,7 +9,7 @@ use PhpSpec\ObjectBehavior;
 use Sylius\Component\User\Model\User;
 use Sylius\Component\User\Model\UserInterface;
 
-class AdminUserSpec extends ObjectBehavior
+final class AdminUserSpec extends ObjectBehavior
 {
     function it_extends_a_base_user_model(): void
     {

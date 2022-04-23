@@ -28,9 +28,6 @@ class LoginPage extends SymfonyPage
         $this->getElement('username')->setValue($username);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'app_frontend_login';

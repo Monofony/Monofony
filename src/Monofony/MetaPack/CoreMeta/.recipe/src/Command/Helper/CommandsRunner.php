@@ -13,8 +13,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 final class CommandsRunner
 {
-    public function __construct(private EntityManagerInterface $entityManager, private ProgressBarCreator $progressBarCreator)
-    {
+    public function __construct(
+        private EntityManagerInterface $entityManager,
+        private ProgressBarCreator $progressBarCreator,
+    ) {
     }
 
     /**

@@ -19,30 +19,15 @@ use Zenstruck\Foundry\Proxy;
 
 final class ManagingAdministratorsContext implements Context
 {
-    private $createPage;
-    private $indexPage;
-    private $updatePage;
-    private $topBarElement;
-    private $notificationChecker;
-    private $sharedStorage;
-    private $objectManager;
-
     public function __construct(
-        CreatePage $createPage,
-        IndexPage $indexPage,
-        UpdatePage $updatePage,
-        TopBarElement $topBarElement,
-        NotificationCheckerInterface $notificationChecker,
-        SharedStorageInterface $sharedStorage,
-        ObjectManager $objectManager
+        private CreatePage $createPage,
+        private IndexPage $indexPage,
+        private UpdatePage $updatePage,
+        private TopBarElement $topBarElement,
+        private NotificationCheckerInterface $notificationChecker,
+        private SharedStorageInterface $sharedStorage,
+        private ObjectManager $objectManager,
     ) {
-        $this->createPage = $createPage;
-        $this->indexPage = $indexPage;
-        $this->updatePage = $updatePage;
-        $this->topBarElement = $topBarElement;
-        $this->notificationChecker = $notificationChecker;
-        $this->sharedStorage = $sharedStorage;
-        $this->objectManager = $objectManager;
     }
 
     /**
@@ -131,8 +116,7 @@ final class ManagingAdministratorsContext implements Context
     }
 
     /**
-     * @When I add it
-     * @When I try to add it
+     * @When I (try to) add it
      */
     public function iAddIt(): void
     {
@@ -210,7 +194,7 @@ final class ManagingAdministratorsContext implements Context
      */
     public function iShouldSeeAdministratorsInTheList(int $amount = 1): void
     {
-        Assert::same($this->indexPage->countItems(), (int) $amount);
+        Assert::same($this->indexPage->countItems(), $amount);
     }
 
     /**
@@ -258,7 +242,7 @@ final class ManagingAdministratorsContext implements Context
     /**
      * @Then there should not be :email administrator anymore
      */
-    public function thereShouldBeNoAnymore($email): void
+    public function thereShouldBeNoAnymore(string $email): void
     {
         Assert::false($this->indexPage->isSingleResourceOnPage(['email' => $email]));
     }

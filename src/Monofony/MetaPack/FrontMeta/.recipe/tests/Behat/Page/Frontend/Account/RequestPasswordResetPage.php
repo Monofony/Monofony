@@ -30,9 +30,6 @@ class RequestPasswordResetPage extends SymfonyPage
         $this->getDocument()->fillField('Email', $email);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_user_request_password_reset_token';

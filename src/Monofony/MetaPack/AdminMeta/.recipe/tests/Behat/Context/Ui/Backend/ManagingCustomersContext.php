@@ -8,27 +8,16 @@ use App\Tests\Behat\Page\Backend\Customer\IndexPage;
 use App\Tests\Behat\Page\Backend\Customer\ShowPage;
 use App\Tests\Behat\Page\Backend\Customer\UpdatePage;
 use Behat\Behat\Context\Context;
-use Monofony\Bridge\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 use Webmozart\Assert\Assert;
 
 final class ManagingCustomersContext implements Context
 {
-    private IndexPage $indexPage;
-    private UpdatePage $updatePage;
-    private ShowPage $showPage;
-    private CurrentPageResolverInterface $currentPageResolver;
-
     public function __construct(
-        IndexPage $indexPage,
-        UpdatePage $updatePage,
-        ShowPage $showPage,
-        CurrentPageResolverInterface $currentPageResolver
+        private IndexPage $indexPage,
+        private UpdatePage $updatePage,
+        private ShowPage $showPage,
     ) {
-        $this->indexPage = $indexPage;
-        $this->updatePage = $updatePage;
-        $this->showPage = $showPage;
-        $this->currentPageResolver = $currentPageResolver;
     }
 
     /**
@@ -190,7 +179,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then /^I should be notified that ([^"]+) should be ([^"]+)$/
      */
-    public function iShouldBeNotifiedThatTheElementShouldBe($elementName, $validationMessage): void
+    public function iShouldBeNotifiedThatTheElementShouldBe(string $elementName, string $validationMessage): void
     {
         Assert::same(
             $this->updatePage->getValidationMessage($elementName),
@@ -201,7 +190,7 @@ final class ManagingCustomersContext implements Context
     /**
      * @Then the customer with email :email should not appear in the store
      */
-    public function theCustomerShouldNotAppearInTheStore($email): void
+    public function theCustomerShouldNotAppearInTheStore(string $email): void
     {
         $this->indexPage->open();
 
@@ -321,22 +310,6 @@ final class ManagingCustomersContext implements Context
     public function thisCustomerShouldBeSubscribedToTheNewsletter(): void
     {
         Assert::true($this->updatePage->isSubscribedToTheNewsletter());
-    }
-
-    /**
-     * @Then I should see the order with number :orderNumber in the list
-     */
-    public function iShouldSeeASingleOrderFromCustomer($orderNumber): void
-    {
-        Assert::true($this->indexPage->isSingleResourceOnPage(['number' => $orderNumber]));
-    }
-
-    /**
-     * @Then I should not see the order with number :orderNumber in the list
-     */
-    public function iShouldNotSeeASingleOrderFromCustomer($orderNumber): void
-    {
-        Assert::false($this->indexPage->isSingleResourceOnPage(['number' => $orderNumber]));
     }
 
     /**

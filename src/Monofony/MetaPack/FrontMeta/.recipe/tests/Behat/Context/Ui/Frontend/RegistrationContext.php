@@ -20,33 +20,16 @@ use Webmozart\Assert\Assert;
 
 class RegistrationContext implements Context
 {
-    private SharedStorageInterface $sharedStorage;
-    private DashboardPage $dashboardPage;
-    private HomePage $homePage;
-    private LoginPage $loginPage;
-    private RegisterPage $registerPage;
-    private VerificationPage $verificationPage;
-    private ProfileUpdatePage $profileUpdatePage;
-    private NotificationCheckerInterface $notificationChecker;
-
     public function __construct(
-        SharedStorageInterface $sharedStorage,
-        DashboardPage $dashboardPage,
-        HomePage $homePage,
-        LoginPage $loginPage,
-        RegisterPage $registerPage,
-        VerificationPage $verificationPage,
-        ProfileUpdatePage $profileUpdatePage,
-        NotificationCheckerInterface $notificationChecker
+        private SharedStorageInterface $sharedStorage,
+        private DashboardPage $dashboardPage,
+        private HomePage $homePage,
+        private LoginPage $loginPage,
+        private RegisterPage $registerPage,
+        private VerificationPage $verificationPage,
+        private ProfileUpdatePage $profileUpdatePage,
+        private NotificationCheckerInterface $notificationChecker,
     ) {
-        $this->sharedStorage = $sharedStorage;
-        $this->dashboardPage = $dashboardPage;
-        $this->homePage = $homePage;
-        $this->loginPage = $loginPage;
-        $this->registerPage = $registerPage;
-        $this->verificationPage = $verificationPage;
-        $this->profileUpdatePage = $profileUpdatePage;
-        $this->notificationChecker = $notificationChecker;
     }
 
     /**
@@ -79,7 +62,7 @@ class RegistrationContext implements Context
      * @When I specify the email as :email
      * @When I do not specify the email
      */
-    public function iSpecifyTheEmail($email = null): void
+    public function iSpecifyTheEmail(?string $email = null): void
     {
         $this->registerPage->specifyEmail($email);
     }
@@ -88,7 +71,7 @@ class RegistrationContext implements Context
      * @When I specify the password as :password
      * @When I do not specify the password
      */
-    public function iSpecifyThePasswordAs($password = null): void
+    public function iSpecifyThePasswordAs(?string $password = null): void
     {
         $this->registerPage->specifyPassword($password);
         $this->sharedStorage->set('password', $password);
@@ -97,7 +80,7 @@ class RegistrationContext implements Context
     /**
      * @When /^I confirm (this password)$/
      */
-    public function iConfirmThisPassword($password): void
+    public function iConfirmThisPassword(string $password): void
     {
         $this->registerPage->verifyPassword($password);
     }
@@ -111,8 +94,7 @@ class RegistrationContext implements Context
     }
 
     /**
-     * @When I register this account
-     * @When I try to register this account
+     * @When I (try to) register this account
      */
     public function iRegisterThisAccount(): void
     {
@@ -120,10 +102,9 @@ class RegistrationContext implements Context
     }
 
     /**
-     * @Then my email should be :email
-     * @Then my email should still be :email
+     * @Then my email should (still) be :email
      */
-    public function myEmailShouldBe($email): void
+    public function myEmailShouldBe(string $email): void
     {
         $this->dashboardPage->open();
 
@@ -133,7 +114,7 @@ class RegistrationContext implements Context
     /**
      * @Then /^I should be notified that the ([^"]+) is required$/
      */
-    public function iShouldBeNotifiedThatElementIsRequired($element): void
+    public function iShouldBeNotifiedThatElementIsRequired(string $element): void
     {
         $this->assertFieldValidationMessage($element, sprintf('Please enter your %s.', $element));
     }
@@ -185,7 +166,7 @@ class RegistrationContext implements Context
     /**
      * @Then I should be able to log in as :email with :password password
      */
-    public function iShouldBeAbleToLogInAsWithPassword($email, $password): void
+    public function iShouldBeAbleToLogInAsWithPassword(string $email, string $password): void
     {
         $this->iLogInAsWithPassword($email, $password);
         $this->iShouldBeLoggedIn();
@@ -194,7 +175,7 @@ class RegistrationContext implements Context
     /**
      * @Then I should not be able to log in as :email with :password password
      */
-    public function iShouldNotBeAbleToLogInAsWithPassword($email, $password): void
+    public function iShouldNotBeAbleToLogInAsWithPassword(string $email, string $password): void
     {
         $this->iLogInAsWithPassword($email, $password);
 
@@ -204,7 +185,7 @@ class RegistrationContext implements Context
     /**
      * @When I log in as :email with :password password
      */
-    public function iLogInAsWithPassword($email, $password): void
+    public function iLogInAsWithPassword(string $email, string $password): void
     {
         $this->loginPage->open();
         $this->loginPage->specifyUsername($email);
@@ -215,7 +196,7 @@ class RegistrationContext implements Context
     /**
      * @When I register with email :email and password :password
      */
-    public function iRegisterWithEmailAndPassword($email, $password): void
+    public function iRegisterWithEmailAndPassword(string $email, string $password): void
     {
         $this->registerPage->open();
         $this->registerPage->specifyEmail($email);
@@ -275,7 +256,7 @@ class RegistrationContext implements Context
     /**
      * @When I (try to )verify using :token token
      */
-    public function iTryToVerifyUsing($token): void
+    public function iTryToVerifyUsing(string $token): void
     {
         $this->verificationPage->verifyAccount($token);
     }
@@ -345,11 +326,7 @@ class RegistrationContext implements Context
         Assert::true($this->profileUpdatePage->isSubscribedToTheNewsletter());
     }
 
-    /**
-     * @param string $element
-     * @param string $expectedMessage
-     */
-    private function assertFieldValidationMessage($element, $expectedMessage): void
+    private function assertFieldValidationMessage(string $element, string $expectedMessage): void
     {
         Assert::true($this->registerPage->checkValidationMessageFor($element, $expectedMessage));
     }

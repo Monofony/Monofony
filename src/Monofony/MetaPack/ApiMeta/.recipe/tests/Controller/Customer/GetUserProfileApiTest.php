@@ -13,9 +13,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
 {
     use AuthorizedHeaderTrait;
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_does_not_allow_to_get_user_profile_for_non_authenticated_user(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
@@ -28,9 +26,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
         $this->assertResponse($response, 'error/access_denied_response', Response::HTTP_UNAUTHORIZED);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_does_not_allows_to_get_another_profile(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
@@ -43,9 +39,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
         $this->assertResponseCode($response, Response::HTTP_FORBIDDEN);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_allows_to_get_user_profile_when_it_is_myself(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
@@ -58,9 +52,7 @@ final class GetUserProfileApiTest extends JsonApiTestCase
         $this->assertResponse($response, 'customer/get_user_profile_response', Response::HTTP_OK);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_allows_to_get_my_user_profile(): void
     {
         $this->loadFixturesFromFile('resources/fixtures.yaml');

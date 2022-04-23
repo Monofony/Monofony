@@ -10,12 +10,12 @@ final class TopBarElement extends Element
 {
     public function hasAvatarInMainBar(string $avatarPath): bool
     {
-        return false !== strpos($this->getAvatarImagePath(), $avatarPath);
+        return str_contains($this->getAvatarImagePath(), $avatarPath);
     }
 
     public function hasDefaultAvatarInMainBar(): bool
     {
-        return false !== strpos($this->getAvatarImagePath(), '//placehold.it/50x50');
+        return str_contains($this->getAvatarImagePath(), '//placehold.it/50x50');
     }
 
     private function getAvatarImagePath(): string
@@ -26,6 +26,6 @@ final class TopBarElement extends Element
             return '';
         }
 
-        return $image->getAttribute('src');
+        return (string) $image->getAttribute('src');
     }
 }

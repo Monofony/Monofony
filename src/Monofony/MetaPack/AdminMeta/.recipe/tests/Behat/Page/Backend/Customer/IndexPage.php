@@ -10,17 +10,11 @@ use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
 
 class IndexPage extends AbstractIndexPage implements IndexPageInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getRouteName(): string
     {
         return 'sylius_backend_customer_index';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCustomerAccountStatus(CustomerInterface $customer): string
     {
         $tableAccessor = $this->getTableAccessor();

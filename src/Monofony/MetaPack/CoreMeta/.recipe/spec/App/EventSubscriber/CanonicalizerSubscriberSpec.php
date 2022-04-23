@@ -13,7 +13,7 @@ use Sylius\Component\Customer\Model\CustomerInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
 use Sylius\Component\User\Model\UserInterface;
 
-class CanonicalizerSubscriberSpec extends ObjectBehavior
+final class CanonicalizerSubscriberSpec extends ObjectBehavior
 {
     function let(CanonicalizerInterface $canonicalizer): void
     {

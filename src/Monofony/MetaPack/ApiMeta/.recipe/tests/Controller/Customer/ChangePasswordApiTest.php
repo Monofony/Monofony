@@ -13,9 +13,7 @@ class ChangePasswordApiTest extends JsonApiTestCase
 {
     use AuthorizedHeaderTrait;
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_does_not_allow_to_change_password_for_non_authenticated_user(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
@@ -28,9 +26,7 @@ class ChangePasswordApiTest extends JsonApiTestCase
         $this->assertResponse($response, 'error/access_denied_response', Response::HTTP_UNAUTHORIZED);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_does_not_allow_to_change_password_without_required_data(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
@@ -43,9 +39,7 @@ class ChangePasswordApiTest extends JsonApiTestCase
         $this->assertResponse($response, 'customer/change_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_does_not_allow_to_change_password_with_wrong_current_password(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
@@ -66,9 +60,7 @@ EOT;
         $this->assertResponse($response, 'customer/wrong_current_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function it_allows_to_change_password(): void
     {
         $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');

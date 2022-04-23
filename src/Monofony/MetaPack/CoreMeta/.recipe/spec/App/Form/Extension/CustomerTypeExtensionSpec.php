@@ -9,7 +9,7 @@ use Sylius\Bundle\CustomerBundle\Form\Type\CustomerType;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class CustomerTypeExtensionSpec extends ObjectBehavior
+final class CustomerTypeExtensionSpec extends ObjectBehavior
 {
     function it_extends_an_abstract_type_extension()
     {
