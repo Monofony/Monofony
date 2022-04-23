@@ -7,3 +7,6 @@ parameters:
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
+
+    ignoreErrors:
+        - '/Symfony\\Component\\Security\\Core\\User\\AdvancedUserInterface not found./'
