@@ -21,8 +21,6 @@ class RefreshTokenApiTest extends JsonApiTestCase
     /** @test */
     public function it_allows_to_refresh_an_access_token(): void
     {
-        $this->markTestSkipped('Skipped for now, cause it fails on CI only');
-
         $this->loadFixturesFromFile('resources/fixtures.yaml');
 
         $data =
