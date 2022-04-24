@@ -20,7 +20,7 @@
         "phpstan/phpstan": "^1.5",
         "phpstan/phpstan-doctrine": "^1.3",
         "phpstan/phpstan-nette": "^1.0",
-        "phpstan/phpstan-symfony": "^0.12",
+        "phpstan/phpstan-symfony": "^1.1",
         "phpstan/phpstan-webmozart-assert": "^1.1",
         "psr/event-dispatcher": "^1.0",
         "se/selenium-server-standalone": "2.*",
