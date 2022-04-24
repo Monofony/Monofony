@@ -1,6 +1,8 @@
 includes:
 	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
 
+reportUnmatchedIgnoredErrors: false
+
 parameters:
     paths:
         - ../../MetaPack/CoreMeta/.recipe

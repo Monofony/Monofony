@@ -9,7 +9,7 @@
         "sylius/user": "^1.11"
     },
     "require-dev": {
-        "phpstan/phpstan": "^0.12"
+        "phpstan/phpstan": "^1.5"
     },
     "autoload": {
         "psr-4": {
