@@ -27,7 +27,6 @@ final class AdminUserContext implements Context
     {
         $adminUser = $this->adminUserFactory->createOne(['email' => $email, 'password' => $password, 'enabled' => true]);
 
-        /** @var UserInterface $user */
         $adminUser = $this->adminUserRepository->find($adminUser->getId());
 
         $this->sharedStorage->set('administrator', $adminUser);
@@ -40,7 +39,6 @@ final class AdminUserContext implements Context
     {
         $adminUser = $this->adminUserFactory->createOne(['username' => $username]);
 
-        /** @var UserInterface $user */
         $adminUser = $this->adminUserRepository->find($adminUser->getId());
 
         $this->sharedStorage->set('administrator', $adminUser);
