@@ -31,8 +31,9 @@ class UserContext implements Context
     {
         $user = $this->appUserFactory
             ->createOne(['email' => $email, 'password' => $password, 'enabled' => true])
-            ->disableAutoRefresh()
         ;
+
+        $user = $this->appUserRepository->find($user->getId());
 
         $this->sharedStorage->set('user', $user);
     }
@@ -57,6 +58,8 @@ class UserContext implements Context
     public function iHaveReceivedResettingPasswordEmail(UserInterface $user): void
     {
         $this->prepareUserPasswordResetToken($user);
+
+        $this->appUserManager->flush();
     }
 
     private function prepareUserPasswordResetToken(UserInterface $user): void
