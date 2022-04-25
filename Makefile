@@ -53,9 +53,7 @@ test-phpspec:
 .PHONY: test-phpspec
 
 test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/MetaPack/CoreMeta/.recipe/src
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/MetaPack/AdminMeta/.recipe/src
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL} src/Monofony/MetaPack/FrontMeta/.recipe/src
+	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL}
 .PHONY: test-phpstan
 
 test-psalm:
