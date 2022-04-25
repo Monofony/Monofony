@@ -117,7 +117,7 @@ EOT
                 /** @var ConstraintViolationListInterface $errors */
                 $errors = $this->validator->validate((string) $value, [new Email(), new NotBlank()]);
                 foreach ($errors as $error) {
-                    throw new \DomainException($error->getMessage());
+                    throw new \DomainException((string) $error->getMessage());
                 }
 
                 return $value;
@@ -153,7 +153,7 @@ EOT
             /** @var ConstraintViolationListInterface $errors */
             $errors = $this->validator->validate($value, [new NotBlank()]);
             foreach ($errors as $error) {
-                throw new \DomainException($error->getMessage());
+                throw new \DomainException((string) $error->getMessage());
             }
 
             return $value;

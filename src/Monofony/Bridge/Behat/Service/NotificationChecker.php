@@ -16,14 +16,12 @@ namespace Monofony\Bridge\Behat\Service;
 use Monofony\Bridge\Behat\Exception\NotificationExpectationMismatchException;
 use Monofony\Bridge\Behat\NotificationType;
 use Monofony\Bridge\Behat\Service\Accessor\NotificationAccessorInterface;
+use Webmozart\Assert\Assert;
 
 final class NotificationChecker implements NotificationCheckerInterface
 {
-    private NotificationAccessorInterface $notificationAccessor;
-
-    public function __construct(NotificationAccessorInterface $notificationAccessor)
+    public function __construct(private NotificationAccessorInterface $notificationAccessor)
     {
-        $this->notificationAccessor = $notificationAccessor;
     }
 
     /**
@@ -31,28 +29,28 @@ final class NotificationChecker implements NotificationCheckerInterface
      */
     public function checkNotification($message, NotificationType $type)
     {
-        if ($this->hasType($type) && $this->hasMessage($message)) {
-            return;
+        foreach ($this->notificationAccessor->getMessageElements() as $messageElement) {
+            if (
+                str_contains($messageElement->getText(), $message) &&
+                $messageElement->hasClass($this->resolveClass($type))
+            ) {
+                return;
+            }
         }
 
-        throw new NotificationExpectationMismatchException($type, $message, $this->notificationAccessor->getType(), $this->notificationAccessor->getMessage());
+        throw new NotificationExpectationMismatchException($type, $message);
     }
 
-    /**
-     * @return bool
-     */
-    private function hasType(NotificationType $type)
+    private function resolveClass(NotificationType $type): string
     {
-        return $type === $this->notificationAccessor->getType();
-    }
+        $typeClassMap = [
+            'failure' => 'negative',
+            'info' => 'info',
+            'success' => 'positive',
+        ];
 
-    /**
-     * @param string $message
-     *
-     * @return bool
-     */
-    private function hasMessage($message)
-    {
-        return false !== strpos($this->notificationAccessor->getMessage(), $message);
+        Assert::keyExists($typeClassMap, $type->__toString());
+
+        return $typeClassMap[$type->__toString()];
     }
 }
