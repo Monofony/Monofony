@@ -15,7 +15,7 @@ var build = (name, assetPath, vendorUiPath) => {
         .addEntry('app', `${assetPath}/js/app.js`)
         // uncomment if you use Sass/SCSS files
         .enableSassLoader((options) => {
-            options.data = '@import "~semantic-ui-css/semantic.min.css";';
+            options.additionalData = '@import "~semantic-ui-css/semantic.min.css";';
         })
         .autoProvidejQuery()
         .configureBabel()
@@ -32,7 +32,7 @@ var build = (name, assetPath, vendorUiPath) => {
             css: 'css/[name].[hash:8].css',
             images: 'img/[name].[hash:8].[ext]',
             fonts: 'font/[name].[hash:8].[ext]'
-        });
+        })
     ;
 
     const config = Encore.getWebpackConfig();
