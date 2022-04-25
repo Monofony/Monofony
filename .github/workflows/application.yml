@@ -94,7 +94,7 @@ jobs:
 
             -
                 name: Run Psalm
-                run: make test-psalm
+                run: vendor/bin/psalm --show-info=false --php-version=${{ matrix.php }}
                 if: always() && steps.end-of-setup.outcome == 'success'
 
 #            -
