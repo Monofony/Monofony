@@ -57,5 +57,4 @@ EOT;
 
         return $refreshToken;
     }
-
 }
