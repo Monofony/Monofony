@@ -11,6 +11,7 @@ use Monofony\Bridge\Behat\Service\SharedStorageInterface;
 use Monofony\Contracts\Core\Model\User\AppUserInterface;
 use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
+use Zenstruck\Foundry\Proxy;
 
 class UserContext implements Context
 {
@@ -31,9 +32,8 @@ class UserContext implements Context
     {
         $user = $this->appUserFactory
             ->createOne(['email' => $email, 'password' => $password, 'enabled' => true])
+            ->disableAutoRefresh()
         ;
-
-        $user = $this->appUserRepository->find($user->getId());
 
         $this->sharedStorage->set('user', $user);
     }
@@ -55,20 +55,24 @@ class UserContext implements Context
     /**
      * @Given /^(?:(I) have|(this user) has) already received a resetting password email$/
      */
-    public function iHaveReceivedResettingPasswordEmail(UserInterface $user): void
+    public function iHaveReceivedResettingPasswordEmail(UserInterface|Proxy $user): void
     {
         $this->prepareUserPasswordResetToken($user);
-
-        $this->appUserManager->flush();
     }
 
-    private function prepareUserPasswordResetToken(UserInterface $user): void
+    private function prepareUserPasswordResetToken(UserInterface|Proxy $user): void
     {
         $token = 'itotallyforgotmypassword';
 
         $user->setPasswordResetToken($token);
 
         $user->setPasswordRequestedAt(new \DateTime());
+
+        if ($user instanceof Proxy) {
+            $user->save();
+
+            return;
+        }
 
         $this->appUserManager->flush();
     }
