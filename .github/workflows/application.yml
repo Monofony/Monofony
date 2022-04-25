@@ -99,10 +99,7 @@ jobs:
 
             -
                 name: Run PHPStan
-                run: |
-                    vendor/bin/phpstan analyse -c phpstan.neon -l 4 src/Monofony/MetaPack/CoreMeta/.recipe/src
-                    vendor/bin/phpstan analyse -c phpstan.neon -l 4 src/Monofony/MetaPack/AdminMeta/.recipe/src
-                    vendor/bin/phpstan analyse -c phpstan.neon -l 4 src/Monofony/MetaPack/FrontMeta/.recipe/src
+                run: vendor/bin/phpstan analyse -c phpstan.neon -l 4
                 if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application:
