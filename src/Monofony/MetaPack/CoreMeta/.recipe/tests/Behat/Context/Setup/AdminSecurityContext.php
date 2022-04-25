@@ -8,6 +8,7 @@ use App\Factory\AdminUserFactory;
 use Behat\Behat\Context\Context;
 use Monofony\Bridge\Behat\Service\AdminSecurityServiceInterface;
 use Monofony\Bridge\Behat\Service\SharedStorageInterface;
+use Sylius\Component\User\Model\UserInterface;
 use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Webmozart\Assert\Assert;
 
@@ -30,9 +31,10 @@ final class AdminSecurityContext implements Context
             ->createOne(['email' => 'admin@example.com', 'password' => 'admin'])
         ;
 
+        /** @var UserInterface $user */
         $user = $this->adminUserRepository->find($user->getId());
 
-        $this->securityService->logIn($user->object());
+        $this->securityService->logIn($user);
 
         $this->sharedStorage->set('administrator', $user);
     }

@@ -97,10 +97,10 @@ jobs:
                 run: make test-psalm
                 if: always() && steps.end-of-setup.outcome == 'success'
 
-            -
-                name: Run PHPStan
-                run: make test-phpstan
-                if: always() && steps.end-of-setup.outcome == 'success'
+#            -
+#                name: Run PHPStan
+#                run: vendor/bin/phpstan analyse -c phpstan.neon -l 4
+#                if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application:
         runs-on: ubuntu-18.04

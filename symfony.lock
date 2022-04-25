@@ -538,6 +538,9 @@
     "sonata-project/twig-extensions": {
         "version": "1.4.1"
     },
+    "stella-maris/clock": {
+        "version": "0.1.4"
+    },
     "swiftmailer/swiftmailer": {
         "version": "v6.0.2"
     },

@@ -2,11 +2,9 @@ includes:
 	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
 
 parameters:
+    level: 4
     paths:
         - ../../MetaPack/CoreMeta/.recipe
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
-
-    ignoreErrors:
-        - '/Symfony\\Component\\Security\\Core\\User\\AdvancedUserInterface not found./'

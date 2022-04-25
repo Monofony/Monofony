@@ -24,7 +24,10 @@ final class AdminUserContext implements Context
      */
     public function thereIsAnAdministratorIdentifiedBy(string $email, string $password = 'admin'): void
     {
-        $adminUser = $this->adminUserFactory->createOne(['email' => $email, 'password' => $password, 'enabled' => true])->object();
+        $adminUser = $this->adminUserFactory->createOne(['email' => $email, 'password' => $password, 'enabled' => true]);
+
+        $adminUser = $this->adminUserRepository->find($adminUser->getId());
+
         $this->sharedStorage->set('administrator', $adminUser);
     }
 

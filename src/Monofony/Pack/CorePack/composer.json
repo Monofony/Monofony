@@ -20,8 +20,8 @@
         "monofony/sylius-user-bridge": "^0.8",
         "sylius/user": "^1.11",
         "sylius/user-bundle": "^1.11",
-        "phpstan/phpstan": "^0.12",
-        "phpstan/phpstan-webmozart-assert": "^0.12",
+        "phpstan/phpstan": "^1.5",
+        "phpstan/phpstan-webmozart-assert": "^1.1",
         "sylius/mailer": "^1.5",
         "sylius/resource": "^1.8",
         "sylius/resource-bundle": "^1.9@beta",
@@ -36,8 +36,8 @@
     "require-dev": {
         "behat/behat": "^3.2",
         "monofony/behat-bridge": "^0.8",
-        "phpstan/phpstan": "^0.12",
-        "phpstan/phpstan-webmozart-assert": "^0.12"
+        "phpstan/phpstan": "^1.5",
+        "phpstan/phpstan-webmozart-assert": "^1.1"
     },
     "config": {
         "sort-packages": true

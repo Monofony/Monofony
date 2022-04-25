@@ -14,7 +14,7 @@
         "monofony/core-contracts": "^0.8",
         "sylius/ui-bundle": "^1.11",
         "pagerfanta/pagerfanta": "^3.5",
-        "phpstan/phpstan": "^0.12",
+        "phpstan/phpstan": "^1.5",
         "sonata-project/block-bundle": "^4.2",
         "sylius/grid-bundle": "^1.11@beta",
         "symfony/asset": "5.4.*",
@@ -28,7 +28,7 @@
         "behat/behat": "^3.2",
         "friends-of-behat/page-object-extension": "^0.3",
         "monofony/behat-bridge": "^0.8",
-        "phpstan/phpstan": "^0.12"
+        "phpstan/phpstan": "^1.5"
     },
     "autoload-dev": {
         "psr-4": {
