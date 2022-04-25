@@ -23,16 +23,39 @@ class RefreshTokenApiTest extends JsonApiTestCase
     {
         $this->loadFixturesFromFile('resources/fixtures.yaml');
 
+        $refreshToken = $this->getRefreshToken();
+
         $data =
             <<<EOT
         {
-            "refresh_token": "SampleRefreshTokenODllODY4ZTQyOThlNWIyMjA1ZDhmZjE1ZDYyMGMwOTUxOWM2NGFmNGRjNjQ2NDBhMDVlNGZjMmQ0YzgyNDM2Ng"
+            "refresh_token": "$refreshToken"
         }
 EOT;
 
         $this->client->request('POST', '/api/token/refresh', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
 
         $response = $this->client->getResponse();
-        // $this->assertResponse($response, 'authentication/new_access_token', Response::HTTP_OK);
+        $this->assertResponse($response, 'authentication/new_access_token', Response::HTTP_OK);
     }
+
+    private function getRefreshToken(): string
+    {
+        $data =
+            <<<EOT
+        {
+            "username": "api@sylius.com",
+            "password": "sylius"
+        }
+EOT;
+
+        $this->client->request('POST', '/api/authentication_token', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $response = $this->client->getResponse();
+
+        $refreshToken = \json_decode($response->getContent(), true)['refresh_token'] ?: null;
+
+        $this->assertNotNull($refreshToken, 'Refresh token was not found but it should.');
+
+        return $refreshToken;
+    }
+
 }
