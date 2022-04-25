@@ -13,63 +13,23 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service\Accessor;
 
-use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Session;
-use Monofony\Bridge\Behat\NotificationType;
 
 final class NotificationAccessor implements NotificationAccessorInterface
 {
-    private Session $session;
-
-    public function __construct(Session $session)
+    public function __construct(private Session $session)
     {
-        $this->session = $session;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getMessage()
+    public function getMessageElements(): array
     {
-        return $this->getMessageElement()->getText();
-    }
+        $messageElements = $this->session->getPage()->findAll('css', '.sylius-flash-message');
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getType()
-    {
-        if (
-            $this->getMessageElement()->hasClass('positive')
-            || $this->getMessageElement()->hasClass('success')
-        ) {
-            return NotificationType::success();
-        }
-
-        if (
-            $this->getMessageElement()->hasClass('negative')
-            || $this->getMessageElement()->hasClass('alert')
-        ) {
-            return NotificationType::failure();
-        }
-
-        throw new \RuntimeException('Cannot resolve notification type');
-    }
-
-    /**
-     * @return NodeElement
-     *
-     * @throws ElementNotFoundException
-     */
-    private function getMessageElement()
-    {
-        $messageElement = $this->session->getPage()->find('css', '.sylius-flash-message');
-
-        if (null === $messageElement) {
+        if (empty($messageElements)) {
             throw new ElementNotFoundException($this->session->getDriver(), 'message element', 'css', '.sylius-flash-message');
         }
 
-        return $messageElement;
+        return $messageElements;
     }
 }

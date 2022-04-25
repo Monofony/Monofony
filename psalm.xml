@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <psalm
-    errorLevel="5"
-    resolveFromConfigFile="true"
+    errorLevel="3"
+    reportMixedIssues="false"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
@@ -16,9 +16,27 @@
             <directory name="src/Monofony/MetaPack/AdminMeta/.recipe/spec" />
             <directory name="src/Monofony/MetaPack/AdminMeta/.recipe/tests" />
             <directory name="src/Monofony/MetaPack/CoreMeta/.recipe/spec" />
+            <directory name="src/Monofony/MetaPack/FrontMeta/.recipe/tests" />
             <directory name="src/Monofony/Bundle/CoreBundle/spec" />
             <directory name="src/Monofony/Component/Admin/spec" />
             <file name="src/Kernel.php"/>
         </ignoreFiles>
     </projectFiles>
+
+    <issueHandlers>
+        <ArgumentTypeCoercion errorLevel="info" />
+        <MoreSpecificReturnType errorLevel="info" />
+        <PossiblyInvalidArrayAssignment errorLevel="info" />
+        <PossiblyInvalidArgument errorLevel="info" />
+        <PossiblyFalseArgument errorLevel="info" />
+        <PossiblyNullArrayAssignment errorLevel="info" />
+        <PossiblyNullArgument errorLevel="info" />
+        <PossiblyNullReference errorLevel="info" />
+
+        <ImplementedReturnTypeMismatch>
+            <errorLevel type="suppress">
+                <directory name="src/Monofony/MetaPack/CoreMeta/.recipe/src/Factory" />
+            </errorLevel>
+        </ImplementedReturnTypeMismatch>
+    </issueHandlers>
 </psalm>

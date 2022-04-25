@@ -55,7 +55,7 @@ final class ResetPasswordHandler implements MessageHandlerInterface
         Assert::notNull($request);
 
         /** @var string $token */
-        $token = $request->get('token');
+        $token = $request->attributes->get('token');
         Assert::notNull($token);
 
         return $token;

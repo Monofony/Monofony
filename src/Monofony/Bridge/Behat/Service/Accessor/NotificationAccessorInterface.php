@@ -13,17 +13,12 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service\Accessor;
 
-use Monofony\Bridge\Behat\NotificationType;
+use Behat\Mink\Element\NodeElement;
 
 interface NotificationAccessorInterface
 {
     /**
-     * @return string
+     * @return array|NodeElement[]
      */
-    public function getMessage();
-
-    /**
-     * @return NotificationType
-     */
-    public function getType();
+    public function getMessageElements(): array;
 }
