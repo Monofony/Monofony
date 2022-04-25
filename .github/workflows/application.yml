@@ -95,7 +95,7 @@ jobs:
             -
                 name: Run Psalm
                 run: vendor/bin/psalm --show-info=false --php-version=${{ matrix.php }}
-                if: always() && steps.end-of-setup.outcome == 'success'
+                if: matrix.php != '8.1' && steps.end-of-setup.outcome == 'success'
 
 #            -
 #                name: Run PHPStan
