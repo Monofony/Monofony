@@ -1,5 +1,3 @@
-PHPSTAN_LEVEL?=4
-
 test: validate test-phpspec analyse test-phpunit test-installer test-fixtures test-behat test-doctrine-migrations
 .PHONY: test
 
@@ -53,7 +51,7 @@ test-phpspec:
 .PHONY: test-phpspec
 
 test-phpstan:
-	vendor/bin/phpstan analyse -c phpstan.neon -l ${PHPSTAN_LEVEL}
+	vendor/bin/phpstan analyse -c phpstan.neon
 .PHONY: test-phpstan
 
 test-psalm:

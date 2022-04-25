@@ -3,12 +3,15 @@ includes:
 	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
 
 parameters:
+    level: 4
     paths:
         - src
 
     reportUnmatchedIgnoredErrors: false
 
     excludePaths:
+        - src/Monofony/MetaPack
+
         # Makes PHPStan crash
         - '**/DependencyInjection/Configuration.php'
 
