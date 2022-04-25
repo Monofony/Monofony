@@ -97,7 +97,7 @@ install-package:
 .PHONY: install-package
 
 test-package-phpstan:
-	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon
+	(cd $(path) && vendor/bin/phpstan analyse -c phpstan.neon)
 .PHONY: test-package-phpstan
 
 clean-package:
