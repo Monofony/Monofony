@@ -7,7 +7,7 @@
         "php": "^8.0"
     },
     "require-dev": {
-        "phpstan/phpstan": "^1.5"
+        "phpstan/phpstan": "^1.6"
     },
     "autoload": {
         "psr-4": {
