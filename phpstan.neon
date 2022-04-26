@@ -10,7 +10,8 @@ parameters:
     reportUnmatchedIgnoredErrors: false
 
     excludePaths:
-        - src/Monofony/MetaPack
+        # Recipes
+        - ../.recipe/**
 
         # Makes PHPStan crash
         - '**/DependencyInjection/Configuration.php'
