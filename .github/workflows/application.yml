@@ -32,8 +32,8 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: "${{ matrix.php }}"
-                    ini-values: date.timezone=Europe/Warsaw, opcache.enable=1, opcache.enable_cli=1, opcache.memory_consumption=512, opcache.max_accelerated_files=65407, opcache.interned_strings_buffer=8, opcache.validate_timestamps=0, opcache.save_comments=1, opcache.fast_shutdown=0
-                    extensions: intl, gd, opcache, mysql, pdo_mysql
+                    ini-values: date.timezone=Europe/Warsaw
+                    extensions: intl, gd, mysql, pdo_mysql
                     tools: symfony
                     coverage: none
 
@@ -97,10 +97,10 @@ jobs:
                 run: vendor/bin/psalm --show-info=false --php-version=${{ matrix.php }}
                 if: matrix.php != '8.1' && steps.end-of-setup.outcome == 'success'
 
-#            -
-#                name: Run PHPStan
-#                run: vendor/bin/phpstan analyse -c phpstan.neon -l 4
-#                if: always() && steps.end-of-setup.outcome == 'success'
+            -
+                name: Run PHPStan
+                run: vendor/bin/phpstan analyse
+                if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application:
         runs-on: ubuntu-18.04
