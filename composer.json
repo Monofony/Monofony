@@ -59,7 +59,8 @@
             "src/Monofony/MetaPack/AdminMeta/.recipe/src/Controller/DashboardController.php",
             "src/Monofony/MetaPack/AdminMeta/.recipe/src/Menu/AdminMenuBuilder.php",
             "src/Monofony/MetaPack/FrontMeta/.recipe/src/Menu/AccountMenuBuilder.php",
-            "src/Monofony/MetaPack/CoreMeta/.recipe/src/Command/Installer/InstallSampleDataCommand.php"
+            "src/Monofony/MetaPack/CoreMeta/.recipe/src/Command/Installer/InstallSampleDataCommand.php",
+            "src/Monofony/MetaPack/ApiMeta/.recipe/src/Story/TestAppUsersStory.php"
         ]
     },
     "require": {
