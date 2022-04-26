@@ -99,7 +99,7 @@ jobs:
 
             -
                 name: Run PHPStan
-                run: vendor/bin/phpstan analyse -c phpstan.neon -l 4 --debug --memory-limit 1G
+                run: vendor/bin/phpstan analyse -c phpstan.neon -l 4 --ansi
                 if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application:
