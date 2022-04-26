@@ -1,5 +1,5 @@
 includes:
-	- vendor/phpstan/phpstan-webmozart-assert/extension.neon
+	- vendor/phpstan/phpstan-doctrine/extension.neon
 
 parameters:
     level: 4
@@ -17,22 +17,13 @@ parameters:
         # Test dependencies
         - '**/spec/**.php'
 
+        # Vendor files in subpackages
+        - '**/Bundle/*/vendor/**.php'
+        - '**/Component/*/vendor/**.php'
+
         # Grids
         - '**/Grid/**.php'
 
         # These packages aren't in require-dev of the global package
         - '**MongoDB**'
         - '**ODM**'
-
-    ignoreErrors:
-        # Magic calls
-        - '/Call to an undefined static method Webmozart\\Assert\\Assert::all/'
-        - '/Call to an undefined static method Webmozart\\Assert\\Assert::nullOr/'
-        - '/Call to an undefined method Faker\\Generator::/'
-        - '/Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::/'
-        - '/Access to an undefined property Faker\\Generator::/'
-        - '/Method Mockery\\MockInterface::shouldReceive\(\) invoked with 1 parameter, 0 required/'
-
-        # These packages aren't in require-dev of the global package
-        - '/Class Doctrine\\Bundle\\MongoDBBundle/'
-        - '/Class Doctrine\\Bundle\\PHPCRBundle/'
