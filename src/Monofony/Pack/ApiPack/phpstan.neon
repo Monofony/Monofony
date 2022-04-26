@@ -5,3 +5,4 @@ parameters:
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
+        - '**/tests/**.php'
