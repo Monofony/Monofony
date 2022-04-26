@@ -1,5 +1,11 @@
 ## Change Log
 
+### v0.8.0-beta.4 (2022/04/26 15:56 +00:00)
+- [#424](https://github.com/Monofony/Monofony/pull/424) Enable Psalm on 8.1 (@loic425)
+- [#423](https://github.com/Monofony/Monofony/pull/423) Simplify PHPStan config (@loic425)
+- [#422](https://github.com/Monofony/Monofony/pull/422) PHPStan fix (@loic425)
+- [#420](https://github.com/Monofony/Monofony/pull/420) Fix date type extension spec (@loic425)
+
 ### v0.8.0-beta.3 (2022/04/26 10:24 +00:00)
 - [#410](https://github.com/Monofony/Monofony/pull/410) Bump minimist from 1.2.5 to 1.2.6 (@dependabot[bot])
 - [#419](https://github.com/Monofony/Monofony/pull/419) Use factories on api tests (@loic425)
