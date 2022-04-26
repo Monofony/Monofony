@@ -18,8 +18,7 @@ parameters:
         - '**/spec/**.php'
 
         # Vendor files in subpackages
-        - '**/Bundle/*/vendor/**.php'
-        - '**/Component/*/vendor/**.php'
+        - '**/vendor/**.php'
 
         # Grids
         - '**/Grid/**.php'

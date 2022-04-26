@@ -11,3 +11,4 @@ parameters:
         - '**/Context/CustomerContext.php'
         - '**/Entity/Customer/**.php'
         - '**/Entity/User/**.php'
+        - '**/Factory/**.php'
