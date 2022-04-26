@@ -8,7 +8,7 @@
   "devDependencies": {
     "@symfony/webpack-encore": "^0.32.0",
     "core-js": "^3.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^9.0.1",
     "upath": "^1.1.0",
     "yargs": "^6.4.0"
