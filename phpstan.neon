@@ -10,34 +10,8 @@ parameters:
     reportUnmatchedIgnoredErrors: false
 
     excludePaths:
-        # Recipes
-        - ../.recipe/**
-
-        # Makes PHPStan crash
-        - '**/DependencyInjection/Configuration.php'
-
         # Vendor files in subpackages
         - '**/vendor/**'
 
         # Test dependencies
         - '**/spec/**.php'
-
-        # Grids
-        - '**/Grid/**.php'
-
-        # These packages aren't in require-dev of the global package
-        - '**MongoDB**'
-        - '**ODM**'
-
-    ignoreErrors:
-        # Magic calls
-        - '/Call to an undefined static method Webmozart\\Assert\\Assert::all/'
-        - '/Call to an undefined static method Webmozart\\Assert\\Assert::nullOr/'
-        - '/Call to an undefined method Faker\\Generator::/'
-        - '/Call to an undefined method Symfony\\Component\\Config\\Definition\\Builder\\NodeParentInterface::/'
-        - '/Access to an undefined property Faker\\Generator::/'
-        - '/Method Mockery\\MockInterface::shouldReceive\(\) invoked with 1 parameter, 0 required/'
-
-        # These packages aren't in require-dev of the global package
-        - '/Class Doctrine\\Bundle\\MongoDBBundle/'
-        - '/Class Doctrine\\Bundle\\PHPCRBundle/'
