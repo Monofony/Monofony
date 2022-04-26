@@ -99,7 +99,7 @@ jobs:
 
             -
                 name: Run PHPStan
-                run: vendor/bin/phpstan analyse -c phpstan.neon --ansi
+                run: vendor/bin/phpstan analyse
                 if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application:
