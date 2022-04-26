@@ -38,5 +38,12 @@
                 <directory name="src/Monofony/MetaPack/CoreMeta/.recipe/src/Factory" />
             </errorLevel>
         </ImplementedReturnTypeMismatch>
+
+        <PossiblyUndefinedMethod>
+            <errorLevel type="suppress">
+                <referencedMethod name="App\Entity\User\AppUser::disableAutoRefresh" />
+                <referencedMethod name="App\Entity\User\AppUser::save" />
+            </errorLevel>
+        </PossiblyUndefinedMethod>
     </issueHandlers>
 </psalm>

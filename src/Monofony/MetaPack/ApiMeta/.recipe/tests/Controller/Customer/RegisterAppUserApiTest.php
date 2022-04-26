@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace App\Tests\Controller\Customer;
 
+use App\Story\TestAppUsersStory;
+use App\Tests\Controller\AuthorizedHeaderTrait;
 use App\Tests\Controller\JsonApiTestCase;
+use App\Tests\Controller\PurgeDatabaseTrait;
 use Symfony\Component\HttpFoundation\Response;
+use Zenstruck\Foundry\Test\Factories;
 
 final class RegisterAppUserApiTest extends JsonApiTestCase
 {
+    use AuthorizedHeaderTrait;
+    use Factories;
+    use PurgeDatabaseTrait;
+
     /** @test */
     public function it_does_not_allow_to_register_an_app_user_without_required_data(): void
     {
@@ -19,7 +27,7 @@ final class RegisterAppUserApiTest extends JsonApiTestCase
     }
 
     /** @test */
-    public function it_does_not_allow_to_register_a_too_short_password()
+    public function it_does_not_allow_to_register_a_too_short_password(): void
     {
         $data =
             <<<EOT
@@ -36,9 +44,9 @@ EOT;
     }
 
     /** @test */
-    public function it_does_not_allow_to_register_an_already_registered_user()
+    public function it_does_not_allow_to_register_an_already_registered_user(): void
     {
-        $this->loadFixturesFromFile('resources/fixtures.yaml');
+        TestAppUsersStory::load();
 
         $data =
             <<<EOT
@@ -55,7 +63,7 @@ EOT;
     }
 
     /** @test */
-    public function it_allows_to_register_an_app_user()
+    public function it_allows_to_register_an_app_user(): void
     {
         $data =
             <<<EOT

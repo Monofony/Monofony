@@ -4,21 +4,26 @@ declare(strict_types=1);
 
 namespace App\Tests\Controller\Customer;
 
+use App\Factory\AppUserFactory;
+use App\Story\TestAppUsersStory;
 use App\Tests\Controller\AuthorizedHeaderTrait;
 use App\Tests\Controller\JsonApiTestCase;
-use Sylius\Component\Customer\Model\CustomerInterface;
+use App\Tests\Controller\PurgeDatabaseTrait;
 use Symfony\Component\HttpFoundation\Response;
+use Zenstruck\Foundry\Test\Factories;
 
 class ChangePasswordApiTest extends JsonApiTestCase
 {
+    use Factories;
     use AuthorizedHeaderTrait;
+    use PurgeDatabaseTrait;
 
     /** @test */
     public function it_does_not_allow_to_change_password_for_non_authenticated_user(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], ['CONTENT_TYPE' => 'application/json'], '{}');
 
@@ -29,9 +34,9 @@ class ChangePasswordApiTest extends JsonApiTestCase
     /** @test */
     public function it_does_not_allow_to_change_password_without_required_data(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, '{}');
 
@@ -42,9 +47,9 @@ class ChangePasswordApiTest extends JsonApiTestCase
     /** @test */
     public function it_does_not_allow_to_change_password_with_wrong_current_password(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $data =
             <<<EOT
@@ -63,9 +68,9 @@ EOT;
     /** @test */
     public function it_allows_to_change_password(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $data =
             <<<EOT

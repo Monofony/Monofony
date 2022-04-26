@@ -4,21 +4,26 @@ declare(strict_types=1);
 
 namespace App\Tests\Controller\Customer;
 
+use App\Factory\AppUserFactory;
+use App\Story\TestAppUsersStory;
 use App\Tests\Controller\AuthorizedHeaderTrait;
 use App\Tests\Controller\JsonApiTestCase;
-use Sylius\Component\Customer\Model\CustomerInterface;
+use App\Tests\Controller\PurgeDatabaseTrait;
 use Symfony\Component\HttpFoundation\Response;
+use Zenstruck\Foundry\Test\Factories;
 
 final class GetUserProfileApiTest extends JsonApiTestCase
 {
     use AuthorizedHeaderTrait;
+    use Factories;
+    use PurgeDatabaseTrait;
 
     /** @test */
     public function it_does_not_allow_to_get_user_profile_for_non_authenticated_user(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $this->client->request('GET', '/api/customers/'.$customer->getId());
 
@@ -29,9 +34,9 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /** @test */
     public function it_does_not_allows_to_get_another_profile(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['another_customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'monofony'])->getCustomer();
 
         $this->client->request('GET', '/api/customers/'.$customer->getId(), [], [], self::$authorizedHeaderWithContentType);
 
@@ -42,9 +47,9 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /** @test */
     public function it_allows_to_get_user_profile_when_it_is_myself(): void
     {
-        $resources = $this->loadFixturesFromFile('resources/fixtures.yaml');
-        /** @var CustomerInterface $customer */
-        $customer = $resources['customer'];
+        TestAppUsersStory::load();
+
+        $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $this->client->request('GET', '/api/customers/'.$customer->getId(), [], [], static::$authorizedHeaderWithContentType);
 
@@ -55,7 +60,9 @@ final class GetUserProfileApiTest extends JsonApiTestCase
     /** @test */
     public function it_allows_to_get_my_user_profile(): void
     {
-        $this->loadFixturesFromFile('resources/fixtures.yaml');
+        TestAppUsersStory::load();
+
+        AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
         $this->client->request('GET', '/api/customers/me', [], [], static::$authorizedHeaderWithContentType);
 

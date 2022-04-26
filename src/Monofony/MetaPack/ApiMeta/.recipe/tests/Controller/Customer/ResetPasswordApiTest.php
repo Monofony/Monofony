@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 namespace App\Tests\Controller\Customer;
 
+use App\Factory\AppUserFactory;
+use App\Story\TestAppUsersStory;
 use App\Tests\Controller\JsonApiTestCase;
+use App\Tests\Controller\PurgeDatabaseTrait;
 use Symfony\Component\HttpFoundation\Response;
+use Zenstruck\Foundry\Test\Factories;
 
 class ResetPasswordApiTest extends JsonApiTestCase
 {
+    use Factories;
+    use PurgeDatabaseTrait;
+
     /** @test */
     public function it_does_not_allow_to_request_password_without_required_data(): void
     {
@@ -28,7 +35,7 @@ EOT;
     /** @test */
     public function it_allows_to_request_new_password(): void
     {
-        $this->loadFixturesFromFile('resources/fixtures.yaml');
+        TestAppUsersStory::load();
 
         $data =
             <<<EOT
@@ -46,7 +53,7 @@ EOT;
     /** @test */
     public function it_does_not_allow_to_reset_password_without_required_data(): void
     {
-        $this->loadFixturesFromFile('resources/fixtures.yaml');
+        TestAppUsersStory::load();
 
         $data =
             <<<EOT
@@ -80,7 +87,13 @@ EOT;
     /** @test */
     public function it_does_not_allow_to_reset_password_with_token_expired(): void
     {
-        $this->loadFixturesFromFile('resources/fixtures.yaml');
+        TestAppUsersStory::load();
+
+        $user = AppUserFactory::find(['username' => 'sylius']);
+        $user->disableAutoRefresh();
+        $user->setPasswordRequestedAt(new \DateTimeImmutable('-1 day'));
+        $user->setPasswordResetToken('expired_t0ken');
+        $user->save();
 
         $data =
             <<<EOT
@@ -98,7 +111,13 @@ EOT;
     /** @test */
     public function it_allows_to_reset_password(): void
     {
-        $this->loadFixturesFromFile('resources/fixtures.yaml');
+        TestAppUsersStory::load();
+
+        $user = AppUserFactory::find(['username' => 'sylius']);
+        $user->disableAutoRefresh();
+        $user->setPasswordRequestedAt(new \DateTimeImmutable());
+        $user->setPasswordResetToken('t0ken');
+        $user->save();
 
         $data =
             <<<EOT

@@ -12,16 +12,25 @@
         "monofony/api-contracts": "^0.8",
         "monofony/api-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
+        "monofony/core-meta": "^0.8",
         "sylius/user": "^1.11",
         "sylius/user-bundle": "^1.11",
         "phpstan/phpstan": "^1.5",
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.8",
-        "symfony/messenger": "5.4.*"
+        "symfony/messenger": "5.4.*",
+        "zenstruck/foundry": "^1.14"
     },
     "require-dev": {
         "lchrusciel/api-test-case": "^5.1",
-        "phpstan/phpstan": "^1.5"
+        "phpstan/phpstan": "^1.5",
+        "zenstruck/foundry": "^1.14"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Entity\\": "../../MetaPack/CoreMeta/.recipe/src/Entity/",
+            "App\\Factory\\": "../../MetaPack/CoreMeta/.recipe/src/Factory/"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
