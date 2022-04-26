@@ -26,6 +26,11 @@
         "phpstan/phpstan": "^1.5",
         "zenstruck/foundry": "^1.14"
     },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Factory\\": "../../MetaPack/CoreMeta/.recipe/src/Factory/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
