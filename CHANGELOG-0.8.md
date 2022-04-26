@@ -1,5 +1,19 @@
 ## Change Log
 
+### v0.8.0-beta.3 (2022/04/26 10:24 +00:00)
+- [#410](https://github.com/Monofony/Monofony/pull/410) Bump minimist from 1.2.5 to 1.2.6 (@dependabot[bot])
+- [#419](https://github.com/Monofony/Monofony/pull/419) Use factories on api tests (@loic425)
+- [#418](https://github.com/Monofony/Monofony/pull/418) Upgrade sass-loder (@loic425)
+- [#397](https://github.com/Monofony/Monofony/pull/397) Bump follow-redirects from 1.14.5 to 1.14.8 (@dependabot[bot])
+- [#399](https://github.com/Monofony/Monofony/pull/399) Bump url-parse from 1.5.3 to 1.5.10 (@dependabot[bot])
+- [#417](https://github.com/Monofony/Monofony/pull/417) Testing with PHP 8.1 (@loic425)
+- [#416](https://github.com/Monofony/Monofony/pull/416) Bump Phpspec version (@loic425)
+- [#414](https://github.com/Monofony/Monofony/pull/414) Bump async from 2.6.3 to 2.6.4 (@dependabot[bot])
+- [#415](https://github.com/Monofony/Monofony/pull/415) Fix refresh token api test (@loic425)
+- [#413](https://github.com/Monofony/Monofony/pull/413) Fix the build (@loic425)
+- [#412](https://github.com/Monofony/Monofony/pull/412) Do not store proxy on shared storage (@loic425)
+- [#411](https://github.com/Monofony/Monofony/pull/411) Improve code quality (@loic425)
+
 ### v0.8.0-beta.2 (2022/03/31 11:56 +00:00)
 - [#409](https://github.com/Monofony/Monofony/pull/409) fix jms prod configuration (@smildev)
 - [#407](https://github.com/Monofony/Monofony/pull/407) Add support for panther extension (@smildev, @loic425)
