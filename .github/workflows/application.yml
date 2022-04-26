@@ -99,7 +99,9 @@ jobs:
 
             -
                 name: Run PHPStan
-                run: vendor/bin/phpstan analyse -c phpstan.neon -l 4 --ansi
+                run: |
+                    vendor/bin/phpstan clear-result-cache
+                    vendor/bin/phpstan analyse -c phpstan.neon -l 4 --ansi
                 if: always() && steps.end-of-setup.outcome == 'success'
 
     test-application:
