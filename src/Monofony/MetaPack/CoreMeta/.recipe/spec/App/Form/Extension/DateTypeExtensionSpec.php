@@ -25,7 +25,7 @@ final class DateTypeExtensionSpec extends ObjectBehavior
         $resolver->setDefaults([
             'widget' => 'single_text',
             'html5' => false,
-        ])->shouldBeCalled();
+        ])->willReturn($resolver)->shouldBeCalled();
 
         $this->configureOptions($resolver);
     }
