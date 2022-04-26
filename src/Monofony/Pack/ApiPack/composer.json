@@ -12,6 +12,7 @@
         "monofony/api-contracts": "^0.8",
         "monofony/api-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
+        "monofony/core-meta": "^0.8",
         "sylius/user": "^1.11",
         "sylius/user-bundle": "^1.11",
         "phpstan/phpstan": "^1.5",
