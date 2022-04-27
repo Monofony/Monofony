@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Swagger;
 
+use Monofony\Contracts\Api\Swagger\AppAuthenticationTokenDocumentationNormalizerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-final class AppAuthenticationTokenDocumentationNormalizer implements NormalizerInterface
+final class AppAuthenticationTokenDocumentationNormalizer implements AppAuthenticationTokenDocumentationNormalizerInterface
 {
     public function __construct(private NormalizerInterface $decoratedNormalizer)
     {

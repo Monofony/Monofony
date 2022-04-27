@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle\DependencyInjection\Compiler;
 
-use App\Swagger\AppAuthenticationTokenDocumentationNormalizer;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -22,14 +21,13 @@ final class RegisterDocumentationNormalizersPass implements CompilerPassInterfac
 {
     public function process(ContainerBuilder $container): void
     {
-        if (!class_exists(AppAuthenticationTokenDocumentationNormalizer::class)) {
-            return;
-        }
+        foreach ($container->findTaggedServiceIds('monofony.documentation_normalizer.app_authentication_token') as $id => $attributes) {
+            $normalizerDefinition = $container->findDefinition($id);
 
-        $normalizerDefinition = $container->register(AppAuthenticationTokenDocumentationNormalizer::class, AppAuthenticationTokenDocumentationNormalizer::class);
-        $normalizerDefinition
-            ->setDecoratedService('api_platform.swagger.normalizer.documentation', null, 10)
-            ->addArgument(new Reference(AppAuthenticationTokenDocumentationNormalizer::class.'.inner'))
-        ;
+            $normalizerDefinition
+                ->setDecoratedService('api_platform.swagger.normalizer.documentation', null, 10)
+                ->addArgument(new Reference($id.'.inner'))
+            ;
+        }
     }
 }
