@@ -16,7 +16,7 @@
         "pagerfanta/pagerfanta": "^3.5",
         "phpstan/phpstan": "^1.5",
         "sonata-project/block-bundle": "^4.2",
-        "sylius/grid-bundle": "^1.11@beta",
+        "sylius/grid-bundle": "^1.11",
         "symfony/asset": "5.4.*",
         "symfony/routing": "5.4.*",
         "symfony/templating": "5.4.*",
