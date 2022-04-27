@@ -19,6 +19,7 @@ use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
 use Monofony\Component\Admin\Menu\AdminMenuBuilderInterface;
 use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 use Monofony\Contracts\Api\Identifier\AppUserIdentifierNormalizerInterface;
+use Monofony\Contracts\Api\Swagger\AppAuthenticationTokenDocumentationNormalizerInterface;
 use Monofony\Contracts\Front\Menu\AccountMenuBuilderInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
@@ -44,7 +45,8 @@ class MonofonyCoreExtension extends Extension
         $this->registerSomeSyliusAliases($container);
         $this->tagCustomerContext($container);
         $this->tagDoctrineEventSubscribers($container);
-        $this->tagApiPlatformIdentiferNormalizer($container);
+        $this->tagApiPlatformIdentifierNormalizer($container);
+        $this->tagApiPlatformDocumentationNormalizers($container);
         $this->buildAccountMenu($container);
         $this->buildDashboardServices($container);
         $this->buildAdminMenu($container);
@@ -82,7 +84,7 @@ class MonofonyCoreExtension extends Extension
             ->addTag('doctrine.event_subscriber');
     }
 
-    private function tagApiPlatformIdentiferNormalizer(ContainerBuilder $container): void
+    private function tagApiPlatformIdentifierNormalizer(ContainerBuilder $container): void
     {
         if (!interface_exists(AppUserIdentifierNormalizerInterface::class)) {
             return;
@@ -90,6 +92,17 @@ class MonofonyCoreExtension extends Extension
 
         $container->registerForAutoconfiguration(AppUserIdentifierNormalizerInterface::class)
             ->addTag('api_platform.identifier.denormalizer', ['priority' => -10]);
+    }
+
+    private function tagApiPlatformDocumentationNormalizers(ContainerBuilder $container): void
+    {
+        if (!interface_exists(AppAuthenticationTokenDocumentationNormalizerInterface::class)) {
+            return;
+        }
+
+        $container->registerForAutoconfiguration(AppAuthenticationTokenDocumentationNormalizerInterface::class)
+            ->addTag('monofony.documentation_normalizer.app_authentication_token')
+        ;
     }
 
     private function buildAccountMenu(ContainerBuilder $container): void

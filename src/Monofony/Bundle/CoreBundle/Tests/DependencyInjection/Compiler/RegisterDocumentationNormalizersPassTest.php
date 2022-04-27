@@ -20,16 +20,27 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 final class RegisterDocumentationNormalizersPassTest extends AbstractCompilerPassTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function it_registers_app_authentication_token_documentation_normalizer(): void
     {
+        $this->container->register(AppAuthenticationTokenDocumentationNormalizer::class, AppAuthenticationTokenDocumentationNormalizer::class);
+
+        $definition = $this->container->findDefinition(AppAuthenticationTokenDocumentationNormalizer::class);
+        $definition->addTag('monofony.documentation_normalizer.app_authentication_token');
+
         $this->compile();
 
-        $this->assertContainerBuilderHasService(
-            AppAuthenticationTokenDocumentationNormalizer::class,
-            AppAuthenticationTokenDocumentationNormalizer::class
+        $definition = $this->container->findDefinition(AppAuthenticationTokenDocumentationNormalizer::class);
+
+        $this->assertEquals([
+            'api_platform.swagger.normalizer.documentation',
+            null,
+            10,
+        ], $definition->getDecoratedService());
+
+        $this->assertEquals(
+            AppAuthenticationTokenDocumentationNormalizer::class.'.inner',
+            $definition->getArgument(0),
         );
     }
 
