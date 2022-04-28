@@ -1,5 +1,10 @@
 ## Change Log
 
+### v0.8.0 (2022/04/28 07:40 +00:00)
+- [#427](https://github.com/Monofony/Monofony/pull/427) Refactor README page (@loic425)
+- [#426](https://github.com/Monofony/Monofony/pull/426) Use an interface for documentation serializers (@loic425)
+- [#425](https://github.com/Monofony/Monofony/pull/425) Use Resource & grid stable releases (@loic425)
+
 ### v0.8.0-beta.4 (2022/04/26 15:56 +00:00)
 - [#424](https://github.com/Monofony/Monofony/pull/424) Enable Psalm on 8.1 (@loic425)
 - [#423](https://github.com/Monofony/Monofony/pull/423) Simplify PHPStan config (@loic425)
