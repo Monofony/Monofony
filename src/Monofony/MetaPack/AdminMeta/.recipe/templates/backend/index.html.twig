@@ -2,7 +2,7 @@
 
 {% import '@SyliusUi/Macro/headers.html.twig' as headers %}
 
-{% block title %}{{ parent() }}{{ 'sylius.ui.dashboard'|trans }}{% endblock %}
+{% block title %}{{ 'sylius.ui.dashboard'|trans }}{{ parent() }}{% endblock %}
 
 {% block content %}
     {{ headers.default('sylius.ui.dashboard'|trans, 'home', 'app.ui.overview_of_your_website'|trans) }}
