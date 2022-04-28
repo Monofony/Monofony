@@ -9,33 +9,82 @@
     </a>    
 </h1>
 
-Documentation
+Monofony is an Open Source micro-framework on top of [**Symfony**](https://symfony.com) & [**Sylius**](https://sylius.com).
+
+It allows you to use great Sylius packages in a non-commerce Symfony project, with [Resource](https://github.com/Sylius/SyliusResourceBundle) & [Grid](https://github.com/Sylius/SyliusGridBundle) bundles.
+
+You'll be able to use a full-stack Behaviour-Driven-Development with [phpspec](https://phpspec.net) and [Behat](http://behat.org). 
+Cause most of the code is coming with Symfony flex recipes, the files are yours, and you'd be able to customize everything easily.
+
+⚙️ Installation
+--------------
+
+[Install Monofony](https://docs.monofony.com/current/setup/application) with Composer (see [requirements details](https://docs.monofony.com/current/setup/requirements)).
+
+📖 Documentation
 -------------
  
 Documentation is available at [docs.monofony.com](https://docs.monofony.com).
 
-Demo
-----
+🐈 Demo
+-------
 
-New demo coming soon...
+The demo project on [Github](https://github.com/Monofony/Demo).
 
-Community
----------
+📦 Packs
+--------
+
+### Admin
+
+This pack is already available with the installation.
+
+Some screenshots from our demo project:
+
+<img alt="Admin dashboard image" src="https://docs.monofony.com/current/_images/admin-dashboard.png" />
+
+<img alt="Admin advanced list image" src="https://docs.monofony.com/current/_images/admin-advanced-list.png" />
+
+### Api
+
+This pack is optional. [Read the doc to install it](https://docs.monofony.com/current/setup/application#api).
+
+You'll have some basic endpoints to manage your customers.
+
+<img alt="Api image" src="https://docs.monofony.com/current/_images/api.png" />
+
+### Front
+
+This pack is optional. [Read the doc to install it](https://docs.monofony.com/current/setup/application#front).
+
+You'll have these default features:
+* customer login
+* customer registration
+* forgotten password
+* user profile
+
+Some screenshots from our demo project:
+
+<img alt="Customer login image" src="https://docs.monofony.com/current/_images/customer-login.png" />
+
+<img alt="Customer account image" src="https://docs.monofony.com/current/_images/customer-account.png" />
+
+
+🤝 Community
+------------
+
+Get Monofony support on [Sylius Slack](https://sylius.com/slack) via `#monofony` channel.
 
 Stay updated by following our [Twitter](https://twitter.com/MonofonyStarter).
 
-Contributing
-------------
+Would like to help us and build the best symfony micro-framework using Sylius? Feel free to open a pull-request!
 
-Would like to help us and build the best symfony-starter using Sylius? Feel free to open a pull-request!
-
-License
--------
+📃 License
+----------
 
 Monofony is completely free and released under the [MIT License](https://github.com/Monofony/SymfonyStarter/blob/master/LICENSE).
 
-Authors
--------
+✍️ Authors
+----------
 
 Monofony was originally created by [Loïc Frémont](https://twitter.com/loic_425).
 See the list of [contributors from our community](https://github.com/Monofony/SymfonyStarter/contributors).
