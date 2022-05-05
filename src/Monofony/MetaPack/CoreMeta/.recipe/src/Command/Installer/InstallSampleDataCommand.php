@@ -62,7 +62,7 @@ EOT
         }
 
         $commands = [
-            (string) LoadDataFixturesDoctrineCommand::getDefaultName() => ['--no-interaction' => true],
+            'doctrine:fixtures:load' => ['--no-interaction' => true],
         ];
 
         $this->commandsRunner->run($commands, $input, $output, $this->getApplication());
