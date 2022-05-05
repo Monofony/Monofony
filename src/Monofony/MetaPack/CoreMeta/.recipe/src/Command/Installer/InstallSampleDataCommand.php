@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Command\Installer;
 
 use App\Command\Helper\CommandsRunner;
-use Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Input\InputInterface;
