@@ -1,5 +1,0 @@
-sylius_resource:
-    resources:
-#        app.topic:
-#            classes:
-#                model: App\Entity\Topic\Topic

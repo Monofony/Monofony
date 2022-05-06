@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\Backend;
 
 use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
 
-final class DashboardController
+final class DashboardAction
 {
     public function __construct(
         private DashboardStatisticsProviderInterface $statisticsProvider,
@@ -16,7 +17,8 @@ final class DashboardController
     ) {
     }
 
-    public function indexAction(): Response
+    #[Route(path: '/admin', name: 'app_backend_dashboard')]
+    public function __invoke(): Response
     {
         $statistics = $this->statisticsProvider->getStatistics();
         $content = $this->twig->render('backend/index.html.twig', ['statistics' => $statistics]);

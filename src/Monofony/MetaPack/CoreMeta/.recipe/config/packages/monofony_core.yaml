@@ -1,5 +1,5 @@
 imports:
-    - { resource: '../sylius/resources.yaml' }
+    - { resource: '../sylius/resources.php' }
     - { resource: "@SyliusCustomerBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusUserBundle/Resources/config/app/config.yml" }
 
@@ -77,6 +77,10 @@ sylius_user:
                     model: Sylius\Component\User\Model\UserOAuth
                     interface: Sylius\Component\User\Model\UserOAuthInterface
                     controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
+
+sylius_resource:
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity', '%kernel.project_dir%/src/Controller']
 
 vich_uploader:
     mappings:

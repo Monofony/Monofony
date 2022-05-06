@@ -1,0 +1,4 @@
+sylius_resource:
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/Monofony/MetaPack/AdminMeta/.recipe/src/Controller'
