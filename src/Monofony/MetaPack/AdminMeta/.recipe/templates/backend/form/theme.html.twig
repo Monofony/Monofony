@@ -57,14 +57,12 @@
 
     <div id="{{ form.vars.id }}">
         <label for="{{ form.file.vars.id }}" class="ui icon labeled button"><i class="cloud upload icon"></i> {{ 'sylius.ui.choose_file'|trans }}</label>
-        {% if file.path|default(null) is not null %}
-            <a target="_blank"
-               href="{{ vich_uploader_asset(file, 'file') }}"
-               class="ui button">
-                <i class="search icon"></i>
-                {{ 'sylius.ui.show'|trans }}
-            </a>
-        {% endif %}
+        <a target="_blank"
+           href="{{ file.path|default(null) is not null ? vich_uploader_asset(file, 'file') : '#' }}"
+           class="ui button" {% if file.path|default(null) is null %} style="display: none"{% endif %}>
+            <i class="search icon"></i>
+            <span class="filename">{{ file.path|default('sylius.ui.show'|trans) }}</span>
+        </a>
         <div class="ui hidden element">
             {{ form_widget(form.file) }}
         </div>

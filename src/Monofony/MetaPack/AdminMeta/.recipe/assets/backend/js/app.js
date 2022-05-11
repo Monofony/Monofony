@@ -12,6 +12,10 @@ import '../scss/main.scss';
 
 $(document).ready(function () {
     $(document).previewUploadedImage('#sylius_admin_user_avatar');
+
+    // Use this previewer for files uploads
+    // $(document).previewUploadedFile('#app_book_file');
+
     $('.sylius-autocomplete').autoComplete();
     $('.sylius-tabular-form').addTabErrors();
     $('.ui.accordion').addAccordionErrors();
