@@ -4,3 +4,6 @@ parameters:
         - ./
     excludePaths:
         - 'vendor/**.php'
+
+    ignoreErrors:
+        - '/Call to an undefined method Sylius\\Component\\User\\Model\\UserInterface::getRoles\(\)/'
