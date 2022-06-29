@@ -30,6 +30,7 @@ Documentation is available at [docs.monofony.com](https://docs.monofony.com).
 -------
 
 The demo project on [Github](https://github.com/Monofony/Demo).
+See our [Monofony live demo](https://demo.monofony.com).
 
 📦 Packs
 --------
