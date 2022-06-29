@@ -146,6 +146,7 @@
         "vimeo/psalm": "^4.22"
     },
     "conflict": {
+        "sylius/ui-bundle": "1.11.6",
         "symfony/symfony": "*",
         "symplify/package-builder": "^7.2",
         "symplify/smart-file-system": "^7.2",
@@ -168,7 +169,10 @@
         ]
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true
+        }
     },
     "repositories": [
         {
