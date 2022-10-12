@@ -13,12 +13,12 @@
         "monofony/api-meta": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/core-meta": "^0.8",
-        "sylius/user": "^1.11",
-        "sylius/user-bundle": "^1.11",
         "phpstan/phpstan": "^1.5",
         "psr/event-dispatcher": "^1.0",
-        "sylius/resource": "^1.8",
-        "symfony/messenger": "5.4.*",
+        "sylius/resource": "^1.10@alpha",
+        "sylius/user": "^1.12@beta",
+        "sylius/user-bundle": "^1.12@beta",
+        "symfony/messenger": "^5.4 || ^6.0",
         "zenstruck/foundry": "^1.14"
     },
     "require-dev": {
@@ -45,7 +45,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.8-dev"
+            "dev-master": "0.9-dev"
         }
     }
 }

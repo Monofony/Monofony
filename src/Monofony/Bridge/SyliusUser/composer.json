@@ -6,7 +6,8 @@
     "require": {
         "php": "^8.0",
         "monofony/core-contracts": "^0.8",
-        "sylius/user-bundle": "^1.11",
+        "sylius/user": "^1.12@beta",
+        "sylius/user-bundle": "^1.12@beta",
         "monofony/customer": "^1.10"
     },
     "require-dev": {
@@ -36,7 +37,7 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "0.8-dev"
+            "dev-master": "0.9-dev"
         }
     }
 }

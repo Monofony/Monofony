@@ -16,18 +16,18 @@
         "monofony/core-bundle": "^0.8",
         "monofony/core-contracts": "^0.8",
         "monofony/core-meta": "^0.8",
-        "sylius/customer-bundle": "^1.11",
         "monofony/sylius-user-bridge": "^0.8",
-        "sylius/user-bundle": "^1.11",
         "phpstan/phpstan": "^1.5",
         "phpstan/phpstan-webmozart-assert": "^1.1",
-        "sylius/mailer": "^1.5",
-        "sylius/resource-bundle": "^1.9",
-        "symfony/config": "5.4.*",
-        "symfony/process": "5.4.*",
-        "symfony/serializer": "5.4.*",
-        "symfony/translation": "5.4.*",
-        "symfony/validator": "5.4.*",
+        "sylius/customer-bundle": "^1.12@beta",
+        "sylius/mailer": "^2.0",
+        "sylius/resource-bundle": "^1.10@alpha",
+        "sylius/user-bundle": "^1.12@beta",
+        "symfony/config": "^5.4 || ^6.0",
+        "symfony/process": "^5.4 || ^6.0",
+        "symfony/serializer": "^5.4 || ^6.0",
+        "symfony/translation": "^5.4 || ^6.0",
+        "symfony/validator": "^5.4 || ^6.0",
         "vich/uploader-bundle": "^1.8",
         "zenstruck/foundry": "^1.14"
     },
@@ -50,7 +50,7 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "0.8-dev"
+            "dev-master": "0.9-dev"
         }
     }
 }
