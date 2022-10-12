@@ -81,7 +81,6 @@
         "pagerfanta/pagerfanta": "^3.5",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^6.2",
-        "sensiolabs/security-checker": "^6.0",
         "sonata-project/block-bundle": "^4.2",
         "sylius/customer-bundle": "^1.12@beta",
         "sylius/grid-bundle": "^1.12@alpha",

@@ -505,15 +505,6 @@
             "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
         }
     },
-    "sensiolabs/security-checker": {
-        "version": "4.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.0",
-            "ref": "05daf6b214e54aed4089f3480f944a67ac3a7889"
-        }
-    },
     "sonata-project/block-bundle": {
         "version": "4.2.0"
     },
