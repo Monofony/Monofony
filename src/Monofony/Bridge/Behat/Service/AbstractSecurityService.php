@@ -15,6 +15,9 @@ namespace Monofony\Bridge\Behat\Service;
 
 use Monofony\Bridge\Behat\Service\Setter\CookieSetterInterface;
 use Sylius\Component\User\Model\UserInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Session\SessionFactoryInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
@@ -22,20 +25,15 @@ use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 
 abstract class AbstractSecurityService implements SecurityServiceInterface
 {
-    private SessionInterface $session;
-
-    private CookieSetterInterface $cookieSetter;
-
     private string $sessionTokenVariable;
 
-    private string $firewallContextName;
-
-    public function __construct(SessionInterface $session, CookieSetterInterface $cookieSetter, string $firewallContextName)
-    {
-        $this->session = $session;
-        $this->cookieSetter = $cookieSetter;
+    public function __construct(
+        private RequestStack $requestStack,
+        private CookieSetterInterface $cookieSetter,
+        private string $firewallContextName,
+        private ?SessionFactoryInterface $sessionFactory = null
+    ) {
         $this->sessionTokenVariable = sprintf('_security_%s', $firewallContextName);
-        $this->firewallContextName = $firewallContextName;
     }
 
     /**
@@ -51,10 +49,12 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
 
     public function logOut(): void
     {
-        $this->session->set($this->sessionTokenVariable, null);
-        $this->session->save();
+        $session = $this->requestStack->getSession();
 
-        $this->cookieSetter->setCookie($this->session->getName(), $this->session->getId());
+        $session->set($this->sessionTokenVariable, null);
+        $session->save();
+
+        $this->cookieSetter->setCookie($session->getName(), $session->getId());
     }
 
     /**
@@ -62,7 +62,7 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
      */
     public function getCurrentToken(): TokenInterface
     {
-        $serializedToken = $this->session->get($this->sessionTokenVariable);
+        $serializedToken = $this->requestStack->getSession()->get($this->sessionTokenVariable);
 
         if (null === $serializedToken) {
             throw new TokenNotFoundException();
@@ -81,9 +81,21 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
 
     private function setToken(TokenInterface $token): void
     {
-        $serializedToken = serialize($token);
-        $this->session->set($this->sessionTokenVariable, $serializedToken);
-        $this->session->save();
-        $this->cookieSetter->setCookie($this->session->getName(), $this->session->getId());
+        if (null !== $this->sessionFactory) {
+            $session = $this->sessionFactory->createSession();
+            $request = new Request();
+            $request->setSession($session);
+            $this->requestStack->push($request);
+        }
+
+        $this->setTokenCookie(serialize($token));
+    }
+
+    private function setTokenCookie($serializedToken = null): void
+    {
+        $session = $this->requestStack->getSession();
+        $session->set($this->sessionTokenVariable, $serializedToken);
+        $session->save();
+        $this->cookieSetter->setCookie($session->getName(), $session->getId());
     }
 }

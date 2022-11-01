@@ -3,7 +3,6 @@ services:
         autowire: true
         autoconfigure: true
         bind:
-            $spoolDirectory: '%kernel.cache_dir%/spool'
             $minkParameters: '@behat.mink.parameters'
 
     Monofony\Bridge\Behat\:

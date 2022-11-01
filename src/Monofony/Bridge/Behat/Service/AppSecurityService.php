@@ -14,12 +14,12 @@ declare(strict_types=1);
 namespace Monofony\Bridge\Behat\Service;
 
 use Monofony\Bridge\Behat\Service\Setter\CookieSetterInterface;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 final class AppSecurityService extends AbstractSecurityService implements AppSecurityServiceInterface
 {
-    public function __construct(SessionInterface $session, CookieSetterInterface $cookieSetter)
+    public function __construct(RequestStack $requestStack, CookieSetterInterface $cookieSetter)
     {
-        parent::__construct($session, $cookieSetter, 'app');
+        parent::__construct($requestStack, $cookieSetter, 'app');
     }
 }
