@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Security;
 
 use Sylius\Component\User\Model\UserInterface as SyliusUserInterface;
+use SyliusLabs\Polyfill\Symfony\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\Exception\CredentialsExpiredException;
 use Symfony\Component\Security\Core\Exception\DisabledException;
-use Symfony\Component\Security\Core\User\User;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -34,7 +34,7 @@ class UserChecker implements UserCheckerInterface
      */
     public function checkPostAuth(UserInterface $user): void
     {
-        if (!$user instanceof User) {
+        if (!$user instanceof AdvancedUserInterface) {
             return;
         }
 

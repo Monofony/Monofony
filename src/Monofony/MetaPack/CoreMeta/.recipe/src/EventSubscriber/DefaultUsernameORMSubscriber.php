@@ -50,6 +50,9 @@ final class DefaultUsernameORMSubscriber implements EventSubscriber
                 continue;
             }
 
+            if (!method_exists($user, 'getUsername')) {
+                continue;
+            }
             if ($customer->getEmail() === $user->getUsername() && $customer->getEmailCanonical() === $user->getUsernameCanonical()) {
                 continue;
             }
