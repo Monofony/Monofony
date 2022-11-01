@@ -214,9 +214,6 @@
     "instaclick/php-webdriver": {
         "version": "1.4.5"
     },
-    "jean85/pretty-package-versions": {
-        "version": "1.2"
-    },
     "jms/metadata": {
         "version": "1.6.0"
     },
@@ -316,12 +313,6 @@
     },
     "netresearch/jsonmapper": {
         "version": "v1.4.0"
-    },
-    "nette/finder": {
-        "version": "v2.5.0"
-    },
-    "nette/utils": {
-        "version": "v3.0.1"
     },
     "nikic/php-parser": {
         "version": "v4.2.2"
@@ -881,29 +872,11 @@
     "symfony/yaml": {
         "version": "v4.2.0"
     },
-    "symplify/autowire-array-parameter": {
-        "version": "9.0.50"
-    },
-    "symplify/composer-json-manipulator": {
-        "version": "9.0.50"
-    },
     "symplify/easy-coding-standard": {
         "version": "v7.0.2"
     },
     "symplify/monorepo-builder": {
         "version": "v7.2.2"
-    },
-    "symplify/package-builder": {
-        "version": "v7.2.2"
-    },
-    "symplify/set-config-resolver": {
-        "version": "v7.2.2"
-    },
-    "symplify/smart-file-system": {
-        "version": "v7.2.2"
-    },
-    "symplify/symplify-kernel": {
-        "version": "8.3.48"
     },
     "textalk/websocket": {
         "version": "1.5.0"

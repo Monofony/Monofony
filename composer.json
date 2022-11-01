@@ -141,14 +141,13 @@
         "symfony/maker-bundle": "^1.36",
         "symfony/web-profiler-bundle": "^5.4 || ^6.0",
         "symplify/easy-coding-standard": "^9.0",
-        "symplify/monorepo-builder": "^8.0",
+        "symplify/monorepo-builder": "^11.0",
         "vimeo/psalm": "^4.22"
     },
     "conflict": {
         "symfony/symfony": "*",
         "symplify/package-builder": "^7.2",
         "symplify/smart-file-system": "^7.2",
-        "symplify/monorepo-builder": "^7.2",
         "symfony/polyfill-mbstring": "1.22.0"
     },
     "scripts": {
@@ -181,7 +180,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "require": "^5.4 || ^6.0"
+            "require": "^6.0"
         },
         "branch-alias": {
             "dev-master": "0.9-dev"
