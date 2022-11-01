@@ -532,9 +532,6 @@
     "stella-maris/clock": {
         "version": "0.1.4"
     },
-    "swiftmailer/swiftmailer": {
-        "version": "v6.0.2"
-    },
     "sylius-labs/polyfill-symfony-event-dispatcher": {
         "version": "v1.0.0"
     },
@@ -745,9 +742,6 @@
     "symfony/polyfill-ctype": {
         "version": "v1.8.0"
     },
-    "symfony/polyfill-iconv": {
-        "version": "v1.11.0"
-    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.20.0"
     },
@@ -834,15 +828,6 @@
     },
     "symfony/string": {
         "version": "v5.2.1"
-    },
-    "symfony/swiftmailer-bundle": {
-        "version": "2.5",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "2.5",
-            "ref": "3db029c03e452b4a23f7fc45cec7c922c2247eb8"
-        }
     },
     "symfony/templating": {
         "version": "v4.2.0"
