@@ -34,7 +34,6 @@ class MonofonyCoreBundle extends Bundle
         $container->addCompilerPass(new RegisterPasswordListenerForResourcesPass());
         $container->addCompilerPass(new ChangeCustomerContextVisibilityPass());
         $container->addCompilerPass(new RegisterDashboardStatisticsPass());
-        $container->addCompilerPass(new RegisterOAuthClientManager());
         $container->addCompilerPass(new RegisterObjectManagerAliasPass());
         $container->addCompilerPass(new RegisterDocumentationNormalizersPass());
     }
