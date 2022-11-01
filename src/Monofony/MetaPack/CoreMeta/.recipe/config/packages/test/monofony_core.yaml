@@ -1,4 +1,5 @@
-swiftmailer:
-    spool:
-        type: file
-        path: "%kernel.cache_dir%/spool"
+framework:
+    cache:
+        pools:
+            test.mailer_pool:
+                adapter: cache.adapter.filesystem
