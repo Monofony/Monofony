@@ -4,6 +4,8 @@ parameters:
     secret: '%env(resolve:APP_SECRET)%'
 
 security:
+    enable_authenticator_manager: true
+
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         sylius_admin_user_provider:
@@ -38,7 +40,6 @@ security:
             logout:
                 path: sylius_backend_logout
                 target: sylius_backend_login
-            anonymous: true
 
         api_login:
             pattern: ^/api/authentication_token
@@ -53,10 +54,8 @@ security:
             pattern: ^/api
             provider: sylius_app_user_provider
             stateless: true
-            anonymous: true
-            guard:
-                authenticators:
-                    - lexik_jwt_authentication.jwt_token_authenticator
+            entry_point: jwt
+            jwt: true
 
         app:
             switch_user: true
@@ -80,7 +79,6 @@ security:
             logout:
                 path: app_frontend_logout
                 target: app_frontend_homepage
-            anonymous: true
 
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
@@ -88,9 +86,9 @@ security:
             security: false
 
     access_control:
-        - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/login-check, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, role: PUBLIC_ACCESS }
+        - { path: ^/admin/login, role: PUBLIC_ACCESS }
+        - { path: ^/admin/login-check, role: PUBLIC_ACCESS }
         - { path: ^/admin/dashboard, role: ROLE_ADMIN }
         - { path: "^/admin.*", role: ROLE_ADMIN }
-        - { path: "^/api", roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: "^/api", roles: PUBLIC_ACCESS }
