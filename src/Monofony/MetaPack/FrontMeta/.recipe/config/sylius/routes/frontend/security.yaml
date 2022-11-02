@@ -2,14 +2,14 @@ app_frontend_login:
     path: /login
     methods: [GET]
     defaults:
-        _controller: sylius.controller.security:loginAction
+        _controller: sylius.controller.security::loginAction
         _sylius:
             template: frontend/security/login.html.twig
 
 app_frontend_login_check:
     path: /login-check
     defaults:
-        _controller: sylius.controller.security:checkAction
+        _controller: sylius.controller.security::checkAction
 
 app_frontend_logout:
     path: /logout
@@ -18,7 +18,7 @@ app_frontend_register:
     path: /register
     methods: [GET, POST]
     defaults:
-        _controller: sylius.controller.customer:createAction
+        _controller: sylius.controller.customer::createAction
         _sylius:
             form: App\Form\Type\Customer\CustomerRegistrationType
             event: register
@@ -31,7 +31,7 @@ sylius_user_request_password_reset_token:
     path: /forgotten-password
     methods: [GET, POST]
     defaults:
-        _controller: sylius.controller.app_user:requestPasswordResetTokenAction
+        _controller: sylius.controller.app_user::requestPasswordResetTokenAction
         _sylius:
             template: frontend/account/requestPasswordReset.html.twig
             redirect: app_frontend_login
@@ -40,13 +40,13 @@ sylius_user_request_password_reset_pin:
     path: /request-pin
     methods: [GET, POST]
     defaults:
-        _controller: sylius.controller.app_user:requestPasswordResetPinAction
+        _controller: sylius.controller.app_user::requestPasswordResetPinAction
 
 app_frontend_password_reset:
     path: /forgotten-password/{token}
     methods: [GET, POST]
     defaults:
-        _controller: sylius.controller.app_user:resetPasswordAction
+        _controller: sylius.controller.app_user::resetPasswordAction
         _sylius:
             template: frontend/account/resetPassword.html.twig
             redirect: app_frontend_login
@@ -55,7 +55,7 @@ app_frontend_user_check_action:
     path: /user-check
     methods: [GET]
     defaults:
-        _controller: sylius.controller.app_user:showAction
+        _controller: sylius.controller.app_user::showAction
         _format: json
         _sylius:
             repository:
@@ -68,12 +68,12 @@ app_frontend_user_request_verification_token:
     path: /verify
     methods: [POST]
     defaults:
-        _controller: sylius.controller.app_user:requestVerificationTokenAction
+        _controller: sylius.controller.app_user::requestVerificationTokenAction
 
 sylius_frontend_user_verification:
     path: /verify/{token}
     methods: [GET]
     defaults:
-        _controller: sylius.controller.app_user:verifyAction
+        _controller: sylius.controller.app_user::verifyAction
         _sylius:
             redirect: app_frontend_homepage
