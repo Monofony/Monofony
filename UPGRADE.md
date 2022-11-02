@@ -5,60 +5,101 @@
 Add these lines on `config/packages/monofony_admin.yaml`
 
 ```yaml
-sylius_ui:
-    events:
-        # [...]
-        
-        sylius.grid:
-            blocks:
-                content:
-                    template: "@SyliusUi/Grid/_content.html.twig"
-                    priority: 10
-        
-        sylius.grid.body:
-            blocks:
-                navigation:
-                    template: "@SyliusUi/Grid/Body/_navigation.html.twig"
-                    priority: 30
-                table:
-                    template: "@SyliusUi/Grid/Body/_table.html.twig"
-                    priority: 20
-                pagination:
-                    template: "@SyliusUi/Grid/Body/_pagination.html.twig"
-                    priority: 10
-        
-        sylius.grid.filters:
-            blocks:
-                content:
-                    template: "@SyliusUi/Grid/Filter/_content.html.twig"
-                    priority: 10
-        
-        sylius.admin.login.before_form:
-            blocks:
-                legacy:
-                    template: "@SyliusUi/Block/_legacySonataEvent.html.twig"
-                    priority: 30
-                    context:
-                        event: sylius.admin.login.before_form
-                logo:
-                    template: "@SyliusUi/Security/_logo.html.twig"
-                    priority: 20
-                error:
-                    template: "@SyliusUi/Security/_error.html.twig"
-                    priority: 10
-                flashes:
-                    template: "@SyliusUi/_flashes.html.twig"
-                    priority: 0
-        
-        sylius.admin.login.form.content:
-            blocks:
-                credentials:
-                    template: "@SyliusUi/Security/Form/_credentials.html.twig"
-                    priority: 20
-                submit:
-                    template: "@SyliusUi/Security/Form/_submit.html.twig"
-                    priority: 10
+imports:
+    - { resource: '@SyliusUiBundle/Resources/config/app/config.yml' }
  ```
+
+Update controller on routes' configuration with two dots:
+
+Example:
+`_controller: App\Controller\DashboardController:indexAction` replaced by `_controller: App\Controller\DashboardController::indexAction`
+
+On `config/routes/api.yaml`
+
+Replace
+```yaml
+gesdinet_jwt_refresh_token:
+    path: /api/token/refresh
+    controller: gesdinet.jwtrefreshtoken::refresh
+```
+
+With
+```yaml
+api_refresh_token:
+    path: /api/token/refresh
+```
+
+On `config/packages/test/monofony_core.yaml`
+
+Replace
+```yaml
+swiftmailer:
+    spool:
+        type: file
+        path: "%kernel.cache_dir%/spool"
+```
+
+With
+```yaml
+framework:
+    cache:
+        pools:
+            test.mailer_pool:
+                adapter: cache.adapter.filesystem
+```
+
+on `src/EventSubscriber/CanonicalaizerSubscriber.php`
+
+Replace
+```php
+} elseif ($item instanceof UserInterface) {
+```
+
+With
+```php
+} elseif ($item instanceof UserInterface && method_exists($item, 'getUsername')) {
+```
+
+on `src/EventSubscriber/DefaultUsernameORMSubscriber.php`
+
+Replace
+```php
+if ($customer->getEmail() === $user->getUsername() && $customer->getEmailCanonical() === $user->getUsernameCanonical()) {
+    continue;
+}
+```
+
+With
+```php
+if (!method_exists($user, 'getUsername')) {
+    continue;
+}
+if ($customer->getEmail() === $user->getUsername() && $customer->getEmailCanonical() === $user->getUsernameCanonical()) {
+    continue;
+}
+```
+
+on `src/Security/UserChecker.php`
+
+Replace
+```php
+if (!$user instanceof User) {
+    return;
+}
+```
+
+With
+```php
+if (!$user instanceof AdvancedUserInterface || !method_exists($user, 'isCredentialsNonExpired')
+    return;
+}
+```
+
+And add this line on imports
+
+```php
+use SyliusLabs\Polyfill\Symfony\Security\Core\User\AdvancedUserInterface;
+```
 
 ## UPGRADE FOR `0.4.x`
 
