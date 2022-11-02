@@ -9,6 +9,43 @@ imports:
     - { resource: '@SyliusUiBundle/Resources/config/app/config.yml' }
  ```
 
+On `config/packages/security.yaml`
+```yaml
+security:
+    firewalls:
+        admin:
+            # [...]
+            anonymous: true
+        api_login:
+            # [...]
+            anonymous: true
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
+```
+
+```yaml
+security:
+    # Add this line
+    enable_authenticator_manager: true
+
+    # [...]
+
+    firewalls:
+        admin:
+            # [...]
+            # Remove that line
+            # anonymous: true 
+        api_login:
+            # [...]
+            entry_point: jwt
+            jwt: true
+            refresh_jwt:
+                check_path: /api/token/refresh
+```
+
+And replace `IS_AUTHENTICATED_ANONYMOUSLY` with `PUBLIC_ACCESS`
+
 Update controller on routes' configuration with two dots:
 
 Example:
@@ -27,6 +64,24 @@ With
 ```yaml
 api_refresh_token:
     path: /api/token/refresh
+```
+
+On `config/packages/test/framework.yaml`
+
+Replace
+```yaml
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+```
+
+With
+```yaml
+framework:
+    test: ~
+    session:
+        storage_factory_id: session.storage.factory.mock_file
 ```
 
 On `config/packages/test/monofony_core.yaml`
