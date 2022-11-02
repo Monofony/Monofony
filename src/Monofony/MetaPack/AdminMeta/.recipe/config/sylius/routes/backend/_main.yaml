@@ -1,7 +1,7 @@
 app_backend_dashboard:
     path: /
     defaults:
-        _controller:  App\Controller\DashboardController:indexAction
+        _controller:  App\Controller\DashboardController::indexAction
         template:     'backend/index.html.twig'
 
 app_backend_partial:

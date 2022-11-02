@@ -34,7 +34,7 @@ final class CanonicalizerSubscriber implements EventSubscriber
 
         if ($item instanceof CustomerInterface) {
             $item->setEmailCanonical($this->canonicalizer->canonicalize($item->getEmail()));
-        } elseif ($item instanceof UserInterface) {
+        } elseif ($item instanceof UserInterface && method_exists($item, 'getUsername')) {
             $item->setUsernameCanonical($this->canonicalizer->canonicalize($item->getUsername()));
             $item->setEmailCanonical($this->canonicalizer->canonicalize($item->getEmail()));
         }

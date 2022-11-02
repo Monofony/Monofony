@@ -39,12 +39,12 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
 
         $form->add('user', AppUserType::class, [
             'constraints' => [new Valid()],
-        ])->shouldBeCalled();
+        ])->willReturn($form)->shouldBeCalled();
         $form->add('createUser', Argument::type('string'), [
             'label' => 'app.ui.create_user',
             'required' => false,
             'mapped' => false,
-        ])->shouldBeCalled();
+        ])->willReturn($form)->shouldBeCalled();
 
         $this->preSetData($event);
     }
@@ -68,8 +68,8 @@ final class AddUserFormSubscriberSpec extends ObjectBehavior
         $customer->setUser(null)->shouldBeCalled();
         $event->setData($customer)->shouldBeCalled();
 
-        $form->remove('user')->shouldBeCalled();
-        $form->add('user', AppUserType::class, ['constraints' => [new Valid()]])->shouldBeCalled();
+        $form->remove('user')->willReturn($form)->shouldBeCalled();
+        $form->add('user', AppUserType::class, ['constraints' => [new Valid()]])->willReturn($form)->shouldBeCalled();
 
         $this->submit($event);
     }

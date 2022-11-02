@@ -2,7 +2,7 @@ sylius_frontend_account_dashboard:
     path: /accueil
     methods: [GET]
     defaults:
-        _controller: sylius.controller.customer:showAction
+        _controller: sylius.controller.customer::showAction
         _sylius:
             template: "frontend/account/dashboard.html.twig"
             repository:
@@ -14,7 +14,7 @@ sylius_frontend_account_profile_update:
     path: /profile/edit
     methods: [GET, PUT]
     defaults:
-        _controller: sylius.controller.customer:updateAction
+        _controller: sylius.controller.customer::updateAction
         _sylius:
             template: "frontend/account/updateProfile.html.twig"
             form: Sylius\Bundle\CustomerBundle\Form\Type\CustomerProfileType
@@ -31,7 +31,7 @@ sylius_frontend_account_change_password:
     path: /change-password
     methods: [GET, PUT]
     defaults:
-        _controller: sylius.controller.app_user:changePasswordAction
+        _controller: sylius.controller.app_user::changePasswordAction
         _sylius:
             template: "frontend/account/changePassword.html.twig"
             redirect: sylius_frontend_account_dashboard

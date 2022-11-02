@@ -13,29 +13,22 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Service;
 
-use Symfony\Component\Finder\Finder;
-use Symfony\Component\Finder\SplFileInfo;
+use Psr\Cache\CacheItemPoolInterface;
+use Symfony\Component\Mime\Email;
 use Webmozart\Assert\Assert;
 
 final class EmailChecker implements EmailCheckerInterface
 {
-    private string $spoolDirectory;
-
-    public function __construct(string $spoolDirectory)
+    public function __construct(private CacheItemPoolInterface $cache)
     {
-        $this->spoolDirectory = $spoolDirectory;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function hasRecipient(string $recipient): bool
     {
-        $this->assertRecipientIsValid($recipient);
+        $messages = $this->getMailerMessages();
 
-        $messages = $this->getMessages($this->spoolDirectory);
-        foreach ($messages as $message) {
-            if ($this->isMessageTo($message, $recipient)) {
+        foreach ($messages as $email) {
+            if ($this->isMessageTo($email, $recipient)) {
                 return true;
             }
         }
@@ -43,17 +36,17 @@ final class EmailChecker implements EmailCheckerInterface
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function hasMessageTo(string $message, string $recipient): bool
     {
         $this->assertRecipientIsValid($recipient);
 
-        $messages = $this->getMessages($this->spoolDirectory);
-        foreach ($messages as $sentMessage) {
-            if ($this->isMessageTo($sentMessage, $recipient)) {
-                if (false !== strpos($sentMessage->getBody(), $message)) {
+        $messages = $this->getMailerMessages();
+
+        foreach ($messages as $email) {
+            if ($this->isMessageTo($email, $recipient)) {
+                $emailTextContent = trim(preg_replace('/\n+\s+/', ' ', strip_tags($email->getHtmlBody())));
+
+                if (str_contains($emailTextContent, $message)) {
                     return true;
                 }
             }
@@ -62,18 +55,15 @@ final class EmailChecker implements EmailCheckerInterface
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function countMessagesTo(string $recipient): int
     {
         $this->assertRecipientIsValid($recipient);
 
         $messagesCount = 0;
+        $messages = $this->getMailerMessages();
 
-        $messages = $this->getMessages($this->spoolDirectory);
-        foreach ($messages as $message) {
-            if ($this->isMessageTo($message, $recipient)) {
+        foreach ($messages as $email) {
+            if ($this->isMessageTo($email, $recipient)) {
                 ++$messagesCount;
             }
         }
@@ -81,17 +71,15 @@ final class EmailChecker implements EmailCheckerInterface
         return $messagesCount;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getSpoolDirectory(): string
+    private function isMessageTo(Email $message, string $recipient): bool
     {
-        return $this->spoolDirectory;
-    }
+        foreach ($message->getTo() as $toRecipient) {
+            if ($recipient === $toRecipient->getAddress()) {
+                return true;
+            }
+        }
 
-    private function isMessageTo(\Swift_Message $message, string $recipient): bool
-    {
-        return array_key_exists($recipient, $message->getTo());
+        return false;
     }
 
     /**
@@ -100,29 +88,16 @@ final class EmailChecker implements EmailCheckerInterface
     private function assertRecipientIsValid(string $recipient): void
     {
         Assert::notEmpty($recipient, 'The recipient cannot be empty.');
-        Assert::string($recipient, sprintf('The recipient must be a string, %s given.', gettype($recipient)));
         Assert::notEq(
             false,
-            filter_var($recipient, FILTER_VALIDATE_EMAIL),
-            'Given recipient is not a valid email address.'
+            filter_var($recipient, \FILTER_VALIDATE_EMAIL),
+            'Given recipient is not a valid email address.',
         );
     }
 
-    /**
-     * @return array|\Swift_Message[]
-     */
-    private function getMessages(string $directory): array
+    /** @return Email[] */
+    private function getMailerMessages(): array
     {
-        $finder = new Finder();
-        $finder->files()->name('*.message')->in($directory);
-        Assert::notEq($finder->count(), 0, sprintf('No message files found in %s.', $directory));
-        $messages = [];
-
-        /** @var SplFileInfo $file */
-        foreach ($finder as $file) {
-            $messages[] = unserialize($file->getContents());
-        }
-
-        return $messages;
+        return $this->cache->hasItem(MessageSendCacher::CACHE_KEY) ? $this->cache->getItem(MessageSendCacher::CACHE_KEY)->get() : [];
     }
 }

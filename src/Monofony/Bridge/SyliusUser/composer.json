@@ -5,8 +5,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "monofony/core-contracts": "^0.8",
-        "sylius/user-bundle": "^1.11",
+        "monofony/core-contracts": "^0.9@dev",
+        "sylius/user": "^1.12 || ^1.12@dev",
+        "sylius/user-bundle": "^1.12 || ^1.12@dev",
         "monofony/customer": "^1.10"
     },
     "require-dev": {
@@ -36,7 +37,7 @@
     ],
     "extra": {
         "branch-alias": {
-            "dev-master": "0.8-dev"
+            "dev-master": "0.9-dev"
         }
     }
 }

@@ -13,10 +13,10 @@ declare(strict_types=1);
 
 namespace Monofony\Bundle\CoreBundle;
 
+use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\BackwardsCompatibility\Symfony6PrivateServicesPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\ChangeCustomerContextVisibilityPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterDashboardStatisticsPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterDocumentationNormalizersPass;
-use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterOAuthClientManager;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterObjectManagerAliasPass;
 use Monofony\Bundle\CoreBundle\DependencyInjection\Compiler\RegisterPasswordListenerForResourcesPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -34,8 +34,8 @@ class MonofonyCoreBundle extends Bundle
         $container->addCompilerPass(new RegisterPasswordListenerForResourcesPass());
         $container->addCompilerPass(new ChangeCustomerContextVisibilityPass());
         $container->addCompilerPass(new RegisterDashboardStatisticsPass());
-        $container->addCompilerPass(new RegisterOAuthClientManager());
         $container->addCompilerPass(new RegisterObjectManagerAliasPass());
         $container->addCompilerPass(new RegisterDocumentationNormalizersPass());
+        $container->addCompilerPass(new Symfony6PrivateServicesPass());
     }
 }
