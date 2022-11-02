@@ -51,7 +51,8 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
     {
         try {
             $this->setTokenCookie();
-        } catch (SessionNotFoundException) {}
+        } catch (SessionNotFoundException) {
+        }
     }
 
     /**
