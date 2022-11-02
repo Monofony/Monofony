@@ -1,0 +1,107 @@
+name: 'Packages Split'
+
+on:
+    push:
+        branches:
+            - main
+        tags:
+            - '*'
+
+env:
+    # 1. for Github split
+    GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+jobs:
+    packages_split:
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+            matrix:
+                # define package to repository map
+                package:
+                    -
+                        local_path: 'Bridge/Behat'
+                        split_repository: 'behat-bridge'
+                    -
+                        local_path: 'Bridge/SyliusUser'
+                        split_repository: 'sylius-user-bridge'
+                    -
+                        local_path: 'Bundle/CoreBundle'
+                        split_repository: 'core-bundle'
+                    -
+                        local_path: 'Component/Admin'
+                        split_repository: 'admin'
+                    -
+                        local_path: 'Component/Core'
+                        split_repository: 'core'
+                    -
+                        local_path: 'Contracts/Admin'
+                        split_repository: 'admin-contracts'
+                    -
+                        local_path: 'Contracts/Api'
+                        split_repository: 'api-contracts'
+                    -
+                        local_path: 'Contracts/Core'
+                        split_repository: 'core-contracts'
+                    -
+                        local_path: 'Contracts/Front'
+                        split_repository: 'front-contracts'
+                    -
+                        local_path: 'MetaPack/AdminMeta'
+                        split_repository: 'admin-meta'
+                    -
+                        local_path: 'MetaPack/ApiMeta'
+                        split_repository: 'api-meta'
+                    -
+                        local_path: 'MetaPack/CoreMeta'
+                        split_repository: 'core-meta'
+                    -
+                        local_path: 'MetaPack/FrontMeta'
+                        split_repository: 'front-meta'
+                    -
+                        local_path: 'Pack/AdminPack'
+                        split_repository: 'admin-pack'
+                    -
+                        local_path: 'Pack/ApiPack'
+                        split_repository: 'api-pack'
+                    -
+                        local_path: 'Pack/CorePack'
+                        split_repository: 'core-pack'
+                    -
+                        local_path: 'Pack/FrontPack'
+                        split_repository: 'front-pack'
+                    -
+                        local_path: 'Pack/TestPack'
+                        split_repository: 'test-pack'
+
+        steps:
+            -   uses: actions/checkout@v2
+
+            # no tag
+            -
+                if: "!startsWith(github.ref, 'refs/tags/')"
+                uses: "symplify/monorepo-split-github-action@2.1"
+                with:
+                    package_directory: 'src/Monofony/${{ matrix.package.local_path }}'
+
+                    repository_organization: 'monofony'
+                    repository_name: '${{ matrix.package.split_repository }}'
+
+                    user_name: "loic425"
+                    user_email: "lc.fremont@gmail.com"
+
+            # with tag
+            -
+                if: "startsWith(github.ref, 'refs/tags/')"
+                uses: "symplify/monorepo-split-github-action@2.1"
+                with:
+                    tag: ${GITHUB_REF#refs/tags/}
+
+                    package_directory: 'src/Monofony/${{ matrix.package.local_path }}'
+
+                    repository_organization: 'monofony'
+                    repository_name: '${{ matrix.package.split_repository }}'
+
+                    user_name: "loic425"
+                    user_email: "lc.fremont@gmail.com"

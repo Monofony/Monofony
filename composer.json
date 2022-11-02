@@ -168,7 +168,8 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "symfony/flex": true
+            "symfony/flex": true,
+            "infection/extension-installer": true
         }
     },
     "repositories": [
