@@ -16,7 +16,7 @@
         "phpstan/phpstan": "^1.5",
         "psr/event-dispatcher": "^1.0",
         "sylius/resource": "^1.10@alpha",
-        "sylius/user": "^1.12",
+        "sylius/user": "^1.12 || ^1.12@dev",
         "sylius/user-bundle": "^1.12 || ^1.12@dev",
         "symfony/messenger": "^5.4 || ^6.0",
         "zenstruck/foundry": "^1.14"
