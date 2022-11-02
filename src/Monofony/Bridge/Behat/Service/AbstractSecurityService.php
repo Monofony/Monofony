@@ -15,6 +15,7 @@ namespace Monofony\Bridge\Behat\Service;
 
 use Monofony\Bridge\Behat\Service\Setter\CookieSetterInterface;
 use Sylius\Component\User\Model\UserInterface;
+use Symfony\Component\HttpFoundation\Exception\SessionNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionFactoryInterface;
@@ -48,12 +49,9 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
 
     public function logOut(): void
     {
-        $session = $this->requestStack->getSession();
-
-        $session->set($this->sessionTokenVariable, null);
-        $session->save();
-
-        $this->cookieSetter->setCookie($session->getName(), $session->getId());
+        try {
+            $this->setTokenCookie();
+        } catch (SessionNotFoundException) {}
     }
 
     /**

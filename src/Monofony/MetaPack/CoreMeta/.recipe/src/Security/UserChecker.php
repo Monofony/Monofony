@@ -34,7 +34,7 @@ class UserChecker implements UserCheckerInterface
      */
     public function checkPostAuth(UserInterface $user): void
     {
-        if (!$user instanceof AdvancedUserInterface) {
+        if (!$user instanceof AdvancedUserInterface || !method_exists($user, 'isCredentialsNonExpired')) {
             return;
         }
 
