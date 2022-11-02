@@ -79,12 +79,10 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
 
     private function setToken(TokenInterface $token): void
     {
-        if (null !== $this->sessionFactory) {
-            $session = $this->sessionFactory->createSession();
-            $request = new Request();
-            $request->setSession($session);
-            $this->requestStack->push($request);
-        }
+        $session = $this->sessionFactory->createSession();
+        $request = new Request();
+        $request->setSession($session);
+        $this->requestStack->push($request);
 
         $this->setTokenCookie(serialize($token));
     }
