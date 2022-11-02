@@ -31,7 +31,7 @@ abstract class AbstractSecurityService implements SecurityServiceInterface
         private RequestStack $requestStack,
         private CookieSetterInterface $cookieSetter,
         private string $firewallContextName,
-        private ?SessionFactoryInterface $sessionFactory = null
+        private SessionFactoryInterface $sessionFactory,
     ) {
         $this->sessionTokenVariable = sprintf('_security_%s', $firewallContextName);
     }

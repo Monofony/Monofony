@@ -7,3 +7,5 @@ services:
 
     Monofony\Bridge\Behat\:
         resource: './*'
+
+    Symfony\Component\HttpFoundation\Session\SessionFactoryInterface: '@session.factory'
