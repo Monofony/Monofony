@@ -17,7 +17,7 @@ use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Mime\Email;
 use Webmozart\Assert\Assert;
 
-final class EmailChecker
+final class EmailChecker implements EmailCheckerInterface
 {
     public function __construct(private CacheItemPoolInterface $cache)
     {

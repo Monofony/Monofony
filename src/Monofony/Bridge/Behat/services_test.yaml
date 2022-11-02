@@ -7,5 +7,3 @@ services:
 
     Monofony\Bridge\Behat\:
         resource: './*'
-
-    Monofony\Bridge\Behat\Service\EmailCheckerInterface: '@Monofony\Bridge\Behat\Service\EmailChecker'
