@@ -7,7 +7,7 @@
         "php": "^8.0",
         "monofony/core-contracts": "^0.9@dev",
         "sylius/user": "^1.12",
-        "sylius/user-bundle": "^1.12",
+        "sylius/user-bundle": "^1.12 || ^1.12@dev",
         "monofony/customer": "^1.10"
     },
     "require-dev": {

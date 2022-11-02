@@ -88,7 +88,7 @@
         "sylius/resource-bundle": "^1.10",
         "sylius/ui-bundle": "^1.12",
         "sylius/user": "^1.12",
-        "sylius/user-bundle": "^1.12",
+        "sylius/user-bundle": "^1.12 || ^1.12@dev",
         "symfony/asset": "^5.4 || ^6.0",
         "symfony/dotenv": "^5.4 || ^6.0",
         "symfony/expression-language": "^5.4 || ^6.0",

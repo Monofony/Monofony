@@ -22,7 +22,7 @@
         "sylius/customer-bundle": "^1.12",
         "sylius/mailer": "^2.0",
         "sylius/resource-bundle": "^1.10",
-        "sylius/user-bundle": "^1.12",
+        "sylius/user-bundle": "^1.12 || ^1.12@dev",
         "symfony/config": "^5.4 || ^6.0",
         "symfony/process": "^5.4 || ^6.0",
         "symfony/serializer": "^5.4 || ^6.0",
