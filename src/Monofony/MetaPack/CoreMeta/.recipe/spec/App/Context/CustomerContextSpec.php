@@ -10,6 +10,7 @@ use PhpSpec\ObjectBehavior;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 final class CustomerContextSpec extends ObjectBehavior
 {
@@ -40,11 +41,11 @@ final class CustomerContextSpec extends ObjectBehavior
         $this->getCustomer()->shouldReturn(null);
     }
 
-    function it_returns_null_if_user_is_not_an_user_instance(
+    function it_returns_null_if_user_is_not_a_shop_user_instance(
         TokenStorageInterface $tokenStorage,
         AuthorizationCheckerInterface $authorizationChecker,
         TokenInterface $token,
-        \stdClass $user
+        UserInterface $user
     ): void {
         $tokenStorage->getToken()->willReturn($token);
         $authorizationChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')->willReturn(true);

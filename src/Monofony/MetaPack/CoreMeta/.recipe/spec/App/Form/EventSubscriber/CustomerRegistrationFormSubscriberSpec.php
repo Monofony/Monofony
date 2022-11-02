@@ -48,7 +48,7 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
         $customer->getUser()->willReturn($user);
 
         $existingCustomer->setUser($user)->shouldBeCalled();
-        $form->setData($existingCustomer)->shouldBeCalled();
+        $form->setData($existingCustomer)->willReturn($form)->shouldBeCalled();
 
         $this->preSubmit($event);
     }
@@ -82,7 +82,7 @@ final class CustomerRegistrationFormSubscriberSpec extends ObjectBehavior
         $existingCustomer->getUser()->willReturn($user);
 
         $existingCustomer->setUser($user)->shouldNotBeCalled();
-        $form->setData($existingCustomer)->shouldNotBeCalled();
+        $form->setData($existingCustomer)->willReturn($form)->shouldNotBeCalled();
 
         $this->preSubmit($event);
     }
