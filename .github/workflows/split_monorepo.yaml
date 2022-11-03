@@ -92,8 +92,6 @@ jobs:
                     user_name: "loic425"
                     user_email: "lc.fremont@gmail.com"
 
-                    branch: "0.x"
-
             # with tag
             -
                 if: "startsWith(github.ref, 'refs/tags/')"
