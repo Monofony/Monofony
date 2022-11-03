@@ -3,13 +3,11 @@ name: 'Packages Split'
 on:
     push:
         branches:
-            - 0.x
             - 0.9
         tags:
             - '*'
 
 env:
-    # 1. for Github split
     GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:

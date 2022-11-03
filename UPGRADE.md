@@ -10,13 +10,15 @@ imports:
  ```
 
 On `config/packages/security.yaml`
+
+Replace
 ```yaml
 security:
     firewalls:
         admin:
             # [...]
             anonymous: true
-        api_login:
+        api:
             # [...]
             anonymous: true
             guard:
@@ -24,6 +26,7 @@ security:
                     - lexik_jwt_authentication.jwt_token_authenticator
 ```
 
+with
 ```yaml
 security:
     # Add this line
@@ -36,7 +39,7 @@ security:
             # [...]
             # Remove that line
             # anonymous: true 
-        api_login:
+        api:
             # [...]
             entry_point: jwt
             jwt: true
