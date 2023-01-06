@@ -7,11 +7,11 @@
         "php": "^8.0",
         "behat/behat": "^3.2",
         "friends-of-behat/page-object-extension": "^0.3",
-        "monofony/admin": "^0.9@dev",
-        "monofony/admin-contracts": "^0.9@dev",
-        "monofony/admin-meta": "^0.9@dev",
-        "monofony/behat-bridge": "^0.9@dev",
-        "monofony/core-contracts": "^0.9@dev",
+        "monofony/admin": "^0.9",
+        "monofony/admin-contracts": "^0.9",
+        "monofony/admin-meta": "^0.9",
+        "monofony/behat-bridge": "^0.9",
+        "monofony/core-contracts": "^0.9",
         "sylius/ui-bundle": "^1.12",
         "pagerfanta/pagerfanta": "^3.5",
         "phpstan/phpstan": "^1.5",
@@ -27,7 +27,7 @@
     "require-dev": {
         "behat/behat": "^3.2",
         "friends-of-behat/page-object-extension": "^0.3",
-        "monofony/behat-bridge": "^0.9@dev",
+        "monofony/behat-bridge": "^0.9",
         "phpstan/phpstan": "^1.5"
     },
     "autoload-dev": {

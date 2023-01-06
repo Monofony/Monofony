@@ -6,7 +6,7 @@
     "require": {
         "php": "^8.0",
         "monofony/customer": "^1.10",
-        "sylius/user": "^1.12 || ^1.12@dev"
+        "sylius/user": "^1.12"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.5"

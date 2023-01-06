@@ -14,9 +14,8 @@ declare(strict_types=1);
 namespace Monofony\Contracts\Core\Model\User;
 
 use Sylius\Component\User\Model\UserInterface as BaseUserInterface;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
-interface AdminUserInterface extends BaseUserInterface, PasswordAuthenticatedUserInterface
+interface AdminUserInterface extends BaseUserInterface
 {
     public const DEFAULT_ADMIN_ROLE = 'ROLE_ADMIN';
 
