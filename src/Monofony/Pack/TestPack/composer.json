@@ -15,7 +15,7 @@
         "friends-of-behat/variadic-extension": "^1.1",
         "friendsofphp/php-cs-fixer": "^3.0",
         "lchrusciel/api-test-case": "^5.1",
-        "monofony/behat-bridge": "^0.9@dev",
+        "monofony/behat-bridge": "^0.9",
         "phpspec/phpspec": "^7.2",
         "phpstan/phpstan": "^1.5",
         "phpstan/phpstan-doctrine": "^1.3",
