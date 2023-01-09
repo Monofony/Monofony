@@ -20,7 +20,7 @@ jobs:
             matrix:
                 php: ["8.0", "8.1"]
                 symfony: ["^5.4", "~6.0.0"]
-                node: ["14.x"]
+                node: ["14.x", "16.x"]
                 mysql: ["5.7"]
 
                 include:
@@ -121,7 +121,7 @@ jobs:
             matrix:
                 php: ["8.0", "8.1"]
                 symfony: ["5.4.*", "~6.0.0"]
-                node: ["14.x"]
+                node: ["14.x", "16.x"]
                 mysql: ["5.7"]
                 behat_driver: ["panther", "chrome", "chrome_headless"]
 
