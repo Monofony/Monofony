@@ -125,9 +125,9 @@ jobs:
             matrix:
                 php: ["8.0", "8.1"]
                 symfony: ["5.4.*", "~6.0.0"]
-                node: ["14.x", "16.x"]
+                node: ["16.x"]
                 mysql: ["5.7"]
-                behat_driver: ["panther", "chrome", "chrome_headless"]
+                behat_driver: ["panther"]
 
                 include:
                     -   php: "8.1"
@@ -137,9 +137,19 @@ jobs:
                         behat_driver: "panther"
                     -   php: "8.1"
                         symfony: "~6.2.0"
-                        node: "14.x"
+                        node: "16.x"
                         mysql: "5.7"
                         behat_driver: "panther"
+                    -   php: "8.1"
+                        symfony: "~6.2.0"
+                        node: "16.x"
+                        mysql: "5.7"
+                        behat_driver: "chrome"
+                    -   php: "8.1"
+                        symfony: "~6.2.0"
+                        node: "16.x"
+                        mysql: "5.7"
+                        behat_driver: "chrome_headless"
 
         env:
             APP_ENV: test
