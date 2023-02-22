@@ -91,6 +91,7 @@ EOT
             return $user;
         }
 
+        /** @var QuestionHelper $questionHelper */
         $questionHelper = $this->getHelper('question');
 
         do {
