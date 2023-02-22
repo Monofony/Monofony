@@ -28,6 +28,10 @@ jobs:
                         symfony: "~6.1.0"
                         node: "14.x"
                         mysql: "5.7"
+                    -   php: "8.1"
+                        symfony: "~6.2.0"
+                        node: "14.x"
+                        mysql: "5.7"
 
         steps:
             -
@@ -128,6 +132,11 @@ jobs:
                 include:
                     -   php: "8.1"
                         symfony: "~6.1.0"
+                        node: "14.x"
+                        mysql: "5.7"
+                        behat_driver: "panther"
+                    -   php: "8.1"
+                        symfony: "~6.2.0"
                         node: "14.x"
                         mysql: "5.7"
                         behat_driver: "panther"
