@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "monofony/core-contracts": "^0.9",
+        "monofony/core-contracts": "^0.10@dev",
         "sylius/user": "^1.12",
         "sylius/user-bundle": "^1.12",
         "monofony/customer": "^1.10"
