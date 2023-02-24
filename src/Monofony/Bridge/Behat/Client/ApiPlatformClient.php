@@ -248,7 +248,7 @@ final class ApiPlatformClient implements ApiClientInterface
             $request->parameters(),
             $request->files(),
             $request->headers(),
-            $request->content() ?? null,
+            $request->content(),
         );
 
         return $this->getLastResponse();
