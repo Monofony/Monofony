@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Bridge\Behat\Client;
 
-use Monofony\Bridge\Behat\Service\SprintfResponseEscaper;
 use Lexik\Bundle\JWTAuthenticationBundle\Response\JWTAuthenticationFailureResponse;
+use Monofony\Bridge\Behat\Service\SprintfResponseEscaper;
 use Symfony\Component\HttpFoundation\Response;
 use Webmozart\Assert\Assert;
 
