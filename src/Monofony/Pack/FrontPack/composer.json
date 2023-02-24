@@ -4,7 +4,7 @@
     "description": "Monofony front pack.",
     "license": "MIT",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "monofony/behat-bridge": "^0.10@dev",
         "monofony/core-bundle": "^0.10@dev",
         "monofony/front-contracts": "^0.10@dev",
