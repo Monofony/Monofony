@@ -6,14 +6,10 @@ namespace App\MessageHandler;
 
 use App\Message\ChangeAppUserPassword;
 use Doctrine\ORM\EntityManagerInterface;
-use Monofony\Contracts\Core\Model\Customer\CustomerInterface;
-use Monofony\Contracts\Core\Model\User\AppUserInterface;
-use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Model\CredentialsHolderInterface;
-use Sylius\Component\User\Repository\UserRepositoryInterface;
 use Sylius\Component\User\Security\PasswordUpdaterInterface;
-use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
+use Symfony\Component\Security\Core\Security;
 use Webmozart\Assert\Assert;
 
 final class ChangeAppUserPasswordHandler implements MessageHandlerInterface
