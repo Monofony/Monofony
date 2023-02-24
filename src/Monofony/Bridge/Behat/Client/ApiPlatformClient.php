@@ -176,9 +176,9 @@ final class ApiPlatformClient implements ApiClientInterface
         $this->request->updateParameters([$key => $value]);
     }
 
-    public function setRequestData(array $content): void
+    public function setRequestData(array $data): void
     {
-        $this->request->setContent($content);
+        $this->request->setContent($data);
     }
 
     /** @param string|int $value */
@@ -230,7 +230,10 @@ final class ApiPlatformClient implements ApiClientInterface
 
     public function getLastResponse(): Response
     {
-        return $this->client->getResponse();
+        /** @var Response $response */
+        $response = $this->client->getResponse();
+
+        return $response;
     }
 
     public function getToken(): ?string

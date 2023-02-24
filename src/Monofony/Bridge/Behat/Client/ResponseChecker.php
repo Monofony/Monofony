@@ -49,9 +49,7 @@ final class ResponseChecker implements ResponseCheckerInterface
 
     public function getTranslationValue(Response $response, string $key, ?string $localeCode = 'en_US'): string
     {
-        $translations = $this->getResponseContentValue($response, 'translations');
-
-        return $translations[$localeCode][$key];
+        return $this->getResponseContentValue($response, 'translations')[$localeCode][$key] ?? '';
     }
 
     public function getError(Response $response): string

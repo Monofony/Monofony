@@ -37,6 +37,12 @@
             </errorLevel>
         </ImplementedReturnTypeMismatch>
 
+        <MoreSpecificImplementedParamType>
+            <errorLevel type="suppress">
+                <file name="src/Monofony/Bridge/Behat/Client/ApiPlatformClient.php" />
+            </errorLevel>
+        </MoreSpecificImplementedParamType>
+
         <PossiblyUndefinedMethod>
             <errorLevel type="suppress">
                 <referencedMethod name="App\Entity\User\AppUser::disableAutoRefresh" />
