@@ -23,6 +23,7 @@
         "phpstan/phpstan": "^1.5",
         "dmore/behat-chrome-extension": "^1.3",
         "dmore/chrome-mink-driver": "^2.7",
+        "gesdinet/jwt-refresh-token-bundle": "^1.0",
         "robertfausk/behat-panther-extension": "^1.1"
     },
     "autoload": {
