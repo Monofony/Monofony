@@ -19,7 +19,7 @@ use Monofony\Component\Admin\Dashboard\Statistics\StatisticInterface;
 use Monofony\Component\Admin\Menu\AdminMenuBuilderInterface;
 use Monofony\Contracts\Admin\Dashboard\DashboardStatisticsProviderInterface;
 use Monofony\Contracts\Api\Identifier\AppUserIdentifierNormalizerInterface;
-use Monofony\Contracts\Api\Swagger\AppAuthenticationTokenDocumentationNormalizerInterface;
+use Monofony\Contracts\Api\Swagger\AppAuthenticationTokenApiFactoryInterface;
 use Monofony\Contracts\Front\Menu\AccountMenuBuilderInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\User\Canonicalizer\CanonicalizerInterface;
@@ -46,7 +46,7 @@ class MonofonyCoreExtension extends Extension
         $this->tagCustomerContext($container);
         $this->tagDoctrineEventSubscribers($container);
         $this->tagApiPlatformIdentifierNormalizer($container);
-        $this->tagApiPlatformDocumentationNormalizers($container);
+        $this->tagOpenApiFactories($container);
         $this->buildAccountMenu($container);
         $this->buildDashboardServices($container);
         $this->buildAdminMenu($container);
@@ -94,14 +94,14 @@ class MonofonyCoreExtension extends Extension
             ->addTag('api_platform.identifier.denormalizer', ['priority' => -10]);
     }
 
-    private function tagApiPlatformDocumentationNormalizers(ContainerBuilder $container): void
+    private function tagOpenApiFactories(ContainerBuilder $container): void
     {
-        if (!interface_exists(AppAuthenticationTokenDocumentationNormalizerInterface::class)) {
+        if (!interface_exists(AppAuthenticationTokenApiFactoryInterface::class)) {
             return;
         }
 
-        $container->registerForAutoconfiguration(AppAuthenticationTokenDocumentationNormalizerInterface::class)
-            ->addTag('monofony.documentation_normalizer.app_authentication_token')
+        $container->registerForAutoconfiguration(AppAuthenticationTokenApiFactoryInterface::class)
+            ->addTag('monofony.openapi.factory.app_authentication_token')
         ;
     }
 

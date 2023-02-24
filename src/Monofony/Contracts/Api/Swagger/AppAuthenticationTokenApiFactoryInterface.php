@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Monofony\Contracts\Api\Swagger;
 
-use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use ApiPlatform\OpenApi\Factory\OpenApiFactoryInterface;
 
-interface AppAuthenticationTokenDocumentationNormalizerInterface extends NormalizerInterface
+interface AppAuthenticationTokenApiFactoryInterface extends OpenApiFactoryInterface
 {
 }

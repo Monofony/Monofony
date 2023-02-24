@@ -56,17 +56,4 @@ final class GetUserProfileApiTest extends JsonApiTestCase
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/get_user_profile_response', Response::HTTP_OK);
     }
-
-    /** @test */
-    public function it_allows_to_get_my_user_profile(): void
-    {
-        TestAppUsersStory::load();
-
-        AppUserFactory::find(['username' => 'sylius'])->getCustomer();
-
-        $this->client->request('GET', '/api/customers/me', [], [], static::$authorizedHeaderWithContentType);
-
-        $response = $this->client->getResponse();
-        $this->assertResponse($response, 'customer/get_user_profile_response', Response::HTTP_OK);
-    }
 }

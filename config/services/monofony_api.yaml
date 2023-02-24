@@ -5,7 +5,7 @@ services:
         bind:
             $syliusResources: '%sylius.resources%'
 
-    app_fixture:
+    app_api:
         namespace: App\
         resource: '../../src/Monofony/MetaPack/ApiMeta/.recipe/src/*'
         exclude: '../../src/Monofony/MetaPack/ApiMeta/.recipe/src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'

@@ -25,7 +25,7 @@ class ChangePasswordApiTest extends JsonApiTestCase
 
         $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], ['CONTENT_TYPE' => 'application/json'], '{}');
+        $this->client->request('PATCH', '/api/customers/'.$customer->getId().'/password', [], [], ['CONTENT_TYPE' => 'application/merge-patch+json'], '{}');
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'error/access_denied_response', Response::HTTP_UNAUTHORIZED);
@@ -38,7 +38,7 @@ class ChangePasswordApiTest extends JsonApiTestCase
 
         $customer = AppUserFactory::find(['username' => 'sylius'])->getCustomer();
 
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, '{}');
+        $this->client->request('PATCH', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderForPatch, '{}');
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/change_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -59,7 +59,7 @@ class ChangePasswordApiTest extends JsonApiTestCase
         }
 EOT;
 
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, $data);
+        $this->client->request('PATCH', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderForPatch, $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/wrong_current_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -80,7 +80,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('PUT', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderWithContentType, $data);
+        $this->client->request('PATCH', '/api/customers/'.$customer->getId().'/password', [], [], self::$authorizedHeaderForPatch, $data);
 
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);
