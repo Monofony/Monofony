@@ -8,4 +8,13 @@ services:
     Monofony\Bridge\Behat\:
         resource: './*'
 
+    Monofony\Bridge\Behat\Client\ApiPlatformClient:
+        arguments:
+            $client: '@test.client'
+            $authorizationHeader: 'Authorization'
+
+    Monofony\Bridge\Behat\Client\RequestFactory:
+        arguments:
+            $apiUrlPrefix: '/api'
+
     Symfony\Component\HttpFoundation\Session\SessionFactoryInterface: '@session.factory'
