@@ -18,7 +18,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: ["8.0", "8.1"]
+                php: ["8.1"]
                 symfony: ["^5.4", "~6.0.0"]
                 node: ["14.x", "16.x"]
                 mysql: ["5.7"]
@@ -123,7 +123,7 @@ jobs:
         strategy:
             fail-fast: false
             matrix:
-                php: ["8.0", "8.1"]
+                php: ["8.1"]
                 symfony: ["5.4.*", "~6.0.0"]
                 node: ["16.x"]
                 mysql: ["5.7"]
