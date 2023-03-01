@@ -17,15 +17,15 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-final class RegisterDocumentationNormalizersPass implements CompilerPassInterface
+final class RegisterOpenApiFactoriesPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        foreach ($container->findTaggedServiceIds('monofony.documentation_normalizer.app_authentication_token') as $id => $attributes) {
+        foreach ($container->findTaggedServiceIds('monofony.openapi.factory.app_authentication_token') as $id => $attributes) {
             $normalizerDefinition = $container->findDefinition($id);
 
             $normalizerDefinition
-                ->setDecoratedService('api_platform.swagger.normalizer.documentation', null, 10)
+                ->setDecoratedService('api_platform.openapi.factory', null, -10)
                 ->addArgument(new Reference($id.'.inner'))
             ;
         }

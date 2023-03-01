@@ -1,4 +1,5 @@
 {
     "token": @string@,
-    "refresh_token": @string@
+    "refresh_token": @string@,
+    "customer": "@string@.startsWith('/api/customers/')"
 }

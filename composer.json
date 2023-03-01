@@ -32,6 +32,7 @@
             "App\\Message\\": "src/Monofony/MetaPack/ApiMeta/.recipe/src/Message/",
             "App\\MessageHandler\\": "src/Monofony/MetaPack/ApiMeta/.recipe/src/MessageHandler/",
             "App\\Migrations\\": "src/Monofony/MetaPack/CoreMeta/.recipe/src/Migrations/",
+            "App\\OpenApi\\": "src/Monofony/MetaPack/ApiMeta/.recipe/src/OpenApi/",
             "App\\Provider\\": "src/Monofony/MetaPack/ApiMeta/.recipe/src/Provider/",
             "App\\Repository\\": "src/Monofony/MetaPack/CoreMeta/.recipe/src/Repository/",
             "App\\Security\\": "src/Monofony/MetaPack/CoreMeta/.recipe/src/Security/",
@@ -60,12 +61,13 @@
             "src/Monofony/MetaPack/AdminMeta/.recipe/src/Menu/AdminMenuBuilder.php",
             "src/Monofony/MetaPack/FrontMeta/.recipe/src/Menu/AccountMenuBuilder.php",
             "src/Monofony/MetaPack/CoreMeta/.recipe/src/Command/Installer/InstallSampleDataCommand.php",
-            "src/Monofony/MetaPack/ApiMeta/.recipe/src/Story/TestAppUsersStory.php"
+            "src/Monofony/MetaPack/ApiMeta/.recipe/src/Story/TestAppUsersStory.php",
+            "src/Monofony/MetaPack/ApiMeta/.recipe/src/EventSubscriber/AuthenticationSuccessSubscriber.php"
         ]
     },
     "require": {
         "php": "^8.1",
-        "api-platform/core": "^2.6",
+        "api-platform/core": "^2.7 || ^3.1",
         "composer/package-versions-deprecated": "^1.11",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.2",

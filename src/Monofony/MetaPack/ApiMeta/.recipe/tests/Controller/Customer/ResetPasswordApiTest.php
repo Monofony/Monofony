@@ -62,7 +62,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('POST', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('PATCH', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/merge-patch+json'], $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/reset_password_validation_response', Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -78,7 +78,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('POST', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('PATCH', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/merge-patch+json'], $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/token_not_found_validation_response', Response::HTTP_NOT_FOUND);
@@ -102,7 +102,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('POST', '/api/reset_password/expired_t0ken', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('PATCH', '/api/reset_password/expired_t0ken', [], [], ['CONTENT_TYPE' => 'application/merge-patch+json'], $data);
 
         $response = $this->client->getResponse();
         $this->assertResponse($response, 'customer/token_expired_validation_response', Response::HTTP_BAD_REQUEST);
@@ -126,7 +126,7 @@ EOT;
         }
 EOT;
 
-        $this->client->request('POST', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/json'], $data);
+        $this->client->request('PATCH', '/api/reset_password/t0ken', [], [], ['CONTENT_TYPE' => 'application/merge-patch+json'], $data);
 
         $response = $this->client->getResponse();
         $this->assertResponseCode($response, Response::HTTP_NO_CONTENT);

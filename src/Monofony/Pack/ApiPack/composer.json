@@ -4,7 +4,7 @@
     "description": "A pack for Monofony.",
     "license": "MIT",
     "require": {
-        "api-platform/core": "^2.6",
+        "api-platform/core": "^2.7 || ^3.1",
         "api-platform/api-pack": "^1.2",
         "lchrusciel/api-test-case": "^5.1",
         "lexik/jwt-authentication-bundle": "^2.14",

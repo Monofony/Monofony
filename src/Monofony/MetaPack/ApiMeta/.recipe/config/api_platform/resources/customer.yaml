@@ -1,49 +1,57 @@
-App\Entity\Customer\Customer:
-    attributes:
-        validation_groups: ["Default", "sylius"]
-        pagination_enabled: false
-        denormalization_context:
-            groups: ["customer:write", "user:write"]
-        normalization_context:
-            groups:
-                - "customer:read"
-                - "user:read"
-    collectionOperations:
-        post:
-            messenger: input
-            input: App\Message\RegisterAppUser
-            output: false
-            openapi_context:
-                summary: Registers an app user
-        reset_password_request:
-            messenger: input
-            input: App\Message\ResetPasswordRequest
-            output: false
-            method: POST
-            path: /request_password
-            openapi_context:
-                summary: Request a new password
-        reset_password:
-            messenger: input
-            input: App\Message\ResetPassword
-            output: false
-            method: POST
-            path: /reset_password/{token}
-            openapi_context:
-                summary: Reset password
-    itemOperations:
-        get:
-            security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
-        put:
-            security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
-        change_password:
-            messenger: input
-            input: App\Message\ChangeAppUserPassword
-            output: false
-            method: PUT
-            path: customers/{id}/password
-            security: 'is_granted("ROLE_USER")'
-            denormalization_context:
-                groups: [ "customer:password:write" ]
-            openapi_context:
-                summary: Change password for logged in customer
+resources:
+    App\Entity\Customer\Customer:
+        -   validationContext:
+                groups: [ "Default", "sylius" ]
+            denormalizationContext:
+                groups: [ "customer:write", "user:write" ]
+            normalizationContext:
+                groups: [ 'customer:read', 'user:read' ]
+            operations:
+                ApiPlatform\Metadata\Get:
+                    security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
+                ApiPlatform\Metadata\Put:
+                    security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
+        -   operations:
+                ApiPlatform\Metadata\Post:
+                    openApiContext:
+                        summary: Registers an app user
+                    output: false
+                    processor: ApiPlatform\Symfony\Messenger\Processor
+                    input: App\Message\RegisterAppUser
+        -   operations:
+                ApiPlatform\Metadata\Post:
+                    uriTemplate: /request_password
+                    openApiContext:
+                        summary: Request a new password
+                    output: false
+                    processor: ApiPlatform\Symfony\Messenger\Processor
+                    input: App\Message\ResetPasswordRequest
+        -   operations:
+                ApiPlatform\Metadata\Patch:
+                    uriTemplate: /reset_password/{token}
+                    uriVariables: []
+                    read: false
+                    openApiContext:
+                        summary: Reset password
+                    output: false
+                    processor: ApiPlatform\Symfony\Messenger\Processor
+                    input: App\Message\ResetPassword
+        -   operations:
+                ApiPlatform\Metadata\Get:
+                    security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
+                ApiPlatform\Metadata\Put:
+                    security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
+        -   operations:
+                ApiPlatform\Metadata\Patch:
+                    uriTemplate: 'customers/{id}/password'
+                    uriVariables: []
+                    read: false
+                    processor: ApiPlatform\Symfony\Messenger\Processor
+                    input: App\Message\ChangeAppUserPassword
+                    output: false
+                    security: 'is_granted("ROLE_USER")'
+                    denormalizationContext:
+                        groups: ['customer:password:write']
+                    openApiContext:
+                        summary: Change password for logged in customer
+
