@@ -81,7 +81,7 @@ jobs:
             # no tag
             -
                 if: "!startsWith(github.ref, 'refs/tags/')"
-                uses: "symplify/monorepo-split-github-action@2.3.0"
+                uses: "symplify/monorepo-split-github-action@2.3"
                 with:
                     package_directory: 'src/Monofony/${{ matrix.package.local_path }}'
 
@@ -96,7 +96,7 @@ jobs:
             # with tag
             -
                 if: "startsWith(github.ref, 'refs/tags/')"
-                uses: "symplify/monorepo-split-github-action@2.3.0"
+                uses: "symplify/monorepo-split-github-action@2.3"
                 with:
                     tag: ${GITHUB_REF#refs/tags/}
 
