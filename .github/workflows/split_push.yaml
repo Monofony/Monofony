@@ -24,7 +24,7 @@ jobs:
                 with:
                     package_path: 'src/Monofony/Bridge/Behat'
                     personal_access_token: ${{ secrets.ACCESS_TOKEN }}
-                    git_username: 'GitHub Action'
-                    git_email: 'action@github.com'
+                    git_username: 'loic425'
+                    git_email: 'lc.fremont@gmail.com'
                     repository_owner: "Monofony"
                     repository_name: "BehatBridge"
