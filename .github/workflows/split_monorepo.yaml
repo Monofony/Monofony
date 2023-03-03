@@ -23,57 +23,57 @@ jobs:
                     -
                         local_path: 'Bridge/Behat'
                         split_repository: 'BehatBridge'
-#                    -
-#                        local_path: 'Bridge/SyliusUser'
-#                        split_repository: 'SyliusUserBridge'
-#                    -
-#                        local_path: 'Bundle/CoreBundle'
-#                        split_repository: 'CoreBundle'
-#                    -
-#                        local_path: 'Component/Admin'
-#                        split_repository: 'Admin'
-#                    -
-#                        local_path: 'Component/Core'
-#                        split_repository: 'Core'
-#                    -
-#                        local_path: 'Contracts/Admin'
-#                        split_repository: 'AdminContracts'
-#                    -
-#                        local_path: 'Contracts/Api'
-#                        split_repository: 'ApiContracts'
-#                    -
-#                        local_path: 'Contracts/Core'
-#                        split_repository: 'CoreContracts'
-#                    -
-#                        local_path: 'Contracts/Front'
-#                        split_repository: 'FrontContracts'
-#                    -
-#                        local_path: 'MetaPack/AdminMeta'
-#                        split_repository: 'AdminMeta'
-#                    -
-#                        local_path: 'MetaPack/ApiMeta'
-#                        split_repository: 'ApiMeta'
-#                    -
-#                        local_path: 'MetaPack/CoreMeta'
-#                        split_repository: 'CoreMeta'
-#                    -
-#                        local_path: 'MetaPack/FrontMeta'
-#                        split_repository: 'FrontMeta'
-#                    -
-#                        local_path: 'Pack/AdminPack'
-#                        split_repository: 'AdminPack'
-#                    -
-#                        local_path: 'Pack/ApiPack'
-#                        split_repository: 'ApiPack'
-#                    -
-#                        local_path: 'Pack/CorePack'
-#                        split_repository: 'CorePack'
-#                    -
-#                        local_path: 'Pack/FrontPack'
-#                        split_repository: 'FrontPack'
-#                    -
-#                        local_path: 'Pack/TestPack'
-#                        split_repository: 'TestPack'
+                    -
+                        local_path: 'Bridge/SyliusUser'
+                        split_repository: 'SyliusUserBridge'
+                    -
+                        local_path: 'Bundle/CoreBundle'
+                        split_repository: 'CoreBundle'
+                    -
+                        local_path: 'Component/Admin'
+                        split_repository: 'Admin'
+                    -
+                        local_path: 'Component/Core'
+                        split_repository: 'Core'
+                    -
+                        local_path: 'Contracts/Admin'
+                        split_repository: 'AdminContracts'
+                    -
+                        local_path: 'Contracts/Api'
+                        split_repository: 'ApiContracts'
+                    -
+                        local_path: 'Contracts/Core'
+                        split_repository: 'CoreContracts'
+                    -
+                        local_path: 'Contracts/Front'
+                        split_repository: 'FrontContracts'
+                    -
+                        local_path: 'MetaPack/AdminMeta'
+                        split_repository: 'AdminMeta'
+                    -
+                        local_path: 'MetaPack/ApiMeta'
+                        split_repository: 'ApiMeta'
+                    -
+                        local_path: 'MetaPack/CoreMeta'
+                        split_repository: 'CoreMeta'
+                    -
+                        local_path: 'MetaPack/FrontMeta'
+                        split_repository: 'FrontMeta'
+                    -
+                        local_path: 'Pack/AdminPack'
+                        split_repository: 'AdminPack'
+                    -
+                        local_path: 'Pack/ApiPack'
+                        split_repository: 'ApiPack'
+                    -
+                        local_path: 'Pack/CorePack'
+                        split_repository: 'CorePack'
+                    -
+                        local_path: 'Pack/FrontPack'
+                        split_repository: 'FrontPack'
+                    -
+                        local_path: 'Pack/TestPack'
+                        split_repository: 'TestPack'
 
         steps:
             -   uses: actions/checkout@v2
@@ -81,24 +81,22 @@ jobs:
             # no tag
             -
                 if: "!startsWith(github.ref, 'refs/tags/')"
-                uses: "alphpaca/monoplus-split-action@2022.1-alpha6"
+                uses: "symplify/monorepo-split-github-action@2.3.0"
                 with:
-                    package_path: 'src/Monofony/${{ matrix.package.local_path }}'
+                    package_directory: 'src/Monofony/${{ matrix.package.local_path }}'
 
-                    personal_access_token: '${{ secrets.ACCESS_TOKEN }}'
-
-                    repository_owner: 'Monofony'
+                    repository_organization: 'Monofony'
                     repository_name: '${{ matrix.package.split_repository }}'
 
-                    git_username: "GitHub Action"
-                    git_email: "action@github.com"
+                    user_name: "GitHub Action"
+                    user_email: "action@github.com"
 
                     branch: '${{ github.ref_name }}'
 
             # with tag
             -
                 if: "startsWith(github.ref, 'refs/tags/')"
-                uses: "symplify/monorepo-split-github-action@2.2"
+                uses: "symplify/monorepo-split-github-action@2.3.0"
                 with:
                     tag: ${GITHUB_REF#refs/tags/}
 
