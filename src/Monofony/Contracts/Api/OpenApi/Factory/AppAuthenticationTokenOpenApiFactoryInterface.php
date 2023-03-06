@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace App\Monofony\Contracts\Api\OpenApi\Factory;
+namespace Monofony\Contracts\Api\OpenApi\Factory;
 
 use ApiPlatform\OpenApi\Factory\OpenApiFactoryInterface;
 

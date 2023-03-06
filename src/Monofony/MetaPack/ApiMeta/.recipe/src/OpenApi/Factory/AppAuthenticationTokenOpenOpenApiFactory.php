@@ -9,7 +9,7 @@ use ApiPlatform\OpenApi\Model\Operation;
 use ApiPlatform\OpenApi\Model\PathItem;
 use ApiPlatform\OpenApi\Model\RequestBody;
 use ApiPlatform\OpenApi\OpenApi;
-use App\Monofony\Contracts\Api\OpenApi\Factory\AppAuthenticationTokenOpenApiFactoryInterface;
+use Monofony\Contracts\Api\OpenApi\Factory\AppAuthenticationTokenOpenApiFactoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 final class AppAuthenticationTokenOpenOpenApiFactory implements AppAuthenticationTokenOpenApiFactoryInterface
