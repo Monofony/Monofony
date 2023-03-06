@@ -15,7 +15,7 @@
         "monofony/core-meta": "^0.10",
         "phpstan/phpstan": "^1.5",
         "psr/event-dispatcher": "^1.0",
-        "sylius/resource": "^1.10",
+        "sylius/resource": "^1.10 || dev-poc-new-resource-metadata",
         "sylius/user": "^1.12",
         "sylius/user-bundle": "^1.12",
         "symfony/messenger": "^6.1",
