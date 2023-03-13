@@ -13,16 +13,16 @@ resources:
                     security: 'is_granted("ROLE_USER") and object.getUser() == user and object == user.getCustomer()'
         -   operations:
                 ApiPlatform\Metadata\Post:
-                    openApiContext:
-                        summary: Registers an app user
+                    openapi:
+                        summary: Registers an app user.
                     output: false
                     processor: ApiPlatform\Symfony\Messenger\Processor
                     input: App\Message\RegisterAppUser
         -   operations:
                 ApiPlatform\Metadata\Post:
                     uriTemplate: /request_password
-                    openApiContext:
-                        summary: Request a new password
+                    openapi:
+                        summary: Request a new password.
                     output: false
                     processor: ApiPlatform\Symfony\Messenger\Processor
                     input: App\Message\ResetPasswordRequest
@@ -31,8 +31,8 @@ resources:
                     uriTemplate: /reset_password/{token}
                     uriVariables: []
                     read: false
-                    openApiContext:
-                        summary: Reset password
+                    openapi:
+                        summary: Reset password.
                     output: false
                     processor: ApiPlatform\Symfony\Messenger\Processor
                     input: App\Message\ResetPassword
@@ -52,6 +52,6 @@ resources:
                     security: 'is_granted("ROLE_USER")'
                     denormalizationContext:
                         groups: ['customer:password:write']
-                    openApiContext:
-                        summary: Change password for logged in customer
+                    openapi:
+                        summary: Change password for logged in customer.
 
