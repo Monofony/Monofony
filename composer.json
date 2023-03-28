@@ -142,7 +142,7 @@
         "symfony/debug-bundle": "^6.1",
         "symfony/maker-bundle": "^1.36",
         "symfony/web-profiler-bundle": "^6.1",
-        "symplify/easy-coding-standard": "^9.0",
+        "symplify/easy-coding-standard": "^11.3",
         "symplify/monorepo-builder": "^11.0",
         "vimeo/psalm": "^4.22"
     },
