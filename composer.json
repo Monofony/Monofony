@@ -144,7 +144,7 @@
         "symfony/web-profiler-bundle": "^6.1",
         "symplify/easy-coding-standard": "^9.0",
         "symplify/monorepo-builder": "^11.0",
-        "vimeo/psalm": "^4.22"
+        "vimeo/psalm": "^5.12"
     },
     "conflict": {
         "symfony/symfony": "*",
