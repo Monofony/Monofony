@@ -87,7 +87,7 @@
         "sylius/customer-bundle": "^1.12",
         "sylius/grid-bundle": "^1.12",
         "sylius/mailer-bundle": "^2.0@beta",
-        "sylius/resource-bundle": "^1.10",
+        "sylius/resource-bundle": "^1.10 || ^1.11@dev",
         "sylius/ui-bundle": "^1.12",
         "sylius/user": "^1.12",
         "sylius/user-bundle": "^1.12",
