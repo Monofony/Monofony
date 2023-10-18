@@ -10,6 +10,7 @@ class JsonApiTestCase extends BaseJsonApiTestCase
 {
     public function __construct(?string $name = null, array $data = [], string $dataName = '')
     {
+        /** @psalm-suppress InternalMethod */
         parent::__construct($name, $data, $dataName);
 
         $this->expectedResponsesPath = __DIR__.'/../Responses';
