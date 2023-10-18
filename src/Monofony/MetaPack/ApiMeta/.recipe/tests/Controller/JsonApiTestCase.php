@@ -8,6 +8,7 @@ use ApiTestCase\JsonApiTestCase as BaseJsonApiTestCase;
 
 class JsonApiTestCase extends BaseJsonApiTestCase
 {
+    /** @psalm-suppress InternalMethod */
     public function __construct(?string $name = null, array $data = [], string $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
