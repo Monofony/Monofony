@@ -5,3 +5,6 @@ parameters:
     excludePaths:
         - 'vendor/**.php'
         - '**/spec/**.php'
+
+    ignoreErrors:
+        - '/Method PHPUnit\\Framework\\TestCase::__construct\(\) invoked with 3 parameters, 1 required/'
